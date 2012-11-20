@@ -20,3 +20,7 @@ this preliminary XSLT conversion available in order to solicit community feedbac
 
 Please submit pull requests, create a github issue here, or send an email to
 [eutilities@ncbi.nlm.nih.gov](eutilities@ncbi.nlm.nih.gov).
+
+##Author
+
+Th primary author of these is Mark Johnson.
