@@ -3,7 +3,7 @@ Eutils-JSON
 
 Conversion XSLTs for NCBI [E-utilities](http://www.ncbi.nlm.nih.gov/books/NBK25501/) XML to JSON.
 
-==Usage examples==
+##Usage examples
 
 You can just use xsltproc to try these out.  For example:
 
@@ -13,7 +13,7 @@ You can just use xsltproc to try these out.  For example:
     xsltproc Eutils2JSON.xsl \
         http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed\&id=5683731\&retmode=xml
 
-==Feedback welcome==
+##Feedback welcome
 
 This is a feature we are preparing to add to NCBI E-utilities, and we are making
 this preliminary XSLT conversion available in order to solicit community feedback.
