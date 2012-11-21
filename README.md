@@ -3,6 +3,15 @@ Eutils-JSON
 
 Conversion XSLTs for NCBI [E-utilities](http://www.ncbi.nlm.nih.gov/books/NBK25501/) XML to JSON.
 
+Please send us your feedback.
+
+We are preparing to add JSON output format to NCBI E-utilities, and are making
+this preliminary XSLT conversion available in order to solicit community feedback.
+
+Please submit pull requests, create a github issue here, or send an email to
+[eutilities@ncbi.nlm.nih.gov](mailto:eutilities@ncbi.nlm.nih.gov).
+
+
 ##Usage examples
 
 You can just use xsltproc to try these out.  In the following examples, the sample output has been
@@ -25,14 +34,7 @@ Example of [esummary for pubmed](http://www.ncbi.nlm.nih.gov/books/NBK25499/#cha
     xsltproc Eutils2JSON.xsl \
         http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed\&id=5683731\&retmode=xml
 
-##Feedback welcome
-
-This is a feature we are preparing to add to NCBI E-utilities, and we are making
-this preliminary XSLT conversion available in order to solicit community feedback.
-
-Please submit pull requests, create a github issue here, or send an email to
-[eutilities@ncbi.nlm.nih.gov](eutilities@ncbi.nlm.nih.gov).
 
 ##Author
 
-Th primary author of these is Mark Johnson.
+The primary author of these is Mark Johnson.
