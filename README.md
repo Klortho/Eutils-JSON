@@ -11,6 +11,9 @@ this preliminary XSLT conversion available in order to solicit community feedbac
 Please submit pull requests, create a github issue here, or send an email to
 [eutilities@ncbi.nlm.nih.gov](mailto:eutilities@ncbi.nlm.nih.gov).
 
+_We will implement this very soon, so send us feedback as soon as possible (preferably
+by the end of November, 2012)._
+
 
 ##Usage examples
 
