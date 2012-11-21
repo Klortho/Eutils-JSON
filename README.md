@@ -8,18 +8,19 @@ Conversion XSLTs for NCBI [E-utilities](http://www.ncbi.nlm.nih.gov/books/NBK255
 You can just use xsltproc to try these out.  In the following examples, the sample output has been
 piped through a pretty printer.
 
-[Einfo](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo); [samples/einfo.json](sample output):
+Example of [einfo](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo)
+([samples/einfo.json](sample output)):
 
     xsltproc Eutils2JSON.xsl http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi
 
-[Einfo for pubmed](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo);
-[samples/einfo.pubmed.json](sample output):
+Example of [einfo for pubmed](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo)
+([sample output](samples/einfo.pubmed.json)):
 
     xsltproc Eutils2JSON.xsl \
         http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed
 
-[Esummary for pubmed](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESummary);
-[samples/esummary.pubmed.json](sample output):
+Example of [esummary for pubmed](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESummary)
+([sample output](samples/esummary.pubmed.json)):
 
     xsltproc Eutils2JSON.xsl \
         http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed\&id=5683731\&retmode=xml
