@@ -21,6 +21,7 @@
     extension-element-prefixes="libxslt np f str">
     <xsl:output method="text" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
 
+    <xsl:variable name='VERSION' select='"0.1"'/>
     <xsl:variable name="lo" select="'abcdefghijklmnopqrstuvwxyz'"/>
     <xsl:variable name="hi" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'"/>
     <xsl:variable name="spaces"
@@ -35,7 +36,8 @@
         <xsl:param name="_" select="/.."/>
         <xsl:variable name="quot">"</xsl:variable>
         <xsl:variable name="bs">\</xsl:variable>
-        <xsl:variable name="result" select="str:replace(str:replace(str:decode-uri($_), $bs, concat($bs,$bs)), $quot, concat($bs,$quot))"/>
+        <xsl:variable name="result" 
+            select="str:replace(str:replace(str:decode-uri($_), $bs, concat($bs,$bs)), $quot, concat($bs,$quot))"/>
         <f:result>
             <xsl:value-of select="$result"/>
         </f:result>
@@ -50,10 +52,14 @@
         </f:result>
     </f:function>
 
-    <!-- You must override this stylesheet to produce JSON -->
+    <!--
+      Produce JSON for einfo DbList        
+    -->
     <xsl:template name="einfoFormatAll">
-        <xsl:text>{ "dblist" : [</xsl:text>
-        <xsl:variable name="qq">"</xsl:variable>
+        <xsl:text>{ "version": "</xsl:text>
+        <xsl:value-of select="$VERSION"/>
+        <xsl:text>",
+  "dblist" : [</xsl:text>
         <xsl:for-each select="DbName">
             <xsl:text>"</xsl:text>
             <xsl:value-of select="np:q(.)"/>
@@ -79,12 +85,16 @@
         </xsl:if>
     </xsl:template>
 
-    <!-- Downcase and copy immediate properties to JSON -->
+    <!-- 
+      Downcase and convert immediate properties (those element children
+      that have no children of their own).  This doesn't copy the <Name>
+      child.
+    -->
     <xsl:template name="copy-properties">
         <xsl:param name="indent" select="number(0)"/>
         <xsl:param name="newline" select="false()"/>
 
-       <xsl:for-each select="*[count(*) = 0]">
+       <xsl:for-each select="*[count(*) = 0 and name(.) != 'Name']">
             <xsl:value-of select="substring($spaces, 1, $indent)"/>
             <xsl:text>"</xsl:text>
             <xsl:value-of select="np:to-lower(np:q(name(.)))"/>
@@ -98,6 +108,11 @@
         </xsl:for-each>
     </xsl:template>
 
+    <!--
+      This template converts a homogenous list of XML elements with property
+      children into a list of key:object pairs in JSON.  The key in each JSON
+      pair is taken from the <Name> element child.
+    -->
     <xsl:template name="format-list">
         <xsl:param name="listname"/>
         <xsl:param name="nodes" select="/.."/>
@@ -123,9 +138,14 @@
             <xsl:text>}</xsl:text>
     </xsl:template>
 
+    <!-- 
+      Produce JSON for einfo DbInfo (information about a specific database)
+    -->
     <xsl:template name="einfoFormatSingle">
         <xsl:text>
-{
+{  "version": "</xsl:text>
+        <xsl:value-of select="$VERSION"/>
+        <xsl:text>",
     "dbinfo": {
 </xsl:text>
         <!-- Data not in fields or links -->
@@ -298,7 +318,8 @@
                     <xsl:apply-templates select="."/>
                     <xsl:if test="not(@Type = 'Structure')">
                         <xsl:text>}</xsl:text>
-                    </xsl:if>                    <xsl:call-template name="conditional-comma"/>
+                    </xsl:if>             
+                    <xsl:call-template name="conditional-comma"/>
                 </xsl:for-each>
                 <xsl:text>    ]</xsl:text>
             </xsl:when>
