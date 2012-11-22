@@ -11,7 +11,10 @@ More samples:
   - http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,254086
       > esummary.unists.xml
 
-Tweets:
-  https://twitter.com/pjacock/status/271349318118694913
-  https://twitter.com/yokofakun/status/271337018359943168
+Online
+  Tweets:
+    https://twitter.com/pjacock/status/271349318118694913
+    https://twitter.com/yokofakun/status/271337018359943168
+  Biostar news item:
+    http://www.biostars.org/p/57536/
 
