@@ -3,13 +3,24 @@ Notes on branch klortho
 Notes:
   * Added 'version'
   * I removed the redundant "name" field inside child hashes.
+  * Changed esummary docsums to be a hash, and the id field of each docsum is the key.
 
 Question:
   * What is the str:decode-uri() doing in the np:q function?
 
-More samples:
-  - http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,254086
-      > esummary.unists.xml
+Samples:
+  - einfo
+      ✓ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi
+          - einfo.xml, einfo.json
+      ✓ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed
+          - einfo.pubmed.xml
+
+  - esummary
+      - http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731&retmode=xml
+
+
+      - http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,254086
+          - esummary.unists.xml
 
 Online
   Tweets:

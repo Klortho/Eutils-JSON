@@ -1,72 +1,49 @@
 {
-  "docsums": [
-    {
-      "id": 5683731,
-      "pubdate": "1968 Aug",
-      "epubdate": "",
-      "source": "Paraplegia",
-      "authorlist": [
-        {
-          "author": "Goldberg MJ"
-        },
-        {
-          "author": "Davis LJ"
+    "version": "0.1",
+    "docsums": {
+        "5683731": {
+            "pubdate": "1968 Aug", 
+            "epubdate": "", 
+            "source": "Paraplegia", 
+            "authorlist": [
+{
+            "author": "Goldberg MJ"}, {
+            "author": "Davis LJ"}    ], 
+            "lastauthor": "Davis LJ", 
+            "title": "An assistive device for smoking.", 
+            "volume": "6", 
+            "issue": "2", 
+            "pages": "103-5", 
+            "langlist": [
+{
+            "lang": "English"}    ], 
+            "nlmuniqueid": "2985038R", 
+            "issn": "0031-1758", 
+            "essn": "", 
+            "pubtypelist": [
+{
+            "pubtype": "Journal Article"}    ], 
+            "recordstatus": "PubMed - indexed for MEDLINE", 
+            "pubstatus": "ppublish", 
+            "articleids": [
+{
+            "pubmed": "5683731"}, {
+            "doi": "10.1038/sc.1968.18"}, {
+            "eid": "5683731"}, {
+            "rid": "5683731"}    ], 
+            "doi": "10.1038/sc.1968.18", 
+            "history": [
+{
+            "pubmed": "1968/08/01 00:00"}, {
+            "medline": "1968/08/01 00:01"}, {
+            "entrez": "1968/08/01 00:00"}    ], 
+            "references": [
+    ], 
+            "hasabstract": 0, 
+            "pmcrefcount": 0, 
+            "fulljournalname": "Paraplegia", 
+            "elocationid": "", 
+            "so": "1968 Aug;6(2):103-5"
         }
-      ],
-      "lastauthor": "Davis LJ",
-      "title": "An assistive device for smoking.",
-      "volume": "6",
-      "issue": "2",
-      "pages": "103-5",
-      "langlist": [
-        {
-          "lang": "English"
-        }
-      ],
-      "nlmuniqueid": "2985038R",
-      "issn": "0031-1758",
-      "essn": "",
-      "pubtypelist": [
-        {
-          "pubtype": "Journal Article"
-        }
-      ],
-      "recordstatus": "PubMed - indexed for MEDLINE",
-      "pubstatus": "ppublish",
-      "articleids": [
-        {
-          "pubmed": "5683731"
-        },
-        {
-          "doi": "10.1038\/sc.1968.18"
-        },
-        {
-          "eid": "5683731"
-        },
-        {
-          "rid": "5683731"
-        }
-      ],
-      "doi": "10.1038\/sc.1968.18",
-      "history": [
-        {
-          "pubmed": "1968\/08\/01 00:00"
-        },
-        {
-          "medline": "1968\/08\/01 00:01"
-        },
-        {
-          "entrez": "1968\/08\/01 00:00"
-        }
-      ],
-      "references": [
-
-      ],
-      "hasabstract": 0,
-      "pmcrefcount": 0,
-      "fulljournalname": "Paraplegia",
-      "elocationid": "",
-      "so": "1968 Aug;6(2):103-5"
-    }
-  ]
+}
 }
