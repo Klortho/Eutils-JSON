@@ -23,35 +23,31 @@ You can just use xsltproc to try these out.  For example,
 
 ### [Einfo](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo)
 
-✓ List databases
+#### ✓ List databases
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi
+([einfo.xml](klortho/samples/einfo.xml)),
+([einfo.json](klortho/samples/einfo.json)),
 
-([einfo.xml](Eutils-JSON/blob/klortho/samples/einfo.xml)),
-([einfo.json](Eutils-JSON/blob/klortho/samples/einfo.json)),
-
-✓ Info about PubMed
+#### ✓ Info about PubMed
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed
-
-([einfo.pubmed.xml](Eutils-JSON/blob/klortho/samples/einfo.pubmed.xml)),
-([einfo.pubmed.json](Eutils-JSON/blob/klortho/samples/einfo.pubmed.json)),
+([einfo.pubmed.xml](klortho/samples/einfo.pubmed.xml)),
+([einfo.pubmed.json](klortho/samples/einfo.pubmed.json)),
 
 ### [Esummary](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESummary)
 
-✓ PubMed - version 1 DTD
+#### ✓ PubMed - version 1 DTD
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731,22144687&retmode=xml
-
 ([esummary.pubmed.xml](klortho/samples/esummary.pubmed.xml)),
-([esummary.pubmed.json](Eutils-JSON/blob/klortho/samples/esummary.pubmed.json)),
+([esummary.pubmed.json](klortho/samples/esummary.pubmed.json)),
 
-- Unists - version 1 DTD
+#### - Unists - version 1 DTD
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,254086
-
-([esummary.unists.xml](Eutils-JSON/blob/klortho/samples/esummary.unists.xml)),
-([esummary.unists.json](Eutils-JSON/blob/klortho/samples/esummary.unists.json)),
+([esummary.unists.xml](klortho/samples/esummary.unists.xml)),
+([esummary.unists.json](klortho/samples/esummary.unists.json)),
 
 
 ##Authors
