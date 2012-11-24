@@ -315,15 +315,27 @@
                         <xsl:value-of select='concat($iu3, "]")'/>
                     </xsl:when>
                     
-                    <!-- If all of them have different names, convert them to
-                    a simple object -->
-                    <xsl:when test='not(Item[@Name = preceding-sibling::Item/@Name])'>
+                    <!-- If there is more than one, and all of them have different names, convert 
+                        them to a simple object -->
+                    <xsl:when test='count(Item) &gt; 1 and
+                                    not(Item[@Name = preceding-sibling::Item/@Name])'>
                         <xsl:value-of select='concat("{", $nl)'/>
                         <xsl:apply-templates select='Item'>
                             <xsl:with-param name='indent' select='concat($indent, $iu)'/>
                         </xsl:apply-templates>
                         <xsl:value-of select='concat($iu3, "}")'/>
                      </xsl:when>
+
+                    <!-- If there is one Structure child, then treat its children like
+                        an object (see unists example) --> 
+                    <xsl:when test='count(Item) = 1 and Item[@Type = "Structure"]'>
+                        <xsl:value-of select='concat("{", $nl)'/>
+                        <xsl:apply-templates select='Item/Item'>
+                            <xsl:with-param name='indent' select='concat($indent, $iu)'/>
+                        </xsl:apply-templates>
+                        <xsl:value-of select='concat($iu3, "}")'/>
+                    </xsl:when>
+                    
                     
                     <!-- Otherwise we have no choice but to convert them to an 
                         array of one-key objects (yuck) -->
