@@ -262,17 +262,17 @@
         
         <xsl:text>"docsums": {</xsl:text>
         <xsl:apply-templates select="DocSum"/>
-        <xsl:value-of select='concat("}", $nl, "}")'/>
+        <xsl:value-of select='concat($nl, $iu, "}", $nl, "}")'/>
     </xsl:template>
 
     <xsl:template match="DocSum">
         <xsl:value-of select="concat($nl, $iu2)" />
-        <xsl:text>"</xsl:text>
-        <xsl:value-of select='Id'/>
-        <xsl:text>": {</xsl:text>
+        <xsl:value-of select="concat('&quot;', Id, '&quot;: {', $nl)"/>
 
-        <xsl:apply-templates select="Item"/>
-        <xsl:value-of select='concat($nl, $iu2, "}", $nl)' />
+        <xsl:apply-templates select="Item">
+            <xsl:with-param name='indent' select='$iu3'/>
+        </xsl:apply-templates>
+        <xsl:value-of select='concat($iu2, "}")' />
         <xsl:call-template name="conditional-comma"/>
     </xsl:template>
 
@@ -283,7 +283,9 @@
     </xsl:template>
     
     <xsl:template match="Item">
-        <xsl:value-of select="concat($nl, $iu3)" />
+        <xsl:param name='indent'/>
+  
+        <xsl:value-of select="$indent" />
         <xsl:text>"</xsl:text>
         <xsl:value-of select="np:to-lower(@Name)"/>
         <xsl:text>": </xsl:text>
@@ -299,23 +301,57 @@
             </xsl:when>
             
             <xsl:when test="@Type = 'List'">
-                <xsl:value-of select='concat("[", $nl)'/>
-                <xsl:for-each select="Item">
-                    <xsl:if test="not(@Type = 'Structure')">
-                        <xsl:text>{</xsl:text>
-                    </xsl:if>
-                    <xsl:apply-templates select="."/>
-                    <xsl:if test="not(@Type = 'Structure')">
-                        <xsl:text>}</xsl:text>
-                    </xsl:if>             
-                    <xsl:call-template name="conditional-comma"/>
-                </xsl:for-each>
-                <xsl:text>    ]</xsl:text>
+                <xsl:choose>
+                    <!-- If all the sub-items of a list have the same name, and
+                        are all strings, dates, or integers, then
+                        convert them to a simple array (and we'll throw away the
+                        Name.) -->
+                    <xsl:when test='not(Item[@Name != preceding-sibling::Item/@Name]) and
+                        not(Item[@Type != "String" and @Type != "Date" and @Type != "Integer"])'>
+                        <xsl:value-of select='concat("[", $nl)'/>
+                        <xsl:apply-templates select='Item' mode='item-to-string-array'>
+                            <xsl:with-param name='indent' select='$iu4'/>
+                        </xsl:apply-templates>
+                        <xsl:value-of select='concat($iu3, "]")'/>
+                    </xsl:when>
+                    
+                    <!-- If all of them have different names, convert them to
+                    a simple object -->
+                    <xsl:when test='not(Item[@Name = preceding-sibling::Item/@Name])'>
+                        <xsl:value-of select='concat("{", $nl)'/>
+                        <xsl:apply-templates select='Item'>
+                            <xsl:with-param name='indent' select='concat($indent, $iu)'/>
+                        </xsl:apply-templates>
+                        <xsl:value-of select='concat($iu3, "}")'/>
+                     </xsl:when>
+                    
+                    <!-- Otherwise we have no choice but to convert them to an 
+                        array of one-key objects (yuck) -->
+                    <xsl:otherwise>
+                        <xsl:value-of select='concat("[", $nl)'/>
+                        <xsl:for-each select="Item">
+                            <xsl:text>{</xsl:text>
+                            <xsl:apply-templates select="."/>
+                            <xsl:text>}</xsl:text>
+                            <xsl:call-template name="conditional-comma"/>
+                        </xsl:for-each>
+                        <xsl:value-of select='concat($iu3, "]")'/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
         </xsl:choose>
         <xsl:call-template name="conditional-comma"/>
+        <xsl:value-of select='$nl'/>
     </xsl:template>
-    
+
+    <xsl:template match='Item' mode='item-to-string-array'>
+        <xsl:param name='indent'/>
+        <xsl:value-of select="concat($indent, '&quot;', np:q(.), '&quot;')"/>
+        <xsl:if test='position() != last()'>
+            <xsl:text>,</xsl:text>
+        </xsl:if>
+        <xsl:value-of select='$nl'/>
+    </xsl:template>
     
 
     <!--============================================================

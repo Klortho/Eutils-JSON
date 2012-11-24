@@ -11,16 +11,15 @@ Question:
 Samples:
   - einfo
       ✓ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi
-          - einfo.xml, einfo.json
+          - einfo
       ✓ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed
-          - einfo.pubmed.xml
+          - einfo.pubmed
 
   - esummary
-      - http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731&retmode=xml
-
-
+      ✓ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731,22144687&retmode=xml
+          - esummary.pubmed
       - http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,254086
-          - esummary.unists.xml
+          - esummary.unists
 
 Online
   Tweets:

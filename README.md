@@ -1,4 +1,4 @@
-Eutils-JSON
+﻿Eutils-JSON
 ===========
 
 Conversion XSLTs for NCBI [E-utilities](http://www.ncbi.nlm.nih.gov/books/NBK25501/) XML to JSON.
@@ -15,29 +15,45 @@ _We will implement this very soon, so send us feedback as soon as possible (pref
 by the end of November, 2012)._
 
 
-##Usage examples
+##Samples
 
-You can just use xsltproc to try these out.  In the following examples, the sample output has been
-piped through a pretty printer.
-
-Example of [einfo](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo)
-([sample output](Eutils-JSON/blob/master/samples/einfo.json)):
+You can just use xsltproc to try these out.  For example,
 
     xsltproc Eutils2JSON.xsl http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi
 
-Example of [einfo for pubmed](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo)
-([sample output](Eutils-JSON/blob/master/samples/einfo.pubmed.json)):
+### [Einfo](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo)
 
-    xsltproc Eutils2JSON.xsl \
-        http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed
+✓ List databases
 
-Example of [esummary for pubmed](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESummary)
-([sample output](Eutils-JSON/blob/master/samples/esummary.pubmed.json)):
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi
 
-    xsltproc Eutils2JSON.xsl \
-        http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed\&id=5683731\&retmode=xml
+([einfo.xml](Eutils-JSON/blob/klortho/samples/einfo.xml)),
+([einfo.json](Eutils-JSON/blob/klortho/samples/einfo.json)),
+
+✓ Info about PubMed
+
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed
+
+([einfo.pubmed.xml](Eutils-JSON/blob/klortho/samples/einfo.pubmed.xml)),
+([einfo.pubmed.json](Eutils-JSON/blob/klortho/samples/einfo.pubmed.json)),
+
+### [Esummary](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESummary)
+
+✓ PubMed - version 1 DTD
+
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731,22144687&retmode=xml
+
+([esummary.pubmed.xml](Eutils-JSON/blob/klortho/samples/esummary.pubmed.xml)),
+([esummary.pubmed.json](Eutils-JSON/blob/klortho/samples/esummary.pubmed.json)),
+
+- Unists - version 1 DTD
+
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,254086
+
+([esummary.unists.xml](Eutils-JSON/blob/klortho/samples/esummary.unists.xml)),
+([esummary.unists.json](Eutils-JSON/blob/klortho/samples/esummary.unists.json)),
 
 
-##Author
+##Authors
 
-The primary author of these is Mark Johnson.
+Mark Johnson, Chris Maloney

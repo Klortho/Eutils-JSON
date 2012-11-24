@@ -1,0 +1,27 @@
+{
+    "version": "0.1",
+    "docsums": {
+        "254085": {
+            "marker_name": "SE234324", 
+            "map_gene_summary_list": {
+{"org": "Sus scrofa", 
+"chr": "chromosome 7,", 
+"locus": "loci LOC100739417 and NUMB,", 
+"polymorphic": "polymorphic"
+}            }, 
+            "epcr_summary": "Found by e-PCR in sequences from Spermophilus tridecemlineatus, Sus scrofa and Toxoplasma gondii.", 
+            "gene_id": ""
+        }, 
+        "254086": {
+            "marker_name": "SE259162", 
+            "map_gene_summary_list": {
+{"org": "Sus scrofa", 
+"chr": "chromosome 12,", 
+"locus": "locus SPAG7,", 
+"polymorphic": "polymorphic"
+}            }, 
+            "epcr_summary": "Found by e-PCR in sequences from Sus scrofa.", 
+            "gene_id": ""
+        }
+    }
+}
