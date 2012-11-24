@@ -104,19 +104,6 @@
         </f:result>
     </f:function>
 
-    <!--
-      Output a comma if and only if this is not the last item in the list.
-    -->
-    <xsl:template name="conditional-comma">
-        <xsl:param name="newline" select="false()"/>
-        <xsl:if test="position() != last()">
-            <xsl:text>, </xsl:text>
-            <xsl:if test="$newline != false()">
-                <xsl:value-of select='$nl'/>
-            </xsl:if>
-        </xsl:if>
-    </xsl:template>
-
     <!--============================================================
       Generic eutilities templates
     -->
@@ -130,7 +117,7 @@
         <xsl:param name="indent" select="''"/>
         <xsl:param name="newline" select="false()"/>
 
-       <xsl:for-each select="*[count(*) = 0 and name(.) != 'Name']">
+        <xsl:for-each select="*[count(*) = 0 and name(.) != 'Name']">
             <xsl:value-of select="$indent"/>
             <xsl:text>"</xsl:text>
             <xsl:value-of select="np:to-lower(np:q(name(.)))"/>
@@ -138,9 +125,9 @@
             <xsl:text>: "</xsl:text>
             <xsl:value-of select="np:q(.)"/>
             <xsl:text>"</xsl:text>
-            <xsl:call-template name="conditional-comma">
-                <xsl:with-param name="newline" select="$newline"/>
-            </xsl:call-template>
+            
+            <xsl:if test='position() != last()'>,</xsl:if>
+            <xsl:value-of select='$nl'/>
         </xsl:for-each>
     </xsl:template>
 
@@ -169,7 +156,9 @@
             </xsl:call-template>
             <xsl:value-of select='concat($nl, $iu3)'/>
             <xsl:text>}</xsl:text>
-            <xsl:call-template name="conditional-comma"/>
+            
+            <xsl:if test='position() != last()'>,</xsl:if>
+            <xsl:value-of select='$nl'/>
         </xsl:for-each>
         <xsl:value-of select='concat($nl, $iu2)'/>
         <xsl:text>}</xsl:text>
@@ -243,7 +232,102 @@
     <!--============================================================
         Esummary version 2.0 specific
     -->
+    <xsl:template match='eSummaryResult[DocumentSummarySet]'>
+        <xsl:value-of select='$result-start'/>
+        
+        <xsl:text>"docsums": {</xsl:text>
+        <xsl:value-of select='$nl'/>
+
+        <xsl:apply-templates select='DocumentSummarySet/DocumentSummary' >
+            <xsl:with-param name='indent' select='$iu2'/>
+        </xsl:apply-templates>
+        <xsl:value-of select='concat($nl, $iu, "}", $nl, "}")'/>
+    </xsl:template>
     
+    <xsl:template match='DocumentSummary'>
+        <xsl:param name='indent' select='""'/>
+        
+        <xsl:value-of select="concat($indent, '&quot;', @uid, '&quot; {', $nl)" />
+        <xsl:apply-templates select='*'>
+            <xsl:with-param name='indent' select='concat($indent, $iu)'/>
+        </xsl:apply-templates>
+        <xsl:value-of select='concat($indent, "}")' />
+        <xsl:if test='position() != last()'>,</xsl:if>
+        <xsl:value-of select='$nl'/>
+    </xsl:template>
+
+
+    <!-- simple types -->
+    <xsl:template match='PubDate
+        | EPubDate
+        | Source
+        | LastAuthor
+        | Title
+        | SortTitle
+        | Volume
+        | Issue
+        | Pages
+        | NlmUniqueID
+        | ISSN
+        | ESSN
+        | PubStatus
+        | PmcRefCount
+        | FullJournalName
+        | ELocationID
+        | ViewCount
+        | DocType
+        | BookTitle
+        | Medium
+        | Edition
+        | PublisherLocation
+        | PublisherName
+        | SrcDate
+        | ReportNumber
+        | AvailableFromURL
+        | LocationLabel
+        | DocDate
+        | BookName
+        | Chapter
+        | SortPubDate
+        | SortFirstAuthor
+        '>
+        <xsl:param name='indent'/>
+        
+        <xsl:value-of select="$indent"/>
+        <xsl:text>"</xsl:text>
+        <xsl:value-of select="np:to-lower(np:q(name(.)))"/>
+        <xsl:text>": "</xsl:text>
+        <xsl:value-of select="np:q(.)"/>
+        <xsl:text>"</xsl:text>
+        
+        <xsl:if test='position() != last()'>,</xsl:if>
+        <xsl:value-of select='$nl'/>
+    </xsl:template>
+    
+    <!-- complex types -->
+    <xsl:template match='
+              Authors
+            | Lang
+            | PubType
+            | RecordStatus
+            | ArticleIds
+            | History
+            | References
+            | Attributes
+            | SrcContribList
+            | DocContribList'>
+        <xsl:param name='indent'/>
+        <xsl:value-of select='$indent'/>
+        <xsl:text>"</xsl:text>
+        <xsl:value-of select="np:to-lower(np:q(name(.)))"/>
+        <xsl:text>": "</xsl:text>
+        <xsl:text>FIXME:  need to implement this template</xsl:text>
+        <xsl:text>"</xsl:text>
+        
+        <xsl:if test='position() != last()'>,</xsl:if>
+        <xsl:value-of select='$nl'/>
+    </xsl:template>
+
     
     <!--============================================================
 	  Esummary version 1 specific
@@ -252,12 +336,13 @@
     <xsl:template match="eSummaryResult[ERROR]">
         <xsl:value-of select='$result-start'/>
         
-        <xsl:text>"error":[</xsl:text>
+        <xsl:text>"error": [</xsl:text>
         <xsl:for-each select="ERROR">
             <xsl:text>"</xsl:text>
             <xsl:value-of select="."/>
             <xsl:text>"</xsl:text>
-            <xsl:call-template name="conditional-comma"/>
+            <xsl:if test='position() != last()'>,</xsl:if>
+            <xsl:value-of select='$nl'/>
         </xsl:for-each>
         <xsl:text>]}</xsl:text>
     </xsl:template>
@@ -278,7 +363,9 @@
             <xsl:with-param name='indent' select='$iu3'/>
         </xsl:apply-templates>
         <xsl:value-of select='concat($iu2, "}")' />
-        <xsl:call-template name="conditional-comma"/>
+        
+        <xsl:if test='position() != last()'>,</xsl:if>
+        <xsl:value-of select='$nl'/>
     </xsl:template>
 
     <xsl:template match="Item[@Type='Structure']">
@@ -350,14 +437,16 @@
                             <xsl:text>{</xsl:text>
                             <xsl:apply-templates select="."/>
                             <xsl:text>}</xsl:text>
-                            <xsl:call-template name="conditional-comma"/>
+
+                            <xsl:if test='position() != last()'>,</xsl:if>
+                            <xsl:value-of select='$nl'/>
                         </xsl:for-each>
                         <xsl:value-of select='concat($iu3, "]")'/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
         </xsl:choose>
-        <xsl:call-template name="conditional-comma"/>
+        <xsl:if test='position() != last()'>,</xsl:if>
         <xsl:value-of select='$nl'/>
     </xsl:template>
 
