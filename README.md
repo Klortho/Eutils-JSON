@@ -37,21 +37,43 @@ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed
 ([einfo.pubmed.xml](klortho/samples/einfo.pubmed.xml)),
 ([einfo.pubmed.json](klortho/samples/einfo.pubmed.json)),
 
-### [Esummary](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESummary)
+### [Esummary version 2.0](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESummary)
 
-#### ✓ PubMed - version 1 DTD
+#### - PubMed - version 2.0
 
-http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731,22144687&retmode=xml
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731,22144687&retmode=xml&version=2.0
 
 ([esummary.pubmed.xml](klortho/samples/esummary.pubmed.xml)),
 ([esummary.pubmed.json](klortho/samples/esummary.pubmed.json)),
 
-#### ✓ Unists - version 1 DTD
+#### - Unists - version 2.0
 
-http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,254086
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,254086&version=2.0
 
 ([esummary.unists.xml](klortho/samples/esummary.unists.xml)),
 ([esummary.unists.json](klortho/samples/esummary.unists.json)),
+
+
+
+### [Esummary version 1](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESummary)
+
+(These maybe won't be used.)
+
+#### ✓ PubMed - version 1
+
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731,22144687&retmode=xml
+
+([esummary.pubmed.1.xml](klortho/samples/esummary.pubmed.1.xml)),
+([esummary.pubmed.1.json](klortho/samples/esummary.pubmed.1.json)),
+
+#### ✓ Unists - version 1
+
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,254086
+
+([esummary.unists.1.xml](klortho/samples/esummary.unists.1.xml)),
+([esummary.unists.1.json](klortho/samples/esummary.unists.1.json)),
+
+
 
 ##Changes from master branch
 

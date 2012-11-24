@@ -241,7 +241,12 @@
     </xsl:template>
 
     <!--============================================================
-	  Esummary-specific
+        Esummary version 2.0 specific
+    -->
+    
+    
+    <!--============================================================
+	  Esummary version 1 specific
 	-->
 
     <xsl:template match="eSummaryResult[ERROR]">

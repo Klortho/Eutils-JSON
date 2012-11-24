@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult, 29 October 2004//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummary_041029.dtd">
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_unists.dtd">
 <eSummaryResult>
-<DocSum>
-	<Id>254085</Id>
-	<Item Name="Marker_Name" Type="String">SE234324</Item>
-	<Item Name="Map_Gene_Summary_List" Type="List">
-		<Item Name="Map_Gene_Summary" Type="Structure">
-			<Item Name="Org" Type="String">Sus scrofa</Item>
-			<Item Name="Chr" Type="String">chromosome 7,</Item>
-			<Item Name="Locus" Type="String">loci LOC100739417 and NUMB,</Item>
-			<Item Name="Polymorphic" Type="String">polymorphic</Item>
-		</Item>
-	</Item>
-	<Item Name="EPCR_Summary" Type="String">Found by e-PCR in sequences from Spermophilus tridecemlineatus, Sus scrofa and Toxoplasma gondii.</Item>
-	<Item Name="Gene_ID" Type="String"></Item>
-</DocSum>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="254085">
+	<Marker_Name>SE234324</Marker_Name>
+	<Map_Gene_Summary_List>
+		<Map_Gene_Summary>
+			<Org>Sus scrofa</Org>
+			<Chr> chromosome 7,</Chr>
+			<Locus> loci LOC100739417 and NUMB,</Locus>
+			<Polymorphic> polymorphic</Polymorphic>
+		</Map_Gene_Summary>
+	</Map_Gene_Summary_List>
+	<EPCR_Summary>Found by e-PCR in sequences from Spermophilus tridecemlineatus, Sus scrofa and Toxoplasma gondii.</EPCR_Summary>
+	<Gene_ID></Gene_ID>
+</DocumentSummary>
 
-<DocSum>
-	<Id>254086</Id>
-	<Item Name="Marker_Name" Type="String">SE259162</Item>
-	<Item Name="Map_Gene_Summary_List" Type="List">
-		<Item Name="Map_Gene_Summary" Type="Structure">
-			<Item Name="Org" Type="String">Sus scrofa</Item>
-			<Item Name="Chr" Type="String">chromosome 12,</Item>
-			<Item Name="Locus" Type="String">locus SPAG7,</Item>
-			<Item Name="Polymorphic" Type="String">polymorphic</Item>
-		</Item>
-	</Item>
-	<Item Name="EPCR_Summary" Type="String">Found by e-PCR in sequences from Sus scrofa.</Item>
-	<Item Name="Gene_ID" Type="String"></Item>
-</DocSum>
+<DocumentSummary uid="254086">
+	<Marker_Name>SE259162</Marker_Name>
+	<Map_Gene_Summary_List>
+		<Map_Gene_Summary>
+			<Org>Sus scrofa</Org>
+			<Chr> chromosome 12,</Chr>
+			<Locus> locus SPAG7,</Locus>
+			<Polymorphic> polymorphic</Polymorphic>
+		</Map_Gene_Summary>
+	</Map_Gene_Summary_List>
+	<EPCR_Summary>Found by e-PCR in sequences from Sus scrofa.</EPCR_Summary>
+	<Gene_ID></Gene_ID>
+</DocumentSummary>
 
+</DocumentSummarySet>
 </eSummaryResult>

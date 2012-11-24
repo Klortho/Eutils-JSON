@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult, 29 October 2004//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummary_041029.dtd">
+<eSummaryResult>
+<DocSum>
+	<Id>5683731</Id>
+	<Item Name="PubDate" Type="Date">1968 Aug</Item>
+	<Item Name="EPubDate" Type="Date"></Item>
+	<Item Name="Source" Type="String">Paraplegia</Item>
+	<Item Name="AuthorList" Type="List">
+		<Item Name="Author" Type="String">Goldberg MJ</Item>
+		<Item Name="Author" Type="String">Davis LJ</Item>
+	</Item>
+	<Item Name="LastAuthor" Type="String">Davis LJ</Item>
+	<Item Name="Title" Type="String">An assistive device for smoking.</Item>
+	<Item Name="Volume" Type="String">6</Item>
+	<Item Name="Issue" Type="String">2</Item>
+	<Item Name="Pages" Type="String">103-5</Item>
+	<Item Name="LangList" Type="List">
+		<Item Name="Lang" Type="String">English</Item>
+	</Item>
+	<Item Name="NlmUniqueID" Type="String">2985038R</Item>
+	<Item Name="ISSN" Type="String">0031-1758</Item>
+	<Item Name="ESSN" Type="String"></Item>
+	<Item Name="PubTypeList" Type="List">
+		<Item Name="PubType" Type="String">Journal Article</Item>
+	</Item>
+	<Item Name="RecordStatus" Type="String">PubMed - indexed for MEDLINE</Item>
+	<Item Name="PubStatus" Type="String">ppublish</Item>
+	<Item Name="ArticleIds" Type="List">
+		<Item Name="pubmed" Type="String">5683731</Item>
+		<Item Name="doi" Type="String">10.1038/sc.1968.18</Item>
+		<Item Name="eid" Type="String">5683731</Item>
+		<Item Name="rid" Type="String">5683731</Item>
+	</Item>
+	<Item Name="DOI" Type="String">10.1038/sc.1968.18</Item>
+	<Item Name="History" Type="List">
+		<Item Name="pubmed" Type="Date">1968/08/01 00:00</Item>
+		<Item Name="medline" Type="Date">1968/08/01 00:01</Item>
+		<Item Name="entrez" Type="Date">1968/08/01 00:00</Item>
+	</Item>
+	<Item Name="References" Type="List"></Item>
+	<Item Name="HasAbstract" Type="Integer">0</Item>
+	<Item Name="PmcRefCount" Type="Integer">0</Item>
+	<Item Name="FullJournalName" Type="String">Paraplegia</Item>
+	<Item Name="ELocationID" Type="String"></Item>
+	<Item Name="SO" Type="String">1968 Aug;6(2):103-5</Item>
+</DocSum>
+
+<DocSum>
+	<Id>22144687</Id>
+	<Item Name="PubDate" Type="Date">2012 Jan</Item>
+	<Item Name="EPubDate" Type="Date">2011 Dec 5</Item>
+	<Item Name="Source" Type="String">Nucleic Acids Res</Item>
+	<Item Name="AuthorList" Type="List">
+		<Item Name="Author" Type="String">Benson DA</Item>
+		<Item Name="Author" Type="String">Karsch-Mizrachi I</Item>
+		<Item Name="Author" Type="String">Clark K</Item>
+		<Item Name="Author" Type="String">Lipman DJ</Item>
+		<Item Name="Author" Type="String">Ostell J</Item>
+		<Item Name="Author" Type="String">Sayers EW</Item>
+	</Item>
+	<Item Name="LastAuthor" Type="String">Sayers EW</Item>
+	<Item Name="Title" Type="String">GenBank.</Item>
+	<Item Name="Volume" Type="String">40</Item>
+	<Item Name="Issue" Type="String">Database issue</Item>
+	<Item Name="Pages" Type="String">D48-53</Item>
+	<Item Name="LangList" Type="List">
+		<Item Name="Lang" Type="String">English</Item>
+	</Item>
+	<Item Name="NlmUniqueID" Type="String">0411011</Item>
+	<Item Name="ISSN" Type="String">0305-1048</Item>
+	<Item Name="ESSN" Type="String">1362-4962</Item>
+	<Item Name="PubTypeList" Type="List">
+		<Item Name="PubType" Type="String">Journal Article</Item>
+	</Item>
+	<Item Name="RecordStatus" Type="String">PubMed - indexed for MEDLINE</Item>
+	<Item Name="PubStatus" Type="String">ppublish+epublish</Item>
+	<Item Name="ArticleIds" Type="List">
+		<Item Name="pii" Type="String">gkr1202</Item>
+		<Item Name="doi" Type="String">10.1093/nar/gkr1202</Item>
+		<Item Name="pubmed" Type="String">22144687</Item>
+		<Item Name="pmc" Type="String">PMC3245039</Item>
+		<Item Name="eid" Type="String">22144687</Item>
+		<Item Name="rid" Type="String">22144687</Item>
+		<Item Name="pmcid" Type="String">pmc-id: PMC3245039;</Item>
+	</Item>
+	<Item Name="DOI" Type="String">10.1093/nar/gkr1202</Item>
+	<Item Name="History" Type="List">
+		<Item Name="aheadofprint" Type="Date">2011/12/05 00:00</Item>
+		<Item Name="entrez" Type="Date">2011/12/07 06:00</Item>
+		<Item Name="pubmed" Type="Date">2011/12/07 06:00</Item>
+		<Item Name="medline" Type="Date">2012/07/06 06:00</Item>
+	</Item>
+	<Item Name="References" Type="List"></Item>
+	<Item Name="HasAbstract" Type="Integer">1</Item>
+	<Item Name="PmcRefCount" Type="Integer">10</Item>
+	<Item Name="FullJournalName" Type="String">Nucleic acids research</Item>
+	<Item Name="ELocationID" Type="String"></Item>
+	<Item Name="SO" Type="String">2012 Jan;40(Database issue):D48-53</Item>
+</DocSum>
+
+</eSummaryResult>
