@@ -43,7 +43,7 @@ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731,22144687&retmode=xml
 
-([esummary.pubmed.xml](Eutils-JSON/blob/klortho/samples/esummary.pubmed.xml)),
+([esummary.pubmed.xml](klortho/samples/esummary.pubmed.xml)),
 ([esummary.pubmed.json](Eutils-JSON/blob/klortho/samples/esummary.pubmed.json)),
 
 - Unists - version 1 DTD
