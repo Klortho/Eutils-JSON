@@ -26,12 +26,14 @@ You can just use xsltproc to try these out.  For example,
 #### ✓ List databases
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi
+
 ([einfo.xml](klortho/samples/einfo.xml)),
 ([einfo.json](klortho/samples/einfo.json)),
 
 #### ✓ Info about PubMed
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed
+
 ([einfo.pubmed.xml](klortho/samples/einfo.pubmed.xml)),
 ([einfo.pubmed.json](klortho/samples/einfo.pubmed.json)),
 
@@ -40,15 +42,35 @@ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed
 #### ✓ PubMed - version 1 DTD
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731,22144687&retmode=xml
+
 ([esummary.pubmed.xml](klortho/samples/esummary.pubmed.xml)),
 ([esummary.pubmed.json](klortho/samples/esummary.pubmed.json)),
 
 #### - Unists - version 1 DTD
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,254086
+
 ([esummary.unists.xml](klortho/samples/esummary.unists.xml)),
 ([esummary.unists.json](klortho/samples/esummary.unists.json)),
 
+##Changes from master branch
+
+* Added 'version'
+* Removed the redundant "name" field inside child hashes.  Maybe should keep it,
+instead -- it doesn't do any harm, and could conceivably be useful.
+* Changed esummary 1.0 docsums to be a hash, and the id field of each docsum is the key.
+* Further changed some of the structure of esummary 1.0 output.
+* Prettified the output.  This can be turned off by passing in the "pretty" parameter is
+false.
+
+##Questions
+
+* What is the str:decode-uri() doing in the np:q function?  Are some of these values
+really URI-style percent encoded?
+
+##To do
+
+* Esummary output should be based on version 2.0 XML, not 1.0.
 
 ##Authors
 
