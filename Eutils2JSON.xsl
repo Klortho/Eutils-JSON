@@ -23,11 +23,10 @@
 
     <xsl:variable name='VERSION' select='"0.1"'/>
     
+    <!-- Turn off pretty-printing by setting this to false() -->
     <xsl:param name='pretty' select='true()'/>
-    <xsl:variable name="spaces"
-        select="'                                                                '"/>
     
-    <!-- newline when pretty-printing; otherwise empty string  -->
+    <!-- $nl == newline when pretty-printing; otherwise empty string  -->
     <xsl:variable name='nl'>
         <xsl:choose>
             <xsl:when test='$pretty'>
@@ -39,7 +38,8 @@
         </xsl:choose>
     </xsl:variable>
     
-    <!-- indent unit (four spaces) when pretty-printing; otherwise empty string -->
+    <!-- $iu = indent unit (four spaces) when pretty-printing; 
+        otherwise empty string -->
     <xsl:variable name='iu'>
         <xsl:choose>
             <xsl:when test='$pretty'>
@@ -54,14 +54,12 @@
     <xsl:variable name='iu3' select='concat($iu2, $iu)'/>
     <xsl:variable name='iu4' select='concat($iu3, $iu)'/>
     
+    <!-- Start-of-output boilerplate -->
     <xsl:variable name='result-start'>
-        <xsl:text>{</xsl:text>
-        <xsl:value-of select='concat($nl, $iu)'/>
-        <xsl:text>"version": "</xsl:text>
-        <xsl:value-of select="$VERSION"/>
-        <xsl:text>",</xsl:text>
-        <xsl:value-of select='concat($nl, $iu)'/>
+        <xsl:value-of select='concat(
+            "{", $nl, $iu, np:dq("version"), ": ", np:dq($VERSION), ",", $nl )'/>
     </xsl:variable>
+    
     
     <!--================================================
       Utility templates and functions
@@ -104,233 +102,355 @@
         </f:result>
     </f:function>
 
+    <!-- 
+      Convenience function to wrap any string in double-quotes.  This 
+      reduces the need for a lot of XML character escaping.
+    -->
+    <f:function name='np:dq'>
+        <xsl:param name='s'/>
+        <f:result>
+            <xsl:value-of select="concat('&quot;', $s, '&quot;')"/>
+        </f:result>
+    </f:function>
+
     <!--============================================================
       Generic eutilities templates
     -->
 
-    <!-- 
-      Downcase and convert immediate properties (those element children
-      that have no children of their own).  This doesn't copy the <Name>
-      child.
-    -->
-    <xsl:template name="copy-properties">
-        <xsl:param name="indent" select="''"/>
-        <xsl:param name="newline" select="false()"/>
-
-        <xsl:for-each select="*[count(*) = 0 and name(.) != 'Name']">
-            <xsl:value-of select="$indent"/>
-            <xsl:text>"</xsl:text>
-            <xsl:value-of select="np:to-lower(np:q(name(.)))"/>
-            <xsl:text>"</xsl:text>
-            <xsl:text>: "</xsl:text>
-            <xsl:value-of select="np:q(.)"/>
-            <xsl:text>"</xsl:text>
-            
-            <xsl:if test='position() != last()'>,</xsl:if>
-            <xsl:value-of select='$nl'/>
-        </xsl:for-each>
-    </xsl:template>
-
     <!--
-      This template converts a homogenous list of XML elements with property
-      children into a list of key:object pairs in JSON.  The key in each JSON
-      pair is taken from the <Name> element child.
+      simple-in-object
+      Call this template for elements that have simple content, when
+      in the context of a JSON object.  This translates the element
+      into a key:value pair, using the element name, converted to lowercase,
+      as the key.
     -->
-    <xsl:template name="format-list">
-        <xsl:param name="listname"/>
-        <xsl:param name="nodes" select="/.."/>
-        
-        <xsl:value-of select='$iu2'/>
+    <xsl:template name='simple-in-object'>
+        <xsl:param name='indent'/>
+        <xsl:param name='key' select='np:to-lower(name(.))'/>
 
-        <xsl:value-of select="concat('&quot;', $listname, '&quot;')"/>
-        <xsl:text>: {</xsl:text>
-        <xsl:for-each select="$nodes">
-            <xsl:value-of select='concat($nl, $iu3)'/>
-            <xsl:text>"</xsl:text>
-            <xsl:value-of select="*[name() = 'Name']"/>
-            <xsl:text>": {</xsl:text>
-            <xsl:value-of select='$nl'/>
-            <xsl:call-template name="copy-properties">
-                <xsl:with-param name='newline' select='$pretty'/>
-                <xsl:with-param name="indent" select="$iu4"/>
-            </xsl:call-template>
-            <xsl:value-of select='concat($nl, $iu3)'/>
-            <xsl:text>}</xsl:text>
-            
-            <xsl:if test='position() != last()'>,</xsl:if>
-            <xsl:value-of select='$nl'/>
-        </xsl:for-each>
-        <xsl:value-of select='concat($nl, $iu2)'/>
-        <xsl:text>}</xsl:text>
+        <xsl:value-of select='concat(
+            $indent, np:dq($key), ": ", np:dq(normalize-space(np:q(.))) )'/>
+        <xsl:if test='position() != last()'>,</xsl:if>
+        <xsl:value-of select='$nl'/>
     </xsl:template>
-
+    
+    <!-- 
+      simple-in-array
+      Call this template for elements that have simple content, when
+      in the context of a JSON array.  This discards the element name,
+      and produces a quoted string from the content.
+    -->
+    <xsl:template name='simple-in-array'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:value-of select="$indent"/>
+        <xsl:value-of select="np:dq(normalize-space(np:q(.)))"/>
+        
+        <xsl:if test='position() != last()'>,</xsl:if>
+        <xsl:value-of select='$nl'/>
+    </xsl:template>
+    
+    <!--
+      array-in-object
+      Call this template for array-type elements.  That is, elements
+      whose content is a list of child elements with the same name.
+      This produces a JSON array.
+    -->
+    <xsl:template name='array-in-object'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:value-of select='$indent'/>
+        
+        <xsl:value-of select="np:dq(np:to-lower(name(.)))"/>
+        <xsl:text>: [</xsl:text>
+        <xsl:value-of select='$nl'/>
+        <xsl:apply-templates select='*'>
+            <xsl:with-param name='indent' select='concat($indent, $iu)'/>
+        </xsl:apply-templates>
+        <xsl:value-of select='$indent'/>
+        <xsl:text>]</xsl:text>
+        <xsl:if test='position() != last()'>,</xsl:if>
+        <xsl:value-of select='$nl'/>
+    </xsl:template>
+    
+    <!-- 
+      object-in-array
+      For elements that contain heterogenous content.  These are converted
+      into JSON objects.  
+    -->
+    <xsl:template name='object-in-array'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:value-of select='$indent'/>
+        
+        <xsl:text>{</xsl:text>
+        <xsl:value-of select='$nl'/>
+        <xsl:apply-templates select='*'>
+            <xsl:with-param name='indent' select='concat($indent, $iu)'/>
+        </xsl:apply-templates>
+        <xsl:value-of select='$indent'/>
+        <xsl:text>}</xsl:text>
+        <xsl:if test='position() != last()'>,</xsl:if>
+        <xsl:value-of select='$nl'/>
+    </xsl:template>
+    
+    <!-- 
+      object-in-object
+      For elements that contain heterogenous content.  These are converted
+      into JSON objects.  The key, by default, is taken from this element's name,
+      but you can override that by passing in the $key param.
+    -->
+    <xsl:template name='object-in-object'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:param name='key' select='np:to-lower(name(.))'/>
+        
+        <xsl:value-of select='$indent'/>
+        <xsl:value-of select="np:dq($key)"/>
+        <xsl:text>: {</xsl:text>
+        <xsl:value-of select='$nl'/>
+        <xsl:apply-templates select='*'>
+            <xsl:with-param name='indent' select='concat($indent, $iu)'/>
+        </xsl:apply-templates>
+        <xsl:value-of select='$indent'/>
+        <xsl:text>}</xsl:text>
+        <xsl:if test='position() != last()'>,</xsl:if>
+        <xsl:value-of select='$nl'/>
+    </xsl:template>
+    
+    <xsl:template match='ERROR'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:call-template name='simple-in-object'>
+            <xsl:with-param name='indent' select='$indent'/>
+            <xsl:with-param name='key' select='"ERROR"'/>
+        </xsl:call-template>        
+    </xsl:template>
+    
     <!--============================================================
       einfo-specific
     -->
     
     <xsl:template match='eInfoResult'>
-      <xsl:apply-templates select='*'/>
+        <xsl:value-of select='$result-start'/>
+        <xsl:apply-templates select='*'>
+            <xsl:with-param name='indent' select='$iu'/>
+        </xsl:apply-templates>
+        <xsl:text>}</xsl:text>
     </xsl:template>
     
-    <!--
-      Produce JSON for einfo DbList        
-    -->
     <xsl:template match="DbList">
-        <xsl:value-of select='$result-start'/>
-
-        <xsl:text>"dblist": [</xsl:text>
-        <xsl:for-each select="DbName">
-            <xsl:value-of select='concat($nl, $iu2)'/>
-            <xsl:text>"</xsl:text>
-            <xsl:value-of select="np:q(.)"/>
-            <xsl:text>"</xsl:text>
-            <xsl:if test="position() != last()">
-                <xsl:text>,</xsl:text>
-            </xsl:if>
-        </xsl:for-each>
-        <xsl:value-of select='concat($nl, $iu)'/>
-        <xsl:text>]</xsl:text>
-        <xsl:value-of select='$nl'/>
-        <xsl:text>}</xsl:text>
+        <xsl:param name='indent' select='""'/>
+        <xsl:call-template name='array-in-object'>
+            <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
+    </xsl:template>
+    
+    <xsl:template match='DbList/DbName'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:call-template name='simple-in-array'>
+            <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
     </xsl:template>
 
-    <!-- 
-      Produce JSON for einfo DbInfo (information about a specific database)
-    -->
     <xsl:template match="DbInfo">
-        <xsl:value-of select='$result-start'/>
-        
-        <xsl:text>"dbinfo": {</xsl:text>
-        <xsl:value-of select='$nl'/>
-        
-        <!-- Data not in fields or links -->
-        <xsl:call-template name="copy-properties">
-            <xsl:with-param name="indent" select='$iu2'/>
-            <xsl:with-param name="newline" select="$pretty"/>
+        <xsl:param name='indent' select='""'/>
+        <xsl:call-template name='object-in-object'>
+            <xsl:with-param name='indent' select='$indent'/>
         </xsl:call-template>
-        <xsl:text>,</xsl:text>
-        <xsl:value-of select='$nl'/>
-        
-        <!-- fields -->
-        <xsl:call-template name="format-list">
-            <xsl:with-param name="listname" select="'fields'"/>
-            <xsl:with-param name="nodes" select="FieldList/Field"/>
+    </xsl:template>
+  
+    <xsl:template match='DbInfo/DbName |
+                         MenuName |
+                         Description |
+                         Count |
+                         LastUpdate |
+                         FullName |
+                         TermCount |
+                         IsDate |
+                         IsNumerical |
+                         SingleToken |
+                         Hierarchy |
+                         IsHidden |
+                         Menu |
+                         DbTo'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:call-template name='simple-in-object'>
+            <xsl:with-param name='indent' select='$indent'/>
         </xsl:call-template>
-        <xsl:value-of select='concat(",", $nl)'/>
-        
-        <!-- links -->
-        <xsl:call-template name="format-list">
-            <xsl:with-param name="listname" select="'links'"/>
-            <xsl:with-param name="nodes" select="LinkList/Link"/>
+    </xsl:template>
+    
+    <xsl:template match='FieldList |
+                         LinkList'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:call-template name='array-in-object'>
+            <xsl:with-param name='indent' select='$indent'/>
         </xsl:call-template>
-        <xsl:value-of select='concat($nl, $iu)'/>
-        <xsl:text>}</xsl:text>
-        <xsl:value-of select='$nl'/>
-        <xsl:text>}</xsl:text>
+    </xsl:template>
+    
+    <xsl:template match='Field |
+                         Link'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:call-template name='object-in-array'>
+            <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
     </xsl:template>
 
     <!--============================================================
         Esummary version 2.0 specific
     -->
-    <xsl:template match='eSummaryResult[DocumentSummarySet]'>
+    <xsl:template match='eSummaryResult'>
         <xsl:value-of select='$result-start'/>
-        
-        <xsl:text>"docsums": {</xsl:text>
-        <xsl:value-of select='$nl'/>
-
-        <xsl:apply-templates select='DocumentSummarySet/DocumentSummary' >
-            <xsl:with-param name='indent' select='$iu2'/>
+        <xsl:apply-templates select='*'>
+            <xsl:with-param name='indent' select='$iu'/>
         </xsl:apply-templates>
-        <xsl:value-of select='concat($nl, $iu, "}", $nl, "}")'/>
+        <xsl:text>}</xsl:text>
+    </xsl:template>
+    
+    <xsl:template match='DocumentSummarySet[@status="OK"]'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:value-of select='$indent'/>
+
+        <xsl:text>"docsums": {</xsl:text>
+        <xsl:value-of select='concat($nl, $indent, $iu)'/>
+        
+        <!-- Output the uids as an array -->
+        <xsl:value-of select='concat(np:dq("uids"), ": [", $nl)'/>
+        <xsl:apply-templates select='DocumentSummary/@uid'>
+            <xsl:with-param name='indent' select='concat($indent, $iu2)'/>
+        </xsl:apply-templates>
+        <xsl:value-of select='concat($indent, $iu, "],", $nl)'/>
+        
+        <xsl:apply-templates select='DocumentSummary' >
+            <xsl:with-param name='indent' select='concat($indent, $iu)'/>
+        </xsl:apply-templates>
+        <xsl:value-of select='concat($indent, "}", $nl)'/>
+    </xsl:template>
+    
+    <xsl:template match='DocumentSummary/@uid'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:call-template name='simple-in-array'>
+            <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
     </xsl:template>
     
     <xsl:template match='DocumentSummary'>
         <xsl:param name='indent' select='""'/>
-        
-        <xsl:value-of select="concat($indent, '&quot;', @uid, '&quot; {', $nl)" />
-        <xsl:apply-templates select='*'>
-            <xsl:with-param name='indent' select='concat($indent, $iu)'/>
-        </xsl:apply-templates>
-        <xsl:value-of select='concat($indent, "}")' />
-        <xsl:if test='position() != last()'>,</xsl:if>
-        <xsl:value-of select='$nl'/>
+        <xsl:call-template name='object-in-object'>
+            <xsl:with-param name='indent' select='$indent'/>
+            <xsl:with-param name='key' select='@uid'/>
+        </xsl:call-template>
     </xsl:template>
 
-
-    <!-- simple types -->
-    <xsl:template match='PubDate
-        | EPubDate
-        | Source
-        | LastAuthor
-        | Title
-        | SortTitle
-        | Volume
-        | Issue
-        | Pages
-        | NlmUniqueID
-        | ISSN
-        | ESSN
-        | PubStatus
-        | PmcRefCount
-        | FullJournalName
-        | ELocationID
-        | ViewCount
-        | DocType
-        | BookTitle
-        | Medium
-        | Edition
-        | PublisherLocation
-        | PublisherName
-        | SrcDate
-        | ReportNumber
-        | AvailableFromURL
-        | LocationLabel
-        | DocDate
-        | BookName
-        | Chapter
-        | SortPubDate
-        | SortFirstAuthor
-        '>
-        <xsl:param name='indent'/>
-        
-        <xsl:value-of select="$indent"/>
-        <xsl:text>"</xsl:text>
-        <xsl:value-of select="np:to-lower(np:q(name(.)))"/>
-        <xsl:text>": "</xsl:text>
-        <xsl:value-of select="np:q(.)"/>
-        <xsl:text>"</xsl:text>
-        
-        <xsl:if test='position() != last()'>,</xsl:if>
-        <xsl:value-of select='$nl'/>
+    <!-- simple type inside an array -->
+    <xsl:template match='string | 
+                         flag'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:call-template name='simple-in-array'>
+            <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
     </xsl:template>
     
-    <!-- complex types -->
-    <xsl:template match='
-              Authors
-            | Lang
-            | PubType
-            | RecordStatus
-            | ArticleIds
-            | History
-            | References
-            | Attributes
-            | SrcContribList
-            | DocContribList'>
-        <xsl:param name='indent'/>
-        <xsl:value-of select='$indent'/>
-        <xsl:text>"</xsl:text>
-        <xsl:value-of select="np:to-lower(np:q(name(.)))"/>
-        <xsl:text>": "</xsl:text>
-        <xsl:text>FIXME:  need to implement this template</xsl:text>
-        <xsl:text>"</xsl:text>
-        
-        <xsl:if test='position() != last()'>,</xsl:if>
-        <xsl:value-of select='$nl'/>
+    <!-- simple types inside an object -->
+    <xsl:template match='PubDate | 
+                         EPubDate | 
+                         Source | 
+                         LastAuthor | 
+                         Title | 
+                         SortTitle | 
+                         Volume |
+                         Issue |
+                         Pages |
+                         NlmUniqueID |
+                         ISSN |
+                         ESSN |
+                         PubStatus |
+                         PmcRefCount |
+                         FullJournalName |
+                         ELocationID |
+                         ViewCount |
+                         DocType |
+                         BookTitle |
+                         Medium |
+                         Edition |
+                         PublisherLocation |
+                         PublisherName |
+                         SrcDate |
+                         ReportNumber |
+                         AvailableFromURL |
+                         LocationLabel |
+                         DocDate |
+                         BookName |
+                         Chapter |
+                         SortPubDate |
+                         SortFirstAuthor |
+                         Name |
+                         AuthType |
+                         ClusterID |
+                         RecordStatus |
+                         IdType |
+                         IdTypeN |
+                         Value | 
+                         Date |
+                         Marker_Name |
+                         Org |
+                         Chr |
+                         Locus |
+                         Polymorphic |
+                         EPCR_Summary |
+                         Gene_ID'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:call-template name='simple-in-object'>
+            <xsl:with-param name="indent" select='$indent'/>
+        </xsl:call-template>
+    </xsl:template>
+    
+    <!-- array-in-object elements -->
+    <xsl:template match='Authors | 
+                         Lang | 
+                         PubType |
+                         ArticleIds |
+                         History |
+                         References |
+                         Attributes |
+                         SrcContribList |
+                         DocContribList |
+                         Map_Gene_Summary_List'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:call-template name='array-in-object'>
+            <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
     </xsl:template>
 
+    <!-- Objects inside arrays. -->
+    <xsl:template match='Author | 
+                         ArticleId |
+                         PubMedPubDate |
+                         Map_Gene_Summary'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:call-template name='object-in-array'>
+            <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
+    </xsl:template>
+    
+    <!-- Default template for unmatched elements.  Report a problem. -->
+    <xsl:template match='*'>
+        <xsl:param name='indent'/>
+        <xsl:variable name='msg'
+            select='concat("FIXME:  unmatched element ", np:dq(name(.)))'/>
+        
+        <xsl:value-of select='concat($indent, $msg, $nl)'/>
+        <xsl:message>
+            <xsl:value-of select='$msg'/>
+        </xsl:message>
+    </xsl:template>
+    
+    <!-- Default template for text nodes.  Throw them away if they
+        are all blanks.  Report a problem otherwise.    -->
+    <xsl:template match="text()" >
+        <xsl:if test='normalize-space(.) != ""'>
+            <xsl:text>FIXME:  non-blank text node with no template match</xsl:text>
+            <xsl:message>FIXME:  non-blank text node with no template match</xsl:message>
+        </xsl:if>
+    </xsl:template>
     
     <!--============================================================
-	  Esummary version 1 specific
+	  Esummary version 1 specific - deprecated
 	-->
 
     <xsl:template match="eSummaryResult[ERROR]">
@@ -461,8 +581,62 @@
     
 
     <!--============================================================
-	  Other
+	  Other.  These are all old, and will probably go away once 
+	  ESearch transform is implemented with the new framework.
 	-->
+
+    <!-- 
+        Downcase and convert immediate properties (those element children
+        that have no children of their own).  This doesn't copy the <Name>
+        child.
+    -->
+    <xsl:template name="copy-properties">
+        <xsl:param name="indent" select="''"/>
+        <xsl:param name="newline" select="false()"/>
+        
+        <xsl:for-each select="*[count(*) = 0 and name(.) != 'Name']">
+            <xsl:value-of select="$indent"/>
+            <xsl:value-of select="np:dq(np:to-lower(name(.)))"/>
+            <xsl:value-of select="concat(':', np:dq(np:q(.)))"/>
+            
+            <xsl:if test='position() != last()'>,</xsl:if>
+            <xsl:value-of select='$nl'/>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <!--
+        This template converts a homogenous list of XML elements with property
+        children into a list of key:object pairs in JSON.  The key in each JSON
+        pair is taken from the <Name> element child.
+    -->
+    <xsl:template name="format-list">
+        <xsl:param name="listname"/>
+        <xsl:param name="nodes" select="/.."/>
+        
+        <xsl:value-of select='$iu2'/>
+        
+        <xsl:value-of select="concat('&quot;', $listname, '&quot;')"/>
+        <xsl:text>: {</xsl:text>
+        <xsl:for-each select="$nodes">
+            <xsl:value-of select='concat($nl, $iu3)'/>
+            <xsl:value-of select="np:dq(Name)"/>
+            <xsl:text>: {</xsl:text>
+            <xsl:value-of select='$nl'/>
+            <xsl:call-template name="copy-properties">
+                <xsl:with-param name='newline' select='$pretty'/>
+                <xsl:with-param name="indent" select="$iu4"/>
+            </xsl:call-template>
+            <xsl:value-of select='concat($nl, $iu3)'/>
+            <xsl:text>}</xsl:text>
+            
+            <xsl:if test='position() != last()'>,</xsl:if>
+            <xsl:value-of select='$nl'/>
+        </xsl:for-each>
+        <xsl:value-of select='concat($nl, $iu2)'/>
+        <xsl:text>}</xsl:text>
+    </xsl:template>
+    
+    
     <xsl:template match="TranslationSet">
         <xsl:text>    "translationset":[</xsl:text>
         <xsl:apply-templates select="Translation"/>
@@ -527,10 +701,5 @@
     </xsl:template>
 
 
-
-    <!-- Execute no builtin rules -->
-   <!-- <xsl:template match="*" priority="-5">
-        <xsl:comment>SKIP: <xsl:value-of select="name()"/></xsl:comment>
-    </xsl:template>-->
 
 </xsl:stylesheet>

@@ -23,30 +23,38 @@ You can just use xsltproc to try these out.  For example,
 
 ### [Einfo](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo)
 
-#### ✓ List databases
+#### ✓ EInfo - list all databases
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi
 
 ([einfo.xml](klortho/samples/einfo.xml)),
 ([einfo.json](klortho/samples/einfo.json)),
 
-#### ✓ Info about PubMed
+#### ✓ EInfo about PubMed
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed
 
 ([einfo.pubmed.xml](klortho/samples/einfo.pubmed.xml)),
 ([einfo.pubmed.json](klortho/samples/einfo.pubmed.json)),
 
+#### ✓ EInfo error
+
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle
+
+([einfo.error.xml](klortho/samples/einfo.error.xml)),
+([einfo.error.json](klortho/samples/einfo.error.json)),
+
+
 ### [Esummary version 2.0](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESummary)
 
-#### - PubMed - version 2.0
+#### ✓ PubMed - version 2.0
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731,22144687&retmode=xml&version=2.0
 
 ([esummary.pubmed.xml](klortho/samples/esummary.pubmed.xml)),
 ([esummary.pubmed.json](klortho/samples/esummary.pubmed.json)),
 
-#### - Unists - version 2.0
+#### ✓ Unists - version 2.0
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,254086&version=2.0
 

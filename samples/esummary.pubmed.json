@@ -1,34 +1,90 @@
 {
     "version": "0.1",
     "docsums": {
-        "5683731" {
+        "uids": [
+            "5683731",
+            "22144687"
+        ],
+        "5683731": {
             "pubdate": "1968 Aug",
             "epubdate": "",
             "source": "Paraplegia",
-            "authors": "FIXME:  need to implement this template",
+            "authors": [
+                {
+                    "name": "Goldberg MJ",
+                    "authtype": "Author",
+                    "clusterid": "2484865"
+                },
+                {
+                    "name": "Davis LJ",
+                    "authtype": "Author",
+                    "clusterid": "1638084"
+                }
+            ],
             "lastauthor": "Davis LJ",
             "title": "An assistive device for smoking.",
-            "sorttitle": "assistive device for smoking ",
+            "sorttitle": "assistive device for smoking",
             "volume": "6",
             "issue": "2",
             "pages": "103-5",
-            "lang": "FIXME:  need to implement this template",
+            "lang": [
+                "eng"
+            ],
             "nlmuniqueid": "2985038R",
             "issn": "0031-1758",
             "essn": "",
-            "pubtype": "FIXME:  need to implement this template",
-            "recordstatus": "FIXME:  need to implement this template",
+            "pubtype": [
+                "Journal Article"
+            ],
+            "recordstatus": "PubMed - indexed for MEDLINE",
             "pubstatus": "4",
-            "articleids": "FIXME:  need to implement this template",
-            "history": "FIXME:  need to implement this template",
-            "references": "FIXME:  need to implement this template",
-            "attributes": "FIXME:  need to implement this template",
+            "articleids": [
+                {
+                    "idtype": "pubmed",
+                    "idtypen": "1",
+                    "value": "5683731"
+                },
+                {
+                    "idtype": "doi",
+                    "idtypen": "3",
+                    "value": "10.1038/sc.1968.18"
+                },
+                {
+                    "idtype": "eid",
+                    "idtypen": "8",
+                    "value": "5683731"
+                },
+                {
+                    "idtype": "rid",
+                    "idtypen": "8",
+                    "value": "5683731"
+                }
+            ],
+            "history": [
+                {
+                    "pubstatus": "pubmed",
+                    "date": "1968/08/01 00:00"
+                },
+                {
+                    "pubstatus": "medline",
+                    "date": "1968/08/01 00:01"
+                },
+                {
+                    "pubstatus": "entrez",
+                    "date": "1968/08/01 00:00"
+                }
+            ],
+            "references": [
+            ],
+            "attributes": [
+            ],
             "pmcrefcount": "0",
             "fulljournalname": "Paraplegia",
             "elocationid": "",
             "viewcount": "68",
             "doctype": "citation",
-            "srccontriblist": "FIXME:  need to implement this template",
+            "srccontriblist": [
+            ],
             "booktitle": "",
             "medium": "",
             "edition": "",
@@ -38,41 +94,134 @@
             "reportnumber": "",
             "availablefromurl": "",
             "locationlabel": "",
-            "doccontriblist": "FIXME:  need to implement this template",
+            "doccontriblist": [
+            ],
             "docdate": "",
             "bookname": "",
             "chapter": "",
             "sortpubdate": "1968/08/01 00:00",
             "sortfirstauthor": "Goldberg MJ"
         },
-        "22144687" {
+        "22144687": {
             "pubdate": "2012 Jan",
             "epubdate": "2011 Dec 5",
             "source": "Nucleic Acids Res",
-            "authors": "FIXME:  need to implement this template",
+            "authors": [
+                {
+                    "name": "Benson DA",
+                    "authtype": "Author",
+                    "clusterid": "0"
+                },
+                {
+                    "name": "Karsch-Mizrachi I",
+                    "authtype": "Author",
+                    "clusterid": "0"
+                },
+                {
+                    "name": "Clark K",
+                    "authtype": "Author",
+                    "clusterid": "0"
+                },
+                {
+                    "name": "Lipman DJ",
+                    "authtype": "Author",
+                    "clusterid": "0"
+                },
+                {
+                    "name": "Ostell J",
+                    "authtype": "Author",
+                    "clusterid": "0"
+                },
+                {
+                    "name": "Sayers EW",
+                    "authtype": "Author",
+                    "clusterid": "0"
+                }
+            ],
             "lastauthor": "Sayers EW",
             "title": "GenBank.",
-            "sorttitle": "genbank ",
+            "sorttitle": "genbank",
             "volume": "40",
             "issue": "Database issue",
             "pages": "D48-53",
-            "lang": "FIXME:  need to implement this template",
+            "lang": [
+                "eng"
+            ],
             "nlmuniqueid": "0411011",
             "issn": "0305-1048",
             "essn": "1362-4962",
-            "pubtype": "FIXME:  need to implement this template",
-            "recordstatus": "FIXME:  need to implement this template",
+            "pubtype": [
+                "Journal Article"
+            ],
+            "recordstatus": "PubMed - indexed for MEDLINE",
             "pubstatus": "256",
-            "articleids": "FIXME:  need to implement this template",
-            "history": "FIXME:  need to implement this template",
-            "references": "FIXME:  need to implement this template",
-            "attributes": "FIXME:  need to implement this template",
+            "articleids": [
+                {
+                    "idtype": "pii",
+                    "idtypen": "4",
+                    "value": "gkr1202"
+                },
+                {
+                    "idtype": "doi",
+                    "idtypen": "3",
+                    "value": "10.1093/nar/gkr1202"
+                },
+                {
+                    "idtype": "pubmed",
+                    "idtypen": "1",
+                    "value": "22144687"
+                },
+                {
+                    "idtype": "pmc",
+                    "idtypen": "8",
+                    "value": "PMC3245039"
+                },
+                {
+                    "idtype": "eid",
+                    "idtypen": "8",
+                    "value": "22144687"
+                },
+                {
+                    "idtype": "rid",
+                    "idtypen": "8",
+                    "value": "22144687"
+                },
+                {
+                    "idtype": "pmcid",
+                    "idtypen": "5",
+                    "value": "pmc-id: PMC3245039;"
+                }
+            ],
+            "history": [
+                {
+                    "pubstatus": "aheadofprint",
+                    "date": "2011/12/05 00:00"
+                },
+                {
+                    "pubstatus": "entrez",
+                    "date": "2011/12/07 06:00"
+                },
+                {
+                    "pubstatus": "pubmed",
+                    "date": "2011/12/07 06:00"
+                },
+                {
+                    "pubstatus": "medline",
+                    "date": "2012/07/06 06:00"
+                }
+            ],
+            "references": [
+            ],
+            "attributes": [
+                "Has Abstract"
+            ],
             "pmcrefcount": "10",
             "fulljournalname": "Nucleic acids research",
             "elocationid": "",
             "viewcount": "1244",
             "doctype": "citation",
-            "srccontriblist": "FIXME:  need to implement this template",
+            "srccontriblist": [
+            ],
             "booktitle": "",
             "medium": "",
             "edition": "",
@@ -82,7 +231,8 @@
             "reportnumber": "",
             "availablefromurl": "",
             "locationlabel": "",
-            "doccontriblist": "FIXME:  need to implement this template",
+            "doccontriblist": [
+            ],
             "docdate": "",
             "bookname": "",
             "chapter": "",
