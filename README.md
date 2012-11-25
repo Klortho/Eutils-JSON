@@ -63,24 +63,6 @@ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,2
 
 
 
-### [Esummary version 1](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESummary)
-
-(These maybe won't be used.)
-
-#### ✓ PubMed - version 1
-
-http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731,22144687&retmode=xml
-
-([esummary.pubmed.1.xml](klortho/samples/esummary.pubmed.1.xml)),
-([esummary.pubmed.1.json](klortho/samples/esummary.pubmed.1.json)),
-
-#### ✓ Unists - version 1
-
-http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,254086
-
-([esummary.unists.1.xml](klortho/samples/esummary.unists.1.xml)),
-([esummary.unists.1.json](klortho/samples/esummary.unists.1.json)),
-
 
 
 ##Changes from master branch

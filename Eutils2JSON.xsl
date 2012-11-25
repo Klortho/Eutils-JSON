@@ -125,7 +125,7 @@
       as the key.
     -->
     <xsl:template name='simple-in-object'>
-        <xsl:param name='indent'/>
+        <xsl:param name='indent' select='""'/>
         <xsl:param name='key' select='np:to-lower(name(.))'/>
 
         <xsl:value-of select='concat(
@@ -221,6 +221,28 @@
             <xsl:with-param name='key' select='"ERROR"'/>
         </xsl:call-template>        
     </xsl:template>
+ 
+    <!-- Default template for unmatched elements.  Report a problem. -->
+    <xsl:template match='*'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:variable name='msg'
+            select='concat("FIXME:  unmatched element ", np:dq(name(.)))'/>
+        
+        <xsl:value-of select='concat($indent, $msg, $nl)'/>
+        <xsl:message>
+            <xsl:value-of select='$msg'/>
+        </xsl:message>
+    </xsl:template>
+    
+    <!-- Default template for text nodes.  Throw them away if they
+        are all blanks.  Report a problem otherwise.    -->
+    <xsl:template match="text()" >
+        <xsl:if test='normalize-space(.) != ""'>
+            <xsl:text>FIXME:  non-blank text node with no template match</xsl:text>
+            <xsl:message>FIXME:  non-blank text node with no template match</xsl:message>
+        </xsl:if>
+    </xsl:template>
+    
     
     <!--============================================================
       einfo-specific
@@ -428,27 +450,6 @@
         </xsl:call-template>
     </xsl:template>
     
-    <!-- Default template for unmatched elements.  Report a problem. -->
-    <xsl:template match='*'>
-        <xsl:param name='indent'/>
-        <xsl:variable name='msg'
-            select='concat("FIXME:  unmatched element ", np:dq(name(.)))'/>
-        
-        <xsl:value-of select='concat($indent, $msg, $nl)'/>
-        <xsl:message>
-            <xsl:value-of select='$msg'/>
-        </xsl:message>
-    </xsl:template>
-    
-    <!-- Default template for text nodes.  Throw them away if they
-        are all blanks.  Report a problem otherwise.    -->
-    <xsl:template match="text()" >
-        <xsl:if test='normalize-space(.) != ""'>
-            <xsl:text>FIXME:  non-blank text node with no template match</xsl:text>
-            <xsl:message>FIXME:  non-blank text node with no template match</xsl:message>
-        </xsl:if>
-    </xsl:template>
-    
     <!--============================================================
 	  Esummary version 1 specific - deprecated
 	-->
@@ -495,8 +496,8 @@
     </xsl:template>
     
     <xsl:template match="Item">
-        <xsl:param name='indent'/>
-  
+        <xsl:param name='indent' select='""'/>
+        
         <xsl:value-of select="$indent" />
         <xsl:text>"</xsl:text>
         <xsl:value-of select="np:to-lower(@Name)"/>
@@ -571,7 +572,7 @@
     </xsl:template>
 
     <xsl:template match='Item' mode='item-to-string-array'>
-        <xsl:param name='indent'/>
+        <xsl:param name='indent' select='""'/>
         <xsl:value-of select="concat($indent, '&quot;', np:q(.), '&quot;')"/>
         <xsl:if test='position() != last()'>
             <xsl:text>,</xsl:text>
