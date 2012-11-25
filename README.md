@@ -83,6 +83,15 @@ You can just use xsltproc to try these out.  For example,
     ([esearch.pubmed.xml](klortho/samples/esearch.pubmed.xml)),
     ([esearch.pubmed.json](klortho/samples/esearch.pubmed.json)),
 
++ ✓ **ESearch Error**
+
+    This query has a bad search term:
+    http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d
+
+    ([esearch.error.xml](klortho/samples/esearch.error.xml)),
+    ([esearch.error.json](klortho/samples/esearch.error.json)),
+
+
 ##Changes from master branch
 
 * Added 'version'
