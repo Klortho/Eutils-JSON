@@ -174,27 +174,26 @@
         <xsl:if test='position() != last()'>,</xsl:if>
         <xsl:value-of select='$nl'/>
     </xsl:template>
-    
-    <!-- 
-      object-in-array
-      For elements that contain heterogenous content.  These are converted
-      into JSON objects.  
+
+    <!--
+        array-in-array
+        Array-type elements that occur inside other arrays.
     -->
-    <xsl:template name='object-in-array'>
+    <xsl:template name='array-in-array'>
         <xsl:param name='indent' select='""'/>
         <xsl:value-of select='$indent'/>
         
-        <xsl:text>{</xsl:text>
+        <xsl:text>[</xsl:text>
         <xsl:value-of select='$nl'/>
         <xsl:apply-templates select='*'>
             <xsl:with-param name='indent' select='concat($indent, $iu)'/>
         </xsl:apply-templates>
         <xsl:value-of select='$indent'/>
-        <xsl:text>}</xsl:text>
+        <xsl:text>]</xsl:text>
         <xsl:if test='position() != last()'>,</xsl:if>
         <xsl:value-of select='$nl'/>
     </xsl:template>
-    
+
     <!-- 
       object-in-object
       For elements that contain heterogenous content.  These are converted
@@ -217,6 +216,27 @@
         <xsl:if test='position() != last()'>,</xsl:if>
         <xsl:value-of select='$nl'/>
     </xsl:template>
+
+    <!-- 
+        object-in-array
+        For elements that contain heterogenous content.  These are converted
+        into JSON objects.  
+    -->
+    <xsl:template name='object-in-array'>
+        <xsl:param name='indent' select='""'/>
+        <xsl:value-of select='$indent'/>
+        
+        <xsl:text>{</xsl:text>
+        <xsl:value-of select='$nl'/>
+        <xsl:apply-templates select='*'>
+            <xsl:with-param name='indent' select='concat($indent, $iu)'/>
+        </xsl:apply-templates>
+        <xsl:value-of select='$indent'/>
+        <xsl:text>}</xsl:text>
+        <xsl:if test='position() != last()'>,</xsl:if>
+        <xsl:value-of select='$nl'/>
+    </xsl:template>
+    
     
     <xsl:template match='ERROR'>
         <xsl:param name='indent' select='""'/>
