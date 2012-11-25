@@ -1,5 +1,6 @@
 {
     "version": "0.1",
+    "resulttype": "esummary",
     "docsums": {
         "uids": [
             "254085",

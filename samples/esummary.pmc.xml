@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_pmc.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="254085">
+	<PubDate>1987 Apr</PubDate>
+	<EPubDate></EPubDate>
+	<Source>J Virol</Source>
+	<Authors>
+		<Author>
+			<Name>Davidson D</Name>
+			<AuthType>
+				Author
+			</AuthType>
+		</Author>
+		<Author>
+			<Name>Hassell JA</Name>
+			<AuthType>
+				Author
+			</AuthType>
+		</Author>
+	</Authors>
+	<Title>Overproduction of polyomavirus middle T antigen in mammalian cells through the use of an adenovirus vector.</Title>
+	<Volume>61</Volume>
+	<Issue>4</Issue>
+	<Pages>1226-1239</Pages>
+	<ArticleIds>
+		<ArticleId>
+			<IdType>pmid</IdType>
+			<Value>3029418</Value>
+		</ArticleId>
+		<ArticleId>
+			<IdType>pmcid</IdType>
+			<Value>PMC254085</Value>
+		</ArticleId>
+	</ArticleIds>
+	<FullJournalName>Journal of Virology</FullJournalName>
+	<SortDate>1987/04/01 00:00</SortDate>
+	<PmcLiveDate>2003/12/01 00:00</PmcLiveDate>
+</DocumentSummary>
+<DocumentSummary uid="1">
+<error>cannot get document summary</error>
+</DocumentSummary>
+
+<DocumentSummary uid="14900">
+	<PubDate>2000 Jun</PubDate>
+	<EPubDate></EPubDate>
+	<Source>Mol Biol Cell</Source>
+	<Authors>
+		<Author>
+			<Name>Temesvari L</Name>
+			<AuthType>
+				Author
+			</AuthType>
+		</Author>
+		<Author>
+			<Name>Zhang L</Name>
+			<AuthType>
+				Author
+			</AuthType>
+		</Author>
+		<Author>
+			<Name>Fodera B</Name>
+			<AuthType>
+				Author
+			</AuthType>
+		</Author>
+		<Author>
+			<Name>Janssen KP</Name>
+			<AuthType>
+				Author
+			</AuthType>
+		</Author>
+		<Author>
+			<Name>Schleicher M</Name>
+			<AuthType>
+				Author
+			</AuthType>
+		</Author>
+		<Author>
+			<Name>Cardelli JA</Name>
+			<AuthType>
+				Author
+			</AuthType>
+		</Author>
+	</Authors>
+	<Title>Inactivation of lmpA, Encoding a LIMPII-related Endosomal Protein, Suppresses the Internalization and Endosomal Trafficking Defects in Profilin-null Mutants</Title>
+	<Volume>11</Volume>
+	<Issue>6</Issue>
+	<Pages>2019-2031</Pages>
+	<ArticleIds>
+		<ArticleId>
+			<IdType>pmid</IdType>
+			<Value>10848626</Value>
+		</ArticleId>
+		<ArticleId>
+			<IdType>pmcid</IdType>
+			<Value>PMC14900</Value>
+		</ArticleId>
+	</ArticleIds>
+	<FullJournalName>Molecular Biology of the Cell</FullJournalName>
+	<SortDate>2000/06/01 00:00</SortDate>
+	<PmcLiveDate>2001/03/07 00:00</PmcLiveDate>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

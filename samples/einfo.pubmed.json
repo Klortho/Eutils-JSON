@@ -1,5 +1,6 @@
 {
     "version": "0.1",
+    "resulttype": "einfo",
     "dbinfo": {
         "dbname": "pubmed",
         "menuname": "PubMed",

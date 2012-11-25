@@ -54,12 +54,6 @@
     <xsl:variable name='iu3' select='concat($iu2, $iu)'/>
     <xsl:variable name='iu4' select='concat($iu3, $iu)'/>
     
-    <!-- Start-of-output boilerplate -->
-    <xsl:variable name='result-start'>
-        <xsl:value-of select='concat(
-            "{", $nl, $iu, np:dq("version"), ": ", np:dq($VERSION), ",", $nl )'/>
-    </xsl:variable>
-    
     
     <!--================================================
       Utility templates and functions
@@ -117,6 +111,16 @@
       Generic eutilities templates
     -->
 
+    <!-- Start-of-output boilerplate -->
+    <xsl:template name='result-start'>
+        <xsl:value-of select='concat(
+            "{", $nl, 
+            $iu, np:dq("version"), ": ", np:dq($VERSION), ",", $nl,
+            $iu, np:dq("resulttype"), ": ",
+            np:dq(substring-before(np:to-lower(name(.)), "result")), ",", $nl
+        )'/>
+    </xsl:template>
+    
     <!--
       simple-in-object
       Call this template for elements that have simple content, when
@@ -249,7 +253,7 @@
     -->
     
     <xsl:template match='eInfoResult'>
-        <xsl:value-of select='$result-start'/>
+        <xsl:call-template name='result-start'/>
         <xsl:apply-templates select='*'>
             <xsl:with-param name='indent' select='$iu'/>
         </xsl:apply-templates>
@@ -317,7 +321,7 @@
         Esummary version 2.0 specific
     -->
     <xsl:template match='eSummaryResult'>
-        <xsl:value-of select='$result-start'/>
+        <xsl:call-template name='result-start'/>
         <xsl:apply-templates select='*'>
             <xsl:with-param name='indent' select='$iu'/>
         </xsl:apply-templates>
@@ -415,7 +419,10 @@
                          Locus |
                          Polymorphic |
                          EPCR_Summary |
-                         Gene_ID'>
+                         Gene_ID |
+                         SortDate |
+                         PmcLiveDate |
+                         DocumentSummary/error'>
         <xsl:param name='indent' select='""'/>
         <xsl:call-template name='simple-in-object'>
             <xsl:with-param name="indent" select='$indent'/>
@@ -450,137 +457,6 @@
         </xsl:call-template>
     </xsl:template>
     
-    <!--============================================================
-	  Esummary version 1 specific - deprecated
-	-->
-
-    <xsl:template match="eSummaryResult[ERROR]">
-        <xsl:value-of select='$result-start'/>
-        
-        <xsl:text>"error": [</xsl:text>
-        <xsl:for-each select="ERROR">
-            <xsl:text>"</xsl:text>
-            <xsl:value-of select="."/>
-            <xsl:text>"</xsl:text>
-            <xsl:if test='position() != last()'>,</xsl:if>
-            <xsl:value-of select='$nl'/>
-        </xsl:for-each>
-        <xsl:text>]}</xsl:text>
-    </xsl:template>
-
-    <xsl:template match="eSummaryResult[DocSum]">
-        <xsl:value-of select='$result-start'/>
-        
-        <xsl:text>"docsums": {</xsl:text>
-        <xsl:apply-templates select="DocSum"/>
-        <xsl:value-of select='concat($nl, $iu, "}", $nl, "}")'/>
-    </xsl:template>
-
-    <xsl:template match="DocSum">
-        <xsl:value-of select="concat($nl, $iu2)" />
-        <xsl:value-of select="concat('&quot;', Id, '&quot;: {', $nl)"/>
-
-        <xsl:apply-templates select="Item">
-            <xsl:with-param name='indent' select='$iu3'/>
-        </xsl:apply-templates>
-        <xsl:value-of select='concat($iu2, "}")' />
-        
-        <xsl:if test='position() != last()'>,</xsl:if>
-        <xsl:value-of select='$nl'/>
-    </xsl:template>
-
-    <xsl:template match="Item[@Type='Structure']">
-        <xsl:text>{</xsl:text>
-        <xsl:apply-templates select="Item"/>
-        <xsl:text>}</xsl:text>
-    </xsl:template>
-    
-    <xsl:template match="Item">
-        <xsl:param name='indent' select='""'/>
-        
-        <xsl:value-of select="$indent" />
-        <xsl:text>"</xsl:text>
-        <xsl:value-of select="np:to-lower(@Name)"/>
-        <xsl:text>": </xsl:text>
-        <xsl:choose>            
-            <xsl:when test="(@Type = 'String') or (@Type = 'Date')">
-                <xsl:text>"</xsl:text>
-                <xsl:value-of select="np:q(.)"/>
-                <xsl:text>"</xsl:text>
-            </xsl:when>
-            
-            <xsl:when test="@Type = 'Integer'">
-                <xsl:value-of select="."/>
-            </xsl:when>
-            
-            <xsl:when test="@Type = 'List'">
-                <xsl:choose>
-                    <!-- If all the sub-items of a list have the same name, and
-                        are all strings, dates, or integers, then
-                        convert them to a simple array (and we'll throw away the
-                        Name.) -->
-                    <xsl:when test='not(Item[@Name != preceding-sibling::Item/@Name]) and
-                        not(Item[@Type != "String" and @Type != "Date" and @Type != "Integer"])'>
-                        <xsl:value-of select='concat("[", $nl)'/>
-                        <xsl:apply-templates select='Item' mode='item-to-string-array'>
-                            <xsl:with-param name='indent' select='$iu4'/>
-                        </xsl:apply-templates>
-                        <xsl:value-of select='concat($iu3, "]")'/>
-                    </xsl:when>
-                    
-                    <!-- If there is more than one, and all of them have different names, convert 
-                        them to a simple object -->
-                    <xsl:when test='count(Item) &gt; 1 and
-                                    not(Item[@Name = preceding-sibling::Item/@Name])'>
-                        <xsl:value-of select='concat("{", $nl)'/>
-                        <xsl:apply-templates select='Item'>
-                            <xsl:with-param name='indent' select='concat($indent, $iu)'/>
-                        </xsl:apply-templates>
-                        <xsl:value-of select='concat($iu3, "}")'/>
-                     </xsl:when>
-
-                    <!-- If there is one Structure child, then treat its children like
-                        an object (see unists example) --> 
-                    <xsl:when test='count(Item) = 1 and Item[@Type = "Structure"]'>
-                        <xsl:value-of select='concat("{", $nl)'/>
-                        <xsl:apply-templates select='Item/Item'>
-                            <xsl:with-param name='indent' select='concat($indent, $iu)'/>
-                        </xsl:apply-templates>
-                        <xsl:value-of select='concat($iu3, "}")'/>
-                    </xsl:when>
-                    
-                    
-                    <!-- Otherwise we have no choice but to convert them to an 
-                        array of one-key objects (yuck) -->
-                    <xsl:otherwise>
-                        <xsl:value-of select='concat("[", $nl)'/>
-                        <xsl:for-each select="Item">
-                            <xsl:text>{</xsl:text>
-                            <xsl:apply-templates select="."/>
-                            <xsl:text>}</xsl:text>
-
-                            <xsl:if test='position() != last()'>,</xsl:if>
-                            <xsl:value-of select='$nl'/>
-                        </xsl:for-each>
-                        <xsl:value-of select='concat($iu3, "]")'/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:when>
-        </xsl:choose>
-        <xsl:if test='position() != last()'>,</xsl:if>
-        <xsl:value-of select='$nl'/>
-    </xsl:template>
-
-    <xsl:template match='Item' mode='item-to-string-array'>
-        <xsl:param name='indent' select='""'/>
-        <xsl:value-of select="concat($indent, '&quot;', np:q(.), '&quot;')"/>
-        <xsl:if test='position() != last()'>
-            <xsl:text>,</xsl:text>
-        </xsl:if>
-        <xsl:value-of select='$nl'/>
-    </xsl:template>
-    
-
     <!--============================================================
 	  Other.  These are all old, and will probably go away once 
 	  ESearch transform is implemented with the new framework.

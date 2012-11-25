@@ -1,5 +1,6 @@
 {
     "version": "0.1",
+    "resulttype": "esummary",
     "docsums": {
         "uids": [
             "5683731",
@@ -239,6 +240,5 @@
             "sortpubdate": "2012/01/01 00:00",
             "sortfirstauthor": "Benson DA"
         }
-
     }
 }

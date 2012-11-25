@@ -1,0 +1,94 @@
+{
+    "version": "0.1",
+    "resulttype": "esummary",
+    "docsums": {
+        "uids": [
+            "254085",
+            "1",
+            "14900"
+        ],
+        "254085": {
+            "pubdate": "1987 Apr",
+            "epubdate": "",
+            "source": "J Virol",
+            "authors": [
+                {
+                    "name": "Davidson D",
+                    "authtype": "Author"
+                },
+                {
+                    "name": "Hassell JA",
+                    "authtype": "Author"
+                }
+            ],
+            "title": "Overproduction of polyomavirus middle T antigen in mammalian cells through the use of an adenovirus vector.",
+            "volume": "61",
+            "issue": "4",
+            "pages": "1226-1239",
+            "articleids": [
+                {
+                    "idtype": "pmid",
+                    "value": "3029418"
+                },
+                {
+                    "idtype": "pmcid",
+                    "value": "PMC254085"
+                }
+            ],
+            "fulljournalname": "Journal of Virology",
+            "sortdate": "1987/04/01 00:00",
+            "pmclivedate": "2003/12/01 00:00"
+        },
+        "1": {
+            "error": "cannot get document summary"
+        },
+        "14900": {
+            "pubdate": "2000 Jun",
+            "epubdate": "",
+            "source": "Mol Biol Cell",
+            "authors": [
+                {
+                    "name": "Temesvari L",
+                    "authtype": "Author"
+                },
+                {
+                    "name": "Zhang L",
+                    "authtype": "Author"
+                },
+                {
+                    "name": "Fodera B",
+                    "authtype": "Author"
+                },
+                {
+                    "name": "Janssen KP",
+                    "authtype": "Author"
+                },
+                {
+                    "name": "Schleicher M",
+                    "authtype": "Author"
+                },
+                {
+                    "name": "Cardelli JA",
+                    "authtype": "Author"
+                }
+            ],
+            "title": "Inactivation of lmpA, Encoding a LIMPII-related Endosomal Protein, Suppresses the Internalization and Endosomal Trafficking Defects in Profilin-null Mutants",
+            "volume": "11",
+            "issue": "6",
+            "pages": "2019-2031",
+            "articleids": [
+                {
+                    "idtype": "pmid",
+                    "value": "10848626"
+                },
+                {
+                    "idtype": "pmcid",
+                    "value": "PMC14900"
+                }
+            ],
+            "fulljournalname": "Molecular Biology of the Cell",
+            "sortdate": "2000/06/01 00:00",
+            "pmclivedate": "2001/03/07 00:00"
+        }
+    }
+}

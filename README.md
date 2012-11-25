@@ -47,23 +47,33 @@ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle
 
 ### [Esummary version 2.0](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESummary)
 
-#### ✓ PubMed - version 2.0
+#### ✓ PubMed
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731,22144687&retmode=xml&version=2.0
 
 ([esummary.pubmed.xml](klortho/samples/esummary.pubmed.xml)),
 ([esummary.pubmed.json](klortho/samples/esummary.pubmed.json)),
 
-#### ✓ Unists - version 2.0
+#### ✓ Unists
 
 http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,254086&version=2.0
 
 ([esummary.unists.xml](klortho/samples/esummary.unists.xml)),
 ([esummary.unists.json](klortho/samples/esummary.unists.json)),
 
+#### ✓ PMC - includes an erroneous ID
 
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pmc&id=254085,1,14900&version=2.0
 
+([esummary.pmc.xml](klortho/samples/esummary.pmc.xml)),
+([esummary.pmc.json](klortho/samples/esummary.pmc.json)),
 
+#### ✓ Error
+
+http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=fleegle&id=254085&version=2.0
+
+([esummary.error.xml](klortho/samples/esummary.error.xml)),
+([esummary.error.json](klortho/samples/esummary.error.json)),
 
 ##Changes from master branch
 
