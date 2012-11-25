@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!DOCTYPE eSearchResult PUBLIC "-//NLM//DTD eSearchResult, 11 May 2002//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSearch_020511.dtd">
+<eSearchResult><Count>5163</Count><RetMax>20</RetMax><RetStart>0</RetStart><IdList>
+		<Id>101595451</Id>
+		<Id>101594756</Id>
+		<Id>101592162</Id>
+		<Id>101584239</Id>
+		<Id>101579894</Id>
+		<Id>101579335</Id>
+		<Id>101562482</Id>
+		<Id>101561609</Id>
+		<Id>101556399</Id>
+		<Id>101591596</Id>
+		<Id>101578136</Id>
+		<Id>101576454</Id>
+		<Id>101574347</Id>
+		<Id>101572928</Id>
+		<Id>101570665</Id>
+		<Id>101566951</Id>
+		<Id>101560767</Id>
+		<Id>101559065</Id>
+		<Id>101558035</Id>
+		<Id>101557580</Id>
+	</IdList><TranslationSet><Translation>     <From>obstetrics[MeSH Terms]</From>     <To>"obstetrics"[MeSH Terms]</To>    </Translation></TranslationSet><TranslationStack>   <TermSet>    <Term>"obstetrics"[MeSH Terms]</Term>    <Field>MeSH Terms</Field>    <Count>5163</Count>    <Explode>Y</Explode>   </TermSet>   <OP>GROUP</OP>  </TranslationStack><QueryTranslation>"obstetrics"[MeSH Terms]</QueryTranslation><ErrorList><PhraseNotFound>fleegle[MeSH Terms]</PhraseNotFound></ErrorList></eSearchResult>
