@@ -17,7 +17,7 @@
                                     <String xml:space="preserve">XSL</String>
                                 </field>
                                 <field name="url">
-                                    <String xml:space="preserve">samples/esummary.error.xml</String>
+                                    <String xml:space="preserve">samples/esearch.pubmed.xml</String>
                                 </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
@@ -39,6 +39,28 @@
                                     <String xml:space="preserve">XSL</String>
                                 </field>
                                 <field name="url">
+                                    <String xml:space="preserve">samples/einfo.pubmed.xml</String>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="name">
+                                    <String xml:space="preserve">eutils-json</String>
+                                </field>
+                                <field name="type">
+                                    <String xml:space="preserve">XSL</String>
+                                </field>
+                                <field name="url">
+                                    <String xml:space="preserve">samples/esummary.pubmed.xml</String>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="name">
+                                    <String xml:space="preserve">eutils-json</String>
+                                </field>
+                                <field name="type">
+                                    <String xml:space="preserve">XSL</String>
+                                </field>
+                                <field name="url">
                                     <String xml:space="preserve">samples/esummary.unists.xml</String>
                                 </field>
                             </scenarioAssociation>
@@ -50,7 +72,7 @@
                                     <String xml:space="preserve">XSL</String>
                                 </field>
                                 <field name="url">
-                                    <String xml:space="preserve">samples/einfo.error.xml</String>
+                                    <String xml:space="preserve">samples/esummary.error.xml</String>
                                 </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
@@ -61,7 +83,18 @@
                                     <String xml:space="preserve">XSL</String>
                                 </field>
                                 <field name="url">
-                                    <String xml:space="preserve">samples/einfo.pubmed.xml</String>
+                                    <String xml:space="preserve">samples/einfo.xml</String>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="name">
+                                    <String xml:space="preserve">eutils-json</String>
+                                </field>
+                                <field name="type">
+                                    <String xml:space="preserve">XSL</String>
+                                </field>
+                                <field name="url">
+                                    <String xml:space="preserve">samples/einfo.error.xml</String>
                                 </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
@@ -183,28 +216,6 @@
                                 </field>
                                 <field name="url">
                                     <String xml:space="preserve">../../../Program%20Files/Oxygen%20XML%20Editor%2012/samples/dita/garage/hierarchy.ditamap</String>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="name">
-                                    <String xml:space="preserve">eutils-json</String>
-                                </field>
-                                <field name="type">
-                                    <String xml:space="preserve">XSL</String>
-                                </field>
-                                <field name="url">
-                                    <String xml:space="preserve">samples/esummary.pubmed.xml</String>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="name">
-                                    <String xml:space="preserve">eutils-json</String>
-                                </field>
-                                <field name="type">
-                                    <String xml:space="preserve">XSL</String>
-                                </field>
-                                <field name="url">
-                                    <String xml:space="preserve">samples/einfo.xml</String>
                                 </field>
                             </scenarioAssociation>
                         </scenarioAssociation-array>

@@ -15,7 +15,7 @@ _We will implement this very soon, so send us feedback as soon as possible (pref
 by the end of November, 2012)._
 
 
-##Samples
+##Samples / test cases
 
 You can just use xsltproc to try these out.  For example,
 
@@ -73,6 +73,15 @@ You can just use xsltproc to try these out.  For example,
 
     ([esummary.error.xml](klortho/samples/esummary.error.xml)),
     ([esummary.error.json](klortho/samples/esummary.error.json)),
+
+### [ESearch](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESearch)
+
++ ✓ **ESearch PubMed**
+
+    http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=cancer&reldate=60&datetype=edat&retmax=100&usehistory=y
+
+    ([esearch.pubmed.xml](klortho/samples/esearch.pubmed.xml)),
+    ([esearch.pubmed.json](klortho/samples/esearch.pubmed.json)),
 
 ##Changes from master branch
 

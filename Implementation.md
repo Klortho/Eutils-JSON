@@ -10,3 +10,10 @@ Generic templates for converting elements into JSON:
 ## simple-in-array
 
 ## array-in-object
+
+## array-in-array
+
+## object-in-object
+
+## object-in-array
+
