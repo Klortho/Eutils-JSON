@@ -14,7 +14,6 @@ Please submit pull requests, create a github issue here, or send an email to
 _We will implement this very soon, so send us feedback as soon as possible (preferably
 by the end of November, 2012)._
 
-
 ##Samples / test cases
 
 You can just use xsltproc to try these out.  For example,
