@@ -34,7 +34,7 @@ ncbisearch    1121
 nlmcatalog    101573253
 omia          2615
 omim          609708
-pmc           3499489
+pmc           254085,1,14900   Includes an erroneous ID
 popset        418209882
 probe         156811
 proteinclusters 2516486
@@ -51,3 +51,5 @@ toolkit       149440
 unigene       1190943
 unists        254085,254086
 gencoll       320608
+
+error         254088           Invalid database name

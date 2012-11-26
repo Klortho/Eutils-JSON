@@ -1,0 +1,27 @@
+﻿<samples>
+  <samplegroup header='EInfo'>
+    <sample title='EInfo' status='✓' name='einfo'>
+      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi</eutils-url>
+      <desc>List all databases</desc>
+    </sample>
+    <sample title='EInfo PubMed' status='✓' name='einfo.pubmed'>
+      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed</eutils-url>
+      <desc></desc>
+    </sample>
+    <sample title='EInfo Error' status='✓' name='einfo.error'>
+      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle</eutils-url>
+      <desc>Invalid database name</desc>
+    </sample>
+  </samplegroup>
+
+  <samplegroup header='ESearch'>
+    <sample title='ESearch PubMed' status='✓' name='esearch.pubmed'>
+      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y</eutils-url>
+      <desc></desc>
+    </sample>
+    <sample title='ESearch Error' status='✓' name='esearch.error'>
+      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d</eutils-url>
+      <desc>This query has a bad search term</desc>
+    </sample>
+  </samplegroup>
+</samples>
