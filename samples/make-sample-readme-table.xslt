@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  This stylesheet converts samples.xml into an HTML fragment that
+  can then be inserted into the README.md file here.  
+-->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" 
                 exclude-result-prefixes="xd" 

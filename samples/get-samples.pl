@@ -3,19 +3,30 @@
 # e-utils, as well as the DTDs.
 # This won't overwrite any existing files.
 
+# This script can also auto-generate an XML file that describes each of the samples,
+# with the name esummary-samples.xml.  It will only do it if you set $genSampXml to
+# a true value below, and only if the file doesn't already exist.  This is only
+# intended to be done once; after that, it should be maintained separately.
+
 use strict;
 
+my $genSampXml = 1;
+my $sampXmlFile = "esummary-samples.xml";
+if (-f $sampXmlFile) { $genSampXml = 0; }
+
 my $samples = "db-samples.txt";
-my $sampxml = "summary-samples.xml";
 my $esummaryBase = "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&version=2.0";
 my $esummaryDtdBase = "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/";
 
 open SAMPLES, $samples or die "Can't open $samples";
-open SAMPXML, ">$sampxml" or die "Can't open $sampxml for writing";
+if ($genSampXml) {
+    open SAMPXML, ">$sampXmlFile" or die "Can't open $sampXmlFile for writing";
+}
 
-print SAMPXML "<samples>\n" .
-              "  <samplegroup header='ESummary'>\n";
-
+if ($genSampXml) {
+    print SAMPXML "<samples>\n" .
+                  "  <samplegroup header='ESummary'>\n";
+}
 
 while (my $line = <SAMPLES>) {
     chomp $line;
@@ -46,14 +57,18 @@ while (my $line = <SAMPLES>) {
     }
 
     # Write a record to the samples xml file
-    my $esumUrlEsc = $esummaryUrl;
-    $esumUrlEsc =~ s/\&/\&amp;/g;
-    print SAMPXML "    <sample title='ESummary $db' status='' name='esummary.$db'>\n" .
-                  "      <eutils-url>$esumUrlEsc</eutils-url>\n" .
-                  "      <desc></desc>\n" .
-                  "    </sample>\n";
+    if ($genSampXml) {
+        my $esumUrlEsc = $esummaryUrl;
+        $esumUrlEsc =~ s/\&/\&amp;/g;
+        print SAMPXML "    <sample title='ESummary $db' status='' name='esummary.$db'>\n" .
+                      "      <eutils-url>$esumUrlEsc</eutils-url>\n" .
+                      "      <desc></desc>\n" .
+                      "    </sample>\n";
+    }
 }
 
 print SAMPXML "  </samplegroup>\n</samples>\n";
-close SAMPXML;
+if ($genSampXml) {
+    close SAMPXML;
+}
 close SAMPLES;
