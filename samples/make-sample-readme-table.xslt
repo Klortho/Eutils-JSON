@@ -7,18 +7,23 @@
   <xsl:output indent="yes" method="html" />
 
   <xsl:template match="samples">
-    <table>
-      <xsl:apply-templates select="*"/>
-    </table>
+    <xsl:apply-templates select="*"/>
   </xsl:template>
 
   <xsl:template match="samplegroup">
-    <tr>
-      <th colspan="4">
-        <xsl:value-of select="@header"/>
-      </th>
-    </tr>
-    <xsl:apply-templates/>
+    <h2>
+      <xsl:value-of select='@header'/>
+    </h2>
+    <table>
+      <tr>
+        <th></th>
+        <th>Status</th>
+        <th rowspan='2'>Local files</th>
+        <th>Comment</th>
+        <th>NCBI EUtils</th>
+      </tr>
+      <xsl:apply-templates/>
+    </table>
   </xsl:template>
 
   <xsl:template match="sample">
@@ -30,18 +35,21 @@
         <xsl:value-of select="@status"/>
       </td>
       <td>
-        <a href="{eutils-url}">
-          <xsl:text>eutils</xsl:text>
-        </a>
-      </td>
-      <td>
-        <a href="{@name}.xml">
+        <a href="../../blob/master/samples/{@name}.xml">
           <xsl:text>xml</xsl:text>
         </a>
       </td>
       <td>
-        <a href="{@name}.json">
+        <a href="../../blob/master/samples/{@name}.json">
           <xsl:text>json</xsl:text>
+        </a>
+      </td>
+      <td>
+        <xsl:value-of select='desc'/>
+      </td>
+      <td>
+        <a href="{eutils-url}">
+          <xsl:value-of select='eutils-url'/>
         </a>
       </td>
     </tr>
