@@ -94,16 +94,6 @@ The ESummary output from each database has its own DTD.
     ([esearch.error.json](klortho/samples/esearch.error.json)),
 
 
-##Changes from master branch
-
-* Added 'version'
-* Removed the redundant "name" field inside child hashes.  Maybe should keep it,
-instead -- it doesn't do any harm, and could conceivably be useful.
-* Changed esummary 1.0 docsums to be a hash, and the id field of each docsum is the key.
-* Further changed some of the structure of esummary 1.0 output.
-* Prettified the output.  This can be turned off by passing in the "pretty" parameter is
-false.
-
 ##Questions
 
 * What is the str:decode-uri() doing in the np:q function?  Are some of these values
