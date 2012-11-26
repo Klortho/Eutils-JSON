@@ -12,9 +12,10 @@
   <xsl:param name='pretty' select='true()'/>
   
   <!-- Parse the ESearch translation stack into a JSON tree structure.  This is
-    experimental (just for fun).  -->
+    experimental.  -->
   <xsl:param name='parse-translation-stack' select='true()'/>
-  
+
+
   <!-- $nl == newline when pretty-printing; otherwise empty string  -->
   <xsl:variable name='nl'>
     <xsl:choose>
@@ -78,8 +79,8 @@
     <xsl:variable name="bs">\</xsl:variable>
     <xsl:variable name="result" 
       select="str:replace(
-      str:replace( str:decode-uri($_), $bs, concat($bs, $bs) ), 
-      $quot, concat($bs, $quot) )"/>
+                  str:replace( str:decode-uri($_), $bs, concat($bs, $bs) ), 
+                  $quot, concat($bs, $quot) )"/>
     <f:result>
       <xsl:value-of select="$result"/>
     </f:result>
