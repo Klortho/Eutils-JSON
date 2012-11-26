@@ -18,7 +18,7 @@
       <tr>
         <th></th>
         <th>Status</th>
-        <th rowspan='2'>Local files</th>
+        <th colspan='2'>Local files</th>
         <th>Comment</th>
         <th>NCBI EUtils</th>
       </tr>
