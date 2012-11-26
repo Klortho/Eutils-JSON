@@ -119,7 +119,16 @@
   -->
   <xsl:template name='simple-in-object'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='key' select='np:to-lower(name(.))'/>
+    <xsl:param name='key'>
+      <xsl:choose>
+        <xsl:when test='self::text()'>
+          <xsl:text>value</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>  <!-- This is an element node -->
+          <xsl:value-of select='np:to-lower(name(.))'/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:param>
     
     <xsl:value-of select='concat(
       $indent, np:dq($key), ": ", np:dq(normalize-space(np:q(.))) )'/>
@@ -150,13 +159,14 @@
   -->
   <xsl:template name='array-in-object'>
     <xsl:param name='indent' select='""'/>
-    <xsl:value-of select='$indent'/>
     
+    <xsl:value-of select='$indent'/>
     <xsl:value-of select="np:dq(np:to-lower(name(.)))"/>
     <xsl:text>: [</xsl:text>
     <xsl:value-of select='$nl'/>
     <xsl:apply-templates select='*'>
       <xsl:with-param name='indent' select='concat($indent, $iu)'/>
+      <xsl:with-param name='context' select='"array"'/>
     </xsl:apply-templates>
     <xsl:value-of select='$indent'/>
     <xsl:text>]</xsl:text>
@@ -214,12 +224,13 @@
   <xsl:template name='object-in-array'>
     <xsl:param name='indent' select='""'/>
     <xsl:param name='force-comma' select='false()'/>
-    <xsl:value-of select='$indent'/>
     
+    <xsl:value-of select='$indent'/>
     <xsl:text>{</xsl:text>
     <xsl:value-of select='$nl'/>
     <xsl:apply-templates select='*'>
       <xsl:with-param name='indent' select='concat($indent, $iu)'/>
+      <xsl:with-param name='context' select='"object"'/>
     </xsl:apply-templates>
     <xsl:value-of select='$indent'/>
     <xsl:text>}</xsl:text>
@@ -259,13 +270,61 @@
       <xsl:value-of select='$msg'/>
     </xsl:message>
   </xsl:template>
+
+
+  <!-- 
+    Default template for an element or attribute. 
+  -->
+  <xsl:template match='@*|*'>
+    <xsl:param name='indent' select='""'/>
+    <xsl:param name='context' select='"object"'/>
+    
+    <xsl:message>
+      <xsl:text>FIXME:  No template defined for </xsl:text>
+      <xsl:choose>
+        <xsl:when test='self::*'>
+          <xsl:text>element </xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:text>attribute </xsl:text>
+          <xsl:value-of select='concat(name(..), "/@")'/>
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:value-of select='name(.)'/>
+    </xsl:message>
+    
+    <xsl:value-of select='$indent'/>
+    <xsl:choose>
+      <xsl:when test='$context = "array"'>
+        <xsl:value-of select='np:dq(normalize-space(np:q(.)))'/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select='concat(
+          np:dq(np:to-lower(name(.))), ": ", np:dq(normalize-space(np:q(.))) )'/>
+      </xsl:otherwise>
+    </xsl:choose>
+    <xsl:if test='position() != last()'>,</xsl:if>
+    <xsl:value-of select='$nl'/>
+  </xsl:template>
   
   <!-- Default template for text nodes.  Throw them away if they
     are all blanks.  Report a problem otherwise.    -->
   <xsl:template match="text()" >
+    <xsl:param name='indent' select='""'/>
+    <xsl:param name='context' select='"object"'/>
+    
+    <xsl:message>FIXME:  non-blank text node with no template match</xsl:message>
+    <xsl:value-of select='$indent'/>
     <xsl:if test='normalize-space(.) != ""'>
-      <xsl:text>FIXME:  non-blank text node with no template match</xsl:text>
-      <xsl:message>FIXME:  non-blank text node with no template match</xsl:message>
+      <xsl:if test='$context = "object"'>
+        <xsl:text>"value": </xsl:text>
+      </xsl:if>
+      <xsl:text>"</xsl:text>
+      <xsl:value-of select='normalize-space(.)'/>
+      <xsl:text>"</xsl:text>
+      <!-- FIXME:  Not sure what position() means for a text node. -->
+      <xsl:if test='position() != last()'>,</xsl:if>
+      <xsl:value-of select='$nl'/>
     </xsl:if>
   </xsl:template>
   

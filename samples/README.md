@@ -83,7 +83,7 @@ conversions.
    </tr>
    <tr>
       <th>ESummary protein</th>
-      <td></td>
+      <td>&#10003;</td>
       <td><a href="../../blob/master/samples/esummary.protein.xml">xml</a></td>
       <td><a href="../../blob/master/samples/esummary.protein.json">json</a></td>
       <td></td>
