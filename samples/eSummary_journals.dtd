@@ -1,0 +1,47 @@
+<!-- DocSum DTD for journals database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+
+<!-- Definition of List type: T_StringList -->
+<!ELEMENT	string	%T_string;>
+<!ENTITY	 % T_StringList	"(string)*">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	Title		%T_string;>
+<!ELEMENT	MedAbbr		%T_string;>
+<!ELEMENT	IsoAbbr		%T_string;>
+<!ELEMENT	NlmId		%T_string;>
+<!ELEMENT	pISSN		%T_string;>
+<!ELEMENT	eISSN		%T_string;>
+<!ELEMENT	PublicationStartYear		%T_string;>
+<!ELEMENT	PublicationEndYear		%T_string;>
+<!ELEMENT	Publisher		%T_string;>
+<!ELEMENT	Language		%T_string;>
+<!ELEMENT	Country		%T_string;>
+<!ELEMENT	BroadHeading		%T_StringList;>
+<!ELEMENT	ContinuationNotes		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			Title
+			| MedAbbr
+			| IsoAbbr
+			| NlmId
+			| pISSN
+			| eISSN
+			| PublicationStartYear
+			| PublicationEndYear
+			| Publisher
+			| Language
+			| Country
+			| BroadHeading
+			| ContinuationNotes
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

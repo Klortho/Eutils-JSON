@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_gap.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="195331">
+	<d_study_results>
+		<d_study_id></d_study_id>
+		<d_study_name></d_study_name>
+		<d_study_ancestor>
+		</d_study_ancestor>
+		<d_study_genotype_platform_list>
+		</d_study_genotype_platform_list>
+		<d_num_descendants_in_subtree>0</d_num_descendants_in_subtree>
+		<d_num_variables_in_subtree>0</d_num_variables_in_subtree>
+		<d_num_documents_in_subtree>0</d_num_documents_in_subtree>
+		<d_num_analyses_in_subtree>0</d_num_analyses_in_subtree>
+		<d_num_participants_in_subtree>0</d_num_participants_in_subtree>
+		<d_study_type></d_study_type>
+		<d_study_type_list>
+		</d_study_type_list>
+		<d_study_status></d_study_status>
+		<d_study_embargo_date></d_study_embargo_date>
+		<d_study_release_date></d_study_release_date>
+		<d_study_project_list>
+		</d_study_project_list>
+		<d_study_disease_list>
+		</d_study_disease_list>
+		<d_study_has_sra></d_study_has_sra>
+		<d_study_archive></d_study_archive>
+	</d_study_results>
+	<d_variable_results>
+		<d_variable_id>phs000201.v1.p1&amp;phv=76164|phv00076164.v1.p1</d_variable_id>
+		<d_variable_name>Abnormal/Total Cells (clone 5)</d_variable_name>
+		<d_variable_ancestor>
+			<d_ancestor_id_and_name>
+				<d_ancestor_id>phs000201.v1.p1</d_ancestor_id>
+				<d_ancestor_name>Acquired Copy Number Alterations in Adult Acute Myeloid Leukemia Genomes</d_ancestor_name>
+			</d_ancestor_id_and_name>
+		</d_variable_ancestor>
+		<d_variable_parent>
+			<d_parent_id_and_name>
+				<d_parent_id>phs000201.v1.p1</d_parent_id>
+				<d_parent_name>Acquired Copy Number Alterations in Adult Acute Myeloid Leukemia Genomes</d_parent_name>
+			</d_parent_id_and_name>
+		</d_variable_parent>
+		<d_variable_dataset>
+			<d_variable_dataset_name>AML_Data</d_variable_dataset_name>
+			<d_variable_dataset_id>pht000885.v1.p1</d_variable_dataset_id>
+			<d_variable_dataset_description>This data table contains subject phenotypes (case-control status, sex, and age variables; n=7) and tumor sample phenotypes (immunophenotype and differential counts, cytogenetic and molecular abnormalities (n=27 variables).  Included also are subject treatment protocol and any transplant type (n=2 variables).</d_variable_dataset_description>
+		</d_variable_dataset>
+		<d_variable_description># of abnormal cells in clone 5/total cells evaluated  (if applicable)</d_variable_description>
+		<d_variable_type> </d_variable_type>
+		<d_variable_embargo_date> </d_variable_embargo_date>
+		<d_variable_phenx> </d_variable_phenx>
+		<d_variable_has_phenx> </d_variable_has_phenx>
+	</d_variable_results>
+	<d_document_results>
+		<d_document_id></d_document_id>
+		<d_document_name></d_document_name>
+		<d_document_ancestor>
+		</d_document_ancestor>
+		<d_document_parent>
+		</d_document_parent>
+		<d_document_description></d_document_description>
+	</d_document_results>
+	<d_analysis_results>
+		<d_analysis_id></d_analysis_id>
+		<d_analysis_name></d_analysis_name>
+		<d_analysis_ancestor>
+		</d_analysis_ancestor>
+		<d_analysis_parent>
+		</d_analysis_parent>
+		<d_analysis_description></d_analysis_description>
+	</d_analysis_results>
+	<d_dataset_results>
+		<d_dataset_id></d_dataset_id>
+		<d_dataset_name></d_dataset_name>
+		<d_dataset_ancestor>
+		</d_dataset_ancestor>
+		<d_dataset_parent>
+		</d_dataset_parent>
+		<d_dataset_description></d_dataset_description>
+		<d_dataset_embargo_date></d_dataset_embargo_date>
+	</d_dataset_results>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

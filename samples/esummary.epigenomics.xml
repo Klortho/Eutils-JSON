@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_epigenomics.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="16796">
+	<Title>H3K4me1 - Human stem cell, iPS DF 6.9 cell line, foreskin, undifferentiated, passage 33</Title>
+	<Summary>Histone modification H3K4me1 assayed by ChIP-seq in Homo sapiens, iPS DF 6.9 cell line, induced pluripotent stem cell, derived from newborn foreskin fibroblast (Cat# CRL-2097TM). Clone 6 sublcone 9. Data from the Roadmap Epigenomics project.</Summary>
+	<DocType>experiment</DocType>
+	<TaxId>9606</TaxId>
+	<GeneId>0</GeneId>
+	<UpdateDate>2012/10/31 00:00</UpdateDate>
+	<CreateDate>2011/12/07 00:00</CreateDate>
+	<Accession>ESX000004137</Accession>
+	<DocStatus>3</DocStatus>
+	<ReplacedById>0</ReplacedById>
+	<RetireDate>1/01/01 00:00</RetireDate>
+	<RetireComment></RetireComment>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

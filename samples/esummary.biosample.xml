@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_biosample.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="182293">
+	<Title>cat genomic DNA</Title>
+	<Accession>LIBGSS_007660</Accession>
+	<Date>2003/11/14</Date>
+	<ModificationDate>2012/04/10</ModificationDate>
+	<Organization>University of Geneva Medical School</Organization>
+	<Taxonomy>9685</Taxonomy>
+	<SourceSample>GSS:LIBGSS_007660</SourceSample>
+	<SampleData>                                      &lt;BioSample submission_date=&quot;2003-08-12T12:26:00.000&quot; last_update=&quot;2012-04-10T15:19:04.947&quot; publication_date=&quot;2003-11-14T00:00:00.000&quot; access=&quot;public&quot; id=&quot;182293&quot;&gt;       &lt;Ids&gt;         &lt;Id db=&quot;GSS&quot; is_primary=&quot;1&quot;&gt;LIBGSS_007660&lt;/Id&gt;       &lt;/Ids&gt;       &lt;Description&gt;         &lt;Title&gt;cat genomic DNA&lt;/Title&gt;         &lt;Organism taxonomy_id=&quot;9685&quot; taxonomy_name=&quot;Felis catus&quot;/&gt;         &lt;Comment&gt;           &lt;Paragraph&gt;direct sequencing of PCR product; sequences orthologous to human chromosome 21 conserved sequences or non-coding RNAs from the whole genome&lt;/Paragraph&gt;         &lt;/Comment&gt;       &lt;/Description&gt;       &lt;Owner&gt;         &lt;Name abbreviation=&quot;&quot;&gt;University of Geneva Medical School&lt;/Name&gt;         &lt;Contacts&gt;           &lt;Contact email=&quot;emmanouil.dermitzakis@medecine.unige.ch&quot; phone=&quot;0041 22 3795719&quot; fax=&quot;0041 22 3795706&quot; lab=&quot;Division of Medical Genetics&quot;&gt;             &lt;Address&gt;               &lt;Street&gt;1 Rue Michel Servet, 1211 Geneva, Switzerland&lt;/Street&gt;             &lt;/Address&gt;             &lt;Name&gt;               &lt;Last&gt;Dermitzakis ET&lt;/Last&gt;             &lt;/Name&gt;           &lt;/Contact&gt;         &lt;/Contacts&gt;       &lt;/Owner&gt;       &lt;Models&gt;         &lt;Model&gt;Generic&lt;/Model&gt;       &lt;/Models&gt;       &lt;Attributes/&gt;       &lt;Status status=&quot;live&quot; when=&quot;2003-11-14T07:42:00.000&quot;/&gt;     &lt;/BioSample&gt;                                      </SampleData>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

@@ -1,0 +1,48 @@
+<!-- DocSum DTD for homologene database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+<!ENTITY	 % T_int		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_HomoloGeneData -->
+<!ELEMENT	TaxName		%T_string;>
+<!ELEMENT	TaxId		%T_int;>
+<!ELEMENT	Symbol		%T_string;>
+<!-- Already defined ...
+<!ELEMENT	Title		%T_string;>
+ ... Already defined -->
+<!ELEMENT	GeneID		%T_int;>
+
+<!-- Definition of Structure type: T_HomoloGeneData -->
+<!ENTITY	 % T_HomoloGeneData	"(
+ 			TaxName
+			| TaxId
+			| Symbol
+			| Title
+			| GeneID
+			)*">
+
+<!-- Definition of List type: T_HomoloGeneListType -->
+<!ELEMENT	HomoloGeneData	%T_HomoloGeneData;>
+<!ENTITY	 % T_HomoloGeneListType	"(HomoloGeneData)*">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	Title		%T_string;>
+<!ELEMENT	Description		%T_string;>
+<!ELEMENT	HomoloGeneDataList		%T_HomoloGeneListType;>
+<!ELEMENT	Caption		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			Title
+			| Description
+			| HomoloGeneDataList
+			| Caption
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

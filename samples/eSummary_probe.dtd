@@ -1,0 +1,31 @@
+<!-- DocSum DTD for probe database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	name		%T_string;>
+<!ELEMENT	title		%T_string;>
+<!ELEMENT	ptype		%T_string;>
+<!ELEMENT	caption		%T_string;>
+<!ELEMENT	issuppressed		%T_string;>
+<!ELEMENT	isreplaced		%T_string;>
+<!ELEMENT	suppressreason		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			name
+			| title
+			| ptype
+			| caption
+			| issuppressed
+			| isreplaced
+			| suppressreason
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

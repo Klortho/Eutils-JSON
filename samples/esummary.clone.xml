@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_clone.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="29702171">
+	<ObjType>clone</ObjType>
+	<ClName>ZMMBBb-459N17</ClName>
+	<ClAliasList>
+		<string>ZMMBBb0459N17</string>
+	</ClAliasList>
+	<LibName>Zea mays BAC HindIII library ZMMBBb</LibName>
+	<LibAbbr>ZMMBBb</LibAbbr>
+	<LibType>genomic</LibType>
+	<Organism>Zea mays</Organism>
+	<VectTypeList>
+		<string>BAC</string>
+	</VectTypeList>
+	<Placed>N</Placed>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

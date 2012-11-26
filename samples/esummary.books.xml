@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_books.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="2825746">
+	<Title>Dictionary of Cancer Terms</Title>
+	<PubDate>2002/01/01 00:00</PubDate>
+	<ID>pdqcis/appendix/glossary/PMC</ID>
+	<AccessionID>NBK65951</AccessionID>
+	<Parents></Parents>
+	<RType>appendix</RType>
+	<RID>NBK65951</RID>
+	<Text></Text>
+	<BookInfo><![CDATA[<Info><Path><Parent id="pdqcis" role="source" type="book" uid="2821524"><Title>PDQ Cancer Information Summaries</Title></Parent><Self id="glossary" role="document" type="appendix" uid="2825746"><Title>Dictionary of Cancer Terms</Title></Self></Path><Citation CitationType="Part"><MainRecord><Title>Dictionary of Cancer Terms.</Title></MainRecord><ParentRecord><Title>PDQ Cancer Information Summaries [Internet].</Title><PublicationStatement>Bethesda (MD): National Cancer Institute (US); 2002-.</PublicationStatement></ParentRecord></Citation></Info>]]></BookInfo>
+	<BookID>2821524</BookID>
+	<BookAccessionID>NBK82221</BookAccessionID>
+	<ChapterID>2825746</ChapterID>
+	<ChapterAccessionID>NBK65951</ChapterAccessionID>
+	<Book>pdqcis</Book>
+	<Navigation>yes</Navigation>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

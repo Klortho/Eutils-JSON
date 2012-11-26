@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_mesh.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="67414177">
+	<DS_YearIntroduced></DS_YearIntroduced>
+	<DS_ScopeNote>RefSeq NM_003046</DS_ScopeNote>
+	<DS_RegistryNumber>0</DS_RegistryNumber>
+	<DS_HeadingMappedTo></DS_HeadingMappedTo>
+	<DS_MeshTerms>
+		<string>SLC7A2 protein, human</string>
+		<string>hCAT-2 transport protein</string>
+		<string>CAT-2 transport protein, human</string>
+		<string>solute carrier family 7 (cationic amino acid transporter, y+ system), member 2 protein, human</string>
+		<string>CAT-2 transporter, human</string>
+	</DS_MeshTerms>
+	<DS_Subheading>
+	</DS_Subheading>
+	<DS_PaPx>
+	</DS_PaPx>
+	<DS_PreviousIndexing>
+		<string>CALCIUM CHANNELS (2000-2006)</string>
+	</DS_PreviousIndexing>
+	<DS_SeeRelated>
+	</DS_SeeRelated>
+	<DS_PaList>
+	</DS_PaList>
+	<DS_IdxLinks>
+		<LinksType>
+			<Parent>1000048</Parent>
+			<TreeNum>@3065</TreeNum>
+			<Children>
+			</Children>
+		</LinksType>
+	</DS_IdxLinks>
+	<DS_EntryDate>2000/10/10 00:00</DS_EntryDate>
+	<DS_RevisionDate>2006/07/06 00:00</DS_RevisionDate>
+	<DS_HeadingMappedToList>
+		<int>68026923</int>
+	</DS_HeadingMappedToList>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

@@ -1,0 +1,56 @@
+<!-- DocSum DTD for genomeprj database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+<!ENTITY	 % T_date		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	Organism_Name		%T_string;>
+<!ELEMENT	Organism_Kingdom		%T_string;>
+<!ELEMENT	Organism_Group		%T_string;>
+<!ELEMENT	TaxId		%T_string;>
+<!ELEMENT	Center		%T_string;>
+<!ELEMENT	Sequencing_Status		%T_string;>
+<!ELEMENT	Project_Type		%T_string;>
+<!ELEMENT	Genome_Size		%T_string;>
+<!ELEMENT	Number_of_Chromosomes		%T_string;>
+<!ELEMENT	Trace_Species_Code		%T_string;>
+<!ELEMENT	Trace_Center_Name		%T_string;>
+<!ELEMENT	Trace_Type_Code		%T_string;>
+<!ELEMENT	Defline		%T_string;>
+<!ELEMENT	Number_of_Mitochondrion		%T_string;>
+<!ELEMENT	Number_of_Plastid		%T_string;>
+<!ELEMENT	Number_of_Plasmid		%T_string;>
+<!ELEMENT	Create_Date		%T_date;>
+<!ELEMENT	Release_Date		%T_date;>
+<!ELEMENT	Options		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			Organism_Name
+			| Organism_Kingdom
+			| Organism_Group
+			| TaxId
+			| Center
+			| Sequencing_Status
+			| Project_Type
+			| Genome_Size
+			| Number_of_Chromosomes
+			| Trace_Species_Code
+			| Trace_Center_Name
+			| Trace_Type_Code
+			| Defline
+			| Number_of_Mitochondrion
+			| Number_of_Plastid
+			| Number_of_Plasmid
+			| Create_Date
+			| Release_Date
+			| Options
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

@@ -1,0 +1,35 @@
+<!-- DocSum DTD for ncbisearch database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+<!ENTITY	 % T_date		"(#PCDATA)">
+<!ENTITY	 % T_int		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	Title		%T_string;>
+<!ELEMENT	Description		%T_string;>
+<!ELEMENT	Url		%T_string;>
+<!ELEMENT	Category		%T_string;>
+<!ELEMENT	Date		%T_date;>
+<!ELEMENT	HomePage		%T_string;>
+<!ELEMENT	LinkCount		%T_int;>
+<!ELEMENT	Authors		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			Title
+			| Description
+			| Url
+			| Category
+			| Date
+			| HomePage
+			| LinkCount
+			| Authors
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

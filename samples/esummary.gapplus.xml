@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_gapplus.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="5235996">
+	<create_date>2012/08/17 00:00</create_date>
+	<last_modified_date>2012/08/17 00:00</last_modified_date>
+	<source>NHLBI-GRASP</source>
+	<key>217036345923135</key>
+	<publication>
+		<pmid>21703634</pmid>
+		<pub_date>2011/06/22 00:00</pub_date>
+		<journal>J Psychiatr Res</journal>
+		<title>A meta-analysis of two genome-wide association studies identifies 3 new loci for alcohol dependence.</title>
+		<location_within_paper>Table S1</location_within_paper>
+		<phenotype_desc>Alcohol dependence</phenotype_desc>
+		<phenotype_category_list>
+			<phenotype_category_info>
+				<phenotype_category>Quantitative trait(s)</phenotype_category>
+			</phenotype_category_info>
+			<phenotype_category_info>
+				<phenotype_category>Neuro</phenotype_category>
+			</phenotype_category_info>
+			<phenotype_category_info>
+				<phenotype_category>Addiction</phenotype_category>
+			</phenotype_category_info>
+			<phenotype_category_info>
+				<phenotype_category>Alcohol</phenotype_category>
+			</phenotype_category_info>
+		</phenotype_category_list>
+		<incl_male_female_only>n</incl_male_female_only>
+		<exclusively_male_female>n</exclusively_male_female>
+	</publication>
+	<snp_info>
+		<current_snp>16925514</current_snp>
+		<cited_snp>rs16925514</cited_snp>
+		<chromosome>11</chromosome>
+		<position>34449260</position>
+		<in_gene></in_gene>
+		<in_linc_rna></in_linc_rna>
+		<in_mi_rna></in_mi_rna>
+		<in_mi_rnabs></in_mi_rnabs>
+		<dbsnp_maf>T;0.0572</dbsnp_maf>
+		<dbsnp_alleles_het_se>G/T;?;?</dbsnp_alleles_het_se>
+		<dbsnp_validation>YES</dbsnp_validation>
+		<dbsnp_clinstatus></dbsnp_clinstatus>
+		<oreganno></oreganno>
+		<conserved_pred_tfbs></conserved_pred_tfbs>
+		<human_enhancer></human_enhancer>
+		<rna_edit></rna_edit>
+		<poly_phen2></poly_phen2>
+		<sift></sift>
+		<ls_snp></ls_snp>
+		<uni_prot_annot></uni_prot_annot>
+	</snp_info>
+	<snp_gene_info_list>
+		<snp_gene_info>
+			<gene_info>
+				<gene_id>847</gene_id>
+				<gene_symbol>CAT</gene_symbol>
+				<gene_start>34460477</gene_start>
+				<gene_stop>34493606</gene_stop>
+			</gene_info>
+			<distance>11218</distance>
+			<functional_class>downstream</functional_class>
+		</snp_gene_info>
+		<snp_gene_info>
+			<gene_info>
+				<gene_id>25841</gene_id>
+				<gene_symbol>ABTB2</gene_symbol>
+				<gene_start>34172534</gene_start>
+				<gene_stop>34378801</gene_stop>
+			</gene_info>
+			<distance>70458</distance>
+			<functional_class>upstream</functional_class>
+		</snp_gene_info>
+	</snp_gene_info_list>
+	<omim_info_list>
+	</omim_info_list>
+	<platform>Illumina [up to 818773]</platform>
+	<pvalue_string>4.6E-06</pvalue_string>
+	<pvalue_log>53372</pvalue_log>
+	<phenotype_list>
+		<phenotype_info>
+			<source>nhlbi-grasp</source>
+			<phenotype>Alcohol dependence</phenotype>
+			<phenotype_desc></phenotype_desc>
+			<phenotype_category_list>
+			</phenotype_category_list>
+		</phenotype_info>
+		<phenotype_info>
+			<source>MeSH</source>
+			<phenotype>foobar</phenotype>
+			<phenotype_desc></phenotype_desc>
+			<phenotype_category_list>
+			</phenotype_category_list>
+		</phenotype_info>
+	</phenotype_list>
+	<sample_info>
+		<initial_sample_desc>1283 EA cases, 1416 EA controls</initial_sample_desc>
+		<replication_sample_desc>3334 Australian individuals (from families)</replication_sample_desc>
+		<total_sample>6033</total_sample>
+		<total_replication_sample>3334</total_replication_sample>
+		<total_discovery_sample>2699</total_discovery_sample>
+		<gwas_ancestry_desc>European</gwas_ancestry_desc>
+	</sample_info>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

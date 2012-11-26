@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_dbvar.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="1272816">
+	<OBJ_TYPE>VARIANT</OBJ_TYPE>
+	<SV>nsv513796</SV>
+	<ST>nstd51</ST>
+	<Tax_ID>9606</Tax_ID>
+	<Organism>human</Organism>
+	<dbVarStudyOrgList>
+	</dbVarStudyOrgList>
+	<PMID>0</PMID>
+	<Project_ID>0</Project_ID>
+	<Project_Name></Project_Name>
+	<Publication_Date>1/01/01 00:00</Publication_Date>
+	<Study_DisplayName>User_submitted_curated_variants</Study_DisplayName>
+	<Method_type_category>probe</Method_type_category>
+	<Method_type_weight>Non-BAC</Method_type_weight>
+	<dbVarAlleleTypeList>
+		<string>Deletion</string>
+	</dbVarAlleleTypeList>
+	<dbVarAlleleOriginList>
+	</dbVarAlleleOriginList>
+	<dbVarMethodList>
+		<string>Curated</string>
+	</dbVarMethodList>
+	<dbVarSampleList>
+	</dbVarSampleList>
+	<dbVarVariantTypeList>
+		<string>Deletion</string>
+	</dbVarVariantTypeList>
+	<Sample_count>0</Sample_count>
+	<Variant_count>0</Variant_count>
+	<Study_type></Study_type>
+	<Study_Description></Study_Description>
+	<Variant_size>4856</Variant_size>
+	<Support_variant_count>1</Support_variant_count>
+	<Subject_Phenotype_status>1</Subject_Phenotype_status>
+	<Validation_status>0</Validation_status>
+	<Validation_status_weight>0</Validation_status_weight>
+	<dbVarEvidenceList>
+		<string>nssv1415024</string>
+	</dbVarEvidenceList>
+	<dbVarPlacementList>
+		<dbVarPlacement>
+			<Chr>X</Chr>
+			<Chr_accession_version>NC_000023.9</Chr_accession_version>
+			<Contig_accession_version></Contig_accession_version>
+			<Chr_start>0</Chr_start>
+			<Chr_end>0</Chr_end>
+			<Chr_inner_start>73660919</Chr_inner_start>
+			<Chr_inner_end>73665772</Chr_inner_end>
+			<Chr_outer_start>73660918</Chr_outer_start>
+			<Chr_outer_end>73665773</Chr_outer_end>
+			<Assembly>NCBI36 (hg18)</Assembly>
+			<Assembly_accession>GCF_000001405.12</Assembly_accession>
+			<Assembly_tax_ID>9606</Assembly_tax_ID>
+			<Placement_type>Remapped</Placement_type>
+		</dbVarPlacement>
+		<dbVarPlacement>
+			<Chr>X</Chr>
+			<Chr_accession_version>NC_000023.10</Chr_accession_version>
+			<Contig_accession_version></Contig_accession_version>
+			<Chr_start>0</Chr_start>
+			<Chr_end>0</Chr_end>
+			<Chr_inner_start>73744194</Chr_inner_start>
+			<Chr_inner_end>73749047</Chr_inner_end>
+			<Chr_outer_start>73744193</Chr_outer_start>
+			<Chr_outer_end>73749048</Chr_outer_end>
+			<Assembly>GRCh37 (hg19)</Assembly>
+			<Assembly_accession>GCF_000001405.13</Assembly_accession>
+			<Assembly_tax_ID>9606</Assembly_tax_ID>
+			<Placement_type>Submitted genomic</Placement_type>
+		</dbVarPlacement>
+	</dbVarPlacementList>
+	<dbVarGeneList>
+		<dbVarGene>
+			<id>6567</id>
+			<name>SLC16A2</name>
+		</dbVarGene>
+	</dbVarGeneList>
+	<dbVarClinicalSignificanceList>
+		<string>Pathogenic</string>
+	</dbVarClinicalSignificanceList>
+	<dbVarSubmittedAssemblyList>
+	</dbVarSubmittedAssemblyList>
+	<dbVarRemappedAssemblyList>
+	</dbVarRemappedAssemblyList>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

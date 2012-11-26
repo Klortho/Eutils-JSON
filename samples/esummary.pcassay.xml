@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_pcassay.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="493206">
+	<AssayName>Assay for Inhibitors of Dual-Specificity Tyrosine-(Y)-Phosphorylation Regulated Kinase 1A (Kinase-Glo assay): round 2 SAR</AssayName>
+	<AssayDescription>NIH Molecular Libraries Probe Production Centers Network [MLPCN] NIH Chemical Genomics Center [NCGC] MLPCN Grant: 1R03MH084827-01 PI Name: Tom Misteli  NCGC Assay Overview:  The CMGC group of protein kinases which includes CDK-like kinases (Clk) and Dyks are essential kinases found in all eukaryotes. Clks have been implicated to play a role in the regulation of alternative splicing [1]; while Dyrks, in particular over expression of Dyrk1A, has been linked to diseases as Down syndrome (DS; OMIM 190685) [2] and Alzheimer disease (AD; OMIM 104300) [3].  Among the members of the CMGC group, the Clks and the Dyrks are very closely related [4] therefore to determine validity and selectivity of an active compound observed in the CLK4 qHTS screen (AID:1770), a bioluminescent counter-screen against Dyrk1A was developed. In addition, potent and selective compounds against Dyrk1A were identified to further assess the role of this enzyme in DS and AD.  Dyrk1A (Invitrogen, cat # PV3785) was assayed using ATP and DYRKtide (AnaSpec, cat# 62698) as substrates. Promega Kinase-Glo  (cat# V6712) technology was used to detect the residual ATP following kinetic reaction. The Kinase-Glo Plus contains Ultra-Glo [5] luciferase and D-luciferin which generates a bioluminescence signal from the remaining ATP. No enzyme and harmine (Sigma, cat # 286044-1G), a compound shown to inhibit Dyrks [6] were used as a positive control; while DMSO treatment was used as a negative control. </AssayDescription>
+	<AssaySourceID>CLK300</AssaySourceID>
+	<ReadoutCount>26</ReadoutCount>
+	<SourceNameList>
+		<string>NCGC</string>
+	</SourceNameList>
+	<CurrentSourceName>NCGC</CurrentSourceName>
+	<ActiveSidCount>122</ActiveSidCount>
+	<ActivePanelSidCnt>0</ActivePanelSidCnt>
+	<ActivityOutcomeMethod>confirmatory</ActivityOutcomeMethod>
+	<InactiveSidCount>7</InactiveSidCount>
+	<InconclusiveSidCount>24</InconclusiveSidCount>
+	<TotalSidCount>153</TotalSidCount>
+	<OnHold>No</OnHold>
+	<XRefDburlList>
+		<string>http://www.ncgc.nih.gov</string>
+	</XRefDburlList>
+	<XRefAsurlList>
+	</XRefAsurlList>
+	<ModifyDate>2011/02/11 00:00</ModifyDate>
+	<DepositDate>2011/02/11 00:00</DepositDate>
+	<HoldUntilDate>1/01/01 00:00</HoldUntilDate>
+	<AID>493206</AID>
+	<TotalCidCount>148</TotalCidCount>
+	<ActiveCidCount>117</ActiveCidCount>
+	<ActivePanelCidCnt>0</ActivePanelCidCnt>
+	<InactiveCidCount>7</InactiveCidCount>
+	<InconclusiveCidCount>24</InconclusiveCidCount>
+	<UnspecifiedCidCount>0</UnspecifiedCidCount>
+	<UnspecifiedSidCount>0</UnspecifiedSidCount>
+	<ProbeCidCount>0</ProbeCidCount>
+	<ProbeSidCount>0</ProbeSidCount>
+	<TargetCount>1</TargetCount>
+	<NumberofSidsWithActivityConcmicromolar>37</NumberofSidsWithActivityConcmicromolar>
+	<NumberofCidsWithActivityConcmicromolar>37</NumberofCidsWithActivityConcmicromolar>
+	<NumberofSidsWithActivityConcnanomolar>0</NumberofSidsWithActivityConcnanomolar>
+	<NumberofCidsWithActivityConcnanomolar>0</NumberofCidsWithActivityConcnanomolar>
+	<ProteinTargetList>
+		<ProteinTarget>
+			<Name>dual specificity tyrosine-phosphorylation-regulated kinase 1A isoform 1 [Homo sapiens]</Name>
+			<GI>18765758</GI>
+			<GeneSymbol>dyrk1a</GeneSymbol>
+			<CddId>214163</CddId>
+			<CddName>PKc_like</CddName>
+			<CddDescription>Protein Kinases</CddDescription>
+		</ProteinTarget>
+	</ProteinTargetList>
+	<BioSystemsList>
+	</BioSystemsList>
+	<TopCidList>
+		<TopCidType>
+			<CID>46916172</CID>
+			<Name>CHEMBL1704879</Name>
+			<PotencyName>Potency</PotencyName>
+			<PotencyValue>0.026</PotencyValue>
+			<ActivityOutcome>active</ActivityOutcome>
+		</TopCidType>
+	</TopCidList>
+	<TopFiveCidList>
+		<TopCidType>
+			<CID>46916172</CID>
+			<Name>CHEMBL1704879</Name>
+			<PotencyName>Potency</PotencyName>
+			<PotencyValue>0.026</PotencyValue>
+			<ActivityOutcome>active</ActivityOutcome>
+		</TopCidType>
+		<TopCidType>
+			<CID>44142055</CID>
+			<Name>MLS002276496</Name>
+			<PotencyName>Potency</PotencyName>
+			<PotencyValue>0.4627</PotencyValue>
+			<ActivityOutcome>active</ActivityOutcome>
+		</TopCidType>
+		<TopCidType>
+			<CID>44223958</CID>
+			<Name>NCGC00185969-01</Name>
+			<PotencyName>Potency</PotencyName>
+			<PotencyValue>0.1162</PotencyValue>
+			<ActivityOutcome>active</ActivityOutcome>
+		</TopCidType>
+		<TopCidType>
+			<CID>44223969</CID>
+			<Name>NCGC00185980-01</Name>
+			<PotencyName>Potency</PotencyName>
+			<PotencyValue>0.2067</PotencyValue>
+			<ActivityOutcome>active</ActivityOutcome>
+		</TopCidType>
+		<TopCidType>
+			<CID>49852570</CID>
+			<Name>NCGC00229607-01</Name>
+			<PotencyName>Potency</PotencyName>
+			<PotencyValue>0.1842</PotencyValue>
+			<ActivityOutcome>active</ActivityOutcome>
+		</TopCidType>
+	</TopFiveCidList>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

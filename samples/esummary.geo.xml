@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_geo.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="65685298">
+	<GDS>3717</GDS>
+	<ERANK>816lkZbQjK26</ERANK>
+	<EVALUE>946zyS-TgA05</EVALUE>
+	<title>NOTCH antagonist SAHM1 effect on T-ALL cell lines</title>
+	<summary>Analysis of HPB-ALL and KOPT-K1 cells treated with SAHM1, an antagonist of the NOTCH transcription factor. SAHM1 is an alpha-helical hydrocarbon stapled peptide derived from MAML1. Results provide insight into the specificity of the antagonistic effect of SAHM1 on gene expression driven by NOTCH.</summary>
+	<GPL>570</GPL>
+	<GSE>18198</GSE>
+	<taxon>Homo sapiens</taxon>
+	<taxid_L>9606</taxid_L>
+	<GSM_L>455115p1p1p4p1p1m5p1p1p4p1p1</GSM_L>
+	<gdsType>Expression profiling by array</gdsType>
+	<valType>transformed count</valType>
+	<idref>243048_at</idref>
+	<ORF></ORF>
+	<geneDesc>cat eye syndrome chromosome region, candidate 7 (non-protein coding)</geneDesc>
+	<geneName>CECR7</geneName>
+	<nucDesc>aa73g04.s1 NCI_CGAP_GCB1 Homo sapiens cDNA clone IMAGE:826614 3-, mRNA sequence</nucDesc>
+	<UGName></UGName>
+	<UGDesc></UGDesc>
+	<cloneID></cloneID>
+	<GBACC>AA521486</GBACC>
+	<PTACC></PTACC>
+	<SPOTID></SPOTID>
+	<gi>2262029</gi>
+	<SAGEmap></SAGEmap>
+	<alias>FLJ40726, SAHL1</alias>
+	<SUB_SAMP_L>455115p1p1p4p1p1;455118p1p1p4p1p1;455115p1p1p1p1p1;455121p1p1p1p1p1</SUB_SAMP_L>
+	<SUB_TYPES_L>6;6;9;9</SUB_TYPES_L>
+	<VMIN>0.862716</VMIN>
+	<VMAX>1.123969</VMAX>
+	<outliers></outliers>
+	<abscalls_chain></abscalls_chain>
+	<AFLAG>5625</AFLAG>
+	<AOUTL>0</AOUTL>
+	<RSTD>14</RSTD>
+	<RMEAN>52</RMEAN>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

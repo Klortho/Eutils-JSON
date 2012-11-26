@@ -1,0 +1,38 @@
+<!-- DocSum DTD for unigene database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+<!ENTITY	 % T_int		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	TITLE		%T_string;>
+<!ELEMENT	CHROMOSOME		%T_string;>
+<!ELEMENT	ORGANISM		%T_string;>
+<!ELEMENT	GENE		%T_string;>
+<!ELEMENT	CLUSTERID		%T_string;>
+<!ELEMENT	TAXID		%T_int;>
+<!ELEMENT	SEQ_COUNT		%T_int;>
+<!ELEMENT	EST_COUNT		%T_int;>
+<!ELEMENT	GENEID		%T_string;>
+<!ELEMENT	RECORDTYPE		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			TITLE
+			| CHROMOSOME
+			| ORGANISM
+			| GENE
+			| CLUSTERID
+			| TAXID
+			| SEQ_COUNT
+			| EST_COUNT
+			| GENEID
+			| RECORDTYPE
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

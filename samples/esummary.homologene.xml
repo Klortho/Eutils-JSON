@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_homologene.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="20659">
+	<Title>solute carrier family 7 (cationic amino acid transporter, y+ system), member 2</Title>
+	<Description>SLC7A2, Slc7a2, slc7a2, F23F1.6, C50D2.2, CAT4 - conserved in Eukaryota</Description>
+	<HomoloGeneDataList>
+		<HomoloGeneData>
+			<TaxName>Homo sapiens</TaxName>
+			<TaxId>9606</TaxId>
+			<Symbol>SLC7A2</Symbol>
+			<Title>solute carrier family 7 (cationic amino acid transporter, y+ system), member 2</Title>
+			<GeneID>6542</GeneID>
+		</HomoloGeneData>
+		<HomoloGeneData>
+			<TaxName>Pan troglodytes</TaxName>
+			<TaxId>9598</TaxId>
+			<Symbol>SLC7A2</Symbol>
+			<Title>solute carrier family 7 (cationic amino acid transporter, y+ system), member 2</Title>
+			<GeneID>740548</GeneID>
+		</HomoloGeneData>
+		<HomoloGeneData>
+			<TaxName>Macaca mulatta</TaxName>
+			<TaxId>9544</TaxId>
+			<Symbol>SLC7A2</Symbol>
+			<Title>solute carrier family 7 (cationic amino acid transporter, y+ system), member 2</Title>
+			<GeneID>710629</GeneID>
+		</HomoloGeneData>
+		<HomoloGeneData>
+			<TaxName>Canis lupus familiaris</TaxName>
+			<TaxId>9615</TaxId>
+			<Symbol>SLC7A2</Symbol>
+			<Title>solute carrier family 7 (cationic amino acid transporter, y+ system), member 2</Title>
+			<GeneID>475614</GeneID>
+		</HomoloGeneData>
+		<HomoloGeneData>
+			<TaxName>Bos taurus</TaxName>
+			<TaxId>9913</TaxId>
+			<Symbol>SLC7A2</Symbol>
+			<Title>solute carrier family 7 (cationic amino acid transporter, y+ system), member 2</Title>
+			<GeneID>538708</GeneID>
+		</HomoloGeneData>
+		<HomoloGeneData>
+			<TaxName>Mus musculus</TaxName>
+			<TaxId>10090</TaxId>
+			<Symbol>Slc7a2</Symbol>
+			<Title>solute carrier family 7 (cationic amino acid transporter, y+ system), member 2</Title>
+			<GeneID>11988</GeneID>
+		</HomoloGeneData>
+		<HomoloGeneData>
+			<TaxName>Rattus norvegicus</TaxName>
+			<TaxId>10116</TaxId>
+			<Symbol>Slc7a2</Symbol>
+			<Title>solute carrier family 7 (cationic amino acid transporter, y+ system), member 2</Title>
+			<GeneID>64554</GeneID>
+		</HomoloGeneData>
+		<HomoloGeneData>
+			<TaxName>Gallus gallus</TaxName>
+			<TaxId>9031</TaxId>
+			<Symbol>SLC7A2</Symbol>
+			<Title>solute carrier family 7 (cationic amino acid transporter, y+ system), member 2</Title>
+			<GeneID>422730</GeneID>
+		</HomoloGeneData>
+		<HomoloGeneData>
+			<TaxName>Danio rerio</TaxName>
+			<TaxId>7955</TaxId>
+			<Symbol>slc7a2</Symbol>
+			<Title>solute carrier family 7 (cationic amino acid transporter, y+ system), member 2</Title>
+			<GeneID>494041</GeneID>
+		</HomoloGeneData>
+		<HomoloGeneData>
+			<TaxName>Drosophila melanogaster</TaxName>
+			<TaxId>7227</TaxId>
+			<Symbol>CG5535</Symbol>
+			<Title>CG5535</Title>
+			<GeneID>39990</GeneID>
+		</HomoloGeneData>
+		<HomoloGeneData>
+			<TaxName>Caenorhabditis elegans</TaxName>
+			<TaxId>6239</TaxId>
+			<Symbol>F23F1.6</Symbol>
+			<Title>hypothetical protein</Title>
+			<GeneID>184903</GeneID>
+		</HomoloGeneData>
+		<HomoloGeneData>
+			<TaxName>Caenorhabditis elegans</TaxName>
+			<TaxId>6239</TaxId>
+			<Symbol>B0454.6</Symbol>
+			<Title>hypothetical protein</Title>
+			<GeneID>173650</GeneID>
+		</HomoloGeneData>
+		<HomoloGeneData>
+			<TaxName>Caenorhabditis elegans</TaxName>
+			<TaxId>6239</TaxId>
+			<Symbol>C50D2.2</Symbol>
+			<Title>hypothetical protein</Title>
+			<GeneID>183650</GeneID>
+		</HomoloGeneData>
+		<HomoloGeneData>
+			<TaxName>Arabidopsis thaliana</TaxName>
+			<TaxId>3702</TaxId>
+			<Symbol>CAT4</Symbol>
+			<Title>cationic amino acid transporter 4</Title>
+			<GeneID>821176</GeneID>
+		</HomoloGeneData>
+	</HomoloGeneDataList>
+	<Caption>Gene conserved in Eukaryota</Caption>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

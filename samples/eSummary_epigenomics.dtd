@@ -1,0 +1,43 @@
+<!-- DocSum DTD for epigenomics database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+<!ENTITY	 % T_int		"(#PCDATA)">
+<!ENTITY	 % T_date		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	Title		%T_string;>
+<!ELEMENT	Summary		%T_string;>
+<!ELEMENT	DocType		%T_string;>
+<!ELEMENT	TaxId		%T_int;>
+<!ELEMENT	GeneId		%T_int;>
+<!ELEMENT	UpdateDate		%T_date;>
+<!ELEMENT	CreateDate		%T_date;>
+<!ELEMENT	Accession		%T_string;>
+<!ELEMENT	DocStatus		%T_int;>
+<!ELEMENT	ReplacedById		%T_int;>
+<!ELEMENT	RetireDate		%T_date;>
+<!ELEMENT	RetireComment		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			Title
+			| Summary
+			| DocType
+			| TaxId
+			| GeneId
+			| UpdateDate
+			| CreateDate
+			| Accession
+			| DocStatus
+			| ReplacedById
+			| RetireDate
+			| RetireComment
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_nlmcatalog.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="101573253">
+	<Host></Host>
+	<NLMUniqueID>101573253</NLMUniqueID>
+	<DateRevised>2011-12-30</DateRevised>
+	<AuthorList>
+		<AuthorInfo>
+			<CollectiveName>Australian Institute of Health and Welfare.</CollectiveName>
+			<LastName></LastName>
+			<ForeName></ForeName>
+			<NameQualifier></NameQualifier>
+			<OtherInformation></OtherInformation>
+			<TitleAssociatedWithName></TitleAssociatedWithName>
+			<AIID>_%7c_%7c_%7c_%7c_%7c_%7cAustralian%20Institute%20of%20Health%20and%20Welfare%7c_%7c_%7c_%7c_%7c_:1015906:|_%7c_%7c_%7c_%7c_%7c_%7cAIHW%7c_%7c_%7c_%7c_%7c_;_%7c_%7c_%7c_%7c_%7c_%7cAustralia%2e%20Australian%20Institute%20of%20Health%20and%20Welfare%7c_%7c_%7c_%7c_%7c_;_%7c_%7c_%7c_%7c_%7c_%7cAustralian%20Institute%20of%20Health%20%26amp%3b%20Welfare%7c_%7c_%7c_%7c_%7c_|_%7c_%7c_%7c_%7c_%7c_%7cAustralian%20Institute%20of%20Health%7c_%7c_%7c_%7c_%7c_:888721|888721</AIID>
+		</AuthorInfo>
+	</AuthorList>
+	<PublicationInfoList>
+		<PublicationInfo>
+			<Imprint>Canberra, ACT : Australian Institute of health and Welfare, c2011.</Imprint>
+			<Place>Canberra, ACT :</Place>
+			<Publisher>Australian Institute of health and Welfare,</Publisher>
+			<DateIssued>c2011.</DateIssued>
+			<Edition></Edition>
+			<DatesOfSerialPublication></DatesOfSerialPublication>
+		</PublicationInfo>
+	</PublicationInfoList>
+	<ResourceInfoList>
+		<ResourceInfo>
+			<TypeOfResource>Electronic Resource</TypeOfResource>
+			<ResourceUnit>Remote electronic resource, Text</ResourceUnit>
+		</ResourceInfo>
+	</ResourceInfoList>
+	<TitleMainList>
+		<TitleMain>
+			<SortTitle>Allergic rhinitis hay fever in Australia</SortTitle>
+			<Title>Allergic rhinitis (&apos;hay fever&apos;) in Australia</Title>
+			<AIID></AIID>
+		</TitleMain>
+	</TitleMainList>
+	<TitleMainSort>Allergic rhinitis hay fever in Australia</TitleMainSort>
+	<TitleOtherList>
+	</TitleOtherList>
+	<ISSNList>
+	</ISSNList>
+	<ISBN>9781742492285</ISBN>
+	<Country></Country>
+	<CurrentIndexingStatus></CurrentIndexingStatus>
+	<MedlineTA></MedlineTA>
+	<ISOAbbreviation></ISOAbbreviation>
+	<StartYear>2011</StartYear>
+	<JrId></JrId>
+	<EndYear>0000</EndYear>
+	<Language>eng</Language>
+	<BroadHeading>
+	</BroadHeading>
+	<ContinuationNotes></ContinuationNotes>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

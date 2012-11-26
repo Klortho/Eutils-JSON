@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_omia.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="2615">
+	<Phenotype>Epidermolysis bullosa, dystrophic</Phenotype>
+	<Phenotype_Summary>Blisters on the outer layer of skin.</Phenotype_Summary>
+	<OMIA_ID>341</OMIA_ID>
+	<MP_List>
+	</MP_List>
+	<Species_Phenotype_Name></Species_Phenotype_Name>
+	<Species_Phenotype_Summary></Species_Phenotype_Summary>
+	<Across_Species_Synonym_List>
+	</Across_Species_Synonym_List>
+	<Taxonomy_ID>9685</Taxonomy_ID>
+	<Sci_Name>Felis catus</Sci_Name>
+	<Common_Name>domestic cat</Common_Name>
+	<Breed>
+	</Breed>
+	<Clinical_Feature></Clinical_Feature>
+	<Genetic_Test></Genetic_Test>
+	<Molecular_Genetics></Molecular_Genetics>
+	<Pathology></Pathology>
+	<Prevalence></Prevalence>
+	<Gene_List>
+	</Gene_List>
+	<Computed_Gene_List>
+	</Computed_Gene_List>
+	<OMIM_ID>
+		<int>131705</int>
+		<int>131750</int>
+		<int>131950</int>
+		<int>132000</int>
+		<int>226500</int>
+		<int>226600</int>
+	</OMIM_ID>
+	<Inheritance></Inheritance>
+	<Inherit_Text></Inherit_Text>
+	<Reference_List>
+	</Reference_List>
+	<PubMed_List>
+		<int>10568446</int>
+	</PubMed_List>
+	<Curation_State></Curation_State>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

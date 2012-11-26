@@ -1,0 +1,153 @@
+<!-- DocSum DTD for pcassay database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+<!ENTITY	 % T_int		"(#PCDATA)">
+
+<!-- Definition of List type: T_StringList -->
+<!ELEMENT	string	%T_string;>
+<!ENTITY	 % T_StringList	"(string)*">
+<!ENTITY	 % T_date		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_ProteinTarget -->
+<!ELEMENT	Name		%T_string;>
+<!ELEMENT	GI		%T_int;>
+<!ELEMENT	GeneSymbol		%T_string;>
+<!ELEMENT	CddId		%T_int;>
+<!ELEMENT	CddName		%T_string;>
+<!ELEMENT	CddDescription		%T_string;>
+
+<!-- Definition of Structure type: T_ProteinTarget -->
+<!ENTITY	 % T_ProteinTarget	"(
+ 			Name
+			| GI
+			| GeneSymbol
+			| CddId
+			| CddName
+			| CddDescription
+			)*">
+
+<!-- Definition of List type: T_ProteinTargetListType -->
+<!ELEMENT	ProteinTarget	%T_ProteinTarget;>
+<!ENTITY	 % T_ProteinTargetListType	"(ProteinTarget)*">
+
+<!-- Members definition of Structure type: T_BioSystems -->
+<!ELEMENT	BSID		%T_int;>
+
+<!-- Definition of Structure type: T_BioSystems -->
+<!ENTITY	 % T_BioSystems	"(
+ 			BSID
+			)*">
+
+<!-- Definition of List type: T_BioSystemsListType -->
+<!ELEMENT	BioSystems	%T_BioSystems;>
+<!ENTITY	 % T_BioSystemsListType	"(BioSystems)*">
+
+<!-- Members definition of Structure type: T_TopCidType -->
+<!ELEMENT	CID		%T_int;>
+<!-- Already defined ...
+<!ELEMENT	Name		%T_string;>
+ ... Already defined -->
+<!ELEMENT	PotencyName		%T_string;>
+<!ELEMENT	PotencyValue		%T_string;>
+<!ELEMENT	ActivityOutcome		%T_string;>
+
+<!-- Definition of Structure type: T_TopCidType -->
+<!ENTITY	 % T_TopCidType	"(
+ 			CID
+			| Name
+			| PotencyName
+			| PotencyValue
+			| ActivityOutcome
+			)*">
+
+<!-- Definition of List type: T_TopFiveCidListType -->
+<!ELEMENT	TopCidType	%T_TopCidType;>
+<!ENTITY	 % T_TopFiveCidListType	"(TopCidType)*">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	AssayName		%T_string;>
+<!ELEMENT	AssayDescription		%T_string;>
+<!ELEMENT	AssaySourceID		%T_string;>
+<!ELEMENT	ReadoutCount		%T_int;>
+<!ELEMENT	SourceNameList		%T_StringList;>
+<!ELEMENT	CurrentSourceName		%T_string;>
+<!ELEMENT	ActiveSidCount		%T_int;>
+<!ELEMENT	ActivePanelSidCnt		%T_int;>
+<!ELEMENT	ActivityOutcomeMethod		%T_string;>
+<!ELEMENT	InactiveSidCount		%T_int;>
+<!ELEMENT	InconclusiveSidCount		%T_int;>
+<!ELEMENT	TotalSidCount		%T_int;>
+<!ELEMENT	OnHold		%T_string;>
+<!ELEMENT	XRefDburlList		%T_StringList;>
+<!ELEMENT	XRefAsurlList		%T_StringList;>
+<!ELEMENT	ModifyDate		%T_date;>
+<!ELEMENT	DepositDate		%T_date;>
+<!ELEMENT	HoldUntilDate		%T_date;>
+<!ELEMENT	AID		%T_int;>
+<!ELEMENT	TotalCidCount		%T_int;>
+<!ELEMENT	ActiveCidCount		%T_int;>
+<!ELEMENT	ActivePanelCidCnt		%T_int;>
+<!ELEMENT	InactiveCidCount		%T_int;>
+<!ELEMENT	InconclusiveCidCount		%T_int;>
+<!ELEMENT	UnspecifiedCidCount		%T_int;>
+<!ELEMENT	UnspecifiedSidCount		%T_int;>
+<!ELEMENT	ProbeCidCount		%T_int;>
+<!ELEMENT	ProbeSidCount		%T_int;>
+<!ELEMENT	TargetCount		%T_int;>
+<!ELEMENT	NumberofSidsWithActivityConcmicromolar		%T_int;>
+<!ELEMENT	NumberofCidsWithActivityConcmicromolar		%T_int;>
+<!ELEMENT	NumberofSidsWithActivityConcnanomolar		%T_int;>
+<!ELEMENT	NumberofCidsWithActivityConcnanomolar		%T_int;>
+<!ELEMENT	ProteinTargetList		%T_ProteinTargetListType;>
+<!ELEMENT	BioSystemsList		%T_BioSystemsListType;>
+<!ELEMENT	TopCidList		%T_TopFiveCidListType;>
+<!ELEMENT	TopFiveCidList		%T_TopFiveCidListType;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			AssayName
+			| AssayDescription
+			| AssaySourceID
+			| ReadoutCount
+			| SourceNameList
+			| CurrentSourceName
+			| ActiveSidCount
+			| ActivePanelSidCnt
+			| ActivityOutcomeMethod
+			| InactiveSidCount
+			| InconclusiveSidCount
+			| TotalSidCount
+			| OnHold
+			| XRefDburlList
+			| XRefAsurlList
+			| ModifyDate
+			| DepositDate
+			| HoldUntilDate
+			| AID
+			| TotalCidCount
+			| ActiveCidCount
+			| ActivePanelCidCnt
+			| InactiveCidCount
+			| InconclusiveCidCount
+			| UnspecifiedCidCount
+			| UnspecifiedSidCount
+			| ProbeCidCount
+			| ProbeSidCount
+			| TargetCount
+			| NumberofSidsWithActivityConcmicromolar
+			| NumberofCidsWithActivityConcmicromolar
+			| NumberofSidsWithActivityConcnanomolar
+			| NumberofCidsWithActivityConcnanomolar
+			| ProteinTargetList
+			| BioSystemsList
+			| TopCidList
+			| TopFiveCidList
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

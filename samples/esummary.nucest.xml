@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_nucest.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="409212211">
+	<Caption>JZ120399</Caption>
+	<Title>aleporoscat Alepocephalus rostratus liver cDNA library Alepocephalus rostratus cDNA similar to catalase (CAT), mRNA sequence</Title>
+	<Extra>gi|409212211|gb|JZ120399.1|</Extra>
+	<Gi>409212211</Gi>
+	<CreateDate>2012/10/19</CreateDate>
+	<UpdateDate>2012/10/20</UpdateDate>
+	<Flags>0</Flags>
+	<TaxId>1245468</TaxId>
+	<Slen>594</Slen>
+	
+	<Biomol>mRNA</Biomol>
+	<MolType>rna</MolType>
+	<Topology>linear</Topology>
+	<SourceDb/>
+	<SegSetSize>0</SegSetSize>
+	<ProjectId>0</ProjectId>
+	<Genome/>
+	<SubType/>
+	<SubName/>
+	<AssemblyGi>0</AssemblyGi>
+	<AssemblyAcc/>
+	<Tech/>
+	<Completeness/>
+	<GeneticCode/>
+	<Strand/>
+	<Organism>Alepocephalus rostratus</Organism>
+<Statistics><Stat type="Length" count="594"/><Stat type="Length" subtype="literal" count="594"/><Stat type="blob_size" count="2048"/><Stat type="pub" count="1"/></Statistics><Properties na="1" est="4" qual="32">37</Properties><OSLT indexed="yes">JZ120399.1</OSLT><AccessionVersion>JZ120399.1</AccessionVersion></DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

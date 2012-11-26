@@ -1,0 +1,65 @@
+<!-- $Id: eSummary_gencoll.dtd 363818 2012-05-18 20:58:30Z yasmax $ -->
+<!-- DocSum DTD for gencoll database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+<!ENTITY	 % T_int		"(#PCDATA)">
+
+<!-- Definition of List type: T_IntList -->
+<!ELEMENT	int	%T_int;>
+<!ENTITY	 % T_IntList	"(int)*">
+<!ENTITY	 % T_date		"(#PCDATA)">
+<!ENTITY	 % T_xml		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	AssemblyAccession		%T_string;>
+<!ELEMENT	AssemblyName		%T_string;>
+<!ELEMENT	UCSCName		%T_string;>
+<!ELEMENT	EnsemblName		%T_string;>
+<!ELEMENT	AssemblyDescription		%T_string;>
+<!ELEMENT	Taxid		%T_int;>
+<!ELEMENT	Organism		%T_string;>
+<!ELEMENT	AssemblyClass		%T_string;>
+<!ELEMENT	WGS		%T_string;>
+<!ELEMENT	Category		%T_string;>
+<!ELEMENT	ReleaseType		%T_string;>
+<!ELEMENT	ReleaseLevel		%T_string;>
+<!ELEMENT	RS_Projects		%T_IntList;>
+<!ELEMENT	GB_Projects		%T_IntList;>
+<!ELEMENT	Coverage		%T_string;>
+<!ELEMENT	PartialGenomeRepresentation		%T_string;>
+<!ELEMENT	NCBIReleaseDate		%T_date;>
+<!ELEMENT	Primary		%T_string;>
+<!ELEMENT	Properties		%T_string;>
+<!ELEMENT	Meta		%T_xml;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			AssemblyAccession
+			| AssemblyName
+			| UCSCName
+			| EnsemblName
+			| AssemblyDescription
+			| Taxid
+			| Organism
+			| AssemblyClass
+			| WGS
+			| Category
+			| ReleaseType
+			| ReleaseLevel
+			| RS_Projects
+			| GB_Projects
+			| Coverage
+			| PartialGenomeRepresentation
+			| NCBIReleaseDate
+			| Primary
+			| Properties
+			| Meta
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

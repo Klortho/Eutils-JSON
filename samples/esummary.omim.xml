@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_omim.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="609708">
+	<Oid>+609708</Oid>
+	<Title>LIPOPROTEIN LIPASE; LPL</Title>
+	<AltTitles>HIGH DENSITY LIPOPROTEIN CHOLESTEROL LEVEL QUANTITATIVE TRAIT LOCUS 11, INCLUDED; HDLCQ11, INCLUDED</AltTitles>
+	<Locus>8p22</Locus>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_cdd.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="201140">
+	<Accession>pfam00302</Accession>
+	<Title>CAT</Title>
+	<Subtitle>Chloramphenicol acetyltransferase</Subtitle>
+	<Abstract></Abstract>
+	<Database>Pfam</Database>
+	<Organism>Bacteria</Organism>
+	<PubDate>2011/12/21 00:00</PubDate>
+	<EntrezDate>2012/10/30 00:00</EntrezDate>
+	<PssmLength>206</PssmLength>
+	<StructureRepresentative>1</StructureRepresentative>
+	<NumberSites>0</NumberSites>
+	<SiteDescriptions>
+	</SiteDescriptions>
+	<Status>0</Status>
+	<LivePssmID>0</LivePssmID>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

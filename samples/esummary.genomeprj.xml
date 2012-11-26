@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_genomeprj.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="54101">
+	<Organism_Name>Bacillus anthracis str. A2012</Organism_Name>
+	<Organism_Kingdom>Bacteria</Organism_Kingdom>
+	<Organism_Group>Firmicutes</Organism_Group>
+	<TaxId>191218</TaxId>
+	<Center>NCBI</Center>
+	<Sequencing_Status></Sequencing_Status>
+	<Project_Type>RefSeq</Project_Type>
+	<Genome_Size>10</Genome_Size>
+	<Number_of_Chromosomes>1</Number_of_Chromosomes>
+	<Trace_Species_Code>cmd=retrieve&amp;val=species_code%3D%22BACILLUS ANTHRACIS STR. A2012%22</Trace_Species_Code>
+	<Trace_Center_Name></Trace_Center_Name>
+	<Trace_Type_Code></Trace_Type_Code>
+	<Defline>Endospore-forming bacteria that causes anthrax</Defline>
+	<Number_of_Mitochondrion></Number_of_Mitochondrion>
+	<Number_of_Plastid></Number_of_Plastid>
+	<Number_of_Plasmid>2</Number_of_Plasmid>
+	<Create_Date>2010/10/15 00:00</Create_Date>
+	<Release_Date>2002/05/09 00:00</Release_Date>
+	<Options></Options>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_proteinclusters.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="2516486">
+	<ACCN>PRK14674</ACCN>
+	<Definition>hypothetical protein</Definition>
+	<Total_Prots>9</Total_Prots>
+	<Total_genera>1</Total_genera>
+	<Total_dups>0</Total_dups>
+	<Pmids></Pmids>
+	<Gene>None</Gene>
+	<GeneSynonym>None</GeneSynonym>
+	<Comment></Comment>
+	<COG>COG0792L</COG>
+	<EC></EC>
+	<HAMAP>MF_00048</HAMAP>
+	<KO>K07460</KO>
+	<CreateDate>2009/08/27 00:00</CreateDate>
+	<ModDate>2012/04/13 00:00</ModDate>
+	<Domains>1</Domains>
+	<CommonTaxonomy>Acinetobacter</CommonTaxonomy>
+	<Paralogs>0</Paralogs>
+	<COGgroup>Replication, recombination and repair</COGgroup>
+	<AverageLength>133</AverageLength>
+	<Total_Publications>5</Total_Publications>
+	<Source>genomic</Source>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

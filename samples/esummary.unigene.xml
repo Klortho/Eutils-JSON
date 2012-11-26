@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_unigene.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="1190943">
+	<TITLE>Catalase</TITLE>
+	<CHROMOSOME>*</CHROMOSOME>
+	<ORGANISM>Canis lupus familiaris</ORGANISM>
+	<GENE>CAT</GENE>
+	<CLUSTERID>Cfa.188</CLUSTERID>
+	<TAXID>9615</TAXID>
+	<SEQ_COUNT>127</SEQ_COUNT>
+	<EST_COUNT>124</EST_COUNT>
+	<GENEID>403474</GENEID>
+	<RECORDTYPE>protein-coding</RECORDTYPE>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

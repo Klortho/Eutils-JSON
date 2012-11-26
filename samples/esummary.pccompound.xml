@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_pccompound.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="10322165">
+	<CID>10322165</CID>
+	<SourceNameList>
+	</SourceNameList>
+	<SourceIDList>
+	</SourceIDList>
+	<SourceCategoryList>
+		<string>Patents</string>
+		<string>Substance Vendors</string>
+		<string>Toxicology</string>
+		<string>Biological Properties</string>
+		<string>Physical Properties</string>
+		<string>Chemical Reactions</string>
+		<string>Theoretical Properties</string>
+		<string>Journal Publishers</string>
+	</SourceCategoryList>
+	<CreateDate>2006/10/25 00:00</CreateDate>
+	<SynonymList>
+		<string>gm 1489</string>
+		<string>NSC727678</string>
+		<string>NSC-727678</string>
+		<string>170905-75-6</string>
+		<string>GM 1489 CalBioChem Cat. No. 364200</string>
+		<string>N-[(2R)-2-(Carboxymethyl)-4-methylpentanoyl]-L-tryptophan-(S)-methyl-benzylamide</string>
+	</SynonymList>
+	<MeSHHeadingList>
+		<string>GM 1489</string>
+	</MeSHHeadingList>
+	<MeSHTermList>
+		<string>GM 1489</string>
+		<string>GM-1489</string>
+		<string>N-(2-carboxymethyl-4-methylpentanoyl)tryptophan 1-phenethylamide</string>
+	</MeSHTermList>
+	<PharmActionList>
+	</PharmActionList>
+	<CommentList>
+		<string>&lt;A HREF=&quot;http://dcv.uhnres.utoronto.ca/SCRIPDB/results/?patentid=US20100004189A1-20100107-C00002_1&quot;&gt;US20100004189A1-20100107-C00002_1&lt;/A&gt;</string>
+		<string>&lt;A HREF=&quot;http://dcv.uhnres.utoronto.ca/SCRIPDB/results/?patentid=US20100008997A1-20100114-C00002_1&quot;&gt;US20100008997A1-20100114-C00002_1&lt;/A&gt;</string>
+		<string>&lt;A HREF=&quot;http://dcv.uhnres.utoronto.ca/SCRIPDB/results/?patentid=US20100015235A1-20100121-C00002_1&quot;&gt;US20100015235A1-20100121-C00002_1&lt;/A&gt;</string>
+		<string>&lt;A HREF=&quot;http://dcv.uhnres.utoronto.ca/SCRIPDB/results/?patentid=US20100098659A1-20100422-C00002_1&quot;&gt;US20100098659A1-20100422-C00002_1&lt;/A&gt;</string>
+		<string>Deposition record created from database Chemistry on host DrZZLaptop on Oct 30, 2011</string>
+		<string>DTP/NCI DIS cdk 1.4.4.  Release-October 2011.</string>
+		<string>Structure Evaluation:Consistent with Molecular Formula.</string>
+	</CommentList>
+	<IUPACName>(3R)-3-[[(2S)-3-(1H-indol-3-yl)-1-oxo-1-[[(1S)-1-phenylethyl]amino]propan-2-yl]carbamoyl]-5-methylhexanoic acid</IUPACName>
+	<CanonicalSmiles>CC(C)CC(CC(=O)O)C(=O)NC(CC1=CNC2=CC=CC=C21)C(=O)NC(C)C3=CC=CC=C3</CanonicalSmiles>
+	<IsomericSmiles>C[C@@H](C1=CC=CC=C1)NC(=O)[C@H](CC2=CNC3=CC=CC=C32)NC(=O)[C@H](CC(C)C)CC(=O)O</IsomericSmiles>
+	<RotatableBondCount>11</RotatableBondCount>
+	<MolecularFormula>C27H33N3O4</MolecularFormula>
+	<MolecularWeight>    463.568620</MolecularWeight>
+	<TotalFormalCharge>0</TotalFormalCharge>
+	<XLogP>3.3</XLogP>
+	<HydrogenBondDonorCount>4</HydrogenBondDonorCount>
+	<HydrogenBondAcceptorCount>4</HydrogenBondAcceptorCount>
+	<Complexity>    691.000000</Complexity>
+	<HeavyAtomCount>34</HeavyAtomCount>
+	<AtomChiralCount>3</AtomChiralCount>
+	<AtomChiralDefCount>3</AtomChiralDefCount>
+	<AtomChiralUndefCount>0</AtomChiralUndefCount>
+	<BondChiralCount>0</BondChiralCount>
+	<BondChiralDefCount>0</BondChiralDefCount>
+	<BondChiralUndefCount>0</BondChiralUndefCount>
+	<IsotopeAtomCount>0</IsotopeAtomCount>
+	<CovalentUnitCount>1</CovalentUnitCount>
+	<TautomerCount>4</TautomerCount>
+	<SubstanceIDList>
+	</SubstanceIDList>
+	<TPSA>111</TPSA>
+	<AssaySourceNameList>
+	</AssaySourceNameList>
+	<MinAC></MinAC>
+	<MaxAC></MaxAC>
+	<MinTC></MinTC>
+	<MaxTC></MaxTC>
+	<ActiveAidCount>0</ActiveAidCount>
+	<InactiveAidCount>0</InactiveAidCount>
+	<TotalAidCount>0</TotalAidCount>
+	<InChIKey>BLPWNGOQQLJQOL-NRYAXDJKSA-N</InChIKey>
+	<ProbeAidCount>0</ProbeAidCount>
+	<InChI>InChI=1S/C27H33N3O4/c1-17(2)13-20(15-25(31)32)26(33)30-24(14-21-16-28-23-12-8-7-11-22(21)23)27(34)29-18(3)19-9-5-4-6-10-19/h4-12,16-18,20,24,28H,13-15H2,1-3H3,(H,29,34)(H,30,33)(H,31,32)/t18-,20+,24-/m0/s1</InChI>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

@@ -46,6 +46,8 @@ You can just use xsltproc to try these out.  For example,
 
 ### [ESummary version 2.0](http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.ESummary)
 
+The ESummary output from each database has its own DTD.
+
 + ✓ **ESummary PubMed**
 
     http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=5683731,22144687&retmode=xml&version=2.0

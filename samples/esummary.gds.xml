@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_gds.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="200040726">
+	<Accession>GSE40726</Accession>
+	<GDS></GDS>
+	<title>Transcriptional profiling of IRF4 -/- vs IRF4 +/- T-cells under Th17 polarizing conditions</title>
+	<summary>Transcriptional profiling of T-cells isolated from spleen of IRF4 -/- mice and cultured under Th17 polarizing conditions for 42 hrs compared to cells similarly isolated and cultured from spleen of IRF4 +/- mice. The aim of the study was to identify global misexpression of genes in IRF4 -/- cells and hence identify key pathways regulated by IRF4 during Th17 differentiation.</summary>
+	<GPL>7202</GPL>
+	<GSE>40726</GSE>
+	<taxon>Mus musculus</taxon>
+	<entryType>GSE</entryType>
+	<gdsType>Expression profiling by array</gdsType>
+	<ptechType></ptechType>
+	<valType></valType>
+	<SSInfo></SSInfo>
+	<subsetInfo></subsetInfo>
+	<PDAT>2012/09/13</PDAT>
+	<suppFile>TXT</suppFile>
+	<Samples>
+		<Sample>
+			<Accession>GSM999794</Accession>
+			<Title>IRF4-mut_Th17_cells_42hr_rep1</Title>
+		</Sample>
+		<Sample>
+			<Accession>GSM999797</Accession>
+			<Title>IRF4-control_Th17_cells_42hr_rep1</Title>
+		</Sample>
+		<Sample>
+			<Accession>GSM999796</Accession>
+			<Title>IRF4-mut_Th17_cells_42hr_rep3</Title>
+		</Sample>
+		<Sample>
+			<Accession>GSM999799</Accession>
+			<Title>IRF4-control_Th17_cells_42hr_rep3</Title>
+		</Sample>
+		<Sample>
+			<Accession>GSM999795</Accession>
+			<Title>IRF4-mut_Th17_cells_42hr_rep2</Title>
+		</Sample>
+		<Sample>
+			<Accession>GSM999798</Accession>
+			<Title>IRF4-control_Th17_cells_42hr_rep2</Title>
+		</Sample>
+	</Samples>
+	<Relations>
+	</Relations>
+	<ExtRelations>
+	</ExtRelations>
+	<n_samples>6</n_samples>
+	<SeriesTitle></SeriesTitle>
+	<PlatformTitle></PlatformTitle>
+	<PlatformTaxa></PlatformTaxa>
+	<SamplesTaxa></SamplesTaxa>
+	<PubMedIds>
+		<int>22983707</int>
+	</PubMedIds>
+	<Projects>
+	</Projects>
+	<FTPLink>ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE40nnn/GSE40726/</FTPLink>
+	<GEO2R>yes</GEO2R>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

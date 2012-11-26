@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_bioproject.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="171168">
+	<TaxId>10090</TaxId>
+	<Project_Id>171168</Project_Id>
+	<Project_Acc>PRJNA171168</Project_Acc>
+	<Project_Type>Primary submission</Project_Type>
+	<Project_Data_Type>Transcriptome or Gene expression</Project_Data_Type>
+	<Project_Type_Order>0</Project_Type_Order>
+	<Project_Subtype></Project_Subtype>
+	<Project_Target_Scope>Multiisolate</Project_Target_Scope>
+	<Project_Target_Material>Transcriptome</Project_Target_Material>
+	<Project_Target_Capture>Whole</Project_Target_Capture>
+	<Project_MethodType>Array</Project_MethodType>
+	<Project_Method></Project_Method>
+	<Project_Objectives_List>
+		<Project_Objectives_Struct>
+			<Project_ObjectivesType>Expression</Project_ObjectivesType>
+			<Project_Objectives></Project_Objectives>
+		</Project_Objectives_Struct>
+	</Project_Objectives_List>
+	<Registration_Date>2012/07/23 00:00</Registration_Date>
+	<Project_Name>Euglycemic agent-mediated hypothalamic transcriptomic manipulation in the N171-82Q model of Huntington&apos;s disease is related to their physiological efficacy</Project_Name>
+	<Project_Title>Euglycemic agent-mediated hypothalamic transcriptomic manipulation in the N171-82Q model of Huntington&apos;s disease is related to their physiological efficacy</Project_Title>
+	<Project_Description>Our aim was to find an effective treatment for the dysfunction in energy regulation and hypothalamic integrity occurring in many Huntington’s disease (HD) patients and mouse models. HD is a neurodegenerative disease caused by an expanded CAG repeat and is characterized by mutant huntingtin aggregates, cell death, progressive motor impairment, and cognitive alterations. Changes in neuroendocrine function, body weight, energy metabolism, euglycemia, appetite function, sleep, and gut function can also occur. It is likely that the locus of these alterations is the hypothalamus. Overall design: Male B6C3-Tg(HD82Gln)81Dbo/J (N171-82Q) mice and age-matched wild-type (WT) mice were used. Transgenic mice were identified by PCR analysis of tail DNA. N171-82Q mice express 82 polyglutamine repeats and display multiple Huntington’s disease-like symptoms. Either Ex-4 (n=10, 300 µL of 0.1 µmol/L solution, Bachem, Torrance, CA), the GLP-1-transferrin hybrid molecule (n=10, GLP-1Tf, 1mg/kg), insulin (n=10, 5Units, Lantus) or a saline vehicle treatment (n=10, phosphate buffered saline, PBS; Sigma, St. Louis, MO) was administered by a once-daily subcutaneous injection. Injections were started when animals were pre-symptomatic (2 months of age) and continued for 5 weeks. 3 Mice from each treatment qroup were used for the microarray analysis. RNA was extracted from frozen hypothalamus tissue using 1.0mm glass beads (BioSpec Products, Inc.) in a Precellys 24 Tissue Homogenizer (Bertin Technologies) and Qiagen RNeasy Mini Kits according to manufacturer&apos;s specifications. Quality and quantity of the total RNA was checked with the Agilent 2100 bioanalyzer using RNA 6000 Nano chips. The standard Illumina protocol using Illumina TotalPrep RNA Amplification Kit (Ambion; Austin, TX, cat # IL1791) was used to biotin label the aRNA generated and then hybridized to Illumina&apos;s Sentrix MouseRef-8 v2 Expression BeadChips (Illumina, San Diego, CA). Arrays were scanned at a resolution of 0.8um using the Beadstation 500 X from Illumina.</Project_Description>
+	<Keyword></Keyword>
+	<Relevance_Agricultural></Relevance_Agricultural>
+	<Relevance_Medical></Relevance_Medical>
+	<Relevance_Industrial></Relevance_Industrial>
+	<Relevance_Environmental></Relevance_Environmental>
+	<Relevance_Evolution></Relevance_Evolution>
+	<Relevance_Model>Yes</Relevance_Model>
+	<Relevance_Other></Relevance_Other>
+	<Organism_Name>Mus musculus</Organism_Name>
+	<Organism_Strain></Organism_Strain>
+	<Organism_Label></Organism_Label>
+	<Sequencing_Status>Unknown</Sequencing_Status>
+	<Submitter_Organization>Gene Expression and Genomics Unit, Research Resources Branch, National Institute on Aging, NIH</Submitter_Organization>
+	<Submitter_Organization_List>
+		<string>Gene Expression and Genomics Unit, Research Resources Branch, National Institute on Aging, NIH</string>
+	</Submitter_Organization_List>
+	<Supergroup>Eukaryotes</Supergroup>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

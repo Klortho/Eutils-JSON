@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_popset.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="418209882">
+	<Caption>Slapeta J</Caption>
+	<Title>Tritrichomonas cysteine protease 2 (CP2) gene, partial cds.</Title>
+	<Extra/>
+	<Gi>418209882</Gi>
+	<SetType>phylogenetic study</SetType>
+	<CreateDate>2012/11/21</CreateDate>
+	<UpdateDate>2012/11/21</UpdateDate>
+	<Flags>0</Flags>
+	<TaxId>5723</TaxId>
+	
+	<Authors>Slapeta,J., Muller,N., Stack,C.M., Walker,G., Lew-Tabor,A., Tachezy,J. and Frey,C.F.</Authors>
+	<Article>Comparative analysis of Tritrichomonas foetus (Riedmuller, 1928) cat genotype, T. foetus (Riedmuller, 1928) cattle genotype and Tritrichomonas suis (Davaine, 1875) at 10 DNA loci.</Article>
+	<Journal>(11-01-2012) Int. J. Parasitol. </Journal>
+<Statistics><Stat type="alignments" count="1"/><Stat type="all" count="81"/><Stat type="blob_size" count="37092"/><Stat type="cdregion" count="16"/><Stat type="cdregion" subtype="CDS" count="16"/><Stat type="gene" count="16"/><Stat type="gene" subtype="Gene" count="16"/><Stat type="nucleotides" count="16"/><Stat type="org" count="17"/><Stat type="prot" count="16"/><Stat type="prot" subtype="Prot" count="16"/><Stat type="proteins" count="16"/><Stat type="pub" count="2"/><Stat type="pub" subtype="PubMed" count="1"/><Stat type="rna" count="16"/><Stat type="rna" subtype="mRNA" count="16"/><Stat type="taxonomy" count="32"/><Stat type="taxonomy" subtype="Tritrichomonas" count="16"/><Stat type="taxonomy" subtype="Tritrichomonas/Tritrichomonas foetus" count="15"/><Stat type="taxonomy" subtype="Tritrichomonas/Tritrichomonas suis" count="1"/><Stat source="all" type="alignments" count="1"/><Stat source="all" type="all" count="81"/><Stat source="all" type="blob_size" count="37092"/><Stat source="all" type="cdregion" count="16"/><Stat source="all" type="gene" count="16"/><Stat source="all" type="nucleotides" count="16"/><Stat source="all" type="org" count="17"/><Stat source="all" type="prot" count="16"/><Stat source="all" type="proteins" count="16"/><Stat source="all" type="pub" count="2"/><Stat source="all" type="rna" count="16"/><Stat source="all" type="taxonomy" count="32"/></Statistics><Properties qual="32" popset="128">160</Properties><OSLT indexed="yes">UNKNOWN</OSLT><AccessionVersion>UNKNOWN</AccessionVersion></DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

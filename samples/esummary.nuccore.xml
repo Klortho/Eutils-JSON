@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_nuccore.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="424386131">
+	<Caption>AAIY02060586</Caption>
+	<Title>Echinops telfairi contig060586, whole genome shotgun sequence</Title>
+	<Extra>gi|424386131|gb|AAIY02060586.1||gnl|WGS:AAIY02|contig060586</Extra>
+	<Gi>424386131</Gi>
+	<CreateDate>2012/11/22</CreateDate>
+	<UpdateDate>2012/11/22</UpdateDate>
+	<Flags>0</Flags>
+	<TaxId>9371</TaxId>
+	<Slen>20193</Slen>
+	
+	<Biomol>genomic</Biomol>
+	<MolType>dna</MolType>
+	<Topology>linear</Topology>
+	<SourceDb>insd</SourceDb>
+	<SegSetSize>0</SegSetSize>
+	<ProjectId>12590</ProjectId>
+	<Genome/>
+	<SubType>sex|country</SubType>
+	<SubName>female|Germany: Ludwig Maximilians University, Munich</SubName>
+	<AssemblyGi>0</AssemblyGi>
+	<AssemblyAcc/>
+	<Tech>wgs</Tech>
+	<Completeness/>
+	<GeneticCode>1</GeneticCode>
+	<Strand/>
+	<Organism>Echinops telfairi</Organism>
+<Statistics><Stat type="Length" count="20193"/><Stat type="Length" subtype="literal" count="20193"/><Stat type="all" count="66"/><Stat type="blob_size" count="14611"/><Stat type="imp" count="65"/><Stat type="imp" subtype="variation" count="65"/><Stat type="org" count="1"/><Stat type="pub" count="2"/><Stat type="pub" subtype="unpublished" count="1"/><Stat source="all" type="Length" count="20193"/><Stat source="all" type="all" count="66"/><Stat source="all" type="blob_size" count="14611"/><Stat source="all" type="imp" count="65"/><Stat source="all" type="org" count="1"/><Stat source="all" type="pub" count="2"/></Statistics><Properties na="1" qual="32">33</Properties><OSLT indexed="yes">AAIY02060586.1</OSLT><AccessionVersion>AAIY02060586.1</AccessionVersion></DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

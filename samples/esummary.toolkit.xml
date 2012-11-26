@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_toolkit.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="149440">
+	<Doxid>classCQueryFuncPromoteIn_1a1cfe44f648227e7da08606595e69a53f</Doxid>
+	<Def>virtual size_t CQueryFuncPromoteIn::GetArgCountMin (CQueryParseNode::EType)</Def>
+	<DefType>method</DefType>
+	<Kind>method</Kind>
+	<ShortDesc>In can have just one argument (a in ()) or a very large number a in (dog, cat, bird mouse......)</ShortDesc>
+	<LongDesc></LongDesc>
+	<XmlDesc><![CDATA[<xd><short><para>In can have just one argument (a in ()) or a very large number a in (dog, cat, bird mouse......) </para></short><long></long><inbody></inbody></xd>]]></XmlDesc>
+	<File>include/gui/objutils/query_func_promote.hpp</File>
+	<Modifiers>public inline virtual</Modifiers>
+	<Attr></Attr>
+	<Lines>478@478-478</Lines>
+	<Link>classCQueryFuncPromoteIn.html#a1cfe44f648227e7da08606595e69a53f</Link>
+	<Name>GetArgCountMin</Name>
+	<DefinedBy>CQueryFuncPromoteIn</DefinedBy>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_structure.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="52770">
+	<PdbAcc>2C9N</PdbAcc>
+	<PdbDescr>Structure Of The Epstein-Barr Virus Zebra Protein At Approximately 3.5 Angstrom Resolution</PdbDescr>
+	<EC></EC>
+	<Resolution>3.3</Resolution>
+	<ExpMethod>X-Ray Diffraction</ExpMethod>
+	<PdbClass>Viral Protein</PdbClass>
+	<PdbDepositDate>2005/12/13 00:00</PdbDepositDate>
+	<MMDBEntryDate>2007/10/11 00:00</MMDBEntryDate>
+	<MMDBModifyDate>2011/05/26 00:00</MMDBModifyDate>
+	<OrganismList>
+		<string>Human herpesvirus 4</string>
+		<string>Human herpesvirus 4</string>
+		<string>Human herpesvirus 4</string>
+		<string>Human herpesvirus 4</string>
+	</OrganismList>
+	<PdbAccSynList>
+	</PdbAccSynList>
+	<LigCode></LigCode>
+	<LigCount>0</LigCount>
+	<ModProteinResCount>0</ModProteinResCount>
+	<ModDNAResCount>0</ModDNAResCount>
+	<ModRNAResCount>0</ModRNAResCount>
+	<ProteinMoleculeCount>2</ProteinMoleculeCount>
+	<DNAMoleculeCount>2</DNAMoleculeCount>
+	<RNAMoleculeCount>0</RNAMoleculeCount>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

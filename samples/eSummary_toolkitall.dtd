@@ -1,0 +1,46 @@
+<!-- DocSum DTD for toolkitall database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+<!ENTITY	 % T_xml		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	Doxid		%T_string;>
+<!ELEMENT	Def		%T_string;>
+<!ELEMENT	DefType		%T_string;>
+<!ELEMENT	Kind		%T_string;>
+<!ELEMENT	ShortDesc		%T_string;>
+<!ELEMENT	LongDesc		%T_string;>
+<!ELEMENT	XmlDesc		%T_xml;>
+<!ELEMENT	File		%T_string;>
+<!ELEMENT	Modifiers		%T_string;>
+<!ELEMENT	Attr		%T_string;>
+<!ELEMENT	Lines		%T_string;>
+<!ELEMENT	Link		%T_string;>
+<!ELEMENT	Name		%T_string;>
+<!ELEMENT	DefinedBy		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			Doxid
+			| Def
+			| DefType
+			| Kind
+			| ShortDesc
+			| LongDesc
+			| XmlDesc
+			| File
+			| Modifiers
+			| Attr
+			| Lines
+			| Link
+			| Name
+			| DefinedBy
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

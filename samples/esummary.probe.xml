@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_probe.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="156811">
+	<name>Pr156811.1</name>
+	<title>Small hairpin RNA (shRNA) probe V2HS_111198 for Homo sapiens gene CECR5 antisense RNA 1 (CECR5-AS1). Reagent is available from Open Biosystems.</title>
+	<ptype>shRNA</ptype>
+	<caption></caption>
+	<issuppressed></issuppressed>
+	<isreplaced></isreplaced>
+	<suppressreason></suppressreason>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

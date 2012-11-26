@@ -1,0 +1,115 @@
+<!-- DocSum DTD for pccompound database -->
+
+<!ENTITY	 % T_int		"(#PCDATA)">
+<!ENTITY	 % T_string		"(#PCDATA)">
+
+<!-- Definition of List type: T_StringList -->
+<!ELEMENT	string	%T_string;>
+<!ENTITY	 % T_StringList	"(string)*">
+<!ENTITY	 % T_date		"(#PCDATA)">
+
+<!-- Definition of List type: T_IntList -->
+<!ELEMENT	int	%T_int;>
+<!ENTITY	 % T_IntList	"(int)*">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	CID		%T_int;>
+<!ELEMENT	SourceNameList		%T_StringList;>
+<!ELEMENT	SourceIDList		%T_StringList;>
+<!ELEMENT	SourceCategoryList		%T_StringList;>
+<!ELEMENT	CreateDate		%T_date;>
+<!ELEMENT	SynonymList		%T_StringList;>
+<!ELEMENT	MeSHHeadingList		%T_StringList;>
+<!ELEMENT	MeSHTermList		%T_StringList;>
+<!ELEMENT	PharmActionList		%T_StringList;>
+<!ELEMENT	CommentList		%T_StringList;>
+<!ELEMENT	IUPACName		%T_string;>
+<!ELEMENT	CanonicalSmiles		%T_string;>
+<!ELEMENT	IsomericSmiles		%T_string;>
+<!ELEMENT	RotatableBondCount		%T_int;>
+<!ELEMENT	MolecularFormula		%T_string;>
+<!ELEMENT	MolecularWeight		%T_string;>
+<!ELEMENT	TotalFormalCharge		%T_int;>
+<!ELEMENT	XLogP		%T_string;>
+<!ELEMENT	HydrogenBondDonorCount		%T_int;>
+<!ELEMENT	HydrogenBondAcceptorCount		%T_int;>
+<!ELEMENT	Complexity		%T_string;>
+<!ELEMENT	HeavyAtomCount		%T_int;>
+<!ELEMENT	AtomChiralCount		%T_int;>
+<!ELEMENT	AtomChiralDefCount		%T_int;>
+<!ELEMENT	AtomChiralUndefCount		%T_int;>
+<!ELEMENT	BondChiralCount		%T_int;>
+<!ELEMENT	BondChiralDefCount		%T_int;>
+<!ELEMENT	BondChiralUndefCount		%T_int;>
+<!ELEMENT	IsotopeAtomCount		%T_int;>
+<!ELEMENT	CovalentUnitCount		%T_int;>
+<!ELEMENT	TautomerCount		%T_int;>
+<!ELEMENT	SubstanceIDList		%T_IntList;>
+<!ELEMENT	TPSA		%T_string;>
+<!ELEMENT	AssaySourceNameList		%T_StringList;>
+<!ELEMENT	MinAC		%T_string;>
+<!ELEMENT	MaxAC		%T_string;>
+<!ELEMENT	MinTC		%T_string;>
+<!ELEMENT	MaxTC		%T_string;>
+<!ELEMENT	ActiveAidCount		%T_int;>
+<!ELEMENT	InactiveAidCount		%T_int;>
+<!ELEMENT	TotalAidCount		%T_int;>
+<!ELEMENT	InChIKey		%T_string;>
+<!ELEMENT	ProbeAidCount		%T_int;>
+<!ELEMENT	InChI		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			CID
+			| SourceNameList
+			| SourceIDList
+			| SourceCategoryList
+			| CreateDate
+			| SynonymList
+			| MeSHHeadingList
+			| MeSHTermList
+			| PharmActionList
+			| CommentList
+			| IUPACName
+			| CanonicalSmiles
+			| IsomericSmiles
+			| RotatableBondCount
+			| MolecularFormula
+			| MolecularWeight
+			| TotalFormalCharge
+			| XLogP
+			| HydrogenBondDonorCount
+			| HydrogenBondAcceptorCount
+			| Complexity
+			| HeavyAtomCount
+			| AtomChiralCount
+			| AtomChiralDefCount
+			| AtomChiralUndefCount
+			| BondChiralCount
+			| BondChiralDefCount
+			| BondChiralUndefCount
+			| IsotopeAtomCount
+			| CovalentUnitCount
+			| TautomerCount
+			| SubstanceIDList
+			| TPSA
+			| AssaySourceNameList
+			| MinAC
+			| MaxAC
+			| MinTC
+			| MaxTC
+			| ActiveAidCount
+			| InactiveAidCount
+			| TotalAidCount
+			| InChIKey
+			| ProbeAidCount
+			| InChI
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

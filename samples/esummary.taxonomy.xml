@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_taxonomy.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="9685">
+	<Status>active</Status>
+	<Rank>species</Rank>
+	<Division>carnivores</Division>
+	<ScientificName>Felis catus</ScientificName>
+	<CommonName>domestic cat</CommonName>
+	<TaxId>9685</TaxId>
+	<AkaTaxId>0</AkaTaxId>
+	<Genus>Felis</Genus>
+	<Species>catus</Species>
+	<Subsp></Subsp>
+	<ModificationDate>2012/03/14 00:00</ModificationDate>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

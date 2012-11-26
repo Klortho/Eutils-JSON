@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_journals.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="35478">
+	<Title>The National union catalog of manuscript collections</Title>
+	<MedAbbr>Natl Union Cat Manuscr Collect</MedAbbr>
+	<IsoAbbr>Natl Union Cat Manuscr Collect</IsoAbbr>
+	<NlmId>58720840R</NlmId>
+	<pISSN>0090-0044</pISSN>
+	<eISSN></eISSN>
+	<PublicationStartYear>1959</PublicationStartYear>
+	<PublicationEndYear>1993</PublicationEndYear>
+	<Publisher>U.S. Library Of Congress</Publisher>
+	<Language>eng</Language>
+	<Country>United States</Country>
+	<BroadHeading>
+	</BroadHeading>
+	<ContinuationNotes></ContinuationNotes>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

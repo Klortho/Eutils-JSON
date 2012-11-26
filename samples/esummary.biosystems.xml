@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_biosystems.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="493040">
+	<source>GO</source>
+	<ModifyDate>2011/11/04 00:00</ModifyDate>
+	<SIDCount>0</SIDCount>
+	<CIDCount>0</CIDCount>
+	<GeneCount>3</GeneCount>
+	<ProteinCount>5</ProteinCount>
+	<feedbackurl>http://amigo.geneontology.org/cgi-bin/amigo/term_details?term=GO:0008811</feedbackurl>
+	<sourceurl>http://www.geneontology.org/</sourceurl>
+	<citations>
+	</citations>
+	<biosystem>
+		<externalid>GO:0008811</externalid>
+		<biosystemname>chloramphenicol O-acetyltransferase activity</biosystemname>
+		<biosystemtype>conserved biosystem</biosystemtype>
+		<bscategory>conserved biosystem</bscategory>
+		<bstype>functional_set</bstype>
+		<description>Catalysis of the reaction: acetyl-CoA + chloramphenicol = chloramphenicol 3-acetate + CoA. Synonyms: CAT I; CAT II; CAT III; acetyl-CoA:chloramphenicol 3-O-acetyltransferase activity; chloramphenicol acetylase activity; chloramphenicol acetyltransferase activity; chloramphenicol transacetylase activity;</description>
+		<comment>
+		</comment>
+		<url>http://amigo.geneontology.org/cgi-bin/amigo/term_details?term=GO:0008811</url>
+		<highliteurl>
+			<hilitetype>
+				simple
+			</hilitetype>
+			<idtypes>
+			</idtypes>
+			<url></url>
+		</highliteurl>
+		<taxonomy>
+		</taxonomy>
+		<genes>
+		</genes>
+		<smallmolecules>
+		</smallmolecules>
+		<citations>
+		</citations>
+		<linkedsystems>
+		</linkedsystems>
+	</biosystem>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

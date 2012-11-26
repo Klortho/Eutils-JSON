@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_medgen.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="122602">
+	<ConceptId>C0626910</ConceptId>
+	<Title>5&apos;-chloroacetamido-5&apos;-deoxythymidine</Title>
+	<Definition></Definition>
+	<SemanticId>T121</SemanticId>
+	<SemanticType>Pharmacologic Substance</SemanticType>
+	<Suppressed></Suppressed>
+	<ConceptMeta>&lt;Names&gt;&lt;Name SDUI=&quot;C048285&quot; SAB=&quot;MSH&quot; TTY=&quot;NM&quot; type=&quot;preferred&quot;&gt;5&apos;-chloroacetamido-5&apos;-deoxythymidine&lt;/Name&gt;&lt;Name SDUI=&quot;C048285&quot; SAB=&quot;MSH&quot; TTY=&quot;CE&quot; type=&quot;syn&quot;&gt;5&apos;-CAT&lt;/Name&gt;&lt;/Names&gt;&lt;Definitions&gt;&lt;/Definitions&gt;&lt;ModesOfInheritance&gt;&lt;/ModesOfInheritance&gt;&lt;OMIM&gt;&lt;/OMIM&gt;&lt;ClinicalFeatures&gt;&lt;/ClinicalFeatures&gt;&lt;RelatedDisorders&gt;&lt;/RelatedDisorders&gt;&lt;SNOMEDCT&gt;&lt;/SNOMEDCT&gt;</ConceptMeta>
+	<ModificationDate>2012/11/24</ModificationDate>
+	<Merged></Merged>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

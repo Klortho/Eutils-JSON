@@ -1,0 +1,27 @@
+<!-- DocSum DTD for seqannot database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	Caption		%T_string;>
+<!ELEMENT	Title		%T_string;>
+<!ELEMENT	ExpXml		%T_string;>
+<!ELEMENT	CreateDate		%T_string;>
+<!ELEMENT	UpdateDate		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			Caption
+			| Title
+			| ExpXml
+			| CreateDate
+			| UpdateDate
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

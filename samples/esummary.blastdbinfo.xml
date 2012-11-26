@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_blastdbinfo.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="645844">
+	<Name>Felis catus</Name>
+	<Path>SNP/cat_9685</Path>
+	<Title>cat_9685</Title>
+	<LastUpdated>2011/01/14 00:00</LastUpdated>
+	<Description>dbSNP cat_9685 blast database</Description>
+	<TotalLength>200357206</TotalLength>
+	<MaxLength>1003</MaxLength>
+	<NumSequences>327037</NumSequences>
+	<Perc75>757</Perc75>
+	<Perc50>588</Perc50>
+	<Perc25>402</Perc25>
+	<N50>0</N50>
+	<Taxid>9685</Taxid>
+	<GenCollAssemblyName></GenCollAssemblyName>
+	<EntrezDatabase></EntrezDatabase>
+	<EntrezQuery></EntrezQuery>
+	<SourceDb>
+		<SourceDbData>
+			<SrcDb>dbSNP</SrcDb>
+		</SourceDbData>
+	</SourceDb>
+	<SequenceType>
+		<SequenceTypeData>
+			<SeqType>OtherDNA</SeqType>
+			<SeqStrategy></SeqStrategy>
+		</SequenceTypeData>
+	</SequenceType>
+	<Term>
+		<TermData>
+			<SearchTerm>variation</SearchTerm>
+		</TermData>
+		<TermData>
+			<SearchTerm>SNP</SearchTerm>
+		</TermData>
+		<TermData>
+			<SearchTerm>polymorphism</SearchTerm>
+		</TermData>
+		<TermData>
+			<SearchTerm>dbSNP</SearchTerm>
+		</TermData>
+	</Term>
+	<OtherUrl>
+	</OtherUrl>
+	<Masking>
+	</Masking>
+	<Project>
+	</Project>
+	<GpipeBuild></GpipeBuild>
+	<WgsProject></WgsProject>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

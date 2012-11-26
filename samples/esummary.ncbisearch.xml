@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_ncbisearch.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="1121">
+	<Title>Sequences Represented in UniVec</Title>
+	<Description>This web page lists the vectors and oligonucleotides represented in the UniVec database.</Description>
+	<Url>http://www.ncbi.nlm.nih.gov/VecScreen/replist.html</Url>
+	<Category></Category>
+	<Date>1/01/01 00:00</Date>
+	<HomePage>VecScreen;http://www.ncbi.nlm.nih.gov/VecScreen/</HomePage>
+	<LinkCount>0</LinkCount>
+	<Authors>vecscreen</Authors>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

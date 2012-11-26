@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_pubmedhealth.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="8625">
+	<Title>Evidence Tables</Title>
+	<ShortTitle>Evidence Tables</ShortTitle>
+	<AltTitleList><![CDATA[]]></AltTitleList>
+	<SortDate>2010/04/01 00:00</SortDate>
+	<UpdateDate>April 2010</UpdateDate>
+	<ID>erta193/appendix/appendixes.app2/PMC</ID>
+	<AccessionID>PMH0008625</AccessionID>
+	<SourceID>erta193</SourceID>
+	<RType>chapter</RType>
+	<Text></Text>
+	<Subject></Subject>
+	<UMLSID></UMLSID>
+	<ICD9ID></ICD9ID>
+	<BioconceptsID></BioconceptsID>
+	<Teaser></Teaser>
+	<BookInfo><![CDATA[]]></BookInfo>
+	<ByLine></ByLine>
+	<PubDate>1/01/01 00:00</PubDate>
+	<ParentID>8821</ParentID>
+	<ContentProvider></ContentProvider>
+	<TagLine></TagLine>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

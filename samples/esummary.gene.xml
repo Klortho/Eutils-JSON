@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_gene.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="21803">
+	<Name>Tgfb1</Name>
+	<Description>transforming growth factor, beta 1</Description>
+	<Orgname>Mus musculus</Orgname>
+	<Status>0</Status>
+	<CurrentID>0</CurrentID>
+	<Chromosome>7</Chromosome>
+	<GeneticSource>genomic</GeneticSource>
+	<MapLocation>7 6.5 cM</MapLocation>
+	<OtherAliases>TGF-beta1, TGFbeta1, Tgfb, Tgfb-1</OtherAliases>
+	<OtherDesignations>TGF-beta 1|TGF-beta-1|regulatory protein|transforming growth factor beta-1|transforming growth factor-beta 1</OtherDesignations>
+	<NomenclatureSymbol>Tgfb1</NomenclatureSymbol>
+	<NomenclatureName>transforming growth factor, beta 1</NomenclatureName>
+	<NomenclatureStatus>Official</NomenclatureStatus>
+	<TaxID>10090</TaxID>
+	<Mim>
+	</Mim>
+	<GenomicInfo>
+		<GenomicInfoType>
+			<ChrLoc>7</ChrLoc>
+			<ChrAccVer>NC_000073.6</ChrAccVer>
+			<ChrStart>25687001</ChrStart>
+			<ChrStop>25704995</ChrStop>
+			<ExonCount>7</ExonCount>
+		</GenomicInfoType>
+	</GenomicInfo>
+	<GeneWeight>204825</GeneWeight>
+	<Summary></Summary>
+	<ChrSort>07</ChrSort>
+	<ChrStart>25687001</ChrStart>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

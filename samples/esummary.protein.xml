@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_protein.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="284822047">
+	<Caption>ADB98021</Caption>
+	<Title>Cat [Donor vector pTKIP-cat]</Title>
+	<Extra>gi|284822047|gb|ADB98021.1|</Extra>
+	<Gi>284822047</Gi>
+	<CreateDate>2010/02/02</CreateDate>
+	<UpdateDate>2010/02/02</UpdateDate>
+	<Flags>0</Flags>
+	<TaxId>711471</TaxId>
+	<Slen>219</Slen>
+	
+	<Biomol/>
+	<MolType>aa</MolType>
+	<Topology>not-set</Topology>
+	<SourceDb>insd</SourceDb>
+	<SegSetSize>0</SegSetSize>
+	<ProjectId>0</ProjectId>
+	<Genome/>
+	<SubType>lab_host</SubType>
+	<SubName>Escherichia coli</SubName>
+	<AssemblyGi>0</AssemblyGi>
+	<AssemblyAcc/>
+	<Tech/>
+	<Completeness/>
+	<GeneticCode>11</GeneticCode>
+	<Strand/>
+	<Organism>Donor vector pTKIP-cat</Organism>
+<Statistics><Stat type="all" count="4"/><Stat type="blob_size" count="5964"/><Stat type="cdregion" count="1"/><Stat type="cdregion" subtype="CDS" count="1"/><Stat type="gene" count="1"/><Stat type="gene" subtype="Gene" count="1"/><Stat type="org" count="1"/><Stat type="prot" count="1"/><Stat type="prot" subtype="Prot" count="1"/><Stat type="pub" count="2"/><Stat type="pub" subtype="PubMed" count="1"/><Stat source="CDD" type="all" count="2"/><Stat source="CDD" type="region" count="2"/><Stat source="CDD" type="region" subtype="Region" count="2"/><Stat source="all" type="all" count="6"/><Stat source="all" type="blob_size" count="5964"/><Stat source="all" type="cdregion" count="1"/><Stat source="all" type="gene" count="1"/><Stat source="all" type="org" count="1"/><Stat source="all" type="prot" count="1"/><Stat source="all" type="pub" count="2"/><Stat source="all" type="region" count="2"/></Statistics><Properties aa="2" qual="32">34</Properties><OSLT indexed="yes">ADB98021.1</OSLT><AccessionVersion>ADB98021.1</AccessionVersion></DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>

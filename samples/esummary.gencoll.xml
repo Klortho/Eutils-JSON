@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_gencoll.dtd">
+<eSummaryResult>
+<DocumentSummarySet status="OK">
+<DocumentSummary uid="320608">
+	<AssemblyAccession>GCA_000181345.2</AssemblyAccession>
+	<AssemblyName>Primary Assembly</AssemblyName>
+	<UCSCName></UCSCName>
+	<EnsemblName></EnsemblName>
+	<AssemblyDescription></AssemblyDescription>
+	<Taxid>9685</Taxid>
+	<Organism>Felis catus</Organism>
+	<AssemblyClass>haploid-unit</AssemblyClass>
+	<WGS>AANG02</WGS>
+	<Category>assembly-unit</Category>
+	<ReleaseType>genbank</ReleaseType>
+	<ReleaseLevel>Major</ReleaseLevel>
+	<RS_Projects>
+	</RS_Projects>
+	<GB_Projects>
+		<int>16726</int>
+	</GB_Projects>
+	<Coverage>0</Coverage>
+	<PartialGenomeRepresentation>false</PartialGenomeRepresentation>
+	<NCBIReleaseDate>2011/12/13 00:00</NCBIReleaseDate>
+	<Primary></Primary>
+	<Properties>has-chromosomal-sequences latest</Properties>
+	<Meta><![CDATA[ <Stats>   <Stat category="scaffold_count" sequence_tag="all">6399</Stat>   <Stat category="scaffold_count" sequence_tag="placed">919</Stat>   <Stat category="scaffold_count" sequence_tag="unlocalized">749</Stat>   <Stat category="scaffold_count" sequence_tag="unplaced">5480</Stat>   <Stat category="total_length" sequence_tag="all">2455524127</Stat>   <Stat category="N50" sequence_tag="all">4658941</Stat>   <Stat category="contig_count" sequence_tag="all">203082</Stat>   <Stat category="chromosome_count" sequence_tag="all">19</Stat>   <Stat category="non_chromosome_replicon_count" sequence_tag="all">0</Stat>   <Stat category="alt_loci_count" sequence_tag="all">0</Stat> </Stats> <Synonyms> <GC-DbTagAlias>   <GC-DbTagAlias_refseq>     <Dbtag>       <Dbtag_db>GenColl</Dbtag_db>       <Dbtag_tag>         <Object-id>           <Object-id_id>439558</Object-id_id>         </Object-id>       </Dbtag_tag>     </Dbtag>   </GC-DbTagAlias_refseq>   <GC-DbTagAlias_similarity value="identical">1</GC-DbTagAlias_similarity> </GC-DbTagAlias> <GC-DbTagAlias>   <GC-DbTagAlias_refseq>     <Dbtag>       <Dbtag_db>GenColl</Dbtag_db>       <Dbtag_tag>         <Object-id>           <Object-id_str>GCF_000181345.1</Object-id_str>         </Object-id>       </Dbtag_tag>     </Dbtag>   </GC-DbTagAlias_refseq>   <GC-DbTagAlias_similarity value="identical">1</GC-DbTagAlias_similarity> </GC-DbTagAlias> </Synonyms> <assembly-level>3</assembly-level> <assembly-status>some chromosomes assembled</assembly-status> <up-links>1</up-links>    ]]></Meta>
+</DocumentSummary>
+
+</DocumentSummarySet>
+</eSummaryResult>
