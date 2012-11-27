@@ -1,0 +1,98 @@
+<!-- DocSum DTD for snp database -->
+
+<!ENTITY	 % T_int		"(#PCDATA)">
+<!ENTITY	 % T_string		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	SNP_ID		%T_int;>
+<!ELEMENT	Organism		%T_string;>
+<!ELEMENT	ALLELE_ORIGIN		%T_string;>
+<!ELEMENT	GLOBAL_MAF		%T_string;>
+<!ELEMENT	GLOBAL_POPULATION		%T_string;>
+<!ELEMENT	GLOBAL_SAMPLESIZE		%T_int;>
+<!ELEMENT	SUSPECTED		%T_string;>
+<!ELEMENT	CLINICAL_SIGNIFICANCE		%T_string;>
+<!ELEMENT	GENE		%T_string;>
+<!ELEMENT	LOCUS_ID		%T_int;>
+<!ELEMENT	ACC		%T_string;>
+<!ELEMENT	CHR		%T_string;>
+<!ELEMENT	WEIGHT		%T_int;>
+<!ELEMENT	HANDLE		%T_string;>
+<!ELEMENT	FXN_CLASS		%T_string;>
+<!ELEMENT	VALIDATED		%T_string;>
+<!ELEMENT	GTYPE		%T_string;>
+<!ELEMENT	NONREF		%T_string;>
+<!ELEMENT	DOCSUM		%T_string;>
+<!ELEMENT	HET		%T_int;>
+<!ELEMENT	SRATE		%T_int;>
+<!ELEMENT	TAX_ID		%T_int;>
+<!ELEMENT	CHRRPT		%T_string;>
+<!ELEMENT	ORIG_BUILD		%T_int;>
+<!ELEMENT	UPD_BUILD		%T_int;>
+<!ELEMENT	CREATEDATE		%T_string;>
+<!ELEMENT	UPDATEDATE		%T_string;>
+<!ELEMENT	POP_CLASS		%T_string;>
+<!ELEMENT	METHOD_CLASS		%T_string;>
+<!ELEMENT	SNP3D		%T_string;>
+<!ELEMENT	LINKOUT		%T_string;>
+<!ELEMENT	SS		%T_int;>
+<!ELEMENT	LOCSNPID		%T_string;>
+<!ELEMENT	ALLELE		%T_string;>
+<!ELEMENT	SNP_CLASS		%T_string;>
+<!ELEMENT	CHRPOS		%T_string;>
+<!ELEMENT	CONTIGPOS		%T_string;>
+<!ELEMENT	TEXT		%T_string;>
+<!ELEMENT	LOOKUP		%T_string;>
+<!ELEMENT	SORT_PRIORITY		%T_int;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			SNP_ID
+			| Organism
+			| ALLELE_ORIGIN
+			| GLOBAL_MAF
+			| GLOBAL_POPULATION
+			| GLOBAL_SAMPLESIZE
+			| SUSPECTED
+			| CLINICAL_SIGNIFICANCE
+			| GENE
+			| LOCUS_ID
+			| ACC
+			| CHR
+			| WEIGHT
+			| HANDLE
+			| FXN_CLASS
+			| VALIDATED
+			| GTYPE
+			| NONREF
+			| DOCSUM
+			| HET
+			| SRATE
+			| TAX_ID
+			| CHRRPT
+			| ORIG_BUILD
+			| UPD_BUILD
+			| CREATEDATE
+			| UPDATEDATE
+			| POP_CLASS
+			| METHOD_CLASS
+			| SNP3D
+			| LINKOUT
+			| SS
+			| LOCSNPID
+			| ALLELE
+			| SNP_CLASS
+			| CHRPOS
+			| CONTIGPOS
+			| TEXT
+			| LOOKUP
+			| SORT_PRIORITY
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

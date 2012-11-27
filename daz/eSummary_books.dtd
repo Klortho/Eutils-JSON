@@ -1,0 +1,50 @@
+<!-- DocSum DTD for books5 database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+<!ENTITY	 % T_date		"(#PCDATA)">
+<!ENTITY	 % T_xml		"(#PCDATA)">
+<!ENTITY	 % T_int		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	Title		%T_string;>
+<!ELEMENT	PubDate		%T_date;>
+<!ELEMENT	ID		%T_string;>
+<!ELEMENT	AccessionID		%T_string;>
+<!ELEMENT	Parents		%T_string;>
+<!ELEMENT	RType		%T_string;>
+<!ELEMENT	RID		%T_string;>
+<!ELEMENT	Text		%T_string;>
+<!ELEMENT	BookInfo		%T_xml;>
+<!ELEMENT	BookID		%T_int;>
+<!ELEMENT	BookAccessionID		%T_string;>
+<!ELEMENT	ChapterID		%T_int;>
+<!ELEMENT	ChapterAccessionID		%T_string;>
+<!ELEMENT	Book		%T_string;>
+<!ELEMENT	Navigation		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			Title
+			| PubDate
+			| ID
+			| AccessionID
+			| Parents
+			| RType
+			| RID
+			| Text
+			| BookInfo
+			| BookID
+			| BookAccessionID
+			| ChapterID
+			| ChapterAccessionID
+			| Book
+			| Navigation
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

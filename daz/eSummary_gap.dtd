@@ -1,0 +1,236 @@
+<!-- DocSum DTD for gap database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_d_ancestor_id_and_name -->
+<!ELEMENT	d_ancestor_id		%T_string;>
+<!ELEMENT	d_ancestor_name		%T_string;>
+
+<!-- Definition of Structure type: T_d_ancestor_id_and_name -->
+<!ENTITY	 % T_d_ancestor_id_and_name	"(
+ 			d_ancestor_id
+			| d_ancestor_name
+			)*">
+
+<!-- Definition of List type: T_d_ancestor_list_type -->
+<!ELEMENT	d_ancestor_id_and_name	%T_d_ancestor_id_and_name;>
+<!ENTITY	 % T_d_ancestor_list_type	"(d_ancestor_id_and_name)*">
+
+<!-- Members definition of Structure type: T_d_genotype_platform_info -->
+<!ELEMENT	d_genotype_vendor		%T_string;>
+<!ELEMENT	d_genotype_platform		%T_string;>
+
+<!-- Definition of Structure type: T_d_genotype_platform_info -->
+<!ENTITY	 % T_d_genotype_platform_info	"(
+ 			d_genotype_vendor
+			| d_genotype_platform
+			)*">
+
+<!-- Definition of List type: T_d_genotype_platform_list_type -->
+<!ELEMENT	d_genotype_platform_info	%T_d_genotype_platform_info;>
+<!ENTITY	 % T_d_genotype_platform_list_type	"(d_genotype_platform_info)*">
+<!ENTITY	 % T_int		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_d_type_info -->
+<!ELEMENT	d_type		%T_string;>
+
+<!-- Definition of Structure type: T_d_type_info -->
+<!ENTITY	 % T_d_type_info	"(
+ 			d_type
+			)*">
+
+<!-- Definition of List type: T_d_type_list_type -->
+<!ELEMENT	d_type_info	%T_d_type_info;>
+<!ENTITY	 % T_d_type_list_type	"(d_type_info)*">
+
+<!-- Members definition of Structure type: T_d_project_info -->
+<!ELEMENT	d_project_name		%T_string;>
+
+<!-- Definition of Structure type: T_d_project_info -->
+<!ENTITY	 % T_d_project_info	"(
+ 			d_project_name
+			)*">
+
+<!-- Definition of List type: T_d_project_list_type -->
+<!ELEMENT	d_project_info	%T_d_project_info;>
+<!ENTITY	 % T_d_project_list_type	"(d_project_info)*">
+
+<!-- Members definition of Structure type: T_d_disease_info -->
+<!ELEMENT	d_disease_name		%T_string;>
+
+<!-- Definition of Structure type: T_d_disease_info -->
+<!ENTITY	 % T_d_disease_info	"(
+ 			d_disease_name
+			)*">
+
+<!-- Definition of List type: T_d_disease_list_type -->
+<!ELEMENT	d_disease_info	%T_d_disease_info;>
+<!ENTITY	 % T_d_disease_list_type	"(d_disease_info)*">
+
+<!-- Members definition of Structure type: T_d_study_results_type -->
+<!ELEMENT	d_study_id		%T_string;>
+<!ELEMENT	d_study_name		%T_string;>
+<!ELEMENT	d_study_ancestor		%T_d_ancestor_list_type;>
+<!ELEMENT	d_study_genotype_platform_list		%T_d_genotype_platform_list_type;>
+<!ELEMENT	d_num_descendants_in_subtree		%T_int;>
+<!ELEMENT	d_num_variables_in_subtree		%T_int;>
+<!ELEMENT	d_num_documents_in_subtree		%T_int;>
+<!ELEMENT	d_num_analyses_in_subtree		%T_int;>
+<!ELEMENT	d_num_participants_in_subtree		%T_int;>
+<!ELEMENT	d_study_type		%T_string;>
+<!ELEMENT	d_study_type_list		%T_d_type_list_type;>
+<!ELEMENT	d_study_status		%T_string;>
+<!ELEMENT	d_study_embargo_date		%T_string;>
+<!ELEMENT	d_study_release_date		%T_string;>
+<!ELEMENT	d_study_project_list		%T_d_project_list_type;>
+<!ELEMENT	d_study_disease_list		%T_d_disease_list_type;>
+<!ELEMENT	d_study_has_sra		%T_string;>
+<!ELEMENT	d_study_archive		%T_string;>
+
+<!-- Definition of Structure type: T_d_study_results_type -->
+<!ENTITY	 % T_d_study_results_type	"(
+ 			d_study_id
+			| d_study_name
+			| d_study_ancestor
+			| d_study_genotype_platform_list
+			| d_num_descendants_in_subtree
+			| d_num_variables_in_subtree
+			| d_num_documents_in_subtree
+			| d_num_analyses_in_subtree
+			| d_num_participants_in_subtree
+			| d_study_type
+			| d_study_type_list
+			| d_study_status
+			| d_study_embargo_date
+			| d_study_release_date
+			| d_study_project_list
+			| d_study_disease_list
+			| d_study_has_sra
+			| d_study_archive
+			)*">
+
+<!-- Members definition of Structure type: T_d_parent_id_and_name -->
+<!ELEMENT	d_parent_id		%T_string;>
+<!ELEMENT	d_parent_name		%T_string;>
+
+<!-- Definition of Structure type: T_d_parent_id_and_name -->
+<!ENTITY	 % T_d_parent_id_and_name	"(
+ 			d_parent_id
+			| d_parent_name
+			)*">
+
+<!-- Definition of List type: T_d_parent_list_type -->
+<!ELEMENT	d_parent_id_and_name	%T_d_parent_id_and_name;>
+<!ENTITY	 % T_d_parent_list_type	"(d_parent_id_and_name)*">
+
+<!-- Members definition of Structure type: T_d_variable_dataset_type -->
+<!ELEMENT	d_variable_dataset_name		%T_string;>
+<!ELEMENT	d_variable_dataset_id		%T_string;>
+<!ELEMENT	d_variable_dataset_description		%T_string;>
+
+<!-- Definition of Structure type: T_d_variable_dataset_type -->
+<!ENTITY	 % T_d_variable_dataset_type	"(
+ 			d_variable_dataset_name
+			| d_variable_dataset_id
+			| d_variable_dataset_description
+			)*">
+
+<!-- Members definition of Structure type: T_d_variable_results_type -->
+<!ELEMENT	d_variable_id		%T_string;>
+<!ELEMENT	d_variable_name		%T_string;>
+<!ELEMENT	d_variable_ancestor		%T_d_ancestor_list_type;>
+<!ELEMENT	d_variable_parent		%T_d_parent_list_type;>
+<!ELEMENT	d_variable_dataset		%T_d_variable_dataset_type;>
+<!ELEMENT	d_variable_description		%T_string;>
+<!ELEMENT	d_variable_type		%T_string;>
+<!ELEMENT	d_variable_embargo_date		%T_string;>
+<!ELEMENT	d_variable_phenx		%T_string;>
+<!ELEMENT	d_variable_has_phenx		%T_string;>
+
+<!-- Definition of Structure type: T_d_variable_results_type -->
+<!ENTITY	 % T_d_variable_results_type	"(
+ 			d_variable_id
+			| d_variable_name
+			| d_variable_ancestor
+			| d_variable_parent
+			| d_variable_dataset
+			| d_variable_description
+			| d_variable_type
+			| d_variable_embargo_date
+			| d_variable_phenx
+			| d_variable_has_phenx
+			)*">
+
+<!-- Members definition of Structure type: T_d_document_results_type -->
+<!ELEMENT	d_document_id		%T_string;>
+<!ELEMENT	d_document_name		%T_string;>
+<!ELEMENT	d_document_ancestor		%T_d_ancestor_list_type;>
+<!ELEMENT	d_document_parent		%T_d_parent_list_type;>
+<!ELEMENT	d_document_description		%T_string;>
+
+<!-- Definition of Structure type: T_d_document_results_type -->
+<!ENTITY	 % T_d_document_results_type	"(
+ 			d_document_id
+			| d_document_name
+			| d_document_ancestor
+			| d_document_parent
+			| d_document_description
+			)*">
+
+<!-- Members definition of Structure type: T_d_analysis_results_type -->
+<!ELEMENT	d_analysis_id		%T_string;>
+<!ELEMENT	d_analysis_name		%T_string;>
+<!ELEMENT	d_analysis_ancestor		%T_d_ancestor_list_type;>
+<!ELEMENT	d_analysis_parent		%T_d_parent_list_type;>
+<!ELEMENT	d_analysis_description		%T_string;>
+
+<!-- Definition of Structure type: T_d_analysis_results_type -->
+<!ENTITY	 % T_d_analysis_results_type	"(
+ 			d_analysis_id
+			| d_analysis_name
+			| d_analysis_ancestor
+			| d_analysis_parent
+			| d_analysis_description
+			)*">
+
+<!-- Members definition of Structure type: T_d_dataset_results_type -->
+<!ELEMENT	d_dataset_id		%T_string;>
+<!ELEMENT	d_dataset_name		%T_string;>
+<!ELEMENT	d_dataset_ancestor		%T_d_ancestor_list_type;>
+<!ELEMENT	d_dataset_parent		%T_d_parent_list_type;>
+<!ELEMENT	d_dataset_description		%T_string;>
+<!ELEMENT	d_dataset_embargo_date		%T_string;>
+
+<!-- Definition of Structure type: T_d_dataset_results_type -->
+<!ENTITY	 % T_d_dataset_results_type	"(
+ 			d_dataset_id
+			| d_dataset_name
+			| d_dataset_ancestor
+			| d_dataset_parent
+			| d_dataset_description
+			| d_dataset_embargo_date
+			)*">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	d_study_results		%T_d_study_results_type;>
+<!ELEMENT	d_variable_results		%T_d_variable_results_type;>
+<!ELEMENT	d_document_results		%T_d_document_results_type;>
+<!ELEMENT	d_analysis_results		%T_d_analysis_results_type;>
+<!ELEMENT	d_dataset_results		%T_d_dataset_results_type;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			d_study_results
+			| d_variable_results
+			| d_document_results
+			| d_analysis_results
+			| d_dataset_results
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

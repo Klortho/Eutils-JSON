@@ -1,0 +1,63 @@
+<!-- DocSum DTD for structure database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+
+<!-- Definition of List type: T_StringList -->
+<!ELEMENT	string	%T_string;>
+<!ENTITY	 % T_StringList	"(string)*">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	PdbAcc		%T_string;>
+<!ELEMENT	PdbDescr		%T_string;>
+<!ELEMENT	EC		%T_string;>
+<!ELEMENT	Resolution		%T_string;>
+<!ELEMENT	ExpMethod		%T_string;>
+<!ELEMENT	PdbClass		%T_string;>
+<!ELEMENT	PdbDepositDate		%T_string;>
+<!ELEMENT	MMDBEntryDate		%T_string;>
+<!ELEMENT	MMDBModifyDate		%T_string;>
+<!ELEMENT	OrganismList		%T_StringList;>
+<!ELEMENT	LigCode		%T_string;>
+<!ELEMENT	LigCount		%T_string;>
+<!ELEMENT	ModProteinResCount		%T_string;>
+<!ELEMENT	ModDNAResCount		%T_string;>
+<!ELEMENT	ModRNAResCount		%T_string;>
+<!ELEMENT	ProteinMoleculeCount		%T_string;>
+<!ELEMENT	DNAMoleculeCount		%T_string;>
+<!ELEMENT	RNAMoleculeCount		%T_string;>
+<!ELEMENT	ProteinChainCount		%T_string;>
+<!ELEMENT	DNAChainCount		%T_string;>
+<!ELEMENT	RNAChainCount		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			PdbAcc
+			| PdbDescr
+			| EC
+			| Resolution
+			| ExpMethod
+			| PdbClass
+			| PdbDepositDate
+			| MMDBEntryDate
+			| MMDBModifyDate
+			| OrganismList
+			| LigCode
+			| LigCount
+			| ModProteinResCount
+			| ModDNAResCount
+			| ModRNAResCount
+			| ProteinMoleculeCount
+			| DNAMoleculeCount
+			| RNAMoleculeCount
+			| ProteinChainCount
+			| DNAChainCount
+			| RNAChainCount
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

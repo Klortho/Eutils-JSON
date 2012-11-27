@@ -1,0 +1,71 @@
+<!-- DocSum DTD for mesh database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+
+<!-- Definition of List type: T_StringList -->
+<!ELEMENT	string	%T_string;>
+<!ENTITY	 % T_StringList	"(string)*">
+<!ENTITY	 % T_int		"(#PCDATA)">
+
+<!-- Definition of List type: T_IntList -->
+<!ELEMENT	int	%T_int;>
+<!ENTITY	 % T_IntList	"(int)*">
+
+<!-- Members definition of Structure type: T_LinksType -->
+<!ELEMENT	Parent		%T_int;>
+<!ELEMENT	TreeNum		%T_string;>
+<!ELEMENT	Children		%T_IntList;>
+
+<!-- Definition of Structure type: T_LinksType -->
+<!ENTITY	 % T_LinksType	"(
+ 			Parent
+			| TreeNum
+			| Children
+			)*">
+
+<!-- Definition of List type: T_LinksListType -->
+<!ELEMENT	LinksType	%T_LinksType;>
+<!ENTITY	 % T_LinksListType	"(LinksType)*">
+<!ENTITY	 % T_date		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	DS_YearIntroduced		%T_string;>
+<!ELEMENT	DS_ScopeNote		%T_string;>
+<!ELEMENT	DS_RegistryNumber		%T_string;>
+<!ELEMENT	DS_HeadingMappedTo		%T_string;>
+<!ELEMENT	DS_MeshTerms		%T_StringList;>
+<!ELEMENT	DS_Subheading		%T_StringList;>
+<!ELEMENT	DS_PaPx		%T_IntList;>
+<!ELEMENT	DS_PreviousIndexing		%T_StringList;>
+<!ELEMENT	DS_SeeRelated		%T_IntList;>
+<!ELEMENT	DS_PaList		%T_StringList;>
+<!ELEMENT	DS_IdxLinks		%T_LinksListType;>
+<!ELEMENT	DS_EntryDate		%T_date;>
+<!ELEMENT	DS_RevisionDate		%T_date;>
+<!ELEMENT	DS_HeadingMappedToList		%T_IntList;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			DS_YearIntroduced
+			| DS_ScopeNote
+			| DS_RegistryNumber
+			| DS_HeadingMappedTo
+			| DS_MeshTerms
+			| DS_Subheading
+			| DS_PaPx
+			| DS_PreviousIndexing
+			| DS_SeeRelated
+			| DS_PaList
+			| DS_IdxLinks
+			| DS_EntryDate
+			| DS_RevisionDate
+			| DS_HeadingMappedToList
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

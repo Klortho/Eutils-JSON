@@ -1,0 +1,90 @@
+<!-- DocSum DTD for geo database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+<!ENTITY	 % T_int		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	GDS		%T_string;>
+<!ELEMENT	ERANK		%T_string;>
+<!ELEMENT	EVALUE		%T_string;>
+<!ELEMENT	title		%T_string;>
+<!ELEMENT	summary		%T_string;>
+<!ELEMENT	GPL		%T_string;>
+<!ELEMENT	GSE		%T_string;>
+<!ELEMENT	taxon		%T_string;>
+<!ELEMENT	taxid_L		%T_string;>
+<!ELEMENT	GSM_L		%T_string;>
+<!ELEMENT	gdsType		%T_string;>
+<!ELEMENT	valType		%T_string;>
+<!ELEMENT	idref		%T_string;>
+<!ELEMENT	ORF		%T_string;>
+<!ELEMENT	geneDesc		%T_string;>
+<!ELEMENT	geneName		%T_string;>
+<!ELEMENT	nucDesc		%T_string;>
+<!ELEMENT	UGName		%T_string;>
+<!ELEMENT	UGDesc		%T_string;>
+<!ELEMENT	cloneID		%T_string;>
+<!ELEMENT	GBACC		%T_string;>
+<!ELEMENT	PTACC		%T_string;>
+<!ELEMENT	SPOTID		%T_string;>
+<!ELEMENT	gi		%T_string;>
+<!ELEMENT	SAGEmap		%T_string;>
+<!ELEMENT	alias		%T_string;>
+<!ELEMENT	SUB_SAMP_L		%T_string;>
+<!ELEMENT	SUB_TYPES_L		%T_string;>
+<!ELEMENT	VMIN		%T_string;>
+<!ELEMENT	VMAX		%T_string;>
+<!ELEMENT	outliers		%T_string;>
+<!ELEMENT	abscalls_chain		%T_string;>
+<!ELEMENT	AFLAG		%T_int;>
+<!ELEMENT	AOUTL		%T_int;>
+<!ELEMENT	RSTD		%T_int;>
+<!ELEMENT	RMEAN		%T_int;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			GDS
+			| ERANK
+			| EVALUE
+			| title
+			| summary
+			| GPL
+			| GSE
+			| taxon
+			| taxid_L
+			| GSM_L
+			| gdsType
+			| valType
+			| idref
+			| ORF
+			| geneDesc
+			| geneName
+			| nucDesc
+			| UGName
+			| UGDesc
+			| cloneID
+			| GBACC
+			| PTACC
+			| SPOTID
+			| gi
+			| SAGEmap
+			| alias
+			| SUB_SAMP_L
+			| SUB_TYPES_L
+			| VMIN
+			| VMAX
+			| outliers
+			| abscalls_chain
+			| AFLAG
+			| AOUTL
+			| RSTD
+			| RMEAN
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

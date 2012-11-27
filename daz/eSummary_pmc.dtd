@@ -1,0 +1,73 @@
+<!-- DocSum DTD for pmc database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+
+<!-- Definition of Enumeration type: T_AuthorType -->
+<!ENTITY	 % T_AuthorType		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_Author -->
+<!ELEMENT	Name		%T_string;>
+<!ELEMENT	AuthType		%T_AuthorType;>
+
+<!-- Definition of Structure type: T_Author -->
+<!ENTITY	 % T_Author	"(
+ 			Name
+			| AuthType
+			)*">
+
+<!-- Definition of List type: T_AuthorList -->
+<!ELEMENT	Author	%T_Author;>
+<!ENTITY	 % T_AuthorList	"(Author)*">
+
+<!-- Members definition of Structure type: T_ArticleId -->
+<!ELEMENT	IdType		%T_string;>
+<!ELEMENT	Value		%T_string;>
+
+<!-- Definition of Structure type: T_ArticleId -->
+<!ENTITY	 % T_ArticleId	"(
+ 			IdType
+			| Value
+			)*">
+
+<!-- Definition of List type: T_ArticleIdList -->
+<!ELEMENT	ArticleId	%T_ArticleId;>
+<!ENTITY	 % T_ArticleIdList	"(ArticleId)*">
+<!ENTITY	 % T_date		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	PubDate		%T_string;>
+<!ELEMENT	EPubDate		%T_string;>
+<!ELEMENT	Source		%T_string;>
+<!ELEMENT	Authors		%T_AuthorList;>
+<!ELEMENT	Title		%T_string;>
+<!ELEMENT	Volume		%T_string;>
+<!ELEMENT	Issue		%T_string;>
+<!ELEMENT	Pages		%T_string;>
+<!ELEMENT	ArticleIds		%T_ArticleIdList;>
+<!ELEMENT	FullJournalName		%T_string;>
+<!ELEMENT	SortDate		%T_date;>
+<!ELEMENT	PmcLiveDate		%T_date;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			PubDate
+			| EPubDate
+			| Source
+			| Authors
+			| Title
+			| Volume
+			| Issue
+			| Pages
+			| ArticleIds
+			| FullJournalName
+			| SortDate
+			| PmcLiveDate
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

@@ -1,0 +1,177 @@
+<!-- DocSum DTD for nlmcatalog database -->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_AuthorInfo -->
+<!ELEMENT	CollectiveName		%T_string;>
+<!ELEMENT	LastName		%T_string;>
+<!ELEMENT	ForeName		%T_string;>
+<!ELEMENT	NameQualifier		%T_string;>
+<!ELEMENT	OtherInformation		%T_string;>
+<!ELEMENT	TitleAssociatedWithName		%T_string;>
+<!ELEMENT	AIID		%T_string;>
+
+<!-- Definition of Structure type: T_AuthorInfo -->
+<!ENTITY	 % T_AuthorInfo	"(
+ 			CollectiveName
+			| LastName
+			| ForeName
+			| NameQualifier
+			| OtherInformation
+			| TitleAssociatedWithName
+			| AIID
+			)*">
+
+<!-- Definition of List type: T_AuthorInfoListType -->
+<!ELEMENT	AuthorInfo	%T_AuthorInfo;>
+<!ENTITY	 % T_AuthorInfoListType	"(AuthorInfo)*">
+
+<!-- Members definition of Structure type: T_PublicationInfo -->
+<!ELEMENT	Imprint		%T_string;>
+<!ELEMENT	Place		%T_string;>
+<!ELEMENT	Publisher		%T_string;>
+<!ELEMENT	DateIssued		%T_string;>
+<!ELEMENT	Edition		%T_string;>
+<!ELEMENT	DatesOfSerialPublication		%T_string;>
+
+<!-- Definition of Structure type: T_PublicationInfo -->
+<!ENTITY	 % T_PublicationInfo	"(
+ 			Imprint
+			| Place
+			| Publisher
+			| DateIssued
+			| Edition
+			| DatesOfSerialPublication
+			)*">
+
+<!-- Definition of List type: T_PublicationInfoListType -->
+<!ELEMENT	PublicationInfo	%T_PublicationInfo;>
+<!ENTITY	 % T_PublicationInfoListType	"(PublicationInfo)*">
+
+<!-- Members definition of Structure type: T_ResourceInfo -->
+<!ELEMENT	TypeOfResource		%T_string;>
+<!ELEMENT	ResourceUnit		%T_string;>
+
+<!-- Definition of Structure type: T_ResourceInfo -->
+<!ENTITY	 % T_ResourceInfo	"(
+ 			TypeOfResource
+			| ResourceUnit
+			)*">
+
+<!-- Definition of List type: T_ResourceInfoListType -->
+<!ELEMENT	ResourceInfo	%T_ResourceInfo;>
+<!ENTITY	 % T_ResourceInfoListType	"(ResourceInfo)*">
+
+<!-- Members definition of Structure type: T_TitleMain -->
+<!ELEMENT	SortTitle		%T_string;>
+<!ELEMENT	Title		%T_string;>
+<!-- Already defined ...
+<!ELEMENT	AIID		%T_string;>
+ ... Already defined -->
+
+<!-- Definition of Structure type: T_TitleMain -->
+<!ENTITY	 % T_TitleMain	"(
+ 			SortTitle
+			| Title
+			| AIID
+			)*">
+
+<!-- Definition of List type: T_TitleMainListType -->
+<!ELEMENT	TitleMain	%T_TitleMain;>
+<!ENTITY	 % T_TitleMainListType	"(TitleMain)*">
+
+<!-- Members definition of Structure type: T_TitleOther -->
+<!ELEMENT	TitleAlternate		%T_string;>
+<!-- Already defined ...
+<!ELEMENT	OtherInformation		%T_string;>
+ ... Already defined -->
+<!-- Already defined ...
+<!ELEMENT	AIID		%T_string;>
+ ... Already defined -->
+
+<!-- Definition of Structure type: T_TitleOther -->
+<!ENTITY	 % T_TitleOther	"(
+ 			TitleAlternate
+			| OtherInformation
+			| AIID
+			)*">
+
+<!-- Definition of List type: T_TitleOtherListType -->
+<!ELEMENT	TitleOther	%T_TitleOther;>
+<!ENTITY	 % T_TitleOtherListType	"(TitleOther)*">
+
+<!-- Members definition of Structure type: T_ISSNInfo -->
+<!ELEMENT	issn		%T_string;>
+<!ELEMENT	validyn		%T_string;>
+<!ELEMENT	issntype		%T_string;>
+
+<!-- Definition of Structure type: T_ISSNInfo -->
+<!ENTITY	 % T_ISSNInfo	"(
+ 			issn
+			| validyn
+			| issntype
+			)*">
+
+<!-- Definition of List type: T_ISSNInfoListType -->
+<!ELEMENT	ISSNInfo	%T_ISSNInfo;>
+<!ENTITY	 % T_ISSNInfoListType	"(ISSNInfo)*">
+
+<!-- Definition of List type: T_StringList -->
+<!ELEMENT	string	%T_string;>
+<!ENTITY	 % T_StringList	"(string)*">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	Host		%T_string;>
+<!ELEMENT	NLMUniqueID		%T_string;>
+<!ELEMENT	DateRevised		%T_string;>
+<!ELEMENT	AuthorList		%T_AuthorInfoListType;>
+<!ELEMENT	PublicationInfoList		%T_PublicationInfoListType;>
+<!ELEMENT	ResourceInfoList		%T_ResourceInfoListType;>
+<!ELEMENT	TitleMainList		%T_TitleMainListType;>
+<!ELEMENT	TitleMainSort		%T_string;>
+<!ELEMENT	TitleOtherList		%T_TitleOtherListType;>
+<!ELEMENT	ISSNList		%T_ISSNInfoListType;>
+<!ELEMENT	ISBN		%T_string;>
+<!ELEMENT	Country		%T_string;>
+<!ELEMENT	CurrentIndexingStatus		%T_string;>
+<!ELEMENT	MedlineTA		%T_string;>
+<!ELEMENT	ISOAbbreviation		%T_string;>
+<!ELEMENT	StartYear		%T_string;>
+<!ELEMENT	JrId		%T_string;>
+<!ELEMENT	EndYear		%T_string;>
+<!ELEMENT	Language		%T_string;>
+<!ELEMENT	BroadHeading		%T_StringList;>
+<!ELEMENT	ContinuationNotes		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!ENTITY	 % T_DocSum	"(
+ 			Host
+			| NLMUniqueID
+			| DateRevised
+			| AuthorList
+			| PublicationInfoList
+			| ResourceInfoList
+			| TitleMainList
+			| TitleMainSort
+			| TitleOtherList
+			| ISSNList
+			| ISBN
+			| Country
+			| CurrentIndexingStatus
+			| MedlineTA
+			| ISOAbbreviation
+			| StartYear
+			| JrId
+			| EndYear
+			| Language
+			| BroadHeading
+			| ContinuationNotes
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>
