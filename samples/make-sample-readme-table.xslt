@@ -9,10 +9,12 @@
                 exclude-result-prefixes="xd" 
                 version="1.0">
 
-  <xsl:output indent="yes" method="html" />
+  <xsl:output indent="yes" method="xml" omit-xml-declaration='yes'/>
 
   <xsl:template match="samples">
-    <xsl:apply-templates select="*"/>
+    <div>
+      <xsl:apply-templates select="*"/>
+    </div>
   </xsl:template>
 
   <xsl:template match="samplegroup">

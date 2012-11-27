@@ -30,7 +30,8 @@
       <desc>This query has a bad search term</desc>
     </sample>
   </samplegroup>
-
+  
+  
   <samplegroup header='ESummary'>
     <sample title='ESummary pubmed' status='✓' name='esummary.pubmed'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmed&amp;id=5683731,22144687</eutils-url>
@@ -446,5 +447,12 @@
       </sample>
     </samplegroup>
   </samples>
-  
+
+  <samplegroup header='EFetch'>
+    <sample title='PubMed' status='' name='efetch.pubmed'>
+      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml</eutils-url>
+      <desc></desc>
+    </sample>
+  </samplegroup>
+
 </samples>
