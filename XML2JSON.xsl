@@ -113,10 +113,14 @@
   
   <!--
     simple-in-object
-    Call this template for elements that have simple content, when
-    in the context of a JSON object.  This translates the element
-    into a key:value pair, using the element name, converted to lowercase,
-    as the key.
+    For text nodes, attributes, or elements that have simple 
+    content, when in the context of a JSON object.  
+    This translates the node into a key:value pair.  If it's a text node, then, by 
+    default, the key will be "value".  If it's an attribute or element node, then, 
+    by default, the key will be the name converted to lowercase (it's up to you
+    to make sure they are unique within the object).
+    
+    FIXME:  I don't think we always want to normalize-space on the content.
   -->
   <xsl:template name='simple-in-object'>
     <xsl:param name='indent' select='""'/>
@@ -125,7 +129,7 @@
         <xsl:when test='self::text()'>
           <xsl:text>value</xsl:text>
         </xsl:when>
-        <xsl:otherwise>  <!-- This is an element node -->
+        <xsl:otherwise>  <!-- This is an attribute or element node -->
           <xsl:value-of select='np:to-lower(name(.))'/>
         </xsl:otherwise>
       </xsl:choose>
@@ -139,38 +143,38 @@
   
   <!-- 
     simple-in-array
-    Call this template for elements that have simple content, when
-    in the context of a JSON array.  This discards the element name,
+    For text nodes, attributes, or elements that have simple content, when
+    in the context of a JSON array.  This discards the attribute or element name,
     and produces a quoted string from the content.
+    
+    FIXME:  I don't think we always want to normalize-space on the content.
   -->
   <xsl:template name='simple-in-array'>
     <xsl:param name='indent' select='""'/>
-    <xsl:value-of select="$indent"/>
-    <xsl:value-of select="np:dq(normalize-space(np:q(.)))"/>
     
+    <xsl:value-of select="concat( $indent, np:dq(normalize-space(np:q(.))) )"/>
     <xsl:if test='position() != last()'>,</xsl:if>
     <xsl:value-of select='$nl'/>
   </xsl:template>
   
   <!--
     array-in-object
-    Call this template for array-type elements.  That is, elements
+    Call this template for array-type elements.  That is, usually, elements
     whose content is a list of child elements with the same name.
-    This produces a JSON array.
+    By default, the key will be the name converted to lowercase.
+    This produces a JSON array.  The "kids" are the set of child elements only,
+    so attributes and text node children are discarded.
   -->
   <xsl:template name='array-in-object'>
     <xsl:param name='indent' select='""'/>
-    
-    <xsl:value-of select='$indent'/>
-    <xsl:value-of select="np:dq(np:to-lower(name(.)))"/>
-    <xsl:text>: [</xsl:text>
-    <xsl:value-of select='$nl'/>
+    <xsl:param name='key' select='np:to-lower(name(.))'/>
+      
+    <xsl:value-of select='concat( $indent, np:dq($key), ": [", $nl )'/>
     <xsl:apply-templates select='*'>
       <xsl:with-param name='indent' select='concat($indent, $iu)'/>
       <xsl:with-param name='context' select='"array"'/>
     </xsl:apply-templates>
-    <xsl:value-of select='$indent'/>
-    <xsl:text>]</xsl:text>
+    <xsl:value-of select='concat($indent, "]")'/>
     <xsl:if test='position() != last()'>,</xsl:if>
     <xsl:value-of select='$nl'/>
   </xsl:template>
@@ -181,42 +185,43 @@
   -->
   <xsl:template name='array-in-array'>
     <xsl:param name='indent' select='""'/>
-    <xsl:value-of select='$indent'/>
-    
-    <xsl:text>[</xsl:text>
-    <xsl:value-of select='$nl'/>
+    <xsl:param name='key' select='np:to-lower(name(.))'/>
+      
+    <xsl:value-of select='concat( $indent, "[", $nl )'/>
     <xsl:apply-templates select='*'>
       <xsl:with-param name='indent' select='concat($indent, $iu)'/>
+      <xsl:with-param name='context' select='"array"'/>
     </xsl:apply-templates>
-    <xsl:value-of select='$indent'/>
-    <xsl:text>]</xsl:text>
+    <xsl:value-of select='concat($indent, "]")'/>
     <xsl:if test='position() != last()'>,</xsl:if>
     <xsl:value-of select='$nl'/>
   </xsl:template>
   
   <!-- 
     object-in-object
-    For elements that contain heterogenous content.  These are converted
-    into JSON objects.  The key, by default, is taken from this element's name,
-    but you can override that by passing in the $key param.
+    For elements that have attributes and/or heterogenous content.  These are 
+    converted into JSON objects.  
+    The key, by default, is taken from this element's name, converted to lowercase.
+    By default, this recurses by calling apply-templates on all attributes and
+    element children.  So text-node children are discarded.  You can override that
+    by passing the $kids param.
   -->
   <xsl:template name='object-in-object'>
     <xsl:param name='indent' select='""'/>
     <xsl:param name='key' select='np:to-lower(name(.))'/>
+    <xsl:param name='kids' select='@*|*'/>
+    <xsl:param name='force-comma' select='false()'/>
     
-    <xsl:value-of select='$indent'/>
-    <xsl:value-of select="np:dq($key)"/>
-    <xsl:text>: {</xsl:text>
-    <xsl:value-of select='$nl'/>
-    <xsl:apply-templates select='*'>
+    <xsl:value-of select='concat( $indent, np:dq($key), ": {", $nl )'/>
+    <xsl:apply-templates select='$kids'>
       <xsl:with-param name='indent' select='concat($indent, $iu)'/>
+      <xsl:with-param name='context' select='"object"'/>
     </xsl:apply-templates>
-    <xsl:value-of select='$indent'/>
-    <xsl:text>}</xsl:text>
-    <xsl:if test='position() != last()'>,</xsl:if>
+    <xsl:value-of select='concat($indent, "}")'/>
+    <xsl:if test='$force-comma or position() != last()'>,</xsl:if>
     <xsl:value-of select='$nl'/>
   </xsl:template>
-  
+
   <!-- 
     object-in-array
     For elements that contain heterogenous content.  These are converted
@@ -224,24 +229,22 @@
   -->
   <xsl:template name='object-in-array'>
     <xsl:param name='indent' select='""'/>
+    <xsl:param name='kids' select='@*|*'/>
     <xsl:param name='force-comma' select='false()'/>
     
-    <xsl:value-of select='$indent'/>
-    <xsl:text>{</xsl:text>
-    <xsl:value-of select='$nl'/>
-    <xsl:apply-templates select='*'>
+    <xsl:value-of select='concat($indent, "{", $nl )'/>
+    <xsl:apply-templates select='$kids'>
       <xsl:with-param name='indent' select='concat($indent, $iu)'/>
       <xsl:with-param name='context' select='"object"'/>
     </xsl:apply-templates>
-    <xsl:value-of select='$indent'/>
-    <xsl:text>}</xsl:text>
+    <xsl:value-of select='concat($indent, "}")'/>
     <xsl:if test='$force-comma or position() != last()'>,</xsl:if>
     <xsl:value-of select='$nl'/>
   </xsl:template>
   
   <!-- 
     simple-obj-in-array
-    This is for simple-type XML elements, but we want to convert
+    This is for simple-type XML attributes or elements, but we want to convert
     them into mini JSON objects.  For example,
     <PhraseNotFound>fleegle</PhraseNotFound>
     will be converted to
@@ -250,31 +253,17 @@
   <xsl:template name='simple-obj-in-array'>
     <xsl:param name='indent' select='""'/>
     <xsl:param name='key' select='np:to-lower(name(.))'/>
-    <xsl:value-of select='$indent'/>
-    
-    <xsl:text>{ </xsl:text>
-    <xsl:value-of select='concat(
-      np:dq($key), ": ", np:dq(normalize-space(np:q(.))) )'/>
-    <xsl:text> }</xsl:text>
+
+    <xsl:value-of select='concat( 
+      $indent, "{ ", np:dq($key), ": ", np:dq(normalize-space(np:q(.))), "}" 
+    )'/>
     <xsl:if test='position() != last()'>,</xsl:if>
     <xsl:value-of select='$nl'/>
   </xsl:template>
   
-  <!-- Default template for unmatched elements.  Report a problem. -->
-  <xsl:template match='*'>
-    <xsl:param name='indent' select='""'/>
-    <xsl:variable name='msg'
-      select='concat("FIXME:  unmatched element ", np:dq(name(.)))'/>
-    
-    <xsl:value-of select='concat($indent, $msg, $nl)'/>
-    <xsl:message>
-      <xsl:value-of select='$msg'/>
-    </xsl:message>
-  </xsl:template>
-
-
   <!-- 
     Default template for an element or attribute. 
+    Reports a problem.
   -->
   <xsl:template match='@*|*'>
     <xsl:param name='indent' select='""'/>
@@ -294,18 +283,18 @@
       <xsl:value-of select='name(.)'/>
     </xsl:message>
     
-    <xsl:value-of select='$indent'/>
     <xsl:choose>
       <xsl:when test='$context = "array"'>
-        <xsl:value-of select='np:dq(normalize-space(np:q(.)))'/>
+        <xsl:call-template name='simple-in-array'>
+          <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:value-of select='concat(
-          np:dq(np:to-lower(name(.))), ": ", np:dq(normalize-space(np:q(.))) )'/>
+        <xsl:call-template name='simple-in-object'>
+          <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>
-    <xsl:if test='position() != last()'>,</xsl:if>
-    <xsl:value-of select='$nl'/>
   </xsl:template>
   
   <!-- Default template for text nodes.  Throw them away if they
@@ -314,18 +303,23 @@
     <xsl:param name='indent' select='""'/>
     <xsl:param name='context' select='"object"'/>
     
-    <xsl:message>FIXME:  non-blank text node with no template match</xsl:message>
-    <xsl:value-of select='$indent'/>
     <xsl:if test='normalize-space(.) != ""'>
-      <xsl:if test='$context = "object"'>
-        <xsl:text>"value": </xsl:text>
-      </xsl:if>
-      <xsl:text>"</xsl:text>
-      <xsl:value-of select='normalize-space(.)'/>
-      <xsl:text>"</xsl:text>
-      <!-- FIXME:  Not sure what position() means for a text node. -->
-      <xsl:if test='position() != last()'>,</xsl:if>
-      <xsl:value-of select='$nl'/>
+      <xsl:message>
+        <xsl:text>FIXME:  non-blank text node with no template match.  Parent element: </xsl:text>
+        <xsl:value-of select='name(..)'/>
+      </xsl:message>
+      <xsl:choose>
+        <xsl:when test='$context = "array"'>
+          <xsl:call-template name='simple-in-array'>
+            <xsl:with-param name='indent' select='$indent'/>
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:call-template name='simple-in-object'>
+            <xsl:with-param name='indent' select='$indent'/>
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
     </xsl:if>
   </xsl:template>
   

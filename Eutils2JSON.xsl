@@ -45,37 +45,32 @@
     <xsl:call-template name='result-start'/>
     <xsl:apply-templates select='*'>
       <xsl:with-param name='indent' select='$iu'/>
+      <xsl:with-param name='context' select='"object"'/>
     </xsl:apply-templates>
     <xsl:text>}</xsl:text>
   </xsl:template>
   
   <xsl:template match="DbList">
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='array-in-object'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
   
   <xsl:template match='DbList/DbName'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='simple-in-array'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
 
   <xsl:template match="DbInfo">
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='object-in-object'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
 
@@ -94,33 +89,27 @@
                        Menu |
                        DbTo'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
 
     <xsl:call-template name='simple-in-object'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
   
   <xsl:template match='FieldList |
                        LinkList'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='array-in-object'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
   
   <xsl:template match='Field |
                        Link'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='object-in-array'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
 
@@ -131,51 +120,44 @@
     <xsl:call-template name='result-start'/>
     <xsl:apply-templates select='*'>
       <xsl:with-param name='indent' select='$iu'/>
+      <xsl:with-param name='context' select='"object"'/>
     </xsl:apply-templates>
     <xsl:text>}</xsl:text>
   </xsl:template>
   
   <xsl:template match='DocumentSummarySet[@status="OK"]'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
-    <xsl:value-of select='$indent'/>
-
-    <xsl:text>"docsums": {</xsl:text>
-    <xsl:value-of select='concat($nl, $indent, $iu)'/>
+    <xsl:value-of select='concat(
+      $indent, np:dq("docsums"), ": {", $nl, $indent, $iu)'/>
     
     <!-- Output the uids as an array -->
     <xsl:value-of select='concat(np:dq("uids"), ": [", $nl)'/>
     <xsl:apply-templates select='DocumentSummary/@uid'>
       <xsl:with-param name='indent' select='concat($indent, $iu2)'/>
-      <xsl:with-param name='context' select='"object"'/>
     </xsl:apply-templates>
     <xsl:value-of select='concat($indent, $iu, "],", $nl)'/>
     
     <xsl:apply-templates select='DocumentSummary' >
       <xsl:with-param name='indent' select='concat($indent, $iu)'/>
-      <xsl:with-param name='context' select='"object"'/>
     </xsl:apply-templates>
+    
     <xsl:value-of select='concat($indent, "}", $nl)'/>
   </xsl:template>
   
   <xsl:template match='DocumentSummary/@uid'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='simple-in-array'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
   
   <xsl:template match='DocumentSummary'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='object-in-object'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
       <xsl:with-param name='key' select='@uid'/>
     </xsl:call-template>
   </xsl:template>
@@ -184,11 +166,9 @@
   <xsl:template match='string | 
                        flag'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='simple-in-array'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
   
@@ -244,11 +224,9 @@
                        PmcLiveDate |
                        DocumentSummary/error'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='simple-in-object'>
       <xsl:with-param name="indent" select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
   
@@ -264,11 +242,9 @@
                        DocContribList |
                        Map_Gene_Summary_List'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='array-in-object'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
 
@@ -278,11 +254,9 @@
                        PubMedPubDate |
                        Map_Gene_Summary'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='object-in-array'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
 
@@ -294,6 +268,7 @@
     <xsl:call-template name='result-start'/>
     <xsl:apply-templates select='*'>
       <xsl:with-param name='indent' select='$iu'/>
+      <xsl:with-param name='context' select='"object"'/>
     </xsl:apply-templates>
     <xsl:text>}</xsl:text>
   </xsl:template>
@@ -310,11 +285,9 @@
                        Explode |
                        QueryTranslation'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='simple-in-object'>
       <xsl:with-param name="indent" select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
 
@@ -322,11 +295,9 @@
   <xsl:template match='Id |
                        OP'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='simple-in-array'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
   
@@ -335,11 +306,9 @@
                        TranslationSet |
                        ErrorList'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='array-in-object'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
   
@@ -347,11 +316,9 @@
   <xsl:template match='Translation |
                        TermSet'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='object-in-array'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
   
@@ -359,11 +326,9 @@
   <xsl:template match='PhraseNotFound |
                        FieldNotFound'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='simple-obj-in-array'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
   
@@ -380,7 +345,6 @@
   -->
   <xsl:template match='TranslationStack'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:choose>
       <xsl:when test='$parse-translation-stack'>
@@ -421,7 +385,6 @@
         <xsl:for-each select='$elems[1]'>
           <xsl:call-template name='object-in-array'>
             <xsl:with-param name='indent' select='$indent'/>
-            <xsl:with-param name='context' select='"array"'/>
             <xsl:with-param name='force-comma' select='$trailing-comma'/>
           </xsl:call-template>
         </xsl:for-each>
@@ -563,29 +526,24 @@
                        OSLT/text() |
                        AccessionVersion'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='simple-in-object'>
       <xsl:with-param name="indent" select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
 
   <!-- array-in-object -->
   <xsl:template match='Statistics'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:call-template name='array-in-object'>
       <xsl:with-param name='indent' select='$indent'/>
-      <xsl:with-param name='context' select='$context'/>
     </xsl:call-template>
   </xsl:template>
 
   <!-- Stat - special object-in-array -->
   <xsl:template match='Stat'>
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     
     <xsl:value-of select='$indent'/>
     <xsl:text>{</xsl:text>
@@ -604,7 +562,6 @@
   <xsl:template match="Properties |
                        OSLT">
     <xsl:param name='indent' select='""'/>
-    <xsl:param name='context' select='"object"'/>
     <xsl:param name='key' select='np:to-lower(name(.))'/>
     
     <xsl:value-of select='$indent'/>
@@ -621,6 +578,155 @@
     <xsl:value-of select='$nl'/>
   </xsl:template>
   
+  <!--====================================================================
+    EFetch PubMed
+  -->
+  <xsl:template match='PubmedArticleSet'>
+    <xsl:call-template name='result-start'/>
+    <xsl:value-of select='concat($iu, np:dq("articles"), ": [", $nl)'/>
+    <xsl:apply-templates select='*'>
+      <xsl:with-param name='indent' select='$iu2'/>
+      <xsl:with-param name='context' select='"object"'/>
+    </xsl:apply-templates>
+    <xsl:value-of select='concat($iu, "]", $nl, "}")'/>
+  </xsl:template>
   
+  <!-- simple-in-object -->
+  <xsl:template match='MedlineCitation/@Owner |
+                       MedlineCitation/@Status |
+                       PMID/@Version |
+                       PMID/text() |
+                       ISSN/@IssnType |
+                       ISSN/text() |
+                       Year |
+                       Month |
+                       Day |
+                       Article/@PubModel |
+                       JournalIssue/@CitedMedium |
+                       ISOAbbreviation |
+                       ArticleTitle |
+                       StartPage |
+                       EndPage |
+                       MedlinePgn |
+                       AbstractText |
+                       CopyrightInformation |
+                       Affiliation |
+                       LastName |
+                       ForeName |
+                       Initials |
+                       Author/@ValidYN |
+                       Language |
+                       Agency |
+                       Country |
+                       ArticleDate/@DateType |
+                       MedlineTA |
+                       ISSNLinking |
+                       CitationSubset |
+                       CommentsCorrections/@RefType |
+                       RefSource |
+                       DescriptorName/@MajorTopicYN |
+                       DescriptorName/text() |
+                       QualifierName/@MajorTopicYN |
+                       QualifierName/text() |
+                       OtherID/@Source |
+                       OtherID/text() |
+                       PubMedPubDate/@PubStatus |
+                       Hour |
+                       Minute |
+                       PublicationStatus |
+                       ArticleId/@IdType |
+                       ArticleId/text() |
+                       RegistryNumber |
+                       NameOfSubstance'>
+    <xsl:param name='indent' select='""'/>
+    
+    <xsl:call-template name='simple-in-object'>
+      <xsl:with-param name='indent' select='$indent'/>
+    </xsl:call-template>
+  </xsl:template> 
 
+  <!-- simple-in-array -->
+  <xsl:template match='PublicationType'>
+    <xsl:param name='indent' select='""'/>
+    
+    <xsl:call-template name='simple-in-array'>
+      <xsl:with-param name='indent' select='$indent'/>
+    </xsl:call-template>
+  </xsl:template>
+  
+  
+  <!-- array-in-object -->
+  <xsl:template match='AuthorList |
+                       GrantList |
+                       PublicationTypeList |
+                       CommentsCorrectionsList |
+                       MeshHeadingList |
+                       ArticleIdList |
+                       ChemicalList'>
+    <xsl:param name='indent' select='""'/>
+    
+    <xsl:call-template name='array-in-object'>
+      <xsl:with-param name='indent' select='$indent'/>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <!-- object-in-array -->
+  <xsl:template match='PubmedArticle |
+                       Grant |
+                       CommentsCorrections |
+                       MeshHeading |
+                       Chemical'>
+    <xsl:param name='indent' select='""'/>
+    
+    <xsl:call-template name='object-in-array'>
+      <xsl:with-param name='indent' select='$indent'/>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <!-- object-in-object -->
+  <xsl:template match='MedlineCitation |
+                       DateCreated |
+                       DateCompleted |
+                       DateRevised |
+                       Article |
+                       Journal |
+                       JournalIssue |
+                       PubDate |
+                       Pagination |
+                       Abstract |
+                       ArticleDate |
+                       MedlineJournalInfo |
+                       PubmedData'>
+    <xsl:param name='indent' select='""'/>
+
+    <xsl:call-template name='object-in-object'>
+      <xsl:with-param name='indent' select='$indent'/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <!-- object-in-object with significant text node children -->
+  <xsl:template match='PMID |
+                       ISSN |
+                       DescriptorName |
+                       QualifierName |
+                       OtherID'>
+    <xsl:param name='indent' select='""'/>
+    
+    <xsl:call-template name='object-in-object'>
+      <xsl:with-param name='indent' select='$indent'/>
+      <xsl:with-param name='kids' select='@*|text()'/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <!-- object-in-array with significant text node children -->
+  <xsl:template match='ArticleId'>
+    <xsl:param name='indent' select='""'/>
+    
+    <xsl:call-template name='object-in-array'>
+      <xsl:with-param name='indent' select='$indent'/>
+      <xsl:with-param name='kids' select='@*|text()'/>
+    </xsl:call-template>
+  </xsl:template>
+  
+  
 </xsl:stylesheet>

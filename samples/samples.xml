@@ -449,7 +449,7 @@
   </samples>
 
   <samplegroup header='EFetch'>
-    <sample title='PubMed' status='' name='efetch.pubmed'>
+    <sample title='PubMed' status='✓' name='efetch.pubmed'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml</eutils-url>
       <desc></desc>
     </sample>

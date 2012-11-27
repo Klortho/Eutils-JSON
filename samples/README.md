@@ -1555,7 +1555,7 @@ conversions.
   </tr>
   <tr>
     <th>PubMed</th>
-    <td/>
+    <td>✓</td>
     <td>
       <a href="../../blob/master/samples/efetch.pubmed.xml">xml</a>
     </td>
