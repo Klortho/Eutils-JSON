@@ -68,14 +68,56 @@ Error element
 ~~-->
 <!ELEMENT        ERROR                  (#PCDATA)>  <!-- .+ -->
 
+<!--~~ <OutputMessage>
+OutputMessage will be a "simple object" inside an array.
+~~ json
+<type>simple-obj</type>
+~~-->
 <!ELEMENT        OutputMessage          (#PCDATA)>  <!-- .+ -->
+
+<!--~~ <QuotedPhraseNotFound>
+QuotedPhraseNotFound will be a "simple object" inside an array.
+~~ json
+<type>simple-obj</type>
+~~-->
 <!ELEMENT        QuotedPhraseNotFound   (#PCDATA)>  <!-- .+ -->
+
+<!--~~ <PhraseIgnored>
+PhraseIgnored will be a "simple object" inside an array.
+~~ json
+<type>simple-obj</type>
+~~-->
 <!ELEMENT        PhraseIgnored          (#PCDATA)>  <!-- .+ -->
+
+<!--~~ <FieldNotFound>
+FieldNotFound will be a "simple object" inside an array.
+~~ json
+<type>simple-obj</type>
+~~-->
 <!ELEMENT        FieldNotFound          (#PCDATA)>  <!-- .+ -->
+
+<!--~~ <PhraseNotFound>
+PhraseNotFound will be a "simple object" inside an array.
+~~ json
+<type>simple-obj</type>
+~~-->
 <!ELEMENT        PhraseNotFound         (#PCDATA)>  <!-- .+ -->
+
+
 <!ELEMENT        QueryTranslation       (#PCDATA)>  <!-- .+ -->
 
+<!--~~ <ErrorList>
+ErrorList will be converted into an array of "simple objects".
+~~ json
+<type>array</type>
+~~-->
 <!ELEMENT        ErrorList      (PhraseNotFound*,FieldNotFound*)>
+
+<!--~~ <WarningList>
+WarningList will be converted into an array of "simple objects".
+~~ json
+<type>array</type>
+~~-->
 <!ELEMENT        WarningList    ( PhraseIgnored*,
                                   QuotedPhraseNotFound*,
                                   OutputMessage* )>

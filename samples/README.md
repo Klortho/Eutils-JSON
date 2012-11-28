@@ -81,7 +81,7 @@ conversions.
   </tr>
   <tr>
     <th>ESearch Error</th>
-    <td>✓</td>
+    <td>✓D</td>
     <td>
       <a href="../../blob/master/samples/esearch.error.xml">xml</a>
     </td>

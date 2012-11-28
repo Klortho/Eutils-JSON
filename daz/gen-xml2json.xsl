@@ -40,11 +40,41 @@
         </xsl:template>
       </x:when>
 
+      <!-- simple-obj -->
+      <x:when test='$content-type = "simple-obj"'>
+        <x:value-of select='$nl'/>
+        <x:comment> 
+          <x:text> content-type override:  simple-obj </x:text>
+        </x:comment>
+        <xsl:template match='{@name}'>
+          <xsl:param name='indent' select='""'/>
+          <xsl:param name='context' select='"unknown"'/>
+          <xsl:call-template name='simple-obj-in-array'>
+            <xsl:with-param name='indent' select='$indent'/>
+            <xsl:with-param name='context' select='$context'/>
+            <x:if test='$key != ""'>
+              <xsl:with-param name='key' select='$key'/>
+            </x:if>
+          </xsl:call-template>
+        </xsl:template>
+      </x:when>
+      
       <!-- simple -->
       <x:when test='$content-type = "simple" or
                     content-model/@spec = "text"'>
         <x:value-of select='$nl'/>
-        <x:comment> Text content </x:comment>
+
+        <x:comment> 
+          <x:choose>
+            <x:when test='$content-type="simple"'>
+              <x:text> content-type override:  simple </x:text>
+            </x:when>
+            <x:otherwise>
+              Text content 
+            </x:otherwise>
+          </x:choose>          
+        </x:comment>
+        
         <xsl:template match='{@name}'>
           <xsl:param name='indent' select='""'/>
           <xsl:param name='context' select='"unknown"'/>
@@ -63,10 +93,20 @@
                       content-model/@spec = "element" and 
                       count(content-model/choice/child) = 1 )'>
         <x:value-of select='$nl'/>
-        <x:comment> Element content with exactly one child (homogenous content).
-          FIXME:  need to check quantifier; if absent or '?', then this could be
-          simple content.
+
+        <x:comment> 
+          <x:choose>
+            <x:when test='$content-type="array"'>
+              <x:text> content-type override:  array </x:text>
+            </x:when>
+            <x:otherwise>
+              Element content with exactly one child (homogenous content).
+              FIXME:  need to check quantifier; if absent or '?', then this could be
+              simple content.
+            </x:otherwise>
+          </x:choose>          
         </x:comment>
+        
         <xsl:template match='{@name}'>
           <xsl:param name='indent' select='""'/>
           <xsl:param name='context' select='"unknown"'/>
@@ -88,8 +128,16 @@
                            content-model//seq[@q="+" or @q="*"] )
                     )'>
         <x:value-of select='$nl'/>
-        <x:comment> Element content with more than one child, and each child can
-          appear at most once.          
+        <x:comment> 
+          <x:choose>
+            <x:when test='$content-type="object"'>
+              <x:text> content-type override:  object </x:text>
+            </x:when>
+            <x:otherwise>
+              Element content with more than one child, and each child can
+              appear at most once.
+            </x:otherwise>
+          </x:choose>          
         </x:comment>
         <xsl:template match='{@name}'>
           <xsl:param name='indent' select='""'/>
@@ -103,7 +151,7 @@
           </xsl:call-template>
         </xsl:template>
       </x:when>
-
+      
       <x:otherwise>
         <x:message>
           <x:text>Need to implement a template for </x:text> 

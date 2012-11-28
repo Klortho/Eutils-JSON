@@ -11,10 +11,6 @@
   <!-- Turn off pretty-printing by setting this to false() -->
   <xsl:param name='pretty' select='true()'/>
   
-  <!-- Parse the ESearch translation stack into a JSON tree structure.  This is
-    experimental.  -->
-  <xsl:param name='parse-translation-stack' select='true()'/>
-
 
   <!-- $nl == newline when pretty-printing; otherwise empty string  -->
   <xsl:variable name='nl'>
@@ -352,16 +348,18 @@
     simple-obj-in-array
     This is for simple-type XML attributes or elements, but we want to convert
     them into mini JSON objects.  For example,
-    <PhraseNotFound>fleegle</PhraseNotFound>
+      <PhraseNotFound>fleegle</PhraseNotFound>
     will be converted to
-    { "phrasenotfound": "fleegle" }
+      { "phrasenotfound": "fleegle" }
+    This is for elements that appear in an array context, but the content is
+    not strictly homogenous.
   -->
   <xsl:template name='simple-obj-in-array'>
     <xsl:param name='indent' select='""'/>
     <xsl:param name='key' select='np:to-lower(name(.))'/>
 
     <xsl:value-of select='concat( 
-      $indent, "{ ", np:dq($key), ": ", np:dq(normalize-space(np:q(.))), "}" 
+      $indent, "{ ", np:dq($key), ": ", np:dq(normalize-space(np:q(.))), " }" 
     )'/>
     <xsl:if test='position() != last()'>,</xsl:if>
     <xsl:value-of select='$nl'/>

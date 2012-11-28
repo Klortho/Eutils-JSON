@@ -32,13 +32,15 @@
             "to": "\"obstetrics\"[MeSH Terms]"
         }
     ],
-    "translationstack": 
+    "translationstack": [
         {
             "term": "\"obstetrics\"[MeSH Terms]",
             "field": "MeSH Terms",
             "count": "5163",
             "explode": "Y"
         },
+        "GROUP"
+    ],
     "querytranslation": "\"obstetrics\"[MeSH Terms]",
     "errorlist": [
         { "phrasenotfound": "fleegle[MeSH Terms]" }
