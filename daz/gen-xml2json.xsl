@@ -25,7 +25,28 @@
                 <xsl:with-param name='indent' select='$iu'/>
                 <xsl:with-param name='context' select='"object"'/>
               </xsl:apply-templates>
-              <xsl:text>}</xsl:text>
+              <xsl:value-of select='concat("}}", $nl)'/>
+            </xsl:template>
+          </x:when>
+          <x:when test='content-model/@spec = "text"'>
+            <xsl:template match='{@name}'>
+              <xsl:param name='indent' select='""'/>
+              <xsl:param name='context' select='"unknown"'/>
+              <xsl:call-template name='simple'>
+                <xsl:with-param name='indent' select='$indent'/>
+                <xsl:with-param name='context' select='$context'/>
+              </xsl:call-template>
+            </xsl:template>
+          </x:when>
+          <x:when test='content-model/@spec = "element" and 
+                        count(content-model/choice/child) = 1'>
+            <xsl:template match='{@name}'>
+              <xsl:param name='indent' select='""'/>
+              <xsl:param name='context' select='"unknown"'/>
+              <xsl:call-template name='array'>
+                <xsl:with-param name='indent' select='$indent'/>
+                <xsl:with-param name='context' select='$context'/>
+              </xsl:call-template>
             </xsl:template>
           </x:when>
           <x:otherwise>

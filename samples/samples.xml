@@ -1,4 +1,4 @@
-﻿<!-- 
+<!--
   Maintain the current status of all the samples here.
   Convert this into HTML with make-sample-readme-table.xslt, and then
   insert the result into README.md.
@@ -6,7 +6,7 @@
 
 <samples>
   <samplegroup header='EInfo'>
-    <sample title='EInfo' status='✓' name='einfo'>
+    <sample title='EInfo' status='✓D' name='einfo'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi</eutils-url>
       <desc>List all databases</desc>
     </sample>
@@ -30,8 +30,8 @@
       <desc>This query has a bad search term</desc>
     </sample>
   </samplegroup>
-  
-  
+
+
   <samplegroup header='ESummary'>
     <sample title='ESummary pubmed' status='✓' name='esummary.pubmed'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmed&amp;id=5683731,22144687</eutils-url>

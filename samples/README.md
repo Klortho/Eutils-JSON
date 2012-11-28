@@ -15,7 +15,7 @@ conversions.
   </tr>
   <tr>
     <th>EInfo</th>
-    <td>✓</td>
+    <td>✓D</td>
     <td>
       <a href="../../blob/master/samples/einfo.xml">xml</a>
     </td>
