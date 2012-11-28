@@ -56,7 +56,7 @@
                                 LinkList?)>
 
 <!--~~ <eInfoResult>
-Stuff
+This is the root element for an EInfo response.
 ~~ tags
 root
 ~~-->
