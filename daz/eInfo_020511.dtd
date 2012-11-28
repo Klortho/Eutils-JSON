@@ -23,6 +23,11 @@ root
 <!ELEMENT       Count           (#PCDATA)>      <!-- \d+ -->
 <!ELEMENT       LastUpdate      (#PCDATA)>      <!-- \d+ -->
 
+<!--~~ <ERROR>
+Error element
+~~ json
+<key>"ERROR"</key>
+~~-->
 <!ELEMENT       ERROR           (#PCDATA)>      <!-- .+ -->
 
 <!ELEMENT       IsDate          (#PCDATA)>      <!-- (Y|N) -->

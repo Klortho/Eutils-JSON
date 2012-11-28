@@ -118,10 +118,23 @@
   <xsl:template name='simple'>
     <xsl:param name='indent' select='""'/>
     <xsl:param name='context' select='"unknown"'/>
+    <xsl:param name='key' select='""'/>
+    
+    <xsl:message>
+      <xsl:text>In simple template, key is '</xsl:text>
+      <xsl:value-of select='$key'/>
+      <xsl:text>'</xsl:text>
+    </xsl:message>
     <xsl:choose>
-      <xsl:when test='$context = "object"'>
+      <xsl:when test='$context = "object" and $key = ""'>
         <xsl:call-template name='simple-in-object'>
           <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test='$context = "object" and $key != ""'>
+        <xsl:call-template name='simple-in-object'>
+          <xsl:with-param name='indent' select='$indent'/>
+          <xsl:with-param name='key' select='$key'/>
         </xsl:call-template>
       </xsl:when>
       <xsl:when test='$context = "array"'>
@@ -145,10 +158,18 @@
   <xsl:template name='array'>
     <xsl:param name='indent' select='""'/>
     <xsl:param name='context' select='"unknown"'/>
+    <xsl:param name='key' select='""'/>
+    
     <xsl:choose>
-      <xsl:when test='$context = "object"'>
+      <xsl:when test='$context = "object" and $key = ""'>
         <xsl:call-template name='array-in-object'>
           <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test='$context = "object" and $key != ""'>
+        <xsl:call-template name='array-in-object'>
+          <xsl:with-param name='indent' select='$indent'/>
+          <xsl:with-param name='key' select='$key'/>
         </xsl:call-template>
       </xsl:when>
       <xsl:when test='$context = "array"'>
@@ -172,10 +193,18 @@
   <xsl:template name='object'>
     <xsl:param name='indent' select='""'/>
     <xsl:param name='context' select='"unknown"'/>
+    <xsl:param name='key' select='""'/>
+    
     <xsl:choose>
-      <xsl:when test='$context = "object"'>
+      <xsl:when test='$context = "object" and $key = ""'>
         <xsl:call-template name='object-in-object'>
           <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test='$context = "object" and $key != ""'>
+        <xsl:call-template name='object-in-object'>
+          <xsl:with-param name='indent' select='$indent'/>
+          <xsl:with-param name='key' select='$key'/>
         </xsl:call-template>
       </xsl:when>
       <xsl:when test='$context = "array"'>
