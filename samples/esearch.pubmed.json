@@ -114,48 +114,42 @@
             "to": "\"neoplasms\"[MeSH Terms] OR \"neoplasms\"[All Fields] OR \"cancer\"[All Fields]"
         }
     ],
-    "translationstack": 
-        [
-            "AND",
-            [
-                "OR",
-                [
-                    "OR",
-                    {
-                        "term": "\"neoplasms\"[MeSH Terms]",
-                        "field": "MeSH Terms",
-                        "count": "2382851",
-                        "explode": "Y"
-                    },
-                    {
-                        "term": "\"neoplasms\"[All Fields]",
-                        "field": "All Fields",
-                        "count": "1880322",
-                        "explode": "Y"
-                    }
-                ],
-                {
-                    "term": "\"cancer\"[All Fields]",
-                    "field": "All Fields",
-                    "count": "1148937",
-                    "explode": "Y"
-                }
-            ],
-            [
-                "RANGE",
-                {
-                    "term": "2012/09/25[EDAT]",
-                    "field": "EDAT",
-                    "count": "0",
-                    "explode": "Y"
-                },
-                {
-                    "term": "2012/11/24[EDAT]",
-                    "field": "EDAT",
-                    "count": "0",
-                    "explode": "Y"
-                }
-            ]
-        ],
+    "translationstack": [
+        {
+            "term": "\"neoplasms\"[MeSH Terms]",
+            "field": "MeSH Terms",
+            "count": "2382851",
+            "explode": "Y"
+        },
+        {
+            "term": "\"neoplasms\"[All Fields]",
+            "field": "All Fields",
+            "count": "1880322",
+            "explode": "Y"
+        },
+        "OR",
+        {
+            "term": "\"cancer\"[All Fields]",
+            "field": "All Fields",
+            "count": "1148937",
+            "explode": "Y"
+        },
+        "OR",
+        "GROUP",
+        {
+            "term": "2012/09/25[EDAT]",
+            "field": "EDAT",
+            "count": "0",
+            "explode": "Y"
+        },
+        {
+            "term": "2012/11/24[EDAT]",
+            "field": "EDAT",
+            "count": "0",
+            "explode": "Y"
+        },
+        "RANGE",
+        "AND"
+    ],
     "querytranslation": "(\"neoplasms\"[MeSH Terms] OR \"neoplasms\"[All Fields] OR \"cancer\"[All Fields]) AND 2012/09/25[EDAT] : 2012/11/24[EDAT]"
 }

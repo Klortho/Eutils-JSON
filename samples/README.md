@@ -67,7 +67,7 @@ conversions.
   </tr>
   <tr>
     <th>ESearch PubMed</th>
-    <td>✓</td>
+    <td>✓D</td>
     <td>
       <a href="../../blob/master/samples/esearch.pubmed.xml">xml</a>
     </td>

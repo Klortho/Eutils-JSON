@@ -12,3 +12,5 @@ Here are some of the things that I'm assuming.
   For example, for EInfo documents, the root element
   will always be eInfoResult
 * That root element will never appear as a child of another element.
+* The root element is always a well-behaved _object_.  That is, it has element
+  content and none of its kids can appear more than once.

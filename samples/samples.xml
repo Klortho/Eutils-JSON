@@ -21,7 +21,7 @@
   </samplegroup>
 
   <samplegroup header='ESearch'>
-    <sample title='ESearch PubMed' status='✓' name='esearch.pubmed'>
+    <sample title='ESearch PubMed' status='✓D' name='esearch.pubmed'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y</eutils-url>
       <desc></desc>
     </sample>

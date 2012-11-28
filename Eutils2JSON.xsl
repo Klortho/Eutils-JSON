@@ -23,6 +23,10 @@
   <xsl:import href='XML2JSON.xsl'/>
   <xsl:output method="text" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
 
+  <!-- Parse the ESearch translation stack into a JSON tree structure.  This is
+    experimental.  -->
+  <xsl:param name='parse-translation-stack' select='false()'/>
+  
   
   
   <xsl:template match='ERROR'>
@@ -48,6 +52,7 @@
       <xsl:with-param name='context' select='"object"'/>
     </xsl:apply-templates>
     <xsl:text>}</xsl:text>
+    <xsl:value-of select='$nl'/>
   </xsl:template>
   
   <xsl:template match="DbList">
@@ -271,6 +276,7 @@
       <xsl:with-param name='context' select='"object"'/>
     </xsl:apply-templates>
     <xsl:text>}</xsl:text>
+    <xsl:value-of select='$nl'/>
   </xsl:template>
 
   <!-- simple-in-object -->
@@ -588,7 +594,7 @@
       <xsl:with-param name='indent' select='$iu2'/>
       <xsl:with-param name='context' select='"object"'/>
     </xsl:apply-templates>
-    <xsl:value-of select='concat($iu, "]", $nl, "}")'/>
+    <xsl:value-of select='concat($iu, "]", $nl, "}", $nl)'/>
   </xsl:template>
   
   <!-- simple-in-object -->

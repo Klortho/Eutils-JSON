@@ -7,6 +7,8 @@
   <x:namespace-alias stylesheet-prefix="xsl" result-prefix="x"/>
   <x:output encoding="UTF-8" method="xml" indent="yes" />
   
+  <x:variable name='nl' select='"&#10;"'/>
+  
   <x:template match="/">
     <!-- Generate the structure of the XSL stylesheet -->
     <xsl:stylesheet version="1.0">
@@ -21,10 +23,13 @@
   </x:template>
 
   <x:template match='element'>
+    <x:variable name='content-type' select='string(annotations/annotation[@type="json"]/type)'/>
     <x:variable name='key' select='string(annotations/annotation[@type="json"]/key)'/>
 
     <x:choose>
       <x:when test='@root="true"'>
+        <x:value-of select='$nl'/>
+        <x:comment> Root element. </x:comment>
         <xsl:template match='{@name}'>
           <xsl:call-template name='result-start'/>
           <xsl:apply-templates select='*'>
@@ -34,7 +39,12 @@
           <xsl:value-of select='concat("}}", $nl)'/>
         </xsl:template>
       </x:when>
-      <x:when test='content-model/@spec = "text"'>
+
+      <!-- simple -->
+      <x:when test='$content-type = "simple" or
+                    content-model/@spec = "text"'>
+        <x:value-of select='$nl'/>
+        <x:comment> Text content </x:comment>
         <xsl:template match='{@name}'>
           <xsl:param name='indent' select='""'/>
           <xsl:param name='context' select='"unknown"'/>
@@ -47,8 +57,16 @@
           </xsl:call-template>
         </xsl:template>
       </x:when>
-      <x:when test='content-model/@spec = "element" and 
-        count(content-model/choice/child) = 1'>
+      
+      <!-- array -->
+      <x:when test='$content-type = "array" or (
+                      content-model/@spec = "element" and 
+                      count(content-model/choice/child) = 1 )'>
+        <x:value-of select='$nl'/>
+        <x:comment> Element content with exactly one child (homogenous content).
+          FIXME:  need to check quantifier; if absent or '?', then this could be
+          simple content.
+        </x:comment>
         <xsl:template match='{@name}'>
           <xsl:param name='indent' select='""'/>
           <xsl:param name='context' select='"unknown"'/>
@@ -61,8 +79,18 @@
           </xsl:call-template>
         </xsl:template>
       </x:when>
-      <x:when test='content-model/@spec = "element" and
-        not(content-model//child[@q="+" or @q="*"])'>
+      
+      <!-- object -->
+      <x:when test='$content-type = "object" or (
+                      content-model/@spec = "element" and
+                      not( content-model//child[@q="+" or @q="*"] |
+                           content-model//choice[@q="+" or @q="*"] |
+                           content-model//seq[@q="+" or @q="*"] )
+                    )'>
+        <x:value-of select='$nl'/>
+        <x:comment> Element content with more than one child, and each child can
+          appear at most once.          
+        </x:comment>
         <xsl:template match='{@name}'>
           <xsl:param name='indent' select='""'/>
           <xsl:param name='context' select='"unknown"'/>
@@ -75,6 +103,7 @@
           </xsl:call-template>
         </xsl:template>
       </x:when>
+
       <x:otherwise>
         <x:message>
           <x:text>Need to implement a template for </x:text> 

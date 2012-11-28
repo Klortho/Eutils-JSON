@@ -120,11 +120,6 @@
     <xsl:param name='context' select='"unknown"'/>
     <xsl:param name='key' select='""'/>
     
-    <xsl:message>
-      <xsl:text>In simple template, key is '</xsl:text>
-      <xsl:value-of select='$key'/>
-      <xsl:text>'</xsl:text>
-    </xsl:message>
     <xsl:choose>
       <xsl:when test='$context = "object" and $key = ""'>
         <xsl:call-template name='simple-in-object'>
