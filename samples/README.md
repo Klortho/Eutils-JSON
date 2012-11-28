@@ -29,7 +29,7 @@ conversions.
   </tr>
   <tr>
     <th>EInfo PubMed</th>
-    <td>✓</td>
+    <td>✓D</td>
     <td>
       <a href="../../blob/master/samples/einfo.pubmed.xml">xml</a>
     </td>

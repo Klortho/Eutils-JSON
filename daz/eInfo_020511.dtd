@@ -5,6 +5,13 @@
 
 <!-- ================================================================= -->
 
+<!--~~ <eInfoResult>
+This is the root element for an EInfo response.
+~~ tags
+root
+~~-->
+<!ELEMENT       eInfoResult     (DbList|DbInfo|ERROR)>
+
 <!ELEMENT       DbName          (#PCDATA)>      <!-- \S+ -->
 <!ELEMENT       Name            (#PCDATA)>      <!-- .+ -->
 <!ELEMENT       FullName        (#PCDATA)>      <!-- .+ -->
@@ -30,16 +37,16 @@
 <!ELEMENT       DbList          (DbName+)>
 
 <!ELEMENT       Field           (Name,
-                FullName,
-                                Description,
-                                TermCount,
-                                IsDate,
-                                IsNumerical,
-                                SingleToken,
-                                Hierarchy,
-                                IsHidden,
-                                IsRangable,
-                IsTruncatable)>
+                                 FullName,
+                                 Description,
+                                 TermCount,
+                                 IsDate,
+                                 IsNumerical,
+                                 SingleToken,
+                                 Hierarchy,
+                                 IsHidden,
+                                 IsRangable,
+                                 IsTruncatable)>
 
 <!ELEMENT       Link            (Name,Menu,Description,DbTo)>
 
@@ -48,16 +55,10 @@
 
 
 <!ELEMENT       DbInfo          (DbName,
-                                MenuName,
-                                Description,
-                                Count,
-                                LastUpdate,
-                                FieldList,
-                                LinkList?)>
+                                 MenuName,
+                                 Description,
+                                 Count,
+                                 LastUpdate,
+                                 FieldList,
+                                 LinkList?)>
 
-<!--~~ <eInfoResult>
-This is the root element for an EInfo response.
-~~ tags
-root
-~~-->
-<!ELEMENT       eInfoResult     (DbList|DbInfo|ERROR)>

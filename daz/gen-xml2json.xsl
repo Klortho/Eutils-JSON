@@ -49,6 +49,17 @@
               </xsl:call-template>
             </xsl:template>
           </x:when>
+          <x:when test='content-model/@spec = "element" and
+                        not(content-model//child[@q="+" or @q="*"])'>
+            <xsl:template match='{@name}'>
+              <xsl:param name='indent' select='""'/>
+              <xsl:param name='context' select='"unknown"'/>
+              <xsl:call-template name='object'>
+                <xsl:with-param name='indent' select='$indent'/>
+                <xsl:with-param name='context' select='$context'/>
+              </xsl:call-template>
+            </xsl:template>
+          </x:when>
           <x:otherwise>
             <x:message>
               <x:text>Need to implement a template for </x:text> 

@@ -112,6 +112,33 @@
   </xsl:template>
 
   <!--
+    simple
+    Delegates either to simple-in-object or simple-in-array.
+  -->
+  <xsl:template name='simple'>
+    <xsl:param name='indent' select='""'/>
+    <xsl:param name='context' select='"unknown"'/>
+    <xsl:choose>
+      <xsl:when test='$context = "object"'>
+        <xsl:call-template name='simple-in-object'>
+          <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test='$context = "array"'>
+        <xsl:call-template name="simple-in-array">
+          <xsl:with-param name='indent' select='$indent'/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:message>
+          <xsl:text>Error:  context is not defined for element </xsl:text>
+          <xsl:value-of select='name(.)'/>
+        </xsl:message>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
+  <!--
     array 
     Delegates either to array-in-object or array-in-array.
   -->
@@ -137,22 +164,22 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-
+  
   <!--
-    simple
-    Delegates either to simple-in-object or simple-in-array.
+    object 
+    Delegates either to object-in-object or object-in-array.
   -->
-  <xsl:template name='simple'>
+  <xsl:template name='object'>
     <xsl:param name='indent' select='""'/>
     <xsl:param name='context' select='"unknown"'/>
     <xsl:choose>
       <xsl:when test='$context = "object"'>
-        <xsl:call-template name='simple-in-object'>
+        <xsl:call-template name='object-in-object'>
           <xsl:with-param name='indent' select='$indent'/>
         </xsl:call-template>
       </xsl:when>
       <xsl:when test='$context = "array"'>
-        <xsl:call-template name="simple-in-array">
+        <xsl:call-template name="object-in-array">
           <xsl:with-param name='indent' select='$indent'/>
         </xsl:call-template>
       </xsl:when>
