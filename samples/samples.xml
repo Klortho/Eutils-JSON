@@ -14,7 +14,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='EInfo Error' status='✓' name='einfo.error'>
+    <sample title='EInfo Error' status='✓D' name='einfo.error'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle</eutils-url>
       <desc>Invalid database name</desc>
     </sample>

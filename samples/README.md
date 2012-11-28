@@ -43,7 +43,7 @@ conversions.
   </tr>
   <tr>
     <th>EInfo Error</th>
-    <td>✓</td>
+    <td>✓D</td>
     <td>
       <a href="../../blob/master/samples/einfo.error.xml">xml</a>
     </td>
