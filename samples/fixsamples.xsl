@@ -59,7 +59,7 @@
       </td>
       <td>
         <a href="{eutils-url}">
-          <xsl:value-of select='eutils-url'/>
+          <xsl:text>get xml</xsl:text>
         </a>
       </td>
     </tr>
