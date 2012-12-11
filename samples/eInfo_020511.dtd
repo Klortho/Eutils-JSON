@@ -26,7 +26,7 @@ root
 <!--~~ <ERROR>
 Error element
 ~~ json
-<key>"ERROR"</key>
+<json name="'ERROR'"/>
 ~~-->
 <!ELEMENT       ERROR           (#PCDATA)>      <!-- .+ -->
 
