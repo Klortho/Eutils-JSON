@@ -2,11 +2,11 @@
 
 <!--
   This stylesheet converts samples.xml into an HTML fragment that
-  can then be inserted into the README.md file here.  
+  can then be inserted into the README.md file here.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" 
-                exclude-result-prefixes="xd" 
+                xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
+                exclude-result-prefixes="xd"
                 version="1.0">
 
   <xsl:output indent="yes" method="xml" omit-xml-declaration='yes'/>
@@ -43,7 +43,7 @@
       </td>
       <td>
         <xsl:if test='@dtd'>
-          <a href="{@dtd}">
+          <a href="../../blob/master/samples/{@dtd}">
             <xsl:text>dtd</xsl:text>
           </a>,
         </xsl:if>
