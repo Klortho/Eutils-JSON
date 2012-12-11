@@ -4,6 +4,16 @@ This directory has local copies of all the samples files.  The tables below are
 auto-generated from samples.xml, where we're keeping track of the status of the
 conversions.
 
+The column "NCBI Eutils" gives a link to retrieve the original XML from the
+NCBI site.  Note that because database contents are prone to change, the results
+might differ from the locally stored xml file.
+
+<!--
+  DO NOT MODIFY BELOW THIS LINE.
+  The stuff from here down is auto-generated, and any changes you make
+  will be lost.  See the fixsamples.pl script.
+-->
+
 <div>
   <h2>EInfo</h2>
   <table>
