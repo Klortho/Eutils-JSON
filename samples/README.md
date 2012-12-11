@@ -48,7 +48,7 @@ might differ from the locally stored xml file.
     </tr>
     <tr>
       <th>EInfo Error</th>
-      <td>✓</td>
+      <td>✓D</td>
       <td><a href="eInfo_020511.dtd">dtd</a>,
         <a href="../../blob/master/samples/einfo.error.xml">xml</a>,
         <a href="../../blob/master/samples/einfo.error.json">json</a></td>
