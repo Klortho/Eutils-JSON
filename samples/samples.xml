@@ -6,7 +6,7 @@
 
 <samples>
   <samplegroup header='EInfo'>
-    <sample title='EInfo' status='✓' name='einfo'>
+    <sample title='EInfo' status='✓D' name='einfo'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi</eutils-url>
       <desc>List all databases</desc>
     </sample>
