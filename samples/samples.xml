@@ -21,15 +21,15 @@
   </samplegroup>
 
   <samplegroup header='ESearch'>
-    <sample title='ESearch PubMed' status='✓' name='esearch.pubmed'>
+    <sample title='ESearch PubMed' status='✓' name='esearch.pubmed' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESearch Error' status='✓' name='esearch.error'>
+    <sample title='ESearch Error' status='✓' name='esearch.error' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d</eutils-url>
       <desc>This query has a bad search term</desc>
     </sample>
-    <sample title='ESearch Bad Error' status='' name='esearch.baderror'>
+    <sample title='ESearch Bad Error' status='' name='esearch.baderror' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=fleegle&amp;term=cat</eutils-url>
       <desc>Invalid db name specified.</desc>
     </sample>

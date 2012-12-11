@@ -70,7 +70,8 @@ might differ from the locally stored xml file.
     <tr>
       <th>ESearch PubMed</th>
       <td>✓</td>
-      <td><a href="../../blob/master/samples/esearch.pubmed.xml">xml</a>,
+      <td><a href="../../blob/master/samples/eSearch_020511.dtd">dtd</a>,
+        <a href="../../blob/master/samples/esearch.pubmed.xml">xml</a>,
         <a href="../../blob/master/samples/esearch.pubmed.json">json</a></td>
       <td></td>
       <td>
@@ -80,7 +81,8 @@ might differ from the locally stored xml file.
     <tr>
       <th>ESearch Error</th>
       <td>✓</td>
-      <td><a href="../../blob/master/samples/esearch.error.xml">xml</a>,
+      <td><a href="../../blob/master/samples/eSearch_020511.dtd">dtd</a>,
+        <a href="../../blob/master/samples/esearch.error.xml">xml</a>,
         <a href="../../blob/master/samples/esearch.error.json">json</a></td>
       <td>This query has a bad search term</td>
       <td>
@@ -90,7 +92,8 @@ might differ from the locally stored xml file.
     <tr>
       <th>ESearch Bad Error</th>
       <td></td>
-      <td><a href="../../blob/master/samples/esearch.baderror.xml">xml</a>,
+      <td><a href="../../blob/master/samples/eSearch_020511.dtd">dtd</a>,
+        <a href="../../blob/master/samples/esearch.baderror.xml">xml</a>,
         <a href="../../blob/master/samples/esearch.baderror.json">json</a></td>
       <td>Invalid db name specified.</td>
       <td>
