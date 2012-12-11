@@ -25,7 +25,7 @@
       <tr>
         <th></th>
         <th>Status</th>
-        <th colspan='2'>Local files</th>
+        <th>Local files</th>
         <th>Comment</th>
         <th>NCBI EUtils</th>
       </tr>
@@ -42,11 +42,14 @@
         <xsl:value-of select="@status"/>
       </td>
       <td>
+        <xsl:if test='@dtd'>
+          <a href="{@dtd}">
+            <xsl:text>dtd</xsl:text>
+          </a>,
+        </xsl:if>
         <a href="../../blob/master/samples/{@name}.xml">
           <xsl:text>xml</xsl:text>
-        </a>
-      </td>
-      <td>
+        </a>,
         <a href="../../blob/master/samples/{@name}.json">
           <xsl:text>json</xsl:text>
         </a>

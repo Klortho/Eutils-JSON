@@ -12,7 +12,7 @@ while (my $line = <R>) {
 close R;
 
 my $table = "temp-table.xml";
-system "xsltproc make-sample-readme-table.xsl samples.xml > $table";
+system "xsltproc fixsamples.xsl samples.xml > $table";
 my $status = $? >> 8;
 if ($status) {
     die "Failed to transform samples.xml into $table";

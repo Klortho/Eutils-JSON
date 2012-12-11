@@ -6,15 +6,15 @@
 
 <samples>
   <samplegroup header='EInfo'>
-    <sample title='EInfo' status='✓D' name='einfo'>
+    <sample title='EInfo' status='✓D' name='einfo' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi</eutils-url>
       <desc>List all databases</desc>
     </sample>
-    <sample title='EInfo PubMed' status='✓' name='einfo.pubmed'>
+    <sample title='EInfo PubMed' status='✓' name='einfo.pubmed' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='EInfo Error' status='✓' name='einfo.error'>
+    <sample title='EInfo Error' status='✓' name='einfo.error' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle</eutils-url>
       <desc>Invalid database name</desc>
     </sample>
