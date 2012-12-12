@@ -69,7 +69,7 @@ might differ from the locally stored xml file.
     </tr>
     <tr>
       <th>ESearch PubMed</th>
-      <td>✓</td>
+      <td>✓D</td>
       <td><a href="../../blob/master/samples/eSearch_020511.dtd">dtd</a>,
         <a href="../../blob/master/samples/esearch.pubmed.xml">xml</a>,
         <a href="../../blob/master/samples/esearch.pubmed.json">json</a></td>
@@ -80,7 +80,7 @@ might differ from the locally stored xml file.
     </tr>
     <tr>
       <th>ESearch Error</th>
-      <td>✓</td>
+      <td>✓D</td>
       <td><a href="../../blob/master/samples/eSearch_020511.dtd">dtd</a>,
         <a href="../../blob/master/samples/esearch.error.xml">xml</a>,
         <a href="../../blob/master/samples/esearch.error.json">json</a></td>
@@ -91,7 +91,7 @@ might differ from the locally stored xml file.
     </tr>
     <tr>
       <th>ESearch Bad Error</th>
-      <td></td>
+      <td>✓D</td>
       <td><a href="../../blob/master/samples/eSearch_020511.dtd">dtd</a>,
         <a href="../../blob/master/samples/esearch.baderror.xml">xml</a>,
         <a href="../../blob/master/samples/esearch.baderror.json">json</a></td>

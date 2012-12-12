@@ -8,6 +8,8 @@ $Id: eSearch_020511.dtd 85163 2006-06-28 17:35:21Z olegh $
 This is the root element for an ESearch response.
 ~~ tags
 root
+~~ json
+<json resulttype='esearch' version='0.2' />
 ~~-->
 <!ELEMENT       eSearchResult  (
                                  (
@@ -55,7 +57,7 @@ root
 <!--~~ <TranslationStack>
 TranslationStack element.
 ~~ json
-<type>array</type>
+<array/>
 ~~-->
 <!ELEMENT       TranslationStack  ((TermSet|OP)*)>
 
@@ -64,63 +66,44 @@ TranslationStack element.
 <!--~~ <ERROR>
 Error element
 ~~ json
-<key>"ERROR"</key>
+<json name='"ERROR"'/>
 ~~-->
 <!ELEMENT        ERROR                  (#PCDATA)>  <!-- .+ -->
 
-<!--~~ <OutputMessage>
-OutputMessage will be a "simple object" inside an array.
-~~ json
-<type>simple-obj</type>
-~~-->
 <!ELEMENT        OutputMessage          (#PCDATA)>  <!-- .+ -->
 
-<!--~~ <QuotedPhraseNotFound>
-QuotedPhraseNotFound will be a "simple object" inside an array.
-~~ json
-<type>simple-obj</type>
-~~-->
 <!ELEMENT        QuotedPhraseNotFound   (#PCDATA)>  <!-- .+ -->
 
-<!--~~ <PhraseIgnored>
-PhraseIgnored will be a "simple object" inside an array.
-~~ json
-<type>simple-obj</type>
-~~-->
 <!ELEMENT        PhraseIgnored          (#PCDATA)>  <!-- .+ -->
 
-<!--~~ <FieldNotFound>
-FieldNotFound will be a "simple object" inside an array.
-~~ json
-<type>simple-obj</type>
-~~-->
 <!ELEMENT        FieldNotFound          (#PCDATA)>  <!-- .+ -->
 
-<!--~~ <PhraseNotFound>
-PhraseNotFound will be a "simple object" inside an array.
-~~ json
-<type>simple-obj</type>
-~~-->
 <!ELEMENT        PhraseNotFound         (#PCDATA)>  <!-- .+ -->
 
 
 <!ELEMENT        QueryTranslation       (#PCDATA)>  <!-- .+ -->
 
 <!--~~ <ErrorList>
-ErrorList will be converted into an array of "simple objects".
+
 ~~ json
-<type>array</type>
+<object>
+  <array name='"phrasesnotfound"' content='PhraseNotFound'/>
+  <array name='"fieldsnotfound"' content='FieldsNotFound'/>
+</object>
 ~~-->
 <!ELEMENT        ErrorList      (PhraseNotFound*,FieldNotFound*)>
 
 <!--~~ <WarningList>
-WarningList will be converted into an array of "simple objects".
+
 ~~ json
-<type>array</type>
+<object>
+  <array name='"phrasesignored"' content='PhraseIgnored'/>
+  <array name='"quotedphrasesnotfound"' content='QuotedPhraseNotFound'/>
+  <array name='"outputmessages"' content='OutputMessage'/>
+</object>
 ~~-->
 <!ELEMENT        WarningList    ( PhraseIgnored*,
                                   QuotedPhraseNotFound*,
                                   OutputMessage* )>
-<!-- Response tags -->
 
 

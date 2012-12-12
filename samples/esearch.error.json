@@ -1,6 +1,6 @@
 {
-    "version": "0.1",
     "resulttype": "esearch",
+    "version": "0.2",
     "count": "5163",
     "retmax": "20",
     "retstart": "0",
@@ -42,7 +42,11 @@
         "GROUP"
     ],
     "querytranslation": "\"obstetrics\"[MeSH Terms]",
-    "errorlist": [
-        { "phrasenotfound": "fleegle[MeSH Terms]" }
-    ]
+    "errorlist": {
+        "phrasesnotfound": [
+            "fleegle[MeSH Terms]"
+        ],
+        "fieldsnotfound": [
+        ]
+    }
 }
