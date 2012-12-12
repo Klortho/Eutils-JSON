@@ -11,6 +11,11 @@
 <!ELEMENT	ClusterID		%T_string;>
 
 <!-- Definition of Structure type: T_Author -->
+<!--~~ <Author>
+
+~~json
+<object/>
+~~-->
 <!ENTITY	 % T_Author	"(
  			Name
 			| AuthType
@@ -41,6 +46,11 @@
 <!ELEMENT	Value		%T_string;>
 
 <!-- Definition of Structure type: T_ArticleId -->
+<!--~~ <ArticleId>
+
+~~json
+<object/>
+~~-->
 <!ENTITY	 % T_ArticleId	"(
  			IdType
 			| IdTypeN
@@ -58,6 +68,11 @@
 <!ELEMENT	Date		%T_string;>
 
 <!-- Definition of Structure type: T_PubMedPubDate -->
+<!--~~ <PubMedPubDate>
+
+~~json
+<object/>
+~~-->
 <!ENTITY	 % T_PubMedPubDate	"(
  			PubStatus
 			| Date
@@ -77,6 +92,11 @@
 <!ELEMENT	Note		%T_string;>
 
 <!-- Definition of Structure type: T_Reference -->
+<!--~~ <Reference>
+
+~~json
+<object/>
+~~-->
 <!ENTITY	 % T_Reference	"(
  			RefSource
 			| RefType
@@ -136,6 +156,11 @@
 <!ELEMENT	SortFirstAuthor		%T_string;>
 
 <!-- Definition of Structure type: T_DocSum -->
+<!--~~ <DocumentSummary>
+
+~~json
+<object name='\@uid'/>
+~~-->
 <!ENTITY	 % T_DocSum	"(
  			PubDate
 			| EPubDate
@@ -184,7 +209,19 @@
 <!ELEMENT DocumentSummary %T_DocSum;>
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
 
+<!--~~ <DocumentSummarySet>
+
+~~json
+<object/>
+~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary*)>
 <!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
 
+<!--~~ <eSummaryResult>
+This is the root element for an ESummary response.
+~~ tags
+root
+~~ json
+<json resulttype='esummary' version='0.2' />
+~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>

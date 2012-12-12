@@ -1,12 +1,10 @@
 {
-    "version": "0.1",
     "resulttype": "esummary",
-    "docsums": {
-        "uids": [
-            "5683731",
-            "22144687"
-        ],
+    "version": "0.2",
+    "documentsummaryset": {
+        "status": "OK",
         "5683731": {
+            "uid": "5683731",
             "pubdate": "1968 Aug",
             "epubdate": "",
             "source": "Paraplegia",
@@ -104,6 +102,7 @@
             "sortfirstauthor": "Goldberg MJ"
         },
         "22144687": {
+            "uid": "22144687",
             "pubdate": "2012 Jan",
             "epubdate": "2011 Dec 5",
             "source": "Nucleic Acids Res",
