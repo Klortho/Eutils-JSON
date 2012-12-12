@@ -420,11 +420,10 @@ might differ from the locally stored xml file.
     </tr>
     <tr>
       <th>ESummary medgen</th>
-      <td></td>
-      <td><a href="../../blob/master/samples/eSummary_medgen.dtd">dtd</a>,
-        <a href="../../blob/master/samples/esummary.medgen.xml">xml</a>,
+      <td>✗</td>
+      <td><a href="../../blob/master/samples/esummary.medgen.xml">xml</a>,
         <a href="../../blob/master/samples/esummary.medgen.json">json</a></td>
-      <td></td>
+      <td>Can't find DTD; see EU-1908.</td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=medgen&amp;id=122602">get xml</a>
       </td>
@@ -542,7 +541,7 @@ might differ from the locally stored xml file.
     <tr>
       <th>ESummary pccompound</th>
       <td></td>
-      <td><a href="../../blob/master/samples/eSummary_pmccompound.dtd">dtd</a>,
+      <td><a href="../../blob/master/samples/eSummary_pccompound.dtd">dtd</a>,
         <a href="../../blob/master/samples/esummary.pccompound.xml">xml</a>,
         <a href="../../blob/master/samples/esummary.pccompound.json">json</a></td>
       <td></td>
@@ -563,11 +562,10 @@ might differ from the locally stored xml file.
     </tr>
     <tr>
       <th>ESummary pubmedhealth</th>
-      <td></td>
-      <td><a href="../../blob/master/samples/eSummary_pubmedhealth.dtd">dtd</a>,
-        <a href="../../blob/master/samples/esummary.pubmedhealth.xml">xml</a>,
+      <td>✗</td>
+      <td><a href="../../blob/master/samples/esummary.pubmedhealth.xml">xml</a>,
         <a href="../../blob/master/samples/esummary.pubmedhealth.json">json</a></td>
-      <td></td>
+      <td>Can't find DTD.  See EU-1908.</td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625">get xml</a>
       </td>
@@ -663,7 +661,7 @@ might differ from the locally stored xml file.
     <tr>
       <th>ESummary error</th>
       <td>✓</td>
-      <td><a href="../../blob/master/samples/eSummary_error.dtd">dtd</a>,
+      <td><a href="../../blob/master/samples/eSummary_041029.dtd">dtd</a>,
         <a href="../../blob/master/samples/esummary.error.xml">xml</a>,
         <a href="../../blob/master/samples/esummary.error.json">json</a></td>
       <td></td>

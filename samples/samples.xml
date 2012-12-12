@@ -157,9 +157,9 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=journals&amp;id=35478</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary medgen' status='' name='esummary.medgen' dtd='eSummary_medgen.dtd'>
+    <sample title='ESummary medgen' status='✗' name='esummary.medgen'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=medgen&amp;id=122602</eutils-url>
-      <desc></desc>
+      <desc>Can't find DTD; see EU-1908.</desc>
     </sample>
     <sample title='ESummary mesh' status='' name='esummary.mesh' dtd='eSummary_mesh.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=mesh&amp;id=67414177</eutils-url>
@@ -205,7 +205,7 @@
       <desc></desc>
     </sample>
     <sample title='ESummary pccompound' status='' name='esummary.pccompound'
-      dtd='eSummary_pmccompound.dtd'>
+      dtd='eSummary_pccompound.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pccompound&amp;id=10322165</eutils-url>
       <desc></desc>
     </sample>
@@ -214,10 +214,9 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcsubstance&amp;id=127317050</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary pubmedhealth' status='' name='esummary.pubmedhealth'
-      dtd='eSummary_pubmedhealth.dtd'>
+    <sample title='ESummary pubmedhealth' status='✗' name='esummary.pubmedhealth'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625</eutils-url>
-      <desc></desc>
+      <desc>Can't find DTD.  See EU-1908.</desc>
     </sample>
     <sample title='ESummary seqannot' status='' name='esummary.seqannot' dtd='eSummary_seqannot.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=seqannot&amp;id=7232</eutils-url>
@@ -251,7 +250,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary error' status='✓' name='esummary.error' dtd='eSummary_error.dtd'>
+    <sample title='ESummary error' status='✓' name='esummary.error' dtd='eSummary_041029.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=error&amp;id=254088</eutils-url>
       <desc></desc>
     </sample>
