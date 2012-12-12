@@ -682,7 +682,8 @@ might differ from the locally stored xml file.
     <tr>
       <th>PubMed</th>
       <td>✓</td>
-      <td><a href="../../blob/master/samples/efetch.pubmed.xml">xml</a>,
+      <td><a href="../../blob/master/samples/pubmed_120101.dtd">dtd</a>,
+        <a href="../../blob/master/samples/efetch.pubmed.xml">xml</a>,
         <a href="../../blob/master/samples/efetch.pubmed.json">json</a></td>
       <td></td>
       <td>
