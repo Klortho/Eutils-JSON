@@ -9,6 +9,8 @@
 This is the root element for an EInfo response.
 ~~ tags
 root
+~~ json
+<json resulttype='einfo' version='0.2' />
 ~~-->
 <!ELEMENT       eInfoResult     (DbList|DbInfo|ERROR)>
 
