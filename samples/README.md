@@ -123,7 +123,7 @@ might differ from the locally stored xml file.
     </tr>
     <tr>
       <th>ESummary protein</th>
-      <td>✓</td>
+      <td>✓D</td>
       <td><a href="../../blob/master/samples/eSummary_protein.dtd">dtd</a>,
         <a href="../../blob/master/samples/esummary.protein.xml">xml</a>,
         <a href="../../blob/master/samples/esummary.protein.json">json</a></td>

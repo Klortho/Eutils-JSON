@@ -1,11 +1,10 @@
 {
-    "version": "0.1",
     "resulttype": "esummary",
-    "docsums": {
-        "uids": [
-            "284822047"
-        ],
+    "version": "0.2",
+    "documentsummaryset": {
+        "status": "OK",
         "284822047": {
+            "uid": "284822047",
             "caption": "ADB98021",
             "title": "Cat [Donor vector pTKIP-cat]",
             "extra": "gi|284822047|gb|ADB98021.1|",
@@ -33,119 +32,332 @@
             "organism": "Donor vector pTKIP-cat",
             "statistics": [
                 {
-                    "type": "all",
-                    "count": "4"
+                    "": [
+                        "4"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "all"
+                    ]
                 },
                 {
-                    "type": "blob_size",
-                    "count": "5964"
+                    "": [
+                        "5964"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "blob_size"
+                    ]
                 },
                 {
-                    "type": "cdregion",
-                    "count": "1"
+                    "": [
+                        "1"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "cdregion"
+                    ]
                 },
                 {
-                    "type": "cdregion",
-                    "subtype": "CDS",
-                    "count": "1"
+                    "": [
+                        "1"
+                    ],
+                    "": [
+                        "CDS"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "cdregion"
+                    ]
                 },
                 {
-                    "type": "gene",
-                    "count": "1"
+                    "": [
+                        "1"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "gene"
+                    ]
                 },
                 {
-                    "type": "gene",
-                    "subtype": "Gene",
-                    "count": "1"
+                    "": [
+                        "1"
+                    ],
+                    "": [
+                        "Gene"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "gene"
+                    ]
                 },
                 {
-                    "type": "org",
-                    "count": "1"
+                    "": [
+                        "1"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "org"
+                    ]
                 },
                 {
-                    "type": "prot",
-                    "count": "1"
+                    "": [
+                        "1"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "prot"
+                    ]
                 },
                 {
-                    "type": "prot",
-                    "subtype": "Prot",
-                    "count": "1"
+                    "": [
+                        "1"
+                    ],
+                    "": [
+                        "Prot"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "prot"
+                    ]
                 },
                 {
-                    "type": "pub",
-                    "count": "2"
+                    "": [
+                        "2"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "pub"
+                    ]
                 },
                 {
-                    "type": "pub",
-                    "subtype": "PubMed",
-                    "count": "1"
+                    "": [
+                        "1"
+                    ],
+                    "": [
+                        "PubMed"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "pub"
+                    ]
                 },
                 {
-                    "source": "CDD",
-                    "type": "all",
-                    "count": "2"
+                    "": [
+                        "2"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "CDD"
+                    ],
+                    "": [
+                        "all"
+                    ]
                 },
                 {
-                    "source": "CDD",
-                    "type": "region",
-                    "count": "2"
+                    "": [
+                        "2"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "CDD"
+                    ],
+                    "": [
+                        "region"
+                    ]
                 },
                 {
-                    "source": "CDD",
-                    "type": "region",
-                    "subtype": "Region",
-                    "count": "2"
+                    "": [
+                        "2"
+                    ],
+                    "": [
+                        "Region"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "CDD"
+                    ],
+                    "": [
+                        "region"
+                    ]
                 },
                 {
-                    "source": "all",
-                    "type": "all",
-                    "count": "6"
+                    "": [
+                        "6"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "all"
+                    ],
+                    "": [
+                        "all"
+                    ]
                 },
                 {
-                    "source": "all",
-                    "type": "blob_size",
-                    "count": "5964"
+                    "": [
+                        "5964"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "all"
+                    ],
+                    "": [
+                        "blob_size"
+                    ]
                 },
                 {
-                    "source": "all",
-                    "type": "cdregion",
-                    "count": "1"
+                    "": [
+                        "1"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "all"
+                    ],
+                    "": [
+                        "cdregion"
+                    ]
                 },
                 {
-                    "source": "all",
-                    "type": "gene",
-                    "count": "1"
+                    "": [
+                        "1"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "all"
+                    ],
+                    "": [
+                        "gene"
+                    ]
                 },
                 {
-                    "source": "all",
-                    "type": "org",
-                    "count": "1"
+                    "": [
+                        "1"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "all"
+                    ],
+                    "": [
+                        "org"
+                    ]
                 },
                 {
-                    "source": "all",
-                    "type": "prot",
-                    "count": "1"
+                    "": [
+                        "1"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "all"
+                    ],
+                    "": [
+                        "prot"
+                    ]
                 },
                 {
-                    "source": "all",
-                    "type": "pub",
-                    "count": "2"
+                    "": [
+                        "2"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "all"
+                    ],
+                    "": [
+                        "pub"
+                    ]
                 },
                 {
-                    "source": "all",
-                    "type": "region",
-                    "count": "2"
+                    "": [
+                        "2"
+                    ],
+                    "": [
+                    ],
+                    "": [
+                    ],
+                    "": [
+                        "all"
+                    ],
+                    "": [
+                        "region"
+                    ]
                 }
             ],
-            "properties": {
-                "aa": "2",
-                "qual": "32",
-                "value": "34"
-            },
-            "oslt": {
-                "indexed": "yes",
-                "value": "ADB98021.1"
-            },
+            "properties": "34",
+            "oslt": "ADB98021.1",
             "accessionversion": "ADB98021.1"
         }
     }
