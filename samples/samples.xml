@@ -49,7 +49,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nuccore&amp;id=424386131</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary nucleotide' status='' name='esummary.nucleotide'
+    <sample title='ESummary nucleotide' status='D' name='esummary.nucleotide'
       dtd='eSummary_nucleotide.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucleotide&amp;id=424386131</eutils-url>
       <desc></desc>

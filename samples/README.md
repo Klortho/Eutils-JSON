@@ -145,7 +145,7 @@ might differ from the locally stored xml file.
     </tr>
     <tr>
       <th>ESummary nucleotide</th>
-      <td/>
+      <td>D</td>
       <td><a href="../../blob/master/samples/eSummary_nucleotide.dtd">dtd</a>,
         <a href="../../blob/master/samples/esummary.nucleotide.xml">xml</a>,
         <a href="../../blob/master/samples/esummary.nucleotide.json">json</a></td>

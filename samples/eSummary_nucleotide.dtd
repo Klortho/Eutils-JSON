@@ -33,6 +33,11 @@
 <!ELEMENT	Organism		%T_string;>
 
 <!-- Definition of Structure type: T_DocSum -->
+<!--~~ <DocumentSummary>
+
+~~json
+<object name='\@uid'/>
+~~-->
 <!ENTITY	 % T_DocSum	"(
  			Caption
 			| Title
@@ -64,8 +69,18 @@
 
 <!ELEMENT DocumentSummary %T_DocSum;>
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+<!--~~ <DocumentSummarySet>
 
+~~json
+<object/>
+~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary*)>
 <!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
-
+<!--~~ <eSummaryResult>
+This is the root element for an ESummary response.
+~~ tags
+root
+~~ json
+<json resulttype='esummary' version='0.2' />
+~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>
