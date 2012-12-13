@@ -18,13 +18,7 @@
 <!--~~ <Stat>
 
 ~~json
-<object>
-  <array name='count' content='\@count'/>
-  <array name='subtype' content='\@subtype'/>
-  <array name='value' content='\@value'/>
-  <array name='source' content='\@source'/>
-  <array name='type' content='\@type'/>
-</object>
+<object/>
 ~~-->
 <!ELEMENT   Stat        EMPTY>
 <!ATTLIST   Stat
@@ -72,19 +66,7 @@
 <!--~~ <IdGiClass>
 
 ~~json
-<object>
-  <array name='defdiv' content='\@defdiv'/>
-  <array name='extfeatmask' content='\@extfeatmask'/>
-  <array name='gi_state' content='\@gi_state'/>
-  <array name='length' content='\@length'/>
-  <array name='mol' content='\@mol'/>
-  <array name='owner' content='\@owner'/>
-  <array name='owner_name' content='\@owner_name'/>
-  <array name='repr' content='\@repr'/>
-  <array name='sat' content='\@sat'/>
-  <array name='sat_key' content='\@sat_key'/>
-  <array name='sat_name' content='\@sat_name'/>
-</object>
+<object/>
 ~~-->
 <!ELEMENT   IdGiClass   EMPTY>
 <!ATTLIST IdGiClass
@@ -204,11 +186,7 @@
 <!--~~ <Otherdb>
 
 ~~json
-<object>
-  <array name='db' content='\@db'/>
-  <array name='term' content='\@term'/>
-  <array name='uid' content='\@uid'/>
-</object>
+<object/>
 ~~-->
 <!ELEMENT Otherdb   EMPTY>
 <!ATTLIST Otherdb
