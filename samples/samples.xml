@@ -45,7 +45,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=protein&amp;id=284822047</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary nuccore' status='' name='esummary.nuccore' dtd='eSummary_nuccore.dtd'>
+    <sample title='ESummary nuccore' status='D' name='esummary.nuccore' dtd='eSummary_nuccore.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nuccore&amp;id=424386131</eutils-url>
       <desc></desc>
     </sample>

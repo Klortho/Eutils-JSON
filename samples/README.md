@@ -134,7 +134,7 @@ might differ from the locally stored xml file.
     </tr>
     <tr>
       <th>ESummary nuccore</th>
-      <td/>
+      <td>D</td>
       <td><a href="../../blob/master/samples/eSummary_nuccore.dtd">dtd</a>,
         <a href="../../blob/master/samples/esummary.nuccore.xml">xml</a>,
         <a href="../../blob/master/samples/esummary.nuccore.json">json</a></td>

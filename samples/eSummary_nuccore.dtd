@@ -15,6 +15,11 @@
 <!ELEMENT	TaxId		%T_int;>
 <!ELEMENT	Slen		%T_int;>
 <!ELEMENT   Statistics  (Stat)+>
+<!--~~ <Stat>
+
+~~json
+<object/>
+~~-->
 <!ELEMENT   Stat        EMPTY>
 <!ATTLIST   Stat
   count     CDATA       #IMPLIED
@@ -57,6 +62,11 @@
 <!ATTLIST   OSLT
   indexed   CDATA       #IMPLIED>
 <!ELEMENT   ReplacedBy  %T_string;>
+<!--~~ <IdGiClass>
+
+~~json
+<object/>
+~~-->
 <!ELEMENT   IdGiClass   EMPTY>
 <!ATTLIST IdGiClass
   defdiv    CDATA       #IMPLIED
@@ -100,6 +110,11 @@
 
 
 <!-- Definition of Structure type: T_DocSum -->
+<!--~~ <DocumentSummary>
+
+~~json
+<object name='\@uid'/>
+~~-->
 <!ENTITY	 % T_DocSum	"(
  			error
  			| Caption
@@ -167,14 +182,30 @@
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
 
 <!ELEMENT Warning (Otherdb)+>
+<!--~~ <Otherdb>
+
+~~json
+<object/>
+~~-->
 <!ELEMENT Otherdb   EMPTY>
 <!ATTLIST Otherdb
   db    CDATA #IMPLIED
   term  CDATA #IMPLIED
   uid   CDATA #IMPLIED>
 
+<!--~~ <DocumentSummarySet>
 
+~~json
+<object/>
+~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary | Warning)*>
 <!ATTLIST DocumentSummarySet status CDATA #IMPLIED>
 
+<!--~~ <eSummaryResult>
+This is the root element for an ESummary response.
+~~ tags
+root
+~~ json
+<json resulttype='esummary' version='0.2' />
+~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>
