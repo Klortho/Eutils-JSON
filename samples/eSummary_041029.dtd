@@ -4,8 +4,17 @@ $Id: eSummary_041029.dtd 49514 2004-10-29 15:52:04Z parantha $
 -->
 <!-- ================================================================= -->
 
+<!--~~ !dtd
+~~json <json lcnames='true' type='esummary' version='0.3' />
+~~-->
+
+
 <!ELEMENT Id                (#PCDATA)>          <!-- \d+ -->
 
+<!--~~ <Item>
+Not implemented yet.  This annotation will cause this to be ignored.
+~~json <custom/>
+~~-->
 <!ELEMENT Item              (#PCDATA|Item)*>   <!-- .+ -->
 
 <!ATTLIST Item
@@ -15,6 +24,13 @@ $Id: eSummary_041029.dtd 49514 2004-10-29 15:52:04Z parantha $
 
 <!ELEMENT ERROR             (#PCDATA)>  <!-- .+ -->
 
+<!--~~ <DocSum>
+Not implemented yet.  This annotation will cause this to be ignored.
+~~json <custom/>
+~~-->
 <!ELEMENT DocSum            (Id, Item+)>
 
+<!--~~ <eSummaryResult>
+~~ tags root
+~~-->
 <!ELEMENT eSummaryResult    (DocSum|ERROR)+>

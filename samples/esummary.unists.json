@@ -1,12 +1,10 @@
 {
-    "version": "0.1",
-    "resulttype": "esummary",
-    "docsums": {
-        "uids": [
-            "254085",
-            "254086"
-        ],
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
         "254085": {
+            "uid": "254085",
             "marker_name": "SE234324",
             "map_gene_summary_list": [
                 {
@@ -20,6 +18,7 @@
             "gene_id": ""
         },
         "254086": {
+            "uid": "254086",
             "marker_name": "SE259162",
             "map_gene_summary_list": [
                 {

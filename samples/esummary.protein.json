@@ -33,107 +33,107 @@
             "statistics": [
                 {
                     "type": "all",
-                    "count": "4"
+                    "count": 4
                 },
                 {
                     "type": "blob_size",
-                    "count": "5964"
+                    "count": 5964
                 },
                 {
                     "type": "cdregion",
-                    "count": "1"
+                    "count": 1
                 },
                 {
                     "type": "cdregion",
                     "subtype": "CDS",
-                    "count": "1"
+                    "count": 1
                 },
                 {
                     "type": "gene",
-                    "count": "1"
+                    "count": 1
                 },
                 {
                     "type": "gene",
                     "subtype": "Gene",
-                    "count": "1"
+                    "count": 1
                 },
                 {
                     "type": "org",
-                    "count": "1"
+                    "count": 1
                 },
                 {
                     "type": "prot",
-                    "count": "1"
+                    "count": 1
                 },
                 {
                     "type": "prot",
                     "subtype": "Prot",
-                    "count": "1"
+                    "count": 1
                 },
                 {
                     "type": "pub",
-                    "count": "2"
+                    "count": 2
                 },
                 {
                     "type": "pub",
                     "subtype": "PubMed",
-                    "count": "1"
+                    "count": 1
                 },
                 {
                     "source": "CDD",
                     "type": "all",
-                    "count": "2"
+                    "count": 2
                 },
                 {
                     "source": "CDD",
                     "type": "region",
-                    "count": "2"
+                    "count": 2
                 },
                 {
                     "source": "CDD",
                     "type": "region",
                     "subtype": "Region",
-                    "count": "2"
+                    "count": 2
                 },
                 {
                     "source": "all",
                     "type": "all",
-                    "count": "6"
+                    "count": 6
                 },
                 {
                     "source": "all",
                     "type": "blob_size",
-                    "count": "5964"
+                    "count": 5964
                 },
                 {
                     "source": "all",
                     "type": "cdregion",
-                    "count": "1"
+                    "count": 1
                 },
                 {
                     "source": "all",
                     "type": "gene",
-                    "count": "1"
+                    "count": 1
                 },
                 {
                     "source": "all",
                     "type": "org",
-                    "count": "1"
+                    "count": 1
                 },
                 {
                     "source": "all",
                     "type": "prot",
-                    "count": "1"
+                    "count": 1
                 },
                 {
                     "source": "all",
                     "type": "pub",
-                    "count": "2"
+                    "count": 2
                 },
                 {
                     "source": "all",
                     "type": "region",
-                    "count": "2"
+                    "count": 2
                 }
             ],
             "properties": {

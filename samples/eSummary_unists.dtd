@@ -1,5 +1,9 @@
 <!-- DocSum DTD for unists database -->
 
+<!--~~ !dtd
+~~json <json lcnames='true' type='esummary' version='0.3' />
+~~-->
+
 <!ENTITY	 % T_string		"(#PCDATA)">
 
 <!-- Members definition of Structure type: T_Map_Gene_Summary -->
@@ -9,6 +13,9 @@
 <!ELEMENT	Polymorphic		%T_string;>
 
 <!-- Definition of Structure type: T_Map_Gene_Summary -->
+<!--~~ <Map_Gene_Summary>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_Map_Gene_Summary	"(
  			Org
 			| Chr
@@ -27,6 +34,9 @@
 <!ELEMENT	Gene_ID		%T_string;>
 
 <!-- Definition of Structure type: T_DocSum -->
+<!--~~ <DocumentSummary>
+~~json <object name='@uid'/>
+~~-->
 <!ENTITY	 % T_DocSum	"(
  			Marker_Name
 			| Map_Gene_Summary_List
@@ -37,7 +47,13 @@
 <!ELEMENT DocumentSummary %T_DocSum;>
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
 
+<!--~~ <DocumentSummarySet>
+~~json <object/>
+~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary*)>
 <!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
 
+<!--~~ <eSummaryResult>
+~~ tags root
+~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>

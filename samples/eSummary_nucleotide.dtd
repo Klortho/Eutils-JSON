@@ -1,5 +1,9 @@
 <!-- DocSum DTD for nuccore database -->
 
+<!--~~ !dtd
+~~json <json lcnames='true' type='esummary' version='0.3' />
+~~-->
+
 <!ENTITY	 % T_string		"(#PCDATA)">
 <!ENTITY	 % T_int		"(#PCDATA)">
 <!ENTITY	 % T_xml		"(#PCDATA)">
@@ -8,22 +12,43 @@
 <!ELEMENT	Caption		%T_string;>
 <!ELEMENT	Title		%T_string;>
 <!ELEMENT	Extra		%T_string;>
+<!--~~ <Gi>
+~~json <number/>
+~~-->
 <!ELEMENT	Gi		%T_int;>
 <!ELEMENT	CreateDate		%T_string;>
 <!ELEMENT	UpdateDate		%T_string;>
+<!--~~ <Flags>
+~~json <number/>
+~~-->
 <!ELEMENT	Flags		%T_int;>
+<!--~~ <TaxId>
+~~json <number/>
+~~-->
 <!ELEMENT	TaxId		%T_int;>
+<!--~~ <Gi>
+~~json <number/>
+~~-->
 <!ELEMENT	Slen		%T_int;>
 <!ELEMENT	Meta		%T_xml;>
 <!ELEMENT	Biomol		%T_string;>
 <!ELEMENT	MolType		%T_string;>
 <!ELEMENT	Topology		%T_string;>
 <!ELEMENT	SourceDb		%T_string;>
+<!--~~ <SegSetSize>
+~~json <number/>
+~~-->
 <!ELEMENT	SegSetSize		%T_int;>
+<!--~~ <ProjectId>
+~~json <number/>
+~~-->
 <!ELEMENT	ProjectId		%T_int;>
 <!ELEMENT	Genome		%T_string;>
 <!ELEMENT	SubType		%T_string;>
 <!ELEMENT	SubName		%T_string;>
+<!--~~ <AssemblyGi>
+~~json <number/>
+~~-->
 <!ELEMENT	AssemblyGi		%T_int;>
 <!ELEMENT	AssemblyAcc		%T_string;>
 <!ELEMENT	Tech		%T_string;>
@@ -34,9 +59,7 @@
 
 <!-- Definition of Structure type: T_DocSum -->
 <!--~~ <DocumentSummary>
-
-~~json
-<object name='\@uid'/>
+~~json <object name='\@uid'/>
 ~~-->
 <!ENTITY	 % T_DocSum	"(
  			Caption
@@ -70,17 +93,12 @@
 <!ELEMENT DocumentSummary %T_DocSum;>
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
 <!--~~ <DocumentSummarySet>
-
-~~json
-<object/>
+~~json <object/>
 ~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary*)>
 <!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
 <!--~~ <eSummaryResult>
-This is the root element for an ESummary response.
-~~ tags
-root
-~~ json
-<json resulttype='esummary' version='0.2' />
+~~ tags root
 ~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>

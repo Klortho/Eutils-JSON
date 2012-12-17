@@ -35,6 +35,9 @@
 ~~json <object/>
 ~~-->
 <!ELEMENT   Stat        EMPTY>
+<!--~~ @count
+~~json <number/>
+~~-->
 <!ATTLIST   Stat
   count     CDATA       #IMPLIED
   subtype   CDATA       #IMPLIED

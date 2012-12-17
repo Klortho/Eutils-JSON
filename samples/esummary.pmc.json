@@ -1,13 +1,10 @@
 {
-    "version": "0.1",
-    "resulttype": "esummary",
-    "docsums": {
-        "uids": [
-            "254085",
-            "1",
-            "14900"
-        ],
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
         "254085": {
+            "uid": "254085",
             "pubdate": "1987 Apr",
             "epubdate": "",
             "source": "J Virol",
@@ -39,10 +36,8 @@
             "sortdate": "1987/04/01 00:00",
             "pmclivedate": "2003/12/01 00:00"
         },
-        "1": {
-            "error": "cannot get document summary"
-        },
         "14900": {
+            "uid": "14900",
             "pubdate": "2000 Jun",
             "epubdate": "",
             "source": "Mol Biol Cell",

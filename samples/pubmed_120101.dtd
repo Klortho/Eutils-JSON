@@ -19,6 +19,11 @@
        -->
 <!-- ================================================================= -->
 <!-- ================================================================= -->
+
+<!--~~ !dtd
+~~json <json lcnames='true' type='esummary' version='0.3' />
+~~-->
+
 <!-- Reference to Where the MEDLINECITATION DTD is located  -->
 <!ENTITY % Medline PUBLIC "-//NLM//DTD Medline, 01 Jan 2012//EN"
       "nlmmedlinecitationset_120101.dtd">
@@ -41,6 +46,10 @@
 <!ENTITY % art.id.type "(doi | pii | pmcpid | pmpid | pmc | mid |
                               sici | %art.id.type.int;)">
 <!-- ================================================================= -->
+<!--~~ <PubmedArticleSet>
+~~tags root
+~~json <array/>
+~~-->
 <!ELEMENT PubmedArticleSet (PubmedArticle | PubmedBookArticle)+>
 <!-- ================================================================= -->
 <!-- This is the top level element for PubMedArticle -->

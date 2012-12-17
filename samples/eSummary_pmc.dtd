@@ -1,5 +1,9 @@
 <!-- DocSum DTD for pmc database -->
 
+<!--~~ !dtd
+~~json <json lcnames='true' type='esummary' version='0.3' />
+~~-->
+
 <!ENTITY	 % T_string		"(#PCDATA)">
 
 <!-- Definition of Enumeration type: T_AuthorType -->
@@ -10,6 +14,9 @@
 <!ELEMENT	AuthType		%T_AuthorType;>
 
 <!-- Definition of Structure type: T_Author -->
+<!--~~ <Author>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_Author	"(
  			Name
 			| AuthType
@@ -24,6 +31,9 @@
 <!ELEMENT	Value		%T_string;>
 
 <!-- Definition of Structure type: T_ArticleId -->
+<!--~~ <ArticleId>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_ArticleId	"(
  			IdType
 			| Value
@@ -49,6 +59,9 @@
 <!ELEMENT	PmcLiveDate		%T_date;>
 
 <!-- Definition of Structure type: T_DocSum -->
+<!--~~ <DocumentSummary>
+~~json <object name='@uid'/>
+~~-->
 <!ENTITY	 % T_DocSum	"(
  			PubDate
 			| EPubDate
@@ -67,7 +80,13 @@
 <!ELEMENT DocumentSummary %T_DocSum;>
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
 
+<!--~~ <DocumentSummarySet>
+~~json <object/>
+~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary*)>
 <!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
 
+<!--~~ <eSummaryResult>
+~~ tags root
+~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>

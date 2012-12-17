@@ -1,5 +1,5 @@
 {
-    "version": "0.1",
-    "resulttype": "esummary",
-    "ERROR": "Invalid db name specified: fleegle"
+    "type": "esummary",
+    "version": "0.3",
+    "error": "Invalid db name specified: fleegle"
 }

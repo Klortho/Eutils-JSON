@@ -6,30 +6,30 @@
 
 <samples>
   <samplegroup header='EInfo'>
-    <sample title='EInfo' status='→✓D' name='einfo' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo' status='D' name='einfo' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi</eutils-url>
       <desc>List all databases</desc>
     </sample>
-    <sample title='EInfo PubMed' status='→✓D' name='einfo.pubmed' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo PubMed' status='D' name='einfo.pubmed' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='EInfo Error' status='→✓D' name='einfo.error' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo Error' status='D' name='einfo.error' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle</eutils-url>
       <desc>Invalid database name</desc>
     </sample>
   </samplegroup>
 
   <samplegroup header='ESearch'>
-    <sample title='ESearch PubMed' status='→✓D' name='esearch.pubmed' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch PubMed' status='D' name='esearch.pubmed' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESearch Error' status='→✓D' name='esearch.error' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch Error' status='D' name='esearch.error' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d</eutils-url>
       <desc>This query has a bad search term</desc>
     </sample>
-    <sample title='ESearch Bad Error' status='→✓D' name='esearch.baderror' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch Bad Error' status='D' name='esearch.baderror' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=fleegle&amp;term=cat</eutils-url>
       <desc>Invalid db name specified.</desc>
     </sample>
@@ -37,11 +37,11 @@
 
 
   <samplegroup header='ESummary'>
-    <sample title='ESummary pubmed' status='→✓D' name='esummary.pubmed' dtd='eSummary_pubmed.dtd'>
+    <sample title='ESummary pubmed' status='D' name='esummary.pubmed' dtd='eSummary_pubmed.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmed&amp;id=5683731,22144687</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary protein' status='→✓D' name='esummary.protein' dtd='eSummary_protein.dtd'>
+    <sample title='ESummary protein' status='D' name='esummary.protein' dtd='eSummary_protein.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=protein&amp;id=284822047</eutils-url>
       <desc></desc>
     </sample>
@@ -183,10 +183,16 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omim&amp;id=609708</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary pmc' status='✓' name='esummary.pmc' dtd='eSummary_pmc.dtd'>
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,1,14900</eutils-url>
+    <sample title='ESummary pmc' status='D' name='esummary.pmc' dtd='eSummary_pmc.dtd'>
+      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,14900</eutils-url>
       <desc></desc>
     </sample>
+
+    <sample title='ESummary pmc with error' status='✗' name='esummary.pmcerror' dtd='eSummary_pmc.dtd'>
+      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,1,14900</eutils-url>
+      <desc>The XML results here are not valid according to the DTD.  Need to open a JIRA ticket.</desc>
+    </sample>
+    
     <sample title='ESummary popset' status='' name='esummary.popset' dtd='eSummary_popset.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=popset&amp;id=418209882</eutils-url>
       <desc></desc>
@@ -242,7 +248,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unigene&amp;id=1190943</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary unists' status='✓' name='esummary.unists' dtd='eSummary_unists.dtd'>
+    <sample title='ESummary unists' status='D' name='esummary.unists' dtd='eSummary_unists.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unists&amp;id=254085,254086</eutils-url>
       <desc></desc>
     </sample>
@@ -250,16 +256,22 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary error' status='✓' name='esummary.error' dtd='eSummary_041029.dtd'>
+    <sample title='ESummary error' status='D' name='esummary.error' dtd='eSummary_041029.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=error&amp;id=254088</eutils-url>
       <desc></desc>
     </sample>
   </samplegroup>
 
   <samplegroup header='EFetch'>
-    <sample title='PubMed' status='✓' name='efetch.pubmed' dtd='pubmed_120101.dtd'>
+    <sample title='PubMed' status='' name='efetch.pubmed' dtd='pubmed_120101.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml</eutils-url>
-      <desc></desc>
+      <desc>
+        This one is very complicated.  Note that I got a start on it before moving to DtdAnalyzer,
+        with a manual stylesheet that is saved here:
+        https://github.com/Klortho/Eutils-JSON/blob/7550961a849e14f53899ea9cc948a36e5903677e/Eutils2JSON.xsl.
+        The JSON file, efetch.pubmed.json, here in the samples directory is the result of that
+        output, and should be the goal.
+      </desc>
     </sample>
   </samplegroup>
 

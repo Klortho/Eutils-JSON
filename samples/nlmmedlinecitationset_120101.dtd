@@ -60,6 +60,9 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
                 VersionID CDATA #IMPLIED
                 VersionDate CDATA #IMPLIED>
 <!ELEMENT	Abstract (AbstractText+,CopyrightInformation?)>
+<!--~~ <AbstractText>
+~~json <object/>
+~~-->
 <!ELEMENT	AbstractText %text;>
 <!ATTLIST       AbstractText
                 Label CDATA #IMPLIED
@@ -79,6 +82,9 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
                           Electronic-Print) #REQUIRED>
 <!ELEMENT	ArticleDate (Year,Month,Day)>
 <!ATTLIST	ArticleDate DateType CDATA  #FIXED "Electronic">
+<!--~~ <ArticleTitle>
+~~json <string/>
+~~-->
 <!ELEMENT	ArticleTitle %text;>
 <!ELEMENT	Author (((LastName, ForeName?, Initials?, Suffix?) | 
                          CollectiveName),NameID*)>
