@@ -1,0 +1,109 @@
+{
+    "resulttype": "esummary",
+    "version": "0.2",
+    "documentsummaryset": {
+        "status": "OK",
+        "424386131": {
+            "uid": "424386131",
+            "caption": "AAIY02060586",
+            "title": "Echinops telfairi contig060586, whole genome shotgun sequence",
+            "extra": "gi|424386131|gb|AAIY02060586.1||gnl|WGS:AAIY02|contig060586",
+            "gi": "424386131",
+            "createdate": "2012/11/22",
+            "updatedate": "2012/11/22",
+            "flags": "0",
+            "taxid": "9371",
+            "slen": "20193",
+            "biomol": "genomic",
+            "moltype": "dna",
+            "topology": "linear",
+            "sourcedb": "insd",
+            "segsetsize": "0",
+            "projectid": "12590",
+            "genome": "",
+            "subtype": "sex|country",
+            "subname": "female|Germany: Ludwig Maximilians University, Munich",
+            "assemblygi": "0",
+            "assemblyacc": "",
+            "tech": "wgs",
+            "completeness": "",
+            "geneticcode": "1",
+            "strand": "",
+            "organism": "Echinops telfairi",
+            "statistics": [
+                {
+                    "type": "Length",
+                    "count": "20193"
+                },
+                {
+                    "type": "Length",
+                    "subtype": "literal",
+                    "count": "20193"
+                },
+                {
+                    "type": "all",
+                    "count": "66"
+                },
+                {
+                    "type": "blob_size",
+                    "count": "14611"
+                },
+                {
+                    "type": "imp",
+                    "count": "65"
+                },
+                {
+                    "type": "imp",
+                    "subtype": "variation",
+                    "count": "65"
+                },
+                {
+                    "type": "org",
+                    "count": "1"
+                },
+                {
+                    "type": "pub",
+                    "count": "2"
+                },
+                {
+                    "type": "pub",
+                    "subtype": "unpublished",
+                    "count": "1"
+                },
+                {
+                    "source": "all",
+                    "type": "Length",
+                    "count": "20193"
+                },
+                {
+                    "source": "all",
+                    "type": "all",
+                    "count": "66"
+                },
+                {
+                    "source": "all",
+                    "type": "blob_size",
+                    "count": "14611"
+                },
+                {
+                    "source": "all",
+                    "type": "imp",
+                    "count": "65"
+                },
+                {
+                    "source": "all",
+                    "type": "org",
+                    "count": "1"
+                },
+                {
+                    "source": "all",
+                    "type": "pub",
+                    "count": "2"
+                }
+            ],
+            "properties": "33",
+            "oslt": "AAIY02060586.1",
+            "accessionversion": "AAIY02060586.1"
+        }
+    }
+}

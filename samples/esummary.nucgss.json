@@ -1,0 +1,65 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "371566079": {
+            "uid": "371566079",
+            "caption": "JS583468",
+            "title": "Oct4_065 Buffalo genomic DNA containing POU5F1 (OCT4) binding regions library Bubalus bubalis genomic clone CIP065 5-, genomic survey sequence",
+            "extra": "gi|371566079|gb|JS583468.1|",
+            "gi": 371566079,
+            "createdate": "2012/01/09",
+            "updatedate": "2012/01/10",
+            "flags": 0,
+            "taxid": 89462,
+            "slen": 283,
+            "biomol": "genomic",
+            "moltype": "dna",
+            "topology": "linear",
+            "sourcedb": "",
+            "segsetsize": 0,
+            "projectid": 0,
+            "genome": "",
+            "subtype": "",
+            "subname": "",
+            "assemblygi": 0,
+            "assemblyacc": "",
+            "tech": "",
+            "completeness": "",
+            "geneticcode": "",
+            "strand": "",
+            "organism": "Bubalus bubalis",
+            "statistics": [
+                {
+                    "type": "Length",
+                    "count": 283
+                },
+                {
+                    "type": "Length",
+                    "subtype": "literal",
+                    "count": 283
+                },
+                {
+                    "type": "blob_size",
+                    "count": 2048
+                },
+                {
+                    "type": "pub",
+                    "count": 1
+                }
+            ],
+            "properties": {
+                "na": "1",
+                "gss": "8",
+                "qual": "32",
+                "value": "41"
+            },
+            "oslt": {
+                "indexed": true,
+                "value": "JS583468.1"
+            },
+            "accessionversion": "JS583468.1"
+        }
+    }
+}

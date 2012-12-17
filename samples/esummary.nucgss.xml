@@ -1,35 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD eSummaryResult//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_nucgss.dtd">
 <eSummaryResult>
-<DocumentSummarySet status="OK">
-<DocumentSummary uid="371566079">
-	<Caption>JS583468</Caption>
-	<Title>Oct4_065 Buffalo genomic DNA containing POU5F1 (OCT4) binding regions library Bubalus bubalis genomic clone CIP065 5-, genomic survey sequence</Title>
-	<Extra>gi|371566079|gb|JS583468.1|</Extra>
-	<Gi>371566079</Gi>
-	<CreateDate>2012/01/09</CreateDate>
-	<UpdateDate>2012/01/10</UpdateDate>
-	<Flags>0</Flags>
-	<TaxId>89462</TaxId>
-	<Slen>283</Slen>
-	
-	<Biomol>genomic</Biomol>
-	<MolType>dna</MolType>
-	<Topology>linear</Topology>
-	<SourceDb/>
-	<SegSetSize>0</SegSetSize>
-	<ProjectId>0</ProjectId>
-	<Genome/>
-	<SubType/>
-	<SubName/>
-	<AssemblyGi>0</AssemblyGi>
-	<AssemblyAcc/>
-	<Tech/>
-	<Completeness/>
-	<GeneticCode/>
-	<Strand/>
-	<Organism>Bubalus bubalis</Organism>
-<Statistics><Stat type="Length" count="283"/><Stat type="Length" subtype="literal" count="283"/><Stat type="blob_size" count="2048"/><Stat type="pub" count="1"/></Statistics><Properties na="1" gss="8" qual="32">41</Properties><OSLT indexed="yes">JS583468.1</OSLT><AccessionVersion>JS583468.1</AccessionVersion></DocumentSummary>
+    <DocumentSummarySet status="OK">
+        <DocumentSummary uid="371566079">
+            <Caption>JS583468</Caption>
+            <Title>Oct4_065 Buffalo genomic DNA containing POU5F1 (OCT4) binding regions library
+                Bubalus bubalis genomic clone CIP065 5-, genomic survey sequence</Title>
+            <Extra>gi|371566079|gb|JS583468.1|</Extra>
+            <Gi>371566079</Gi>
+            <CreateDate>2012/01/09</CreateDate>
+            <UpdateDate>2012/01/10</UpdateDate>
+            <Flags>0</Flags>
+            <TaxId>89462</TaxId>
+            <Slen>283</Slen>
 
-</DocumentSummarySet>
+            <Biomol>genomic</Biomol>
+            <MolType>dna</MolType>
+            <Topology>linear</Topology>
+            <SourceDb/>
+            <SegSetSize>0</SegSetSize>
+            <ProjectId>0</ProjectId>
+            <Genome/>
+            <SubType/>
+            <SubName/>
+            <AssemblyGi>0</AssemblyGi>
+            <AssemblyAcc/>
+            <Tech/>
+            <Completeness/>
+            <GeneticCode/>
+            <Strand/>
+            <Organism>Bubalus bubalis</Organism>
+            <Statistics>
+                <Stat type="Length" count="283"/>
+                <Stat type="Length" subtype="literal" count="283"/>
+                <Stat type="blob_size" count="2048"/>
+                <Stat type="pub" count="1"/>
+            </Statistics>
+            <Properties na="1" gss="8" qual="32">41</Properties>
+            <OSLT indexed="yes">JS583468.1</OSLT>
+            <AccessionVersion>JS583468.1</AccessionVersion>
+        </DocumentSummary>
+
+    </DocumentSummarySet>
 </eSummaryResult>
