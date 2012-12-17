@@ -4,12 +4,13 @@ $Id: eSearch_020511.dtd 85163 2006-06-28 17:35:21Z olegh $
 -->
 <!-- ================================================================= -->
 
+<!--~~ !dtd
+~~json <json lcnames='true' type='esearch' version='0.3' />
+~~-->
+
 <!--~~ <eSearchResult>
 This is the root element for an ESearch response.
-~~ tags
-root
-~~ json
-<json resulttype='esearch' version='0.2' />
+~~ tags root
 ~~-->
 <!ELEMENT       eSearchResult  (
                                  (
@@ -55,18 +56,13 @@ root
 <!ELEMENT       TermSet           (Term, Field, Count, Explode)>
 
 <!--~~ <TranslationStack>
-TranslationStack element.
-~~ json
-<array/>
+~~ json <array/>
 ~~-->
 <!ELEMENT       TranslationStack  ((TermSet|OP)*)>
 
 <!-- Error message tags  -->
-
 <!--~~ <ERROR>
-Error element
-~~ json
-<json name='"ERROR"'/>
+~~ json <json name='"ERROR"'/>
 ~~-->
 <!ELEMENT        ERROR                  (#PCDATA)>  <!-- .+ -->
 
@@ -84,23 +80,21 @@ Error element
 <!ELEMENT        QueryTranslation       (#PCDATA)>  <!-- .+ -->
 
 <!--~~ <ErrorList>
-
 ~~ json
-<object>
-  <array name='"phrasesnotfound"' content='PhraseNotFound'/>
-  <array name='"fieldsnotfound"' content='FieldsNotFound'/>
-</object>
+  <object>
+    <array name='"phrasesnotfound"' content='PhraseNotFound'/>
+    <array name='"fieldsnotfound"' content='FieldsNotFound'/>
+  </object>
 ~~-->
 <!ELEMENT        ErrorList      (PhraseNotFound*,FieldNotFound*)>
 
 <!--~~ <WarningList>
-
 ~~ json
-<object>
-  <array name='"phrasesignored"' content='PhraseIgnored'/>
-  <array name='"quotedphrasesnotfound"' content='QuotedPhraseNotFound'/>
-  <array name='"outputmessages"' content='OutputMessage'/>
-</object>
+  <object>
+    <array name='"phrasesignored"' content='PhraseIgnored'/>
+    <array name='"quotedphrasesnotfound"' content='QuotedPhraseNotFound'/>
+    <array name='"outputmessages"' content='OutputMessage'/>
+  </object>
 ~~-->
 <!ELEMENT        WarningList    ( PhraseIgnored*,
                                   QuotedPhraseNotFound*,

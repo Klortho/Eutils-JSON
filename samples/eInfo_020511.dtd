@@ -5,12 +5,13 @@
 
 <!-- ================================================================= -->
 
+<!--~~ !dtd
+~~json <json lcnames='true' type='einfo' version='0.3' />
+~~-->
+
 <!--~~ <eInfoResult>
 This is the root element for an EInfo response.
-~~ tags
-root
-~~ json
-<json resulttype='einfo' version='0.2' />
+~~ tags root
 ~~-->
 <!ELEMENT       eInfoResult     (DbList|DbInfo|ERROR)>
 
@@ -26,9 +27,7 @@ root
 <!ELEMENT       LastUpdate      (#PCDATA)>      <!-- \d+ -->
 
 <!--~~ <ERROR>
-Error element
-~~ json
-<json name="'ERROR'"/>
+~~ json <json name="'ERROR'"/>
 ~~-->
 <!ELEMENT       ERROR           (#PCDATA)>      <!-- .+ -->
 
