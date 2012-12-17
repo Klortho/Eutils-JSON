@@ -49,7 +49,7 @@
           <br/>
           <!-- Assume the DTD filename always ends in ".dtd" -->
           <xsl:variable name='xslName' 
-            select='concat(substring(@dtd, string-length(@dtd) - 4), "-2json.xsl")'/>
+            select='concat(substring(@dtd, 1, string-length(@dtd) - 4), "-2json.xsl")'/>
           <a href='../../blob/master/samples/{$xslName}'>
             <xsl:value-of select='$xslName'/>
           </a>

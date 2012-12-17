@@ -46,7 +46,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eInfo_020511.dtd">eInfo_020511.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/1.dtd-2json.xsl">1.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eInfo_020511-2json.xsl">eInfo_020511-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/einfo.xml">einfo.xml</a>
         <br/>
@@ -63,7 +63,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eInfo_020511.dtd">eInfo_020511.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/1.dtd-2json.xsl">1.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eInfo_020511-2json.xsl">eInfo_020511-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/einfo.pubmed.xml">einfo.pubmed.xml</a>
         <br/>
@@ -80,7 +80,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eInfo_020511.dtd">eInfo_020511.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/1.dtd-2json.xsl">1.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eInfo_020511-2json.xsl">eInfo_020511-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/einfo.error.xml">einfo.error.xml</a>
         <br/>
@@ -107,7 +107,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSearch_020511.dtd">eSearch_020511.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/1.dtd-2json.xsl">1.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSearch_020511-2json.xsl">eSearch_020511-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esearch.pubmed.xml">esearch.pubmed.xml</a>
         <br/>
@@ -124,7 +124,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSearch_020511.dtd">eSearch_020511.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/1.dtd-2json.xsl">1.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSearch_020511-2json.xsl">eSearch_020511-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esearch.error.xml">esearch.error.xml</a>
         <br/>
@@ -141,7 +141,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSearch_020511.dtd">eSearch_020511.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/1.dtd-2json.xsl">1.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSearch_020511-2json.xsl">eSearch_020511-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esearch.baderror.xml">esearch.baderror.xml</a>
         <br/>
@@ -168,7 +168,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_pubmed.dtd">eSummary_pubmed.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/d.dtd-2json.xsl">d.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_pubmed-2json.xsl">eSummary_pubmed-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.pubmed.xml">esummary.pubmed.xml</a>
         <br/>
@@ -185,7 +185,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_protein.dtd">eSummary_protein.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/n.dtd-2json.xsl">n.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_protein-2json.xsl">eSummary_protein-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.protein.xml">esummary.protein.xml</a>
         <br/>
@@ -202,7 +202,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_nuccore.dtd">eSummary_nuccore.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/e.dtd-2json.xsl">e.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_nuccore-2json.xsl">eSummary_nuccore-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.nuccore.xml">esummary.nuccore.xml</a>
         <br/>
@@ -219,7 +219,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_nucleotide.dtd">eSummary_nucleotide.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/e.dtd-2json.xsl">e.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_nucleotide-2json.xsl">eSummary_nucleotide-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.nucleotide.xml">esummary.nucleotide.xml</a>
         <br/>
@@ -236,7 +236,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_nucgss.dtd">eSummary_nucgss.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/s.dtd-2json.xsl">s.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_nucgss-2json.xsl">eSummary_nucgss-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.nucgss.xml">esummary.nucgss.xml</a>
         <br/>
@@ -253,7 +253,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_nucest.dtd">eSummary_nucest.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/t.dtd-2json.xsl">t.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_nucest-2json.xsl">eSummary_nucest-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.nucest.xml">esummary.nucest.xml</a>
         <br/>
@@ -270,7 +270,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_structure.dtd">eSummary_structure.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/e.dtd-2json.xsl">e.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_structure-2json.xsl">eSummary_structure-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.structure.xml">esummary.structure.xml</a>
         <br/>
@@ -287,7 +287,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_genome.dtd">eSummary_genome.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/e.dtd-2json.xsl">e.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_genome-2json.xsl">eSummary_genome-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.genome.xml">esummary.genome.xml</a>
         <br/>
@@ -304,7 +304,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_assembly.dtd">eSummary_assembly.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/y.dtd-2json.xsl">y.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_assembly-2json.xsl">eSummary_assembly-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.assembly.xml">esummary.assembly.xml</a>
         <br/>
@@ -321,7 +321,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_gcassembly.dtd">eSummary_gcassembly.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/y.dtd-2json.xsl">y.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_gcassembly-2json.xsl">eSummary_gcassembly-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.gcassembly.xml">esummary.gcassembly.xml</a>
         <br/>
@@ -338,7 +338,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_genomeprj.dtd">eSummary_genomeprj.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/j.dtd-2json.xsl">j.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_genomeprj-2json.xsl">eSummary_genomeprj-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.genomeprj.xml">esummary.genomeprj.xml</a>
         <br/>
@@ -355,7 +355,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_bioproject.dtd">eSummary_bioproject.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/t.dtd-2json.xsl">t.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_bioproject-2json.xsl">eSummary_bioproject-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.bioproject.xml">esummary.bioproject.xml</a>
         <br/>
@@ -372,7 +372,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_biosample.dtd">eSummary_biosample.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/e.dtd-2json.xsl">e.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_biosample-2json.xsl">eSummary_biosample-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.biosample.xml">esummary.biosample.xml</a>
         <br/>
@@ -389,7 +389,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_biosystems.dtd">eSummary_biosystems.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/s.dtd-2json.xsl">s.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_biosystems-2json.xsl">eSummary_biosystems-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.biosystems.xml">esummary.biosystems.xml</a>
         <br/>
@@ -406,7 +406,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_blastdbinfo.dtd">eSummary_blastdbinfo.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/o.dtd-2json.xsl">o.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_blastdbinfo-2json.xsl">eSummary_blastdbinfo-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.blastdbinfo.xml">esummary.blastdbinfo.xml</a>
         <br/>
@@ -423,7 +423,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_books.dtd">eSummary_books.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/s.dtd-2json.xsl">s.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_books-2json.xsl">eSummary_books-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.books.xml">esummary.books.xml</a>
         <br/>
@@ -440,7 +440,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_cdd.dtd">eSummary_cdd.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/d.dtd-2json.xsl">d.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_cdd-2json.xsl">eSummary_cdd-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.cdd.xml">esummary.cdd.xml</a>
         <br/>
@@ -457,7 +457,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_clone.dtd">eSummary_clone.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/e.dtd-2json.xsl">e.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_clone-2json.xsl">eSummary_clone-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.clone.xml">esummary.clone.xml</a>
         <br/>
@@ -474,7 +474,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_gap.dtd">eSummary_gap.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/p.dtd-2json.xsl">p.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_gap-2json.xsl">eSummary_gap-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.gap.xml">esummary.gap.xml</a>
         <br/>
@@ -491,7 +491,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_gapplus.dtd">eSummary_gapplus.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/s.dtd-2json.xsl">s.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_gapplus-2json.xsl">eSummary_gapplus-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.gapplus.xml">esummary.gapplus.xml</a>
         <br/>
@@ -508,7 +508,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_dbvar.dtd">eSummary_dbvar.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/r.dtd-2json.xsl">r.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_dbvar-2json.xsl">eSummary_dbvar-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.dbvar.xml">esummary.dbvar.xml</a>
         <br/>
@@ -525,7 +525,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_epigenomics.dtd">eSummary_epigenomics.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/s.dtd-2json.xsl">s.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_epigenomics-2json.xsl">eSummary_epigenomics-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.epigenomics.xml">esummary.epigenomics.xml</a>
         <br/>
@@ -542,7 +542,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_gene.dtd">eSummary_gene.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/e.dtd-2json.xsl">e.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_gene-2json.xsl">eSummary_gene-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.gene.xml">esummary.gene.xml</a>
         <br/>
@@ -559,7 +559,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_gds.dtd">eSummary_gds.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/s.dtd-2json.xsl">s.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_gds-2json.xsl">eSummary_gds-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.gds.xml">esummary.gds.xml</a>
         <br/>
@@ -576,7 +576,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_geo.dtd">eSummary_geo.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/o.dtd-2json.xsl">o.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_geo-2json.xsl">eSummary_geo-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.geo.xml">esummary.geo.xml</a>
         <br/>
@@ -593,7 +593,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_geoprofiles.dtd">eSummary_geoprofiles.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/s.dtd-2json.xsl">s.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_geoprofiles-2json.xsl">eSummary_geoprofiles-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.geoprofiles.xml">esummary.geoprofiles.xml</a>
         <br/>
@@ -610,7 +610,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_homologene.dtd">eSummary_homologene.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/e.dtd-2json.xsl">e.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_homologene-2json.xsl">eSummary_homologene-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.homologene.xml">esummary.homologene.xml</a>
         <br/>
@@ -627,7 +627,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_journals.dtd">eSummary_journals.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/s.dtd-2json.xsl">s.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_journals-2json.xsl">eSummary_journals-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.journals.xml">esummary.journals.xml</a>
         <br/>
@@ -657,7 +657,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_mesh.dtd">eSummary_mesh.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/h.dtd-2json.xsl">h.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_mesh-2json.xsl">eSummary_mesh-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.mesh.xml">esummary.mesh.xml</a>
         <br/>
@@ -674,7 +674,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_ncbisearch.dtd">eSummary_ncbisearch.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/h.dtd-2json.xsl">h.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_ncbisearch-2json.xsl">eSummary_ncbisearch-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.ncbisearch.xml">esummary.ncbisearch.xml</a>
         <br/>
@@ -691,7 +691,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_nlmcatalog.dtd">eSummary_nlmcatalog.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/g.dtd-2json.xsl">g.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_nlmcatalog-2json.xsl">eSummary_nlmcatalog-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.nlmcatalog.xml">esummary.nlmcatalog.xml</a>
         <br/>
@@ -708,7 +708,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_omia.dtd">eSummary_omia.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/a.dtd-2json.xsl">a.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_omia-2json.xsl">eSummary_omia-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.omia.xml">esummary.omia.xml</a>
         <br/>
@@ -725,7 +725,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_omim.dtd">eSummary_omim.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/m.dtd-2json.xsl">m.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_omim-2json.xsl">eSummary_omim-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.omim.xml">esummary.omim.xml</a>
         <br/>
@@ -742,7 +742,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_pmc.dtd">eSummary_pmc.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/c.dtd-2json.xsl">c.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_pmc-2json.xsl">eSummary_pmc-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.pmc.xml">esummary.pmc.xml</a>
         <br/>
@@ -759,7 +759,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_popset.dtd">eSummary_popset.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/t.dtd-2json.xsl">t.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_popset-2json.xsl">eSummary_popset-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.popset.xml">esummary.popset.xml</a>
         <br/>
@@ -776,7 +776,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_probe.dtd">eSummary_probe.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/e.dtd-2json.xsl">e.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_probe-2json.xsl">eSummary_probe-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.probe.xml">esummary.probe.xml</a>
         <br/>
@@ -793,7 +793,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_proteinclusters.dtd">eSummary_proteinclusters.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/s.dtd-2json.xsl">s.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_proteinclusters-2json.xsl">eSummary_proteinclusters-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.proteinclusters.xml">esummary.proteinclusters.xml</a>
         <br/>
@@ -810,7 +810,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_pcassay.dtd">eSummary_pcassay.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/y.dtd-2json.xsl">y.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_pcassay-2json.xsl">eSummary_pcassay-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.pcassay.xml">esummary.pcassay.xml</a>
         <br/>
@@ -827,7 +827,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_pccompound.dtd">eSummary_pccompound.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/d.dtd-2json.xsl">d.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_pccompound-2json.xsl">eSummary_pccompound-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.pccompound.xml">esummary.pccompound.xml</a>
         <br/>
@@ -844,7 +844,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_pcsubstance.dtd">eSummary_pcsubstance.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/e.dtd-2json.xsl">e.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_pcsubstance-2json.xsl">eSummary_pcsubstance-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.pcsubstance.xml">esummary.pcsubstance.xml</a>
         <br/>
@@ -874,7 +874,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_seqannot.dtd">eSummary_seqannot.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/t.dtd-2json.xsl">t.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_seqannot-2json.xsl">eSummary_seqannot-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.seqannot.xml">esummary.seqannot.xml</a>
         <br/>
@@ -891,7 +891,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_snp.dtd">eSummary_snp.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/p.dtd-2json.xsl">p.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_snp-2json.xsl">eSummary_snp-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.snp.xml">esummary.snp.xml</a>
         <br/>
@@ -908,7 +908,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_sra.dtd">eSummary_sra.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/a.dtd-2json.xsl">a.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_sra-2json.xsl">eSummary_sra-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.sra.xml">esummary.sra.xml</a>
         <br/>
@@ -925,7 +925,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_taxonomy.dtd">eSummary_taxonomy.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/y.dtd-2json.xsl">y.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_taxonomy-2json.xsl">eSummary_taxonomy-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.taxonomy.xml">esummary.taxonomy.xml</a>
         <br/>
@@ -942,7 +942,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_toolkit.dtd">eSummary_toolkit.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/t.dtd-2json.xsl">t.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_toolkit-2json.xsl">eSummary_toolkit-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.toolkit.xml">esummary.toolkit.xml</a>
         <br/>
@@ -959,7 +959,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_unigene.dtd">eSummary_unigene.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/e.dtd-2json.xsl">e.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_unigene-2json.xsl">eSummary_unigene-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.unigene.xml">esummary.unigene.xml</a>
         <br/>
@@ -976,7 +976,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_unists.dtd">eSummary_unists.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/s.dtd-2json.xsl">s.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_unists-2json.xsl">eSummary_unists-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.unists.xml">esummary.unists.xml</a>
         <br/>
@@ -993,7 +993,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_gencoll.dtd">eSummary_gencoll.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/l.dtd-2json.xsl">l.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_gencoll-2json.xsl">eSummary_gencoll-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.gencoll.xml">esummary.gencoll.xml</a>
         <br/>
@@ -1010,7 +1010,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/eSummary_041029.dtd">eSummary_041029.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/9.dtd-2json.xsl">9.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/eSummary_041029-2json.xsl">eSummary_041029-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/esummary.error.xml">esummary.error.xml</a>
         <br/>
@@ -1037,7 +1037,7 @@ Finally, run that against the instance document(s) to generate JSON output:
       <td>
         <a href="../../blob/master/samples/pubmed_120101.dtd">pubmed_120101.dtd</a>
         <br/>
-        <a href="../../blob/master/samples/1.dtd-2json.xsl">1.dtd-2json.xsl</a>
+        <a href="../../blob/master/samples/pubmed_120101-2json.xsl">pubmed_120101-2json.xsl</a>
         <br/>
         <a href="../../blob/master/samples/efetch.pubmed.xml">efetch.pubmed.xml</a>
         <br/>
