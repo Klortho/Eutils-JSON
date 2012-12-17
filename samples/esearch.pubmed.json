@@ -1,6 +1,6 @@
 {
-    "resulttype": "esearch",
-    "version": "0.2",
+    "type": "esearch",
+    "version": "0.3",
     "count": "15169",
     "retmax": "100",
     "retstart": "0",

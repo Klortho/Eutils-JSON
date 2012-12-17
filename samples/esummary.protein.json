@@ -1,6 +1,6 @@
 {
-    "resulttype": "esummary",
-    "version": "0.2",
+    "type": "esummary",
+    "version": "0.3",
     "documentsummaryset": {
         "status": "OK",
         "284822047": {
@@ -8,22 +8,22 @@
             "caption": "ADB98021",
             "title": "Cat [Donor vector pTKIP-cat]",
             "extra": "gi|284822047|gb|ADB98021.1|",
-            "gi": "284822047",
+            "gi": 284822047,
             "createdate": "2010/02/02",
             "updatedate": "2010/02/02",
-            "flags": "0",
-            "taxid": "711471",
-            "slen": "219",
+            "flags": 0,
+            "taxid": 711471,
+            "slen": 219,
             "biomol": "",
             "moltype": "aa",
             "topology": "not-set",
             "sourcedb": "insd",
-            "segsetsize": "0",
-            "projectid": "0",
+            "segsetsize": 0,
+            "projectid": 0,
             "genome": "",
             "subtype": "lab_host",
             "subname": "Escherichia coli",
-            "assemblygi": "0",
+            "assemblygi": 0,
             "assemblyacc": "",
             "tech": "",
             "completeness": "",
@@ -136,8 +136,15 @@
                     "count": "2"
                 }
             ],
-            "properties": "34",
-            "oslt": "ADB98021.1",
+            "properties": {
+                "aa": "2",
+                "qual": "32",
+                "value": "34"
+            },
+            "oslt": {
+                "indexed": "yes",
+                "value": "ADB98021.1"
+            },
             "accessionversion": "ADB98021.1"
         }
     }

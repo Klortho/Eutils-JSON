@@ -1,5 +1,10 @@
 <!-- DocSum DTD for pubmed database -->
 
+<!--~~ !dtd
+~~json <json lcnames='true' type='esummary' version='0.3' />
+~~-->
+
+
 <!ENTITY	 % T_string		"(#PCDATA)">
 
 <!-- Definition of Enumeration type: T_AuthorType -->
@@ -12,9 +17,7 @@
 
 <!-- Definition of Structure type: T_Author -->
 <!--~~ <Author>
-
-~~json
-<object/>
+~~json <object/>
 ~~-->
 <!ENTITY	 % T_Author	"(
  			Name
@@ -47,9 +50,7 @@
 
 <!-- Definition of Structure type: T_ArticleId -->
 <!--~~ <ArticleId>
-
-~~json
-<object/>
+~~json <object/>
 ~~-->
 <!ENTITY	 % T_ArticleId	"(
  			IdType
@@ -69,9 +70,7 @@
 
 <!-- Definition of Structure type: T_PubMedPubDate -->
 <!--~~ <PubMedPubDate>
-
-~~json
-<object/>
+~~json <object/>
 ~~-->
 <!ENTITY	 % T_PubMedPubDate	"(
  			PubStatus
@@ -93,9 +92,7 @@
 
 <!-- Definition of Structure type: T_Reference -->
 <!--~~ <Reference>
-
-~~json
-<object/>
+~~json <object/>
 ~~-->
 <!ENTITY	 % T_Reference	"(
  			RefSource
@@ -157,9 +154,7 @@
 
 <!-- Definition of Structure type: T_DocSum -->
 <!--~~ <DocumentSummary>
-
-~~json
-<object name='\@uid'/>
+~~json <object name='@uid'/>
 ~~-->
 <!ENTITY	 % T_DocSum	"(
  			PubDate
@@ -210,18 +205,12 @@
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
 
 <!--~~ <DocumentSummarySet>
-
-~~json
-<object/>
+~~json <object/>
 ~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary*)>
 <!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
 
 <!--~~ <eSummaryResult>
-This is the root element for an ESummary response.
-~~ tags
-root
-~~ json
-<json resulttype='esummary' version='0.2' />
+~~ tags root
 ~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>

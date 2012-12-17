@@ -24,6 +24,12 @@ Finally, run that against the instance document(s) to generate JSON output:
     xsltproc eInfo_020511-2json.xsl einfo.pubmed.xml > einfo.pubmed.json
     xsltproc eInfo_020511-2json.xsl einfo.error.xml > einfo.error.json
 
+As a validity check, you then should copy-paste the resultant JSON into
+http://jsonlint.com/.  Note that it's really not enough to use a Javascript
+utility to just read it in, because we want to use a strict validator that
+looks for things like extraneous trailing commas in arrays and objects.
+
+
 <!--
   DO NOT MODIFY BELOW THIS LINE.
   The stuff from here down is auto-generated, and any changes you make

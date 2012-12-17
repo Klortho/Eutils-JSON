@@ -1,5 +1,5 @@
 {
-    "resulttype": "esearch",
-    "version": "0.2",
+    "type": "esearch",
+    "version": "0.3",
     "ERROR": "Invalid db name specified: fleegle"
 }

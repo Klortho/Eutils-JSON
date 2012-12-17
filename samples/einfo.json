@@ -1,6 +1,6 @@
 {
-    "resulttype": "einfo",
-    "version": "0.2",
+    "type": "einfo",
+    "version": "0.3",
     "dblist": [
         "pubmed",
         "protein",

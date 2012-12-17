@@ -1,5 +1,5 @@
 {
-    "resulttype": "einfo",
-    "version": "0.2",
+    "type": "einfo",
+    "version": "0.3",
     "ERROR": "Can not retrieve DbInfo for db=fleegle"
 }

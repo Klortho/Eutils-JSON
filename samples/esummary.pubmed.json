@@ -1,6 +1,6 @@
 {
-    "resulttype": "esummary",
-    "version": "0.2",
+    "type": "esummary",
+    "version": "0.3",
     "documentsummaryset": {
         "status": "OK",
         "5683731": {

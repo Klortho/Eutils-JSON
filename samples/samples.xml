@@ -6,30 +6,30 @@
 
 <samples>
   <samplegroup header='EInfo'>
-    <sample title='EInfo' status='✓D' name='einfo' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo' status='→✓D' name='einfo' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi</eutils-url>
       <desc>List all databases</desc>
     </sample>
-    <sample title='EInfo PubMed' status='✓D' name='einfo.pubmed' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo PubMed' status='→✓D' name='einfo.pubmed' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='EInfo Error' status='✓D' name='einfo.error' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo Error' status='→✓D' name='einfo.error' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle</eutils-url>
       <desc>Invalid database name</desc>
     </sample>
   </samplegroup>
 
   <samplegroup header='ESearch'>
-    <sample title='ESearch PubMed' status='✓D' name='esearch.pubmed' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch PubMed' status='→✓D' name='esearch.pubmed' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESearch Error' status='✓D' name='esearch.error' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch Error' status='→✓D' name='esearch.error' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d</eutils-url>
       <desc>This query has a bad search term</desc>
     </sample>
-    <sample title='ESearch Bad Error' status='✓D' name='esearch.baderror' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch Bad Error' status='→✓D' name='esearch.baderror' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=fleegle&amp;term=cat</eutils-url>
       <desc>Invalid db name specified.</desc>
     </sample>
@@ -37,11 +37,11 @@
 
 
   <samplegroup header='ESummary'>
-    <sample title='ESummary pubmed' status='✓D' name='esummary.pubmed' dtd='eSummary_pubmed.dtd'>
+    <sample title='ESummary pubmed' status='→✓D' name='esummary.pubmed' dtd='eSummary_pubmed.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmed&amp;id=5683731,22144687</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary protein' status='✓D' name='esummary.protein' dtd='eSummary_protein.dtd'>
+    <sample title='ESummary protein' status='→✓D' name='esummary.protein' dtd='eSummary_protein.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=protein&amp;id=284822047</eutils-url>
       <desc></desc>
     </sample>
