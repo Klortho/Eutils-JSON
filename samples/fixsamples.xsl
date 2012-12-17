@@ -26,7 +26,7 @@
         <th></th>
         <th>Status</th>
         <th>Local files</th>
-        <th>Comment</th>
+        <th>Comments</th>
         <th>NCBI EUtils</th>
       </tr>
       <xsl:apply-templates/>
@@ -44,14 +44,23 @@
       <td>
         <xsl:if test='@dtd'>
           <a href="../../blob/master/samples/{@dtd}">
-            <xsl:text>dtd</xsl:text>
-          </a>,
+            <xsl:value-of select='@dtd'/>
+          </a>
+          <br/>
+          <!-- Assume the DTD filename always ends in ".dtd" -->
+          <xsl:variable name='xslName' 
+            select='concat(substring(@dtd, string-length(@dtd) - 4), "-2json.xsl")'/>
+          <a href='../../blob/master/samples/{$xslName}'>
+            <xsl:value-of select='$xslName'/>
+          </a>
+          <br/>
         </xsl:if>
         <a href="../../blob/master/samples/{@name}.xml">
-          <xsl:text>xml</xsl:text>
-        </a>,
+          <xsl:value-of select='concat(@name, ".xml")'/>
+        </a>
+        <br/>
         <a href="../../blob/master/samples/{@name}.json">
-          <xsl:text>json</xsl:text>
+          <xsl:value-of select='concat(@name, ".json")'/>
         </a>
       </td>
       <td>
