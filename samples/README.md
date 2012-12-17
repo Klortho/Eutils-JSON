@@ -52,7 +52,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>EInfo</th>
-      <td>→✓D</td>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eInfo_020511.dtd">eInfo_020511.dtd</a>
         <br/>
@@ -69,7 +69,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>EInfo PubMed</th>
-      <td>→✓D</td>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eInfo_020511.dtd">eInfo_020511.dtd</a>
         <br/>
@@ -86,7 +86,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>EInfo Error</th>
-      <td>→✓D</td>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eInfo_020511.dtd">eInfo_020511.dtd</a>
         <br/>
@@ -113,7 +113,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>ESearch PubMed</th>
-      <td>→✓D</td>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSearch_020511.dtd">eSearch_020511.dtd</a>
         <br/>
@@ -130,7 +130,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>ESearch Error</th>
-      <td>→✓D</td>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSearch_020511.dtd">eSearch_020511.dtd</a>
         <br/>
@@ -147,7 +147,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>ESearch Bad Error</th>
-      <td>→✓D</td>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSearch_020511.dtd">eSearch_020511.dtd</a>
         <br/>
@@ -174,7 +174,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>ESummary pubmed</th>
-      <td>→✓D</td>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_pubmed.dtd">eSummary_pubmed.dtd</a>
         <br/>
@@ -191,7 +191,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>ESummary protein</th>
-      <td>→✓D</td>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_protein.dtd">eSummary_protein.dtd</a>
         <br/>
@@ -748,7 +748,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>ESummary pmc</th>
-      <td>✓</td>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_pmc.dtd">eSummary_pmc.dtd</a>
         <br/>
@@ -759,6 +759,23 @@ See also problems.md here for things that should be turned into JIRA tickets.
         <a href="../../blob/master/samples/esummary.pmc.json">esummary.pmc.json</a>
       </td>
       <td></td>
+      <td>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,14900">get xml</a>
+      </td>
+    </tr>
+    <tr>
+      <th>ESummary pmc with error</th>
+      <td>✗</td>
+      <td>
+        <a href="../../blob/master/samples/eSummary_pmc.dtd">eSummary_pmc.dtd</a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_pmc-2json.xsl">eSummary_pmc-2json.xsl</a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pmcerror.xml">esummary.pmcerror.xml</a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pmcerror.json">esummary.pmcerror.json</a>
+      </td>
+      <td>The XML results here are not valid according to the DTD.  Need to open a JIRA ticket.</td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,1,14900">get xml</a>
       </td>
@@ -982,7 +999,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>ESummary unists</th>
-      <td>✓</td>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_unists.dtd">eSummary_unists.dtd</a>
         <br/>
@@ -1016,7 +1033,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>ESummary error</th>
-      <td>✓</td>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_041029.dtd">eSummary_041029.dtd</a>
         <br/>
@@ -1043,7 +1060,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>PubMed</th>
-      <td>✓</td>
+      <td></td>
       <td>
         <a href="../../blob/master/samples/pubmed_120101.dtd">pubmed_120101.dtd</a>
         <br/>
@@ -1053,7 +1070,13 @@ See also problems.md here for things that should be turned into JIRA tickets.
         <br/>
         <a href="../../blob/master/samples/efetch.pubmed.json">efetch.pubmed.json</a>
       </td>
-      <td></td>
+      <td>
+        This one is very complicated.  Note that I got a start on it before moving to DtdAnalyzer,
+        with a manual stylesheet that is saved here:
+        https://github.com/Klortho/Eutils-JSON/blob/7550961a849e14f53899ea9cc948a36e5903677e/Eutils2JSON.xsl.
+        The JSON file, efetch.pubmed.json, here in the samples directory is the result of that
+        output, and should be the goal.
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml">get xml</a>
       </td>
