@@ -48,7 +48,7 @@ looks for things like extraneous trailing commas in arrays and objects.
     </tr>
     <tr>
       <th>EInfo</th>
-      <td>✓D</td>
+      <td>→✓D</td>
       <td>
         <a href="../../blob/master/samples/eInfo_020511.dtd">eInfo_020511.dtd</a>
         <br/>
@@ -65,7 +65,7 @@ looks for things like extraneous trailing commas in arrays and objects.
     </tr>
     <tr>
       <th>EInfo PubMed</th>
-      <td>✓D</td>
+      <td>→✓D</td>
       <td>
         <a href="../../blob/master/samples/eInfo_020511.dtd">eInfo_020511.dtd</a>
         <br/>
@@ -82,7 +82,7 @@ looks for things like extraneous trailing commas in arrays and objects.
     </tr>
     <tr>
       <th>EInfo Error</th>
-      <td>✓D</td>
+      <td>→✓D</td>
       <td>
         <a href="../../blob/master/samples/eInfo_020511.dtd">eInfo_020511.dtd</a>
         <br/>
@@ -109,7 +109,7 @@ looks for things like extraneous trailing commas in arrays and objects.
     </tr>
     <tr>
       <th>ESearch PubMed</th>
-      <td>✓D</td>
+      <td>→✓D</td>
       <td>
         <a href="../../blob/master/samples/eSearch_020511.dtd">eSearch_020511.dtd</a>
         <br/>
@@ -126,7 +126,7 @@ looks for things like extraneous trailing commas in arrays and objects.
     </tr>
     <tr>
       <th>ESearch Error</th>
-      <td>✓D</td>
+      <td>→✓D</td>
       <td>
         <a href="../../blob/master/samples/eSearch_020511.dtd">eSearch_020511.dtd</a>
         <br/>
@@ -143,7 +143,7 @@ looks for things like extraneous trailing commas in arrays and objects.
     </tr>
     <tr>
       <th>ESearch Bad Error</th>
-      <td>✓D</td>
+      <td>→✓D</td>
       <td>
         <a href="../../blob/master/samples/eSearch_020511.dtd">eSearch_020511.dtd</a>
         <br/>
@@ -170,7 +170,7 @@ looks for things like extraneous trailing commas in arrays and objects.
     </tr>
     <tr>
       <th>ESummary pubmed</th>
-      <td>✓D</td>
+      <td>→✓D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_pubmed.dtd">eSummary_pubmed.dtd</a>
         <br/>
@@ -187,7 +187,7 @@ looks for things like extraneous trailing commas in arrays and objects.
     </tr>
     <tr>
       <th>ESummary protein</th>
-      <td>✓D</td>
+      <td>→✓D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_protein.dtd">eSummary_protein.dtd</a>
         <br/>
