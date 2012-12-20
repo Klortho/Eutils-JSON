@@ -62,7 +62,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucest&amp;id=409212211</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary structure' status='' name='esummary.structure' dtd='eSummary_structure.dtd'>
+    <sample title='ESummary structure' status='D' name='esummary.structure' dtd='eSummary_structure.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=structure&amp;id=52770</eutils-url>
       <desc></desc>
     </sample>

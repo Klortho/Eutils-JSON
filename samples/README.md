@@ -276,7 +276,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>ESummary structure</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_structure.dtd">eSummary_structure.dtd</a>
         <br/>
