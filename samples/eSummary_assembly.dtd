@@ -1,9 +1,14 @@
 <!-- DocSum DTD for assembly database -->
-
+<!--~~ !dtd
+~~json <json lcnames='true' type='esummary' version='0.3' />
+~~-->
 <!ENTITY	 % T_string		"(#PCDATA)">
 <!ENTITY	 % T_int		"(#PCDATA)">
 
 <!-- Definition of List type: T_IntList -->
+<!--~~ <int>
+~~json <number/>
+~~-->
 <!ELEMENT	int	%T_int;>
 <!ENTITY	 % T_IntList	"(int)*">
 <!ENTITY	 % T_date		"(#PCDATA)">
@@ -47,6 +52,10 @@
 <!ELEMENT	LastUpdateDate		%T_date;>
 <!ELEMENT	Primary		%T_string;>
 <!ELEMENT	PropertyList		%T_StrList;>
+<!--~~ <Synonym>
+~~json
+  <object/>
+~~-->
 <!ELEMENT	Synonym		%T_SynStruct;>
 <!ELEMENT	SortOrder		%T_string;>
 <!ELEMENT	SubmitterOrganization		%T_string;>
@@ -54,6 +63,9 @@
 <!ELEMENT	Meta		%T_xml;>
 
 <!-- Definition of Structure type: T_DocSum -->
+<!--~~ <DocumentSummary>
+~~json <object name='@uid'/>
+~~-->
 <!ENTITY	 % T_DocSum	"(
  			GbUid
 			| AssemblyAccession
@@ -85,8 +97,12 @@
 
 <!ELEMENT DocumentSummary %T_DocSum;>
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
-
+<!--~~ <DocumentSummarySet>
+~~json <object/>
+~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary*)>
 <!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
-
+<!--~~ <eSummaryResult>
+~~ tags root
+~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>

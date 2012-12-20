@@ -70,7 +70,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genome&amp;id=2640</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary assembly' status='' name='esummary.assembly' dtd='eSummary_assembly.dtd'>
+    <sample title='ESummary assembly' status='D' name='esummary.assembly' dtd='eSummary_assembly.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=assembly&amp;id=440818</eutils-url>
       <desc></desc>
     </sample>
