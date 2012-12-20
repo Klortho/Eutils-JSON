@@ -259,7 +259,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>ESummary nucest</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_nucest.dtd">eSummary_nucest.dtd</a>
         <br/>
