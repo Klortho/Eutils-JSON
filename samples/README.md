@@ -327,7 +327,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>ESummary gcassembly</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_gcassembly.dtd">eSummary_gcassembly.dtd</a>
         <br/>
