@@ -58,7 +58,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucgss&amp;id=371566079</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary nucest' status='' name='esummary.nucest' dtd='eSummary_nucest.dtd'>
+    <sample title='ESummary nucest' status='D' name='esummary.nucest' dtd='eSummary_nucest.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucest&amp;id=409212211</eutils-url>
       <desc></desc>
     </sample>

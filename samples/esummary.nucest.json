@@ -1,0 +1,65 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "409212211": {
+            "uid": "409212211",
+            "caption": "JZ120399",
+            "title": "aleporoscat Alepocephalus rostratus liver cDNA library Alepocephalus rostratus cDNA similar to catalase (CAT), mRNA sequence",
+            "extra": "gi|409212211|gb|JZ120399.1|",
+            "gi": 409212211,
+            "createdate": "2012/10/19",
+            "updatedate": "2012/10/20",
+            "flags": 0,
+            "taxid": 1245468,
+            "slen": 594,
+            "biomol": "mRNA",
+            "moltype": "rna",
+            "topology": "linear",
+            "sourcedb": "",
+            "segsetsize": 0,
+            "projectid": 0,
+            "genome": "",
+            "subtype": "",
+            "subname": "",
+            "assemblygi": 0,
+            "assemblyacc": "",
+            "tech": "",
+            "completeness": "",
+            "geneticcode": "",
+            "strand": "",
+            "organism": "Alepocephalus rostratus",
+            "statistics": [
+                {
+                    "type": "Length",
+                    "count": 594
+                },
+                {
+                    "type": "Length",
+                    "subtype": "literal",
+                    "count": 594
+                },
+                {
+                    "type": "blob_size",
+                    "count": 2048
+                },
+                {
+                    "type": "pub",
+                    "count": 1
+                }
+            ],
+            "properties": {
+                "na": "1",
+                "est": "4",
+                "qual": "32",
+                "value": "37"
+            },
+            "oslt": {
+                "indexed": true,
+                "value": "JZ120399.1"
+            },
+            "accessionversion": "JZ120399.1"
+        }
+    }
+}

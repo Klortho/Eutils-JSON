@@ -1,5 +1,8 @@
 <!-- DocSum DTD for all sequence databases -->
 
+<!--~~ !dtd
+~~json <json lcnames='true' type='esummary' version='0.3' />
+~~-->
 <!ENTITY	 % T_string		"(#PCDATA)">
 <!ENTITY	 % T_int		"(#PCDATA)">
 
@@ -8,14 +11,29 @@
 <!ELEMENT	Caption		%T_string;>
 <!ELEMENT	Title		%T_string;>
 <!ELEMENT	Extra		%T_string;>
+<!--~~ <Gi>
+~~json <number/>
+~~-->
 <!ELEMENT	Gi		%T_int;>
 <!ELEMENT	CreateDate		%T_string;>
 <!ELEMENT	UpdateDate		%T_string;>
+<!--~~ <Flags>
+~~json <number/>
+~~-->
 <!ELEMENT	Flags		%T_int;>
+<!--~~ <TaxId>
+~~json <number/>
+~~-->
 <!ELEMENT	TaxId		%T_int;>
+<!--~~ <Slen>
+~~json <number/>
+~~-->
 <!ELEMENT	Slen		%T_int;>
 <!ELEMENT   Statistics  (Stat)+>
 <!ELEMENT   Stat        EMPTY>
+<!--~~ @count
+~~json <number/>
+~~-->
 <!ATTLIST   Stat
   count     CDATA       #IMPLIED
   subtype   CDATA       #IMPLIED
@@ -28,11 +46,20 @@
 <!ELEMENT	MolType		%T_string;>
 <!ELEMENT	Topology	%T_string;>
 <!ELEMENT	SourceDb	%T_string;>
+<!--~~ <SegSetSize>
+~~json <number/>
+~~-->
 <!ELEMENT	SegSetSize	%T_int;>
+<!--~~ <ProjectId>
+~~json <number/>
+~~-->
 <!ELEMENT	ProjectId	%T_int;>
 <!ELEMENT	Genome		%T_string;>
 <!ELEMENT	SubType		%T_string;>
 <!ELEMENT	SubName		%T_string;>
+<!--~~ <AssemblyGi>
+~~json <number/>
+~~-->
 <!ELEMENT	AssemblyGi	%T_int;>
 <!ELEMENT	AssemblyAcc	%T_string;>
 <!ELEMENT	Tech		%T_string;>
@@ -165,7 +192,9 @@
             | Organelle
             | OtherReplicons                     
 			)*">
-
+<!--~~ <DocumentSummary>
+~~json <object name='@uid'/>
+~~-->
 <!ELEMENT DocumentSummary %T_DocSum;>
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
 
@@ -177,7 +206,12 @@
   uid   CDATA #IMPLIED>
 
 
+<!--~~ <DocumentSummarySet>
+~~json <object/>
+~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary | Warning)*>
 <!ATTLIST DocumentSummarySet status CDATA #IMPLIED>
-
+<!--~~ <eSummaryResult>
+~~ tags root
+~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>
