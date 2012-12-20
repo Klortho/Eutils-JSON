@@ -344,7 +344,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>ESummary genomeprj</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_genomeprj.dtd">eSummary_genomeprj.dtd</a>
         <br/>

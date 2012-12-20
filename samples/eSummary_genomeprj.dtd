@@ -1,5 +1,7 @@
 <!-- DocSum DTD for genomeprj database -->
-
+<!--~~ !dtd
+~~json <json lcnames='true' type='esummary' version='0.3' />
+~~-->
 <!ENTITY	 % T_string		"(#PCDATA)">
 <!ENTITY	 % T_date		"(#PCDATA)">
 
@@ -25,6 +27,9 @@
 <!ELEMENT	Options		%T_string;>
 
 <!-- Definition of Structure type: T_DocSum -->
+<!--~~ <DocumentSummary>
+~~json <object name='@uid'/>
+~~-->
 <!ENTITY	 % T_DocSum	"(
  			Organism_Name
 			| Organism_Kingdom
@@ -49,8 +54,12 @@
 
 <!ELEMENT DocumentSummary %T_DocSum;>
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
-
+<!--~~ <DocumentSummarySet>
+~~json <object/>
+~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary*)>
 <!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
-
+<!--~~ <eSummaryResult>
+~~ tags root
+~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>
