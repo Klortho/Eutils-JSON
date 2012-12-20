@@ -293,7 +293,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
     </tr>
     <tr>
       <th>ESummary genome</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_genome.dtd">eSummary_genome.dtd</a>
         <br/>

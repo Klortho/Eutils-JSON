@@ -1,5 +1,7 @@
 <!-- $Id: eSummary_genome.dtd 342479 2011-10-27 20:49:57Z fedorov $ -->
-
+<!--~~ !dtd
+~~json <json lcnames='true' type='esummary' version='0.3' />
+~~-->
 <!-- IDXCODEBLOCK_START_ELEMENTS -->
 <!ELEMENT AssemblyID	 (#PCDATA)>
 <!ATTLIST AssemblyID	 weight CDATA #IMPLIED>
@@ -87,9 +89,15 @@
  ... Already defined -->
 <!ELEMENT	Create_Date		%T_date;>
 <!ELEMENT	Options		%T_string;>
+<!--~~ <Weight>
+~~json <number/>
+~~-->
 <!ELEMENT	Weight		%T_int;>
 
 <!-- Definition of Structure type: T_DocSum -->
+<!--~~ <DocumentSummary>
+~~json <object name='@uid'/>
+~~-->
 <!ENTITY	 % T_DocSum	"(
  			Organism_Name
 			| Organism_Kingdom
@@ -118,8 +126,12 @@
   term  CDATA #IMPLIED
   uid   CDATA #IMPLIED>
 
-
+<!--~~ <DocumentSummarySet>
+~~json <object/>
+~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary | Warning)*>
 <!ATTLIST DocumentSummarySet status CDATA #IMPLIED>
-
+<!--~~ <eSummaryResult>
+~~ tags root
+~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>
