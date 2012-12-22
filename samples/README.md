@@ -29,10 +29,36 @@ http://jsonlint.com/.  Note that it's really not enough to use a Javascript
 utility to just read it in, because we want to use a strict validator that
 looks for things like extraneous trailing commas in arrays and objects.
 
-See assumptions.md here for assumptions that we made which might conceivably
-result in invalid JSON output for certain XML documents.
-
 See also problems.md here for things that should be turned into JIRA tickets.
+
+# Assumptions
+
+Here are some assumptions we made while mapping DTD elements to JSON.
+These might be incorrect, which, in most cases, would mean that there would be
+some XML instance documents that are valid according to the DTD that would
+result in invalid JSON output.
+
+
+## eSummary_pmd.dtd
+* <Author> → object
+* <DocumentSummary> → object
+* <ArticleId> → object
+
+## eSummary_unists.dtd
+* <DocumentSummary> → object
+* <Map_Gene_Summary> → object
+
+## eSummary_nuccore.dtd
+* <DocumentSummarySet> → object; in this case, what if it contains Warnings?
+
+# Problems
+
+## XML results that fail to validate
+
+* esummary.pmc, with an error:
+  http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&version=2.0&db=pmc&id=254085,1,14900
+
+
 
 <!--
   DO NOT MODIFY BELOW THIS LINE.
