@@ -52,7 +52,9 @@
     <sample title='ESummary nucleotide' status='D' name='esummary.nucleotide'
       dtd='eSummary_nucleotide.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucleotide&amp;id=424386131</eutils-url>
-      <desc></desc>
+      <desc>
+        The instance document is invalid according to the DTD.
+      </desc>
     </sample>
     <sample title='ESummary nucgss' status='D' name='esummary.nucgss' dtd='eSummary_nucgss.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucgss&amp;id=371566079</eutils-url>
@@ -72,7 +74,10 @@
     </sample>
     <sample title='ESummary genome' status='D' name='esummary.genome' dtd='eSummary_genome.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genome&amp;id=2640</eutils-url>
-      <desc></desc>
+      <desc>
+        Instance document is not valid according to the DTD.  
+        The elements Organism_Group and  Organism_Subgroup are not declared.
+      </desc>
     </sample>
     <sample title='ESummary assembly' status='D' name='esummary.assembly' dtd='eSummary_assembly.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=assembly&amp;id=440818</eutils-url>
@@ -81,7 +86,9 @@
     <sample title='ESummary gcassembly' status='D' name='esummary.gcassembly'
       dtd='eSummary_gcassembly.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gcassembly&amp;id=440818</eutils-url>
-      <desc></desc>
+      <desc>
+        Instance document is not valid according to the DTD.  
+      </desc>
     </sample>
     <sample title='ESummary genomeprj' status='D' name='esummary.genomeprj' dtd='eSummary_genomeprj.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genomeprj&amp;id=54101</eutils-url>
@@ -124,11 +131,15 @@
     </sample>
     <sample title='ESummary gapplus' status='' name='esummary.gapplus' dtd='eSummary_gapplus.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996</eutils-url>
-      <desc></desc>
+      <desc>
+        Instance document is not valid according to the DTD.  
+      </desc>
     </sample>
     <sample title='ESummary dbvar' status='' name='esummary.dbvar' dtd='eSummary_dbvar.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816</eutils-url>
-      <desc></desc>
+      <desc>
+        Instance document is not valid according to the DTD.  
+      </desc>
     </sample>
     <sample title='ESummary epigenomics' status='' name='esummary.epigenomics'
       dtd='eSummary_epigenomics.dtd'>
@@ -141,7 +152,9 @@
     </sample>
     <sample title='ESummary gds' status='' name='esummary.gds' dtd='eSummary_gds.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726</eutils-url>
-      <desc></desc>
+      <desc>
+        Instance document is not valid according to the DTD.  
+      </desc>
     </sample>
     <sample title='ESummary geo' status='' name='esummary.geo' dtd='eSummary_geo.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geo&amp;id=65685298</eutils-url>
@@ -199,7 +212,9 @@
     
     <sample title='ESummary popset' status='' name='esummary.popset' dtd='eSummary_popset.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=popset&amp;id=418209882</eutils-url>
-      <desc></desc>
+      <desc>
+        The instance document is invalid according to the DTD.
+      </desc>
     </sample>
     <sample title='ESummary probe' status='' name='esummary.probe' dtd='eSummary_probe.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=probe&amp;id=156811</eutils-url>
@@ -222,7 +237,9 @@
     <sample title='ESummary pcsubstance' status='' name='esummary.pcsubstance'
       dtd='eSummary_pcsubstance.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcsubstance&amp;id=127317050</eutils-url>
-      <desc></desc>
+      <desc>
+        XML instance document is empty.
+      </desc>
     </sample>
     <sample title='ESummary pubmedhealth' status='✗' name='esummary.pubmedhealth'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625</eutils-url>
@@ -230,11 +247,15 @@
     </sample>
     <sample title='ESummary seqannot' status='' name='esummary.seqannot' dtd='eSummary_seqannot.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=seqannot&amp;id=7232</eutils-url>
-      <desc></desc>
+      <desc>
+        XML instance document is empty.
+      </desc>
     </sample>
     <sample title='ESummary snp' status='' name='esummary.snp' dtd='eSummary_snp.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=snp&amp;id=206676795</eutils-url>
-      <desc></desc>
+      <desc>
+        XML instance document is empty.
+      </desc>
     </sample>
     <sample title='ESummary sra' status='' name='esummary.sra' dtd='eSummary_sra.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=sra&amp;id=30750</eutils-url>
@@ -242,7 +263,9 @@
     </sample>
     <sample title='ESummary taxonomy' status='' name='esummary.taxonomy' dtd='eSummary_taxonomy.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=taxonomy&amp;id=9685</eutils-url>
-      <desc></desc>
+      <desc>
+        XML instance document is invalid.
+      </desc>
     </sample>
     <sample title='ESummary toolkit' status='' name='esummary.toolkit' dtd='eSummary_toolkit.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=toolkit&amp;id=149440</eutils-url>
