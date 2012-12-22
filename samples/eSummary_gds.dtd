@@ -1,6 +1,13 @@
 <!-- $Id: eSummary_gds.dtd 363818 2012-05-18 20:58:30Z yasmax $ -->
 <!-- DocSum DTD for gds database -->
 
+<!--~~ !dtd
+~~json 
+    <json type='esummary' version='0.3'>
+      <config lcnames='true'/>
+    </json>
+~~-->
+
 <!ENTITY	 % T_string		"(#PCDATA)">
 
 <!-- Members definition of Structure type: T_Sample -->

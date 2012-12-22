@@ -1,5 +1,12 @@
 <!-- DocSum DTD for sra database -->
 
+<!--~~ !dtd
+~~json 
+    <json type='esummary' version='0.3'>
+      <config lcnames='true'/>
+    </json>
+~~-->
+
 <!ENTITY	 % T_string		"(#PCDATA)">
 
 <!-- Members definition of Structure type: T_DocSum -->

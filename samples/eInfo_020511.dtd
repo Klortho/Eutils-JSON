@@ -6,7 +6,10 @@
 <!-- ================================================================= -->
 
 <!--~~ !dtd
-~~json <json lcnames='true' type='einfo' version='0.3' />
+~~json 
+    <json type='einfo' version='0.3'>
+      <config lcnames='true'/>
+    </json>
 ~~-->
 
 <!--~~ <eInfoResult>

@@ -1,7 +1,6 @@
 {
     "type": "esummary",
     "version": "0.3",
-    "import": "esummary.structure.xsl",
     "documentsummaryset": {
         "status": "OK",
         "52770": {

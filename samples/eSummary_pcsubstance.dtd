@@ -1,5 +1,12 @@
 <!-- DocSum DTD for pcsubstance database -->
 
+<!--~~ !dtd
+~~json 
+    <json type='esummary' version='0.3'>
+      <config lcnames='true'/>
+    </json>
+~~-->
+
 <!ENTITY	 % T_int		"(#PCDATA)">
 <!ENTITY	 % T_string		"(#PCDATA)">
 

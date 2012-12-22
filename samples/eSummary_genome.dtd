@@ -1,7 +1,12 @@
 <!-- $Id: eSummary_genome.dtd 342479 2011-10-27 20:49:57Z fedorov $ -->
+
 <!--~~ !dtd
-~~json <json lcnames='true' type='esummary' version='0.3' />
+~~json 
+    <json type='esummary' version='0.3'>
+      <config lcnames='true'/>
+    </json>
 ~~-->
+
 <!-- IDXCODEBLOCK_START_ELEMENTS -->
 <!ELEMENT AssemblyID	 (#PCDATA)>
 <!ATTLIST AssemblyID	 weight CDATA #IMPLIED>

@@ -5,9 +5,11 @@ $Id: eSummary_041029.dtd 49514 2004-10-29 15:52:04Z parantha $
 <!-- ================================================================= -->
 
 <!--~~ !dtd
-~~json <json lcnames='true' type='esummary' version='0.3' />
+~~json 
+    <json type='esummary' version='0.3'>
+      <config lcnames='true'/>
+    </json>
 ~~-->
-
 
 <!ELEMENT Id                (#PCDATA)>          <!-- \d+ -->
 

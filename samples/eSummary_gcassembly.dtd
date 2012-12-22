@@ -1,8 +1,13 @@
 <!-- $Id: eSummary_gcassembly.dtd 363818 2012-05-18 20:58:30Z yasmax $ -->
 <!-- DocSum DTD for gcassembly database -->
+
 <!--~~ !dtd
-~~json <json lcnames='true' type='esummary' version='0.3' />
+~~json 
+    <json type='esummary' version='0.3'>
+      <config lcnames='true'/>
+    </json>
 ~~-->
+
 <!ENTITY	 % T_string		"(#PCDATA)">
 <!ENTITY	 % T_int		"(#PCDATA)">
 

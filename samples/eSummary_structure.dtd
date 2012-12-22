@@ -1,7 +1,12 @@
 <!-- DocSum DTD for structure database -->
+
 <!--~~ !dtd
-~~json <json lcnames='true' type='esummary' version='0.3' import='esummary.structure.xsl'/>
+~~json 
+    <json type='esummary' version='0.3'>
+      <config lcnames='true' import='esummary.structure.xsl'/>
+    </json>
 ~~-->
+
 <!ENTITY	 % T_string		"(#PCDATA)">
 
 <!-- Definition of List type: T_StringList -->

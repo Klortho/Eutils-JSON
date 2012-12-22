@@ -1,6 +1,13 @@
 <!-- $Id: eSummary_gencoll.dtd 363818 2012-05-18 20:58:30Z yasmax $ -->
 <!-- DocSum DTD for gencoll database -->
 
+<!--~~ !dtd
+~~json 
+    <json type='esummary' version='0.3'>
+      <config lcnames='true'/>
+    </json>
+~~-->
+
 <!ENTITY	 % T_string		"(#PCDATA)">
 <!ENTITY	 % T_int		"(#PCDATA)">
 

@@ -1,7 +1,10 @@
 <!-- DocSum DTD for pmc database -->
 
 <!--~~ !dtd
-~~json <json lcnames='true' type='esummary' version='0.3' />
+~~json 
+    <json type='esummary' version='0.3'>
+      <config lcnames='true'/>
+    </json>
 ~~-->
 
 <!ENTITY	 % T_string		"(#PCDATA)">

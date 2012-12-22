@@ -1,6 +1,13 @@
 <!-- $Id: eSummary_biosystems.dtd 363818 2012-05-18 20:58:30Z yasmax $ -->
 <!-- DocSum DTD for biosystems database -->
 
+<!--~~ !dtd
+~~json 
+    <json type='esummary' version='0.3'>
+      <config lcnames='true'/>
+    </json>
+~~-->
+
 <!ENTITY	 % T_string		"(#PCDATA)">
 <!ENTITY	 % T_date		"(#PCDATA)">
 <!ENTITY	 % T_int		"(#PCDATA)">

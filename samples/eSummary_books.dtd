@@ -1,5 +1,12 @@
 <!-- DocSum DTD for books5 database -->
 
+<!--~~ !dtd
+~~json 
+    <json type='esummary' version='0.3'>
+      <config lcnames='true'/>
+    </json>
+~~-->
+
 <!ENTITY	 % T_string		"(#PCDATA)">
 <!ENTITY	 % T_date		"(#PCDATA)">
 <!ENTITY	 % T_xml		"(#PCDATA)">
