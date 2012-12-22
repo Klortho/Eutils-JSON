@@ -1,6 +1,6 @@
 <!-- DocSum DTD for structure database -->
 <!--~~ !dtd
-~~json <json lcnames='true' type='esummary' version='0.3' />
+~~json <json lcnames='true' type='esummary' version='0.3' import='esummary.structure.xsl'/>
 ~~-->
 <!ENTITY	 % T_string		"(#PCDATA)">
 

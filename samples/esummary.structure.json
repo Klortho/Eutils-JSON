@@ -1,0 +1,35 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "import": "esummary.structure.xsl",
+    "documentsummaryset": {
+        "status": "OK",
+        "52770": {
+            "uid": "52770",
+            "pdbacc": "2C9N",
+            "pdbdescr": "Structure Of The Epstein-Barr Virus Zebra Protein At Approximately 3.5 Angstrom Resolution",
+            "ec": "",
+            "resolution": "3.3",
+            "expmethod": "X-Ray Diffraction",
+            "pdbclass": "Viral Protein",
+            "pdbdepositdate": "2005/12/13 00:00",
+            "mmdbentrydate": "2007/10/11 00:00",
+            "mmdbmodifydate": "2011/05/26 00:00",
+            "organismlist": [
+                "Human herpesvirus 4",
+                "Human herpesvirus 4",
+                "Human herpesvirus 4",
+                "Human herpesvirus 4"
+            ],
+            "pdbaccsynlist": "\n\t",
+            "ligcode": "",
+            "ligcount": "0",
+            "modproteinrescount": "0",
+            "moddnarescount": "0",
+            "modrnarescount": "0",
+            "proteinmoleculecount": "2",
+            "dnamoleculecount": "2",
+            "rnamoleculecount": "0"
+        }
+    }
+}

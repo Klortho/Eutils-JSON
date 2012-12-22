@@ -64,7 +64,11 @@
     </sample>
     <sample title='ESummary structure' status='D' name='esummary.structure' dtd='eSummary_structure.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=structure&amp;id=52770</eutils-url>
-      <desc></desc>
+      <desc>
+        Instance document is not valid according to the DTD.  The element PdbAccSynList
+        is not declared.  This requires us to create a special imported XSLT
+        for this, esummary.structure.xsl.
+      </desc>
     </sample>
     <sample title='ESummary genome' status='D' name='esummary.genome' dtd='eSummary_genome.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genome&amp;id=2640</eutils-url>
