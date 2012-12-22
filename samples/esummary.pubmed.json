@@ -11,18 +11,18 @@
             "authors": [
                 {
                     "name": "Goldberg MJ",
-                    "authtype": "Author",
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t",
                     "clusterid": "2484865"
                 },
                 {
                     "name": "Davis LJ",
-                    "authtype": "Author",
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t",
                     "clusterid": "1638084"
                 }
             ],
             "lastauthor": "Davis LJ",
             "title": "An assistive device for smoking.",
-            "sorttitle": "assistive device for smoking",
+            "sorttitle": "assistive device for smoking ",
             "volume": "6",
             "issue": "2",
             "pages": "103-5",
@@ -35,7 +35,7 @@
             "pubtype": [
                 "Journal Article"
             ],
-            "recordstatus": "PubMed - indexed for MEDLINE",
+            "recordstatus": "\n\t\tPubMed - indexed for MEDLINE\n\t",
             "pubstatus": "4",
             "articleids": [
                 {
@@ -109,38 +109,38 @@
             "authors": [
                 {
                     "name": "Benson DA",
-                    "authtype": "Author",
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t",
                     "clusterid": "0"
                 },
                 {
                     "name": "Karsch-Mizrachi I",
-                    "authtype": "Author",
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t",
                     "clusterid": "0"
                 },
                 {
                     "name": "Clark K",
-                    "authtype": "Author",
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t",
                     "clusterid": "0"
                 },
                 {
                     "name": "Lipman DJ",
-                    "authtype": "Author",
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t",
                     "clusterid": "0"
                 },
                 {
                     "name": "Ostell J",
-                    "authtype": "Author",
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t",
                     "clusterid": "0"
                 },
                 {
                     "name": "Sayers EW",
-                    "authtype": "Author",
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t",
                     "clusterid": "0"
                 }
             ],
             "lastauthor": "Sayers EW",
             "title": "GenBank.",
-            "sorttitle": "genbank",
+            "sorttitle": "genbank ",
             "volume": "40",
             "issue": "Database issue",
             "pages": "D48-53",
@@ -153,7 +153,7 @@
             "pubtype": [
                 "Journal Article"
             ],
-            "recordstatus": "PubMed - indexed for MEDLINE",
+            "recordstatus": "\n\t\tPubMed - indexed for MEDLINE\n\t",
             "pubstatus": "256",
             "articleids": [
                 {
