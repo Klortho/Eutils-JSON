@@ -670,7 +670,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary epigenomics</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_epigenomics.dtd">eSummary_epigenomics.dtd</a>
         <br/>
@@ -687,7 +687,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary gene</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_gene.dtd">eSummary_gene.dtd</a>
         <br/>
