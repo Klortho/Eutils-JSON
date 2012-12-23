@@ -1,0 +1,18 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "182293": {
+            "uid": "182293",
+            "title": "cat genomic DNA",
+            "accession": "LIBGSS_007660",
+            "date": "2003/11/14",
+            "modificationdate": "2012/04/10",
+            "organization": "University of Geneva Medical School",
+            "taxonomy": "9685",
+            "sourcesample": "GSS:LIBGSS_007660",
+            "sampledata": "                                      <BioSample submission_date=\"2003-08-12T12:26:00.000\" last_update=\"2012-04-10T15:19:04.947\" publication_date=\"2003-11-14T00:00:00.000\" access=\"public\" id=\"182293\">       <Ids>         <Id db=\"GSS\" is_primary=\"1\">LIBGSS_007660</Id>       </Ids>       <Description>         <Title>cat genomic DNA</Title>         <Organism taxonomy_id=\"9685\" taxonomy_name=\"Felis catus\"/>         <Comment>           <Paragraph>direct sequencing of PCR product; sequences orthologous to human chromosome 21 conserved sequences or non-coding RNAs from the whole genome</Paragraph>         </Comment>       </Description>       <Owner>         <Name abbreviation=\"\">University of Geneva Medical School</Name>         <Contacts>           <Contact email=\"emmanouil.dermitzakis@medecine.unige.ch\" phone=\"0041 22 3795719\" fax=\"0041 22 3795706\" lab=\"Division of Medical Genetics\">             <Address>               <Street>1 Rue Michel Servet, 1211 Geneva, Switzerland</Street>             </Address>             <Name>               <Last>Dermitzakis ET</Last>             </Name>           </Contact>         </Contacts>       </Owner>       <Models>         <Model>Generic</Model>       </Models>       <Attributes/>       <Status status=\"live\" when=\"2003-11-14T07:42:00.000\"/>     </BioSample>                                      "
+        }
+    }
+}
