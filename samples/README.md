@@ -78,7 +78,7 @@ whether or not our conversion to JSON is robust.
 
 These DTD specs should be reviewed, and tightened up, where possible.
 
-## Miscellaneous places where the DTD could be improved
+## Miscellaneous places where the DTDs could be improved
 
 ### eSummary_blastdbinfo.dtd
 
@@ -96,6 +96,13 @@ Likewise:
     <!ELEMENT Term "(TermData)*">
     <!ELEMENT TermData "(SearchTerm)*">
     <!ELEMENT SearchTerm "(#PCDATA)">
+
+### eSummary_book.dtd
+
+Uses escaped-XML CDATA section for BookInfo.  This makes the data very hard to extract
+for other applications, and in particular for conversion into JSON.  My guess is that
+this is only done because you can have HTML markup inside the title.  If that's the
+case, then the escaped-XML could be reserved to just the &lt;Title> element.
 
 ## Other
 

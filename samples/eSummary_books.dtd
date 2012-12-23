@@ -22,6 +22,9 @@
 <!ELEMENT	RID		%T_string;>
 <!ELEMENT	Text		%T_string;>
 <!ELEMENT	BookInfo		%T_xml;>
+<!--~~ <BookID>
+~~json <number/>
+~~-->
 <!ELEMENT	BookID		%T_int;>
 <!ELEMENT	BookAccessionID		%T_string;>
 <!ELEMENT	ChapterID		%T_int;>

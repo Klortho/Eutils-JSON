@@ -1,0 +1,25 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "2825746": {
+            "uid": "2825746",
+            "title": "Dictionary of Cancer Terms",
+            "pubdate": "2002/01/01 00:00",
+            "id": "pdqcis/appendix/glossary/PMC",
+            "accessionid": "NBK65951",
+            "parents": "",
+            "rtype": "appendix",
+            "rid": "NBK65951",
+            "text": "",
+            "bookinfo": "<Info><Path><Parent id=\"pdqcis\" role=\"source\" type=\"book\" uid=\"2821524\"><Title>PDQ Cancer Information Summaries</Title></Parent><Self id=\"glossary\" role=\"document\" type=\"appendix\" uid=\"2825746\"><Title>Dictionary of Cancer Terms</Title></Self></Path><Citation CitationType=\"Part\"><MainRecord><Title>Dictionary of Cancer Terms.</Title></MainRecord><ParentRecord><Title>PDQ Cancer Information Summaries [Internet].</Title><PublicationStatement>Bethesda (MD): National Cancer Institute (US); 2002-.</PublicationStatement></ParentRecord></Citation></Info>",
+            "bookid": 2821524,
+            "bookaccessionid": "NBK82221",
+            "chapterid": "2825746",
+            "chapteraccessionid": "NBK65951",
+            "book": "pdqcis",
+            "navigation": "yes"
+        }
+    }
+}
