@@ -57,18 +57,16 @@ a list.
 
 For example, in eSummary_pmc.dtd, the following is the declaration for `<author>`:
 
-    ```
     <!ENTITY   % T_Author "(
           Name
           | AuthType
           )*">
     <!-- Definition of List type: T_AuthorList -->
     <!ELEMENT Author  %T_Author;>
-    ```
 
 We guessed that this element probably always only has *at most* one of each of the
-child elements <Name> and <AuthType>, but that's not the way it is written.  There
-are many instances of this, and the <DocumentSummary> element in each esummary DTD
+child elements &lt;Name> and &lt;AuthType>, but that's not the way it is written.  There
+are many instances of this, and the &lt;DocumentSummary> element in each esummary DTD
 is the most prominent example.  Sometimes we may have guessed wrong, but there were
 so many examples of this, and it seemed to be such a common pattern, that I think we
 were right.
@@ -89,33 +87,37 @@ These DTD specs should be reviewed, and tightened up, where possible.
 
 # Assumptions
 
+[FIXME:  In fact, there were many more than are listed here.  Either go back and find
+all the assumptions by looking at the added json annotations, or else abandon the attempt
+to maintain this list.]
+
 Here are some assumptions we made while mapping DTD elements to JSON.
 These might be incorrect, which, in most cases, would mean that there would be
 some XML instance documents that are valid according to the DTD that would
 result in invalid JSON output.
 
 ## eSummary_bioproject.dtd
-* <Project_Objectives_Struct> → object
+* &lt;Project_Objectives_Struct> → object
 
 ## eSummary_biosystems.dtd
-* <citation> → object
-* <gene> → object
-* <proteinstruct> → object
+* &lt;citation> → object
+* &lt;gene> → object
+* &lt;proteinstruct> → object
 
 
 
 
 ## eSummary_pmc.dtd
-* <Author> → object
-* <DocumentSummary> → object
-* <ArticleId> → object
+* &lt;Author> → object
+* &lt;DocumentSummary> → object
+* &lt;ArticleId> → object
 
 ## eSummary_unists.dtd
-* <DocumentSummary> → object
-* <Map_Gene_Summary> → object
+* &lt;DocumentSummary> → object
+* &lt;Map_Gene_Summary> → object
 
 ## eSummary_nuccore.dtd
-* <DocumentSummarySet> → object; in this case, what if it contains Warnings?
+* &lt;DocumentSummarySet> → object; in this case, what if it contains Warnings?
 
 
 
@@ -397,7 +399,7 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.genome.json">esummary.genome.json</a>
       </td>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
         The elements Organism_Group and Organism_Subgroup were not declared, so
         I added them as strings.
       </td>
@@ -609,7 +611,7 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.gapplus.json">esummary.gapplus.json</a>
       </td>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
       </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996">get xml</a>
@@ -628,7 +630,7 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.dbvar.json">esummary.dbvar.json</a>
       </td>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
       </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816">get xml</a>
@@ -681,7 +683,7 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.gds.json">esummary.gds.json</a>
       </td>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
       </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726">get xml</a>
