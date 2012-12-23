@@ -1,0 +1,23 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "29702171": {
+            "uid": "29702171",
+            "objtype": "clone",
+            "clname": "ZMMBBb-459N17",
+            "claliaslist": [
+                "ZMMBBb0459N17"
+            ],
+            "libname": "Zea mays BAC HindIII library ZMMBBb",
+            "libabbr": "ZMMBBb",
+            "libtype": "genomic",
+            "organism": "Zea mays",
+            "vecttypelist": [
+                "BAC"
+            ],
+            "placed": "N"
+        }
+    }
+}
