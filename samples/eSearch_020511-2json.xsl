@@ -9,6 +9,7 @@
              encoding="UTF-8"
              indent="yes"
              omit-xml-declaration="yes"/>
+   <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
    <x:template match="RetMax | To | Term | QueryKey | Explode | FieldNotFound | From | OP | PhraseIgnored | RetStart | WebEnv | OutputMessage | QuotedPhraseNotFound | Id | Field | Count | PhraseNotFound | QueryTranslation">
       <x:param name="indent" select="&#34;&#34;"/>
@@ -21,7 +22,9 @@
    <x:template match="eSearchResult">
       <x:call-template name="result-start">
          <x:with-param name="dtd-annotation">
-            <json lcnames="true" type="esearch" version="0.3"/>
+            <json type="esearch" version="0.3">
+               <config lcnames="true"/>
+            </json>
          </x:with-param>
       </x:call-template>
       <x:apply-templates select="@*|*">
@@ -30,8 +33,6 @@
       </x:apply-templates>
       <x:value-of select="np:end-object(&#34;&#34;, false())"/>
    </x:template>
-
-   <!-- Element ERROR, type:  string-->
    <x:template match="ERROR">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
@@ -41,8 +42,6 @@
          <x:with-param name="key" select="&#34;ERROR&#34;"/>
       </x:call-template>
    </x:template>
-
-   <!-- Element ErrorList, type:  object-->
    <x:template match="ErrorList">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
@@ -76,8 +75,22 @@
       <x:value-of select="np:end-array(concat($indent, $iu1), false())"/>
       <!-- done: 'array' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
       <!-- done: 'object' --></x:template>
-
-   <!-- Element WarningList, type:  object-->
+   <x:template match="IdList | TranslationSet | TranslationStack">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="array">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="Translation | TermSet">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="object">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
    <x:template match="WarningList">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
@@ -120,20 +133,4 @@
       <x:value-of select="np:end-array(concat($indent, $iu1), false())"/>
       <!-- done: 'array' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
       <!-- done: 'object' --></x:template>
-   <x:template match="IdList | TranslationSet | TranslationStack">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="array">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="Translation | TermSet">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
 </x:stylesheet>
