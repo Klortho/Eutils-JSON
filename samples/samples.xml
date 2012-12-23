@@ -137,6 +137,9 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996</eutils-url>
       <desc>
         Instance document is not valid according to the DTD.  
+        This DTD looks like it doesn't match the content very well.  I fixed it by adding
+        elements until the instance document validated, but I don't have much confidence that
+        the DTD I created is correct.
       </desc>
     </sample>
     <sample title='ESummary dbvar' status='' name='esummary.dbvar' dtd='eSummary_dbvar.dtd'>

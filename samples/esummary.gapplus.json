@@ -7,17 +7,104 @@
             "uid": "5235996",
             "create_date": "2012/08/17 00:00",
             "last_modified_date": "2012/08/17 00:00",
-            "source": NHLBI-GRASP,
+            "source": "NHLBI-GRASP",
             "key": "217036345923135",
-            "publication": "\n\t\t21703634\n\t\t2011/06/22 00:00\n\t\tJ Psychiatr Res\n\t\tA meta-analysis of two genome-wide association studies identifies 3 new loci for alcohol dependence.\n\t\tTable S1\n\t\tAlcohol dependence\n\t\t\n\t\t\t\n\t\t\t\tQuantitative trait(s)\n\t\t\t\n\t\t\t\n\t\t\t\tNeuro\n\t\t\t\n\t\t\t\n\t\t\t\tAddiction\n\t\t\t\n\t\t\t\n\t\t\t\tAlcohol\n\t\t\t\n\t\t\n\t\tn\n\t\tn\n\t",
-            "snp_info": "\n\t\t16925514\n\t\trs16925514\n\t\t11\n\t\t34449260\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tT;0.0572\n\t\tG/T;?;?\n\t\tYES\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t",
-            "snp_gene_info_list": "\n\t\t\n\t\t\t\n\t\t\t\t847\n\t\t\t\tCAT\n\t\t\t\t34460477\n\t\t\t\t34493606\n\t\t\t\n\t\t\t11218\n\t\t\tdownstream\n\t\t\n\t\t\n\t\t\t\n\t\t\t\t25841\n\t\t\t\tABTB2\n\t\t\t\t34172534\n\t\t\t\t34378801\n\t\t\t\n\t\t\t70458\n\t\t\tupstream\n\t\t\n\t",
+            "publication": {
+                "pmid": 21703634,
+                "pub_date": "2011/06/22 00:00",
+                "journal": "J Psychiatr Res",
+                "title": "A meta-analysis of two genome-wide association studies identifies 3 new loci for alcohol dependence.",
+                "location_within_paper": "Table S1",
+                "phenotype_desc": "Alcohol dependence",
+                "phenotype_category_list": [
+                    [
+                        "Quantitative trait(s)"
+                    ],
+                    [
+                        "Neuro"
+                    ],
+                    [
+                        "Addiction"
+                    ],
+                    [
+                        "Alcohol"
+                    ]
+                ],
+                "incl_male_female_only": false,
+                "exclusively_male_female": false
+            },
+            "snp_info": {
+                "current_snp": "16925514",
+                "cited_snp": "rs16925514",
+                "chromosome": "11",
+                "position": "34449260",
+                "in_gene": "",
+                "in_linc_rna": "",
+                "in_mi_rna": "",
+                "in_mi_rnabs": "",
+                "dbsnp_maf": "T;0.0572",
+                "dbsnp_alleles_het_se": "G/T;?;?",
+                "dbsnp_validation": "YES",
+                "dbsnp_clinstatus": "",
+                "oreganno": "",
+                "conserved_pred_tfbs": "",
+                "human_enhancer": "",
+                "rna_edit": "",
+                "poly_phen2": "",
+                "sift": "",
+                "ls_snp": "",
+                "uni_prot_annot": ""
+            },
+            "snp_gene_info_list": [
+                {
+                    "gene_info": {
+                        "gene_id": "847",
+                        "gene_symbol": "CAT",
+                        "gene_start": 34460477,
+                        "gene_stop": 34493606
+                    },
+                    "distance": 11218,
+                    "functional_class": "downstream"
+                },
+                {
+                    "gene_info": {
+                        "gene_id": "25841",
+                        "gene_symbol": "ABTB2",
+                        "gene_start": 34172534,
+                        "gene_stop": 34378801
+                    },
+                    "distance": 70458,
+                    "functional_class": "upstream"
+                }
+            ],
             "omim_info_list": "\n\t",
             "platform": "Illumina [up to 818773]",
             "pvalue_string": "4.6E-06",
             "pvalue_log": 53372,
-            "phenotype_list": "\n\t\t\n\t\t\tnhlbi-grasp\n\t\t\tAlcohol dependence\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\n\t\t\n\t\t\tMeSH\n\t\t\tfoobar\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\n\t",
-            "sample_info": "\n\t\t1283 EA cases, 1416 EA controls\n\t\t3334 Australian individuals (from families)\n\t\t6033\n\t\t3334\n\t\t2699\n\t\tEuropean\n\t"
+            "phenotype_list": [
+                {
+                    "source": "nhlbi-grasp",
+                    "phenotype": "Alcohol dependence",
+                    "phenotype_desc": "",
+                    "phenotype_category_list": [
+                    ]
+                },
+                {
+                    "source": "MeSH",
+                    "phenotype": "foobar",
+                    "phenotype_desc": "",
+                    "phenotype_category_list": [
+                    ]
+                }
+            ],
+            "sample_info": {
+                "initial_sample_desc": "1283 EA cases, 1416 EA controls",
+                "replication_sample_desc": "3334 Australian individuals (from families)",
+                "total_sample": 6033,
+                "total_replication_sample": 3334,
+                "total_discovery_sample": 2699,
+                "gwas_ancestry_desc": "European"
+            }
         }
     }
 }

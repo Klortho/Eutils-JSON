@@ -56,10 +56,7 @@
 <!ENTITY	 % T_mesh_category_list_type	"(mesh_category)*">
 
 <!-- Members definition of Structure type: T_DocSum -->
-
-<!--~~ <source>
-~~json <number/>
-~~-->
+<!-- Note:  this is not an integer. -->
 <!ELEMENT	source		%T_int;>
 
 <!--~~ <pha>
@@ -155,12 +152,155 @@
 <!ELEMENT	dist_2		%T_int;>
 <!ELEMENT	functional_class		%T_string;>
 
+
+<!ELEMENT create_date (#PCDATA)>
+<!ELEMENT last_modified_date (#PCDATA)>
+<!ELEMENT key (#PCDATA)>
+<!ELEMENT publication ( pmid, 
+                        pub_date, 
+                        journal, 
+                        title, 
+                        location_within_paper, 
+                        phenotype_desc,
+                        phenotype_category_list,
+                        incl_male_female_only,
+                        exclusively_male_female
+                      )>
+<!ELEMENT pub_date (#PCDATA)>
+<!ELEMENT journal (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT location_within_paper (#PCDATA)>
+<!ELEMENT phenotype_desc (#PCDATA)>
+<!ELEMENT phenotype_category_list (phenotype_category_info)* >
+<!ELEMENT phenotype_category_info (phenotype_category) >
+<!ELEMENT phenotype_category (#PCDATA) >
+<!--~~ <incl_male_female_only>
+~~json <boolean/>
+~~-->
+<!ELEMENT incl_male_female_only (#PCDATA) >
+<!--~~ <exclusively_male_female>
+~~json <boolean/>
+~~-->
+<!ELEMENT exclusively_male_female (#PCDATA) >
+
+<!ELEMENT snp_info ( current_snp,
+                     cited_snp,
+                     chromosome,
+                     position,
+                     in_gene,
+                     in_linc_rna,
+                     in_mi_rna,
+                     in_mi_rnabs,
+                     dbsnp_maf,
+                     dbsnp_alleles_het_se,
+                     dbsnp_validation,
+                     dbsnp_clinstatus,
+                     oreganno,
+                     conserved_pred_tfbs,
+                     human_enhancer,
+                     rna_edit,
+                     poly_phen2,
+                     sift,
+                     ls_snp,
+                     uni_prot_annot
+                    )>
+<!ELEMENT current_snp (#PCDATA) >
+<!ELEMENT cited_snp (#PCDATA) >
+<!ELEMENT chromosome (#PCDATA) >
+<!ELEMENT position (#PCDATA) >
+<!ELEMENT in_gene (#PCDATA) >
+<!ELEMENT in_linc_rna (#PCDATA) >
+<!ELEMENT in_mi_rna (#PCDATA) >
+<!ELEMENT in_mi_rnabs (#PCDATA) >
+<!ELEMENT dbsnp_maf (#PCDATA) >
+<!ELEMENT dbsnp_alleles_het_se (#PCDATA) >
+<!ELEMENT dbsnp_validation (#PCDATA) >
+<!ELEMENT dbsnp_clinstatus (#PCDATA) >
+<!ELEMENT oreganno (#PCDATA) >
+<!ELEMENT conserved_pred_tfbs (#PCDATA) >
+<!ELEMENT human_enhancer (#PCDATA) >
+<!ELEMENT rna_edit (#PCDATA) >
+<!ELEMENT poly_phen2 (#PCDATA) >
+<!ELEMENT sift (#PCDATA) >
+<!ELEMENT ls_snp (#PCDATA) >
+<!ELEMENT uni_prot_annot (#PCDATA) >
+
+<!ELEMENT snp_gene_info_list (snp_gene_info)* >
+<!ELEMENT snp_gene_info ( gene_info, 
+                          distance, 
+                          functional_class
+                        )>
+<!ELEMENT gene_info ( gene_id,
+                      gene_symbol,
+                      gene_start,
+                      gene_stop )>
+<!ELEMENT gene_id (#PCDATA) >
+<!ELEMENT gene_symbol (#PCDATA) >
+<!--~~ <gene_start>
+~~json <number/>
+~~-->
+<!ELEMENT gene_start (#PCDATA) >
+<!--~~ <gene_stop>
+~~json <number/>
+~~-->
+<!ELEMENT gene_stop (#PCDATA) >
+<!--~~ <distance>
+~~json <number/>
+~~-->
+<!ELEMENT distance (#PCDATA) >
+
+<!ELEMENT omim_info_list (#PCDATA) >
+<!ELEMENT platform (#PCDATA) >
+
+<!ELEMENT phenotype_list (phenotype_info)* >
+<!ELEMENT phenotype_info ( source,
+                           phenotype,
+                           phenotype_desc,
+                           phenotype_category_list )>
+<!ELEMENT phenotype (#PCDATA) >                           
+
+<!ELEMENT sample_info ( initial_sample_desc,
+                        replication_sample_desc,
+                        total_sample,
+                        total_replication_sample,
+                        total_discovery_sample,
+                        gwas_ancestry_desc )>
+
+<!ELEMENT initial_sample_desc (#PCDATA) >        
+
+<!ELEMENT replication_sample_desc (#PCDATA) >
+
+<!--~~ <total_sample>
+~~json <number/>
+~~-->
+<!ELEMENT total_sample (#PCDATA) >     
+
+<!--~~ <total_replication_sample>
+~~json <number/>
+~~-->
+<!ELEMENT total_replication_sample (#PCDATA) >      
+
+<!--~~ <total_discovery_sample>
+~~json <number/>
+~~-->
+<!ELEMENT total_discovery_sample (#PCDATA) >    
+
+<!ELEMENT gwas_ancestry_desc (#PCDATA) >                           
+
 <!-- Definition of Structure type: T_DocSum -->
 <!--~~ <DocumentSummary>
 ~~json <object name='@uid'/>
 ~~-->
 <!ENTITY	 % T_DocSum	"(
- 			source
+      create_date
+      | last_modified_date
+ 			| source
+ 			| key
+ 			| publication
+ 			| snp_info
+ 			| snp_gene_info_list
+ 			| omim_info_list
+ 			| platform
 			| pha
 			| analysis_version
 			| analysis_name
@@ -171,6 +311,8 @@
 			| marker_rs
 			| pvalue_string
 			| pvalue_log
+			| phenotype_list
+			| sample_info
 			| mesh_term
 			| mesh_category_list
 			| chr

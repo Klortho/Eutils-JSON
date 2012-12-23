@@ -78,6 +78,11 @@ whether or not our conversion to JSON is robust.
 
 These DTD specs should be reviewed, and tightened up, where possible.
 
+## Errors in DTDs
+
+* In eSummary_gapplus.dtd, element &lt;source> is marked as "T_int", but its values
+  in instance documents are not numbers, they are text strings.
+
 ## Miscellaneous places where the DTDs could be improved
 
 ### eSummary_blastdbinfo.dtd
@@ -422,7 +427,7 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.genome.json">esummary.genome.json</a>
       </td>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
         The elements Organism_Group and Organism_Subgroup were not declared, so
         I added them as strings.
       </td>
@@ -634,7 +639,7 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.gapplus.json">esummary.gapplus.json</a>
       </td>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
       </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996">get xml</a>
@@ -653,7 +658,7 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.dbvar.json">esummary.dbvar.json</a>
       </td>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
       </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816">get xml</a>
@@ -706,7 +711,7 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.gds.json">esummary.gds.json</a>
       </td>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
       </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726">get xml</a>
