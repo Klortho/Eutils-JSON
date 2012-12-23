@@ -38,8 +38,10 @@ These might be incorrect, which, in most cases, would mean that there would be
 some XML instance documents that are valid according to the DTD that would
 result in invalid JSON output.
 
+## eSummary_bioproject.dtd
+* <Project_Objectives_Struct> → object
 
-## eSummary_pmd.dtd
+## eSummary_pmc.dtd
 * <Author> → object
 * <DocumentSummary> → object
 * <ArticleId> → object
@@ -67,6 +69,29 @@ result in invalid JSON output.
   http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&version=2.0&db=pmc&id=254085,1,14900
 
 * esummary.nucleotide.xml
+
+## DTDs that are not well-specified.
+
+In many cases, the declarations in the DTDs are not optimal.  We often guessed at
+the actual schema that the data would conform to, based on the example instance
+document.  Sometimes, we might have guessed wrong.  See "Assumptions", below, for
+a list.
+
+For example, in eSummary_pmc.dtd, the following is the declaration for `<author>`:
+
+    ```
+    <!ENTITY   % T_Author "(
+          Name
+          | AuthType
+          )*">
+    <!-- Definition of List type: T_AuthorList -->
+    <!ELEMENT Author  %T_Author;>
+    ```
+
+We guessed that this element probably always only has *at most* one of each of the
+child elements <Name> and <AuthType>, but that's not the way it is written.  There
+are many instances of this, and the <DocumentSummary> element in each esummary DTD
+is the most prominent example.
 
 ## Other
 

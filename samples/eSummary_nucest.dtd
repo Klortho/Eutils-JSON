@@ -134,6 +134,9 @@
 
 
 <!-- Definition of Structure type: T_DocSum -->
+<!--~~ <DocumentSummary>
+~~json <object name='@uid'/>
+~~-->
 <!ENTITY	 % T_DocSum	"(
  			error
  			| Caption
@@ -196,9 +199,6 @@
             | Organelle
             | OtherReplicons                     
 			)*">
-<!--~~ <DocumentSummary>
-~~json <object name='@uid'/>
-~~-->
 <!ELEMENT DocumentSummary %T_DocSum;>
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
 

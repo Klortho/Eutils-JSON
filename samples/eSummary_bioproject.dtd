@@ -15,6 +15,9 @@
 <!ELEMENT	Project_Objectives		%T_string;>
 
 <!-- Definition of Structure type: T_Project_Objectives_Struct -->
+<!--~~ <Project_Objectives_Struct>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_Project_Objectives_Struct	"(
  			Project_ObjectivesType
 			| Project_Objectives
@@ -64,6 +67,9 @@
 <!ELEMENT	Supergroup		%T_string;>
 
 <!-- Definition of Structure type: T_DocSum -->
+<!--~~ <DocumentSummary>
+~~json <object name='@uid'/>
+~~-->
 <!ENTITY	 % T_DocSum	"(
  			TaxId
 			| Project_Id
@@ -102,7 +108,13 @@
 <!ELEMENT DocumentSummary %T_DocSum;>
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
 
+<!--~~ <DocumentSummarySet>
+~~json <object/>
+~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary*)>
 <!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
 
+<!--~~ <eSummaryResult>
+~~ tags root
+~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>

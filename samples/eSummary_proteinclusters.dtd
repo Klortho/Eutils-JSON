@@ -12,6 +12,9 @@
 <!ENTITY	 % T_date		"(#PCDATA)">
 
 <!-- Members definition of Structure type: T_DocSum -->
+<!--~~ <DocumentSummary>
+~~json <object name='@uid'/>
+~~-->
 <!ELEMENT	ACCN		%T_string;>
 <!ELEMENT	Definition		%T_string;>
 <!ELEMENT	Total_Prots		%T_int;>
@@ -64,7 +67,13 @@
 <!ELEMENT DocumentSummary %T_DocSum;>
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
 
+<!--~~ <DocumentSummarySet>
+~~json <object/>
+~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary*)>
 <!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
 
+<!--~~ <eSummaryResult>
+~~ tags root
+~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>
