@@ -106,8 +106,8 @@
     uri="eSummary_toolkit.dtd"/>
   <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_toolkitall.dtd"
     uri="eSummary_toolkitall.dtd"/>
-  <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_unigene.dtd""
-    uri=".dtd""/>
+  <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_unigene.dtd"
+    uri="eSummary_unigene.dtd"/>
   <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_unists.dtd"
     uri="eSummary_unists.dtd"/>
   <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/nlmmedlinecitationset_120101.dtd"

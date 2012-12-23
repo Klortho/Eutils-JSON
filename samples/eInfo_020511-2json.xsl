@@ -9,6 +9,7 @@
              encoding="UTF-8"
              indent="yes"
              omit-xml-declaration="yes"/>
+   <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
    <x:template match="IsRangable | TermCount | IsNumerical | DbName | IsDate | MenuName | FullName | DbTo | Menu | LastUpdate | Hierarchy | SingleToken | IsTruncatable | Count | IsHidden | Description | Name">
       <x:param name="indent" select="&#34;&#34;"/>
@@ -18,8 +19,6 @@
          <x:with-param name="context" select="$context"/>
       </x:call-template>
    </x:template>
-
-   <!-- Element ERROR, type:  string-->
    <x:template match="ERROR">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
@@ -48,7 +47,9 @@
    <x:template match="eInfoResult">
       <x:call-template name="result-start">
          <x:with-param name="dtd-annotation">
-            <json lcnames="true" type="einfo" version="0.3"/>
+            <json type="einfo" version="0.3">
+               <config lcnames="true"/>
+            </json>
          </x:with-param>
       </x:call-template>
       <x:apply-templates select="@*|*">
