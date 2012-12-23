@@ -68,6 +68,12 @@ result in invalid JSON output.
 
 * esummary.nucleotide.xml
 
+## Other
+
+* esummary.assembly uses an ugly hack to get metadata into the output, including
+  an escaped-xml section inside a "Meta" element.  This data will be very difficult to
+  extract in JSON.
+
 <!--
   DO NOT MODIFY BELOW THIS LINE.
   The stuff from here down is auto-generated, and any changes you make
