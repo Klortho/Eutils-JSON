@@ -133,7 +133,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gap&amp;id=195331</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary gapplus' status='' name='esummary.gapplus' dtd='eSummary_gapplus.dtd'>
+    <sample title='ESummary gapplus' status='D' name='esummary.gapplus' dtd='eSummary_gapplus.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996</eutils-url>
       <desc>
         Instance document is not valid according to the DTD.  
@@ -142,10 +142,11 @@
         the DTD I created is correct.
       </desc>
     </sample>
-    <sample title='ESummary dbvar' status='' name='esummary.dbvar' dtd='eSummary_dbvar.dtd'>
+    <sample title='ESummary dbvar' status='D' name='esummary.dbvar' dtd='eSummary_dbvar.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816</eutils-url>
       <desc>
         Instance document is not valid according to the DTD.  
+        Assembly_accession is not defined.
       </desc>
     </sample>
     <sample title='ESummary epigenomics' status='' name='esummary.epigenomics'

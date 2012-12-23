@@ -12,10 +12,16 @@
 <!ENTITY	 % T_int		"(#PCDATA)">
 
 <!-- Members definition of Structure type: T_dbVarStudyOrg -->
+<!--~~ <tax_id>
+~~json <number/>
+~~-->
 <!ELEMENT	tax_id		%T_int;>
 <!ELEMENT	species		%T_string;>
 
 <!-- Definition of Structure type: T_dbVarStudyOrg -->
+<!--~~ <dbVarStudyOrg>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_dbVarStudyOrg	"(
  			tax_id
 			| species
@@ -34,17 +40,46 @@
 <!ELEMENT	Chr		%T_string;>
 <!ELEMENT	Chr_accession_version		%T_string;>
 <!ELEMENT	Contig_accession_version		%T_string;>
+
+<!--~~ <Chr_start>
+~~json <number/>
+~~-->
 <!ELEMENT	Chr_start		%T_int;>
+
+<!--~~ <Chr_end>
+~~json <number/>
+~~-->
 <!ELEMENT	Chr_end		%T_int;>
+
+<!--~~ <Chr_inner_start>
+~~json <number/>
+~~-->
 <!ELEMENT	Chr_inner_start		%T_int;>
+
+<!--~~ <Chr_inner_end>
+~~json <number/>
+~~-->
 <!ELEMENT	Chr_inner_end		%T_int;>
+
+<!--~~ <Chr_outer_start>
+~~json <number/>
+~~-->
 <!ELEMENT	Chr_outer_start		%T_int;>
+
+<!--~~ <Chr_outer_end>
+~~json <number/>
+~~-->
 <!ELEMENT	Chr_outer_end		%T_int;>
+
 <!ELEMENT	Assembly		%T_string;>
+<!ELEMENT	Assembly_accession		%T_string;>
 <!ELEMENT	Assembly_tax_ID		%T_string;>
 <!ELEMENT	Placement_type		%T_string;>
 
 <!-- Definition of Structure type: T_dbVarPlacement -->
+<!--~~ <dbVarPlacement>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_dbVarPlacement	"(
  			Chr
 			| Chr_accession_version
@@ -56,6 +91,7 @@
 			| Chr_outer_start
 			| Chr_outer_end
 			| Assembly
+			| Assembly_accession
 			| Assembly_tax_ID
 			| Placement_type
 			)*">
@@ -65,10 +101,17 @@
 <!ENTITY	 % T_dbVarPlacementListType	"(dbVarPlacement)*">
 
 <!-- Members definition of Structure type: T_dbVarGene -->
+<!--~~ <id>
+~~json <number/>
+~~-->
 <!ELEMENT	id		%T_int;>
+
 <!ELEMENT	name		%T_string;>
 
 <!-- Definition of Structure type: T_dbVarGene -->
+<!--~~ <dbVarGene>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_dbVarGene	"(
  			id
 			| name
@@ -82,11 +125,25 @@
 <!ELEMENT	OBJ_TYPE		%T_string;>
 <!ELEMENT	SV		%T_string;>
 <!ELEMENT	ST		%T_string;>
+
+<!--~~ <Tax_ID>
+~~json <number/>
+~~-->
 <!ELEMENT	Tax_ID		%T_int;>
+
 <!ELEMENT	Organism		%T_string;>
 <!ELEMENT	dbVarStudyOrgList		%T_dbVarStudyOrgListType;>
+
+<!--~~ <PMID>
+~~json <number/>
+~~-->
 <!ELEMENT	PMID		%T_int;>
+
+<!--~~ <Project_ID>
+~~json <number/>
+~~-->
 <!ELEMENT	Project_ID		%T_int;>
+
 <!ELEMENT	Project_Name		%T_string;>
 <!ELEMENT	Publication_Date		%T_date;>
 <!ELEMENT	Study_DisplayName		%T_string;>
@@ -97,14 +154,40 @@
 <!ELEMENT	dbVarMethodList		%T_StringList;>
 <!ELEMENT	dbVarSampleList		%T_StringList;>
 <!ELEMENT	dbVarVariantTypeList		%T_StringList;>
+
+<!--~~ <Sample_count>
+~~json <number/>
+~~-->
 <!ELEMENT	Sample_count		%T_int;>
+
+<!--~~ <Variant_count>
+~~json <number/>
+~~-->
 <!ELEMENT	Variant_count		%T_int;>
+
 <!ELEMENT	Study_type		%T_string;>
 <!ELEMENT	Study_Description		%T_string;>
+
+<!--~~ <Variant_size>
+~~json <number/>
+~~-->
 <!ELEMENT	Variant_size		%T_int;>
+
+<!--~~ <Support_variant_count>
+~~json <number/>
+~~-->
 <!ELEMENT	Support_variant_count		%T_int;>
+
+<!--~~ <Subject_Phenotype_status>
+~~json <number/>
+~~-->
 <!ELEMENT	Subject_Phenotype_status		%T_int;>
+
+<!--~~ <Validation_status>
+~~json <number/>
+~~-->
 <!ELEMENT	Validation_status		%T_int;>
+
 <!ELEMENT	Validation_status_weight		%T_string;>
 <!ELEMENT	dbVarEvidenceList		%T_StringList;>
 <!ELEMENT	dbVarPlacementList		%T_dbVarPlacementListType;>

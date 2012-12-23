@@ -427,7 +427,7 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.genome.json">esummary.genome.json</a>
       </td>
       <td>
-        Instance document is not valid according to the DTD.
+        Instance document is not valid according to the DTD.  
         The elements Organism_Group and Organism_Subgroup were not declared, so
         I added them as strings.
       </td>
@@ -628,7 +628,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary gapplus</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_gapplus.dtd">eSummary_gapplus.dtd</a>
         <br/>
@@ -639,7 +639,10 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.gapplus.json">esummary.gapplus.json</a>
       </td>
       <td>
-        Instance document is not valid according to the DTD.
+        Instance document is not valid according to the DTD.  
+        This DTD looks like it doesn't match the content very well.  I fixed it by adding
+        elements until the instance document validated, but I don't have much confidence that
+        the DTD I created is correct.
       </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996">get xml</a>
@@ -647,7 +650,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary dbvar</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_dbvar.dtd">eSummary_dbvar.dtd</a>
         <br/>
@@ -658,7 +661,8 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.dbvar.json">esummary.dbvar.json</a>
       </td>
       <td>
-        Instance document is not valid according to the DTD.
+        Instance document is not valid according to the DTD.  
+        Assembly_accession is not defined.
       </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816">get xml</a>
@@ -711,7 +715,7 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.gds.json">esummary.gds.json</a>
       </td>
       <td>
-        Instance document is not valid according to the DTD.
+        Instance document is not valid according to the DTD.  
       </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726">get xml</a>

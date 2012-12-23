@@ -8,12 +8,12 @@
             "obj_type": "VARIANT",
             "sv": "nsv513796",
             "st": "nstd51",
-            "tax_id": "9606",
+            "tax_id": 9606,
             "organism": "human",
             "dbvarstudyorglist": [
             ],
-            "pmid": "0",
-            "project_id": "0",
+            "pmid": 0,
+            "project_id": 0,
             "project_name": "",
             "publication_date": "1/01/01 00:00",
             "study_displayname": "User_submitted_curated_variants",
@@ -32,24 +32,55 @@
             "dbvarvarianttypelist": [
                 "Deletion"
             ],
-            "sample_count": "0",
-            "variant_count": "0",
+            "sample_count": 0,
+            "variant_count": 0,
             "study_type": "",
             "study_description": "",
-            "variant_size": "4856",
-            "support_variant_count": "1",
-            "subject_phenotype_status": "1",
-            "validation_status": "0",
+            "variant_size": 4856,
+            "support_variant_count": 1,
+            "subject_phenotype_status": 1,
+            "validation_status": 0,
             "validation_status_weight": "0",
             "dbvarevidencelist": [
                 "nssv1415024"
             ],
             "dbvarplacementlist": [
-                "\n\t\t\tX\n\t\t\tNC_000023.9\n\t\t\t\n\t\t\t0\n\t\t\t0\n\t\t\t73660919\n\t\t\t73665772\n\t\t\t73660918\n\t\t\t73665773\n\t\t\tNCBI36 (hg18)\n\t\t\tGCF_000001405.12\n\t\t\t9606\n\t\t\tRemapped\n\t\t",
-                "\n\t\t\tX\n\t\t\tNC_000023.10\n\t\t\t\n\t\t\t0\n\t\t\t0\n\t\t\t73744194\n\t\t\t73749047\n\t\t\t73744193\n\t\t\t73749048\n\t\t\tGRCh37 (hg19)\n\t\t\tGCF_000001405.13\n\t\t\t9606\n\t\t\tSubmitted genomic\n\t\t"
+                {
+                    "chr": "X",
+                    "chr_accession_version": "NC_000023.9",
+                    "contig_accession_version": "",
+                    "chr_start": 0,
+                    "chr_end": 0,
+                    "chr_inner_start": 73660919,
+                    "chr_inner_end": 73665772,
+                    "chr_outer_start": 73660918,
+                    "chr_outer_end": 73665773,
+                    "assembly": "NCBI36 (hg18)",
+                    "assembly_accession": "GCF_000001405.12",
+                    "assembly_tax_id": "9606",
+                    "placement_type": "Remapped"
+                },
+                {
+                    "chr": "X",
+                    "chr_accession_version": "NC_000023.10",
+                    "contig_accession_version": "",
+                    "chr_start": 0,
+                    "chr_end": 0,
+                    "chr_inner_start": 73744194,
+                    "chr_inner_end": 73749047,
+                    "chr_outer_start": 73744193,
+                    "chr_outer_end": 73749048,
+                    "assembly": "GRCh37 (hg19)",
+                    "assembly_accession": "GCF_000001405.13",
+                    "assembly_tax_id": "9606",
+                    "placement_type": "Submitted genomic"
+                }
             ],
             "dbvargenelist": [
-                "\n\t\t\t6567\n\t\t\tSLC16A2\n\t\t"
+                {
+                    "id": 6567,
+                    "name": "SLC16A2"
+                }
             ],
             "dbvarclinicalsignificancelist": [
                 "Pathogenic"
