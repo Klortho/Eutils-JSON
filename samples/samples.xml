@@ -149,7 +149,7 @@
         Assembly_accession is not defined.
       </desc>
     </sample>
-    <sample title='ESummary epigenomics' status='' name='esummary.epigenomics'
+    <sample title='ESummary epigenomics' status='D' name='esummary.epigenomics'
       dtd='eSummary_epigenomics.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=epigenomics&amp;id=16796</eutils-url>
       <desc></desc>

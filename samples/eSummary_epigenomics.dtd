@@ -15,13 +15,31 @@
 <!ELEMENT	Title		%T_string;>
 <!ELEMENT	Summary		%T_string;>
 <!ELEMENT	DocType		%T_string;>
+
+<!--~~ <TaxId>
+~~json <number/>
+~~-->
 <!ELEMENT	TaxId		%T_int;>
+
+<!--~~ <GeneId>
+~~json <number/>
+~~-->
 <!ELEMENT	GeneId		%T_int;>
+
 <!ELEMENT	UpdateDate		%T_date;>
 <!ELEMENT	CreateDate		%T_date;>
 <!ELEMENT	Accession		%T_string;>
+
+<!--~~ <DocStatus>
+~~json <number/>
+~~-->
 <!ELEMENT	DocStatus		%T_int;>
+
+<!--~~ <ReplacedById>
+~~json <number/>
+~~-->
 <!ELEMENT	ReplacedById		%T_int;>
+
 <!ELEMENT	RetireDate		%T_date;>
 <!ELEMENT	RetireComment		%T_string;>
 
