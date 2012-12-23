@@ -1,0 +1,25 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "201140": {
+            "uid": "201140",
+            "accession": "pfam00302",
+            "title": "CAT",
+            "subtitle": "Chloramphenicol acetyltransferase",
+            "abstract": "",
+            "database": "Pfam",
+            "organism": "Bacteria",
+            "pubdate": "2011/12/21 00:00",
+            "entrezdate": "2012/10/30 00:00",
+            "pssmlength": 206,
+            "structurerepresentative": 1,
+            "numbersites": 0,
+            "sitedescriptions": [
+            ],
+            "status": 0,
+            "livepssmid": 0
+        }
+    }
+}

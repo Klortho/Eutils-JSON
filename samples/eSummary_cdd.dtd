@@ -24,11 +24,26 @@
 <!ELEMENT	Organism		%T_string;>
 <!ELEMENT	PubDate		%T_date;>
 <!ELEMENT	EntrezDate		%T_date;>
+<!--~~ <PssmLength>
+~~json <number/>
+~~-->
 <!ELEMENT	PssmLength		%T_int;>
+<!--~~ <StructureRepresentative>
+~~json <number/>
+~~-->
 <!ELEMENT	StructureRepresentative		%T_int;>
+<!--~~ <NumberSites>
+~~json <number/>
+~~-->
 <!ELEMENT	NumberSites		%T_int;>
 <!ELEMENT	SiteDescriptions		%T_SiteDescListType;>
+<!--~~ <Status>
+~~json <number/>
+~~-->
 <!ELEMENT	Status		%T_int;>
+<!--~~ <LivePssmID>
+~~json <number/>
+~~-->
 <!ELEMENT	LivePssmID		%T_int;>
 
 <!-- Definition of Structure type: T_DocSum -->
