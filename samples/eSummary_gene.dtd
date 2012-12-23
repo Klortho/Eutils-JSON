@@ -11,17 +11,37 @@
 <!ENTITY	 % T_int		"(#PCDATA)">
 
 <!-- Definition of List type: T_MimListType -->
+
+<!--~~ <int>
+~~json <number/>
+~~-->
 <!ELEMENT	int	%T_int;>
+
 <!ENTITY	 % T_MimListType	"(int)*">
 
 <!-- Members definition of Structure type: T_GenomicInfoType -->
 <!ELEMENT	ChrLoc		%T_string;>
 <!ELEMENT	ChrAccVer		%T_string;>
+
+<!--~~ <ChrStart>
+~~json <number/>
+~~-->
 <!ELEMENT	ChrStart		%T_int;>
+
+<!--~~ <ChrStop>
+~~json <number/>
+~~-->
 <!ELEMENT	ChrStop		%T_int;>
+
+<!--~~ <ExonCount>
+~~json <number/>
+~~-->
 <!ELEMENT	ExonCount		%T_int;>
 
 <!-- Definition of Structure type: T_GenomicInfoType -->
+<!--~~ <GenomicInfoType>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_GenomicInfoType	"(
  			ChrLoc
 			| ChrAccVer
@@ -38,8 +58,17 @@
 <!ELEMENT	Name		%T_string;>
 <!ELEMENT	Description		%T_string;>
 <!ELEMENT	Orgname		%T_string;>
+
+<!--~~ <Status>
+~~json <number/>
+~~-->
 <!ELEMENT	Status		%T_int;>
+
+<!--~~ <CurrentID>
+~~json <number/>
+~~-->
 <!ELEMENT	CurrentID		%T_int;>
+
 <!ELEMENT	Chromosome		%T_string;>
 <!ELEMENT	GeneticSource		%T_string;>
 <!ELEMENT	MapLocation		%T_string;>
@@ -48,10 +77,20 @@
 <!ELEMENT	NomenclatureSymbol		%T_string;>
 <!ELEMENT	NomenclatureName		%T_string;>
 <!ELEMENT	NomenclatureStatus		%T_string;>
+
+<!--~~ <TaxID>
+~~json <number/>
+~~-->
 <!ELEMENT	TaxID		%T_int;>
+
 <!ELEMENT	Mim		%T_MimListType;>
 <!ELEMENT	GenomicInfo		%T_GenomicInfoListType;>
+
+<!--~~ <GeneWeight>
+~~json <number/>
+~~-->
 <!ELEMENT	GeneWeight		%T_int;>
+
 <!ELEMENT	Summary		%T_string;>
 <!ELEMENT	ChrSort		%T_string;>
 <!-- Already defined ...

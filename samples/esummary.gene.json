@@ -8,8 +8,8 @@
             "name": "Tgfb1",
             "description": "transforming growth factor, beta 1",
             "orgname": "Mus musculus",
-            "status": "0",
-            "currentid": "0",
+            "status": 0,
+            "currentid": 0,
             "chromosome": "7",
             "geneticsource": "genomic",
             "maplocation": "7 6.5 cM",
@@ -18,16 +18,22 @@
             "nomenclaturesymbol": "Tgfb1",
             "nomenclaturename": "transforming growth factor, beta 1",
             "nomenclaturestatus": "Official",
-            "taxid": "10090",
+            "taxid": 10090,
             "mim": [
             ],
             "genomicinfo": [
-                "\n\t\t\t7\n\t\t\tNC_000073.6\n\t\t\t25687001\n\t\t\t25704995\n\t\t\t7\n\t\t"
+                {
+                    "chrloc": "7",
+                    "chraccver": "NC_000073.6",
+                    "chrstart": 25687001,
+                    "chrstop": 25704995,
+                    "exoncount": 7
+                }
             ],
-            "geneweight": "204825",
+            "geneweight": 204825,
             "summary": "",
             "chrsort": "07",
-            "chrstart": "25687001"
+            "chrstart": 25687001
         }
     }
 }

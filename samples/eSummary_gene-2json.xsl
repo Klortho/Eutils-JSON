@@ -11,7 +11,7 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
-   <x:template match="Chromosome | NomenclatureSymbol | OtherDesignations | GeneWeight | NomenclatureName | ChrLoc | ChrStart | NomenclatureStatus | MapLocation | Orgname | OtherAliases | ChrStop | CurrentID | GeneticSource | TaxID | ChrAccVer | int | Summary | ExonCount | Description | ChrSort | Name | Status | @uid | @status">
+   <x:template match="Chromosome | NomenclatureSymbol | OtherDesignations | NomenclatureName | ChrLoc | NomenclatureStatus | MapLocation | Orgname | OtherAliases | GeneticSource | ChrAccVer | Summary | Description | ChrSort | Name | @uid | @status">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="string">
@@ -33,6 +33,22 @@
       </x:apply-templates>
       <x:value-of select="np:end-object(&#34;&#34;, false())"/>
    </x:template>
+   <x:template match="GenomicInfoType | DocumentSummarySet">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="object">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="GeneWeight | ChrStart | ChrStop | CurrentID | TaxID | int | ExonCount | Status">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="number">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
    <x:template match="DocumentSummary">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
@@ -46,14 +62,6 @@
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="array">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="DocumentSummarySet">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
       </x:call-template>
