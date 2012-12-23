@@ -112,7 +112,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosystems&amp;id=493040</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary blastdbinfo' status='' name='esummary.blastdbinfo'
+    <sample title='ESummary blastdbinfo' status='D' name='esummary.blastdbinfo'
       dtd='eSummary_blastdbinfo.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=blastdbinfo&amp;id=645844</eutils-url>
       <desc></desc>

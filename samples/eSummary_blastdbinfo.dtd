@@ -28,6 +28,9 @@
 <!ELEMENT	SeqStrategy		%T_string;>
 
 <!-- Definition of Structure type: T_SequenceTypeData -->
+<!--~~ <SequenceTypeData>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_SequenceTypeData	"(
  			SeqType
 			| SeqStrategy
@@ -67,6 +70,9 @@
 <!ELEMENT	options		%T_string;>
 
 <!-- Definition of Structure type: T_MaskingData -->
+<!--~~ <MaskingData>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_MaskingData	"(
  			tag
 			| algorithm
@@ -78,6 +84,9 @@
 <!ENTITY	 % T_MaskingType	"(MaskingData)*">
 
 <!-- Members definition of Structure type: T_ProjectData -->
+<!--~~ <pid>
+~~json <number/>
+~~-->
 <!ELEMENT	pid		%T_int;>
 
 <!-- Definition of Structure type: T_ProjectData -->
@@ -96,12 +105,33 @@
 <!ELEMENT	LastUpdated		%T_date;>
 <!ELEMENT	Description		%T_string;>
 <!ELEMENT	TotalLength		%T_string;>
+<!--~~ <MaxLength>
+~~json <number/>
+~~-->
 <!ELEMENT	MaxLength		%T_int;>
+<!--~~ <NumSequences>
+~~json <number/>
+~~-->
 <!ELEMENT	NumSequences		%T_int;>
+<!--~~ <Perc75>
+~~json <number/>
+~~-->
 <!ELEMENT	Perc75		%T_int;>
+<!--~~ <Perc50>
+~~json <number/>
+~~-->
 <!ELEMENT	Perc50		%T_int;>
+<!--~~ <Perc25>
+~~json <number/>
+~~-->
 <!ELEMENT	Perc25		%T_int;>
+<!--~~ <N50>
+~~json <number/>
+~~-->
 <!ELEMENT	N50		%T_int;>
+<!--~~ <Taxid>
+~~json <number/>
+~~-->
 <!ELEMENT	Taxid		%T_int;>
 <!ELEMENT	GenCollAssemblyName		%T_string;>
 <!ELEMENT	EntrezDatabase		%T_string;>

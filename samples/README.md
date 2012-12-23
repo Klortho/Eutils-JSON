@@ -78,6 +78,25 @@ whether or not our conversion to JSON is robust.
 
 These DTD specs should be reviewed, and tightened up, where possible.
 
+## Miscellaneous places where the DTD could be improved
+
+### eSummary_blastdbinfo.dtd
+
+This DTD has the following effective definitions:
+
+    <!ELEMENT SourceDb "(SourceDbData)*">
+    <!ELEMENT SourceDbData "(SrcDb)*">
+    <!ELEMENT SrcDb "(#PCDATA)">
+
+Why an array inside of an array?  First of all, are more than one value allowed?  Even
+if so, then this could be flattened at least one level.
+
+Likewise:
+
+    <!ELEMENT Term "(TermData)*">
+    <!ELEMENT TermData "(SearchTerm)*">
+    <!ELEMENT SearchTerm "(#PCDATA)">
+
 ## Other
 
 * esummary.assembly uses an ugly hack to get metadata into the output, including
@@ -103,9 +122,6 @@ result in invalid JSON output.
 * &lt;citation> → object
 * &lt;gene> → object
 * &lt;proteinstruct> → object
-
-
-
 
 ## eSummary_pmc.dtd
 * &lt;Author> → object

@@ -1,0 +1,59 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "645844": {
+            "uid": "645844",
+            "name": "Felis catus",
+            "path": "SNP/cat_9685",
+            "title": "cat_9685",
+            "lastupdated": "2011/01/14 00:00",
+            "description": "dbSNP cat_9685 blast database",
+            "totallength": "200357206",
+            "maxlength": 1003,
+            "numsequences": 327037,
+            "perc75": 757,
+            "perc50": 588,
+            "perc25": 402,
+            "n50": 0,
+            "taxid": 9685,
+            "gencollassemblyname": "",
+            "entrezdatabase": "",
+            "entrezquery": "",
+            "sourcedb": [
+                [
+                    "dbSNP"
+                ]
+            ],
+            "sequencetype": [
+                {
+                    "seqtype": "OtherDNA",
+                    "seqstrategy": ""
+                }
+            ],
+            "term": [
+                [
+                    "variation"
+                ],
+                [
+                    "SNP"
+                ],
+                [
+                    "polymorphism"
+                ],
+                [
+                    "dbSNP"
+                ]
+            ],
+            "otherurl": [
+            ],
+            "masking": [
+            ],
+            "project": [
+            ],
+            "gpipebuild": "",
+            "wgsproject": ""
+        }
+    }
+}
