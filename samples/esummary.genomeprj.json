@@ -1,0 +1,29 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "54101": {
+            "uid": "54101",
+            "organism_name": "Bacillus anthracis str. A2012",
+            "organism_kingdom": "Bacteria",
+            "organism_group": "Firmicutes",
+            "taxid": "191218",
+            "center": "NCBI",
+            "sequencing_status": "",
+            "project_type": "RefSeq",
+            "genome_size": "10",
+            "number_of_chromosomes": "1",
+            "trace_species_code": "cmd=retrieve&val=species_code%3D%22BACILLUS ANTHRACIS STR. A2012%22",
+            "trace_center_name": "",
+            "trace_type_code": "",
+            "defline": "Endospore-forming bacteria that causes anthrax",
+            "number_of_mitochondrion": "",
+            "number_of_plastid": "",
+            "number_of_plasmid": "2",
+            "create_date": "2010/10/15 00:00",
+            "release_date": "2002/05/09 00:00",
+            "options": ""
+        }
+    }
+}
