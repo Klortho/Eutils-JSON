@@ -1,0 +1,41 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "2640": {
+            "uid": "2640",
+            "organism_name": "Maylandia zebra",
+            "organism_kingdom": "Eukaryotes",
+            "organism_group": "",
+            "organism_subgroup": "Fishes",
+            "defline": {
+                "value": "The zebra mbuna is a freshwater cichlid fish found in lakes in Malawi, Mozambique, and Tanzania."
+            },
+            "projectid": {
+                "value": "43325"
+            },
+            "project_accession": {
+                "value": "PRJNA43325"
+            },
+            "status": {
+                "value": "Draft"
+            },
+            "number_of_chromosomes": 0,
+            "number_of_plasmids": 0,
+            "number_of_organelles": 0,
+            "assembly_name": {
+                "value": "MetZeb1.1"
+            },
+            "assembly_accession": {
+                "value": "GCA_000238955.2"
+            },
+            "assemblyid": {
+                "value": "398768"
+            },
+            "create_date": "2010/01/01 00:00",
+            "options": "",
+            "weight": 0
+        }
+    }
+}

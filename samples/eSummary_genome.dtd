@@ -34,6 +34,8 @@
 <!ATTLIST Locus_tag	 weight CDATA #IMPLIED>
 <!ELEMENT Organism	 (#PCDATA)>
 <!ATTLIST Organism	 weight CDATA #IMPLIED>
+<!ELEMENT	Organism_Group		(#PCDATA)>
+<!ELEMENT	Organism_Subgroup		(#PCDATA)>
 <!ELEMENT PmId	 (#PCDATA)>
 <!ATTLIST PmId	 weight CDATA #IMPLIED>
 <!ELEMENT ProjectID	 (#PCDATA)>
@@ -80,9 +82,22 @@
 <!-- Already defined ...
 <!ELEMENT	Status		%T_string;>
  ... Already defined -->
+ 
+ <!--~~ <Number_of_Chromosomes>
+ ~~json <number/>
+ ~~-->
 <!ELEMENT	Number_of_Chromosomes		%T_string;>
+
+ <!--~~ <Number_of_Plasmids>
+ ~~json <number/>
+ ~~-->
 <!ELEMENT	Number_of_Plasmids		%T_string;>
+
+ <!--~~ <Number_of_Organelles>
+ ~~json <number/>
+ ~~-->
 <!ELEMENT	Number_of_Organelles		%T_string;>
+
 <!-- Already defined ...
 <!ELEMENT	Assembly_Name		%T_string;>
  ... Already defined -->
