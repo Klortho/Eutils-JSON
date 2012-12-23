@@ -1,0 +1,47 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "493040": {
+            "uid": "493040",
+            "source": "GO",
+            "modifydate": "2011/11/04 00:00",
+            "sidcount": 0,
+            "cidcount": 0,
+            "genecount": 3,
+            "proteincount": 5,
+            "feedbackurl": "http://amigo.geneontology.org/cgi-bin/amigo/term_details?term=GO:0008811",
+            "sourceurl": "http://www.geneontology.org/",
+            "citations": [
+            ],
+            "biosystem": {
+                "externalid": "GO:0008811",
+                "biosystemname": "chloramphenicol O-acetyltransferase activity",
+                "biosystemtype": "conserved biosystem",
+                "bscategory": "conserved biosystem",
+                "bstype": "functional_set",
+                "description": "Catalysis of the reaction: acetyl-CoA + chloramphenicol = chloramphenicol 3-acetate + CoA. Synonyms: CAT I; CAT II; CAT III; acetyl-CoA:chloramphenicol 3-O-acetyltransferase activity; chloramphenicol acetylase activity; chloramphenicol acetyltransferase activity; chloramphenicol transacetylase activity;",
+                "comment": [
+                ],
+                "url": "http://amigo.geneontology.org/cgi-bin/amigo/term_details?term=GO:0008811",
+                "highliteurl": {
+                    "hilitetype": "\n\t\t\t\tsimple\n\t\t\t",
+                    "idtypes": [
+                    ],
+                    "url": ""
+                },
+                "taxonomy": [
+                ],
+                "genes": [
+                ],
+                "smallmolecules": [
+                ],
+                "citations": [
+                ],
+                "linkedsystems": [
+                ]
+            }
+        }
+    }
+}

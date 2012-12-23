@@ -17,11 +17,17 @@
 <!ENTITY	 % T_categorylist	"(string)*">
 
 <!-- Members definition of Structure type: T_citation -->
+<!--~~ <pmid>
+~~json <number/>
+~~-->
 <!ELEMENT	pmid		%T_int;>
 <!ELEMENT	textcitation		%T_string;>
 <!ELEMENT	category		%T_categorylist;>
 
 <!-- Definition of Structure type: T_citation -->
+<!--~~ <citation>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_citation	"(
  			pmid
 			| textcitation
@@ -56,6 +62,9 @@
  ... Already defined -->
 
 <!-- Definition of Structure type: T_highliteurlstruct -->
+<!--~~ <highliteurl>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_highliteurlstruct	"(
  			hilitetype
 			| idtypes
@@ -63,10 +72,16 @@
 			)*">
 
 <!-- Members definition of Structure type: T_taxnodestruct -->
+<!--~~ <taxid>
+~~json <number/>
+~~-->
 <!ELEMENT	taxid		%T_int;>
 <!ELEMENT	taxonomyname		%T_string;>
 
 <!-- Definition of Structure type: T_taxnodestruct -->
+<!--~~ <taxnodestruct>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_taxnodestruct	"(
  			taxid
 			| taxonomyname
@@ -83,6 +98,9 @@
 <!ENTITY	 % T_namelist	"(string)*">
 
 <!-- Members definition of Structure type: T_geneidstruct -->
+<!--~~ <geneid>
+~~json <number/>
+~~-->
 <!ELEMENT	geneid		%T_int;>
 <!ELEMENT	genename		%T_string;>
 <!-- Already defined ...
@@ -97,6 +115,9 @@
 			)*">
 
 <!-- Members definition of Structure type: T_proteinstruct -->
+<!--~~ <gi>
+~~json <number/>
+~~-->
 <!ELEMENT	gi		%T_int;>
 <!ELEMENT	accession		%T_string;>
 <!-- Already defined ...
@@ -111,14 +132,23 @@
 			)*">
 
 <!-- Definition of List type: T_proteinlist -->
+<!--~~ <proteinstruct>
+~~json <object/>
+~~-->
 <!ELEMENT	proteinstruct	%T_proteinstruct;>
 <!ENTITY	 % T_proteinlist	"(proteinstruct)*">
 
 <!-- Members definition of Structure type: T_entitystruct -->
+<!--~~ <gene>
+~~json <object/>
+~~-->
 <!ELEMENT	gene		%T_geneidstruct;>
 <!ELEMENT	protein		%T_proteinlist;>
 
 <!-- Definition of Structure type: T_entitystruct -->
+<!--~~ <entitystruct>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_entitystruct	"(
  			gene
 			| protein
@@ -129,6 +159,9 @@
 <!ENTITY	 % T_entitylist	"(entitystruct)*">
 
 <!-- Members definition of Structure type: T_propertystruct -->
+<!--~~ <propertystruct>
+~~json <object/>
+~~-->
 <!ELEMENT	propertyname		%T_string;>
 <!ELEMENT	propertyvalue		%T_string;>
 
@@ -157,6 +190,9 @@
 <!ELEMENT	property		%T_propertylist;>
 
 <!-- Definition of Structure type: T_genestruct -->
+<!--~~ <genestruct>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_genestruct	"(
  			externalid
 			| names
@@ -178,8 +214,17 @@
 <!-- Already defined ...
 <!ELEMENT	comment		%T_commentlist;>
  ... Already defined -->
+
+<!--~~ <sid>
+~~json <number/>
+~~-->
 <!ELEMENT	sid		%T_int;>
+
+<!--~~ <cid>
+~~json <number/>
+~~-->
 <!ELEMENT	cid		%T_int;>
+
 <!-- Already defined ...
 <!ELEMENT	category		%T_categorylist;>
  ... Already defined -->
@@ -188,6 +233,9 @@
  ... Already defined -->
 
 <!-- Definition of Structure type: T_smallmoleculestruct -->
+<!--~~ <smallmoleculestruct>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_smallmoleculestruct	"(
  			externalid
 			| moleculenames
@@ -209,11 +257,18 @@
 <!-- Already defined ...
 <!ELEMENT	externalid		%T_string;>
  ... Already defined -->
+
+<!--~~ <bsid>
+~~json <number/>
+~~-->
 <!ELEMENT	bsid		%T_int;>
 <!ELEMENT	linkedsystemname		%T_string;>
 <!ELEMENT	linkedsystemtype		%T_linkedsystemenum;>
 
 <!-- Definition of Structure type: T_linkedsystemstruct -->
+<!--~~ <linkedsystemstruct>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_linkedsystemstruct	"(
  			externalid
 			| bsid
@@ -244,6 +299,9 @@
 <!ELEMENT	linkedsystems		%T_linkedsystemlist;>
 
 <!-- Definition of Structure type: T_biosystemstruct -->
+<!--~~ <biosystem>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_biosystemstruct	"(
  			externalid
 			| biosystemname
@@ -264,9 +322,25 @@
 <!-- Members definition of Structure type: T_DocSum -->
 <!ELEMENT	source		%T_string;>
 <!ELEMENT	ModifyDate		%T_date;>
+
+<!--~~ <SIDCount>
+~~json <number/>
+~~-->
 <!ELEMENT	SIDCount		%T_int;>
+
+<!--~~ <CIDCount>
+~~json <number/>
+~~-->
 <!ELEMENT	CIDCount		%T_int;>
+
+<!--~~ <GeneCount>
+~~json <number/>
+~~-->
 <!ELEMENT	GeneCount		%T_int;>
+
+<!--~~ <ProteinCount>
+~~json <number/>
+~~-->
 <!ELEMENT	ProteinCount		%T_int;>
 <!ELEMENT	feedbackurl		%T_string;>
 <!ELEMENT	sourceurl		%T_string;>

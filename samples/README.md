@@ -31,28 +31,6 @@ looks for things like extraneous trailing commas in arrays and objects.
 
 See also problems.md here for things that should be turned into JIRA tickets.
 
-# Assumptions
-
-Here are some assumptions we made while mapping DTD elements to JSON.
-These might be incorrect, which, in most cases, would mean that there would be
-some XML instance documents that are valid according to the DTD that would
-result in invalid JSON output.
-
-## eSummary_bioproject.dtd
-* <Project_Objectives_Struct> → object
-
-## eSummary_pmc.dtd
-* <Author> → object
-* <DocumentSummary> → object
-* <ArticleId> → object
-
-## eSummary_unists.dtd
-* <DocumentSummary> → object
-* <Map_Gene_Summary> → object
-
-## eSummary_nuccore.dtd
-* <DocumentSummarySet> → object; in this case, what if it contains Warnings?
-
 # Problems
 
 ## All ESummary DTDs seem to use the same public identifier
@@ -70,7 +48,7 @@ result in invalid JSON output.
 
 * esummary.nucleotide.xml
 
-## DTDs that are not well-specified.
+## DTDs elements that are under-specified.
 
 In many cases, the declarations in the DTDs are not optimal.  We often guessed at
 the actual schema that the data would conform to, based on the example instance
@@ -91,13 +69,56 @@ For example, in eSummary_pmc.dtd, the following is the declaration for `<author>
 We guessed that this element probably always only has *at most* one of each of the
 child elements <Name> and <AuthType>, but that's not the way it is written.  There
 are many instances of this, and the <DocumentSummary> element in each esummary DTD
-is the most prominent example.
+is the most prominent example.  Sometimes we may have guessed wrong, but there were
+so many examples of this, and it seemed to be such a common pattern, that I think we
+were right.
+
+In other words (if we were right) the DTDs specify these elements too loosely, and
+that leads to problems when trying to write robust applications that should be able
+to handle any instance document.  In our case, it causes some uncertainty about
+whether or not our conversion to JSON is robust.
+
+These DTD specs should be reviewed, and tightened up, where possible.
 
 ## Other
 
 * esummary.assembly uses an ugly hack to get metadata into the output, including
   an escaped-xml section inside a "Meta" element.  This data will be very difficult to
   extract in JSON.
+
+
+# Assumptions
+
+Here are some assumptions we made while mapping DTD elements to JSON.
+These might be incorrect, which, in most cases, would mean that there would be
+some XML instance documents that are valid according to the DTD that would
+result in invalid JSON output.
+
+## eSummary_bioproject.dtd
+* <Project_Objectives_Struct> → object
+
+## eSummary_biosystems.dtd
+* <citation> → object
+* <gene> → object
+* <proteinstruct> → object
+
+
+
+
+## eSummary_pmc.dtd
+* <Author> → object
+* <DocumentSummary> → object
+* <ArticleId> → object
+
+## eSummary_unists.dtd
+* <DocumentSummary> → object
+* <Map_Gene_Summary> → object
+
+## eSummary_nuccore.dtd
+* <DocumentSummarySet> → object; in this case, what if it contains Warnings?
+
+
+
 
 <!--
   DO NOT MODIFY BELOW THIS LINE.
@@ -300,7 +321,10 @@ is the most prominent example.
         <br/>
         <a href="../../blob/master/samples/esummary.nucleotide.json">esummary.nucleotide.json</a>
       </td>
-      <td/>
+      <td>
+        The instance document is invalid according to the DTD.  I fixed the DTD,
+        by adding some elements and attributes that were declared in eSummary_nuccore.dtd.
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucleotide&amp;id=424386131">get xml</a>
       </td>
@@ -351,7 +375,11 @@ is the most prominent example.
         <br/>
         <a href="../../blob/master/samples/esummary.structure.json">esummary.structure.json</a>
       </td>
-      <td/>
+      <td>
+        Instance document is not valid according to the DTD.  The element PdbAccSynList
+        is not declared.  This requires us to create a special imported XSLT
+        for this, esummary.structure.xsl.
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=structure&amp;id=52770">get xml</a>
       </td>
@@ -368,7 +396,11 @@ is the most prominent example.
         <br/>
         <a href="../../blob/master/samples/esummary.genome.json">esummary.genome.json</a>
       </td>
-      <td/>
+      <td>
+        Instance document is not valid according to the DTD.  
+        The elements Organism_Group and Organism_Subgroup were not declared, so
+        I added them as strings.
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genome&amp;id=2640">get xml</a>
       </td>
@@ -402,7 +434,11 @@ is the most prominent example.
         <br/>
         <a href="../../blob/master/samples/esummary.gcassembly.json">esummary.gcassembly.json</a>
       </td>
-      <td/>
+      <td>
+        Instance document is not valid according to the DTD.  No definitions for
+        SubmitterOrganization or AssemblyStatus.  I added the definitions for these from
+        eSummary_assembly.dtd (which makes these two DTDs identical.)
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gcassembly&amp;id=440818">get xml</a>
       </td>
@@ -426,7 +462,7 @@ is the most prominent example.
     </tr>
     <tr>
       <th>ESummary bioproject</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_bioproject.dtd">eSummary_bioproject.dtd</a>
         <br/>
@@ -443,7 +479,7 @@ is the most prominent example.
     </tr>
     <tr>
       <th>ESummary biosample</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_biosample.dtd">eSummary_biosample.dtd</a>
         <br/>
@@ -460,7 +496,7 @@ is the most prominent example.
     </tr>
     <tr>
       <th>ESummary biosystems</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_biosystems.dtd">eSummary_biosystems.dtd</a>
         <br/>
@@ -572,7 +608,9 @@ is the most prominent example.
         <br/>
         <a href="../../blob/master/samples/esummary.gapplus.json">esummary.gapplus.json</a>
       </td>
-      <td/>
+      <td>
+        Instance document is not valid according to the DTD.  
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996">get xml</a>
       </td>
@@ -589,7 +627,9 @@ is the most prominent example.
         <br/>
         <a href="../../blob/master/samples/esummary.dbvar.json">esummary.dbvar.json</a>
       </td>
-      <td/>
+      <td>
+        Instance document is not valid according to the DTD.  
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816">get xml</a>
       </td>
@@ -640,7 +680,9 @@ is the most prominent example.
         <br/>
         <a href="../../blob/master/samples/esummary.gds.json">esummary.gds.json</a>
       </td>
-      <td/>
+      <td>
+        Instance document is not valid according to the DTD.  
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726">get xml</a>
       </td>
@@ -857,7 +899,9 @@ is the most prominent example.
         <br/>
         <a href="../../blob/master/samples/esummary.popset.json">esummary.popset.json</a>
       </td>
-      <td/>
+      <td>
+        The instance document is invalid according to the DTD.
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=popset&amp;id=418209882">get xml</a>
       </td>
@@ -942,7 +986,9 @@ is the most prominent example.
         <br/>
         <a href="../../blob/master/samples/esummary.pcsubstance.json">esummary.pcsubstance.json</a>
       </td>
-      <td/>
+      <td>
+        XML instance document is empty.
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcsubstance&amp;id=127317050">get xml</a>
       </td>
@@ -972,7 +1018,9 @@ is the most prominent example.
         <br/>
         <a href="../../blob/master/samples/esummary.seqannot.json">esummary.seqannot.json</a>
       </td>
-      <td/>
+      <td>
+        XML instance document is empty.
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=seqannot&amp;id=7232">get xml</a>
       </td>
@@ -989,7 +1037,9 @@ is the most prominent example.
         <br/>
         <a href="../../blob/master/samples/esummary.snp.json">esummary.snp.json</a>
       </td>
-      <td/>
+      <td>
+        XML instance document is empty.
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=snp&amp;id=206676795">get xml</a>
       </td>
@@ -1023,7 +1073,9 @@ is the most prominent example.
         <br/>
         <a href="../../blob/master/samples/esummary.taxonomy.json">esummary.taxonomy.json</a>
       </td>
-      <td/>
+      <td>
+        XML instance document is invalid.
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=taxonomy&amp;id=9685">get xml</a>
       </td>

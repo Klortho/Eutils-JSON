@@ -98,16 +98,16 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genomeprj&amp;id=54101</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary bioproject' status='' name='esummary.bioproject'
+    <sample title='ESummary bioproject' status='D' name='esummary.bioproject'
       dtd='eSummary_bioproject.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=bioproject&amp;id=171168</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary biosample' status='' name='esummary.biosample' dtd='eSummary_biosample.dtd'>
+    <sample title='ESummary biosample' status='D' name='esummary.biosample' dtd='eSummary_biosample.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosample&amp;id=182293</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary biosystems' status='' name='esummary.biosystems'
+    <sample title='ESummary biosystems' status='D' name='esummary.biosystems'
       dtd='eSummary_biosystems.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosystems&amp;id=493040</eutils-url>
       <desc></desc>
