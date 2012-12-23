@@ -14,6 +14,9 @@
 <!ELEMENT	d_ancestor_name		%T_string;>
 
 <!-- Definition of Structure type: T_d_ancestor_id_and_name -->
+<!--~~ <d_ancestor_id_and_name>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_d_ancestor_id_and_name	"(
  			d_ancestor_id
 			| d_ancestor_name
@@ -28,6 +31,9 @@
 <!ELEMENT	d_genotype_platform		%T_string;>
 
 <!-- Definition of Structure type: T_d_genotype_platform_info -->
+<!--~~ <d_genotype_platform_info>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_d_genotype_platform_info	"(
  			d_genotype_vendor
 			| d_genotype_platform
@@ -79,10 +85,30 @@
 <!ELEMENT	d_study_name		%T_string;>
 <!ELEMENT	d_study_ancestor		%T_d_ancestor_list_type;>
 <!ELEMENT	d_study_genotype_platform_list		%T_d_genotype_platform_list_type;>
+
+<!--~~ <d_num_descendants_in_subtree>
+~~json <number/>
+~~-->
 <!ELEMENT	d_num_descendants_in_subtree		%T_int;>
+
+<!--~~ <d_num_variables_in_subtree>
+~~json <number/>
+~~-->
 <!ELEMENT	d_num_variables_in_subtree		%T_int;>
+
+<!--~~ <d_num_documents_in_subtree>
+~~json <number/>
+~~-->
 <!ELEMENT	d_num_documents_in_subtree		%T_int;>
+
+<!--~~ <d_num_analyses_in_subtree>
+~~json <number/>
+~~-->
 <!ELEMENT	d_num_analyses_in_subtree		%T_int;>
+
+<!--~~ <d_num_participants_in_subtree>
+~~json <number/>
+~~-->
 <!ELEMENT	d_num_participants_in_subtree		%T_int;>
 <!ELEMENT	d_study_type		%T_string;>
 <!ELEMENT	d_study_type_list		%T_d_type_list_type;>
@@ -95,6 +121,9 @@
 <!ELEMENT	d_study_archive		%T_string;>
 
 <!-- Definition of Structure type: T_d_study_results_type -->
+<!--~~ <d_study_results>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_d_study_results_type	"(
  			d_study_id
 			| d_study_name
@@ -121,6 +150,9 @@
 <!ELEMENT	d_parent_name		%T_string;>
 
 <!-- Definition of Structure type: T_d_parent_id_and_name -->
+<!--~~ <d_parent_id_and_name>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_d_parent_id_and_name	"(
  			d_parent_id
 			| d_parent_name
@@ -136,6 +168,9 @@
 <!ELEMENT	d_variable_dataset_description		%T_string;>
 
 <!-- Definition of Structure type: T_d_variable_dataset_type -->
+<!--~~ <d_variable_dataset>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_d_variable_dataset_type	"(
  			d_variable_dataset_name
 			| d_variable_dataset_id
@@ -155,6 +190,9 @@
 <!ELEMENT	d_variable_has_phenx		%T_string;>
 
 <!-- Definition of Structure type: T_d_variable_results_type -->
+<!--~~ <d_variable_results>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_d_variable_results_type	"(
  			d_variable_id
 			| d_variable_name
@@ -176,6 +214,9 @@
 <!ELEMENT	d_document_description		%T_string;>
 
 <!-- Definition of Structure type: T_d_document_results_type -->
+<!--~~ <d_document_results>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_d_document_results_type	"(
  			d_document_id
 			| d_document_name
@@ -192,6 +233,9 @@
 <!ELEMENT	d_analysis_description		%T_string;>
 
 <!-- Definition of Structure type: T_d_analysis_results_type -->
+<!--~~ <d_analysis_results>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_d_analysis_results_type	"(
  			d_analysis_id
 			| d_analysis_name
@@ -209,6 +253,9 @@
 <!ELEMENT	d_dataset_embargo_date		%T_string;>
 
 <!-- Definition of Structure type: T_d_dataset_results_type -->
+<!--~~ <d_dataset_results>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_d_dataset_results_type	"(
  			d_dataset_id
 			| d_dataset_name

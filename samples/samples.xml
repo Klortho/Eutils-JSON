@@ -125,11 +125,11 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=cdd&amp;id=201140</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary clone' status='' name='esummary.clone' dtd='eSummary_clone.dtd'>
+    <sample title='ESummary clone' status='D' name='esummary.clone' dtd='eSummary_clone.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=clone&amp;id=29702171</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary gap' status='' name='esummary.gap' dtd='eSummary_gap.dtd'>
+    <sample title='ESummary gap' status='D' name='esummary.gap' dtd='eSummary_gap.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gap&amp;id=195331</eutils-url>
       <desc></desc>
     </sample>
