@@ -31,24 +31,85 @@
             "strand": "",
             "organism": "Echinops telfairi",
             "statistics": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                {
+                    "type": "Length",
+                    "count": 20193
+                },
+                {
+                    "type": "Length",
+                    "subtype": "literal",
+                    "count": 20193
+                },
+                {
+                    "type": "all",
+                    "count": 66
+                },
+                {
+                    "type": "blob_size",
+                    "count": 14611
+                },
+                {
+                    "type": "imp",
+                    "count": 65
+                },
+                {
+                    "type": "imp",
+                    "subtype": "variation",
+                    "count": 65
+                },
+                {
+                    "type": "org",
+                    "count": 1
+                },
+                {
+                    "type": "pub",
+                    "count": 2
+                },
+                {
+                    "type": "pub",
+                    "subtype": "unpublished",
+                    "count": 1
+                },
+                {
+                    "source": "all",
+                    "type": "Length",
+                    "count": 20193
+                },
+                {
+                    "source": "all",
+                    "type": "all",
+                    "count": 66
+                },
+                {
+                    "source": "all",
+                    "type": "blob_size",
+                    "count": 14611
+                },
+                {
+                    "source": "all",
+                    "type": "imp",
+                    "count": 65
+                },
+                {
+                    "source": "all",
+                    "type": "org",
+                    "count": 1
+                },
+                {
+                    "source": "all",
+                    "type": "pub",
+                    "count": 2
+                }
             ],
-            "properties": "33",
-            "oslt": "AAIY02060586.1",
+            "properties": {
+                "na": "1",
+                "qual": "32",
+                "value": "33"
+            },
+            "oslt": {
+                "indexed": true,
+                "value": "AAIY02060586.1"
+            },
             "accessionversion": "AAIY02060586.1"
         }
     }

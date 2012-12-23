@@ -11,7 +11,7 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
-   <x:template match="Extra | Organism | Caption | Strand | Biomol | Title | SubType | SourceDb | Genome | CreateDate | GeneticCode | Slen | Topology | Completeness | SubName | MolType | Tech | Meta | UpdateDate | AssemblyAcc | @uid | @status">
+   <x:template match="Extra | Organism | Caption | Strand | Biomol | Title | SubType | SourceDb | Genome | CreateDate | GeneticCode | AccessionVersion | Slen | Topology | Completeness | SubName | MolType | Tech | Meta | UpdateDate | AssemblyAcc | @est | @gss | @subtype | @popset | @na | @qual | @uid | @type | @value | @status | @genome | @trace | @source | @aa">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="string">
@@ -41,10 +41,43 @@
       </x:apply-templates>
       <x:value-of select="np:end-object(&#34;&#34;, false())"/>
    </x:template>
-   <x:template match="SegSetSize | AssemblyGi | ProjectId | TaxId | Flags | Gi">
+   <x:template match="SegSetSize | AssemblyGi | ProjectId | TaxId | Flags | Gi | @count">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="number">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="Properties | OSLT">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="object">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+         <x:with-param name="kids" select="@*|node()"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="Properties/text()">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="string">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="OSLT/text()">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="string">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="Stat | DocumentSummarySet">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="object">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
       </x:call-template>
@@ -58,10 +91,10 @@
          <x:with-param name="key" select="@uid"/>
       </x:call-template>
    </x:template>
-   <x:template match="DocumentSummarySet">
+   <x:template match="@indexed">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
+      <x:call-template name="boolean">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
       </x:call-template>
