@@ -1,0 +1,53 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "440818": {
+            "uid": "440818",
+            "gbuid": "320798",
+            "assemblyaccession": "GCF_000181335.1",
+            "assemblyname": "Felis_catus-6.2",
+            "ucscname": "",
+            "ensemblname": "",
+            "assemblydescription": "",
+            "organism": "Felis catus",
+            "speciestaxid": "9685",
+            "speciesname": "Felis catus",
+            "assemblyclass": "haploid",
+            "wgs": "AANG02",
+            "releaselevel": "Major",
+            "rs_projects": [
+                175699
+            ],
+            "gb_projects": [
+                16726
+            ],
+            "coverage": "",
+            "partialgenomerepresentation": "false",
+            "ncbireleasedate": "2012/10/09 00:00",
+            "submissiondate": "2011/09/13 00:00",
+            "lastupdatedate": "2012/11/07 00:00",
+            "primary": "439558",
+            "propertylist": [
+                "Eukaryota",
+                "default",
+                "has-chromosomal-sequences",
+                "has-mitochondrion",
+                "latest",
+                "latest_genbank",
+                "latest_refseq",
+                "species-default"
+            ],
+            "synonym": {
+                "genbank": "GCA_000181335.2",
+                "refseq": "GCF_000181335.1",
+                "similarity": "different"
+            },
+            "sortorder": "DC30001813359798",
+            "submitterorganization": "International Cat Genome Sequencing Consortium",
+            "assemblystatus": "Chromosome",
+            "meta": " <Stats> <Stat category=\"N50\" sequence_tag=\"all\">4658941</Stat> <Stat category=\"alt_loci_count\" sequence_tag=\"all\">0</Stat> <Stat category=\"chromosome_count\" sequence_tag=\"all\">19</Stat> <Stat category=\"contig_count\" sequence_tag=\"all\">203083</Stat> <Stat category=\"non_chromosome_replicon_count\" sequence_tag=\"all\">1</Stat> <Stat category=\"replicon_count\" sequence_tag=\"all\">20</Stat> <Stat category=\"scaffold_count\" sequence_tag=\"all\">6400</Stat> <Stat category=\"scaffold_count\" sequence_tag=\"placed\">920</Stat> <Stat category=\"scaffold_count\" sequence_tag=\"unlocalized\">749</Stat> <Stat category=\"scaffold_count\" sequence_tag=\"unplaced\">4731</Stat> <Stat category=\"total_length\" sequence_tag=\"all\">2455541136</Stat> </Stats> <FtpSites>   <FtpPath type=\"GenBank\">ftp://ftp.ncbi.nlm.nih.gov/genbank/genomes/Eukaryotes/vertebrates_mammals/Felis_catus/Felis_catus-6.2/</FtpPath> </FtpSites> <assembly-level>3</assembly-level> <assembly-status>Chromosome</assembly-status> <submitter-organization>International Cat Genome Sequencing Consortium</submitter-organization>    "
+        }
+    }
+}

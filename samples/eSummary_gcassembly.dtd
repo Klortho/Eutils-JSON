@@ -64,6 +64,8 @@
 ~~-->
 <!ELEMENT	Synonym		%T_SynStruct;>
 <!ELEMENT	SortOrder		%T_string;>
+<!ELEMENT	SubmitterOrganization		%T_string;>
+<!ELEMENT	AssemblyStatus		%T_string;>
 <!ELEMENT	Meta		%T_xml;>
 
 <!-- Definition of Structure type: T_DocSum -->
@@ -94,6 +96,8 @@
 			| PropertyList
 			| Synonym
 			| SortOrder
+			| SubmitterOrganization
+			| AssemblyStatus
 			| Meta
 			)*">
 

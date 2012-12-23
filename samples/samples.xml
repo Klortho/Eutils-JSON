@@ -89,7 +89,9 @@
       dtd='eSummary_gcassembly.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gcassembly&amp;id=440818</eutils-url>
       <desc>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.  No definitions for
+        SubmitterOrganization or AssemblyStatus.  I added the definitions for these from
+        eSummary_assembly.dtd (which makes these two DTDs identical.)
       </desc>
     </sample>
     <sample title='ESummary genomeprj' status='D' name='esummary.genomeprj' dtd='eSummary_genomeprj.dtd'>
