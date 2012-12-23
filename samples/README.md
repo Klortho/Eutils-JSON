@@ -589,7 +589,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary clone</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_clone.dtd">eSummary_clone.dtd</a>
         <br/>
@@ -606,7 +606,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary gap</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_gap.dtd">eSummary_gap.dtd</a>
         <br/>
