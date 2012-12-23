@@ -1,0 +1,36 @@
+Usage: xsltproc [options] stylesheet file [file ...]
+   Options:
+	--version or -V: show the version of libxml and libxslt used
+	--verbose or -v: show logs of what's happening
+	--output file or -o file: save to a given file
+	--timing: display the time used
+	--repeat: run the transformation 20 times
+	--debug: dump the tree of the result instead
+	--dumpextensions: dump the registered extension elements and functions to stdout
+	--novalid skip the Dtd loading phase
+	--nodtdattr do not default attributes from the DTD
+	--noout: do not dump the result
+	--maxdepth val : increase the maximum depth
+	--maxparserdepth val : increase the maximum parser depth
+	--html: the input document is(are) an HTML file(s)
+	--encoding: the input document character encoding
+	--param name value : pass a (parameter,value) pair
+	       value is an UTF8 XPath expression.
+	       string values must be quoted like "'string'"
+ or	       use stringparam to avoid it
+	--stringparam name value : pass a (parameter, UTF8 string value) pair
+	--path 'paths': provide a set of paths for resources
+	--nonet : refuse to fetch DTDs or entities over network
+	--nowrite : refuse to write to any file or resource
+	--nomkdir : refuse to create directories
+	--writesubtree path : allow file write only with the path subtree
+	--catalogs : use SGML catalogs from $SGML_CATALOG_FILES
+	             otherwise XML Catalogs starting from 
+	         file:///etc/xml/catalog are activated by default
+	--xinclude : do XInclude processing on document input
+	--xincludestyle : do XInclude processing on stylesheets
+	--load-trace : print trace of all external entites loaded
+	--profile or --norman : dump profiling informations 
+
+Project libxslt home page: http://xmlsoft.org/XSLT/
+To report bugs and get help: http://xmlsoft.org/XSLT/bugs.html

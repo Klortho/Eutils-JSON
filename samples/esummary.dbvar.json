@@ -1,0 +1,63 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "1272816": {
+            "uid": "1272816",
+            "obj_type": "VARIANT",
+            "sv": "nsv513796",
+            "st": "nstd51",
+            "tax_id": "9606",
+            "organism": "human",
+            "dbvarstudyorglist": [
+            ],
+            "pmid": "0",
+            "project_id": "0",
+            "project_name": "",
+            "publication_date": "1/01/01 00:00",
+            "study_displayname": "User_submitted_curated_variants",
+            "method_type_category": "probe",
+            "method_type_weight": "Non-BAC",
+            "dbvaralleletypelist": [
+                "Deletion"
+            ],
+            "dbvaralleleoriginlist": [
+            ],
+            "dbvarmethodlist": [
+                "Curated"
+            ],
+            "dbvarsamplelist": [
+            ],
+            "dbvarvarianttypelist": [
+                "Deletion"
+            ],
+            "sample_count": "0",
+            "variant_count": "0",
+            "study_type": "",
+            "study_description": "",
+            "variant_size": "4856",
+            "support_variant_count": "1",
+            "subject_phenotype_status": "1",
+            "validation_status": "0",
+            "validation_status_weight": "0",
+            "dbvarevidencelist": [
+                "nssv1415024"
+            ],
+            "dbvarplacementlist": [
+                "\n\t\t\tX\n\t\t\tNC_000023.9\n\t\t\t\n\t\t\t0\n\t\t\t0\n\t\t\t73660919\n\t\t\t73665772\n\t\t\t73660918\n\t\t\t73665773\n\t\t\tNCBI36 (hg18)\n\t\t\tGCF_000001405.12\n\t\t\t9606\n\t\t\tRemapped\n\t\t",
+                "\n\t\t\tX\n\t\t\tNC_000023.10\n\t\t\t\n\t\t\t0\n\t\t\t0\n\t\t\t73744194\n\t\t\t73749047\n\t\t\t73744193\n\t\t\t73749048\n\t\t\tGRCh37 (hg19)\n\t\t\tGCF_000001405.13\n\t\t\t9606\n\t\t\tSubmitted genomic\n\t\t"
+            ],
+            "dbvargenelist": [
+                "\n\t\t\t6567\n\t\t\tSLC16A2\n\t\t"
+            ],
+            "dbvarclinicalsignificancelist": [
+                "Pathogenic"
+            ],
+            "dbvarsubmittedassemblylist": [
+            ],
+            "dbvarremappedassemblylist": [
+            ]
+        }
+    }
+}

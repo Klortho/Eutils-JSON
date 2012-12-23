@@ -1,0 +1,40 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "67414177": {
+            "uid": "67414177",
+            "ds_yearintroduced": "",
+            "ds_scopenote": "RefSeq NM_003046",
+            "ds_registrynumber": "0",
+            "ds_headingmappedto": "",
+            "ds_meshterms": [
+                "SLC7A2 protein, human",
+                "hCAT-2 transport protein",
+                "CAT-2 transport protein, human",
+                "solute carrier family 7 (cationic amino acid transporter, y+ system), member 2 protein, human",
+                "CAT-2 transporter, human"
+            ],
+            "ds_subheading": [
+            ],
+            "ds_papx": [
+            ],
+            "ds_previousindexing": [
+                "CALCIUM CHANNELS (2000-2006)"
+            ],
+            "ds_seerelated": [
+            ],
+            "ds_palist": [
+            ],
+            "ds_idxlinks": [
+                "\n\t\t\t1000048\n\t\t\t@3065\n\t\t\t\n\t\t\t\n\t\t"
+            ],
+            "ds_entrydate": "2000/10/10 00:00",
+            "ds_revisiondate": "2006/07/06 00:00",
+            "ds_headingmappedtolist": [
+                "68026923"
+            ]
+        }
+    }
+}

@@ -11,6 +11,14 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
+   <x:template match="LOCSNPID | SUSPECTED | CHRPOS | GTYPE | CHRRPT | Organism | GLOBAL_MAF | UPD_BUILD | HANDLE | ACC | LINKOUT | SORT_PRIORITY | WEIGHT | METHOD_CLASS | SRATE | LOOKUP | SNP3D | CREATEDATE | DOCSUM | SNP_CLASS | ALLELE | FXN_CLASS | TAX_ID | HET | GENE | NONREF | CONTIGPOS | VALIDATED | ALLELE_ORIGIN | UPDATEDATE | GLOBAL_SAMPLESIZE | SS | POP_CLASS | GLOBAL_POPULATION | TEXT | CHR | SNP_ID | CLINICAL_SIGNIFICANCE | ORIG_BUILD | LOCUS_ID | @uid | @status">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="string">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
    <x:template match="eSummaryResult">
       <x:call-template name="result-start">
          <x:with-param name="dtd-annotation">
@@ -25,30 +33,6 @@
       </x:apply-templates>
       <x:value-of select="np:end-object(&#34;&#34;, false())"/>
    </x:template>
-   <x:template match="Issue | EPubDate | AuthType | PubDate | SortDate | Volume | Title | FullJournalName | Value | Pages | Source | PmcLiveDate | IdType | Name | @uid | @status">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="Author | ArticleId | DocumentSummarySet">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="ArticleIds | Authors">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="array">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
    <x:template match="DocumentSummary">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
@@ -56,6 +40,14 @@
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
          <x:with-param name="key" select="@uid"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="DocumentSummarySet">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="object">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
       </x:call-template>
    </x:template>
 </x:stylesheet>

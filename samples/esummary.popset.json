@@ -1,0 +1,26 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "418209882": {
+            "uid": "418209882",
+            "caption": "Slapeta J",
+            "title": "Tritrichomonas cysteine protease 2 (CP2) gene, partial cds.",
+            "extra": "",
+            "gi": "418209882",
+            "settype": "phylogenetic study",
+            "createdate": "2012/11/21",
+            "updatedate": "2012/11/21",
+            "flags": "0",
+            "taxid": "5723",
+            "authors": "Slapeta,J., Muller,N., Stack,C.M., Walker,G., Lew-Tabor,A., Tachezy,J. and Frey,C.F.",
+            "article": "Comparative analysis of Tritrichomonas foetus (Riedmuller, 1928) cat genotype, T. foetus (Riedmuller, 1928) cattle genotype and Tritrichomonas suis (Davaine, 1875) at 10 DNA loci.",
+            "journal": "(11-01-2012) Int. J. Parasitol. ",
+            "statistics": "",
+            "properties": "160",
+            "oslt": "UNKNOWN",
+            "accessionversion": "UNKNOWN"
+        }
+    }
+}

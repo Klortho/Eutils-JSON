@@ -11,12 +11,27 @@
 <!ENTITY	 % T_string		"(#PCDATA)">
 
 <!-- Members definition of Structure type: T_study -->
+
+<!--~~ <phs>
+~~json <number/>
+~~-->
 <!ELEMENT	phs		%T_int;>
+
+<!--~~ <study_version>
+~~json <number/>
+~~-->
 <!ELEMENT	study_version		%T_int;>
+
+<!--~~ <participant_set>
+~~json <number/>
+~~-->
 <!ELEMENT	participant_set		%T_int;>
 <!ELEMENT	study_name		%T_string;>
 
 <!-- Definition of Structure type: T_study -->
+<!--~~ <study>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_study	"(
  			phs
 			| study_version
@@ -41,30 +56,102 @@
 <!ENTITY	 % T_mesh_category_list_type	"(mesh_category)*">
 
 <!-- Members definition of Structure type: T_DocSum -->
+
+<!--~~ <source>
+~~json <number/>
+~~-->
 <!ELEMENT	source		%T_int;>
+
+<!--~~ <pha>
+~~json <number/>
+~~-->
 <!ELEMENT	pha		%T_int;>
+
+<!--~~ <analysis_version>
+~~json <number/>
+~~-->
 <!ELEMENT	analysis_version		%T_int;>
 <!ELEMENT	analysis_name		%T_string;>
 <!ELEMENT	study_list		%T_study_list_type;>
+
+<!--~~ <studies_snp_id>
+~~json <number/>
+~~-->
 <!ELEMENT	studies_snp_id		%T_int;>
+
+<!--~~ <gwas_study_id>
+~~json <number/>
+~~-->
 <!ELEMENT	gwas_study_id		%T_int;>
+
+<!--~~ <pmid>
+~~json <number/>
+~~-->
 <!ELEMENT	pmid		%T_int;>
+
+<!--~~ <marker_rs>
+~~json <number/>
+~~-->
 <!ELEMENT	marker_rs		%T_int;>
 <!ELEMENT	pvalue_string		%T_string;>
+
+<!--~~ <pvalue_log>
+~~json <number/>
+~~-->
 <!ELEMENT	pvalue_log		%T_int;>
 <!ELEMENT	mesh_term		%T_string;>
 <!ELEMENT	mesh_category_list		%T_mesh_category_list_type;>
+
+<!--~~ <chr>
+~~json <number/>
+~~-->
 <!ELEMENT	chr		%T_int;>
+
+<!--~~ <pos>
+~~json <number/>
+~~-->
 <!ELEMENT	pos		%T_int;>
+
+<!--~~ <gene_1>
+~~json <number/>
+~~-->
 <!ELEMENT	gene_1		%T_int;>
 <!ELEMENT	gene_1_name		%T_string;>
+
+<!--~~ <gene_1_start>
+~~json <number/>
+~~-->
 <!ELEMENT	gene_1_start		%T_int;>
+
+<!--~~ <gene_1_stop>
+~~json <number/>
+~~-->
 <!ELEMENT	gene_1_stop		%T_int;>
+
+<!--~~ <dist_1>
+~~json <number/>
+~~-->
 <!ELEMENT	dist_1		%T_int;>
+
+<!--~~ <gene_2>
+~~json <number/>
+~~-->
 <!ELEMENT	gene_2		%T_int;>
 <!ELEMENT	gene_2_name		%T_string;>
+
+<!--~~ <gene_2_start>
+~~json <number/>
+~~-->
 <!ELEMENT	gene_2_start		%T_int;>
+
+<!--~~ <gene_2_stop>
+~~json <number/>
+~~-->
 <!ELEMENT	gene_2_stop		%T_int;>
+
+<!--~~ <dist_2>
+~~json <number/>
+~~-->
 <!ELEMENT	dist_2		%T_int;>
 <!ELEMENT	functional_class		%T_string;>
 

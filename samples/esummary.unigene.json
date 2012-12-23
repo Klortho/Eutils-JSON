@@ -1,0 +1,20 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "1190943": {
+            "uid": "1190943",
+            "title": "Catalase",
+            "chromosome": "*",
+            "organism": "Canis lupus familiaris",
+            "gene": "CAT",
+            "clusterid": "Cfa.188",
+            "taxid": "9615",
+            "seq_count": "127",
+            "est_count": "124",
+            "geneid": "403474",
+            "recordtype": "protein-coding"
+        }
+    }
+}

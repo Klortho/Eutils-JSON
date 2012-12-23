@@ -1,0 +1,21 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "9685": {
+            "uid": "9685",
+            "status": "active",
+            "rank": "species",
+            "division": "carnivores",
+            "scientificname": "Felis catus",
+            "commonname": "domestic cat",
+            "taxid": "9685",
+            "akataxid": "0",
+            "genus": "Felis",
+            "species": "catus",
+            "subsp": "",
+            "modificationdate": "2012/03/14 00:00"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "5235996": {
+            "uid": "5235996",
+            "create_date": "2012/08/17 00:00",
+            "last_modified_date": "2012/08/17 00:00",
+            "source": NHLBI-GRASP,
+            "key": "217036345923135",
+            "publication": "\n\t\t21703634\n\t\t2011/06/22 00:00\n\t\tJ Psychiatr Res\n\t\tA meta-analysis of two genome-wide association studies identifies 3 new loci for alcohol dependence.\n\t\tTable S1\n\t\tAlcohol dependence\n\t\t\n\t\t\t\n\t\t\t\tQuantitative trait(s)\n\t\t\t\n\t\t\t\n\t\t\t\tNeuro\n\t\t\t\n\t\t\t\n\t\t\t\tAddiction\n\t\t\t\n\t\t\t\n\t\t\t\tAlcohol\n\t\t\t\n\t\t\n\t\tn\n\t\tn\n\t",
+            "snp_info": "\n\t\t16925514\n\t\trs16925514\n\t\t11\n\t\t34449260\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tT;0.0572\n\t\tG/T;?;?\n\t\tYES\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t",
+            "snp_gene_info_list": "\n\t\t\n\t\t\t\n\t\t\t\t847\n\t\t\t\tCAT\n\t\t\t\t34460477\n\t\t\t\t34493606\n\t\t\t\n\t\t\t11218\n\t\t\tdownstream\n\t\t\n\t\t\n\t\t\t\n\t\t\t\t25841\n\t\t\t\tABTB2\n\t\t\t\t34172534\n\t\t\t\t34378801\n\t\t\t\n\t\t\t70458\n\t\t\tupstream\n\t\t\n\t",
+            "omim_info_list": "\n\t",
+            "platform": "Illumina [up to 818773]",
+            "pvalue_string": "4.6E-06",
+            "pvalue_log": 53372,
+            "phenotype_list": "\n\t\t\n\t\t\tnhlbi-grasp\n\t\t\tAlcohol dependence\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\n\t\t\n\t\t\tMeSH\n\t\t\tfoobar\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\n\t",
+            "sample_info": "\n\t\t1283 EA cases, 1416 EA controls\n\t\t3334 Australian individuals (from families)\n\t\t6033\n\t\t3334\n\t\t2699\n\t\tEuropean\n\t"
+        }
+    }
+}

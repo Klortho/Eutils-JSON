@@ -11,11 +11,11 @@
             "authors": [
                 {
                     "name": "Davidson D",
-                    "authtype": "Author"
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t"
                 },
                 {
                     "name": "Hassell JA",
-                    "authtype": "Author"
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t"
                 }
             ],
             "title": "Overproduction of polyomavirus middle T antigen in mammalian cells through the use of an adenovirus vector.",
@@ -44,27 +44,27 @@
             "authors": [
                 {
                     "name": "Temesvari L",
-                    "authtype": "Author"
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t"
                 },
                 {
                     "name": "Zhang L",
-                    "authtype": "Author"
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t"
                 },
                 {
                     "name": "Fodera B",
-                    "authtype": "Author"
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t"
                 },
                 {
                     "name": "Janssen KP",
-                    "authtype": "Author"
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t"
                 },
                 {
                     "name": "Schleicher M",
-                    "authtype": "Author"
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t"
                 },
                 {
                     "name": "Cardelli JA",
-                    "authtype": "Author"
+                    "authtype": "\n\t\t\t\tAuthor\n\t\t\t"
                 }
             ],
             "title": "Inactivation of lmpA, Encoding a LIMPII-related Endosomal Protein, Suppresses the Internalization and Endosomal Trafficking Defects in Profilin-null Mutants",

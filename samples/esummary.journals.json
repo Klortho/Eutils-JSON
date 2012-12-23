@@ -1,0 +1,24 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "35478": {
+            "uid": "35478",
+            "title": "The National union catalog of manuscript collections",
+            "medabbr": "Natl Union Cat Manuscr Collect",
+            "isoabbr": "Natl Union Cat Manuscr Collect",
+            "nlmid": "58720840R",
+            "pissn": "0090-0044",
+            "eissn": "",
+            "publicationstartyear": "1959",
+            "publicationendyear": "1993",
+            "publisher": "U.S. Library Of Congress",
+            "language": "eng",
+            "country": "United States",
+            "broadheading": [
+            ],
+            "continuationnotes": ""
+        }
+    }
+}

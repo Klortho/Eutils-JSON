@@ -9,7 +9,8 @@
              encoding="UTF-8"
              indent="yes"
              omit-xml-declaration="yes"/>
-   <x:param name="lcnames" select="true()"/>
+   <x:param name="pretty" select="true()"/>
+   <x:param name="lcnames" select="false()"/>
    <x:template match="AbstractText | PubMedPubDate | Chemical | DataBank | PersonalNameSubject | ContributionDate | DateRevised | Publisher | CommentsCorrections | PubmedArticle | BeginningDate | Grant | PubmedData | EndingDate | PubmedBookData | Journal | MedlineJournalInfo | DateCreated | ArticleDate | JournalIssue | DateCompleted | PubmedBookArticle">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
@@ -34,159 +35,12 @@
          <x:with-param name="context" select="$context"/>
       </x:call-template>
    </x:template>
-
-   <!-- Element OtherID, type:  object-->
-   <x:template match="OtherID">
+   <x:template match="OtherID | URL | LocationLabel | SupplMeshName | NameID | DescriptorName | Param | ELocationID | GeneralNote | PMID | ArticleId | ISSN | QualifierName">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="object">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids-param" select="true()"/>
-         <x:with-param name="kids" select="@*|node()"/>
-      </x:call-template>
-   </x:template>
-
-   <!-- Element URL, type:  object-->
-   <x:template match="URL">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids-param" select="true()"/>
-         <x:with-param name="kids" select="@*|node()"/>
-      </x:call-template>
-   </x:template>
-
-   <!-- Element LocationLabel, type:  object-->
-   <x:template match="LocationLabel">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids-param" select="true()"/>
-         <x:with-param name="kids" select="@*|node()"/>
-      </x:call-template>
-   </x:template>
-
-   <!-- Element SupplMeshName, type:  object-->
-   <x:template match="SupplMeshName">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids-param" select="true()"/>
-         <x:with-param name="kids" select="@*|node()"/>
-      </x:call-template>
-   </x:template>
-
-   <!-- Element NameID, type:  object-->
-   <x:template match="NameID">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids-param" select="true()"/>
-         <x:with-param name="kids" select="@*|node()"/>
-      </x:call-template>
-   </x:template>
-
-   <!-- Element DescriptorName, type:  object-->
-   <x:template match="DescriptorName">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids-param" select="true()"/>
-         <x:with-param name="kids" select="@*|node()"/>
-      </x:call-template>
-   </x:template>
-
-   <!-- Element Param, type:  object-->
-   <x:template match="Param">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids-param" select="true()"/>
-         <x:with-param name="kids" select="@*|node()"/>
-      </x:call-template>
-   </x:template>
-
-   <!-- Element ELocationID, type:  object-->
-   <x:template match="ELocationID">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids-param" select="true()"/>
-         <x:with-param name="kids" select="@*|node()"/>
-      </x:call-template>
-   </x:template>
-
-   <!-- Element GeneralNote, type:  object-->
-   <x:template match="GeneralNote">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids-param" select="true()"/>
-         <x:with-param name="kids" select="@*|node()"/>
-      </x:call-template>
-   </x:template>
-
-   <!-- Element PMID, type:  object-->
-   <x:template match="PMID">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids-param" select="true()"/>
-         <x:with-param name="kids" select="@*|node()"/>
-      </x:call-template>
-   </x:template>
-
-   <!-- Element ArticleId, type:  object-->
-   <x:template match="ArticleId">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids-param" select="true()"/>
-         <x:with-param name="kids" select="@*|node()"/>
-      </x:call-template>
-   </x:template>
-
-   <!-- Element ISSN, type:  object-->
-   <x:template match="ISSN">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids-param" select="true()"/>
-         <x:with-param name="kids" select="@*|node()"/>
-      </x:call-template>
-   </x:template>
-
-   <!-- Element QualifierName, type:  object-->
-   <x:template match="QualifierName">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids-param" select="true()"/>
          <x:with-param name="kids" select="@*|node()"/>
       </x:call-template>
    </x:template>

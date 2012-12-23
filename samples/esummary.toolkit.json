@@ -1,0 +1,24 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "149440": {
+            "uid": "149440",
+            "doxid": "classCQueryFuncPromoteIn_1a1cfe44f648227e7da08606595e69a53f",
+            "def": "virtual size_t CQueryFuncPromoteIn::GetArgCountMin (CQueryParseNode::EType)",
+            "deftype": "method",
+            "kind": "method",
+            "shortdesc": "In can have just one argument (a in ()) or a very large number a in (dog, cat, bird mouse......)",
+            "longdesc": "",
+            "xmldesc": "<xd><short><para>In can have just one argument (a in ()) or a very large number a in (dog, cat, bird mouse......) </para></short><long></long><inbody></inbody></xd>",
+            "file": "include/gui/objutils/query_func_promote.hpp",
+            "modifiers": "public inline virtual",
+            "attr": "",
+            "lines": "478@478-478",
+            "link": "classCQueryFuncPromoteIn.html#a1cfe44f648227e7da08606595e69a53f",
+            "name": "GetArgCountMin",
+            "definedby": "CQueryFuncPromoteIn"
+        }
+    }
+}

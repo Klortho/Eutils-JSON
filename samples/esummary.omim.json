@@ -1,0 +1,14 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "609708": {
+            "uid": "609708",
+            "oid": "+609708",
+            "title": "LIPOPROTEIN LIPASE; LPL",
+            "alttitles": "HIGH DENSITY LIPOPROTEIN CHOLESTEROL LEVEL QUANTITATIVE TRAIT LOCUS 11, INCLUDED; HDLCQ11, INCLUDED",
+            "locus": "8p22"
+        }
+    }
+}

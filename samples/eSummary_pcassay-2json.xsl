@@ -11,6 +11,14 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
+   <x:template match="ActivityOutcome | UnspecifiedSidCount | ModifyDate | ActiveSidCount | CurrentSourceName | ProbeCidCount | ActivePanelSidCnt | ActivityOutcomeMethod | AID | NumberofSidsWithActivityConcmicromolar | UnspecifiedCidCount | BSID | ActiveCidCount | NumberofCidsWithActivityConcnanomolar | ProbeSidCount | AssayDescription | TotalCidCount | NumberofSidsWithActivityConcnanomolar | string | InactiveCidCount | GI | InactiveSidCount | AssayName | OnHold | PotencyName | PotencyValue | NumberofCidsWithActivityConcmicromolar | CddName | AssaySourceID | InconclusiveSidCount | InconclusiveCidCount | CID | TargetCount | TotalSidCount | CddDescription | HoldUntilDate | DepositDate | CddId | ActivePanelCidCnt | Name | ReadoutCount | GeneSymbol | @uid | @status">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="string">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
    <x:template match="eSummaryResult">
       <x:call-template name="result-start">
          <x:with-param name="dtd-annotation">
@@ -25,23 +33,7 @@
       </x:apply-templates>
       <x:value-of select="np:end-object(&#34;&#34;, false())"/>
    </x:template>
-   <x:template match="Issue | EPubDate | AuthType | PubDate | SortDate | Volume | Title | FullJournalName | Value | Pages | Source | PmcLiveDate | IdType | Name | @uid | @status">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="Author | ArticleId | DocumentSummarySet">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="ArticleIds | Authors">
+   <x:template match="BioSystemsList | ProteinTargetList | TopCidList | BioSystems | XRefAsurlList | XRefDburlList | TopFiveCidList | SourceNameList">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="array">
@@ -56,6 +48,14 @@
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
          <x:with-param name="key" select="@uid"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="DocumentSummarySet">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="object">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
       </x:call-template>
    </x:template>
 </x:stylesheet>

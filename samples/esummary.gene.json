@@ -1,0 +1,33 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "21803": {
+            "uid": "21803",
+            "name": "Tgfb1",
+            "description": "transforming growth factor, beta 1",
+            "orgname": "Mus musculus",
+            "status": "0",
+            "currentid": "0",
+            "chromosome": "7",
+            "geneticsource": "genomic",
+            "maplocation": "7 6.5 cM",
+            "otheraliases": "TGF-beta1, TGFbeta1, Tgfb, Tgfb-1",
+            "otherdesignations": "TGF-beta 1|TGF-beta-1|regulatory protein|transforming growth factor beta-1|transforming growth factor-beta 1",
+            "nomenclaturesymbol": "Tgfb1",
+            "nomenclaturename": "transforming growth factor, beta 1",
+            "nomenclaturestatus": "Official",
+            "taxid": "10090",
+            "mim": [
+            ],
+            "genomicinfo": [
+                "\n\t\t\t7\n\t\t\tNC_000073.6\n\t\t\t25687001\n\t\t\t25704995\n\t\t\t7\n\t\t"
+            ],
+            "geneweight": "204825",
+            "summary": "",
+            "chrsort": "07",
+            "chrstart": "25687001"
+        }
+    }
+}

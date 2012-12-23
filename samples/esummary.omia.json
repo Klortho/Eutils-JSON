@@ -1,0 +1,49 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "2615": {
+            "uid": "2615",
+            "phenotype": "Epidermolysis bullosa, dystrophic",
+            "phenotype_summary": "Blisters on the outer layer of skin.",
+            "omia_id": "341",
+            "mp_list": [
+            ],
+            "species_phenotype_name": "",
+            "species_phenotype_summary": "",
+            "across_species_synonym_list": [
+            ],
+            "taxonomy_id": "9685",
+            "sci_name": "Felis catus",
+            "common_name": "domestic cat",
+            "breed": [
+            ],
+            "clinical_feature": "",
+            "genetic_test": "",
+            "molecular_genetics": "",
+            "pathology": "",
+            "prevalence": "",
+            "gene_list": [
+            ],
+            "computed_gene_list": [
+            ],
+            "omim_id": [
+                "131705",
+                "131750",
+                "131950",
+                "132000",
+                "226500",
+                "226600"
+            ],
+            "inheritance": "",
+            "inherit_text": "",
+            "reference_list": [
+            ],
+            "pubmed_list": [
+                "10568446"
+            ],
+            "curation_state": ""
+        }
+    }
+}

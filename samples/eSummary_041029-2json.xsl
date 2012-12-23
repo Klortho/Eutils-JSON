@@ -9,11 +9,14 @@
              encoding="UTF-8"
              indent="yes"
              omit-xml-declaration="yes"/>
+   <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
    <x:template match="eSummaryResult">
       <x:call-template name="result-start">
          <x:with-param name="dtd-annotation">
-            <json lcnames="true" type="esummary" version="0.3"/>
+            <json type="esummary" version="0.3">
+               <config lcnames="true"/>
+            </json>
          </x:with-param>
       </x:call-template>
       <x:apply-templates select="@*|*">

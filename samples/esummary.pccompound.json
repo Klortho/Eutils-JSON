@@ -1,0 +1,89 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "10322165": {
+            "uid": "10322165",
+            "cid": "10322165",
+            "sourcenamelist": [
+            ],
+            "sourceidlist": [
+            ],
+            "sourcecategorylist": [
+                "Patents",
+                "Substance Vendors",
+                "Toxicology",
+                "Biological Properties",
+                "Physical Properties",
+                "Chemical Reactions",
+                "Theoretical Properties",
+                "Journal Publishers"
+            ],
+            "createdate": "2006/10/25 00:00",
+            "synonymlist": [
+                "gm 1489",
+                "NSC727678",
+                "NSC-727678",
+                "170905-75-6",
+                "GM 1489 CalBioChem Cat. No. 364200",
+                "N-[(2R)-2-(Carboxymethyl)-4-methylpentanoyl]-L-tryptophan-(S)-methyl-benzylamide"
+            ],
+            "meshheadinglist": [
+                "GM 1489"
+            ],
+            "meshtermlist": [
+                "GM 1489",
+                "GM-1489",
+                "N-(2-carboxymethyl-4-methylpentanoyl)tryptophan 1-phenethylamide"
+            ],
+            "pharmactionlist": [
+            ],
+            "commentlist": [
+                "<A HREF=\"http://dcv.uhnres.utoronto.ca/SCRIPDB/results/?patentid=US20100004189A1-20100107-C00002_1\">US20100004189A1-20100107-C00002_1</A>",
+                "<A HREF=\"http://dcv.uhnres.utoronto.ca/SCRIPDB/results/?patentid=US20100008997A1-20100114-C00002_1\">US20100008997A1-20100114-C00002_1</A>",
+                "<A HREF=\"http://dcv.uhnres.utoronto.ca/SCRIPDB/results/?patentid=US20100015235A1-20100121-C00002_1\">US20100015235A1-20100121-C00002_1</A>",
+                "<A HREF=\"http://dcv.uhnres.utoronto.ca/SCRIPDB/results/?patentid=US20100098659A1-20100422-C00002_1\">US20100098659A1-20100422-C00002_1</A>",
+                "Deposition record created from database Chemistry on host DrZZLaptop on Oct 30, 2011",
+                "DTP/NCI DIS cdk 1.4.4.  Release-October 2011.",
+                "Structure Evaluation:Consistent with Molecular Formula."
+            ],
+            "iupacname": "(3R)-3-[[(2S)-3-(1H-indol-3-yl)-1-oxo-1-[[(1S)-1-phenylethyl]amino]propan-2-yl]carbamoyl]-5-methylhexanoic acid",
+            "canonicalsmiles": "CC(C)CC(CC(=O)O)C(=O)NC(CC1=CNC2=CC=CC=C21)C(=O)NC(C)C3=CC=CC=C3",
+            "isomericsmiles": "C[C@@H](C1=CC=CC=C1)NC(=O)[C@H](CC2=CNC3=CC=CC=C32)NC(=O)[C@H](CC(C)C)CC(=O)O",
+            "rotatablebondcount": "11",
+            "molecularformula": "C27H33N3O4",
+            "molecularweight": "    463.568620",
+            "totalformalcharge": "0",
+            "xlogp": "3.3",
+            "hydrogenbonddonorcount": "4",
+            "hydrogenbondacceptorcount": "4",
+            "complexity": "    691.000000",
+            "heavyatomcount": "34",
+            "atomchiralcount": "3",
+            "atomchiraldefcount": "3",
+            "atomchiralundefcount": "0",
+            "bondchiralcount": "0",
+            "bondchiraldefcount": "0",
+            "bondchiralundefcount": "0",
+            "isotopeatomcount": "0",
+            "covalentunitcount": "1",
+            "tautomercount": "4",
+            "substanceidlist": [
+            ],
+            "tpsa": "111",
+            "assaysourcenamelist": [
+            ],
+            "minac": "",
+            "maxac": "",
+            "mintc": "",
+            "maxtc": "",
+            "activeaidcount": "0",
+            "inactiveaidcount": "0",
+            "totalaidcount": "0",
+            "inchikey": "BLPWNGOQQLJQOL-NRYAXDJKSA-N",
+            "probeaidcount": "0",
+            "inchi": "InChI=1S/C27H33N3O4/c1-17(2)13-20(15-25(31)32)26(33)30-24(14-21-16-28-23-12-8-7-11-22(21)23)27(34)29-18(3)19-9-5-4-6-10-19/h4-12,16-18,20,24,28H,13-15H2,1-3H3,(H,29,34)(H,30,33)(H,31,32)/t18-,20+,24-/m0/s1"
+        }
+    }
+}

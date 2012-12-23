@@ -1,0 +1,32 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "2516486": {
+            "uid": "2516486",
+            "accn": "PRK14674",
+            "definition": "hypothetical protein",
+            "total_prots": "9",
+            "total_genera": "1",
+            "total_dups": "0",
+            "pmids": "",
+            "gene": "None",
+            "genesynonym": "None",
+            "comment": "",
+            "cog": "COG0792L",
+            "ec": "",
+            "hamap": "MF_00048",
+            "ko": "K07460",
+            "createdate": "2009/08/27 00:00",
+            "moddate": "2012/04/13 00:00",
+            "domains": "1",
+            "commontaxonomy": "Acinetobacter",
+            "paralogs": "0",
+            "coggroup": "Replication, recombination and repair",
+            "averagelength": "133",
+            "total_publications": "5",
+            "source": "genomic"
+        }
+    }
+}
