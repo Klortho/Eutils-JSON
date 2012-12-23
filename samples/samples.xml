@@ -117,11 +117,11 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=blastdbinfo&amp;id=645844</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary books' status='' name='esummary.books' dtd='eSummary_books.dtd'>
+    <sample title='ESummary books' status='D' name='esummary.books' dtd='eSummary_books.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=books&amp;id=2825746</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary cdd' status='' name='esummary.cdd' dtd='eSummary_cdd.dtd'>
+    <sample title='ESummary cdd' status='D' name='esummary.cdd' dtd='eSummary_cdd.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=cdd&amp;id=201140</eutils-url>
       <desc></desc>
     </sample>
