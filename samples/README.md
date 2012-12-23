@@ -53,12 +53,20 @@ result in invalid JSON output.
 
 # Problems
 
+## All ESummary DTDs seem to use the same public identifier
+
+* All the esummary example files use the public id "-//NLM//DTD eSummaryResult//EN"
+  to refer to their DTDs, but different system identifiers.  This makes it more
+  difficult to use OASIS catalog files with them, which is important to prevent
+  external tools from hitting our servers every time they read an XML instance
+  document.
+
 ## XML results that fail to validate
 
-* esummary.pmc, with an error:
+* esummary.pmcerror.xml, PMC esummary, with an erroroneous id:
   http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&version=2.0&db=pmc&id=254085,1,14900
 
-
+* esummary.nucleotide.xml
 
 <!--
   DO NOT MODIFY BELOW THIS LINE.

@@ -9,6 +9,7 @@
              encoding="UTF-8"
              indent="yes"
              omit-xml-declaration="yes"/>
+   <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
    <x:template match="Extra | Organism | Caption | Strand | Biomol | Title | SubType | SourceDb | Genome | CreateDate | GeneticCode | Slen | Topology | Completeness | SubName | MolType | Tech | Meta | UpdateDate | AssemblyAcc | @uid | @status">
       <x:param name="indent" select="&#34;&#34;"/>
@@ -18,10 +19,20 @@
          <x:with-param name="context" select="$context"/>
       </x:call-template>
    </x:template>
+   <x:template match="Statistics">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="array">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
    <x:template match="eSummaryResult">
       <x:call-template name="result-start">
          <x:with-param name="dtd-annotation">
-            <json lcnames="true" type="esummary" version="0.3"/>
+            <json type="esummary" version="0.3">
+               <config lcnames="true"/>
+            </json>
          </x:with-param>
       </x:call-template>
       <x:apply-templates select="@*|*">
@@ -38,15 +49,13 @@
          <x:with-param name="context" select="$context"/>
       </x:call-template>
    </x:template>
-
-   <!-- Element DocumentSummary, type:  object-->
    <x:template match="DocumentSummary">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="object">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
-         <x:with-param name="key" select="\@uid"/>
+         <x:with-param name="key" select="@uid"/>
       </x:call-template>
    </x:template>
    <x:template match="DocumentSummarySet">

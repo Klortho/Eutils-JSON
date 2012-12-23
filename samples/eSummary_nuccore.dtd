@@ -87,12 +87,14 @@
   popset    CDATA       #IMPLIED>
 <!ELEMENT   Comment     %T_string;>
 <!ELEMENT   Status      %T_string;>
+
 <!ELEMENT   OSLT        %T_string;>
 <!--~~ @indexed
 ~~json <boolean/>
 ~~-->
 <!ATTLIST   OSLT
   indexed   CDATA       #IMPLIED>
+  
 <!ELEMENT   ReplacedBy  %T_string;>
 <!--~~ <IdGiClass>
 ~~json <object/>
@@ -154,7 +156,7 @@
 			| Flags
 			| TaxId
 			| Slen
-            | Statistics
+      | Statistics
 			| Biomol
 			| BioMol
 			| MolType

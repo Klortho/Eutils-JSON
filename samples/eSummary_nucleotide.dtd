@@ -33,6 +33,21 @@
 ~~json <number/>
 ~~-->
 <!ELEMENT	Slen		%T_int;>
+<!ELEMENT   Statistics  (Stat)+>
+<!--~~ <Stat>
+~~json <object/>
+~~-->
+<!ELEMENT   Stat        EMPTY>
+<!--~~ @count
+~~json <number/>
+~~-->
+<!ATTLIST   Stat
+  count     CDATA       #IMPLIED
+  subtype   CDATA       #IMPLIED
+  value     CDATA       #IMPLIED
+  source    CDATA       #IMPLIED
+  type      CDATA       #IMPLIED>
+
 <!ELEMENT	Meta		%T_xml;>
 <!ELEMENT	Biomol		%T_string;>
 <!ELEMENT	MolType		%T_string;>
@@ -60,9 +75,28 @@
 <!ELEMENT	Strand		%T_string;>
 <!ELEMENT	Organism		%T_string;>
 
+<!ELEMENT   AccessionVersion %T_string;>
+<!ELEMENT   Properties  %T_string;>
+<!ATTLIST   Properties
+  na        CDATA       #IMPLIED
+  aa        CDATA       #IMPLIED
+  est       CDATA       #IMPLIED
+  gss       CDATA       #IMPLIED
+  trace     CDATA       #IMPLIED
+  qual      CDATA       #IMPLIED
+  genome    CDATA       #IMPLIED
+  popset    CDATA       #IMPLIED>
+
+<!ELEMENT   OSLT        %T_string;>
+<!--~~ @indexed
+~~json <boolean/>
+~~-->
+<!ATTLIST   OSLT
+  indexed   CDATA       #IMPLIED>
+
 <!-- Definition of Structure type: T_DocSum -->
 <!--~~ <DocumentSummary>
-~~json <object name='\@uid'/>
+~~json <object name='@uid'/>
 ~~-->
 <!ENTITY	 % T_DocSum	"(
  			Caption
@@ -91,6 +125,10 @@
 			| GeneticCode
 			| Strand
 			| Organism
+			| Statistics
+			| Properties
+			| OSLT
+			| AccessionVersion
 			)*">
 
 <!ELEMENT DocumentSummary %T_DocSum;>
