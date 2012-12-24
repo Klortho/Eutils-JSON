@@ -10,7 +10,7 @@
             "ucscname": "",
             "ensemblname": "",
             "assemblydescription": "",
-            "taxid": "9685",
+            "taxid": 9685,
             "organism": "Felis catus",
             "assemblyclass": "haploid-unit",
             "wgs": "AANG02",

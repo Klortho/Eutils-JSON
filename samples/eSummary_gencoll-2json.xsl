@@ -11,7 +11,7 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
-   <x:template match="ReleaseLevel | Coverage | ReleaseType | Organism | NCBIReleaseDate | UCSCName | Properties | AssemblyClass | AssemblyDescription | Primary | AssemblyName | int | PartialGenomeRepresentation | Taxid | AssemblyAccession | EnsemblName | WGS | Category | Meta | @uid | @status">
+   <x:template match="ReleaseLevel | Coverage | ReleaseType | Organism | NCBIReleaseDate | UCSCName | Properties | AssemblyClass | AssemblyDescription | Primary | AssemblyName | int | PartialGenomeRepresentation | AssemblyAccession | EnsemblName | WGS | Category | Meta | @uid | @status">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="string">
@@ -48,6 +48,14 @@
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
          <x:with-param name="key" select="@uid"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="Taxid">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="number">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
       </x:call-template>
    </x:template>
    <x:template match="DocumentSummarySet">

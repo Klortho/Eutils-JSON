@@ -156,6 +156,16 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=epigenomics&amp;id=16796</eutils-url>
       <desc></desc>
     </sample>
+    <sample title='ESummary gencoll' status='' name='esummary.gencoll' dtd='eSummary_gencoll.dtd'>
+      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608</eutils-url>
+      <desc></desc>
+      <notes>
+        <note rid='⑤'>
+          Escaped markup inside the &lt;Meta> element.  This seems unnecessary in this
+          case because the contents seem to be well-defined custom markup.
+        </note>
+      </notes>
+    </sample>
     <sample title='ESummary gene' status='D' name='esummary.gene' dtd='eSummary_gene.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gene&amp;id=21803</eutils-url>
       <desc></desc>
@@ -318,10 +328,6 @@
           &lt;Map_Gene_Summary> is under-specified.
         </note>
       </notes>
-    </sample>
-    <sample title='ESummary gencoll' status='' name='esummary.gencoll' dtd='eSummary_gencoll.dtd'>
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608</eutils-url>
-      <desc></desc>
     </sample>
     <sample title='ESummary error' status='D' name='esummary.error' dtd='eSummary_041029.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=error&amp;id=254088</eutils-url>

@@ -551,6 +551,22 @@ result in invalid JSON output.
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=epigenomics&amp;id=16796">EUtils</a></td>
     </tr>
     <tr>
+      <th>ESummary gencoll</th>
+      <td/>
+      <td>
+        
+          Escaped markup inside the &lt;Meta&gt; element.  This seems unnecessary in this
+          case because the contents seem to be well-defined custom markup.
+        
+      </td>
+      <td/>
+      <td><a href="../../blob/master/samples/eSummary_gencoll.dtd">DTD</a>,
+          <a href="../../blob/master/samples/eSummary_gencoll-2json.xsl">XSL</a>,
+        <a href="../../blob/master/samples/esummary.gencoll.xml">XML</a>,
+        <a href="../../blob/master/samples/esummary.gencoll.json">JSON</a>,
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608">EUtils</a></td>
+    </tr>
+    <tr>
       <th>ESummary gene</th>
       <td>D</td>
       <td/>
@@ -891,17 +907,6 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.unists.xml">XML</a>,
         <a href="../../blob/master/samples/esummary.unists.json">JSON</a>,
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unists&amp;id=254085,254086">EUtils</a></td>
-    </tr>
-    <tr>
-      <th>ESummary gencoll</th>
-      <td/>
-      <td/>
-      <td/>
-      <td><a href="../../blob/master/samples/eSummary_gencoll.dtd">DTD</a>,
-          <a href="../../blob/master/samples/eSummary_gencoll-2json.xsl">XSL</a>,
-        <a href="../../blob/master/samples/esummary.gencoll.xml">XML</a>,
-        <a href="../../blob/master/samples/esummary.gencoll.json">JSON</a>,
-        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608">EUtils</a></td>
     </tr>
     <tr>
       <th>ESummary error</th>

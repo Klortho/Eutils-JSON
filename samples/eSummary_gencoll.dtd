@@ -23,7 +23,12 @@
 <!ELEMENT	UCSCName		%T_string;>
 <!ELEMENT	EnsemblName		%T_string;>
 <!ELEMENT	AssemblyDescription		%T_string;>
+
+<!--~~ <Taxid>
+~~json <number/>
+~~-->
 <!ELEMENT	Taxid		%T_int;>
+
 <!ELEMENT	Organism		%T_string;>
 <!ELEMENT	AssemblyClass		%T_string;>
 <!ELEMENT	WGS		%T_string;>
