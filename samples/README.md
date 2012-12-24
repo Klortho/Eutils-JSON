@@ -1046,7 +1046,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary popset</th>
-      <td/>
+      <td>D</td>
       <td/>
       <td>
         The instance document is invalid according to the DTD.

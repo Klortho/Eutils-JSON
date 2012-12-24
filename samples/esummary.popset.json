@@ -8,18 +8,174 @@
             "caption": "Slapeta J",
             "title": "Tritrichomonas cysteine protease 2 (CP2) gene, partial cds.",
             "extra": "",
-            "gi": "418209882",
+            "gi": 418209882,
             "settype": "phylogenetic study",
             "createdate": "2012/11/21",
             "updatedate": "2012/11/21",
-            "flags": "0",
-            "taxid": "5723",
+            "flags": 0,
+            "taxid": 5723,
             "authors": "Slapeta,J., Muller,N., Stack,C.M., Walker,G., Lew-Tabor,A., Tachezy,J. and Frey,C.F.",
             "article": "Comparative analysis of Tritrichomonas foetus (Riedmuller, 1928) cat genotype, T. foetus (Riedmuller, 1928) cattle genotype and Tritrichomonas suis (Davaine, 1875) at 10 DNA loci.",
             "journal": "(11-01-2012) Int. J. Parasitol. ",
-            "statistics": "",
-            "properties": "160",
-            "oslt": "UNKNOWN",
+            "statistics": [
+                {
+                    "type": "alignments",
+                    "count": 1
+                },
+                {
+                    "type": "all",
+                    "count": 81
+                },
+                {
+                    "type": "blob_size",
+                    "count": 37092
+                },
+                {
+                    "type": "cdregion",
+                    "count": 16
+                },
+                {
+                    "type": "cdregion",
+                    "subtype": "CDS",
+                    "count": 16
+                },
+                {
+                    "type": "gene",
+                    "count": 16
+                },
+                {
+                    "type": "gene",
+                    "subtype": "Gene",
+                    "count": 16
+                },
+                {
+                    "type": "nucleotides",
+                    "count": 16
+                },
+                {
+                    "type": "org",
+                    "count": 17
+                },
+                {
+                    "type": "prot",
+                    "count": 16
+                },
+                {
+                    "type": "prot",
+                    "subtype": "Prot",
+                    "count": 16
+                },
+                {
+                    "type": "proteins",
+                    "count": 16
+                },
+                {
+                    "type": "pub",
+                    "count": 2
+                },
+                {
+                    "type": "pub",
+                    "subtype": "PubMed",
+                    "count": 1
+                },
+                {
+                    "type": "rna",
+                    "count": 16
+                },
+                {
+                    "type": "rna",
+                    "subtype": "mRNA",
+                    "count": 16
+                },
+                {
+                    "type": "taxonomy",
+                    "count": 32
+                },
+                {
+                    "type": "taxonomy",
+                    "subtype": "Tritrichomonas",
+                    "count": 16
+                },
+                {
+                    "type": "taxonomy",
+                    "subtype": "Tritrichomonas/Tritrichomonas foetus",
+                    "count": 15
+                },
+                {
+                    "type": "taxonomy",
+                    "subtype": "Tritrichomonas/Tritrichomonas suis",
+                    "count": 1
+                },
+                {
+                    "source": "all",
+                    "type": "alignments",
+                    "count": 1
+                },
+                {
+                    "source": "all",
+                    "type": "all",
+                    "count": 81
+                },
+                {
+                    "source": "all",
+                    "type": "blob_size",
+                    "count": 37092
+                },
+                {
+                    "source": "all",
+                    "type": "cdregion",
+                    "count": 16
+                },
+                {
+                    "source": "all",
+                    "type": "gene",
+                    "count": 16
+                },
+                {
+                    "source": "all",
+                    "type": "nucleotides",
+                    "count": 16
+                },
+                {
+                    "source": "all",
+                    "type": "org",
+                    "count": 17
+                },
+                {
+                    "source": "all",
+                    "type": "prot",
+                    "count": 16
+                },
+                {
+                    "source": "all",
+                    "type": "proteins",
+                    "count": 16
+                },
+                {
+                    "source": "all",
+                    "type": "pub",
+                    "count": 2
+                },
+                {
+                    "source": "all",
+                    "type": "rna",
+                    "count": 16
+                },
+                {
+                    "source": "all",
+                    "type": "taxonomy",
+                    "count": 32
+                }
+            ],
+            "properties": {
+                "qual": "32",
+                "popset": "128",
+                "value": "160"
+            },
+            "oslt": {
+                "indexed": true,
+                "value": "UNKNOWN"
+            },
             "accessionversion": "UNKNOWN"
         }
     }

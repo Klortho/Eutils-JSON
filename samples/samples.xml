@@ -230,7 +230,7 @@
       <notes>②</notes>
     </sample>
     
-    <sample title='ESummary popset' status='' name='esummary.popset' dtd='eSummary_popset.dtd'>
+    <sample title='ESummary popset' status='D' name='esummary.popset' dtd='eSummary_popset.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=popset&amp;id=418209882</eutils-url>
       <desc>
         The instance document is invalid according to the DTD.

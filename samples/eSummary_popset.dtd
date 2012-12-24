@@ -15,16 +15,68 @@
 <!ELEMENT	Caption		%T_string;>
 <!ELEMENT	Title		%T_string;>
 <!ELEMENT	Extra		%T_string;>
+
+<!--~~ <Gi>
+~~json <number/>
+~~-->
 <!ELEMENT	Gi		%T_int;>
 <!ELEMENT	SetType		%T_string;>
 <!ELEMENT	CreateDate		%T_string;>
 <!ELEMENT	UpdateDate		%T_string;>
+
+<!--~~ <Flags>
+~~json <number/>
+~~-->
 <!ELEMENT	Flags		%T_int;>
+
+<!--~~ <TaxId>
+~~json <number/>
+~~-->
 <!ELEMENT	TaxId		%T_int;>
+
 <!ELEMENT	Meta		%T_xml;>
 <!ELEMENT	Authors		%T_string;>
 <!ELEMENT	Article		%T_string;>
 <!ELEMENT	Journal		%T_string;>
+
+<!ELEMENT   Statistics  (Stat)+>
+
+<!--~~ <Stat>
+~~json <object/>
+~~-->
+<!ELEMENT   Stat        EMPTY>
+
+<!--~~ @count
+~~json <number/>
+~~-->
+<!ATTLIST   Stat
+  count     CDATA       #IMPLIED
+  subtype   CDATA       #IMPLIED
+  value     CDATA       #IMPLIED
+  source    CDATA       #IMPLIED
+  type      CDATA       #IMPLIED>
+  
+<!ELEMENT   AccessionVersion %T_string;>
+
+<!ELEMENT   Properties  %T_string;>
+<!ATTLIST   Properties
+  na        CDATA       #IMPLIED
+  aa        CDATA       #IMPLIED
+  est       CDATA       #IMPLIED
+  gss       CDATA       #IMPLIED
+  trace     CDATA       #IMPLIED
+  qual      CDATA       #IMPLIED
+  genome    CDATA       #IMPLIED
+  popset    CDATA       #IMPLIED>
+
+<!ELEMENT   OSLT        %T_string;>
+<!--~~ @indexed
+~~json <boolean/>
+~~-->
+<!ATTLIST   OSLT
+  indexed   CDATA       #IMPLIED>
+  
+
 
 <!-- Definition of Structure type: T_DocSum -->
 <!--~~ <DocumentSummary>
@@ -44,6 +96,10 @@
 			| Authors
 			| Article
 			| Journal
+			| Statistics
+			| AccessionVersion
+			| Properties
+			| OSLT
 			)*">
 
 <!ELEMENT DocumentSummary %T_DocSum;>
