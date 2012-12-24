@@ -135,12 +135,12 @@
 #dtd2xml2json  eSummary_pubmedhealth.dtd eSummary_pubmedhealth-2json.xsl
 #xsltproc eSummary_pubmedhealth-2json.xsl esummary.pubmedhealth.xml > esummary.pubmedhealth.json
 
-dtd2xml2json eSummary_seqannot.dtd eSummary_seqannot-2json.xsl
-xsltproc eSummary_seqannot-2json.xsl esummary.seqannot.xml > esummary.seqannot.json
-exit
+#dtd2xml2json eSummary_seqannot.dtd eSummary_seqannot-2json.xsl
+#xsltproc eSummary_seqannot-2json.xsl esummary.seqannot.xml > esummary.seqannot.json
 
-#dtd2xml2json eSummary_snp.dtd eSummary_snp-2json.xsl
-#xsltproc eSummary_snp-2json.xsl esummary.snp.xml > esummary.snp.json
+dtd2xml2json eSummary_snp.dtd eSummary_snp-2json.xsl
+xsltproc eSummary_snp-2json.xsl esummary.snp.xml > esummary.snp.json
+exit
 
 #dtd2xml2json eSummary_sra.dtd eSummary_sra-2json.xsl
 #xsltproc eSummary_sra-2json.xsl esummary.sra.xml > esummary.sra.json

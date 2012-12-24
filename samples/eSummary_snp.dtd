@@ -11,38 +11,84 @@
 <!ENTITY	 % T_string		"(#PCDATA)">
 
 <!-- Members definition of Structure type: T_DocSum -->
+<!--~~ <SNP_ID>
+~~json <number/>
+~~-->
 <!ELEMENT	SNP_ID		%T_int;>
+
 <!ELEMENT	Organism		%T_string;>
 <!ELEMENT	ALLELE_ORIGIN		%T_string;>
 <!ELEMENT	GLOBAL_MAF		%T_string;>
 <!ELEMENT	GLOBAL_POPULATION		%T_string;>
+
+<!--~~ <GLOBAL_SAMPLESIZE>
+~~json <number/>
+~~-->
 <!ELEMENT	GLOBAL_SAMPLESIZE		%T_int;>
+
 <!ELEMENT	SUSPECTED		%T_string;>
 <!ELEMENT	CLINICAL_SIGNIFICANCE		%T_string;>
 <!ELEMENT	GENE		%T_string;>
+
+<!--~~ <LOCUS_ID>
+~~json <number/>
+~~-->
 <!ELEMENT	LOCUS_ID		%T_int;>
+
 <!ELEMENT	ACC		%T_string;>
 <!ELEMENT	CHR		%T_string;>
+
+<!--~~ <WEIGHT>
+~~json <number/>
+~~-->
 <!ELEMENT	WEIGHT		%T_int;>
+
 <!ELEMENT	HANDLE		%T_string;>
 <!ELEMENT	FXN_CLASS		%T_string;>
 <!ELEMENT	VALIDATED		%T_string;>
 <!ELEMENT	GTYPE		%T_string;>
 <!ELEMENT	NONREF		%T_string;>
 <!ELEMENT	DOCSUM		%T_string;>
+
+<!--~~ <HET>
+~~json <number/>
+~~-->
 <!ELEMENT	HET		%T_int;>
+
+<!--~~ <SRATE>
+~~json <number/>
+~~-->
 <!ELEMENT	SRATE		%T_int;>
+
+<!--~~ <TAX_ID>
+~~json <number/>
+~~-->
 <!ELEMENT	TAX_ID		%T_int;>
+
 <!ELEMENT	CHRRPT		%T_string;>
+
+<!--~~ <ORIG_BUILD>
+~~json <number/>
+~~-->
 <!ELEMENT	ORIG_BUILD		%T_int;>
+
+<!--~~ <UPD_BUILD>
+~~json <number/>
+~~-->
 <!ELEMENT	UPD_BUILD		%T_int;>
+
 <!ELEMENT	CREATEDATE		%T_string;>
 <!ELEMENT	UPDATEDATE		%T_string;>
 <!ELEMENT	POP_CLASS		%T_string;>
 <!ELEMENT	METHOD_CLASS		%T_string;>
 <!ELEMENT	SNP3D		%T_string;>
 <!ELEMENT	LINKOUT		%T_string;>
+
+<!--~~ <SS>
+~~json <number/>
+~~-->
 <!ELEMENT	SS		%T_int;>
+
 <!ELEMENT	LOCSNPID		%T_string;>
 <!ELEMENT	ALLELE		%T_string;>
 <!ELEMENT	SNP_CLASS		%T_string;>
@@ -50,6 +96,10 @@
 <!ELEMENT	CONTIGPOS		%T_string;>
 <!ELEMENT	TEXT		%T_string;>
 <!ELEMENT	LOOKUP		%T_string;>
+
+<!--~~ <SORT_PRIORITY>
+~~json <number/>
+~~-->
 <!ELEMENT	SORT_PRIORITY		%T_int;>
 
 <!-- Definition of Structure type: T_DocSum -->

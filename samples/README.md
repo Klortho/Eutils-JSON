@@ -798,10 +798,11 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary seqannot</th>
-      <td/>
-      <td/>
+      <td>D</td>
+      <td>⑤</td>
       <td>
-        XML instance document is empty.
+        The bulk of the data here is trapped inside the escaped-markup content
+        of the &lt;ExpXml&gt; element.
       </td>
       <td><a href="../../blob/master/samples/eSummary_seqannot.dtd">DTD</a>,
           <a href="../../blob/master/samples/eSummary_seqannot-2json.xsl">XSL</a>,
@@ -811,10 +812,9 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary snp</th>
-      <td/>
+      <td>D</td>
       <td/>
       <td>
-        XML instance document is empty.
       </td>
       <td><a href="../../blob/master/samples/eSummary_snp.dtd">DTD</a>,
           <a href="../../blob/master/samples/eSummary_snp-2json.xsl">XSL</a>,

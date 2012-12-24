@@ -276,10 +276,9 @@
       </desc>
       <notes>⑤</notes>
     </sample>
-    <sample title='ESummary snp' status='' name='esummary.snp' dtd='eSummary_snp.dtd'>
+    <sample title='ESummary snp' status='D' name='esummary.snp' dtd='eSummary_snp.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=snp&amp;id=206676795</eutils-url>
       <desc>
-        XML instance document is empty.
       </desc>
     </sample>
     <sample title='ESummary sra' status='' name='esummary.sra' dtd='eSummary_sra.dtd'>

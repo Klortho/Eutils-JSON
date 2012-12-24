@@ -11,7 +11,7 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
-   <x:template match="LOCSNPID | SUSPECTED | CHRPOS | GTYPE | CHRRPT | Organism | GLOBAL_MAF | UPD_BUILD | HANDLE | ACC | LINKOUT | SORT_PRIORITY | WEIGHT | METHOD_CLASS | SRATE | LOOKUP | SNP3D | CREATEDATE | DOCSUM | SNP_CLASS | ALLELE | FXN_CLASS | TAX_ID | HET | GENE | NONREF | CONTIGPOS | VALIDATED | ALLELE_ORIGIN | UPDATEDATE | GLOBAL_SAMPLESIZE | SS | POP_CLASS | GLOBAL_POPULATION | TEXT | CHR | SNP_ID | CLINICAL_SIGNIFICANCE | ORIG_BUILD | LOCUS_ID | @uid | @status">
+   <x:template match="LOCSNPID | SUSPECTED | CHRPOS | GTYPE | CHRRPT | Organism | GLOBAL_MAF | HANDLE | ACC | LINKOUT | METHOD_CLASS | LOOKUP | SNP3D | CREATEDATE | DOCSUM | SNP_CLASS | ALLELE | FXN_CLASS | GENE | NONREF | CONTIGPOS | VALIDATED | ALLELE_ORIGIN | UPDATEDATE | POP_CLASS | GLOBAL_POPULATION | TEXT | CHR | CLINICAL_SIGNIFICANCE | @uid | @status">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="string">
@@ -32,6 +32,14 @@
          <x:with-param name="context" select="&#34;object&#34;"/>
       </x:apply-templates>
       <x:value-of select="np:end-object(&#34;&#34;, false())"/>
+   </x:template>
+   <x:template match="UPD_BUILD | SORT_PRIORITY | WEIGHT | SRATE | TAX_ID | HET | GLOBAL_SAMPLESIZE | SS | SNP_ID | ORIG_BUILD | LOCUS_ID">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="number">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
    </x:template>
    <x:template match="DocumentSummary">
       <x:param name="indent" select="&#34;&#34;"/>
