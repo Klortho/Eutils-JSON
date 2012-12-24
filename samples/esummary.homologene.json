@@ -8,20 +8,104 @@
             "title": "solute carrier family 7 (cationic amino acid transporter, y+ system), member 2",
             "description": "SLC7A2, Slc7a2, slc7a2, F23F1.6, C50D2.2, CAT4 - conserved in Eukaryota",
             "homologenedatalist": [
-                "\n\t\t\tHomo sapiens\n\t\t\t9606\n\t\t\tSLC7A2\n\t\t\tsolute carrier family 7 (cationic amino acid transporter, y+ system), member 2\n\t\t\t6542\n\t\t",
-                "\n\t\t\tPan troglodytes\n\t\t\t9598\n\t\t\tSLC7A2\n\t\t\tsolute carrier family 7 (cationic amino acid transporter, y+ system), member 2\n\t\t\t740548\n\t\t",
-                "\n\t\t\tMacaca mulatta\n\t\t\t9544\n\t\t\tSLC7A2\n\t\t\tsolute carrier family 7 (cationic amino acid transporter, y+ system), member 2\n\t\t\t710629\n\t\t",
-                "\n\t\t\tCanis lupus familiaris\n\t\t\t9615\n\t\t\tSLC7A2\n\t\t\tsolute carrier family 7 (cationic amino acid transporter, y+ system), member 2\n\t\t\t475614\n\t\t",
-                "\n\t\t\tBos taurus\n\t\t\t9913\n\t\t\tSLC7A2\n\t\t\tsolute carrier family 7 (cationic amino acid transporter, y+ system), member 2\n\t\t\t538708\n\t\t",
-                "\n\t\t\tMus musculus\n\t\t\t10090\n\t\t\tSlc7a2\n\t\t\tsolute carrier family 7 (cationic amino acid transporter, y+ system), member 2\n\t\t\t11988\n\t\t",
-                "\n\t\t\tRattus norvegicus\n\t\t\t10116\n\t\t\tSlc7a2\n\t\t\tsolute carrier family 7 (cationic amino acid transporter, y+ system), member 2\n\t\t\t64554\n\t\t",
-                "\n\t\t\tGallus gallus\n\t\t\t9031\n\t\t\tSLC7A2\n\t\t\tsolute carrier family 7 (cationic amino acid transporter, y+ system), member 2\n\t\t\t422730\n\t\t",
-                "\n\t\t\tDanio rerio\n\t\t\t7955\n\t\t\tslc7a2\n\t\t\tsolute carrier family 7 (cationic amino acid transporter, y+ system), member 2\n\t\t\t494041\n\t\t",
-                "\n\t\t\tDrosophila melanogaster\n\t\t\t7227\n\t\t\tCG5535\n\t\t\tCG5535\n\t\t\t39990\n\t\t",
-                "\n\t\t\tCaenorhabditis elegans\n\t\t\t6239\n\t\t\tF23F1.6\n\t\t\thypothetical protein\n\t\t\t184903\n\t\t",
-                "\n\t\t\tCaenorhabditis elegans\n\t\t\t6239\n\t\t\tB0454.6\n\t\t\thypothetical protein\n\t\t\t173650\n\t\t",
-                "\n\t\t\tCaenorhabditis elegans\n\t\t\t6239\n\t\t\tC50D2.2\n\t\t\thypothetical protein\n\t\t\t183650\n\t\t",
-                "\n\t\t\tArabidopsis thaliana\n\t\t\t3702\n\t\t\tCAT4\n\t\t\tcationic amino acid transporter 4\n\t\t\t821176\n\t\t"
+                {
+                    "taxname": "Homo sapiens",
+                    "taxid": 9606,
+                    "symbol": "SLC7A2",
+                    "title": "solute carrier family 7 (cationic amino acid transporter, y+ system), member 2",
+                    "geneid": "6542"
+                },
+                {
+                    "taxname": "Pan troglodytes",
+                    "taxid": 9598,
+                    "symbol": "SLC7A2",
+                    "title": "solute carrier family 7 (cationic amino acid transporter, y+ system), member 2",
+                    "geneid": "740548"
+                },
+                {
+                    "taxname": "Macaca mulatta",
+                    "taxid": 9544,
+                    "symbol": "SLC7A2",
+                    "title": "solute carrier family 7 (cationic amino acid transporter, y+ system), member 2",
+                    "geneid": "710629"
+                },
+                {
+                    "taxname": "Canis lupus familiaris",
+                    "taxid": 9615,
+                    "symbol": "SLC7A2",
+                    "title": "solute carrier family 7 (cationic amino acid transporter, y+ system), member 2",
+                    "geneid": "475614"
+                },
+                {
+                    "taxname": "Bos taurus",
+                    "taxid": 9913,
+                    "symbol": "SLC7A2",
+                    "title": "solute carrier family 7 (cationic amino acid transporter, y+ system), member 2",
+                    "geneid": "538708"
+                },
+                {
+                    "taxname": "Mus musculus",
+                    "taxid": 10090,
+                    "symbol": "Slc7a2",
+                    "title": "solute carrier family 7 (cationic amino acid transporter, y+ system), member 2",
+                    "geneid": "11988"
+                },
+                {
+                    "taxname": "Rattus norvegicus",
+                    "taxid": 10116,
+                    "symbol": "Slc7a2",
+                    "title": "solute carrier family 7 (cationic amino acid transporter, y+ system), member 2",
+                    "geneid": "64554"
+                },
+                {
+                    "taxname": "Gallus gallus",
+                    "taxid": 9031,
+                    "symbol": "SLC7A2",
+                    "title": "solute carrier family 7 (cationic amino acid transporter, y+ system), member 2",
+                    "geneid": "422730"
+                },
+                {
+                    "taxname": "Danio rerio",
+                    "taxid": 7955,
+                    "symbol": "slc7a2",
+                    "title": "solute carrier family 7 (cationic amino acid transporter, y+ system), member 2",
+                    "geneid": "494041"
+                },
+                {
+                    "taxname": "Drosophila melanogaster",
+                    "taxid": 7227,
+                    "symbol": "CG5535",
+                    "title": "CG5535",
+                    "geneid": "39990"
+                },
+                {
+                    "taxname": "Caenorhabditis elegans",
+                    "taxid": 6239,
+                    "symbol": "F23F1.6",
+                    "title": "hypothetical protein",
+                    "geneid": "184903"
+                },
+                {
+                    "taxname": "Caenorhabditis elegans",
+                    "taxid": 6239,
+                    "symbol": "B0454.6",
+                    "title": "hypothetical protein",
+                    "geneid": "173650"
+                },
+                {
+                    "taxname": "Caenorhabditis elegans",
+                    "taxid": 6239,
+                    "symbol": "C50D2.2",
+                    "title": "hypothetical protein",
+                    "geneid": "183650"
+                },
+                {
+                    "taxname": "Arabidopsis thaliana",
+                    "taxid": 3702,
+                    "symbol": "CAT4",
+                    "title": "cationic amino acid transporter 4",
+                    "geneid": "821176"
+                }
             ],
             "caption": "Gene conserved in Eukaryota"
         }

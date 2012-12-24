@@ -12,14 +12,26 @@
 
 <!-- Members definition of Structure type: T_HomoloGeneData -->
 <!ELEMENT	TaxName		%T_string;>
+
+<!--~~ <TaxId>
+~~json <number/>
+~~-->
 <!ELEMENT	TaxId		%T_int;>
+
 <!ELEMENT	Symbol		%T_string;>
 <!-- Already defined ...
 <!ELEMENT	Title		%T_string;>
  ... Already defined -->
+
+<!--~~ <TaxId>
+~~json <number/>
+~~-->
 <!ELEMENT	GeneID		%T_int;>
 
 <!-- Definition of Structure type: T_HomoloGeneData -->
+<!--~~ <HomoloGeneData>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_HomoloGeneData	"(
  			TaxName
 			| TaxId
