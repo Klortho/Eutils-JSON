@@ -37,10 +37,10 @@
             "vmax": "1.123969",
             "outliers": "",
             "abscalls_chain": "",
-            "aflag": "5625",
-            "aoutl": "0",
-            "rstd": "14",
-            "rmean": "52"
+            "aflag": 5625,
+            "aoutl": 0,
+            "rstd": 14,
+            "rmean": 52
         }
     }
 }

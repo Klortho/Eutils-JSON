@@ -11,10 +11,18 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
-   <x:template match="summary | RMEAN | GBACC | UGName | AOUTL | GDS | VMIN | VMAX | taxon | SPOTID | gi | outliers | GSM_L | title | geneName | gdsType | PTACC | idref | SUB_SAMP_L | valType | SUB_TYPES_L | SAGEmap | EVALUE | cloneID | ORF | nucDesc | abscalls_chain | GSE | RSTD | taxid_L | AFLAG | ERANK | geneDesc | UGDesc | alias | GPL | @uid | @status">
+   <x:template match="summary | GBACC | UGName | GDS | VMIN | VMAX | taxon | SPOTID | gi | outliers | GSM_L | title | geneName | gdsType | PTACC | idref | SUB_SAMP_L | valType | SUB_TYPES_L | SAGEmap | EVALUE | cloneID | ORF | nucDesc | abscalls_chain | GSE | taxid_L | ERANK | geneDesc | UGDesc | alias | GPL | @uid | @status">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="string">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="RMEAN | AOUTL | RSTD | AFLAG">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="number">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
       </x:call-template>

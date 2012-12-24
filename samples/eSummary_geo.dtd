@@ -43,9 +43,25 @@
 <!ELEMENT	VMAX		%T_string;>
 <!ELEMENT	outliers		%T_string;>
 <!ELEMENT	abscalls_chain		%T_string;>
+
+<!--~~ <AFLAG>
+~~json <number/>
+~~-->
 <!ELEMENT	AFLAG		%T_int;>
+
+<!--~~ <AOUTL>
+~~json <number/>
+~~-->
 <!ELEMENT	AOUTL		%T_int;>
+
+<!--~~ <RSTD>
+~~json <number/>
+~~-->
 <!ELEMENT	RSTD		%T_int;>
+
+<!--~~ <RMEAN>
+~~json <number/>
+~~-->
 <!ELEMENT	RMEAN		%T_int;>
 
 <!-- Definition of Structure type: T_DocSum -->
