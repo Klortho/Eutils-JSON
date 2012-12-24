@@ -16,11 +16,18 @@
 <!ENTITY	 % T_date		"(#PCDATA)">
 
 <!-- Definition of List type: T_IntList -->
+<!--~~ <int>
+~~json <number/>
+~~-->
 <!ELEMENT	int	%T_int;>
 <!ENTITY	 % T_IntList	"(int)*">
 
 <!-- Members definition of Structure type: T_DocSum -->
+<!--~~ <SID>
+~~json <number/>
+~~-->
 <!ELEMENT	SID		%T_int;>
+
 <!ELEMENT	SourceNameList		%T_StringList;>
 <!ELEMENT	CurrentSourceName		%T_string;>
 <!ELEMENT	SourceID		%T_string;>
@@ -39,24 +46,84 @@
 <!ELEMENT	IUPACName		%T_string;>
 <!ELEMENT	CanonicalSmiles		%T_string;>
 <!ELEMENT	IsomericSmiles		%T_string;>
+
+<!--~~ <RotatableBondCount>
+~~json <number/>
+~~-->
 <!ELEMENT	RotatableBondCount		%T_int;>
+
 <!ELEMENT	MolecularFormula		%T_string;>
 <!ELEMENT	MolecularWeight		%T_string;>
+
+<!--~~ <TotalFormalCharge>
+~~json <number/>
+~~-->
 <!ELEMENT	TotalFormalCharge		%T_int;>
+
 <!ELEMENT	XLogP		%T_string;>
+
+<!--~~ <HydrogenBondDonorCount>
+~~json <number/>
+~~-->
 <!ELEMENT	HydrogenBondDonorCount		%T_int;>
+
+<!--~~ <HydrogenBondAcceptorCount>
+~~json <number/>
+~~-->
 <!ELEMENT	HydrogenBondAcceptorCount		%T_int;>
+
 <!ELEMENT	Complexity		%T_string;>
+
+<!--~~ <HeavyAtomCount>
+~~json <number/>
+~~-->
 <!ELEMENT	HeavyAtomCount		%T_int;>
+
+<!--~~ <AtomChiralCount>
+~~json <number/>
+~~-->
 <!ELEMENT	AtomChiralCount		%T_int;>
+
+<!--~~ <AtomChiralDefCount>
+~~json <number/>
+~~-->
 <!ELEMENT	AtomChiralDefCount		%T_int;>
+
+<!--~~ <AtomChiralUndefCount>
+~~json <number/>
+~~-->
 <!ELEMENT	AtomChiralUndefCount		%T_int;>
+
+<!--~~ <BondChiralCount>
+~~json <number/>
+~~-->
 <!ELEMENT	BondChiralCount		%T_int;>
+
+<!--~~ <BondChiralDefCount>
+~~json <number/>
+~~-->
 <!ELEMENT	BondChiralDefCount		%T_int;>
+
+<!--~~ <BondChiralUndefCount>
+~~json <number/>
+~~-->
 <!ELEMENT	BondChiralUndefCount		%T_int;>
+
+<!--~~ <IsotopeAtomCount>
+~~json <number/>
+~~-->
 <!ELEMENT	IsotopeAtomCount		%T_int;>
+
+<!--~~ <CovalentUnitCount>
+~~json <number/>
+~~-->
 <!ELEMENT	CovalentUnitCount		%T_int;>
+
+<!--~~ <TautomerCount>
+~~json <number/>
+~~-->
 <!ELEMENT	TautomerCount		%T_int;>
+
 <!ELEMENT	CompoundIDList		%T_IntList;>
 <!ELEMENT	TPSA		%T_string;>
 <!ELEMENT	AssaySourceNameList		%T_StringList;>
@@ -64,11 +131,29 @@
 <!ELEMENT	MaxAC		%T_string;>
 <!ELEMENT	MinTC		%T_string;>
 <!ELEMENT	MaxTC		%T_string;>
+
+<!--~~ <ActiveAidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	ActiveAidCount		%T_int;>
+
+<!--~~ <InactiveAidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	InactiveAidCount		%T_int;>
+
+<!--~~ <TotalAidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	TotalAidCount		%T_int;>
+
 <!ELEMENT	InChIKey		%T_string;>
+
+<!--~~ <ProbeAidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	ProbeAidCount		%T_int;>
+
 <!ELEMENT	HoldUntilDate		%T_date;>
 
 <!-- Definition of Structure type: T_DocSum -->

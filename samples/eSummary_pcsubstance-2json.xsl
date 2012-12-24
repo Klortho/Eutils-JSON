@@ -11,10 +11,18 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
-   <x:template match="IsomericSmiles | TPSA | TotalFormalCharge | ModifyDate | SourceID | CurrentSourceName | MolecularWeight | BondChiralUndefCount | SID | AtomChiralCount | MaxTC | InactiveAidCount | CanonicalSmiles | HydrogenBondAcceptorCount | BondChiralDefCount | MinAC | ProbeAidCount | RegistryNumber | Complexity | AtomChiralUndefCount | string | DBUrl | SourceReleaseDate | XLogP | IsotopeAtomCount | AtomChiralDefCount | int | HeavyAtomCount | RotatableBondCount | IUPACName | MaxAC | TautomerCount | MinTC | InChIKey | SBUrl | HydrogenBondDonorCount | BondChiralCount | HoldUntilDate | DepositDate | CovalentUnitCount | ActiveAidCount | TotalAidCount | MolecularFormula | @uid | @status">
+   <x:template match="IsomericSmiles | TPSA | ModifyDate | SourceID | CurrentSourceName | MolecularWeight | MaxTC | CanonicalSmiles | MinAC | RegistryNumber | Complexity | string | DBUrl | SourceReleaseDate | XLogP | IUPACName | MaxAC | MinTC | InChIKey | SBUrl | HoldUntilDate | DepositDate | MolecularFormula | @uid | @status">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="string">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="TotalFormalCharge | BondChiralUndefCount | SID | AtomChiralCount | InactiveAidCount | HydrogenBondAcceptorCount | BondChiralDefCount | ProbeAidCount | AtomChiralUndefCount | IsotopeAtomCount | AtomChiralDefCount | int | HeavyAtomCount | RotatableBondCount | TautomerCount | HydrogenBondDonorCount | BondChiralCount | CovalentUnitCount | ActiveAidCount | TotalAidCount">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="number">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
       </x:call-template>

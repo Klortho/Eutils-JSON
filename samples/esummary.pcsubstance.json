@@ -1,0 +1,82 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "127317050": {
+            "uid": "127317050",
+            "sid": 127317050,
+            "sourcenamelist": [
+                "826",
+                "EPO",
+                "SLING Consortium"
+            ],
+            "currentsourcename": "SLING Consortium",
+            "sourceid": "30497-EP2292088A1",
+            "sourcecategorylist": [
+                "Patents"
+            ],
+            "sourcereleasedate": "2011/12/03 00:00",
+            "depositdate": "2011/12/03 00:00",
+            "modifydate": "2011/12/03 00:00",
+            "registrynumber": "",
+            "dburl": "",
+            "sburl": "",
+            "synonymlist": [
+                "30497-EP2292088A1",
+                "CAT"
+            ],
+            "meshheadinglist": [
+            ],
+            "meshtermlist": [
+            ],
+            "pharmactionlist": [
+            ],
+            "commentlist": [
+                "<a href=\"http://worldwide.espacenet.com/publicationDetails/biblio?FT=D&CC=EP&NR=2292088A1&KC=A1\">Mutant receptors and their use in a nuclear receptor-based inducible gene expression system</a>",
+                "Patent Number: EP2292088A1",
+                "Publication Date: 2011-03-09",
+                "Classifications: C07K14/435A3, A61K31/16, A61K31/47, C07D215/44, C07H21/04, C12N15/62",
+                "Applicant(s): INTREXON CORP [US]",
+                "Hits: Description"
+            ],
+            "iupacname": "6-chloro-2-N,4-N-diethyl-1,3,5-triazine-2,4-diamine",
+            "canonicalsmiles": "CCNC1=NC(=NC(=N1)Cl)NCC",
+            "isomericsmiles": "CCNC1=NC(=NC(=N1)Cl)NCC",
+            "rotatablebondcount": 4,
+            "molecularformula": "C7H12ClN5",
+            "molecularweight": "    201.656680",
+            "totalformalcharge": 0,
+            "xlogp": "2.200",
+            "hydrogenbonddonorcount": 2,
+            "hydrogenbondacceptorcount": 5,
+            "complexity": "    131.000000",
+            "heavyatomcount": 13,
+            "atomchiralcount": 0,
+            "atomchiraldefcount": 0,
+            "atomchiralundefcount": 0,
+            "bondchiralcount": 0,
+            "bondchiraldefcount": 0,
+            "bondchiralundefcount": 0,
+            "isotopeatomcount": 0,
+            "covalentunitcount": 1,
+            "tautomercount": 5,
+            "compoundidlist": [
+                5216
+            ],
+            "tpsa": "62.7",
+            "assaysourcenamelist": [
+            ],
+            "minac": "",
+            "maxac": "",
+            "mintc": "",
+            "maxtc": "",
+            "activeaidcount": 0,
+            "inactiveaidcount": 0,
+            "totalaidcount": 0,
+            "inchikey": "ODCWYMIRDDJXKW-UHFFFAOYSA-N",
+            "probeaidcount": 0,
+            "holduntildate": "1/01/01 00:00"
+        }
+    }
+}
