@@ -880,7 +880,11 @@ result in invalid JSON output.
     <tr>
       <th>ESummary unists</th>
       <td>D</td>
-      <td/>
+      <td>
+        
+          &lt;Map_Gene_Summary&gt; is under-specified.
+        
+      </td>
       <td/>
       <td><a href="../../blob/master/samples/eSummary_unists.dtd">DTD</a>,
           <a href="../../blob/master/samples/eSummary_unists-2json.xsl">XSL</a>,

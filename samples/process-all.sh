@@ -150,12 +150,12 @@
 #dtd2xml2json eSummary_toolkit.dtd eSummary_toolkit-2json.xsl
 #xsltproc eSummary_toolkit-2json.xsl esummary.toolkit.xml > esummary.toolkit.json
 
-dtd2xml2json eSummary_unigene.dtd eSummary_unigene-2json.xsl
-xsltproc eSummary_unigene-2json.xsl esummary.unigene.xml > esummary.unigene.json
-exit
+#dtd2xml2json eSummary_unigene.dtd eSummary_unigene-2json.xsl
+#xsltproc eSummary_unigene-2json.xsl esummary.unigene.xml > esummary.unigene.json
 
-#dtd2xml2json eSummary_unists.dtd eSummary_unists-2json.xsl
-#xsltproc eSummary_unists-2json.xsl esummary.unists.xml > esummary.unists.json
+dtd2xml2json eSummary_unists.dtd eSummary_unists-2json.xsl
+xsltproc eSummary_unists-2json.xsl esummary.unists.xml > esummary.unists.json
+exit
 
 #dtd2xml2json eSummary_gencoll.dtd eSummary_gencoll-2json.xsl
 #xsltproc eSummary_gencoll-2json.xsl esummary.gencoll.xml > esummary.gencoll.json

@@ -313,6 +313,11 @@
     <sample title='ESummary unists' status='D' name='esummary.unists' dtd='eSummary_unists.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unists&amp;id=254085,254086</eutils-url>
       <desc></desc>
+      <notes>
+        <note rid='③'>
+          &lt;Map_Gene_Summary> is under-specified.
+        </note>
+      </notes>
     </sample>
     <sample title='ESummary gencoll' status='' name='esummary.gencoll' dtd='eSummary_gencoll.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608</eutils-url>
