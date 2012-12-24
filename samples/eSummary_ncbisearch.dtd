@@ -18,7 +18,12 @@
 <!ELEMENT	Category		%T_string;>
 <!ELEMENT	Date		%T_date;>
 <!ELEMENT	HomePage		%T_string;>
+
+<!--~~ <LinkCount>
+~~json <number/>
+~~-->
 <!ELEMENT	LinkCount		%T_int;>
+
 <!ELEMENT	Authors		%T_string;>
 
 <!-- Definition of Structure type: T_DocSum -->
