@@ -1067,7 +1067,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary probe</th>
-      <td/>
+      <td>D</td>
       <td/>
       <td/>
       <td><a href="../../blob/master/samples/eSummary_probe.dtd">

@@ -236,7 +236,7 @@
         The instance document is invalid according to the DTD.
       </desc>
     </sample>
-    <sample title='ESummary probe' status='' name='esummary.probe' dtd='eSummary_probe.dtd'>
+    <sample title='ESummary probe' status='D' name='esummary.probe' dtd='eSummary_probe.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=probe&amp;id=156811</eutils-url>
       <desc></desc>
     </sample>
