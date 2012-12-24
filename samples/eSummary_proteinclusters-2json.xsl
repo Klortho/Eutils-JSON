@@ -11,7 +11,7 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
-   <x:template match="ModDate | EC | Total_Publications | COG | COGgroup | Comment | Gene | Total_genera | Definition | Total_dups | CreateDate | HAMAP | Source | AverageLength | CommonTaxonomy | GeneSynonym | Paralogs | ACCN | Pmids | KO | Total_Prots | Domains | @uid | @status">
+   <x:template match="ModDate | EC | COG | COGgroup | Comment | Gene | Definition | CreateDate | HAMAP | Source | CommonTaxonomy | GeneSynonym | ACCN | Pmids | KO | @uid | @status">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="string">
@@ -32,6 +32,14 @@
          <x:with-param name="context" select="&#34;object&#34;"/>
       </x:apply-templates>
       <x:value-of select="np:end-object(&#34;&#34;, false())"/>
+   </x:template>
+   <x:template match="Total_Publications | Total_genera | Total_dups | AverageLength | Paralogs | Total_Prots | Domains">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="number">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
    </x:template>
    <x:template match="DocumentSummary">
       <x:param name="indent" select="&#34;&#34;"/>

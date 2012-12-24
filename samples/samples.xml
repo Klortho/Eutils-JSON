@@ -240,7 +240,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=probe&amp;id=156811</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary proteinclusters' status='' name='esummary.proteinclusters'
+    <sample title='ESummary proteinclusters' status='D' name='esummary.proteinclusters'
       dtd='eSummary_proteinclusters.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=proteinclusters&amp;id=2516486</eutils-url>
       <desc></desc>

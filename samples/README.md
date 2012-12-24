@@ -1086,7 +1086,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary proteinclusters</th>
-      <td/>
+      <td>D</td>
       <td/>
       <td/>
       <td><a href="../../blob/master/samples/eSummary_proteinclusters.dtd">

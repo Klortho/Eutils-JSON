@@ -17,9 +17,22 @@
 ~~-->
 <!ELEMENT	ACCN		%T_string;>
 <!ELEMENT	Definition		%T_string;>
+
+<!--~~ <Total_Prots>
+~~json <number/>
+~~-->
 <!ELEMENT	Total_Prots		%T_int;>
+
+<!--~~ <Total_genera>
+~~json <number/>
+~~-->
 <!ELEMENT	Total_genera		%T_int;>
+
+<!--~~ <Total_dups>
+~~json <number/>
+~~-->
 <!ELEMENT	Total_dups		%T_int;>
+
 <!ELEMENT	Pmids		%T_string;>
 <!ELEMENT	Gene		%T_string;>
 <!ELEMENT	GeneSynonym		%T_string;>
@@ -30,12 +43,31 @@
 <!ELEMENT	KO		%T_string;>
 <!ELEMENT	CreateDate		%T_date;>
 <!ELEMENT	ModDate		%T_date;>
+
+<!--~~ <Domains>
+~~json <number/>
+~~-->
 <!ELEMENT	Domains		%T_int;>
+
 <!ELEMENT	CommonTaxonomy		%T_string;>
+
+<!--~~ <Paralogs>
+~~json <number/>
+~~-->
 <!ELEMENT	Paralogs		%T_int;>
+
 <!ELEMENT	COGgroup		%T_string;>
+
+<!--~~ <AverageLength>
+~~json <number/>
+~~-->
 <!ELEMENT	AverageLength		%T_int;>
+
+<!--~~ <Total_Publications>
+~~json <number/>
+~~-->
 <!ELEMENT	Total_Publications		%T_int;>
+
 <!ELEMENT	Source		%T_string;>
 
 <!-- Definition of Structure type: T_DocSum -->
