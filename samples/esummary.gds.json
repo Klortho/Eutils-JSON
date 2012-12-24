@@ -21,23 +21,42 @@
             "pdat": "2012/09/13",
             "suppfile": "TXT",
             "samples": [
-                "\n\t\t\tGSM999794\n\t\t\tIRF4-mut_Th17_cells_42hr_rep1\n\t\t",
-                "\n\t\t\tGSM999797\n\t\t\tIRF4-control_Th17_cells_42hr_rep1\n\t\t",
-                "\n\t\t\tGSM999796\n\t\t\tIRF4-mut_Th17_cells_42hr_rep3\n\t\t",
-                "\n\t\t\tGSM999799\n\t\t\tIRF4-control_Th17_cells_42hr_rep3\n\t\t",
-                "\n\t\t\tGSM999795\n\t\t\tIRF4-mut_Th17_cells_42hr_rep2\n\t\t",
-                "\n\t\t\tGSM999798\n\t\t\tIRF4-control_Th17_cells_42hr_rep2\n\t\t"
+                {
+                    "accession": "GSM999794",
+                    "title": "IRF4-mut_Th17_cells_42hr_rep1"
+                },
+                {
+                    "accession": "GSM999797",
+                    "title": "IRF4-control_Th17_cells_42hr_rep1"
+                },
+                {
+                    "accession": "GSM999796",
+                    "title": "IRF4-mut_Th17_cells_42hr_rep3"
+                },
+                {
+                    "accession": "GSM999799",
+                    "title": "IRF4-control_Th17_cells_42hr_rep3"
+                },
+                {
+                    "accession": "GSM999795",
+                    "title": "IRF4-mut_Th17_cells_42hr_rep2"
+                },
+                {
+                    "accession": "GSM999798",
+                    "title": "IRF4-control_Th17_cells_42hr_rep2"
+                }
             ],
             "relations": [
             ],
-            "extrelations": "\n\t",
-            "n_samples": "6",
+            "extrelations": [
+            ],
+            "n_samples": 6,
             "seriestitle": "",
             "platformtitle": "",
             "platformtaxa": "",
             "samplestaxa": "",
             "pubmedids": [
-                "22983707"
+                22983707
             ],
             "projects": [
             ],

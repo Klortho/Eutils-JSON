@@ -17,6 +17,9 @@
 <!ELEMENT	Title		%T_string;>
 
 <!-- Definition of Structure type: T_Sample -->
+<!--~~ <Sample>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_Sample	"(
  			Accession
 			| Title
@@ -31,6 +34,9 @@
 <!ELEMENT	TargetObject		%T_string;>
 
 <!-- Definition of Structure type: T_Relation -->
+<!--~~ <Relation>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_Relation	"(
  			RelationType
 			| TargetObject
@@ -42,6 +48,9 @@
 <!ENTITY	 % T_int		"(#PCDATA)">
 
 <!-- Definition of List type: T_IntList -->
+<!--~~ <int>
+~~json <number/>
+~~-->
 <!ELEMENT	int	%T_int;>
 <!ENTITY	 % T_IntList	"(int)*">
 
@@ -50,6 +59,9 @@
 <!ELEMENT	URL		%T_string;>
 
 <!-- Definition of Structure type: T_Project -->
+<!--~~ <Project>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_Project	"(
  			Name
 			| URL
@@ -77,13 +89,21 @@
 <!ELEMENT	suppFile		%T_string;>
 <!ELEMENT	Samples		%T_SampleList;>
 <!ELEMENT	Relations		%T_RelationList;>
+<!ELEMENT	ExtRelations		%T_RelationList;>
+
+<!--~~ <n_samples>
+~~json <number/>
+~~-->
 <!ELEMENT	n_samples		%T_int;>
+
 <!ELEMENT	SeriesTitle		%T_string;>
 <!ELEMENT	PlatformTitle		%T_string;>
 <!ELEMENT	PlatformTaxa		%T_string;>
 <!ELEMENT	SamplesTaxa		%T_string;>
 <!ELEMENT	PubMedIds		%T_IntList;>
 <!ELEMENT	Projects		%T_ProjectList;>
+<!ELEMENT FTPLink %T_string;>
+<!ELEMENT GEO2R (#PCDATA)>
 
 <!-- Definition of Structure type: T_DocSum -->
 <!--~~ <DocumentSummary>
@@ -107,6 +127,7 @@
 			| suppFile
 			| Samples
 			| Relations
+			| ExtRelations
 			| n_samples
 			| SeriesTitle
 			| PlatformTitle
@@ -114,6 +135,8 @@
 			| SamplesTaxa
 			| PubMedIds
 			| Projects
+			| FTPLink
+			| GEO2R
 			)*">
 
 <!ELEMENT DocumentSummary %T_DocSum;>

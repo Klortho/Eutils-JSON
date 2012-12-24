@@ -161,7 +161,11 @@
     <sample title='ESummary gds' status='' name='esummary.gds' dtd='eSummary_gds.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726</eutils-url>
       <desc>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.  There was no declaration
+        for &lt;ExtRelations>.  I <em>guessed</em> that this should have the same content model as
+        &lt;Relations>.  No declaration for &lt;FTPLink>, and based on the sample, I added this
+        with text content.  No declaration for &lt;GEO2R>.  The sample has value "yes", and I made
+        this a JSON string, although boolean might be better.
       </desc>
     </sample>
     <sample title='ESummary geo' status='' name='esummary.geo' dtd='eSummary_geo.dtd'>
