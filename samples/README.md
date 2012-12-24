@@ -704,7 +704,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary gds</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_gds.dtd">eSummary_gds.dtd</a>
         <br/>
@@ -715,7 +715,11 @@ result in invalid JSON output.
         <a href="../../blob/master/samples/esummary.gds.json">esummary.gds.json</a>
       </td>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.  There was no declaration
+        for &lt;ExtRelations&gt;.  I guessed that this should have the same content model as
+        &lt;Relations&gt;.  No declaration for &lt;FTPLink&gt;, and based on the sample, I added this
+        with text content.  No declaration for &lt;GEO2R&gt;.  The sample has value "yes", and I made
+        this a JSON string, although boolean might be better.
       </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726">get xml</a>
@@ -723,7 +727,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary geo</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_geo.dtd">eSummary_geo.dtd</a>
         <br/>
@@ -740,7 +744,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary geoprofiles</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_geoprofiles.dtd">eSummary_geoprofiles.dtd</a>
         <br/>

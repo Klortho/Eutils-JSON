@@ -158,7 +158,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gene&amp;id=21803</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary gds' status='' name='esummary.gds' dtd='eSummary_gds.dtd'>
+    <sample title='ESummary gds' status='D' name='esummary.gds' dtd='eSummary_gds.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726</eutils-url>
       <desc>
         Instance document is not valid according to the DTD.  There was no declaration
@@ -168,11 +168,11 @@
         this a JSON string, although boolean might be better.
       </desc>
     </sample>
-    <sample title='ESummary geo' status='' name='esummary.geo' dtd='eSummary_geo.dtd'>
+    <sample title='ESummary geo' status='D' name='esummary.geo' dtd='eSummary_geo.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geo&amp;id=65685298</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary geoprofiles' status='' name='esummary.geoprofiles'
+    <sample title='ESummary geoprofiles' status='D' name='esummary.geoprofiles'
       dtd='eSummary_geoprofiles.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geoprofiles&amp;id=65526197</eutils-url>
       <desc></desc>
