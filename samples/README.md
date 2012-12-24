@@ -823,13 +823,17 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary medgen</th>
-      <td>✗</td>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/esummary.medgen.xml">esummary.medgen.xml</a>
         <br/>
         <a href="../../blob/master/samples/esummary.medgen.json">esummary.medgen.json</a>
       </td>
-      <td>Can't find DTD; see EU-1908.</td>
+      <td>
+        Can't find DTD; see EU-1908.
+        I went ahead and created a DTD for this.  There's just enough detail to get
+        the sample file to validate.  It might or might not be correct.
+      </td>
       <td>
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=medgen&amp;id=122602">get xml</a>
       </td>

@@ -186,9 +186,14 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=journals&amp;id=35478</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary medgen' status='✗' name='esummary.medgen'>
+    <sample title='ESummary medgen' status='D' name='esummary.medgen'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=medgen&amp;id=122602</eutils-url>
-      <desc>Can't find DTD; see EU-1908.</desc>
+      <desc>
+        Can't find DTD; see EU-1908.
+        I went ahead and created a DTD for this.  There's just enough detail to get
+        the sample file to validate.  It might or might not be correct.
+      </desc>
+      <notes>⑤</notes>
     </sample>
     <sample title='ESummary mesh' status='' name='esummary.mesh' dtd='eSummary_mesh.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=mesh&amp;id=67414177</eutils-url>
