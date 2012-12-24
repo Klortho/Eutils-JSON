@@ -120,15 +120,15 @@
 #dtd2xml2json eSummary_probe.dtd eSummary_probe-2json.xsl
 #xsltproc eSummary_probe-2json.xsl esummary.probe.xml > esummary.probe.json
 
-dtd2xml2json eSummary_proteinclusters.dtd eSummary_proteinclusters-2json.xsl
-xsltproc eSummary_proteinclusters-2json.xsl esummary.proteinclusters.xml > esummary.proteinclusters.json
-exit
+#dtd2xml2json eSummary_proteinclusters.dtd eSummary_proteinclusters-2json.xsl
+#xsltproc eSummary_proteinclusters-2json.xsl esummary.proteinclusters.xml > esummary.proteinclusters.json
 
 #dtd2xml2json eSummary_pcassay.dtd eSummary_pcassay-2json.xsl
 #xsltproc eSummary_pcassay-2json.xsl esummary.pcassay.xml > esummary.pcassay.json
 
-#dtd2xml2json eSummary_pccompound.dtd eSummary_pccompound-2json.xsl
-#xsltproc eSummary_pccompound-2json.xsl esummary.pccompound.xml > esummary.pccompound.json
+dtd2xml2json eSummary_pccompound.dtd eSummary_pccompound-2json.xsl
+xsltproc eSummary_pccompound-2json.xsl esummary.pccompound.xml > esummary.pccompound.json
+exit
 
 #dtd2xml2json eSummary_pcsubstance.dtd eSummary_pcsubstance-2json.xsl
 #xsltproc eSummary_pcsubstance-2json.xsl esummary.pcsubstance.xml > esummary.pcsubstance.json

@@ -245,7 +245,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=proteinclusters&amp;id=2516486</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary pcassay' status='' name='esummary.pcassay' dtd='eSummary_pcassay.dtd'>
+    <sample title='ESummary pcassay' status='D' name='esummary.pcassay' dtd='eSummary_pcassay.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcassay&amp;id=493206</eutils-url>
       <desc></desc>
     </sample>

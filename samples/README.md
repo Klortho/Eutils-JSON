@@ -1105,7 +1105,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary pcassay</th>
-      <td/>
+      <td>D</td>
       <td/>
       <td/>
       <td><a href="../../blob/master/samples/eSummary_pcassay.dtd">

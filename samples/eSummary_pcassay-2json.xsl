@@ -11,10 +11,18 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
-   <x:template match="ActivityOutcome | UnspecifiedSidCount | ModifyDate | ActiveSidCount | CurrentSourceName | ProbeCidCount | ActivePanelSidCnt | ActivityOutcomeMethod | AID | NumberofSidsWithActivityConcmicromolar | UnspecifiedCidCount | BSID | ActiveCidCount | NumberofCidsWithActivityConcnanomolar | ProbeSidCount | AssayDescription | TotalCidCount | NumberofSidsWithActivityConcnanomolar | string | InactiveCidCount | GI | InactiveSidCount | AssayName | OnHold | PotencyName | PotencyValue | NumberofCidsWithActivityConcmicromolar | CddName | AssaySourceID | InconclusiveSidCount | InconclusiveCidCount | CID | TargetCount | TotalSidCount | CddDescription | HoldUntilDate | DepositDate | CddId | ActivePanelCidCnt | Name | ReadoutCount | GeneSymbol | @uid | @status">
+   <x:template match="ActivityOutcome | ModifyDate | CurrentSourceName | ActivityOutcomeMethod | AssayDescription | string | AssayName | OnHold | PotencyName | PotencyValue | CddName | AssaySourceID | CddDescription | HoldUntilDate | DepositDate | Name | GeneSymbol | @uid | @status">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="string">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="UnspecifiedSidCount | ActiveSidCount | ProbeCidCount | ActivePanelSidCnt | AID | NumberofSidsWithActivityConcmicromolar | UnspecifiedCidCount | BSID | ActiveCidCount | NumberofCidsWithActivityConcnanomolar | ProbeSidCount | TotalCidCount | NumberofSidsWithActivityConcnanomolar | InactiveCidCount | GI | InactiveSidCount | NumberofCidsWithActivityConcmicromolar | InconclusiveSidCount | InconclusiveCidCount | CID | TargetCount | TotalSidCount | CddId | ActivePanelCidCnt | ReadoutCount">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="number">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
       </x:call-template>
@@ -50,7 +58,7 @@
          <x:with-param name="key" select="@uid"/>
       </x:call-template>
    </x:template>
-   <x:template match="DocumentSummarySet">
+   <x:template match="ProteinTarget | DocumentSummarySet | TopCidType">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="object">

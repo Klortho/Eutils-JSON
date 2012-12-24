@@ -17,13 +17,26 @@
 
 <!-- Members definition of Structure type: T_ProteinTarget -->
 <!ELEMENT	Name		%T_string;>
+
+<!--~~ <GI>
+~~json <number/>
+~~-->
 <!ELEMENT	GI		%T_int;>
+
 <!ELEMENT	GeneSymbol		%T_string;>
+
+<!--~~ <CddId>
+~~json <number/>
+~~-->
 <!ELEMENT	CddId		%T_int;>
+
 <!ELEMENT	CddName		%T_string;>
 <!ELEMENT	CddDescription		%T_string;>
 
 <!-- Definition of Structure type: T_ProteinTarget -->
+<!--~~ <ProteinTarget>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_ProteinTarget	"(
  			Name
 			| GI
@@ -38,6 +51,9 @@
 <!ENTITY	 % T_ProteinTargetListType	"(ProteinTarget)*">
 
 <!-- Members definition of Structure type: T_BioSystems -->
+<!--~~ <BSID>
+~~json <number/>
+~~-->
 <!ELEMENT	BSID		%T_int;>
 
 <!-- Definition of Structure type: T_BioSystems -->
@@ -50,7 +66,11 @@
 <!ENTITY	 % T_BioSystemsListType	"(BioSystems)*">
 
 <!-- Members definition of Structure type: T_TopCidType -->
+<!--~~ <CID>
+~~json <number/>
+~~-->
 <!ELEMENT	CID		%T_int;>
+
 <!-- Already defined ...
 <!ELEMENT	Name		%T_string;>
  ... Already defined -->
@@ -59,6 +79,9 @@
 <!ELEMENT	ActivityOutcome		%T_string;>
 
 <!-- Definition of Structure type: T_TopCidType -->
+<!--~~ <TopCidType>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_TopCidType	"(
  			CID
 			| Name
@@ -75,36 +98,124 @@
 <!ELEMENT	AssayName		%T_string;>
 <!ELEMENT	AssayDescription		%T_string;>
 <!ELEMENT	AssaySourceID		%T_string;>
+
+<!--~~ <ReadoutCount>
+~~json <number/>
+~~-->
 <!ELEMENT	ReadoutCount		%T_int;>
+
 <!ELEMENT	SourceNameList		%T_StringList;>
 <!ELEMENT	CurrentSourceName		%T_string;>
+
+<!--~~ <ActiveSidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	ActiveSidCount		%T_int;>
+
+<!--~~ <ActivePanelSidCnt>
+~~json <number/>
+~~-->
 <!ELEMENT	ActivePanelSidCnt		%T_int;>
+
 <!ELEMENT	ActivityOutcomeMethod		%T_string;>
+
+<!--~~ <InactiveSidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	InactiveSidCount		%T_int;>
+
+<!--~~ <InconclusiveSidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	InconclusiveSidCount		%T_int;>
+
+<!--~~ <TotalSidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	TotalSidCount		%T_int;>
+
 <!ELEMENT	OnHold		%T_string;>
 <!ELEMENT	XRefDburlList		%T_StringList;>
 <!ELEMENT	XRefAsurlList		%T_StringList;>
 <!ELEMENT	ModifyDate		%T_date;>
 <!ELEMENT	DepositDate		%T_date;>
 <!ELEMENT	HoldUntilDate		%T_date;>
+
+<!--~~ <AID>
+~~json <number/>
+~~-->
 <!ELEMENT	AID		%T_int;>
+
+<!--~~ <TotalCidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	TotalCidCount		%T_int;>
+
+<!--~~ <ActiveCidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	ActiveCidCount		%T_int;>
+
+<!--~~ <ActivePanelCidCnt>
+~~json <number/>
+~~-->
 <!ELEMENT	ActivePanelCidCnt		%T_int;>
+
+<!--~~ <InactiveCidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	InactiveCidCount		%T_int;>
+
+<!--~~ <InconclusiveCidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	InconclusiveCidCount		%T_int;>
+
+<!--~~ <UnspecifiedCidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	UnspecifiedCidCount		%T_int;>
+
+<!--~~ <UnspecifiedSidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	UnspecifiedSidCount		%T_int;>
+
+<!--~~ <ProbeCidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	ProbeCidCount		%T_int;>
+
+<!--~~ <ProbeSidCount>
+~~json <number/>
+~~-->
 <!ELEMENT	ProbeSidCount		%T_int;>
+
+<!--~~ <TargetCount>
+~~json <number/>
+~~-->
 <!ELEMENT	TargetCount		%T_int;>
+
+<!--~~ <NumberofSidsWithActivityConcmicromolar>
+~~json <number/>
+~~-->
 <!ELEMENT	NumberofSidsWithActivityConcmicromolar		%T_int;>
+
+<!--~~ <NumberofCidsWithActivityConcmicromolar>
+~~json <number/>
+~~-->
 <!ELEMENT	NumberofCidsWithActivityConcmicromolar		%T_int;>
+
+<!--~~ <NumberofSidsWithActivityConcnanomolar>
+~~json <number/>
+~~-->
 <!ELEMENT	NumberofSidsWithActivityConcnanomolar		%T_int;>
+
+<!--~~ <NumberofCidsWithActivityConcnanomolar>
+~~json <number/>
+~~-->
 <!ELEMENT	NumberofCidsWithActivityConcnanomolar		%T_int;>
+
 <!ELEMENT	ProteinTargetList		%T_ProteinTargetListType;>
 <!ELEMENT	BioSystemsList		%T_BioSystemsListType;>
 <!ELEMENT	TopCidList		%T_TopFiveCidListType;>

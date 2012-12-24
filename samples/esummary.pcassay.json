@@ -8,17 +8,17 @@
             "assayname": "Assay for Inhibitors of Dual-Specificity Tyrosine-(Y)-Phosphorylation Regulated Kinase 1A (Kinase-Glo assay): round 2 SAR",
             "assaydescription": "NIH Molecular Libraries Probe Production Centers Network [MLPCN] NIH Chemical Genomics Center [NCGC] MLPCN Grant: 1R03MH084827-01 PI Name: Tom Misteli  NCGC Assay Overview:  The CMGC group of protein kinases which includes CDK-like kinases (Clk) and Dyks are essential kinases found in all eukaryotes. Clks have been implicated to play a role in the regulation of alternative splicing [1]; while Dyrks, in particular over expression of Dyrk1A, has been linked to diseases as Down syndrome (DS; OMIM 190685) [2] and Alzheimer disease (AD; OMIM 104300) [3].  Among the members of the CMGC group, the Clks and the Dyrks are very closely related [4] therefore to determine validity and selectivity of an active compound observed in the CLK4 qHTS screen (AID:1770), a bioluminescent counter-screen against Dyrk1A was developed. In addition, potent and selective compounds against Dyrk1A were identified to further assess the role of this enzyme in DS and AD.  Dyrk1A (Invitrogen, cat # PV3785) was assayed using ATP and DYRKtide (AnaSpec, cat# 62698) as substrates. Promega Kinase-Glo  (cat# V6712) technology was used to detect the residual ATP following kinetic reaction. The Kinase-Glo Plus contains Ultra-Glo [5] luciferase and D-luciferin which generates a bioluminescence signal from the remaining ATP. No enzyme and harmine (Sigma, cat # 286044-1G), a compound shown to inhibit Dyrks [6] were used as a positive control; while DMSO treatment was used as a negative control. ",
             "assaysourceid": "CLK300",
-            "readoutcount": "26",
+            "readoutcount": 26,
             "sourcenamelist": [
                 "NCGC"
             ],
             "currentsourcename": "NCGC",
-            "activesidcount": "122",
-            "activepanelsidcnt": "0",
+            "activesidcount": 122,
+            "activepanelsidcnt": 0,
             "activityoutcomemethod": "confirmatory",
-            "inactivesidcount": "7",
-            "inconclusivesidcount": "24",
-            "totalsidcount": "153",
+            "inactivesidcount": 7,
+            "inconclusivesidcount": 24,
+            "totalsidcount": 153,
             "onhold": "No",
             "xrefdburllist": [
                 "http://www.ncgc.nih.gov"
@@ -28,35 +28,78 @@
             "modifydate": "2011/02/11 00:00",
             "depositdate": "2011/02/11 00:00",
             "holduntildate": "1/01/01 00:00",
-            "aid": "493206",
-            "totalcidcount": "148",
-            "activecidcount": "117",
-            "activepanelcidcnt": "0",
-            "inactivecidcount": "7",
-            "inconclusivecidcount": "24",
-            "unspecifiedcidcount": "0",
-            "unspecifiedsidcount": "0",
-            "probecidcount": "0",
-            "probesidcount": "0",
-            "targetcount": "1",
-            "numberofsidswithactivityconcmicromolar": "37",
-            "numberofcidswithactivityconcmicromolar": "37",
-            "numberofsidswithactivityconcnanomolar": "0",
-            "numberofcidswithactivityconcnanomolar": "0",
+            "aid": 493206,
+            "totalcidcount": 148,
+            "activecidcount": 117,
+            "activepanelcidcnt": 0,
+            "inactivecidcount": 7,
+            "inconclusivecidcount": 24,
+            "unspecifiedcidcount": 0,
+            "unspecifiedsidcount": 0,
+            "probecidcount": 0,
+            "probesidcount": 0,
+            "targetcount": 1,
+            "numberofsidswithactivityconcmicromolar": 37,
+            "numberofcidswithactivityconcmicromolar": 37,
+            "numberofsidswithactivityconcnanomolar": 0,
+            "numberofcidswithactivityconcnanomolar": 0,
             "proteintargetlist": [
-                "\n\t\t\tdual specificity tyrosine-phosphorylation-regulated kinase 1A isoform 1 [Homo sapiens]\n\t\t\t18765758\n\t\t\tdyrk1a\n\t\t\t214163\n\t\t\tPKc_like\n\t\t\tProtein Kinases\n\t\t"
+                {
+                    "name": "dual specificity tyrosine-phosphorylation-regulated kinase 1A isoform 1 [Homo sapiens]",
+                    "gi": 18765758,
+                    "genesymbol": "dyrk1a",
+                    "cddid": 214163,
+                    "cddname": "PKc_like",
+                    "cdddescription": "Protein Kinases"
+                }
             ],
             "biosystemslist": [
             ],
             "topcidlist": [
-                "\n\t\t\t46916172\n\t\t\tCHEMBL1704879\n\t\t\tPotency\n\t\t\t0.026\n\t\t\tactive\n\t\t"
+                {
+                    "cid": 46916172,
+                    "name": "CHEMBL1704879",
+                    "potencyname": "Potency",
+                    "potencyvalue": "0.026",
+                    "activityoutcome": "active"
+                }
             ],
             "topfivecidlist": [
-                "\n\t\t\t46916172\n\t\t\tCHEMBL1704879\n\t\t\tPotency\n\t\t\t0.026\n\t\t\tactive\n\t\t",
-                "\n\t\t\t44142055\n\t\t\tMLS002276496\n\t\t\tPotency\n\t\t\t0.4627\n\t\t\tactive\n\t\t",
-                "\n\t\t\t44223958\n\t\t\tNCGC00185969-01\n\t\t\tPotency\n\t\t\t0.1162\n\t\t\tactive\n\t\t",
-                "\n\t\t\t44223969\n\t\t\tNCGC00185980-01\n\t\t\tPotency\n\t\t\t0.2067\n\t\t\tactive\n\t\t",
-                "\n\t\t\t49852570\n\t\t\tNCGC00229607-01\n\t\t\tPotency\n\t\t\t0.1842\n\t\t\tactive\n\t\t"
+                {
+                    "cid": 46916172,
+                    "name": "CHEMBL1704879",
+                    "potencyname": "Potency",
+                    "potencyvalue": "0.026",
+                    "activityoutcome": "active"
+                },
+                {
+                    "cid": 44142055,
+                    "name": "MLS002276496",
+                    "potencyname": "Potency",
+                    "potencyvalue": "0.4627",
+                    "activityoutcome": "active"
+                },
+                {
+                    "cid": 44223958,
+                    "name": "NCGC00185969-01",
+                    "potencyname": "Potency",
+                    "potencyvalue": "0.1162",
+                    "activityoutcome": "active"
+                },
+                {
+                    "cid": 44223969,
+                    "name": "NCGC00185980-01",
+                    "potencyname": "Potency",
+                    "potencyvalue": "0.2067",
+                    "activityoutcome": "active"
+                },
+                {
+                    "cid": 49852570,
+                    "name": "NCGC00229607-01",
+                    "potencyname": "Potency",
+                    "potencyvalue": "0.1842",
+                    "activityoutcome": "active"
+                }
             ]
         }
     }
