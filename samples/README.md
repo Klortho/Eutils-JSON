@@ -33,8 +33,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
 
 # Notes / Problems
 
-<a id='①'/>
-## ① All ESummary DTDs seem to use the same public identifier
+## ① All ESummary DTDs use the same public identifier
 
 * All the esummary example files use the public id "-//NLM//DTD eSummaryResult//EN"
   to refer to their DTDs, but different system identifiers.  This makes it more
@@ -122,7 +121,6 @@ Places where this is a problem:
 * esummary.assembly.xml - in the &lt;Meta> element.
 * eSummary_book.dtd - in &lt;BookInfo>
 * esummary.medgen.xml  - in &lt;ConceptMeta>
-
 
 ## ⑥ Miscellaneous problems / questions / suggestions
 
@@ -448,7 +446,7 @@ result in invalid JSON output.
       <td>D</td>
       <td/>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
         The elements Organism_Group and Organism_Subgroup were not declared, so
         I added them as strings.
       </td>
@@ -660,7 +658,7 @@ result in invalid JSON output.
       <td>D</td>
       <td/>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
         This DTD looks like it doesn't match the content very well.  I fixed it by adding
         elements until the instance document validated, but I don't have much confidence that
         the DTD I created is correct.
@@ -682,7 +680,7 @@ result in invalid JSON output.
       <td>D</td>
       <td/>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
         Assembly_accession is not defined.
       </td>
       <td>

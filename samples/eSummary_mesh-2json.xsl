@@ -33,7 +33,7 @@
       </x:apply-templates>
       <x:value-of select="np:end-object(&#34;&#34;, false())"/>
    </x:template>
-   <x:template match="Parent | TreeNum | DS_RevisionDate | DS_ScopeNote | string | DS_HeadingMappedTo | int | DS_YearIntroduced | DS_EntryDate | DS_RegistryNumber | @uid | @status">
+   <x:template match="Parent | TreeNum | DS_RevisionDate | DS_ScopeNote | string | DS_HeadingMappedTo | DS_YearIntroduced | DS_EntryDate | DS_RegistryNumber | @uid | @status">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="string">
@@ -50,7 +50,15 @@
          <x:with-param name="key" select="@uid"/>
       </x:call-template>
    </x:template>
-   <x:template match="DocumentSummarySet">
+   <x:template match="int">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="number">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="LinksType | DocumentSummarySet">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="object">

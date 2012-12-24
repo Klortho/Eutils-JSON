@@ -15,6 +15,9 @@
 <!ENTITY	 % T_int		"(#PCDATA)">
 
 <!-- Definition of List type: T_IntList -->
+<!--~~ <int>
+~~json <number/>
+~~-->
 <!ELEMENT	int	%T_int;>
 <!ENTITY	 % T_IntList	"(int)*">
 
@@ -24,6 +27,9 @@
 <!ELEMENT	Children		%T_IntList;>
 
 <!-- Definition of Structure type: T_LinksType -->
+<!--~~ <LinksType>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_LinksType	"(
  			Parent
 			| TreeNum

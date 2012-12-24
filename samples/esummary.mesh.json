@@ -28,12 +28,17 @@
             "ds_palist": [
             ],
             "ds_idxlinks": [
-                "\n\t\t\t1000048\n\t\t\t@3065\n\t\t\t\n\t\t\t\n\t\t"
+                {
+                    "parent": "1000048",
+                    "treenum": "@3065",
+                    "children": [
+                    ]
+                }
             ],
             "ds_entrydate": "2000/10/10 00:00",
             "ds_revisiondate": "2006/07/06 00:00",
             "ds_headingmappedtolist": [
-                "68026923"
+                68026923
             ]
         }
     }

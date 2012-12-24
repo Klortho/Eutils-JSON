@@ -42,7 +42,7 @@
         <xsl:value-of select="@status"/>
       </td>
       <td>
-        <xsl:value-of select='@notes'/>
+        <xsl:value-of select='notes'/>
       </td>
       <td>
         <xsl:value-of select='desc'/>
@@ -50,26 +50,27 @@
       <td>
         <xsl:if test='@dtd'>
           <a href="../../blob/master/samples/{@dtd}">
-            <xsl:value-of select='@dtd'/>
-          </a>
+            DTD
+          </a> (local)
           <br/>
           <!-- Assume the DTD filename always ends in ".dtd" -->
           <xsl:variable name='xslName' 
             select='concat(substring(@dtd, 1, string-length(@dtd) - 4), "-2json.xsl")'/>
           <a href='../../blob/master/samples/{$xslName}'>
-            <xsl:value-of select='$xslName'/>
-          </a>
+            Generated XSL
+          </a> (local)
           <br/>
         </xsl:if>
         <a href="../../blob/master/samples/{@name}.xml">
-          <xsl:value-of select='concat(@name, ".xml")'/>
-        </a>
+          XML sample
+        </a> (local)
         <br/>
         <a href="../../blob/master/samples/{@name}.json">
-          <xsl:value-of select='concat(@name, ".json")'/>
-        </a><br/>
+          JSON product
+        </a> (local)
+        <br/>
         <a href="{eutils-url}">
-          <xsl:text>get xml</xsl:text>
+          <xsl:text>Fetch from eutils</xsl:text>
         </a>
       </td>
     </tr>

@@ -197,7 +197,7 @@
       </desc>
       <notes>⑤</notes>
     </sample>
-    <sample title='ESummary mesh' status='' name='esummary.mesh' dtd='eSummary_mesh.dtd'>
+    <sample title='ESummary mesh' status='D' name='esummary.mesh' dtd='eSummary_mesh.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=mesh&amp;id=67414177</eutils-url>
       <desc></desc>
     </sample>
