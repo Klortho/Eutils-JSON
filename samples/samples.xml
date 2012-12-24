@@ -215,7 +215,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omia&amp;id=2615</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary omim' status='' name='esummary.omim' dtd='eSummary_omim.dtd'>
+    <sample title='ESummary omim' status='D' name='esummary.omim' dtd='eSummary_omim.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omim&amp;id=609708</eutils-url>
       <desc></desc>
     </sample>
