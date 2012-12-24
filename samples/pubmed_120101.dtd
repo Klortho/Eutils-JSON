@@ -21,8 +21,12 @@
 <!-- ================================================================= -->
 
 <!--~~ !dtd
-~~json <json lcnames='true' type='esummary' version='0.3' />
+~~json 
+    <json type='efetch.pubmed' version='0.3'>
+      <config lcnames='true' import='pubmed.xsl'/>
+    </json>
 ~~-->
+
 
 <!-- Reference to Where the MEDLINECITATION DTD is located  -->
 <!ENTITY % Medline PUBLIC "-//NLM//DTD Medline, 01 Jan 2012//EN"
@@ -48,9 +52,10 @@
 <!-- ================================================================= -->
 <!--~~ <PubmedArticleSet>
 ~~tags root
-~~json <array/>
+~~json <custom/>
 ~~-->
 <!ELEMENT PubmedArticleSet (PubmedArticle | PubmedBookArticle)+>
+
 <!-- ================================================================= -->
 <!-- This is the top level element for PubMedArticle -->
 <!ELEMENT PubmedArticle (MedlineCitation, PubmedData?)>

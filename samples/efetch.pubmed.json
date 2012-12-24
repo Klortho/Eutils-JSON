@@ -1,0 +1,590 @@
+{
+    "type": "efetch.pubmed",
+    "version": "0.3",
+    "pubmedarticles": [
+        {
+            "medlinecitation": {
+                "owner": "NLM",
+                "status": "MEDLINE",
+                "pmid": {
+                    "version": "1",
+                    "value": "17284678"
+                },
+                "datecreated": {
+                    "year": "2007",
+                    "month": "03",
+                    "day": "02"
+                },
+                "datecompleted": {
+                    "year": "2007",
+                    "month": "04",
+                    "day": "05"
+                },
+                "daterevised": {
+                    "year": "2009",
+                    "month": "11",
+                    "day": "18"
+                },
+                "article": {
+                    "pubmodel": "Print-Electronic",
+                    "journal": {
+                        "issn": {
+                            "issntype": "Print",
+                            "value": "1088-9051"
+                        },
+                        "journalissue": {
+                            "citedmedium": "Print",
+                            "volume": "17",
+                            "issue": "3",
+                            "pubdate": [
+                                "2007",
+                                "Mar"
+                            ]
+                        },
+                        "title": "Genome research",
+                        "isoabbreviation": "Genome Res."
+                    },
+                    "articletitle": "Sequencing and analysis of chromosome 1 of Eimeria tenella reveals a unique\n          segmental organization.",
+                    "pagination": [
+                        "311-9"
+                    ],
+                    "abstract": [
+                        {
+                            "label": "fleegle",
+                            "value": "<i>Eimeria tenella</i> is an intracellular protozoan parasite that infects the\n            intestinal tracts of domestic fowl and causes coccidiosis, a serious and sometimes\n            lethal enteritis. Eimeria falls in the same phylum (Apicomplexa) as several human and\n            animal parasites such as Cryptosporidium, Toxoplasma, and the malaria parasite,\n            Plasmodium. Here we report the sequencing and analysis of the first chromosome of E.\n            tenella, a chromosome believed to carry loci associated with drug resistance and known\n            to differ between virulent and attenuated strains of the parasite. The chromosome--which\n            appears to be representative of the genome--is gene-dense and rich in simple-sequence\n            repeats, many of which appear to give rise to repetitive amino acid tracts in the\n            predicted proteins. Most striking is the segmentation of the chromosome into repeat-rich\n            regions peppered with transposon-like elements and telomere-like repeats, alternating\n            with repeat-free regions. Predicted genes differ in character between the two types of\n            segment, and the repeat-rich regions appear to be associated with strain-to-strain\n            variation."
+                        }
+                    ],
+                    "affiliation": "Malaysia Genome Institute, UKM-MTDC Smart Technology Centre, Universiti\n          Kebangsaan Malaysia, 43600 UKM Bangi, Selangor DE, Malaysia.",
+                    "authorlist": [
+                        {
+                            "completeyn": "Y"
+                        },
+                        "authors",
+                        "\n            Ling\n            King-Hwa\n            KH\n          ",
+                        "\n            Rajandream\n            Marie-Adele\n            MA\n          ",
+                        "\n            Rivailler\n            Pierre\n            P\n          ",
+                        "\n            Ivens\n            Alasdair\n            A\n          ",
+                        "\n            Yap\n            Soon-Joo\n            SJ\n          ",
+                        "\n            Madeira\n            Alda M B N\n            AM\n          ",
+                        "\n            Mungall\n            Karen\n            K\n          ",
+                        "\n            Billington\n            Karen\n            K\n          ",
+                        "\n            Yee\n            Wai-Yan\n            WY\n          ",
+                        "\n            Bankier\n            Alan T\n            AT\n          ",
+                        "\n            Carroll\n            Fionnadh\n            F\n          ",
+                        "\n            Durham\n            Alan M\n            AM\n          ",
+                        "\n            Peters\n            Nicholas\n            N\n          ",
+                        "\n            Loo\n            Shu-San\n            SS\n          ",
+                        "\n            Isa\n            Mohd Noor Mat\n            MN\n          ",
+                        "\n            Novaes\n            Jeniffer\n            J\n          ",
+                        "\n            Quail\n            Michael\n            M\n          ",
+                        "\n            Rosli\n            Rozita\n            R\n          ",
+                        "\n            Nor Shamsudin\n            Mariana\n            M\n          ",
+                        "\n            Sobreira\n            Tiago J P\n            TJ\n          ",
+                        "\n            Tivey\n            Adrian R\n            AR\n          ",
+                        "\n            Wai\n            Siew-Fun\n            SF\n          ",
+                        "\n            White\n            Sarah\n            S\n          ",
+                        "\n            Wu\n            Xikun\n            X\n          ",
+                        "\n            Kerhornou\n            Arnaud\n            A\n          ",
+                        "\n            Blake\n            Damer\n            D\n          ",
+                        "\n            Mohamed\n            Rahmah\n            R\n          ",
+                        "\n            Shirley\n            Martin\n            M\n          ",
+                        "\n            Gruber\n            Arthur\n            A\n          ",
+                        "\n            Berriman\n            Matthew\n            M\n          ",
+                        "\n            Tomley\n            Fiona\n            F\n          ",
+                        "\n            Dear\n            Paul H\n            PH\n          ",
+                        "\n            Wan\n            Kiew-Lian\n            KL\n          "
+                    ],
+                    "language": "eng",
+                    "grantlist": "\n          \n            Wellcome Trust\n            United Kingdom\n          \n        ",
+                    "publicationtypelist": [
+                        "Comparative Study",
+                        "Journal Article",
+                        "Research Support, Non-U.S. Gov't"
+                    ],
+                    "articledate": {
+                        "datetype": "Electronic",
+                        "year": "2007",
+                        "month": "02",
+                        "day": "06"
+                    }
+                },
+                "medlinejournalinfo": {
+                    "country": "United States",
+                    "medlineta": "Genome Res",
+                    "nlmuniqueid": "9518021",
+                    "issnlinking": "1088-9051"
+                },
+                "citationsubset": "IM",
+                "commentscorrectionslist": [
+                    {
+                        "reftype": "Cites",
+                        "refsource": "J Mol Biol. 2004 May 14;338(5):1027-36",
+                        "pmid": {
+                            "version": "1",
+                            "value": "15111065"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Trends Parasitol. 2004 May;20(5):199-201",
+                        "pmid": {
+                            "version": "1",
+                            "value": "15105014"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Bioinformatics. 2004 Nov 1;20(16):2878-9",
+                        "pmid": {
+                            "version": "1",
+                            "value": "15145805"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Parasitol Today. 1991 May;7(5):99-105",
+                        "pmid": {
+                            "version": "1",
+                            "value": "15463458"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nature. 2005 May 5;435(7038):43-57",
+                        "pmid": {
+                            "version": "1",
+                            "value": "15875012"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nucleic Acids Res. 2005 Jul 1;33(Web Server issue):W116-20",
+                        "pmid": {
+                            "version": "1",
+                            "value": "15980438"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Science. 2005 Jul 15;309(5733):416-22",
+                        "pmid": {
+                            "version": "1",
+                            "value": "16020726"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nat Genet. 2005 Sep;37(9):986-90",
+                        "pmid": {
+                            "version": "1",
+                            "value": "16086015"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Chromosome Res. 2005;13(5):517-24",
+                        "pmid": {
+                            "version": "1",
+                            "value": "16132816"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nat Rev Genet. 2005 Oct;6(10):743-55",
+                        "pmid": {
+                            "version": "1",
+                            "value": "16205714"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Bioinformatics. 2006 Feb 1;22(3):361-2",
+                        "pmid": {
+                            "version": "1",
+                            "value": "16332714"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Mol Microbiol. 2006 Apr;60(1):5-15",
+                        "pmid": {
+                            "version": "1",
+                            "value": "16556216"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Mol Biochem Parasitol. 1990 Jan 15;38(2):169-73",
+                        "pmid": {
+                            "version": "1",
+                            "value": "2325704"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Parasite Immunol. 1986 Nov;8(6):529-39",
+                        "pmid": {
+                            "version": "1",
+                            "value": "3543808"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Parasitol Res. 1994;80(5):366-73",
+                        "pmid": {
+                            "version": "1",
+                            "value": "7971922"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nucleic Acids Res. 1995 Dec 25;23(24):4992-9",
+                        "pmid": {
+                            "version": "1",
+                            "value": "8559656"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nucleic Acids Res. 1997 Mar 1;25(5):955-64",
+                        "pmid": {
+                            "version": "1",
+                            "value": "9023104"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nucleic Acids Res. 1999 Jan 15;27(2):573-80",
+                        "pmid": {
+                            "version": "1",
+                            "value": "9862982"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Int J Parasitol. 1999 Dec;29(12):1885-92",
+                        "pmid": {
+                            "version": "1",
+                            "value": "10961844"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Genome Res. 2000 Oct;10(10):1587-93",
+                        "pmid": {
+                            "version": "1",
+                            "value": "11042156"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Genome Res. 2000 Nov;10(11):1737-42",
+                        "pmid": {
+                            "version": "1",
+                            "value": "11076859"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Bioinformatics. 2000 Oct;16(10):944-5",
+                        "pmid": {
+                            "version": "1",
+                            "value": "11120685"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nature. 2001 Feb 15;409(6822):860-921",
+                        "pmid": {
+                            "version": "1",
+                            "value": "11237011"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nature. 2002 Jul 4;418(6893):79-85",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12097910"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nature. 2002 Oct 3;419(6906):498-511",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12368864"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nature. 2002 Oct 3;419(6906):527-31",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12368867"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Exp Parasitol. 2002 Jun-Jul;101(2-3):168-73",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12427472"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nucleic Acids Res. 2003 Jan 1;31(1):439-41",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12520045"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Genome Res. 2003 Mar;13(3):443-54",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12618375"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Avian Pathol. 2003 Apr;32(2):115-27",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12745365"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Parasitol Res. 2003 Aug;90(6):473-5",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12802683"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "BMC Bioinformatics. 2004 May 14;5:59",
+                        "pmid": {
+                            "version": "1",
+                            "value": "15144565"
+                        }
+                    }
+                ],
+                "meshheadinglist": [
+                    "\n          Animals\n        ",
+                    "\n          Base Sequence\n        ",
+                    "\n          Chromosome Mapping\n        ",
+                    "\n          Chromosome Structures\n          genetics\n        ",
+                    "\n          Computational Biology\n        ",
+                    "\n          Eimeria tenella\n          genetics\n        ",
+                    "\n          Genes, Protozoan\n          genetics\n        ",
+                    "\n          Minisatellite Repeats\n          genetics\n        ",
+                    "\n          Molecular Sequence Data\n        ",
+                    "\n          Polymorphism, Restriction Fragment\n            Length\n        ",
+                    "\n          Sequence Analysis, DNA\n        "
+                ],
+                "otherid": {
+                    "source": "NLM",
+                    "value": "PMC1800922"
+                }
+            },
+            "pubmeddata": {
+                "history": [
+                    {
+                        "pubstatus": "aheadofprint",
+                        "year": "2007",
+                        "month": "2",
+                        "day": "6"
+                    },
+                    {
+                        "pubstatus": "pubmed",
+                        "year": "2007",
+                        "month": "2",
+                        "day": "8",
+                        "hour": "9",
+                        "minute": "0"
+                    },
+                    {
+                        "pubstatus": "medline",
+                        "year": "2007",
+                        "month": "4",
+                        "day": "6",
+                        "hour": "9",
+                        "minute": "0"
+                    },
+                    {
+                        "pubstatus": "entrez",
+                        "year": "2007",
+                        "month": "2",
+                        "day": "8",
+                        "hour": "9",
+                        "minute": "0"
+                    }
+                ],
+                "publicationstatus": "ppublish",
+                "articleidlist": [
+                    {
+                        "idtype": "pii",
+                        "value": "gr.5823007"
+                    },
+                    {
+                        "idtype": "doi",
+                        "value": "10.1101/gr.5823007"
+                    },
+                    {
+                        "idtype": "pubmed",
+                        "value": "17284678"
+                    },
+                    {
+                        "idtype": "pmc",
+                        "value": "PMC1800922"
+                    }
+                ]
+            }
+        },
+        {
+            "medlinecitation": {
+                "owner": "NLM",
+                "status": "MEDLINE",
+                "pmid": {
+                    "version": "1",
+                    "value": "9997"
+                },
+                "datecreated": {
+                    "year": "1976",
+                    "month": "12",
+                    "day": "30"
+                },
+                "datecompleted": {
+                    "year": "1976",
+                    "month": "12",
+                    "day": "30"
+                },
+                "daterevised": {
+                    "year": "2003",
+                    "month": "11",
+                    "day": "14"
+                },
+                "article": {
+                    "pubmodel": "Print",
+                    "journal": {
+                        "issn": {
+                            "issntype": "Print",
+                            "value": "0006-3002"
+                        },
+                        "journalissue": {
+                            "citedmedium": "Print",
+                            "volume": "446",
+                            "issue": "1",
+                            "pubdate": [
+                                "1976",
+                                "Sep",
+                                "28"
+                            ]
+                        },
+                        "title": "Biochimica et biophysica acta",
+                        "isoabbreviation": "Biochim. Biophys. Acta"
+                    },
+                    "articletitle": "Magnetic studies of Chromatium flavocytochrome C552. A mechanism for\n          heme-flavin interaction.",
+                    "pagination": [
+                        "179-91"
+                    ],
+                    "abstract": [
+                        {
+                            "value": "Electron paramagnetic resonance and magnetic susceptibility studies of\n            Chromatium flavocytochrome C552 and its diheme flavin-free subunit at temperatures below\n            45 degrees K are reported. The results show that in the intact protein and the subunit\n            the two low-spin (S = 1/2) heme irons are distinguishable, giving rise to separate EPR\n            signals. In the intact protein only, one of the heme irons exists in two different low\n            spin environments in the pH range 5.5 to 10.5, while the other remains in a constant\n            environment. Factors influencing the variable heme iron environment also influence\n            flavin reactivity, indicating the existence of a mechanism for heme-flavin\n            interaction."
+                        }
+                    ],
+                    "authorlist": [
+                        {
+                            "completeyn": "Y"
+                        },
+                        "authors",
+                        "\n            Strekas\n            T C\n            TC\n          "
+                    ],
+                    "language": "eng",
+                    "publicationtypelist": [
+                        "Journal Article"
+                    ]
+                },
+                "medlinejournalinfo": {
+                    "country": "NETHERLANDS",
+                    "medlineta": "Biochim Biophys Acta",
+                    "nlmuniqueid": "0217513",
+                    "issnlinking": "0006-3002"
+                },
+                "chemicallist": [
+                    {
+                        "registrynumber": "0",
+                        "nameofsubstance": "Cytochrome c Group"
+                    },
+                    {
+                        "registrynumber": "0",
+                        "nameofsubstance": "Flavins"
+                    },
+                    {
+                        "registrynumber": "14875-96-8",
+                        "nameofsubstance": "Heme"
+                    },
+                    {
+                        "registrynumber": "7439-89-6",
+                        "nameofsubstance": "Iron"
+                    }
+                ],
+                "citationsubset": "IM",
+                "meshheadinglist": [
+                    "\n          Binding Sites\n        ",
+                    "\n          Chromatium\n          enzymology\n        ",
+                    "\n          Cytochrome c Group\n        ",
+                    "\n          Electron Spin Resonance Spectroscopy\n        ",
+                    "\n          Flavins\n        ",
+                    "\n          Heme\n        ",
+                    "\n          Hydrogen-Ion Concentration\n        ",
+                    "\n          Iron\n          analysis\n        ",
+                    "\n          Magnetics\n        ",
+                    "\n          Oxidation-Reduction\n        ",
+                    "\n          Protein Binding\n        ",
+                    "\n          Protein Conformation\n        ",
+                    "\n          Temperature\n        "
+                ]
+            },
+            "pubmeddata": {
+                "history": [
+                    {
+                        "pubstatus": "pubmed",
+                        "year": "1976",
+                        "month": "9",
+                        "day": "28"
+                    },
+                    {
+                        "pubstatus": "medline",
+                        "year": "1976",
+                        "month": "9",
+                        "day": "28",
+                        "hour": "0",
+                        "minute": "1"
+                    },
+                    {
+                        "pubstatus": "entrez",
+                        "year": "1976",
+                        "month": "9",
+                        "day": "28",
+                        "hour": "0",
+                        "minute": "0"
+                    }
+                ],
+                "publicationstatus": "ppublish",
+                "articleidlist": [
+                    {
+                        "idtype": "pubmed",
+                        "value": "9997"
+                    }
+                ]
+            }
+        }
+    ],
+    "pubmedbookarticles": [
+    ]
+}

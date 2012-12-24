@@ -44,8 +44,16 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 <!ELEMENT sup	%text; > <!-- superscript -->
 <!ELEMENT sub	%text; > <!-- subscript -->
 <!ELEMENT u		%text; > <!-- underline -->
+
 <!-- ================================================================= -->
+<!--~~ <MedlineCitationSet>
+~~json <array/>
+~~-->
 <!ELEMENT	MedlineCitationSet (MedlineCitation*, DeleteCitation?)>
+
+<!--~~ <MedlineCitation>
+~~json <object/>
+~~-->
 <!ELEMENT	MedlineCitation (PMID, DateCreated, DateCompleted?, DateRevised?,
                 Article, MedlineJournalInfo, ChemicalList?,SupplMeshList?,
                 CitationSubset*, CommentsCorrectionsList?, GeneSymbolList?,
@@ -59,9 +67,14 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
                         OLDMEDLINE) #REQUIRED
                 VersionID CDATA #IMPLIED
                 VersionDate CDATA #IMPLIED>
+                
+<!--~~ <Abstract>
+~~json <array/>
+~~-->
 <!ELEMENT	Abstract (AbstractText+,CopyrightInformation?)>
+
 <!--~~ <AbstractText>
-~~json <object/>
+~~json <custom/>
 ~~-->
 <!ELEMENT	AbstractText %text;>
 <!ATTLIST       AbstractText
@@ -71,8 +84,17 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 <!ELEMENT	AccessionNumber (#PCDATA)>
 <!ELEMENT	AccessionNumberList (AccessionNumber+)>
 <!ELEMENT	Acronym (#PCDATA)>
+
+<!--~~ <Affiliation>
+~~json <custom/>
+~~-->
 <!ELEMENT	Affiliation %text;>
+
 <!ELEMENT	Agency (#PCDATA)>
+
+<!--~~ <Article>
+~~json <object/>
+~~-->
 <!ELEMENT	Article (Journal,ArticleTitle,((Pagination, ELocationID*) | 
                         ELocationID+),Abstract?, Affiliation?, AuthorList?, 
                         Language+, DataBankList?, GrantList?,PublicationTypeList, 
@@ -82,19 +104,35 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
                           Electronic-Print) #REQUIRED>
 <!ELEMENT	ArticleDate (Year,Month,Day)>
 <!ATTLIST	ArticleDate DateType CDATA  #FIXED "Electronic">
+
 <!--~~ <ArticleTitle>
-~~json <string/>
+~~json <custom/>
 ~~-->
 <!ELEMENT	ArticleTitle %text;>
+
 <!ELEMENT	Author (((LastName, ForeName?, Initials?, Suffix?) | 
                          CollectiveName),NameID*)>
 <!ATTLIST	Author ValidYN (Y | N) "Y">
+
+<!--~~ <AuthorList>
+~~json <custom/>
+~~-->
 <!ELEMENT	AuthorList (Author+)>
+
+<!--~~ @CompleteYN
+~~json <custom/>
+~~-->
 <!ATTLIST	AuthorList CompleteYN (Y | N) "Y">
+
 <!ELEMENT	Chemical (RegistryNumber,NameOfSubstance)>
 <!ELEMENT	ChemicalList (Chemical+)>
 <!ELEMENT	CitationSubset (#PCDATA)>
+
+<!--~~ <CollectiveName>
+~~json <custom/>
+~~-->
 <!ELEMENT	CollectiveName %text;>
+
 <!ELEMENT	CommentsCorrections (RefSource,PMID?,Note?)>
 <!ATTLIST   CommentsCorrections 
                 RefType (CommentOn | CommentIn | ErratumIn | ErratumFor | 
@@ -142,7 +180,12 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 <!ELEMENT	Journal (ISSN?, JournalIssue, Title?, ISOAbbreviation?)>
 <!ELEMENT	JournalIssue (Volume?, Issue?, PubDate)>
 <!ATTLIST	JournalIssue CitedMedium (Internet | Print) #REQUIRED>
+
+<!--~~ <Keyword>
+~~json <custom/>
+~~-->
 <!ELEMENT	Keyword %text;>
+
 <!ATTLIST	Keyword MajorTopicYN (Y | N) "N">
 <!ELEMENT	KeywordList (Keyword+)>
 <!ATTLIST	KeywordList Owner (NLM | NLM-AUTO | NASA | PIP | KIE | NOTNLM | HHS) "NLM">
@@ -183,12 +226,22 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 <!ELEMENT	Season (#PCDATA)>
 <!ELEMENT	SpaceFlightMission (#PCDATA)>
 <!ELEMENT       StartPage (#PCDATA)>
+
+<!--~~ <Suffix>
+~~json <custom/>
+~~-->
 <!ELEMENT	Suffix %text;>
+
 <!ELEMENT       SupplMeshList (SupplMeshName+)>
 <!ELEMENT       SupplMeshName (#PCDATA)>
 <!ATTLIST       SupplMeshName Type (Disease | Protocol) #REQUIRED>
 <!ELEMENT	Title (#PCDATA)>
+
+<!--~~ <VernacularTitle>
+~~json <custom/>
+~~-->
 <!ELEMENT	VernacularTitle %text;>
+
 <!ELEMENT	Volume (#PCDATA)>
 <!ELEMENT	Year (#PCDATA)>
 <!ELEMENT	DeleteCitation (PMID+)>

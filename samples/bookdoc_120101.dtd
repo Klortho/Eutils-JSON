@@ -28,8 +28,14 @@
 				part		CDATA			#IMPLIED
 				sec		CDATA			#IMPLIED"  >
 
-
+<!--~~ <BookDocumentSet>
+~~json <array/>
+~~-->
 <!ELEMENT BookDocumentSet (BookDocument*, DeleteDocument?)>
+
+<!--~~ <BookDocument>
+~~json <object/>
+~~-->
 <!ELEMENT BookDocument ( PMID, ArticleIdList, Book, LocationLabel*, ArticleTitle?, VernacularTitle?,
 	Pagination?, Language*, AuthorList*, GroupList?, PublicationType*, Abstract?, Sections?, KeywordList*, 
 	ContributionDate?, DateRevised?, CitationString?, GrantList?) >
