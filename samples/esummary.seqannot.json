@@ -1,0 +1,15 @@
+{
+    "type": "esummary",
+    "version": "0.3",
+    "documentsummaryset": {
+        "status": "OK",
+        "7232": {
+            "uid": "7232",
+            "caption": "NA000006492.2",
+            "title": "UCSF-UBC-USC Penis Foreskin Melanocyte Primary Cells mRNA-Seq Donor skin02 Library A07119 EA Release 7",
+            "expxml": "  <xml xmlns:xsi=\"http://www/w3.org/2001/XMLSchema-instance\" accession=\"NA000006492\">       <Descriptor name=\"GSM941743\" tag=\"gene expression\" scope=\"Epigenomics\">         <Title>UCSF-UBC-USC Penis Foreskin Melanocyte Primary Cells mRNA-Seq Donor skin02 Library A07119 EA Release 7</Title>         <Comment>A complete description of the biological sample, experimental protocol and data processing parameters may be found in GEO record GSM941743.&amp;#xa;&amp;#xa;QUALITY SCORES&amp;#xa;NUMBER OF MAPPED READS: 318,299,784&amp;#xa;NUMBER OF MRNA-SEQ EXPERIMENTS SCORED IN THIS RELEASE: 3&amp;#xa;PERCENT READS MAPPING TO UCSC GENES: 94.85&amp;#xa;PERCENT READS MAPPING TO UCSC GENES PERCENTILE: 67&amp;#xa;MAXIMUM REPLICATE CORRELATION: 0.97&amp;#xa;</Comment>       </Descriptor>       <Provider source=\"NCBI\" name=\"GEO\">         <Contact email=\"geo@ncbi.nlm.nih.gov\">NCBI GEO Group</Contact>         <Annot-chain>trk007814|GCF_000001405.13|abund-graph|GSM941743|sup21353</Annot-chain>       </Provider>       <XClass type=\"Epigenomics\">         <AUTO tag=\"trk007814|GCF_000001405.13|abund-graph|GSM941743|sup21353\" version=\"2\"/>       </XClass>       <Content protein_present=\"false\" mrna_present=\"false\">         <Annot type=\"ftable\">           <Feature type=\"bad\"/>         </Annot>       </Content>       <Properties>         <Organism taxid=\"9606\">GRCh37</Organism>         <Keyword>gene expression</Keyword>         <TargetAssembly db=\"gencol\" idstr=\"GCF_000001405.13\">(9606, hg19, GRCh37)</TargetAssembly>         <LinkList>           <Link>             <URL_Link>               <Label>GEO Sample Record GSM941743</Label>               <URL>http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM941743</URL>             </URL_Link>           </Link>         </LinkList>       </Properties>     </xml>  ",
+            "createdate": "2012/09/20",
+            "updatedate": "2012/09/20"
+        }
+    }
+}

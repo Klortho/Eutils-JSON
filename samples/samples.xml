@@ -268,11 +268,13 @@
         might not be correct.
       </desc>
     </sample>
-    <sample title='ESummary seqannot' status='' name='esummary.seqannot' dtd='eSummary_seqannot.dtd'>
+    <sample title='ESummary seqannot' status='D' name='esummary.seqannot' dtd='eSummary_seqannot.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=seqannot&amp;id=7232</eutils-url>
       <desc>
-        XML instance document is empty.
+        The bulk of the data here is trapped inside the escaped-markup content
+        of the &lt;ExpXml> element.
       </desc>
+      <notes>⑤</notes>
     </sample>
     <sample title='ESummary snp' status='' name='esummary.snp' dtd='eSummary_snp.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=snp&amp;id=206676795</eutils-url>
