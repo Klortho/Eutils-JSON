@@ -41,10 +41,13 @@ See also problems.md here for things that should be turned into JIRA tickets.
   external tools from hitting our servers every time they read an XML instance
   document.
 
-## ② XML results that fail to validate
+## ② XML results that fail to validate (bad DTDs)
 
 * esummary.pmcerror.xml, PMC esummary, with an erroroneous id:
   http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&version=2.0&db=pmc&id=254085,1,14900
+  I had to add a declaration for the &lt;error&gt; element into the DTD.  I suspect
+  that this is a problem for all the other esummary DTDs as well, but I didn't try
+  them with erroneous IDs.
 
 * esummary.nucleotide.xml
 
@@ -174,7 +177,10 @@ result in invalid JSON output.
 ## eSummary_nuccore.dtd
 * &lt;DocumentSummarySet> → object; in this case, what if it contains Warnings?
 
+# To do
 
+* Go through all the sample DTDs once more for a quick check of which problems were
+  encountered with which, and add "notes" markers to cross-reference them.
 
 
 <!--
@@ -1021,9 +1027,9 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary pmc with error</th>
-      <td>✗</td>
-      <td/>
-      <td>The XML results here are not valid according to the DTD.  Need to open a JIRA ticket.</td>
+      <td>D</td>
+      <td>②</td>
+      <td>The XML results here are not valid according to the DTD. </td>
       <td><a href="../../blob/master/samples/eSummary_pmc.dtd">
             DTD
           </a> (local)

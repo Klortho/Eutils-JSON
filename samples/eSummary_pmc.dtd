@@ -60,6 +60,7 @@
 <!ELEMENT	FullJournalName		%T_string;>
 <!ELEMENT	SortDate		%T_date;>
 <!ELEMENT	PmcLiveDate		%T_date;>
+<!ELEMENT error (#PCDATA) >
 
 <!-- Definition of Structure type: T_DocSum -->
 <!--~~ <DocumentSummary>
@@ -78,6 +79,7 @@
 			| FullJournalName
 			| SortDate
 			| PmcLiveDate
+			| error
 			)*">
 
 <!ELEMENT DocumentSummary %T_DocSum;>
