@@ -16,9 +16,22 @@
 <!ELEMENT	ORGANISM		%T_string;>
 <!ELEMENT	GENE		%T_string;>
 <!ELEMENT	CLUSTERID		%T_string;>
+
+<!--~~ <TAXID>
+~~json <number/>
+~~-->
 <!ELEMENT	TAXID		%T_int;>
+
+<!--~~ <SEQ_COUNT>
+~~json <number/>
+~~-->
 <!ELEMENT	SEQ_COUNT		%T_int;>
+
+<!--~~ <EST_COUNT>
+~~json <number/>
+~~-->
 <!ELEMENT	EST_COUNT		%T_int;>
+
 <!ELEMENT	GENEID		%T_string;>
 <!ELEMENT	RECORDTYPE		%T_string;>
 

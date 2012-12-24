@@ -853,7 +853,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary toolkit</th>
-      <td/>
+      <td>D</td>
       <td>⑤</td>
       <td>
         Has escaped markup inside an &lt;XmlDesc&gt; element.  I could understand this if the
@@ -868,7 +868,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary unigene</th>
-      <td/>
+      <td>D</td>
       <td/>
       <td/>
       <td><a href="../../blob/master/samples/eSummary_unigene.dtd">DTD</a>,

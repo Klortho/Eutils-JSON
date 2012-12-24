@@ -10,9 +10,9 @@
             "organism": "Canis lupus familiaris",
             "gene": "CAT",
             "clusterid": "Cfa.188",
-            "taxid": "9615",
-            "seq_count": "127",
-            "est_count": "124",
+            "taxid": 9615,
+            "seq_count": 127,
+            "est_count": 124,
             "geneid": "403474",
             "recordtype": "protein-coding"
         }

@@ -297,7 +297,7 @@
         &lt;ModificationDate> to the DTD.
       </desc>
     </sample>
-    <sample title='ESummary toolkit' status='' name='esummary.toolkit' dtd='eSummary_toolkit.dtd'>
+    <sample title='ESummary toolkit' status='D' name='esummary.toolkit' dtd='eSummary_toolkit.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=toolkit&amp;id=149440</eutils-url>
       <desc>
         Has escaped markup inside an &lt;XmlDesc> element.  I could understand this if the
@@ -306,7 +306,7 @@
       </desc>
       <notes>⑤</notes>
     </sample>
-    <sample title='ESummary unigene' status='' name='esummary.unigene' dtd='eSummary_unigene.dtd'>
+    <sample title='ESummary unigene' status='D' name='esummary.unigene' dtd='eSummary_unigene.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unigene&amp;id=1190943</eutils-url>
       <desc></desc>
     </sample>
