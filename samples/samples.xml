@@ -299,7 +299,12 @@
     </sample>
     <sample title='ESummary toolkit' status='' name='esummary.toolkit' dtd='eSummary_toolkit.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=toolkit&amp;id=149440</eutils-url>
-      <desc></desc>
+      <desc>
+        Has escaped markup inside an &lt;XmlDesc> element.  I could understand this if the
+        markup were HTML, designed to be injected into a web page, but it is not.  It appears
+        to be a custom XML format, so, why not deliver it unescaped?
+      </desc>
+      <notes>⑤</notes>
     </sample>
     <sample title='ESummary unigene' status='' name='esummary.unigene' dtd='eSummary_unigene.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unigene&amp;id=1190943</eutils-url>

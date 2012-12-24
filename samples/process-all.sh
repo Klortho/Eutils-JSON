@@ -144,12 +144,12 @@
 #dtd2xml2json eSummary_sra.dtd eSummary_sra-2json.xsl
 #xsltproc eSummary_sra-2json.xsl esummary.sra.xml > esummary.sra.json
 
-dtd2xml2json eSummary_taxonomy.dtd eSummary_taxonomy-2json.xsl
-xsltproc eSummary_taxonomy-2json.xsl esummary.taxonomy.xml > esummary.taxonomy.json
-exit
+#dtd2xml2json eSummary_taxonomy.dtd eSummary_taxonomy-2json.xsl
+#xsltproc eSummary_taxonomy-2json.xsl esummary.taxonomy.xml > esummary.taxonomy.json
 
-#dtd2xml2json eSummary_toolkit.dtd eSummary_toolkit-2json.xsl
-#xsltproc eSummary_toolkit-2json.xsl esummary.toolkit.xml > esummary.toolkit.json
+dtd2xml2json eSummary_toolkit.dtd eSummary_toolkit-2json.xsl
+xsltproc eSummary_toolkit-2json.xsl esummary.toolkit.xml > esummary.toolkit.json
+exit
 
 #dtd2xml2json eSummary_unigene.dtd eSummary_unigene-2json.xsl
 #xsltproc eSummary_unigene-2json.xsl esummary.unigene.xml > esummary.unigene.json

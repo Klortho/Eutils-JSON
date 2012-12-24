@@ -854,8 +854,12 @@ result in invalid JSON output.
     <tr>
       <th>ESummary toolkit</th>
       <td/>
-      <td/>
-      <td/>
+      <td>⑤</td>
+      <td>
+        Has escaped markup inside an &lt;XmlDesc&gt; element.  I could understand this if the
+        markup were HTML, designed to be injected into a web page, but it is not.  It appears
+        to be a custom XML format, so, why not deliver it unescaped?
+      </td>
       <td><a href="../../blob/master/samples/eSummary_toolkit.dtd">DTD</a>,
           <a href="../../blob/master/samples/eSummary_toolkit-2json.xsl">XSL</a>,
         <a href="../../blob/master/samples/esummary.toolkit.xml">XML</a>,
