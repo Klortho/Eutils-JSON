@@ -25,9 +25,9 @@
       <tr>
         <th></th>
         <th>Status</th>
-        <th>Local files</th>
+        <th>Notes</th>
         <th>Comments</th>
-        <th>NCBI EUtils</th>
+        <th>Links</th>
       </tr>
       <xsl:apply-templates/>
     </table>
@@ -40,6 +40,12 @@
       </th>
       <td>
         <xsl:value-of select="@status"/>
+      </td>
+      <td>
+        <xsl:value-of select='@notes'/>
+      </td>
+      <td>
+        <xsl:value-of select='desc'/>
       </td>
       <td>
         <xsl:if test='@dtd'>
@@ -61,12 +67,7 @@
         <br/>
         <a href="../../blob/master/samples/{@name}.json">
           <xsl:value-of select='concat(@name, ".json")'/>
-        </a>
-      </td>
-      <td>
-        <xsl:value-of select='desc'/>
-      </td>
-      <td>
+        </a><br/>
         <a href="{eutils-url}">
           <xsl:text>get xml</xsl:text>
         </a>
