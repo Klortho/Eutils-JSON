@@ -19,6 +19,9 @@
 <!ELEMENT	AIID		%T_string;>
 
 <!-- Definition of Structure type: T_AuthorInfo -->
+<!--~~ <AuthorInfo>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_AuthorInfo	"(
  			CollectiveName
 			| LastName
@@ -42,6 +45,9 @@
 <!ELEMENT	DatesOfSerialPublication		%T_string;>
 
 <!-- Definition of Structure type: T_PublicationInfo -->
+<!--~~ <PublicationInfo>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_PublicationInfo	"(
  			Imprint
 			| Place
@@ -60,6 +66,9 @@
 <!ELEMENT	ResourceUnit		%T_string;>
 
 <!-- Definition of Structure type: T_ResourceInfo -->
+<!--~~ <ResourceInfo>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_ResourceInfo	"(
  			TypeOfResource
 			| ResourceUnit
@@ -77,6 +86,9 @@
  ... Already defined -->
 
 <!-- Definition of Structure type: T_TitleMain -->
+<!--~~ <TitleMain>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_TitleMain	"(
  			SortTitle
 			| Title
@@ -97,6 +109,9 @@
  ... Already defined -->
 
 <!-- Definition of Structure type: T_TitleOther -->
+<!--~~ <TitleOther>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_TitleOther	"(
  			TitleAlternate
 			| OtherInformation
@@ -113,6 +128,9 @@
 <!ELEMENT	issntype		%T_string;>
 
 <!-- Definition of Structure type: T_ISSNInfo -->
+<!--~~ <ISSNInfo>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_ISSNInfo	"(
  			issn
 			| validyn

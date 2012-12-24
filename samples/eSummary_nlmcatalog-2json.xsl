@@ -11,6 +11,14 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
+   <x:template match="TitleOther | ISSNInfo | AuthorInfo | ResourceInfo | PublicationInfo | TitleMain | DocumentSummarySet">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="object">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
    <x:template match="LastName | NLMUniqueID | validyn | DateRevised | Country | Publisher | ResourceUnit | MedlineTA | NameQualifier | issn | ForeName | ISOAbbreviation | EndYear | Place | ContinuationNotes | Title | TypeOfResource | Edition | string | Imprint | Language | TitleAlternate | Host | JrId | TitleAssociatedWithName | AIID | SortTitle | CurrentIndexingStatus | TitleMainSort | StartYear | ISBN | issntype | OtherInformation | CollectiveName | DateIssued | DatesOfSerialPublication | @uid | @status">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
@@ -48,14 +56,6 @@
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
          <x:with-param name="key" select="@uid"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="DocumentSummarySet">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
       </x:call-template>
    </x:template>
 </x:stylesheet>

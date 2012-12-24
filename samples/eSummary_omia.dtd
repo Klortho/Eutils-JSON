@@ -14,6 +14,9 @@
 <!ELEMENT	MP_Name		%T_string;>
 
 <!-- Definition of Structure type: T_MP -->
+<!--~~ <MP>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_MP	"(
  			MP_ID
 			| MP_Name
@@ -32,6 +35,9 @@
 <!ELEMENT	Gene_Name		%T_string;>
 
 <!-- Definition of Structure type: T_Gene -->
+<!--~~ <Gene>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_Gene	"(
  			Gene_ID
 			| Gene_Name
@@ -43,6 +49,9 @@
 <!ENTITY	 % T_int		"(#PCDATA)">
 
 <!-- Definition of List type: T_IntList -->
+<!--~~ <int>
+~~json <number/>
+~~-->
 <!ELEMENT	int	%T_int;>
 <!ENTITY	 % T_IntList	"(int)*">
 
@@ -51,13 +60,25 @@
 <!ELEMENT	Journal		%T_string;>
 <!ELEMENT	Volume		%T_string;>
 <!ELEMENT	Pages		%T_string;>
+
+<!--~~ <Year>
+~~json <number/>
+~~-->
 <!ELEMENT	Year		%T_int;>
+
 <!ELEMENT	Publisher		%T_string;>
 <!ELEMENT	Publish_Place		%T_string;>
 <!ELEMENT	Author_List		%T_StringList;>
+
+<!--~~ <PubMed_UID>
+~~json <number/>
+~~-->
 <!ELEMENT	PubMed_UID		%T_int;>
 
 <!-- Definition of Structure type: T_Reference -->
+<!--~~ <Reference>
+~~json <object/>
+~~-->
 <!ENTITY	 % T_Reference	"(
  			Title
 			| Journal

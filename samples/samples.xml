@@ -201,17 +201,17 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=mesh&amp;id=67414177</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary ncbisearch' status='' name='esummary.ncbisearch'
+    <sample title='ESummary ncbisearch' status='D' name='esummary.ncbisearch'
       dtd='eSummary_ncbisearch.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=ncbisearch&amp;id=1121</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary nlmcatalog' status='' name='esummary.nlmcatalog'
+    <sample title='ESummary nlmcatalog' status='D' name='esummary.nlmcatalog'
       dtd='eSummary_nlmcatalog.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nlmcatalog&amp;id=101573253</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary omia' status='' name='esummary.omia' dtd='eSummary_omia.dtd'>
+    <sample title='ESummary omia' status='D' name='esummary.omia' dtd='eSummary_omia.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omia&amp;id=2615</eutils-url>
       <desc></desc>
     </sample>

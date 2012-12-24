@@ -19,7 +19,7 @@
          <x:with-param name="context" select="$context"/>
       </x:call-template>
    </x:template>
-   <x:template match="Pathology | Publisher | Molecular_Genetics | Inheritance | Genetic_Test | Species_Phenotype_Name | Publish_Place | Clinical_Feature | Sci_Name | Volume | Title | string | Journal | Common_Name | Taxonomy_ID | Pages | int | OMIA_ID | Curation_State | Gene_Name | Gene_ID | Prevalence | Phenotype | Year | MP_Name | Species_Phenotype_Summary | Phenotype_Summary | MP_ID | PubMed_UID | Inherit_Text | @uid | @status">
+   <x:template match="Pathology | Publisher | Molecular_Genetics | Inheritance | Genetic_Test | Species_Phenotype_Name | Publish_Place | Clinical_Feature | Sci_Name | Volume | Title | string | Journal | Common_Name | Taxonomy_ID | Pages | OMIA_ID | Curation_State | Gene_Name | Gene_ID | Prevalence | Phenotype | MP_Name | Species_Phenotype_Summary | Phenotype_Summary | MP_ID | Inherit_Text | @uid | @status">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="string">
@@ -41,6 +41,14 @@
       </x:apply-templates>
       <x:value-of select="np:end-object(&#34;&#34;, false())"/>
    </x:template>
+   <x:template match="MP | Gene | Reference | DocumentSummarySet">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="object">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
    <x:template match="DocumentSummary">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
@@ -50,10 +58,10 @@
          <x:with-param name="key" select="@uid"/>
       </x:call-template>
    </x:template>
-   <x:template match="DocumentSummarySet">
+   <x:template match="int | Year | PubMed_UID">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="object">
+      <x:call-template name="number">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
       </x:call-template>
