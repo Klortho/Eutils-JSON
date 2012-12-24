@@ -182,7 +182,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=homologene&amp;id=20659</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary journals' status='' name='esummary.journals' dtd='eSummary_journals.dtd'>
+    <sample title='ESummary journals' status='D' name='esummary.journals' dtd='eSummary_journals.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=journals&amp;id=35478</eutils-url>
       <desc></desc>
     </sample>
