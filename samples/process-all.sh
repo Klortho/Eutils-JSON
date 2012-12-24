@@ -114,12 +114,12 @@
 #xsltproc eSummary_pmc-2json.xsl esummary.pmc.xml > esummary.pmc.json
 #xsltproc eSummary_pmc-2json.xsl esummary.pmcerror.xml > esummary.pmcerror.json
 
-dtd2xml2json eSummary_popset.dtd eSummary_popset-2json.xsl
-xsltproc eSummary_popset-2json.xsl esummary.popset.xml > esummary.popset.json
-exit
+#dtd2xml2json eSummary_popset.dtd eSummary_popset-2json.xsl
+#xsltproc eSummary_popset-2json.xsl esummary.popset.xml > esummary.popset.json
 
-#dtd2xml2json eSummary_probe.dtd eSummary_probe-2json.xsl
-#xsltproc eSummary_probe-2json.xsl esummary.probe.xml > esummary.probe.json
+dtd2xml2json eSummary_probe.dtd eSummary_probe-2json.xsl
+xsltproc eSummary_probe-2json.xsl esummary.probe.xml > esummary.probe.json
+exit
 
 #dtd2xml2json eSummary_proteinclusters.dtd eSummary_proteinclusters-2json.xsl
 #xsltproc eSummary_proteinclusters-2json.xsl esummary.proteinclusters.xml > esummary.proteinclusters.json

@@ -15,29 +15,37 @@
 <!ELEMENT	Caption		%T_string;>
 <!ELEMENT	Title		%T_string;>
 <!ELEMENT	Extra		%T_string;>
+
 <!--~~ <Gi>
 ~~json <number/>
 ~~-->
 <!ELEMENT	Gi		%T_int;>
+
 <!ELEMENT	CreateDate		%T_string;>
 <!ELEMENT	UpdateDate		%T_string;>
+
 <!--~~ <Flags>
 ~~json <number/>
 ~~-->
 <!ELEMENT	Flags		%T_int;>
+
 <!--~~ <TaxId>
 ~~json <number/>
 ~~-->
 <!ELEMENT	TaxId		%T_int;>
+
 <!--~~ <Slen>
 ~~json <number/>
 ~~-->
 <!ELEMENT	Slen		%T_int;>
+
 <!ELEMENT   Statistics  (Stat)+>
+
 <!--~~ <Stat>
 ~~json <object/>
 ~~-->
 <!ELEMENT   Stat        EMPTY>
+
 <!--~~ @count
 ~~json <number/>
 ~~-->
@@ -47,27 +55,33 @@
   value     CDATA       #IMPLIED
   source    CDATA       #IMPLIED
   type      CDATA       #IMPLIED>
+  
 <!ELEMENT	Biomol		%T_string;>
 <!-- Until docsuminfo with fixed Biomol field is propagated, we'll need this spelling as well: -->
 <!ELEMENT	BioMol		%T_string;>
 <!ELEMENT	MolType		%T_string;>
 <!ELEMENT	Topology	%T_string;>
 <!ELEMENT	SourceDb	%T_string;>
+
 <!--~~ <SegSetSize>
 ~~json <number/>
 ~~-->
 <!ELEMENT	SegSetSize	%T_int;>
+
 <!--~~ <ProjectId>
 ~~json <number/>
 ~~-->
 <!ELEMENT	ProjectId	%T_int;>
+
 <!ELEMENT	Genome		%T_string;>
 <!ELEMENT	SubType		%T_string;>
 <!ELEMENT	SubName		%T_string;>
+
 <!--~~ <AssemblyGi>
 ~~json <number/>
 ~~-->
 <!ELEMENT	AssemblyGi	%T_int;>
+
 <!ELEMENT	AssemblyAcc	%T_string;>
 <!ELEMENT	Tech		%T_string;>
 <!ELEMENT	Completeness	%T_string;>
@@ -75,6 +89,7 @@
 <!ELEMENT	Strand		%T_string;>
 <!ELEMENT	Organism	%T_string;>
 <!ELEMENT   AccessionVersion %T_string;>
+
 <!ELEMENT   Properties  %T_string;>
 <!ATTLIST   Properties
   na        CDATA       #IMPLIED
@@ -85,6 +100,7 @@
   qual      CDATA       #IMPLIED
   genome    CDATA       #IMPLIED
   popset    CDATA       #IMPLIED>
+
 <!ELEMENT   Comment     %T_string;>
 <!ELEMENT   Status      %T_string;>
 
