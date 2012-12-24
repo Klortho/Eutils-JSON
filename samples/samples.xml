@@ -249,7 +249,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcassay&amp;id=493206</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary pccompound' status='' name='esummary.pccompound'
+    <sample title='ESummary pccompound' status='D' name='esummary.pccompound'
       dtd='eSummary_pccompound.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pccompound&amp;id=10322165</eutils-url>
       <desc></desc>

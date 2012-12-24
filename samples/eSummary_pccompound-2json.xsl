@@ -11,10 +11,18 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
-   <x:template match="IsomericSmiles | TPSA | TotalFormalCharge | MolecularWeight | BondChiralUndefCount | AtomChiralCount | MaxTC | InactiveAidCount | CanonicalSmiles | HydrogenBondAcceptorCount | BondChiralDefCount | MinAC | ProbeAidCount | Complexity | AtomChiralUndefCount | string | CreateDate | XLogP | IsotopeAtomCount | AtomChiralDefCount | int | HeavyAtomCount | RotatableBondCount | IUPACName | MaxAC | InChI | TautomerCount | MinTC | InChIKey | CID | HydrogenBondDonorCount | BondChiralCount | CovalentUnitCount | ActiveAidCount | TotalAidCount | MolecularFormula | @uid | @status">
+   <x:template match="IsomericSmiles | TPSA | MolecularWeight | MaxTC | CanonicalSmiles | MinAC | Complexity | string | CreateDate | XLogP | int | IUPACName | MaxAC | InChI | MinTC | InChIKey | MolecularFormula | @uid | @status">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:call-template name="string">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="TotalFormalCharge | BondChiralUndefCount | AtomChiralCount | InactiveAidCount | HydrogenBondAcceptorCount | BondChiralDefCount | ProbeAidCount | AtomChiralUndefCount | IsotopeAtomCount | AtomChiralDefCount | HeavyAtomCount | RotatableBondCount | TautomerCount | CID | HydrogenBondDonorCount | BondChiralCount | CovalentUnitCount | ActiveAidCount | TotalAidCount">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:call-template name="number">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
       </x:call-template>

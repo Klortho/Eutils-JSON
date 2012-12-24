@@ -1124,7 +1124,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary pccompound</th>
-      <td/>
+      <td>D</td>
       <td/>
       <td/>
       <td><a href="../../blob/master/samples/eSummary_pccompound.dtd">
