@@ -51,26 +51,26 @@
         <xsl:if test='@dtd'>
           <a href="../../blob/master/samples/{@dtd}">
             DTD
-          </a> (local)
+          </a>
           <br/>
           <!-- Assume the DTD filename always ends in ".dtd" -->
           <xsl:variable name='xslName' 
             select='concat(substring(@dtd, 1, string-length(@dtd) - 4), "-2json.xsl")'/>
           <a href='../../blob/master/samples/{$xslName}'>
-            Generated XSL
-          </a> (local)
+            XSL
+          </a>
           <br/>
         </xsl:if>
         <a href="../../blob/master/samples/{@name}.xml">
-          XML sample
-        </a> (local)
+          XML
+        </a>
         <br/>
         <a href="../../blob/master/samples/{@name}.json">
-          JSON product
-        </a> (local)
+          JSON
+        </a>
         <br/>
         <a href="{eutils-url}">
-          <xsl:text>Fetch from eutils</xsl:text>
+          <xsl:text>EUtils</xsl:text>
         </a>
       </td>
     </tr>

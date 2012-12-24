@@ -204,57 +204,75 @@ result in invalid JSON output.
       <td>D</td>
       <td/>
       <td>List all databases</td>
-      <td><a href="../../blob/master/samples/eInfo_020511.dtd">
+      <td>
+        <a href="../../blob/master/samples/eInfo_020511.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eInfo_020511-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/einfo.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/einfo.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eInfo_020511-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/einfo.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/einfo.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>EInfo PubMed</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eInfo_020511.dtd">
+      <td>
+        <a href="../../blob/master/samples/eInfo_020511.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eInfo_020511-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/einfo.pubmed.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/einfo.pubmed.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eInfo_020511-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/einfo.pubmed.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/einfo.pubmed.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>EInfo Error</th>
       <td>D</td>
       <td/>
       <td>Invalid database name</td>
-      <td><a href="../../blob/master/samples/eInfo_020511.dtd">
+      <td>
+        <a href="../../blob/master/samples/eInfo_020511.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eInfo_020511-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/einfo.error.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/einfo.error.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eInfo_020511-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/einfo.error.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/einfo.error.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle">EUtils</a>
+      </td>
     </tr>
   </table>
   <h2>ESearch</h2>
@@ -271,57 +289,75 @@ result in invalid JSON output.
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSearch_020511.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSearch_020511.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSearch_020511-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esearch.pubmed.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esearch.pubmed.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSearch_020511-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esearch.pubmed.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esearch.pubmed.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESearch Error</th>
       <td>D</td>
       <td/>
       <td>This query has a bad search term</td>
-      <td><a href="../../blob/master/samples/eSearch_020511.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSearch_020511.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSearch_020511-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esearch.error.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esearch.error.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSearch_020511-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esearch.error.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esearch.error.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESearch Bad Error</th>
       <td>D</td>
       <td/>
       <td>Invalid db name specified.</td>
-      <td><a href="../../blob/master/samples/eSearch_020511.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSearch_020511.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSearch_020511-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esearch.baderror.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esearch.baderror.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=fleegle&amp;term=cat">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSearch_020511-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esearch.baderror.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esearch.baderror.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=fleegle&amp;term=cat">EUtils</a>
+      </td>
     </tr>
   </table>
   <h2>ESummary</h2>
@@ -338,57 +374,75 @@ result in invalid JSON output.
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_pubmed.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_pubmed.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_pubmed-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.pubmed.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.pubmed.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmed&amp;id=5683731,22144687">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_pubmed-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pubmed.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pubmed.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmed&amp;id=5683731,22144687">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary protein</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_protein.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_protein.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_protein-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.protein.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.protein.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=protein&amp;id=284822047">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_protein-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.protein.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.protein.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=protein&amp;id=284822047">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary nuccore</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_nuccore.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_nuccore.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_nuccore-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.nuccore.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.nuccore.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nuccore&amp;id=424386131">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_nuccore-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.nuccore.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.nuccore.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nuccore&amp;id=424386131">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary nucleotide</th>
@@ -398,57 +452,75 @@ result in invalid JSON output.
         The instance document is invalid according to the DTD.  I fixed the DTD,
         by adding some elements and attributes that were declared in eSummary_nuccore.dtd.
       </td>
-      <td><a href="../../blob/master/samples/eSummary_nucleotide.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_nucleotide.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_nucleotide-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.nucleotide.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.nucleotide.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucleotide&amp;id=424386131">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_nucleotide-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.nucleotide.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.nucleotide.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucleotide&amp;id=424386131">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary nucgss</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_nucgss.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_nucgss.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_nucgss-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.nucgss.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.nucgss.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucgss&amp;id=371566079">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_nucgss-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.nucgss.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.nucgss.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucgss&amp;id=371566079">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary nucest</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_nucest.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_nucest.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_nucest-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.nucest.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.nucest.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucest&amp;id=409212211">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_nucest-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.nucest.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.nucest.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucest&amp;id=409212211">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary structure</th>
@@ -459,19 +531,25 @@ result in invalid JSON output.
         is not declared.  This requires us to create a special imported XSLT
         for this, esummary.structure.xsl.
       </td>
-      <td><a href="../../blob/master/samples/eSummary_structure.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_structure.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_structure-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.structure.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.structure.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=structure&amp;id=52770">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_structure-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.structure.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.structure.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=structure&amp;id=52770">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary genome</th>
@@ -482,38 +560,50 @@ result in invalid JSON output.
         The elements Organism_Group and Organism_Subgroup were not declared, so
         I added them as strings.
       </td>
-      <td><a href="../../blob/master/samples/eSummary_genome.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_genome.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_genome-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.genome.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.genome.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genome&amp;id=2640">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_genome-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.genome.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.genome.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genome&amp;id=2640">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary assembly</th>
       <td>D</td>
       <td>⑤</td>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_assembly.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_assembly.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_assembly-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.assembly.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.assembly.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=assembly&amp;id=440818">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_assembly-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.assembly.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.assembly.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=assembly&amp;id=440818">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary gcassembly</th>
@@ -524,190 +614,250 @@ result in invalid JSON output.
         SubmitterOrganization or AssemblyStatus.  I added the definitions for these from
         eSummary_assembly.dtd (which makes these two DTDs identical.)
       </td>
-      <td><a href="../../blob/master/samples/eSummary_gcassembly.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_gcassembly.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_gcassembly-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.gcassembly.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.gcassembly.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gcassembly&amp;id=440818">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_gcassembly-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.gcassembly.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.gcassembly.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gcassembly&amp;id=440818">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary genomeprj</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_genomeprj.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_genomeprj.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_genomeprj-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.genomeprj.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.genomeprj.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genomeprj&amp;id=54101">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_genomeprj-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.genomeprj.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.genomeprj.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genomeprj&amp;id=54101">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary bioproject</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_bioproject.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_bioproject.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_bioproject-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.bioproject.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.bioproject.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=bioproject&amp;id=171168">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_bioproject-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.bioproject.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.bioproject.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=bioproject&amp;id=171168">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary biosample</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_biosample.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_biosample.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_biosample-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.biosample.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.biosample.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosample&amp;id=182293">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_biosample-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.biosample.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.biosample.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosample&amp;id=182293">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary biosystems</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_biosystems.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_biosystems.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_biosystems-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.biosystems.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.biosystems.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosystems&amp;id=493040">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_biosystems-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.biosystems.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.biosystems.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosystems&amp;id=493040">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary blastdbinfo</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_blastdbinfo.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_blastdbinfo.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_blastdbinfo-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.blastdbinfo.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.blastdbinfo.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=blastdbinfo&amp;id=645844">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_blastdbinfo-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.blastdbinfo.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.blastdbinfo.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=blastdbinfo&amp;id=645844">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary books</th>
       <td>D</td>
       <td>⑤</td>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_books.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_books.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_books-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.books.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.books.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=books&amp;id=2825746">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_books-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.books.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.books.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=books&amp;id=2825746">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary cdd</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_cdd.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_cdd.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_cdd-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.cdd.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.cdd.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=cdd&amp;id=201140">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_cdd-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.cdd.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.cdd.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=cdd&amp;id=201140">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary clone</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_clone.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_clone.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_clone-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.clone.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.clone.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=clone&amp;id=29702171">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_clone-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.clone.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.clone.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=clone&amp;id=29702171">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary gap</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_gap.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_gap.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_gap-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.gap.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.gap.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gap&amp;id=195331">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_gap-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.gap.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.gap.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gap&amp;id=195331">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary gapplus</th>
@@ -719,19 +869,25 @@ result in invalid JSON output.
         elements until the instance document validated, but I don't have much confidence that
         the DTD I created is correct.
       </td>
-      <td><a href="../../blob/master/samples/eSummary_gapplus.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_gapplus.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_gapplus-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.gapplus.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.gapplus.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_gapplus-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.gapplus.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.gapplus.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary dbvar</th>
@@ -741,57 +897,75 @@ result in invalid JSON output.
         Instance document is not valid according to the DTD.  
         Assembly_accession is not defined.
       </td>
-      <td><a href="../../blob/master/samples/eSummary_dbvar.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_dbvar.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_dbvar-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.dbvar.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.dbvar.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_dbvar-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.dbvar.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.dbvar.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary epigenomics</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_epigenomics.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_epigenomics.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_epigenomics-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.epigenomics.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.epigenomics.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=epigenomics&amp;id=16796">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_epigenomics-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.epigenomics.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.epigenomics.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=epigenomics&amp;id=16796">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary gene</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_gene.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_gene.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_gene-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.gene.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.gene.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gene&amp;id=21803">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_gene-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.gene.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.gene.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gene&amp;id=21803">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary gds</th>
@@ -804,95 +978,125 @@ result in invalid JSON output.
         with text content.  No declaration for &lt;GEO2R&gt;.  The sample has value "yes", and I made
         this a JSON string, although boolean might be better.
       </td>
-      <td><a href="../../blob/master/samples/eSummary_gds.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_gds.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_gds-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.gds.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.gds.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_gds-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.gds.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.gds.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary geo</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_geo.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_geo.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_geo-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.geo.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.geo.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geo&amp;id=65685298">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_geo-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.geo.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.geo.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geo&amp;id=65685298">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary geoprofiles</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_geoprofiles.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_geoprofiles.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_geoprofiles-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.geoprofiles.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.geoprofiles.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geoprofiles&amp;id=65526197">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_geoprofiles-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.geoprofiles.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.geoprofiles.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geoprofiles&amp;id=65526197">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary homologene</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_homologene.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_homologene.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_homologene-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.homologene.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.homologene.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=homologene&amp;id=20659">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_homologene-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.homologene.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.homologene.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=homologene&amp;id=20659">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary journals</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_journals.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_journals.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_journals-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.journals.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.journals.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=journals&amp;id=35478">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_journals-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.journals.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.journals.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=journals&amp;id=35478">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary medgen</th>
@@ -903,146 +1107,192 @@ result in invalid JSON output.
         I went ahead and created a DTD for this.  There's just enough detail to get
         the sample file to validate.  It might or might not be correct.
       </td>
-      <td><a href="../../blob/master/samples/esummary.medgen.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.medgen.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=medgen&amp;id=122602">Fetch from eutils</a></td>
+      <td>
+        <a href="../../blob/master/samples/esummary.medgen.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.medgen.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=medgen&amp;id=122602">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary mesh</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_mesh.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_mesh.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_mesh-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.mesh.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.mesh.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=mesh&amp;id=67414177">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_mesh-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.mesh.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.mesh.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=mesh&amp;id=67414177">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary ncbisearch</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_ncbisearch.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_ncbisearch.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_ncbisearch-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.ncbisearch.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.ncbisearch.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=ncbisearch&amp;id=1121">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_ncbisearch-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.ncbisearch.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.ncbisearch.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=ncbisearch&amp;id=1121">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary nlmcatalog</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_nlmcatalog.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_nlmcatalog.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_nlmcatalog-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.nlmcatalog.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.nlmcatalog.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nlmcatalog&amp;id=101573253">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_nlmcatalog-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.nlmcatalog.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.nlmcatalog.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nlmcatalog&amp;id=101573253">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary omia</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_omia.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_omia.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_omia-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.omia.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.omia.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omia&amp;id=2615">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_omia-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.omia.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.omia.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omia&amp;id=2615">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary omim</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_omim.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_omim.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_omim-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.omim.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.omim.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omim&amp;id=609708">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_omim-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.omim.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.omim.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omim&amp;id=609708">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary pmc</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_pmc.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_pmc.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_pmc-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.pmc.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.pmc.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,14900">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_pmc-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pmc.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pmc.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,14900">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary pmc with error</th>
       <td>D</td>
       <td>②</td>
       <td>The XML results here are not valid according to the DTD. </td>
-      <td><a href="../../blob/master/samples/eSummary_pmc.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_pmc.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_pmc-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.pmcerror.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.pmcerror.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,1,14900">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_pmc-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pmcerror.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pmcerror.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,1,14900">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary popset</th>
@@ -1051,95 +1301,125 @@ result in invalid JSON output.
       <td>
         The instance document is invalid according to the DTD.
       </td>
-      <td><a href="../../blob/master/samples/eSummary_popset.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_popset.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_popset-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.popset.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.popset.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=popset&amp;id=418209882">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_popset-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.popset.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.popset.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=popset&amp;id=418209882">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary probe</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_probe.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_probe.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_probe-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.probe.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.probe.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=probe&amp;id=156811">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_probe-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.probe.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.probe.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=probe&amp;id=156811">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary proteinclusters</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_proteinclusters.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_proteinclusters.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_proteinclusters-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.proteinclusters.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.proteinclusters.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=proteinclusters&amp;id=2516486">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_proteinclusters-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.proteinclusters.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.proteinclusters.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=proteinclusters&amp;id=2516486">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary pcassay</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_pcassay.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_pcassay.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_pcassay-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.pcassay.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.pcassay.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcassay&amp;id=493206">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_pcassay-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pcassay.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pcassay.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcassay&amp;id=493206">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary pccompound</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_pccompound.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_pccompound.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_pccompound-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.pccompound.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.pccompound.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pccompound&amp;id=10322165">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_pccompound-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pccompound.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pccompound.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pccompound&amp;id=10322165">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary pcsubstance</th>
@@ -1148,32 +1428,42 @@ result in invalid JSON output.
       <td>
         XML instance document is empty.
       </td>
-      <td><a href="../../blob/master/samples/eSummary_pcsubstance.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_pcsubstance.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_pcsubstance-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.pcsubstance.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.pcsubstance.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcsubstance&amp;id=127317050">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_pcsubstance-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pcsubstance.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pcsubstance.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcsubstance&amp;id=127317050">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary pubmedhealth</th>
       <td>✗</td>
       <td/>
       <td>Can't find DTD.  See EU-1908.</td>
-      <td><a href="../../blob/master/samples/esummary.pubmedhealth.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.pubmedhealth.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625">Fetch from eutils</a></td>
+      <td>
+        <a href="../../blob/master/samples/esummary.pubmedhealth.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.pubmedhealth.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary seqannot</th>
@@ -1182,19 +1472,25 @@ result in invalid JSON output.
       <td>
         XML instance document is empty.
       </td>
-      <td><a href="../../blob/master/samples/eSummary_seqannot.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_seqannot.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_seqannot-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.seqannot.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.seqannot.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=seqannot&amp;id=7232">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_seqannot-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.seqannot.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.seqannot.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=seqannot&amp;id=7232">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary snp</th>
@@ -1203,38 +1499,50 @@ result in invalid JSON output.
       <td>
         XML instance document is empty.
       </td>
-      <td><a href="../../blob/master/samples/eSummary_snp.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_snp.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_snp-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.snp.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.snp.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=snp&amp;id=206676795">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_snp-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.snp.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.snp.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=snp&amp;id=206676795">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary sra</th>
       <td/>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_sra.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_sra.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_sra-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.sra.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.sra.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=sra&amp;id=30750">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_sra-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.sra.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.sra.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=sra&amp;id=30750">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary taxonomy</th>
@@ -1243,114 +1551,150 @@ result in invalid JSON output.
       <td>
         XML instance document is invalid.
       </td>
-      <td><a href="../../blob/master/samples/eSummary_taxonomy.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_taxonomy.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_taxonomy-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.taxonomy.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.taxonomy.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=taxonomy&amp;id=9685">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_taxonomy-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.taxonomy.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.taxonomy.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=taxonomy&amp;id=9685">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary toolkit</th>
       <td/>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_toolkit.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_toolkit.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_toolkit-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.toolkit.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.toolkit.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=toolkit&amp;id=149440">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_toolkit-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.toolkit.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.toolkit.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=toolkit&amp;id=149440">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary unigene</th>
       <td/>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_unigene.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_unigene.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_unigene-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.unigene.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.unigene.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unigene&amp;id=1190943">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_unigene-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.unigene.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.unigene.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unigene&amp;id=1190943">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary unists</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_unists.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_unists.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_unists-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.unists.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.unists.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unists&amp;id=254085,254086">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_unists-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.unists.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.unists.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unists&amp;id=254085,254086">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary gencoll</th>
       <td/>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_gencoll.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_gencoll.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_gencoll-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.gencoll.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.gencoll.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_gencoll-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.gencoll.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.gencoll.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608">EUtils</a>
+      </td>
     </tr>
     <tr>
       <th>ESummary error</th>
       <td>D</td>
       <td/>
       <td/>
-      <td><a href="../../blob/master/samples/eSummary_041029.dtd">
+      <td>
+        <a href="../../blob/master/samples/eSummary_041029.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/eSummary_041029-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/esummary.error.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/esummary.error.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=error&amp;id=254088">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/eSummary_041029-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.error.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/esummary.error.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=error&amp;id=254088">EUtils</a>
+      </td>
     </tr>
   </table>
   <h2>EFetch</h2>
@@ -1373,19 +1717,25 @@ result in invalid JSON output.
         The JSON file, efetch.pubmed.json, here in the samples directory is the result of that
         output, and should be the goal.
       </td>
-      <td><a href="../../blob/master/samples/pubmed_120101.dtd">
+      <td>
+        <a href="../../blob/master/samples/pubmed_120101.dtd">
             DTD
-          </a> (local)
-          <br/><a href="../../blob/master/samples/pubmed_120101-2json.xsl">
-            Generated XSL
-          </a> (local)
-          <br/><a href="../../blob/master/samples/efetch.pubmed.xml">
-          XML sample
-        </a> (local)
-        <br/><a href="../../blob/master/samples/efetch.pubmed.json">
-          JSON product
-        </a> (local)
-        <br/><a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml">Fetch from eutils</a></td>
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/pubmed_120101-2json.xsl">
+            XSL
+          </a>
+        <br/>
+        <a href="../../blob/master/samples/efetch.pubmed.xml">
+          XML
+        </a>
+        <br/>
+        <a href="../../blob/master/samples/efetch.pubmed.json">
+          JSON
+        </a>
+        <br/>
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml">EUtils</a>
+      </td>
     </tr>
   </table>
 </div>

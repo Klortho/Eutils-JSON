@@ -126,12 +126,12 @@
 #dtd2xml2json eSummary_pcassay.dtd eSummary_pcassay-2json.xsl
 #xsltproc eSummary_pcassay-2json.xsl esummary.pcassay.xml > esummary.pcassay.json
 
-dtd2xml2json eSummary_pccompound.dtd eSummary_pccompound-2json.xsl
-xsltproc eSummary_pccompound-2json.xsl esummary.pccompound.xml > esummary.pccompound.json
-exit
+#dtd2xml2json eSummary_pccompound.dtd eSummary_pccompound-2json.xsl
+#xsltproc eSummary_pccompound-2json.xsl esummary.pccompound.xml > esummary.pccompound.json
 
-#dtd2xml2json eSummary_pcsubstance.dtd eSummary_pcsubstance-2json.xsl
-#xsltproc eSummary_pcsubstance-2json.xsl esummary.pcsubstance.xml > esummary.pcsubstance.json
+dtd2xml2json eSummary_pcsubstance.dtd eSummary_pcsubstance-2json.xsl
+xsltproc eSummary_pcsubstance-2json.xsl esummary.pcsubstance.xml > esummary.pcsubstance.json
+exit
 
 #dtd2xml2json  -2json.xsl
 #xsltproc -2json.xsl esummary.pubmedhealth.xml > esummary.pubmedhealth.json
