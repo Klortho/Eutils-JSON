@@ -188,7 +188,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=journals&amp;id=35478</eutils-url>
       <desc></desc>
     </sample>
-    <sample title='ESummary medgen' status='D' name='esummary.medgen'>
+    <sample title='ESummary medgen' status='D' name='esummary.medgen' dtd='eSummary_medgen.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=medgen&amp;id=122602</eutils-url>
       <desc>
         Can't find DTD; see EU-1908.
@@ -261,9 +261,12 @@
         XML instance document is empty.
       </desc>
     </sample>
-    <sample title='ESummary pubmedhealth' status='✗' name='esummary.pubmedhealth'>
+    <sample title='ESummary pubmedhealth' status='D' name='esummary.pubmedhealth'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625</eutils-url>
-      <desc>Can't find DTD.  See EU-1908.</desc>
+      <desc>
+        Can't find DTD.  See EU-1908.  I created one by copying and hacking the books DTD.  Might or
+        might not be correct.
+      </desc>
     </sample>
     <sample title='ESummary seqannot' status='' name='esummary.seqannot' dtd='eSummary_seqannot.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=seqannot&amp;id=7232</eutils-url>

@@ -94,6 +94,8 @@
     uri="eSummary_proteinclusters.dtd"/>
   <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_pubmed.dtd"
     uri="eSummary_pubmed.dtd"/>
+  <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_pubmedhealth.dtd"
+    uri="eSummary_pubmedhealth.dtd"/>
   <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_seqannot.dtd"
     uri="eSummary_seqannot.dtd"/>
   <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_snp.dtd"

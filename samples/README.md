@@ -631,7 +631,9 @@ result in invalid JSON output.
         I went ahead and created a DTD for this.  There's just enough detail to get
         the sample file to validate.  It might or might not be correct.
       </td>
-      <td><a href="../../blob/master/samples/esummary.medgen.xml">XML</a>,
+      <td><a href="../../blob/master/samples/eSummary_medgen.dtd">DTD</a>,
+          <a href="../../blob/master/samples/eSummary_medgen-2json.xsl">XSL</a>,
+        <a href="../../blob/master/samples/esummary.medgen.xml">XML</a>,
         <a href="../../blob/master/samples/esummary.medgen.json">JSON</a>,
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=medgen&amp;id=122602">EUtils</a></td>
     </tr>
@@ -771,7 +773,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary pcsubstance</th>
-      <td/>
+      <td>D</td>
       <td/>
       <td>
         XML instance document is empty.
@@ -784,9 +786,12 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary pubmedhealth</th>
-      <td>✗</td>
+      <td>D</td>
       <td/>
-      <td>Can't find DTD.  See EU-1908.</td>
+      <td>
+        Can't find DTD.  See EU-1908.  I created one by copying and hacking the books DTD.  Might or
+        might not be correct.
+      </td>
       <td><a href="../../blob/master/samples/esummary.pubmedhealth.xml">XML</a>,
         <a href="../../blob/master/samples/esummary.pubmedhealth.json">JSON</a>,
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625">EUtils</a></td>

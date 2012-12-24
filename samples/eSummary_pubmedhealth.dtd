@@ -1,0 +1,88 @@
+<!-- 
+  DocSum DTD for pubmedhealth database.
+  This was copied and modified from the eSummary_books.dtd.
+-->
+
+<!--~~ !dtd
+~~json 
+    <json type='esummary' version='0.3'>
+      <config lcnames='true'/>
+    </json>
+~~-->
+
+<!ENTITY	 % T_string		"(#PCDATA)">
+<!ENTITY	 % T_date		"(#PCDATA)">
+<!ENTITY	 % T_xml		"(#PCDATA)">
+<!ENTITY	 % T_int		"(#PCDATA)">
+
+<!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT	Title		%T_string;>
+<!ELEMENT	ShortTitle		%T_string;>
+<!ELEMENT	AltTitleList		%T_string;>
+<!ELEMENT	SortDate %T_date;>
+<!ELEMENT	UpdateDate %T_date;>
+<!ELEMENT	PubDate		%T_date;>
+<!ELEMENT	ID		%T_string;>
+<!ELEMENT	AccessionID		%T_string;>
+<!ELEMENT	SourceID %T_string;>
+<!ELEMENT	Parents		%T_string;>
+<!ELEMENT	RType		%T_string;>
+<!ELEMENT	RID		%T_string;>
+<!ELEMENT	Text		%T_string;>
+<!ELEMENT	Subject %T_string;>
+<!ELEMENT	UMLSID %T_string;>
+<!ELEMENT	ICD9ID %T_string;>
+<!ELEMENT	BioconceptsID %T_string;>
+<!ELEMENT	Teaser %T_string;>
+<!ELEMENT	BookInfo		%T_xml;>
+<!ELEMENT	ByLine %T_string;>
+<!ELEMENT	ParentID %T_string;>
+<!ELEMENT	ContentProvider %T_string;>
+<!ELEMENT	TagLine %T_string;>
+
+<!--~~ <BookID>
+~~json <number/>
+~~-->
+<!ELEMENT	BookID		%T_int;>
+
+<!ELEMENT	BookAccessionID		%T_string;>
+<!ELEMENT	ChapterID		%T_int;>
+<!ELEMENT	ChapterAccessionID		%T_string;>
+<!ELEMENT	Book		%T_string;>
+<!ELEMENT	Navigation		%T_string;>
+
+<!-- Definition of Structure type: T_DocSum -->
+<!--~~ <DocumentSummary>
+~~json <object name='@uid'/>
+~~-->
+<!ENTITY	 % T_DocSum	"(
+ 			Title
+			| PubDate
+			| ID
+			| AccessionID
+			| Parents
+			| RType
+			| RID
+			| Text
+			| BookInfo
+			| BookID
+			| BookAccessionID
+			| ChapterID
+			| ChapterAccessionID
+			| Book
+			| Navigation
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!--~~ <DocumentSummarySet>
+~~json <object/>
+~~-->
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!--~~ <eSummaryResult>
+~~ tags root
+~~-->
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>
