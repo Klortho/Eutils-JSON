@@ -141,12 +141,12 @@
 #dtd2xml2json eSummary_snp.dtd eSummary_snp-2json.xsl
 #xsltproc eSummary_snp-2json.xsl esummary.snp.xml > esummary.snp.json
 
-dtd2xml2json eSummary_sra.dtd eSummary_sra-2json.xsl
-xsltproc eSummary_sra-2json.xsl esummary.sra.xml > esummary.sra.json
-exit
+#dtd2xml2json eSummary_sra.dtd eSummary_sra-2json.xsl
+#xsltproc eSummary_sra-2json.xsl esummary.sra.xml > esummary.sra.json
 
-#dtd2xml2json eSummary_taxonomy.dtd eSummary_taxonomy-2json.xsl
-#xsltproc eSummary_taxonomy-2json.xsl esummary.taxonomy.xml > esummary.taxonomy.json
+dtd2xml2json eSummary_taxonomy.dtd eSummary_taxonomy-2json.xsl
+xsltproc eSummary_taxonomy-2json.xsl esummary.taxonomy.xml > esummary.taxonomy.json
+exit
 
 #dtd2xml2json eSummary_toolkit.dtd eSummary_toolkit-2json.xsl
 #xsltproc eSummary_toolkit-2json.xsl esummary.toolkit.xml > esummary.toolkit.json

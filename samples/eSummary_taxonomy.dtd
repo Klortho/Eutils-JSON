@@ -11,30 +11,65 @@
 <!ENTITY	 % T_int		"(#PCDATA)">
 
 <!-- Members definition of Structure type: T_DocSum -->
+<!ELEMENT Status %T_string;>
 <!ELEMENT	Rank		%T_string;>
 <!ELEMENT	Division		%T_string;>
 <!ELEMENT	ScientificName		%T_string;>
 <!ELEMENT	CommonName		%T_string;>
+
+<!--~~ <TaxId>
+~~json <number/>
+~~-->
 <!ELEMENT	TaxId		%T_int;>
+
+<!--~~ <AkaTaxId>
+~~json <number/>
+~~-->
+<!ELEMENT	AkaTaxId		%T_int;>
+
+<!--~~ <NucNumber>
+~~json <number/>
+~~-->
 <!ELEMENT	NucNumber		%T_int;>
+
+<!--~~ <ProtNumber>
+~~json <number/>
+~~-->
 <!ELEMENT	ProtNumber		%T_int;>
+
+<!--~~ <StructNumber>
+~~json <number/>
+~~-->
 <!ELEMENT	StructNumber		%T_int;>
+
+<!--~~ <GenNumber>
+~~json <number/>
+~~-->
 <!ELEMENT	GenNumber		%T_int;>
+
+<!--~~ <GeneNumber>
+~~json <number/>
+~~-->
 <!ELEMENT	GeneNumber		%T_int;>
+
 <!ELEMENT	Genus		%T_string;>
 <!ELEMENT	Species		%T_string;>
 <!ELEMENT	Subsp		%T_string;>
+
+<!ELEMENT ModificationDate %T_string; >
 
 <!-- Definition of Structure type: T_DocSum -->
 <!--~~ <DocumentSummary>
 ~~json <object name='@uid'/>
 ~~-->
 <!ENTITY	 % T_DocSum	"(
- 			Rank
+      Status
+ 			| Rank
 			| Division
 			| ScientificName
 			| CommonName
 			| TaxId
+			| AkaTaxId
 			| NucNumber
 			| ProtNumber
 			| StructNumber
@@ -43,6 +78,7 @@
 			| Genus
 			| Species
 			| Subsp
+			| ModificationDate
 			)*">
 
 <!ELEMENT DocumentSummary %T_DocSum;>

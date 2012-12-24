@@ -839,10 +839,11 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary taxonomy</th>
-      <td/>
+      <td>D</td>
       <td/>
       <td>
-        XML instance document is invalid.
+        XML instance document is invalid.  Added &lt;Status&gt;, &lt;AkaTaxId&gt;, and
+        &lt;ModificationDate&gt; to the DTD.
       </td>
       <td><a href="../../blob/master/samples/eSummary_taxonomy.dtd">DTD</a>,
           <a href="../../blob/master/samples/eSummary_taxonomy-2json.xsl">XSL</a>,
