@@ -824,9 +824,13 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary sra</th>
-      <td/>
-      <td/>
-      <td/>
+      <td>D</td>
+      <td>⑤</td>
+      <td>
+        Like seqannot, the bulk of the data here is trapped inside the escaped-markup content
+        of the &lt;ExpXml&gt; element.  There is another escaped-markup element here, &lt;Runs&gt;, 
+        which also has some nice but inaccessible data.
+      </td>
       <td><a href="../../blob/master/samples/eSummary_sra.dtd">DTD</a>,
           <a href="../../blob/master/samples/eSummary_sra-2json.xsl">XSL</a>,
         <a href="../../blob/master/samples/esummary.sra.xml">XML</a>,

@@ -281,9 +281,14 @@
       <desc>
       </desc>
     </sample>
-    <sample title='ESummary sra' status='' name='esummary.sra' dtd='eSummary_sra.dtd'>
+    <sample title='ESummary sra' status='D' name='esummary.sra' dtd='eSummary_sra.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=sra&amp;id=30750</eutils-url>
-      <desc></desc>
+      <desc>
+        Like seqannot, the bulk of the data here is trapped inside the escaped-markup content
+        of the &lt;ExpXml> element.  There is another escaped-markup element here, &lt;Runs>, 
+        which also has some nice but inaccessible data.
+      </desc>
+      <notes>⑤</notes>
     </sample>
     <sample title='ESummary taxonomy' status='' name='esummary.taxonomy' dtd='eSummary_taxonomy.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=taxonomy&amp;id=9685</eutils-url>
