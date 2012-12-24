@@ -33,7 +33,7 @@ See also problems.md here for things that should be turned into JIRA tickets.
 
 # Problems
 
-## All ESummary DTDs seem to use the same public identifier
+## ① All ESummary DTDs seem to use the same public identifier
 
 * All the esummary example files use the public id "-//NLM//DTD eSummaryResult//EN"
   to refer to their DTDs, but different system identifiers.  This makes it more
@@ -41,14 +41,14 @@ See also problems.md here for things that should be turned into JIRA tickets.
   external tools from hitting our servers every time they read an XML instance
   document.
 
-## XML results that fail to validate
+## ② XML results that fail to validate
 
 * esummary.pmcerror.xml, PMC esummary, with an erroroneous id:
   http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&version=2.0&db=pmc&id=254085,1,14900
 
 * esummary.nucleotide.xml
 
-## DTDs elements that are under-specified.
+## ③ DTDs elements that are under-specified.
 
 In many cases, the declarations in the DTDs are not optimal.  We often guessed at
 the actual schema that the data would conform to, based on the example instance
@@ -78,12 +78,52 @@ whether or not our conversion to JSON is robust.
 
 These DTD specs should be reviewed, and tightened up, where possible.
 
-## Errors in DTDs
+## ④ Errors in DTDs
 
 * In eSummary_gapplus.dtd, element &lt;source> is marked as "T_int", but its values
   in instance documents are not numbers, they are text strings.
 
-## Miscellaneous places where the DTDs could be improved
+## ⑤ Escaped markup
+
+In many places, escaped-XML is used inside elements.  Here are two examples:
+
+In esummary.book.xml, in the &lt;BookInfo> element.  This uses a CDATA section:
+
+```
+<BookInfo><![CDATA[
+  <Info>
+    <Path>
+      <Parent id="pdqcis" role="source" type="book" uid="2821524">
+        <Title>PDQ Cancer Information Summaries</Title>
+      </Parent>
+  ....
+]]></BookInfo>
+```
+
+In esummary.medgen.xml, in the &lt;ConceptMeta> element.  This does not use
+a CDATA section, but the effect is exactly the same:
+
+```
+<ConceptMeta>&lt;Names&gt;&lt;Name SDUI=&quot;C048285&quot; SAB=&quot;MSH&quot;
+  TTY=&quot;NM&quot; type=&quot;preferred&quot;&gt;5&apos;-chloroacetamido-5
+  ...&lt;/SNOMEDCT&gt;</ConceptMeta>
+```
+
+These make the data very hard to extract
+for other applications, and in particular for conversion into JSON.  These should
+be eliminated as much as possible.  For example, in the books example, probably
+this was only done because the &lt;Title> element can contain HTML.  If that's the
+case, then only that element needs to contain escaped markup, and not the entire
+&lt;BookInfo> element.  For medgen, I can't see any reason for it.
+
+Places where this is a problem:
+
+* esummary.assembly.xml - in the &lt;Meta> element.
+* eSummary_book.dtd - in &lt;BookInfo>
+* esummary.medgen.xml  - in &lt;ConceptMeta>
+
+
+## ⑥ Miscellaneous problems / questions / suggestions
 
 ### eSummary_blastdbinfo.dtd
 
@@ -102,18 +142,6 @@ Likewise:
     <!ELEMENT TermData "(SearchTerm)*">
     <!ELEMENT SearchTerm "(#PCDATA)">
 
-### eSummary_book.dtd
-
-Uses escaped-XML CDATA section for BookInfo.  This makes the data very hard to extract
-for other applications, and in particular for conversion into JSON.  My guess is that
-this is only done because you can have HTML markup inside the title.  If that's the
-case, then the escaped-XML could be reserved to just the &lt;Title> element.
-
-## Other
-
-* esummary.assembly uses an ugly hack to get metadata into the output, including
-  an escaped-xml section inside a "Meta" element.  This data will be very difficult to
-  extract in JSON.
 
 
 # Assumptions
@@ -761,7 +789,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary homologene</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_homologene.dtd">eSummary_homologene.dtd</a>
         <br/>
@@ -778,7 +806,7 @@ result in invalid JSON output.
     </tr>
     <tr>
       <th>ESummary journals</th>
-      <td/>
+      <td>D</td>
       <td>
         <a href="../../blob/master/samples/eSummary_journals.dtd">eSummary_journals.dtd</a>
         <br/>

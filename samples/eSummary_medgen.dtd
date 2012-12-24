@@ -1,0 +1,51 @@
+<!-- 
+  DocSum DTD for medgen database.
+  This was invented by Chris Maloney, and might or might not be correct!
+-->
+
+<!--~~ !dtd
+~~json 
+    <json type='esummary' version='0.3'>
+      <config lcnames='true'/>
+    </json>
+~~-->
+
+<!ELEMENT ConceptId (#PCDATA) >
+<!ELEMENT Title (#PCDATA) >
+<!ELEMENT Definition (#PCDATA) >
+<!ELEMENT SemanticId (#PCDATA) >
+<!ELEMENT SemanticType (#PCDATA) >
+<!ELEMENT Suppressed (#PCDATA) >
+<!ELEMENT ConceptMeta (#PCDATA) >
+<!ELEMENT ModificationDate (#PCDATA) >
+<!ELEMENT Merged (#PCDATA) >
+
+<!-- Definition of Structure type: T_DocSum -->
+<!--~~ <DocumentSummary>
+~~json <object name='@uid'/>
+~~-->
+<!ENTITY	 % T_DocSum	"(
+ 			  ConceptId
+			| Title
+			| Definition
+			| SemanticId
+			| SemanticType
+			| Suppressed
+			| ConceptMeta
+			| ModificationDate
+			| Merged
+			)*">
+
+<!ELEMENT DocumentSummary %T_DocSum;>
+<!ATTLIST DocumentSummary uid CDATA #IMPLIED>
+
+<!--~~ <DocumentSummarySet>
+~~json <object/>
+~~-->
+<!ELEMENT DocumentSummarySet (DocumentSummary*)>
+<!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
+
+<!--~~ <eSummaryResult>
+~~ tags root
+~~-->
+<!ELEMENT eSummaryResult (DocumentSummarySet?)>

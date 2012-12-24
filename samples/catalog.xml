@@ -56,6 +56,8 @@
     uri="eSummary_homologene.dtd"/>
   <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_journals.dtd"
     uri="eSummary_journals.dtd"/>
+  <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_medgen.dtd"
+    uri="eSummary_medgen.dtd"/>
   <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_mesh.dtd"
     uri="eSummary_mesh.dtd"/>
   <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_ncbisearch.dtd"
