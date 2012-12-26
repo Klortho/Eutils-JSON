@@ -32,6 +32,7 @@
 <!ENTITY % Medline PUBLIC "-//NLM//DTD Medline, 01 Jan 2012//EN"
       "nlmmedlinecitationset_120101.dtd">
 %Medline;
+
 <!-- ================================================================= -->
 <!ENTITY % ArticleTitle.Ref "ArticleTitle">
 <!ENTITY % ISSN.Ref "ISSN?">
@@ -49,6 +50,7 @@
 							
 <!ENTITY % art.id.type "(doi | pii | pmcpid | pmpid | pmc | mid |
                               sici | %art.id.type.int;)">
+
 <!-- ================================================================= -->
 <!--~~ <PubmedArticleSet>
 ~~tags root
@@ -81,7 +83,11 @@
 <!ELEMENT ObjectList (Object)+>
 
 <!--~~ <Object>
-~~json <custom/>
+~~json
+  <array>
+    <object select='@*'/>
+    <members select='*'/>
+  </array>
 ~~-->
 <!ELEMENT Object (Param)*>
 <!ATTLIST Object Type CDATA #REQUIRED>

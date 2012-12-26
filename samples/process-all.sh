@@ -163,5 +163,5 @@
 #xsltproc eSummary_041029-2json.xsl esummary.error.xml > esummary.error.json
 
 dtd2xml2json pubmed_120101.dtd pubmed_120101-2json.xsl
-xsltproc pubmed_120101-2json.xsl efetch.pubmed.xml > efetch.pubmed.json
-xsltproc pubmed_120101-2json.xsl efetch.pubmedbook.xml > efetch.pubmedbook.json
+#xsltproc pubmed_120101-2json.xsl efetch.pubmed.xml > efetch.pubmed.json
+#xsltproc pubmed_120101-2json.xsl efetch.pubmedbook.xml > efetch.pubmedbook.json#

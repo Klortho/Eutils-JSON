@@ -32,7 +32,9 @@
 
   <!-- 
     Elements from nlmmedlinecitationset that have "%text;"
-    content, and have attributes.
+    content, and have attributes.  These are converted into an object
+    with one member for each attribute, and one member named "value" for
+    the content.
   -->
   <xsl:template match='AbstractText | 
                        BookTitle |
@@ -41,8 +43,17 @@
                        SectionTitle'>
     <xsl:param name="indent" select="''"/>
     <xsl:param name="context" select="'unknown'"/>
+    <xsl:param name='trailing-comma' select='position() != last()'/>
 
-    <xsl:value-of select='np:start-object($indent)'/>
+    <xsl:choose>
+      <xsl:when test='$context = "array"'>
+        <xsl:value-of select='np:start-object($indent)'/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:variable name="key" select="np:to-lower(name(.))"/>
+        <xsl:value-of select="np:key-start-object($indent, $key)"/>
+      </xsl:otherwise>
+    </xsl:choose>
     
     <xsl:apply-templates select='@*'>
       <xsl:with-param name="indent" select="concat($indent, $iu)"/>
@@ -57,9 +68,10 @@
       <xsl:with-param name="indent" select="concat($indent, $iu)"/>
       <xsl:with-param name='key' select='"value"'/>
       <xsl:with-param name='value' select='$value'/>
+      <xsl:with-param name='trailing-comma' select='false()'/>
     </xsl:call-template>
     
-    <xsl:value-of select='np:end-object($indent, position() != last())'/>
+    <xsl:value-of select='np:end-object($indent, $trailing-comma)'/>
   </xsl:template>
 
   <!-- 
@@ -102,103 +114,5 @@
   </xsl:template>
 
 
-  <!-- 
-    AuthorList, DataBankList, Object.  Inside an object.  These are almost normal array-types,
-    but they each take some attributes.   We'll create a JSON object at the front of
-    the array to hold the attribute values.
-  -->
-  <xsl:template match='AuthorList | DataBankList | Object'>
-    <xsl:param name="indent" select="''"/>
-    
-    <xsl:value-of select='np:key-start-array($indent, "np:to-lower(name(.))'/>
-    
-    <xsl:call-template name='object-in-array'>
-      <xsl:with-param name="indent" select="concat($indent, $iu)"/>
-      <xsl:with-param name='kids' select='@CompleteYN'/>
-      <xsl:with-param name='trailing-comma' select='not(not(*))'/>
-    </xsl:call-template>
-
-    <xsl:apply-templates select='*'>
-      <xsl:with-param name='indent' select='concat($indent, $iu)'/>
-      <xsl:with-param name='context' select='"array"'/>
-    </xsl:apply-templates>
-
-    <xsl:value-of select='np:end-array()'/>
-  </xsl:template>
-
-  <!--
-    Author.  Context is array.  This will be a normal object with the exception that the
-    NameID (zero-to-many) kids will be turned into an embedded array. 
-  -->
-  <xsl:template match='Author'>
-    <xsl:param name='indent' select='""'/>
-    
-    <!-- "ci" = current indent.  This will illustrate a formulaic way of incrementing 
-      the indent each time we start a new embedded item. Start with "0", which will
-      be the indent that we were given as a parameter.    --> 
-    <xsl:variable name='ci0' select='$indent'/>  
-    
-    <xsl:value-of select='np:start-object($ci0)'/>
-    <xsl:variable name='ci1' select='concat($ci0, $iu)'/>
-    
-    <xsl:apply-templates select='@*|*[not(self::NameID)]'>
-      <xsl:with-param name='indent' select='$ci1'/>
-      <xsl:with-param name="context" select="'object'"/>
-      <xsl:with-param name="trailing-comma" select="true()"/>
-    </xsl:apply-templates>
-
-    <xsl:call-template name='array-in-object'>
-      <xsl:with-param name="indent" select="$ci1"/>
-      <xsl:with-param name='key' select='"nameids"'/>
-      <xsl:with-param name='kids' select='NameID'
-      <xsl:with-param name="trailing-comma" select="false()"/>
-    </xsl:call-template>
-    
-    <xsl:value-of select='np:end-object($ci0, position() != last())'/>
-  </xsl:template>
-
-
-
-  <!--
-    Book.  Context is object.  This will be a normal object with the exception that the
-    AuthorList*, Isbn*, and ELocationID* kids will be turned into an embedded arrays. 
-  -->
-  <xsl:template match='Book'>
-    <xsl:param name='indent' select='""'/>
-    <xsl:variable name='ci0' select='$indent'/>  
-    
-    <xsl:value-of select='np:key-start-object($ci0, "book")'/>
-    <xsl:variable name='ci1' select='concat($ci0, $iu)'/>
-    
-    <xsl:apply-templates select='@*|*[not(self::NameID or self::Isbn or self::ELocationID)]'>
-      <xsl:with-param name='indent' select='$ci1'/>
-      <xsl:with-param name="context" select="'object'"/>
-      <xsl:with-param name="trailing-comma" select="true()"/>
-    </xsl:apply-templates>
-    
-    <xsl:call-template name='array-in-object'>
-      <xsl:with-param name="indent" select="$ci1"/>
-      <xsl:with-param name='key' select='"authorlists"'/>
-      <xsl:with-param name='kids' select='AuthorList'/>
-      <xsl:with-param name="trailing-comma" select="true()"/>
-    </xsl:call-template>
-    
-    <xsl:call-template name='array-in-object'>
-      <xsl:with-param name="indent" select="$ci1"/>
-      <xsl:with-param name='key' select='"isbns"'/>
-      <xsl:with-param name='kids' select='Isbn'/>
-      <xsl:with-param name="trailing-comma" select="true()"/>
-    </xsl:call-template>
-    
-    <xsl:call-template name='array-in-object'>
-      <xsl:with-param name="indent" select="$ci1"/>
-      <xsl:with-param name='key' select='"elocationids"'/>
-      <xsl:with-param name='kids' select='ELocationID'/>
-      <xsl:with-param name="trailing-comma" select="false()"/>
-    </xsl:call-template>
-
-    <xsl:value-of select='np:end-object($ci0, position() != last())'/>
-  </xsl:template>
-  
 
 </xsl:stylesheet>

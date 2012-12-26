@@ -345,6 +345,8 @@
         The JSON file, efetch.pubmed.json, here in the samples directory is the result of that
         output, and should be the goal.
       </desc>
+      <notes>
+      </notes>
     </sample>
     <sample title='PubMed Book' status='' name='efetch.pubmedbook' dtd='pubmed_120101.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=20301295&&amp;retmode=xml</eutils-url>

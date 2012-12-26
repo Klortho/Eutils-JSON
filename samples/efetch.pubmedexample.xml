@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2013//EN" 
+  "http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_130101.dtd">
+  
+<!-- 
+  This is a contrived example, meant to test all the permutations of content allowable
+  by the DTD.
+-->
+<PubmedArticleSet>
+  <PubmedArticle>
+    <MedlineCitation Owner="NLM" Status="MEDLINE">
+      <PMID Version="1">17284678</PMID>
+      <DateCreated>
+        <Year>2007</Year>
+        <Month>03</Month>
+        <Day>02</Day>
+      </DateCreated>
+      <DateCompleted>
+        <Year>2007</Year>
+        <Month>04</Month>
+        <Day>05</Day>
+      </DateCompleted>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Print">1088-9051</ISSN>
+          <JournalIssue CitedMedium="Print">
+            <Volume>17</Volume>
+            <Issue>3</Issue>
+            <PubDate>
+              <Year>2007</Year>
+              <Month>Mar</Month>
+            </PubDate>
+          </JournalIssue>
+          <Title>Genome research</Title>
+          <ISOAbbreviation>Genome Res.</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>Sequencing and analysis of chromosome 1 of Eimeria tenella reveals a unique
+          segmental organization.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>311-9</MedlinePgn>
+        </Pagination>
+        <Abstract>
+          <AbstractText Label="dummy-label"><i>Lorem ipsum</i> and 
+            ipsum lorem.</AbstractText>
+        </Abstract>
+        <Affiliation>Malaysia Genome Institute, UKM-MTDC Smart Technology Centre, Universiti
+          Kebangsaan Malaysia, 43600 UKM Bangi, Selangor DE, Malaysia.</Affiliation>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Ling</LastName>
+            <ForeName>King-Hwa</ForeName>
+            <Initials>KH</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Rajandream</LastName>
+            <ForeName>Marie-Adele</ForeName>
+            <Initials>MA</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <GrantList CompleteYN="Y">
+          <Grant>
+            <Agency>Wellcome Trust</Agency>
+            <Country>United Kingdom</Country>
+          </Grant>
+        </GrantList>
+        <PublicationTypeList>
+          <PublicationType>Comparative Study</PublicationType>
+          <PublicationType>Journal Article</PublicationType>
+          <PublicationType>Research Support, Non-U.S. Gov't</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2007</Year>
+          <Month>02</Month>
+          <Day>06</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>United States</Country>
+        <MedlineTA>Genome Res</MedlineTA>
+        <NlmUniqueID>9518021</NlmUniqueID>
+        <ISSNLinking>1088-9051</ISSNLinking>
+      </MedlineJournalInfo>
+      <CitationSubset>IM</CitationSubset>
+      <CommentsCorrectionsList>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Mol Biol. 2004 May 14;338(5):1027-36</RefSource>
+          <PMID Version="1">15111065</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Trends Parasitol. 2004 May;20(5):199-201</RefSource>
+          <PMID Version="1">15105014</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Bioinformatics. 2004 Nov 1;20(16):2878-9</RefSource>
+          <PMID Version="1">15145805</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Parasitol Today. 1991 May;7(5):99-105</RefSource>
+          <PMID Version="1">15463458</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nature. 2005 May 5;435(7038):43-57</RefSource>
+          <PMID Version="1">15875012</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nucleic Acids Res. 2005 Jul 1;33(Web Server issue):W116-20</RefSource>
+          <PMID Version="1">15980438</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Science. 2005 Jul 15;309(5733):416-22</RefSource>
+          <PMID Version="1">16020726</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nat Genet. 2005 Sep;37(9):986-90</RefSource>
+          <PMID Version="1">16086015</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Chromosome Res. 2005;13(5):517-24</RefSource>
+          <PMID Version="1">16132816</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nat Rev Genet. 2005 Oct;6(10):743-55</RefSource>
+          <PMID Version="1">16205714</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Bioinformatics. 2006 Feb 1;22(3):361-2</RefSource>
+          <PMID Version="1">16332714</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Mol Microbiol. 2006 Apr;60(1):5-15</RefSource>
+          <PMID Version="1">16556216</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Mol Biochem Parasitol. 1990 Jan 15;38(2):169-73</RefSource>
+          <PMID Version="1">2325704</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Parasite Immunol. 1986 Nov;8(6):529-39</RefSource>
+          <PMID Version="1">3543808</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Parasitol Res. 1994;80(5):366-73</RefSource>
+          <PMID Version="1">7971922</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nucleic Acids Res. 1995 Dec 25;23(24):4992-9</RefSource>
+          <PMID Version="1">8559656</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nucleic Acids Res. 1997 Mar 1;25(5):955-64</RefSource>
+          <PMID Version="1">9023104</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nucleic Acids Res. 1999 Jan 15;27(2):573-80</RefSource>
+          <PMID Version="1">9862982</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Int J Parasitol. 1999 Dec;29(12):1885-92</RefSource>
+          <PMID Version="1">10961844</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Genome Res. 2000 Oct;10(10):1587-93</RefSource>
+          <PMID Version="1">11042156</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Genome Res. 2000 Nov;10(11):1737-42</RefSource>
+          <PMID Version="1">11076859</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Bioinformatics. 2000 Oct;16(10):944-5</RefSource>
+          <PMID Version="1">11120685</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nature. 2001 Feb 15;409(6822):860-921</RefSource>
+          <PMID Version="1">11237011</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nature. 2002 Jul 4;418(6893):79-85</RefSource>
+          <PMID Version="1">12097910</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nature. 2002 Oct 3;419(6906):498-511</RefSource>
+          <PMID Version="1">12368864</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nature. 2002 Oct 3;419(6906):527-31</RefSource>
+          <PMID Version="1">12368867</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Exp Parasitol. 2002 Jun-Jul;101(2-3):168-73</RefSource>
+          <PMID Version="1">12427472</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Nucleic Acids Res. 2003 Jan 1;31(1):439-41</RefSource>
+          <PMID Version="1">12520045</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Genome Res. 2003 Mar;13(3):443-54</RefSource>
+          <PMID Version="1">12618375</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Avian Pathol. 2003 Apr;32(2):115-27</RefSource>
+          <PMID Version="1">12745365</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Parasitol Res. 2003 Aug;90(6):473-5</RefSource>
+          <PMID Version="1">12802683</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>BMC Bioinformatics. 2004 May 14;5:59</RefSource>
+          <PMID Version="1">15144565</PMID>
+        </CommentsCorrections>
+      </CommentsCorrectionsList>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N">Animals</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N">Base Sequence</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N">Chromosome Mapping</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N">Chromosome Structures</DescriptorName>
+          <QualifierName MajorTopicYN="Y">genetics</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N">Computational Biology</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N">Eimeria tenella</DescriptorName>
+          <QualifierName MajorTopicYN="Y">genetics</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N">Genes, Protozoan</DescriptorName>
+          <QualifierName MajorTopicYN="Y">genetics</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N">Minisatellite Repeats</DescriptorName>
+          <QualifierName MajorTopicYN="N">genetics</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N">Molecular Sequence Data</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N">Polymorphism, Restriction Fragment
+            Length</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName MajorTopicYN="N">Sequence Analysis, DNA</DescriptorName>
+        </MeshHeading>
+      </MeshHeadingList>
+      <OtherID Source="NLM">PMC1800922</OtherID>
+      <OtherID Source="CPFH">BL5</OtherID>
+      <OtherAbstract Type='AAMC'>
+        <AbstractText>Foo <b>bar</b>!</AbstractText>
+        <AbstractText>Bazz <i>buzz</i>!</AbstractText>
+        <CopyrightInformation>No copyright, this time!</CopyrightInformation>
+      </OtherAbstract>
+      <OtherAbstract Type='AIDS'>
+        <AbstractText>Foo <b>bar</b>!</AbstractText>
+      </OtherAbstract>
+      <KeywordList>
+        <Keyword MajorTopicYN="Y">Krazy Kool</Keyword>
+        <Keyword>The Snap!</Keyword>
+      </KeywordList>
+      <InvestigatorList>
+        <Investigator>
+          <LastName>Johnson</LastName>
+          <ForeName>Fred</ForeName>
+        </Investigator>
+        <Investigator>
+          <LastName>Bert</LastName>
+        </Investigator>
+      </InvestigatorList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="aheadofprint">
+          <Year>2007</Year>
+          <Month>2</Month>
+          <Day>6</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2007</Year>
+          <Month>2</Month>
+          <Day>8</Day>
+          <Hour>9</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pii">gr.5823007</ArticleId>
+        <ArticleId IdType="doi">10.1101/gr.5823007</ArticleId>
+        <ArticleId IdType="pubmed">17284678</ArticleId>
+        <ArticleId IdType="pmc">PMC1800922</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+
+  
+  <PubmedBookArticle>
+    <BookDocument>
+      <PMID Version="1">20301295</PMID>
+      <ArticleIdList>
+        <ArticleId IdType="bookaccession">NBK1116</ArticleId>
+      </ArticleIdList>
+      <Book>
+        <Publisher>
+          <PublisherName>University of Washington, Seattle</PublisherName>
+          <PublisherLocation>Seattle (WA)</PublisherLocation>
+        </Publisher>
+        <BookTitle book="gene">GeneReviews™</BookTitle>
+        <PubDate>
+          <Year>1993</Year>
+        </PubDate>
+        <BeginningDate>
+          <Year>1993</Year>
+        </BeginningDate>
+        <AuthorList Type="editors">
+          <Author>
+            <LastName>Pagon</LastName>
+            <ForeName>Roberta A</ForeName>
+            <Initials>RA</Initials>
+          </Author>
+        </AuthorList>
+        <Medium>Internet</Medium>
+      </Book>
+      <Language>eng</Language>
+      <Abstract>
+        <AbstractText>Lorem ipsum ....</AbstractText>
+        <CopyrightInformation>Copyright © blah blah blah.</CopyrightInformation>
+      </Abstract>
+      <Sections>
+        <Section>
+          <SectionTitle book="gene" part="alk-nbs">ALK-Related Neuroblastoma
+            Susceptibility</SectionTitle>
+        </Section>
+        <Section>
+          <SectionTitle book="gene" part="glossaryHelp">Glossary Instructions</SectionTitle>
+        </Section>
+        <Section>
+          <SectionTitle book="gene" part="glossary">Illustrated Glossary</SectionTitle>
+        </Section>
+      </Sections>
+    </BookDocument>
+    <PubmedBookData>
+      <History>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2010</Year>
+          <Month>3</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2010</Year>
+          <Month>3</Month>
+          <Day>20</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">20301295</ArticleId>
+      </ArticleIdList>
+    </PubmedBookData>
+  </PubmedBookArticle>
+
+</PubmedArticleSet>

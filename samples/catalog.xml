@@ -4,7 +4,7 @@
 
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
 
-  <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/bookdoc_120101.dtd"
+  <system systemId="http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/bookdoc_120101.dtd"
     uri="bookdoc_120101.dtd"/>
   <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eInfo_020511.dtd"
     uri="eInfo_020511.dtd"/>
@@ -114,9 +114,10 @@
     uri="eSummary_unigene.dtd"/>
   <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSummary_unists.dtd"
     uri="eSummary_unists.dtd"/>
-  <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/nlmmedlinecitationset_120101.dtd"
+  
+  <system systemId="http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/nlmmedlinecitationset_120101.dtd"
     uri="nlmmedlinecitationset_120101.dtd"/>
-  <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/pubmed_120101.dtd"
+  <system systemId="http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_130101.dtd"
     uri="pubmed_120101.dtd"/>
   
 </catalog>

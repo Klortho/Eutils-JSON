@@ -34,14 +34,31 @@
 <!ELEMENT BookDocumentSet (BookDocument*, DeleteDocument?)>
 
 <!--~~ <BookDocument>
-~~json <object/>
+~~json 
+  <object>
+    <members select='PMID | ArticleIdList | Book | ArticleTitle | VernacularTitle |
+                     Pagination | GroupList | Abstract | Sections | 
+                     ContributionDate | DateRevised | CitationString | GrantList'/>
+    <array name='"locationlabels"' select='LocationLabel'/>
+    <array name='"languages"' select='Language'/>
+    <array name='"authorlists"' select='AuthorList'/>
+    <array name='"publicationtypes"' select='PublicationType'/>
+    <array name='"keywordlists"' select='KeywordList'/>
+  </object>
 ~~-->
 <!ELEMENT BookDocument ( PMID, ArticleIdList, Book, LocationLabel*, ArticleTitle?, VernacularTitle?,
 	Pagination?, Language*, AuthorList*, GroupList?, PublicationType*, Abstract?, Sections?, KeywordList*, 
 	ContributionDate?, DateRevised?, CitationString?, GrantList?) >
 
 <!--~~ <Book>
-~~json <custom/>
+~~json
+  <object>
+    <members select='Publisher | BookTitle | PubDate | BeginningDate | EndingDate | Volume |
+                     VolumeTitle | Edition | CollectionTitle | Medium | ReportNumber'/>
+    <array name='"authorlists"' select='AuthorList'/>
+    <array name='"isbn"' select='Isbn'/>
+    <array name='"elocationid"' select='ELocationID'/>
+  </object>
 ~~-->
 <!ELEMENT Book ( Publisher, BookTitle, PubDate, BeginningDate?, EndingDate?, AuthorList*, Volume?, VolumeTitle?, 
 	Edition?, CollectionTitle?, Isbn*, ELocationID*, Medium?, ReportNumber?) >
@@ -104,6 +121,14 @@
 <!ELEMENT PubmedBookData (History?, PublicationStatus, ArticleIdList, ObjectList?)>
 
 <!ELEMENT Sections	(Section+) >
+
+<!--~~ <Section>
+~~json
+  <object>
+    <members select='LocationLabel | SectionTitle'/>
+    <array name='"sections"' select='Section'/>
+  </object>
+~~-->
 <!ELEMENT Section	(LocationLabel?, SectionTitle, Section*) >
 
 <!--~~ <SectionTitle>
