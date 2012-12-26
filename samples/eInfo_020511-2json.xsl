@@ -14,34 +14,42 @@
    <x:template match="IsRangable | TermCount | IsNumerical | DbName | IsDate | MenuName | FullName | DbTo | Menu | LastUpdate | Hierarchy | SingleToken | IsTruncatable | Count | IsHidden | Description | Name">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:param name="trailing-comma" select="position() != last()"/>
       <x:call-template name="string">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
+         <x:with-param name="trailing-comma" select="$trailing-comma"/>
       </x:call-template>
    </x:template>
    <x:template match="ERROR">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:param name="trailing-comma" select="position() != last()"/>
       <x:call-template name="string">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
          <x:with-param name="key" select="'ERROR'"/>
+         <x:with-param name="trailing-comma" select="$trailing-comma"/>
       </x:call-template>
    </x:template>
    <x:template match="Link | Field | DbInfo">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:param name="trailing-comma" select="position() != last()"/>
       <x:call-template name="object">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
+         <x:with-param name="trailing-comma" select="$trailing-comma"/>
       </x:call-template>
    </x:template>
    <x:template match="DbList | FieldList | LinkList">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:param name="trailing-comma" select="position() != last()"/>
       <x:call-template name="array">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
+         <x:with-param name="trailing-comma" select="$trailing-comma"/>
       </x:call-template>
    </x:template>
    <x:template match="eInfoResult">
@@ -52,10 +60,13 @@
             </json>
          </x:with-param>
       </x:call-template>
-      <x:apply-templates select="@*|*">
-         <x:with-param name="indent" select="$iu"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-      </x:apply-templates>
+      <x:variable name="indent" select="$iu"/>
+      <x:variable name="context" select="&#34;object&#34;"/>
+      <x:call-template name="object">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+         <x:with-param name="key" select="&#34;response&#34;"/>
+      </x:call-template>
       <x:value-of select="np:end-object(&#34;&#34;, false())"/>
    </x:template>
 </x:stylesheet>

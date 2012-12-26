@@ -1,5 +1,6 @@
-#dtd2xml2json eInfo_020511.dtd eInfo_020511-2json.xsl
-#xsltproc eInfo_020511-2json.xsl einfo.xml > einfo.json
+dtd2xml2json eInfo_020511.dtd eInfo_020511-2json.xsl
+xsltproc eInfo_020511-2json.xsl einfo.xml > einfo.json
+exit
 #xsltproc eInfo_020511-2json.xsl einfo.pubmed.xml > einfo.pubmed.json
 #xsltproc eInfo_020511-2json.xsl einfo.error.xml > einfo.error.json
 
@@ -162,6 +163,7 @@
 #dtd2xml2json eSummary_041029.dtd eSummary_041029-2json.xsl
 #xsltproc eSummary_041029-2json.xsl esummary.error.xml > esummary.error.json
 
-dtd2xml2json pubmed_120101.dtd pubmed_120101-2json.xsl
+#dtd2xml2json pubmed_120101.dtd pubmed_120101-2json.xsl
 #xsltproc pubmed_120101-2json.xsl efetch.pubmed.xml > efetch.pubmed.json
-#xsltproc pubmed_120101-2json.xsl efetch.pubmedbook.xml > efetch.pubmedbook.json#
+#xsltproc pubmed_120101-2json.xsl efetch.pubmedbook.xml > efetch.pubmedbook.json
+#xsltproc pubmed_120101-2json.xsl efetch.pubmedexample.xml > efetch.pubmedexample.json
