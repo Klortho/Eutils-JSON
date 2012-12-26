@@ -23,7 +23,7 @@
 <!--~~ !dtd
 ~~json 
     <json type='efetch.pubmed' version='0.3'>
-      <config lcnames='true' import='pubmed.xsl'/>
+      <config lcnames='true' import='efetch.pubmed.xsl'/>
     </json>
 ~~-->
 
@@ -79,8 +79,13 @@
 	Type ( FullText | Summary | fulltext | summary) #IMPLIED
 >
 <!ELEMENT ObjectList (Object)+>
+
+<!--~~ <Object>
+~~json <custom/>
+~~-->
 <!ELEMENT Object (Param)*>
 <!ATTLIST Object Type CDATA #REQUIRED>
+
 <!ELEMENT Param (#PCDATA)>
 <!ATTLIST Param Name CDATA #REQUIRED>
 <!ELEMENT Hour (#PCDATA)>

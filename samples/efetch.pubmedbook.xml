@@ -1,0 +1,1821 @@
+<?xml version="1.0"?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2013//EN" "http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_130101.dtd">
+<PubmedArticleSet>
+<PubmedBookArticle>
+    <BookDocument>
+        <PMID Version="1">20301295</PMID>
+        <ArticleIdList>
+            <ArticleId IdType="bookaccession">NBK1116</ArticleId>
+        </ArticleIdList>
+        <Book>
+            <Publisher>
+                <PublisherName>University of Washington, Seattle</PublisherName>
+                <PublisherLocation>Seattle (WA)</PublisherLocation>
+            </Publisher>
+            <BookTitle book="gene">GeneReviews™</BookTitle>
+            <PubDate>
+                <Year>1993</Year>
+            </PubDate>
+            <BeginningDate>
+                <Year>1993</Year>
+            </BeginningDate>
+            <AuthorList Type="editors">
+                <Author>
+                    <LastName>Pagon</LastName>
+                    <ForeName>Roberta A</ForeName>
+                    <Initials>RA</Initials>
+                </Author>
+                <Author>
+                    <LastName>Bird</LastName>
+                    <ForeName>Thomas D</ForeName>
+                    <Initials>TD</Initials>
+                </Author>
+                <Author>
+                    <LastName>Dolan</LastName>
+                    <ForeName>Cynthia R</ForeName>
+                    <Initials>CR</Initials>
+                </Author>
+                <Author>
+                    <LastName>Stephens</LastName>
+                    <ForeName>Karen</ForeName>
+                    <Initials>K</Initials>
+                </Author>
+                <Author>
+                    <LastName>Adam</LastName>
+                    <ForeName>Margaret P</ForeName>
+                    <Initials>MP</Initials>
+                </Author>
+            </AuthorList>
+            <Medium>Internet</Medium>
+        </Book>
+        <Language>eng</Language>
+        <Abstract>
+            <AbstractText>GeneReviews are expert-authored, peer-reviewed disease descriptions that apply genetic testing to the diagnosis, management, and genetic counseling of patients and families with specific inherited conditions. Published exclusively online, each GeneReview entry is: (1) peer reviewed for accuracy by (a) editorial staff experts in clinical genetics, laboratory genetics, and genetic counseling and by (b) acknowledged international subject experts; (2) updated by the author(s) in a formal comprehensive process every two to three years or as needed; and (3) revised by the author(s) or editorial staff whenever significant changes in clinically relevant information occur. GeneReviews are part of the GeneTests Web site, which also includes: a Laboratory Directory of US and international laboratories offering molecular genetic testing, specialized cytogenetic testing, and biochemical testing for inherited disorders; a Clinic Directory of US and international genetics clinics providing genetic evaluation and genetic counseling; Resources that are consumer health-oriented organizations and disease registries; Educational materials; and an Illustrated Glossary of genetic counseling and testing terms.</AbstractText>
+            <CopyrightInformation>Copyright © 1993-2012, University of Washington, Seattle. All rights reserved.</CopyrightInformation>
+        </Abstract>
+        <Sections>
+            <Section>
+                <SectionTitle book="gene" part="del1p36">1p36 Deletion Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mdel1q21_1">1q21.1 Microdeletion</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mdel15q13_3">15q13.3 Microdeletion</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mdel15q24">15q24 Microdeletion Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="del16p11_2">16p11.2 Microdeletion</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="del2q37_2">2q37 Microdeletion Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cah">21-Hydroxylase-Deficient Congenital Adrenal Hyperplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gr_22q11deletion">22q11.2 Deletion Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dupl22q11">22q11.2 Duplication</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gr_3ms">3-M Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mga3">3-Methylglutaconic Aciduria Type 3</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="xxms">46,XX Testicular Disorder of Sex Development</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gonad-dys-46xy">46,XY Disorder of Sex Development and 46,XY Complete Gonadal Dysgenesis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mdel9q22_3">9q22.3 Microdeletion</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="adamtsl4-eyes">ADAMTSL4-Related Eye Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ipa">AIP-Related Familial Isolated Pituitary Adenomas</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="alk-nbs">ALK-Related Neuroblastoma Susceptibility</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="iahsp">ALS2-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ano5-md">ANO5-Related Muscle Diseases</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fap">APC-Associated Polyposis Conditions</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="arsacs">ARSACS</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cutis-laxa">ATP6V0A2-Related Cutis Laxa</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="menkes">ATP7A-Related Copper Transport Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="acp">Aceruloplasminemia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="achon1b">Achondrogenesis Type 1B</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="achondroplasia">Achondroplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="achm">Achromatopsia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="npab">Acid Sphingomyelinase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="aprt-def">Adenine Phosphoribosyltransferase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ada">Adenosine Deaminase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="apbd">Adult Polyglucosan Body Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="aic">Aicardi Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ags">Aicardi-Goutières Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="alagille">Alagille Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="alexander">Alexander Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="alkap">Alkaptonuria</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="a-mannosidosis">Alpha-Mannosidosis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="xlmr">Alpha-Thalassemia X-Linked Intellectual Disability Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="a-thal">Alpha-Thalassemia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="alpha1-a">Alpha1-Antitrypsin Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="alstrom">Alström Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="alzheimer">Alzheimer Disease Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="amish-mcph">Amish Lethal Microcephaly</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="als-overview">Amyotrophic Lateral Sclerosis Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="acpp">Andersen-Tawil Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="androgen">Androgen Insensitivity Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="angelman">Angelman Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="aniridia">Aniridia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="aec">Ankyloblepharon-Ectodermal Defects-Cleft Lip/Palate Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="anophthalmia-ov">Anophthalmia/Microphthalmia Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="arg1">Arginase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="args-aciduria">Argininosuccinate Lyase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="arvd">Arrhythmogenic Right Ventricular Dysplasia/Cardiomyopathy, Autosomal Dominant</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="arts">Arts Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mld">Arylsulfatase A Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="aoa">Ataxia with Oculomotor Apraxia Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="aoa2">Ataxia with Oculomotor Apraxia Type 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="aved">Ataxia with Vitamin E Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ataxia-telangiectas">Ataxia-Telangiectasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ao2">Atelosteogenesis Type 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="husa">Atypical Hemolytic-Uremic Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="autism-overview">Autism Spectrum Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="alps">Autoimmune Lymphoproliferative Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="higes">Autosomal Dominant Hyper IgE Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="adnfle">Autosomal Dominant Nocturnal Frontal Lobe Epilepsy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="peaf">Autosomal Dominant Partial Epilepsy with Auditory Features</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="li-ar">Autosomal Recessive Congenital Ichthyosis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="brca1">BRCA1 and BRCA2 Hereditary Breast and Ovarian Cancer</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="spg17">BSCL2-Related Neurologic Disorders/Seipinopathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bgs">Baller-Gerold Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bbs">Bardet-Biedl Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bws">Beckwith-Wiedemann Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bfns">Benign Familial Neonatal Seizures</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bscl">Berardinelli-Seip Congenital Lipodystrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bvd">Best Vitelliform Macular Dystrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="b-thal">Beta-Thalassemia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bietti-cd">Bietti Crystalline Dystrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="biotin">Biotinidase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bhd">Birt-Hogg-Dubé Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bpes">Blepharophimosis, Ptosis, and Epicanthus Inversus</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bloom">Bloom's Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bofs">Branchiooculofacial Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bor">Branchiootorenal Spectrum Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="brugada">Brugada Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cadasil">CADASIL</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="carasil">CARASIL</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="catsper-mi">CATSPER-Related Male Infertility</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hrpt2">CDC73-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cf">CFTR-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="charge">CHARGE Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cd-chst3">CHST3-Related Skeletal Dysplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="clcn7">CLCN7-Related Osteopetrosis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="col4a1-dis">COL4A1-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hdls">CSF1R-Related Hereditary Diffuse Leukoencephalopathy with Spheroids</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="caffey">Caffey Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lgmd2a">Calpainopathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="campo-dysp">Campomelic Dysplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ced">Camurati-Engelmann Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="canavan">Canavan Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cfc">Cardiofaciocutaneous Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="carney">Carney Complex</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cpt1a">Carnitine Palmitoyltransferase 1A Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cpt2">Carnitine Palmitoyltransferase II Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="chh">Cartilage-Hair Hypoplasia - Anauxetic Dysplasia Spectrum Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cvt">Catecholaminergic Polymorphic Ventricular Tachycardia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cav">Caveolinopathies</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="celiac">Celiac Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cco">Central Core Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ccm">Cerebral Cavernous Malformation, Familial</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ctx">Cerebrotendinous Xanthomatosis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="char">Char Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cmt">Charcot-Marie-Tooth Hereditary Neuropathy Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cmt1">Charcot-Marie-Tooth Neuropathy Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cmt2">Charcot-Marie-Tooth Neuropathy Type 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cmt2a">Charcot-Marie-Tooth Neuropathy Type 2A</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cmt2e">Charcot-Marie-Tooth Neuropathy Type 2E/1F</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cmt4">Charcot-Marie-Tooth Neuropathy Type 4</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cmt-4a">Charcot-Marie-Tooth Neuropathy Type 4A</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cmt4c">Charcot-Marie-Tooth Neuropathy Type 4C</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cmtx">Charcot-Marie-Tooth Neuropathy X Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cmtx5">Charcot-Marie-Tooth Neuropathy X Type 5</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="chediak-higashi">Chediak-Higashi Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cherubism">Cherubism</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cach">Childhood Ataxia with Central Nervous System Hypomyelination/Vanishing White Matter</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cdp1-xlr">Chondrodysplasia Punctata 1, X-Linked</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="x-dcdp">Chondrodysplasia Punctata 2, X-Linked</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="chac">Chorea-Acanthocytosis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="choroid">Choroideremia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cgd">Chronic Granulomatous Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="citrin">Citrin Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ctlm">Citrullinemia Type I</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ccd">Cleidocranial Dysplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cockayne">Cockayne Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cls">Coffin-Lowry Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cohen">Cohen Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ciss">Cold-Induced Sweating Syndrome including Crisponi Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="alport">Collagen IV-Related Nephropathies (Alport Syndrome and Thin Basement Membrane Nephropathy)</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bethlem">Collagen Type VI-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cvid">Common Variable Immune Deficiency Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ccfdn">Congenital Cataracts, Facial Dysmorphism, and Neuropathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ondine">Congenital Central Hypoventilation Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cca">Congenital Contractural Arachnodactyly</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="df-lamm">Congenital Deafness with Labyrinthine Aplasia, Microtia, and Microdontia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cdh-ov">Congenital Diaphragmatic Hernia Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cdg">Congenital Disorders of Glycosylation Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cda1">Congenital Dyserythropoietic Anemia Type I</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cftd">Congenital Fiber-Type Disproportion</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cfeom">Congenital Fibrosis of the Extraocular Muscles</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hepatic-fibrosis">Congenital Hepatic Fibrosis Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cmd-overview">Congenital Muscular Dystrophy Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cms">Congenital Myasthenic Syndromes</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="csc-dys">Congenital Stromal Corneal Dystrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cdls">Cornelia de Lange Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="costello">Costello Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="m-hfm-ov">Craniofacial Microsomia Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cranio-md">Craniometaphyseal Dysplasia, Autosomal Dominant</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="creatine">Creatine Deficiency Syndromes</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ctns">Cystinosis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="abs">Cytochrome P450 Oxidoreductase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dcx">DCX-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dfna2">DFNA2 Nonsyndromic Hearing Loss</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dfnx1">DFNX1 Nonsyndromic Hearing Loss and Deafness</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dguok-mtddepl">DGUOK-Related Mitochondrial DNA Depletion Syndrome, Hepatocerebral Form</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cmt-dib">DNM2-Related Intermediate Charcot-Marie-Tooth Neuropathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dnmt1-ddsn">DNMT1-Related Dementia, Deafness, and Sensory Neuropathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="drpla">DRPLA</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="deafness-overview">Deafness and Hereditary Hearing Loss Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ddon">Deafness-Dystonia-Optic Neuronopathy Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mpgn">Dense Deposit Disease/Membranoproliferative Glomerulonephritis Type II</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dent">Dent Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dmtn">Diabetes Mellitus, 6q24-Related Transient Neonatal</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="diamond-b">Diamond-Blackfan Anemia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="diastrophic-d">Diastrophic Dysplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dcm-ov">Dilated Cardiomyopathy Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cbl">Disorders of Intracellular Cobalamin Metabolism</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="donnai">Donnai-Barrow Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dbh">Dopamine Beta-Hydroxylase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="duane">Duane Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="miyoshi">Dysferlinopathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dkc">Dyskeratosis Congenita</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dystonia-ov">Dystonia Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hmdpc">Dystonia/Parkinsonism, Hypermanganesemia, Polycythemia, and Chronic Liver Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ebd">Dystrophic Epidermolysis Bullosa</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dbmd">Dystrophinopathies</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="efemp2-cutis-laxa">EFEMP2-Related Cutis Laxa</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cyclic-n">ELANE-Related Neutropenia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="alzheimer-early">Early-Onset Familial Alzheimer Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dystonia">Early-Onset Primary Dystonia (DYT1)</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="eds">Ehlers-Danlos Syndrome, Classic Type</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="eds3">Ehlers-Danlos Syndrome, Hypermobility Type</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="eds6">Ehlers-Danlos Syndrome, Kyphoscoliotic Form</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="eds4">Ehlers-Danlos Syndrome Type IV</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="emanuel">Emanuel Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="edmd">Emery-Dreifuss Muscular Dystrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="msx2">Enlarged Parietal Foramina</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ebs">Epidermolysis Bullosa Simplex</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="eb-pa">Epidermolysis Bullosa with Pyloric Atresia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gale-def">Epimerase Deficiency Galactosemia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ea1">Episodic Ataxia Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ea2">Episodic Ataxia Type 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="epp-ar">Erythropoietic Protoporphyria, Autosomal Recessive</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="tef-ov">Esophageal Atresia/Tracheoesophageal Fistula Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fbln5-cutis-laxa">FBLN5-Related Cutis Laxa</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="craniosynostosis">FGFR-Related Craniosynostosis Syndromes</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="flnb-dis">FLNB-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fragilex">FMR1-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="xl-nystag">FRMD7-Related Infantile Nystagmus</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fabry">Fabry Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fsh">Facioscapulohumeral Muscular Dystrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="factor-v-leiden">Factor V Leiden Thrombophilia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cebpa-aml">Familial Acute Myeloid Leukemia (AML) with Mutated CEBPA</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fd">Familial Dysautonomia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fevr">Familial Exudative Vitreoretinopathy, Autosomal Dominant</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fhm">Familial Hemiplegic Migraine</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hi">Familial Hyperinsulinism</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hyper-card">Familial Hypertrophic Cardiomyopathy Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bgc">Familial Idiopathic Basal Ganglia Calcification</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hyper-nfj2">Familial Juvenile Hyperuricemic Nephropathy Type 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lpl">Familial Lipoprotein Lipase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fmf">Familial Mediterranean Fever</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mono7-mds">Familial Mosaic Monosomy 7 Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pknd">Familial Paroxysmal Kinesigenic Dyskinesia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pnknd">Familial Paroxysmal Nonkinesigenic Dyskinesia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="tfap">Familial Transthyretin Amyloidosis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fa">Fanconi Anemia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fahn">Fatty Acid Hydroxylase-Associated Neurodegeneration</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="feingold">Feingold Syndrome 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fhs">Floating-Harbor Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="focal-dh">Focal Dermal Hypoplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="issd">Free Sialic Acid Storage Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="friedreich">Friedreich Ataxia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ftd-chmp2b">Frontotemporal Dementia, Chromosome 3-Linked</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fryns">Fryns Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fcmd">Fukuyama Congenital Muscular Dystrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fum">Fumarate Hydratase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cmt2d">GARS-Associated Axonal Neuropathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gata1">GATA1-Related X-Linked Cytopenia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ftd-grn">GRN-Related Frontotemporal Dementia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="drd">GTP Cyclohydrolase 1-Deficient Dopa-Responsive Dystonia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="galactosemia">Galactosemia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gaucher">Gaucher Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="geleophys-dysp">Geleophysic Dysplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="prion">Genetic Prion Diseases</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gan">Giant Axonal Neuropathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="glut1">Glucose Transporter Type 1 Deficiency Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="nkh">Glycine Encephalopathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gsd1">Glycogen Storage Disease Type I</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gsd2">Glycogen Storage Disease Type II (Pompe Disease)</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gsd3">Glycogen Storage Disease Type III</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gsd5">Glycogen Storage Disease Type V</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gsd6">Glycogen Storage Disease Type VI</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gcps">Greig Cephalopolysyndactyly Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hemochromatosis">HFE-Associated Hereditary Hemochromatosis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hfg">Hand-Foot-Genital Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hlh">Hemophagocytic Lymphohistiocytosis, Familial</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hemo-a">Hemophilia A</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hemo-b">Hemophilia B</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="vodi">Hepatic Veno-Occlusive Disease with Immunodeficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ataxias">Hereditary Ataxia Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hcp">Hereditary Coproporphyria</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hgc">Hereditary Diffuse Gastric Cancer</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="folate-mal">Hereditary Folate Malabsorption</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hht">Hereditary Hemorrhagic Telangiectasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hlrcc">Hereditary Leiomyomatosis and Renal Cell Cancer</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="accpn">Hereditary Motor and Sensory Neuropathy with Agenesis of the Corpus Callosum</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ext">Hereditary Multiple Osteochondromas</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hna">Hereditary Neuralgic Amyotrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hnpp">Hereditary Neuropathy with Liability to Pressure Palsies</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="paragangliomas">Hereditary Paraganglioma-Pheochromocytoma Syndromes</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hsan4">Hereditary Sensory and Autonomic Neuropathy IV</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hsan2">Hereditary Sensory and Autonomic Neuropathy Type II</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hsn1">Hereditary Sensory Neuropathy Type IA</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hsp">Hereditary Spastic Paraplegia Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pph">Heritable Pulmonary Arterial Hypertension</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hps">Hermansky-Pudlak Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="tay-sachs">Hexosaminidase A Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ed2">Hidrotic Ectodermal Dysplasia 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hirschsprung-ov">Hirschsprung Disease Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hpe-overview">Holoprosencephaly Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hos">Holt-Oram Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="homocystinuria">Homocystinuria Caused by Cystathionine Beta-Synthase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="huntington">Huntington Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hd-l2">Huntington Disease-Like 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hgps">Hutchinson-Gilford Progeria Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sys-h">Hyalinosis, Inherited Systemic</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="aip">Hydroxymethylbilane Synthase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hyperek">Hyperekplexia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hyper-pp">Hyperkalemic Periodic Paralysis Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hhhs">Hyperornithinemia-Hyperammonemia-Homocitrullinuria Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hypochondroplasia">Hypochondroplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="x-hed">Hypohidrotic Ectodermal Dysplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hpp">Hypokalemic Periodic Paralysis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hypo-mcc">Hypomyelination and Congenital Cataract</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hops">Hypophosphatasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ipex">IPEX Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="vws">IRF6-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ibm">Inclusion Body Myopathy 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ibmpfd">Inclusion Body Myopathy with Paget Disease of Bone and/or Frontotemporal Dementia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="i-p">Incontinentia Pigmenti</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca-io">Infantile-Onset Spinocerebellar Ataxia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ihh-ov">Isolated Gonadotropin-Releasing Hormone (GnRH) Deficiency Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="jln">Jervell and Lange-Nielsen Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="joubert">Joubert Syndrome and Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ebj">Junctional Epidermolysis Bullosa</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="jh">Juvenile Hereditary Hemochromatosis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="jps">Juvenile Polyposis Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mdel17q21_31">KANSL1-Related Intellectual Disability Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="kat6b-dis">KAT6B-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="kabuki">Kabuki Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="kms">Kallmann Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="kleefstra">Kleefstra Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="krabbe">Krabbe Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="l1cam">L1 Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mdef-cmd">LAMA2-Related Muscular Dystrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="leopard">LEOPARD Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="chrom17-lis">LIS1-Associated Lissencephaly/Subcortical Band Heterotopia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dcm-lmna">LMNA-Related Dilated Cardiomyopathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lrrk2">LRRK2-Related Parkinson Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mpd1">Laing Distal Myopathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lca">Leber Congenital Amaurosis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lhon">Leber Hereditary Optic Neuropathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="legius">Legius Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lenz">Lenz Microphthalmia Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lns">Lesch-Nyhan Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lbsl">Leukoencephalopathy with Brain Stem and Spinal Cord Involvement and Lactate Elevation</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="li-fraumeni">Li-Fraumeni Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lgmd-overview">Limb-Girdle Muscular Dystrophy Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="loeys-dietz">Loeys-Dietz Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pfic">Low Gamma-GT Familial Intrahepatic Cholestasis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lowe">Lowe Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lds">Lymphedema-Distichiasis Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="x-lpd">Lymphoproliferative Disease, X-Linked</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hnpcc">Lynch Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lpi">Lysinuric Protein Intolerance</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ftdp-17">MAPT-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="thctd">MCT8 (SLC16A2)-Specific Thyroid Hormone Cell Transporter Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mecp2-dup">MECP2 Duplication Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rett">MECP2-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="fg">MED12-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="melas">MELAS</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="merrf">MERRF</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mpv17-mtdep">MPV17-Related Hepatocerebral Mitochondrial DNA Depletion Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="maps">MUTYH-Associated Polyposis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="myh9">MYH9-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="majeed">Majeed Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mhs">Malignant Hyperthermia Susceptibility</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mota">Manitoba Oculotrichoanal Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="msud">Maple Syrup Urine Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="marfan">Marfan Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mss">Marinesco-Sjögren Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mkks">McKusick-Kaufman Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mcleod">McLeod Neuroacanthocytosis Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mcad">Medium-Chain Acyl-Coenzyme A Dehydrogenase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mlc">Megalencephalic Leukoencephalopathy with Subcortical Cysts</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mma">Methylmalonic Acidemia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="microph-lsd">Microphthalmia with Linear Skin Defects Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="milroy">Milroy Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="kss">Mitochondrial DNA Deletion Syndromes</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="narp">Mitochondrial DNA-Associated Leigh Syndrome and NARP</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mt-overview">Mitochondrial Disorders Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mngie">Mitochondrial Neurogastrointestinal Encephalopathy Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mws">Mowat-Wilson Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ml2">Mucolipidosis II</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ml3a">Mucolipidosis III Alpha/Beta</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ml3c">Mucolipidosis III Gamma</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ml4">Mucolipidosis IV</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mps1">Mucopolysaccharidosis Type I</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="hunter">Mucopolysaccharidosis Type II</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="muenke">Muenke Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mmd">Multiminicore Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="vmcm">Multiple Cutaneous and Mucosal Venous Malformations</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="men1">Multiple Endocrine Neoplasia Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="men2">Multiple Endocrine Neoplasia Type 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="edm-ad">Multiple Epiphyseal Dysplasia, Dominant</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="edm">Multiple Epiphyseal Dysplasia, Recessive</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ms">Multiple Sclerosis Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="myo-dystonia">Myoclonus-Dystonia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mfm">Myofibrillar Myopathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="myodef-sda">Myopathy with Deficiency of ISCU</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mstn">Myostatin-Related Muscle Hypertrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="myotonia-c">Myotonia Congenita</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="myotonic-d">Myotonic Dystrophy Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="myotonic-d2">Myotonic Dystrophy Type 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="norrie">NDP-Related Retinopathies</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="nsdhl-dis">NSDHL-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="nail-ps">Nail-Patella Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="nem">Nemaline Myopathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ndi">Nephrogenic Diabetes Insipidus</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="neuroferritin">Neuroferritinopathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="nf1">Neurofibromatosis 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="nf2">Neurofibromatosis 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ncl">Neuronal Ceroid-Lipofuscinoses</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="bcns">Nevoid Basal Cell Carcinoma Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="npc">Niemann-Pick Disease Type C</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="nijmegen">Nijmegen Breakage Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dfna3">Nonsyndromic Hearing Loss and Deafness, DFNA3</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dfnb1">Nonsyndromic Hearing Loss and Deafness, DFNB1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mt-deafness">Nonsyndromic Hearing Loss and Deafness, Mitochondrial</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="noonan">Noonan Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dfnb9">OTOF-Related Deafness</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="x-oa">Ocular Albinism, X-Linked</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="oca1">Oculocutaneous Albinism Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="oca2">Oculocutaneous Albinism Type 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="oca4">Oculocutaneous Albinism Type 4</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="opmd">Oculopharyngeal Muscular Dystrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="opa">Optic Atrophy Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ofd1">Oral-Facial-Digital Syndrome Type I</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="oi">Osteogenesis Imperfecta</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="opd">Otopalatodigital Spectrum Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pink1-pd">PINK1 Type of Young-Onset Parkinson Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="inad">PLA2G6-Associated Neurodegeneration</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pmd">PLP1-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cdg-1a">PMM2-CDG (CDG-Ia)</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="alpers">POLG-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="me-ataxia">PRICKLE1-Related Progressive Myoclonus Epilepsy with Ataxia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="prop1">PROP1-Related Combined Pituitary Hormone Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="prss1-hp">PRSS1-Related Hereditary Pancreatitis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="phts">PTEN Hamartoma Tumor Syndrome (PHTS)</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pc">Pachyonychia Congenita</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="phs">Pallister-Hall Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pkan">Pantothenate Kinase-Associated Neurodegeneration</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="jpd">Parkin Type of Juvenile Parkinson Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="parkinson-overview">Parkinson Disease Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pendred">Pendred Syndrome/DFNB4</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="dmn">Permanent Neonatal Diabetes Mellitus</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pbd">Peroxisome Biogenesis Disorders, Zellweger Syndrome Spectrum</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="perry">Perry Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="peters-plus">Peters Plus Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pjs">Peutz-Jeghers Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gr_22q13_3">Phelan-McDermid Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pku">Phenylalanine Hydroxylase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="prs">Phosphoribosylpyrophosphate Synthetase Superactivity</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gsd9">Phosphorylase Kinase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pitt-hopkins">Pitt-Hopkins Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pol3-leuk">Pol III-Related Leukodystrophies</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pkd-ad">Polycystic Kidney Disease, Autosomal Dominant</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pkd-ar">Polycystic Kidney Disease, Autosomal Recessive</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="plosl">Polycystic Lipomembranous Osteodysplasia with Sclerosing Leukoencephalopathy (PLOSL)</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="poly">Polymicrogyria Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pc-hypo-p">Pontocerebellar Hypoplasia Type 2 and Type 4</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pws">Prader-Willi Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="microcephaly">Primary Autosomal Recessive Microcephaly</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pcd">Primary Ciliary Dyskinesia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="glc">Primary Congenital Glaucoma</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ph1">Primary Hyperoxaluria Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ph2">Primary Hyperoxaluria Type 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lafora">Progressive Myoclonus Epilepsy, Lafora Type</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="propionic-a">Propionic Acidemia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="proteus">Proteus Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ptt">Prothrombin-Related Thrombophilia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="psach">Pseudoachondroplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pha2">Pseudohypoaldosteronism Type II</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pxe">Pseudoxanthoma Elasticum</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pf">Pulmonary Fibrosis, Familial</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pds">Pyridoxine-Dependent Epilepsy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="pdc">Pyruvate Carboxylase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rasa1-rel-dis">RASA1-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rob">ROR2-Related Robinow Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rapid-odp">Rapid-Onset Dystonia-Parkinsonism</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rgcb">Red-Green Color Vision Defects</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="refsum">Refsum Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="papr">Renal Coloboma Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rp-overview">Retinitis Pigmentosa Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="retinoblastoma">Retinoblastoma</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rcdp">Rhizomelic Chondrodysplasia Punctata Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rbs">Roberts Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rws">Romano-Ward Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rts">Rothmund-Thomson Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rotor">Rotor Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rsts">Rubinstein-Taybi Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rss">Russell-Silver Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="drrs">SALL4-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="gefs">SCN1A-Related Seizure Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="etha">SCN9A-Related Inherited Erythromelalgia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="lwd">SHOX-Related Haploinsufficiency Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sost">SOST-Related Sclerosing Bone Dysplasias</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sox2">SOX2-Related Eye Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sucla2-def">SUCLA2-Related Mitochondrial DNA Depletion Syndrome, Encephalomyopathic Form, with Mild Methylmalonic Aciduria</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="syne1ca-ar">SYNE1-Related Autosomal Recessive Cerebellar Ataxia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="scs">Saethre-Chotzen Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="salih-myo">Salih Myopathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="siod">Schimke Immunoosseous Dysplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="scad">Short-Chain Acyl-CoA Dehydrogenase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sgs">Shprintzen-Goldberg Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sds">Shwachman-Diamond Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sft">Sialuria</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sickle">Sickle Cell Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sgbs">Simpson-Golabi-Behmel Syndrome Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="slo">Smith-Lemli-Opitz Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sms">Smith-Magenis Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sotos">Sotos Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="spg3a">Spastic Paraplegia 3A</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="spg7">Spastic Paraplegia 7</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="spg8">Spastic Paraplegia 8</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="spg4">Spastic Paraplegia Type 4</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="spg11">Spastic Paraplegia Type 11</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="kennedy">Spinal and Bulbar Muscular Atrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sma">Spinal Muscular Atrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sma-xli">Spinal Muscular Atrophy, X-Linked Infantile</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca1">Spinocerebellar Ataxia Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca2">Spinocerebellar Ataxia Type 2</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca3">Spinocerebellar Ataxia Type 3</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca6">Spinocerebellar Ataxia Type 6</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca7">Spinocerebellar Ataxia Type 7</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca8">Spinocerebellar Ataxia Type 8</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca10">Spinocerebellar Ataxia Type 10</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca11">Spinocerebellar Ataxia Type 11</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca12">Spinocerebellar Ataxia Type 12</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca13">Spinocerebellar Ataxia Type 13</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca14">Spinocerebellar Ataxia Type 14</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca15">Spinocerebellar Ataxia Type 15</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca17">Spinocerebellar Ataxia Type 17</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca20">Spinocerebellar Ataxia Type 20</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sca28">Spinocerebellar Ataxia Type 28</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="scan1">Spinocerebellar Ataxia with Axonal Neuropathy, Autosomal Recessive</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="spondylocostal-d">Spondylocostal Dysostosis, Autosomal Recessive</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="spondylothor-d">Spondylothoracic Dysostosis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="stickler">Stickler Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ssadh">Succinic Semialdehyde Dehydrogenase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="cdsp">Systemic Primary Carnitine Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="tardbp-als">TARDBP-Related Amyotrophic Lateral Sclerosis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="tfr2">TFR2-Related Hereditary Hemochromatosis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="tk2-mtddepl">TK2-Related Mitochondrial DNA Depletion Syndrome, Myopathic Form</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="tetra-amelia">Tetra-Amelia Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="td">Thanatophoric Dysplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="oa-overview">The Organic Acidemias: An Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="trma">Thiamine-Responsive Megaloblastic Anemia Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="taa">Thoracic Aortic Aneurysms and Aortic Dissections</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="tar">Thrombocytopenia Absent Radius Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="timothy">Timothy Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="tourette">Tourette Disorder Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="tbs">Townes-Brocks Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="tcs">Treacher Collins Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="trimethylaminuria">Trimethylaminuria</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="spg20">Troyer Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="tuberous-sclerosis">Tuberous Sclerosis Complex</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="thdrd">Tyrosine Hydroxylase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="tyrosinemia">Tyrosinemia Type 1</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mckd2">UMOD-Associated Kidney Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="udd">Udd Distal Myopathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="epm1">Unverricht-Lundborg Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ucd-overview">Urea Cycle Disorders Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="usher1">Usher Syndrome Type I</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="usher2">Usher Syndrome Type II</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="von-willebrand">von Willebrand Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="wagner">VCAN-Related Vitreoretinopathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="vldlr-ch">VLDLR-Associated Cerebellar Hypoplasia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="vlcad">Very Long-Chain Acyl-Coenzyme A Dehydrogenase Deficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="vhl">Von Hippel-Lindau Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="was">WAS-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="wfs">WFS1-Related Disorders</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ws1">Waardenburg Syndrome Type I</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="weill-ms">Weill-Marchesani Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="werner">Werner Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="williams">Williams Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="wilms-ov">Wilms Tumor Overview</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="wilson">Wilson Disease</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="whs">Wolf-Hirschhorn Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="ahc">X-Linked Adrenal Hypoplasia Congenita</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="x-ald">X-Linked Adrenoleukodystrophy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="xla">X-Linked Agammaglobulinemia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="mtm">X-Linked Centronuclear Myopathy</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="csnb">X-Linked Congenital Stationary Night Blindness</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="xdp">X-Linked Dystonia-Parkinsonism</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="xlhi">X-Linked Hyper IgM Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="rickets-xlh">X-Linked Hypophosphatemia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="retinoschisis">X-Linked Juvenile Retinoschisis</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="opitz">X-Linked Opitz G/BBB Syndrome</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="x-pvh">X-Linked Periventricular Heterotopia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="x-scid">X-Linked Severe Combined Immunodeficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sider-anemia">X-Linked Sideroblastic Anemia and Ataxia</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="sedt">X-Linked Spondyloepiphyseal Dysplasia Tarda</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="xp">Xeroderma Pigmentosum</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="yci">Y Chromosome Infertility</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="zap70-scid">ZAP70-Related Severe Combined Immunodeficiency</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="glossaryHelp">Glossary Instructions</SectionTitle>
+            </Section>
+            <Section>
+                <SectionTitle book="gene" part="glossary">Illustrated Glossary</SectionTitle>
+            </Section>
+        </Sections>
+    </BookDocument>
+    <PubmedBookData>
+        <History>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2010</Year>
+                <Month>3</Month>
+                <Day>20</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2010</Year>
+                <Month>3</Month>
+                <Day>20</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2010</Year>
+                <Month>3</Month>
+                <Day>20</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">20301295</ArticleId>
+        </ArticleIdList>
+    </PubmedBookData>
+</PubmedBookArticle>
+
+</PubmedArticleSet>

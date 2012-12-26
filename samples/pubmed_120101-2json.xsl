@@ -4,7 +4,7 @@
               xmlns:xs="http://www.w3.org/2001/XMLSchema"
               version="1.0">
    <x:import href="xml2json.xsl"/>
-   <x:import href="pubmed.xsl"/>
+   <x:import href="efetch.pubmed.xsl"/>
    <x:output method="text"
              version="1.0"
              encoding="UTF-8"
@@ -49,7 +49,7 @@
       <x:call-template name="object">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids" select="@*|node()"/>
+         <x:with-param name="kids" select="node()"/>
          <x:with-param name="trailing-comma" select="$trailing-comma"/>
       </x:call-template>
    </x:template>
@@ -155,6 +155,40 @@
       <x:call-template name="string">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
+      </x:call-template>
+   </x:template>
+   <x:template match="MeshHeading">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+
+      <!--json annotation for content model: object-->
+      <x:choose>
+         <x:when test="$context = &#34;array&#34;">
+            <x:value-of select="np:start-object(concat($indent, $iu0))"/>
+         </x:when>
+         <x:otherwise>
+            <x:variable name="key" select="np:to-lower(name(.))"/>
+            <x:value-of select="np:key-start-object(concat($indent, $iu0), $key)"/>
+         </x:otherwise>
+      </x:choose>
+
+      <!--json annotation for content model: 'array'-->
+      <x:value-of select="np:key-start-array(concat($indent, $iu1), qualifiernames)"/>
+      <x:apply-templates select="QualifierName">
+         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
+         <x:with-param name="context" select="&#34;array&#34;"/>
+      </x:apply-templates>
+      <x:value-of select="np:end-array(concat($indent, $iu1), false())"/>
+      <!-- done: 'array' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
+      <!-- done: 'object' --></x:template>
+   <x:template match="@CompleteYN">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:param name="trailing-comma" select="position() != last()"/>
+      <x:call-template name="boolean">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+         <x:with-param name="trailing-comma" select="$trailing-comma"/>
       </x:call-template>
    </x:template>
 </x:stylesheet>

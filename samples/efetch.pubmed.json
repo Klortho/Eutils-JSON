@@ -57,43 +57,273 @@
                     "affiliation": "Malaysia Genome Institute, UKM-MTDC Smart Technology Centre, Universiti\n          Kebangsaan Malaysia, 43600 UKM Bangi, Selangor DE, Malaysia.",
                     "authorlist": [
                         {
-                            "completeyn": "Y"
+                            "completeyn": true
                         },
-                        "authors",
-                        "\n            Ling\n            King-Hwa\n            KH\n          ",
-                        "\n            Rajandream\n            Marie-Adele\n            MA\n          ",
-                        "\n            Rivailler\n            Pierre\n            P\n          ",
-                        "\n            Ivens\n            Alasdair\n            A\n          ",
-                        "\n            Yap\n            Soon-Joo\n            SJ\n          ",
-                        "\n            Madeira\n            Alda M B N\n            AM\n          ",
-                        "\n            Mungall\n            Karen\n            K\n          ",
-                        "\n            Billington\n            Karen\n            K\n          ",
-                        "\n            Yee\n            Wai-Yan\n            WY\n          ",
-                        "\n            Bankier\n            Alan T\n            AT\n          ",
-                        "\n            Carroll\n            Fionnadh\n            F\n          ",
-                        "\n            Durham\n            Alan M\n            AM\n          ",
-                        "\n            Peters\n            Nicholas\n            N\n          ",
-                        "\n            Loo\n            Shu-San\n            SS\n          ",
-                        "\n            Isa\n            Mohd Noor Mat\n            MN\n          ",
-                        "\n            Novaes\n            Jeniffer\n            J\n          ",
-                        "\n            Quail\n            Michael\n            M\n          ",
-                        "\n            Rosli\n            Rozita\n            R\n          ",
-                        "\n            Nor Shamsudin\n            Mariana\n            M\n          ",
-                        "\n            Sobreira\n            Tiago J P\n            TJ\n          ",
-                        "\n            Tivey\n            Adrian R\n            AR\n          ",
-                        "\n            Wai\n            Siew-Fun\n            SF\n          ",
-                        "\n            White\n            Sarah\n            S\n          ",
-                        "\n            Wu\n            Xikun\n            X\n          ",
-                        "\n            Kerhornou\n            Arnaud\n            A\n          ",
-                        "\n            Blake\n            Damer\n            D\n          ",
-                        "\n            Mohamed\n            Rahmah\n            R\n          ",
-                        "\n            Shirley\n            Martin\n            M\n          ",
-                        "\n            Gruber\n            Arthur\n            A\n          ",
-                        "\n            Berriman\n            Matthew\n            M\n          ",
-                        "\n            Tomley\n            Fiona\n            F\n          ",
-                        "\n            Dear\n            Paul H\n            PH\n          ",
-                        "\n            Wan\n            Kiew-Lian\n            KL\n          "
-                    ],
+                        {
+                            "validyn": "Y",
+                            "lastname": "Ling",
+                            "forename": "King-Hwa",
+                            "initials": "KH",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Rajandream",
+                            "forename": "Marie-Adele",
+                            "initials": "MA",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Rivailler",
+                            "forename": "Pierre",
+                            "initials": "P",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Ivens",
+                            "forename": "Alasdair",
+                            "initials": "A",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Yap",
+                            "forename": "Soon-Joo",
+                            "initials": "SJ",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Madeira",
+                            "forename": "Alda M B N",
+                            "initials": "AM",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Mungall",
+                            "forename": "Karen",
+                            "initials": "K",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Billington",
+                            "forename": "Karen",
+                            "initials": "K",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Yee",
+                            "forename": "Wai-Yan",
+                            "initials": "WY",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Bankier",
+                            "forename": "Alan T",
+                            "initials": "AT",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Carroll",
+                            "forename": "Fionnadh",
+                            "initials": "F",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Durham",
+                            "forename": "Alan M",
+                            "initials": "AM",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Peters",
+                            "forename": "Nicholas",
+                            "initials": "N",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Loo",
+                            "forename": "Shu-San",
+                            "initials": "SS",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Isa",
+                            "forename": "Mohd Noor Mat",
+                            "initials": "MN",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Novaes",
+                            "forename": "Jeniffer",
+                            "initials": "J",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Quail",
+                            "forename": "Michael",
+                            "initials": "M",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Rosli",
+                            "forename": "Rozita",
+                            "initials": "R",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Nor Shamsudin",
+                            "forename": "Mariana",
+                            "initials": "M",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Sobreira",
+                            "forename": "Tiago J P",
+                            "initials": "TJ",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Tivey",
+                            "forename": "Adrian R",
+                            "initials": "AR",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Wai",
+                            "forename": "Siew-Fun",
+                            "initials": "SF",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "White",
+                            "forename": "Sarah",
+                            "initials": "S",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Wu",
+                            "forename": "Xikun",
+                            "initials": "X",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Kerhornou",
+                            "forename": "Arnaud",
+                            "initials": "A",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Blake",
+                            "forename": "Damer",
+                            "initials": "D",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Mohamed",
+                            "forename": "Rahmah",
+                            "initials": "R",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Shirley",
+                            "forename": "Martin",
+                            "initials": "M",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Gruber",
+                            "forename": "Arthur",
+                            "initials": "A",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Berriman",
+                            "forename": "Matthew",
+                            "initials": "M",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Tomley",
+                            "forename": "Fiona",
+                            "initials": "F",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Dear",
+                            "forename": "Paul H",
+                            "initials": "PH",
+                            "nameids": [
+                            ]
+                        },
+                        {
+                            "validyn": "Y",
+                            "lastname": "Wan",
+                            "forename": "Kiew-Lian",
+                            "initials": "KL",
+                            "nameids": [
+                            ]
+                        }
+]
                     "language": "eng",
                     "grantlist": "\n          \n            Wellcome Trust\n            United Kingdom\n          \n        ",
                     "publicationtypelist": [
@@ -499,11 +729,17 @@
                     ],
                     "authorlist": [
                         {
-                            "completeyn": "Y"
+                            "completeyn": true
                         },
-                        "authors",
-                        "\n            Strekas\n            T C\n            TC\n          "
-                    ],
+                        {
+                            "validyn": "Y",
+                            "lastname": "Strekas",
+                            "forename": "T C",
+                            "initials": "TC",
+                            "nameids": [
+                            ]
+                        }
+]
                     "language": "eng",
                     "publicationtypelist": [
                         "Journal Article"

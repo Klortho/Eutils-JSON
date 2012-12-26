@@ -182,6 +182,20 @@ result in invalid JSON output.
 * Go through all the sample DTDs once more for a quick check of which problems were
   encountered with which, and add "notes" markers to cross-reference them.
 
+* dtd2xml2json should complain when there's something in the spec that it
+  doesn't understand, like:
+
+      <object>
+        <fleegle/>
+      </object>
+
+
+* Add to the report:  EFetch-pubmed pushed the boundaries of what is possible
+  using the current incarnation of the dtd2xml2json utility.  That utility badly
+  needs one refactorization:  an intermediate XML format, that gets rid of the
+  endemic problems of maintaining indenting and trailing commas in the XSLT
+  templates.
+
 
 <!--
   DO NOT MODIFY BELOW THIS LINE.
@@ -374,7 +388,7 @@ result in invalid JSON output.
       <td>D</td>
       <td/>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
         The elements Organism_Group and Organism_Subgroup were not declared, so
         I added them as strings.
       </td>
@@ -514,7 +528,7 @@ result in invalid JSON output.
       <td>D</td>
       <td/>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
         This DTD looks like it doesn't match the content very well.  I fixed it by adding
         elements until the instance document validated, but I don't have much confidence that
         the DTD I created is correct.
@@ -530,7 +544,7 @@ result in invalid JSON output.
       <td>D</td>
       <td/>
       <td>
-        Instance document is not valid according to the DTD.  
+        Instance document is not valid according to the DTD.
         Assembly_accession is not defined.
       </td>
       <td><a href="../../blob/master/samples/eSummary_dbvar.dtd">DTD</a>,
@@ -554,10 +568,10 @@ result in invalid JSON output.
       <th>ESummary gencoll</th>
       <td/>
       <td>
-        
+
           Escaped markup inside the &lt;Meta&gt; element.  This seems unnecessary in this
           case because the contents seem to be well-defined custom markup.
-        
+
       </td>
       <td/>
       <td><a href="../../blob/master/samples/eSummary_gencoll.dtd">DTD</a>,
@@ -844,7 +858,7 @@ result in invalid JSON output.
       <td>⑤</td>
       <td>
         Like seqannot, the bulk of the data here is trapped inside the escaped-markup content
-        of the &lt;ExpXml&gt; element.  There is another escaped-markup element here, &lt;Runs&gt;, 
+        of the &lt;ExpXml&gt; element.  There is another escaped-markup element here, &lt;Runs&gt;,
         which also has some nice but inaccessible data.
       </td>
       <td><a href="../../blob/master/samples/eSummary_sra.dtd">DTD</a>,
@@ -897,9 +911,9 @@ result in invalid JSON output.
       <th>ESummary unists</th>
       <td>D</td>
       <td>
-        
+
           &lt;Map_Gene_Summary&gt; is under-specified.
-        
+
       </td>
       <td/>
       <td><a href="../../blob/master/samples/eSummary_unists.dtd">DTD</a>,
@@ -939,6 +953,8 @@ result in invalid JSON output.
         https://github.com/Klortho/Eutils-JSON/blob/7550961a849e14f53899ea9cc948a36e5903677e/Eutils2JSON.xsl.
         The JSON file, efetch.pubmed.json, here in the samples directory is the result of that
         output, and should be the goal.
+        There's an error in the DTD:  in bookdoc_120101.dtd, the content model of &lt;BookDocument>
+        includes an element &lt;GroupList>, but there is no declaration for it.
       </td>
       <td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>,
           <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSL</a>,

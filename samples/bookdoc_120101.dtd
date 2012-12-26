@@ -40,25 +40,53 @@
 	Pagination?, Language*, AuthorList*, GroupList?, PublicationType*, Abstract?, Sections?, KeywordList*, 
 	ContributionDate?, DateRevised?, CitationString?, GrantList?) >
 
+<!--~~ <Book>
+~~json <custom/>
+~~-->
 <!ELEMENT Book ( Publisher, BookTitle, PubDate, BeginningDate?, EndingDate?, AuthorList*, Volume?, VolumeTitle?, 
 	Edition?, CollectionTitle?, Isbn*, ELocationID*, Medium?, ReportNumber?) >
+
 <!ELEMENT Publisher (PublisherName, PublisherLocation?) >
+
+<!--~~ <PublisherName>
+~~json <custom/>
+~~-->
 <!ELEMENT PublisherName      %text; >
+
 <!ELEMENT PublisherLocation (#PCDATA) >
+
+<!--~~ <BookTitle>
+~~json <custom/>
+~~-->
 <!ELEMENT BookTitle      %text; >
+
 <!ATTLIST BookTitle	%booklinkatts; >
 
 <!ELEMENT ContributionDate ( Year, ((Month, Day?) | Season)? ) >
 <!ELEMENT BeginningDate ( Year, ((Month, Day?) | Season)? ) >
 <!ELEMENT EndingDate ( Year, ((Month, Day?) | Season)? ) >
+
+<!--~~ <VolumeTitle>
+~~json <custom/>
+~~-->
 <!ELEMENT VolumeTitle %text; >
+
 <!ELEMENT Edition (#PCDATA) >
+
+<!--~~ <CollectionTitle>
+~~json <custom/>
+~~-->
 <!ELEMENT CollectionTitle      %text; >
 <!ATTLIST CollectionTitle	%booklinkatts; >
+
 <!ELEMENT Isbn (#PCDATA) >
 <!ELEMENT Medium (#PCDATA) >
 <!ELEMENT ReportNumber (#PCDATA) >
 <!ELEMENT ContractNumber (#PCDATA) >
+
+<!--~~ <CitationString>
+~~json <custom/>
+~~-->
 <!ELEMENT CitationString      %text; >
 
 <!ATTLIST ArticleTitle	%booklinkatts; >
@@ -78,7 +106,11 @@
 <!ELEMENT Sections	(Section+) >
 <!ELEMENT Section	(LocationLabel?, SectionTitle, Section*) >
 
+<!--~~ <SectionTitle>
+~~json <custom/>
+~~-->
 <!ELEMENT SectionTitle	%text; >
+
 <!ATTLIST SectionTitle	%booklinkatts; >
 
 <!ELEMENT PubmedBookArticleSet (PubmedBookArticle)*>

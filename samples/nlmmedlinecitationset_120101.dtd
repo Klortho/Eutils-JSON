@@ -39,10 +39,30 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 <!-- ====================================================================== -->
 <!ENTITY % format	" b | i | sup | sub | u " >
 <!ENTITY % text             "(#PCDATA | %format;)*" >
+
+<!--~~ <b>
+~~json <custom/>
+~~-->
 <!ELEMENT b		%text; > <!-- bold -->
+
+<!--~~ <i>
+~~json <custom/>
+~~-->
 <!ELEMENT i		%text; > <!-- italic -->
+
+<!--~~ <sup>
+~~json <custom/>
+~~-->
 <!ELEMENT sup	%text; > <!-- superscript -->
+
+<!--~~ <sub>
+~~json <custom/>
+~~-->
 <!ELEMENT sub	%text; > <!-- subscript -->
+
+<!--~~ <u>
+~~json <custom/>
+~~-->
 <!ELEMENT u		%text; > <!-- underline -->
 
 <!-- ================================================================= -->
@@ -110,6 +130,9 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 ~~-->
 <!ELEMENT	ArticleTitle %text;>
 
+<!--~~ <Author>
+~~json <custom/>
+~~-->
 <!ELEMENT	Author (((LastName, ForeName?, Initials?, Suffix?) | 
                          CollectiveName),NameID*)>
 <!ATTLIST	Author ValidYN (Y | N) "Y">
@@ -120,7 +143,7 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 <!ELEMENT	AuthorList (Author+)>
 
 <!--~~ @CompleteYN
-~~json <custom/>
+~~json <boolean/>
 ~~-->
 <!ATTLIST	AuthorList CompleteYN (Y | N) "Y">
 
@@ -144,8 +167,13 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 <!ELEMENT	CopyrightInformation (#PCDATA)>
 <!ELEMENT	Country (#PCDATA)>
 <!ELEMENT	DataBank (DataBankName, AccessionNumberList?)>
+
+<!--~~ <DataBankList>
+~~json <custom/>
+~~-->
 <!ELEMENT	DataBankList (DataBank+)>
 <!ATTLIST	DataBankList CompleteYN (Y | N) "Y">
+
 <!ELEMENT	DataBankName (#PCDATA)>
 <!ELEMENT	DateCompleted (Year,Month,Day)>
 <!ELEMENT	DateCreated (Year,Month,Day)>
@@ -195,7 +223,16 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 <!ELEMENT	MedlineJournalInfo (Country?, MedlineTA, NlmUniqueID?,ISSNLinking?)>
 <!ELEMENT   MedlinePgn (#PCDATA)>
 <!ELEMENT	MedlineTA (#PCDATA)>
+
+<!--~~ <MeshHeading>
+~~json 
+  <object>
+    <member content='DescriptorName'/>
+    <array name='qualifiernames' content='QualifierName'/>
+  </object>
+~~-->
 <!ELEMENT	MeshHeading (DescriptorName, QualifierName*)>
+
 <!ELEMENT	MeshHeadingList (MeshHeading+)>
 <!ELEMENT	Month (#PCDATA)>
 <!ELEMENT   NameID (#PCDATA)>

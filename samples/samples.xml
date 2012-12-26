@@ -335,7 +335,7 @@
     </sample>
   </samplegroup>
 
-  <samplegroup header='EFetch'>
+  <samplegroup header='EFetch PubMed'>
     <sample title='PubMed' status='' name='efetch.pubmed' dtd='pubmed_120101.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml</eutils-url>
       <desc>
@@ -346,6 +346,11 @@
         output, and should be the goal.
       </desc>
     </sample>
+    <sample title='PubMed Book' status='' name='efetch.pubmedbook' dtd='pubmed_120101.dtd'>
+      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=20301295&&amp;retmode=xml</eutils-url>
+      <desc></desc>
+    </sample>
+    
   </samplegroup>
 
 </samples>
