@@ -1,622 +1,597 @@
 <?xml version="1.0"?>
-<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2012//EN" "http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_120101.dtd">
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2013//EN" "http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_130101.dtd">
 <PubmedArticleSet>
-  <PubmedArticle>
+<PubmedArticle>
     <MedlineCitation Owner="NLM" Status="MEDLINE">
-      <PMID Version="1">17284678</PMID>
-      <DateCreated>
-        <Year>2007</Year>
-        <Month>03</Month>
-        <Day>02</Day>
-      </DateCreated>
-      <DateCompleted>
-        <Year>2007</Year>
-        <Month>04</Month>
-        <Day>05</Day>
-      </DateCompleted>
-      <DateRevised>
-        <Year>2009</Year>
-        <Month>11</Month>
-        <Day>18</Day>
-      </DateRevised>
-      <Article PubModel="Print-Electronic">
-        <Journal>
-          <ISSN IssnType="Print">1088-9051</ISSN>
-          <JournalIssue CitedMedium="Print">
-            <Volume>17</Volume>
-            <Issue>3</Issue>
-            <PubDate>
-              <Year>2007</Year>
-              <Month>Mar</Month>
-            </PubDate>
-          </JournalIssue>
-          <Title>Genome research</Title>
-          <ISOAbbreviation>Genome Res.</ISOAbbreviation>
-        </Journal>
-        <ArticleTitle>Sequencing and analysis of chromosome 1 of Eimeria tenella reveals a unique
-          segmental organization.</ArticleTitle>
-        <Pagination>
-          <MedlinePgn>311-9</MedlinePgn>
-        </Pagination>
-        <Abstract>
-          <AbstractText Label="fleegle"><i>Eimeria tenella</i> is an intracellular protozoan parasite that infects the
-            intestinal tracts of domestic fowl and causes coccidiosis, a serious and sometimes
-            lethal enteritis. Eimeria falls in the same phylum (Apicomplexa) as several human and
-            animal parasites such as Cryptosporidium, Toxoplasma, and the malaria parasite,
-            Plasmodium. Here we report the sequencing and analysis of the first chromosome of E.
-            tenella, a chromosome believed to carry loci associated with drug resistance and known
-            to differ between virulent and attenuated strains of the parasite. The chromosome--which
-            appears to be representative of the genome--is gene-dense and rich in simple-sequence
-            repeats, many of which appear to give rise to repetitive amino acid tracts in the
-            predicted proteins. Most striking is the segmentation of the chromosome into repeat-rich
-            regions peppered with transposon-like elements and telomere-like repeats, alternating
-            with repeat-free regions. Predicted genes differ in character between the two types of
-            segment, and the repeat-rich regions appear to be associated with strain-to-strain
-            variation.</AbstractText>
-        </Abstract>
-        <Affiliation>Malaysia Genome Institute, UKM-MTDC Smart Technology Centre, Universiti
-          Kebangsaan Malaysia, 43600 UKM Bangi, Selangor DE, Malaysia.</Affiliation>
-        <AuthorList CompleteYN="Y">
-          <Author ValidYN="Y">
-            <LastName>Ling</LastName>
-            <ForeName>King-Hwa</ForeName>
-            <Initials>KH</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Rajandream</LastName>
-            <ForeName>Marie-Adele</ForeName>
-            <Initials>MA</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Rivailler</LastName>
-            <ForeName>Pierre</ForeName>
-            <Initials>P</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Ivens</LastName>
-            <ForeName>Alasdair</ForeName>
-            <Initials>A</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Yap</LastName>
-            <ForeName>Soon-Joo</ForeName>
-            <Initials>SJ</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Madeira</LastName>
-            <ForeName>Alda M B N</ForeName>
-            <Initials>AM</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Mungall</LastName>
-            <ForeName>Karen</ForeName>
-            <Initials>K</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Billington</LastName>
-            <ForeName>Karen</ForeName>
-            <Initials>K</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Yee</LastName>
-            <ForeName>Wai-Yan</ForeName>
-            <Initials>WY</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Bankier</LastName>
-            <ForeName>Alan T</ForeName>
-            <Initials>AT</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Carroll</LastName>
-            <ForeName>Fionnadh</ForeName>
-            <Initials>F</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Durham</LastName>
-            <ForeName>Alan M</ForeName>
-            <Initials>AM</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Peters</LastName>
-            <ForeName>Nicholas</ForeName>
-            <Initials>N</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Loo</LastName>
-            <ForeName>Shu-San</ForeName>
-            <Initials>SS</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Isa</LastName>
-            <ForeName>Mohd Noor Mat</ForeName>
-            <Initials>MN</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Novaes</LastName>
-            <ForeName>Jeniffer</ForeName>
-            <Initials>J</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Quail</LastName>
-            <ForeName>Michael</ForeName>
-            <Initials>M</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Rosli</LastName>
-            <ForeName>Rozita</ForeName>
-            <Initials>R</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Nor Shamsudin</LastName>
-            <ForeName>Mariana</ForeName>
-            <Initials>M</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Sobreira</LastName>
-            <ForeName>Tiago J P</ForeName>
-            <Initials>TJ</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Tivey</LastName>
-            <ForeName>Adrian R</ForeName>
-            <Initials>AR</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Wai</LastName>
-            <ForeName>Siew-Fun</ForeName>
-            <Initials>SF</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>White</LastName>
-            <ForeName>Sarah</ForeName>
-            <Initials>S</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Wu</LastName>
-            <ForeName>Xikun</ForeName>
-            <Initials>X</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Kerhornou</LastName>
-            <ForeName>Arnaud</ForeName>
-            <Initials>A</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Blake</LastName>
-            <ForeName>Damer</ForeName>
-            <Initials>D</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Mohamed</LastName>
-            <ForeName>Rahmah</ForeName>
-            <Initials>R</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Shirley</LastName>
-            <ForeName>Martin</ForeName>
-            <Initials>M</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Gruber</LastName>
-            <ForeName>Arthur</ForeName>
-            <Initials>A</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Berriman</LastName>
-            <ForeName>Matthew</ForeName>
-            <Initials>M</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Tomley</LastName>
-            <ForeName>Fiona</ForeName>
-            <Initials>F</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Dear</LastName>
-            <ForeName>Paul H</ForeName>
-            <Initials>PH</Initials>
-          </Author>
-          <Author ValidYN="Y">
-            <LastName>Wan</LastName>
-            <ForeName>Kiew-Lian</ForeName>
-            <Initials>KL</Initials>
-          </Author>
-        </AuthorList>
-        <Language>eng</Language>
-        <GrantList CompleteYN="Y">
-          <Grant>
-            <Agency>Wellcome Trust</Agency>
-            <Country>United Kingdom</Country>
-          </Grant>
-        </GrantList>
-        <PublicationTypeList>
-          <PublicationType>Comparative Study</PublicationType>
-          <PublicationType>Journal Article</PublicationType>
-          <PublicationType>Research Support, Non-U.S. Gov't</PublicationType>
-        </PublicationTypeList>
-        <ArticleDate DateType="Electronic">
-          <Year>2007</Year>
-          <Month>02</Month>
-          <Day>06</Day>
-        </ArticleDate>
-      </Article>
-      <MedlineJournalInfo>
-        <Country>United States</Country>
-        <MedlineTA>Genome Res</MedlineTA>
-        <NlmUniqueID>9518021</NlmUniqueID>
-        <ISSNLinking>1088-9051</ISSNLinking>
-      </MedlineJournalInfo>
-      <CitationSubset>IM</CitationSubset>
-      <CommentsCorrectionsList>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>J Mol Biol. 2004 May 14;338(5):1027-36</RefSource>
-          <PMID Version="1">15111065</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Trends Parasitol. 2004 May;20(5):199-201</RefSource>
-          <PMID Version="1">15105014</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Bioinformatics. 2004 Nov 1;20(16):2878-9</RefSource>
-          <PMID Version="1">15145805</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Parasitol Today. 1991 May;7(5):99-105</RefSource>
-          <PMID Version="1">15463458</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Nature. 2005 May 5;435(7038):43-57</RefSource>
-          <PMID Version="1">15875012</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Nucleic Acids Res. 2005 Jul 1;33(Web Server issue):W116-20</RefSource>
-          <PMID Version="1">15980438</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Science. 2005 Jul 15;309(5733):416-22</RefSource>
-          <PMID Version="1">16020726</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Nat Genet. 2005 Sep;37(9):986-90</RefSource>
-          <PMID Version="1">16086015</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Chromosome Res. 2005;13(5):517-24</RefSource>
-          <PMID Version="1">16132816</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Nat Rev Genet. 2005 Oct;6(10):743-55</RefSource>
-          <PMID Version="1">16205714</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Bioinformatics. 2006 Feb 1;22(3):361-2</RefSource>
-          <PMID Version="1">16332714</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Mol Microbiol. 2006 Apr;60(1):5-15</RefSource>
-          <PMID Version="1">16556216</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Mol Biochem Parasitol. 1990 Jan 15;38(2):169-73</RefSource>
-          <PMID Version="1">2325704</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Parasite Immunol. 1986 Nov;8(6):529-39</RefSource>
-          <PMID Version="1">3543808</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Parasitol Res. 1994;80(5):366-73</RefSource>
-          <PMID Version="1">7971922</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Nucleic Acids Res. 1995 Dec 25;23(24):4992-9</RefSource>
-          <PMID Version="1">8559656</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Nucleic Acids Res. 1997 Mar 1;25(5):955-64</RefSource>
-          <PMID Version="1">9023104</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Nucleic Acids Res. 1999 Jan 15;27(2):573-80</RefSource>
-          <PMID Version="1">9862982</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Int J Parasitol. 1999 Dec;29(12):1885-92</RefSource>
-          <PMID Version="1">10961844</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Genome Res. 2000 Oct;10(10):1587-93</RefSource>
-          <PMID Version="1">11042156</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Genome Res. 2000 Nov;10(11):1737-42</RefSource>
-          <PMID Version="1">11076859</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Bioinformatics. 2000 Oct;16(10):944-5</RefSource>
-          <PMID Version="1">11120685</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Nature. 2001 Feb 15;409(6822):860-921</RefSource>
-          <PMID Version="1">11237011</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Nature. 2002 Jul 4;418(6893):79-85</RefSource>
-          <PMID Version="1">12097910</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Nature. 2002 Oct 3;419(6906):498-511</RefSource>
-          <PMID Version="1">12368864</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Nature. 2002 Oct 3;419(6906):527-31</RefSource>
-          <PMID Version="1">12368867</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Exp Parasitol. 2002 Jun-Jul;101(2-3):168-73</RefSource>
-          <PMID Version="1">12427472</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Nucleic Acids Res. 2003 Jan 1;31(1):439-41</RefSource>
-          <PMID Version="1">12520045</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Genome Res. 2003 Mar;13(3):443-54</RefSource>
-          <PMID Version="1">12618375</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Avian Pathol. 2003 Apr;32(2):115-27</RefSource>
-          <PMID Version="1">12745365</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>Parasitol Res. 2003 Aug;90(6):473-5</RefSource>
-          <PMID Version="1">12802683</PMID>
-        </CommentsCorrections>
-        <CommentsCorrections RefType="Cites">
-          <RefSource>BMC Bioinformatics. 2004 May 14;5:59</RefSource>
-          <PMID Version="1">15144565</PMID>
-        </CommentsCorrections>
-      </CommentsCorrectionsList>
-      <MeshHeadingList>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Animals</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Base Sequence</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Chromosome Mapping</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Chromosome Structures</DescriptorName>
-          <QualifierName MajorTopicYN="Y">genetics</QualifierName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Computational Biology</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Eimeria tenella</DescriptorName>
-          <QualifierName MajorTopicYN="Y">genetics</QualifierName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Genes, Protozoan</DescriptorName>
-          <QualifierName MajorTopicYN="Y">genetics</QualifierName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Minisatellite Repeats</DescriptorName>
-          <QualifierName MajorTopicYN="N">genetics</QualifierName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Molecular Sequence Data</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Polymorphism, Restriction Fragment
-            Length</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Sequence Analysis, DNA</DescriptorName>
-        </MeshHeading>
-      </MeshHeadingList>
-      <OtherID Source="NLM">PMC1800922</OtherID>
+        <PMID Version="1">17284678</PMID>
+        <DateCreated>
+            <Year>2007</Year>
+            <Month>03</Month>
+            <Day>02</Day>
+        </DateCreated>
+        <DateCompleted>
+            <Year>2007</Year>
+            <Month>04</Month>
+            <Day>05</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2009</Year>
+            <Month>11</Month>
+            <Day>18</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Print">1088-9051</ISSN>
+                <JournalIssue CitedMedium="Print">
+                    <Volume>17</Volume>
+                    <Issue>3</Issue>
+                    <PubDate>
+                        <Year>2007</Year>
+                        <Month>Mar</Month>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Genome research</Title>
+                <ISOAbbreviation>Genome Res.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Sequencing and analysis of chromosome 1 of Eimeria tenella reveals a unique segmental organization.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>311-9</MedlinePgn>
+            </Pagination>
+            <Abstract>
+                <AbstractText>Eimeria tenella is an intracellular protozoan parasite that infects the intestinal tracts of domestic fowl and causes coccidiosis, a serious and sometimes lethal enteritis. Eimeria falls in the same phylum (Apicomplexa) as several human and animal parasites such as Cryptosporidium, Toxoplasma, and the malaria parasite, Plasmodium. Here we report the sequencing and analysis of the first chromosome of E. tenella, a chromosome believed to carry loci associated with drug resistance and known to differ between virulent and attenuated strains of the parasite. The chromosome--which appears to be representative of the genome--is gene-dense and rich in simple-sequence repeats, many of which appear to give rise to repetitive amino acid tracts in the predicted proteins. Most striking is the segmentation of the chromosome into repeat-rich regions peppered with transposon-like elements and telomere-like repeats, alternating with repeat-free regions. Predicted genes differ in character between the two types of segment, and the repeat-rich regions appear to be associated with strain-to-strain variation.</AbstractText>
+            </Abstract>
+            <Affiliation>Malaysia Genome Institute, UKM-MTDC Smart Technology Centre, Universiti Kebangsaan Malaysia, 43600 UKM Bangi, Selangor DE, Malaysia.</Affiliation>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Ling</LastName>
+                    <ForeName>King-Hwa</ForeName>
+                    <Initials>KH</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Rajandream</LastName>
+                    <ForeName>Marie-Adele</ForeName>
+                    <Initials>MA</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Rivailler</LastName>
+                    <ForeName>Pierre</ForeName>
+                    <Initials>P</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Ivens</LastName>
+                    <ForeName>Alasdair</ForeName>
+                    <Initials>A</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Yap</LastName>
+                    <ForeName>Soon-Joo</ForeName>
+                    <Initials>SJ</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Madeira</LastName>
+                    <ForeName>Alda M B N</ForeName>
+                    <Initials>AM</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Mungall</LastName>
+                    <ForeName>Karen</ForeName>
+                    <Initials>K</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Billington</LastName>
+                    <ForeName>Karen</ForeName>
+                    <Initials>K</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Yee</LastName>
+                    <ForeName>Wai-Yan</ForeName>
+                    <Initials>WY</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Bankier</LastName>
+                    <ForeName>Alan T</ForeName>
+                    <Initials>AT</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Carroll</LastName>
+                    <ForeName>Fionnadh</ForeName>
+                    <Initials>F</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Durham</LastName>
+                    <ForeName>Alan M</ForeName>
+                    <Initials>AM</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Peters</LastName>
+                    <ForeName>Nicholas</ForeName>
+                    <Initials>N</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Loo</LastName>
+                    <ForeName>Shu-San</ForeName>
+                    <Initials>SS</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Isa</LastName>
+                    <ForeName>Mohd Noor Mat</ForeName>
+                    <Initials>MN</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Novaes</LastName>
+                    <ForeName>Jeniffer</ForeName>
+                    <Initials>J</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Quail</LastName>
+                    <ForeName>Michael</ForeName>
+                    <Initials>M</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Rosli</LastName>
+                    <ForeName>Rozita</ForeName>
+                    <Initials>R</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Nor Shamsudin</LastName>
+                    <ForeName>Mariana</ForeName>
+                    <Initials>M</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Sobreira</LastName>
+                    <ForeName>Tiago J P</ForeName>
+                    <Initials>TJ</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Tivey</LastName>
+                    <ForeName>Adrian R</ForeName>
+                    <Initials>AR</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Wai</LastName>
+                    <ForeName>Siew-Fun</ForeName>
+                    <Initials>SF</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>White</LastName>
+                    <ForeName>Sarah</ForeName>
+                    <Initials>S</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Wu</LastName>
+                    <ForeName>Xikun</ForeName>
+                    <Initials>X</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Kerhornou</LastName>
+                    <ForeName>Arnaud</ForeName>
+                    <Initials>A</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Blake</LastName>
+                    <ForeName>Damer</ForeName>
+                    <Initials>D</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Mohamed</LastName>
+                    <ForeName>Rahmah</ForeName>
+                    <Initials>R</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Shirley</LastName>
+                    <ForeName>Martin</ForeName>
+                    <Initials>M</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Gruber</LastName>
+                    <ForeName>Arthur</ForeName>
+                    <Initials>A</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Berriman</LastName>
+                    <ForeName>Matthew</ForeName>
+                    <Initials>M</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Tomley</LastName>
+                    <ForeName>Fiona</ForeName>
+                    <Initials>F</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Dear</LastName>
+                    <ForeName>Paul H</ForeName>
+                    <Initials>PH</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Wan</LastName>
+                    <ForeName>Kiew-Lian</ForeName>
+                    <Initials>KL</Initials>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <GrantList CompleteYN="Y">
+                <Grant>
+                    <Agency>Wellcome Trust</Agency>
+                    <Country>United Kingdom</Country>
+                </Grant>
+            </GrantList>
+            <PublicationTypeList>
+                <PublicationType>Comparative Study</PublicationType>
+                <PublicationType>Journal Article</PublicationType>
+                <PublicationType>Research Support, Non-U.S. Gov't</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2007</Year>
+                <Month>02</Month>
+                <Day>06</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>Genome Res</MedlineTA>
+            <NlmUniqueID>9518021</NlmUniqueID>
+            <ISSNLinking>1088-9051</ISSNLinking>
+        </MedlineJournalInfo>
+        <CitationSubset>IM</CitationSubset>
+        <CommentsCorrectionsList>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nucleic Acids Res. 1999 Jan 15;27(2):573-80</RefSource>
+                <PMID Version="1">9862982</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nucleic Acids Res. 1997 Mar 1;25(5):955-64</RefSource>
+                <PMID Version="1">9023104</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Genome Res. 2000 Oct;10(10):1587-93</RefSource>
+                <PMID Version="1">11042156</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Genome Res. 2000 Nov;10(11):1737-42</RefSource>
+                <PMID Version="1">11076859</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Bioinformatics. 2000 Oct;16(10):944-5</RefSource>
+                <PMID Version="1">11120685</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nature. 2001 Feb 15;409(6822):860-921</RefSource>
+                <PMID Version="1">11237011</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nature. 2002 Jul 4;418(6893):79-85</RefSource>
+                <PMID Version="1">12097910</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nature. 2002 Oct 3;419(6906):498-511</RefSource>
+                <PMID Version="1">12368864</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nature. 2002 Oct 3;419(6906):527-31</RefSource>
+                <PMID Version="1">12368867</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Exp Parasitol. 2002 Jun-Jul;101(2-3):168-73</RefSource>
+                <PMID Version="1">12427472</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nucleic Acids Res. 2003 Jan 1;31(1):439-41</RefSource>
+                <PMID Version="1">12520045</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Genome Res. 2003 Mar;13(3):443-54</RefSource>
+                <PMID Version="1">12618375</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Avian Pathol. 2003 Apr;32(2):115-27</RefSource>
+                <PMID Version="1">12745365</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Parasitol Res. 2003 Aug;90(6):473-5</RefSource>
+                <PMID Version="1">12802683</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Trends Parasitol. 2004 May;20(5):199-201</RefSource>
+                <PMID Version="1">15105014</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Mol Biol. 2004 May 14;338(5):1027-36</RefSource>
+                <PMID Version="1">15111065</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>BMC Bioinformatics. 2004 May 14;5:59</RefSource>
+                <PMID Version="1">15144565</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Bioinformatics. 2004 Nov 1;20(16):2878-9</RefSource>
+                <PMID Version="1">15145805</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Parasitol Today. 1991 May;7(5):99-105</RefSource>
+                <PMID Version="1">15463458</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nature. 2005 May 5;435(7038):43-57</RefSource>
+                <PMID Version="1">15875012</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nucleic Acids Res. 2005 Jul 1;33(Web Server issue):W116-20</RefSource>
+                <PMID Version="1">15980438</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Science. 2005 Jul 15;309(5733):416-22</RefSource>
+                <PMID Version="1">16020726</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nat Genet. 2005 Sep;37(9):986-90</RefSource>
+                <PMID Version="1">16086015</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Chromosome Res. 2005;13(5):517-24</RefSource>
+                <PMID Version="1">16132816</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nat Rev Genet. 2005 Oct;6(10):743-55</RefSource>
+                <PMID Version="1">16205714</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Bioinformatics. 2006 Feb 1;22(3):361-2</RefSource>
+                <PMID Version="1">16332714</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Mol Microbiol. 2006 Apr;60(1):5-15</RefSource>
+                <PMID Version="1">16556216</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Mol Biochem Parasitol. 1990 Jan 15;38(2):169-73</RefSource>
+                <PMID Version="1">2325704</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Parasite Immunol. 1986 Nov;8(6):529-39</RefSource>
+                <PMID Version="1">3543808</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Parasitol Res. 1994;80(5):366-73</RefSource>
+                <PMID Version="1">7971922</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nucleic Acids Res. 1995 Dec 25;23(24):4992-9</RefSource>
+                <PMID Version="1">8559656</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Int J Parasitol. 1999 Dec;29(12):1885-92</RefSource>
+                <PMID Version="1">10961844</PMID>
+            </CommentsCorrections>
+        </CommentsCorrectionsList>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Animals</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Base Sequence</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Chromosome Mapping</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Chromosome Structures</DescriptorName>
+                <QualifierName MajorTopicYN="Y">genetics</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Computational Biology</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Eimeria tenella</DescriptorName>
+                <QualifierName MajorTopicYN="Y">genetics</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Genes, Protozoan</DescriptorName>
+                <QualifierName MajorTopicYN="Y">genetics</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Minisatellite Repeats</DescriptorName>
+                <QualifierName MajorTopicYN="N">genetics</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Molecular Sequence Data</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Polymorphism, Restriction Fragment Length</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Sequence Analysis, DNA</DescriptorName>
+            </MeshHeading>
+        </MeshHeadingList>
+        <OtherID Source="NLM">PMC1800922</OtherID>
     </MedlineCitation>
     <PubmedData>
-      <History>
-        <PubMedPubDate PubStatus="aheadofprint">
-          <Year>2007</Year>
-          <Month>2</Month>
-          <Day>6</Day>
-        </PubMedPubDate>
-        <PubMedPubDate PubStatus="pubmed">
-          <Year>2007</Year>
-          <Month>2</Month>
-          <Day>8</Day>
-          <Hour>9</Hour>
-          <Minute>0</Minute>
-        </PubMedPubDate>
-        <PubMedPubDate PubStatus="medline">
-          <Year>2007</Year>
-          <Month>4</Month>
-          <Day>6</Day>
-          <Hour>9</Hour>
-          <Minute>0</Minute>
-        </PubMedPubDate>
-        <PubMedPubDate PubStatus="entrez">
-          <Year>2007</Year>
-          <Month>2</Month>
-          <Day>8</Day>
-          <Hour>9</Hour>
-          <Minute>0</Minute>
-        </PubMedPubDate>
-      </History>
-      <PublicationStatus>ppublish</PublicationStatus>
-      <ArticleIdList>
-        <ArticleId IdType="pii">gr.5823007</ArticleId>
-        <ArticleId IdType="doi">10.1101/gr.5823007</ArticleId>
-        <ArticleId IdType="pubmed">17284678</ArticleId>
-        <ArticleId IdType="pmc">PMC1800922</ArticleId>
-      </ArticleIdList>
+        <History>
+            <PubMedPubDate PubStatus="aheadofprint">
+                <Year>2007</Year>
+                <Month>2</Month>
+                <Day>6</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2007</Year>
+                <Month>2</Month>
+                <Day>8</Day>
+                <Hour>9</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2007</Year>
+                <Month>4</Month>
+                <Day>6</Day>
+                <Hour>9</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2007</Year>
+                <Month>2</Month>
+                <Day>8</Day>
+                <Hour>9</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pii">gr.5823007</ArticleId>
+            <ArticleId IdType="doi">10.1101/gr.5823007</ArticleId>
+            <ArticleId IdType="pubmed">17284678</ArticleId>
+            <ArticleId IdType="pmc">PMC1800922</ArticleId>
+        </ArticleIdList>
     </PubmedData>
-  </PubmedArticle>
+</PubmedArticle>
 
 
-  <PubmedArticle>
+<PubmedArticle>
     <MedlineCitation Owner="NLM" Status="MEDLINE">
-      <PMID Version="1">9997</PMID>
-      <DateCreated>
-        <Year>1976</Year>
-        <Month>12</Month>
-        <Day>30</Day>
-      </DateCreated>
-      <DateCompleted>
-        <Year>1976</Year>
-        <Month>12</Month>
-        <Day>30</Day>
-      </DateCompleted>
-      <DateRevised>
-        <Year>2003</Year>
-        <Month>11</Month>
-        <Day>14</Day>
-      </DateRevised>
-      <Article PubModel="Print">
-        <Journal>
-          <ISSN IssnType="Print">0006-3002</ISSN>
-          <JournalIssue CitedMedium="Print">
-            <Volume>446</Volume>
-            <Issue>1</Issue>
-            <PubDate>
-              <Year>1976</Year>
-              <Month>Sep</Month>
-              <Day>28</Day>
-            </PubDate>
-          </JournalIssue>
-          <Title>Biochimica et biophysica acta</Title>
-          <ISOAbbreviation>Biochim. Biophys. Acta</ISOAbbreviation>
-        </Journal>
-        <ArticleTitle>Magnetic studies of Chromatium flavocytochrome C552. A mechanism for
-          heme-flavin interaction.</ArticleTitle>
-        <Pagination>
-          <MedlinePgn>179-91</MedlinePgn>
-        </Pagination>
-        <Abstract>
-          <AbstractText>Electron paramagnetic resonance and magnetic susceptibility studies of
-            Chromatium flavocytochrome C552 and its diheme flavin-free subunit at temperatures below
-            45 degrees K are reported. The results show that in the intact protein and the subunit
-            the two low-spin (S = 1/2) heme irons are distinguishable, giving rise to separate EPR
-            signals. In the intact protein only, one of the heme irons exists in two different low
-            spin environments in the pH range 5.5 to 10.5, while the other remains in a constant
-            environment. Factors influencing the variable heme iron environment also influence
-            flavin reactivity, indicating the existence of a mechanism for heme-flavin
-            interaction.</AbstractText>
-        </Abstract>
-        <AuthorList CompleteYN="Y">
-          <Author ValidYN="Y">
-            <LastName>Strekas</LastName>
-            <ForeName>T C</ForeName>
-            <Initials>TC</Initials>
-          </Author>
-        </AuthorList>
-        <Language>eng</Language>
-        <PublicationTypeList>
-          <PublicationType>Journal Article</PublicationType>
-        </PublicationTypeList>
-      </Article>
-      <MedlineJournalInfo>
-        <Country>NETHERLANDS</Country>
-        <MedlineTA>Biochim Biophys Acta</MedlineTA>
-        <NlmUniqueID>0217513</NlmUniqueID>
-        <ISSNLinking>0006-3002</ISSNLinking>
-      </MedlineJournalInfo>
-      <ChemicalList>
-        <Chemical>
-          <RegistryNumber>0</RegistryNumber>
-          <NameOfSubstance>Cytochrome c Group</NameOfSubstance>
-        </Chemical>
-        <Chemical>
-          <RegistryNumber>0</RegistryNumber>
-          <NameOfSubstance>Flavins</NameOfSubstance>
-        </Chemical>
-        <Chemical>
-          <RegistryNumber>14875-96-8</RegistryNumber>
-          <NameOfSubstance>Heme</NameOfSubstance>
-        </Chemical>
-        <Chemical>
-          <RegistryNumber>7439-89-6</RegistryNumber>
-          <NameOfSubstance>Iron</NameOfSubstance>
-        </Chemical>
-      </ChemicalList>
-      <CitationSubset>IM</CitationSubset>
-      <MeshHeadingList>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Binding Sites</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Chromatium</DescriptorName>
-          <QualifierName MajorTopicYN="Y">enzymology</QualifierName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="Y">Cytochrome c Group</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Electron Spin Resonance Spectroscopy</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Flavins</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Heme</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Hydrogen-Ion Concentration</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Iron</DescriptorName>
-          <QualifierName MajorTopicYN="N">analysis</QualifierName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Magnetics</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Oxidation-Reduction</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Protein Binding</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Protein Conformation</DescriptorName>
-        </MeshHeading>
-        <MeshHeading>
-          <DescriptorName MajorTopicYN="N">Temperature</DescriptorName>
-        </MeshHeading>
-      </MeshHeadingList>
+        <PMID Version="1">9997</PMID>
+        <DateCreated>
+            <Year>1976</Year>
+            <Month>12</Month>
+            <Day>30</Day>
+        </DateCreated>
+        <DateCompleted>
+            <Year>1976</Year>
+            <Month>12</Month>
+            <Day>30</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2003</Year>
+            <Month>11</Month>
+            <Day>14</Day>
+        </DateRevised>
+        <Article PubModel="Print">
+            <Journal>
+                <ISSN IssnType="Print">0006-3002</ISSN>
+                <JournalIssue CitedMedium="Print">
+                    <Volume>446</Volume>
+                    <Issue>1</Issue>
+                    <PubDate>
+                        <Year>1976</Year>
+                        <Month>Sep</Month>
+                        <Day>28</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Biochimica et biophysica acta</Title>
+                <ISOAbbreviation>Biochim. Biophys. Acta</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Magnetic studies of Chromatium flavocytochrome C552. A mechanism for heme-flavin interaction.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>179-91</MedlinePgn>
+            </Pagination>
+            <Abstract>
+                <AbstractText>Electron paramagnetic resonance and magnetic susceptibility studies of Chromatium flavocytochrome C552 and its diheme flavin-free subunit at temperatures below 45 degrees K are reported. The results show that in the intact protein and the subunit the two low-spin (S = 1/2) heme irons are distinguishable, giving rise to separate EPR signals. In the intact protein only, one of the heme irons exists in two different low spin environments in the pH range 5.5 to 10.5, while the other remains in a constant environment. Factors influencing the variable heme iron environment also influence flavin reactivity, indicating the existence of a mechanism for heme-flavin interaction.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Strekas</LastName>
+                    <ForeName>T C</ForeName>
+                    <Initials>TC</Initials>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType>Journal Article</PublicationType>
+            </PublicationTypeList>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>NETHERLANDS</Country>
+            <MedlineTA>Biochim Biophys Acta</MedlineTA>
+            <NlmUniqueID>0217513</NlmUniqueID>
+            <ISSNLinking>0006-3002</ISSNLinking>
+        </MedlineJournalInfo>
+        <ChemicalList>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance>Cytochrome c Group</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance>Flavins</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>14875-96-8</RegistryNumber>
+                <NameOfSubstance>Heme</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>7439-89-6</RegistryNumber>
+                <NameOfSubstance>Iron</NameOfSubstance>
+            </Chemical>
+        </ChemicalList>
+        <CitationSubset>IM</CitationSubset>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Binding Sites</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Chromatium</DescriptorName>
+                <QualifierName MajorTopicYN="Y">enzymology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="Y">Cytochrome c Group</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Electron Spin Resonance Spectroscopy</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Flavins</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Heme</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Hydrogen-Ion Concentration</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Iron</DescriptorName>
+                <QualifierName MajorTopicYN="N">analysis</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Magnetics</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Oxidation-Reduction</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Protein Binding</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Protein Conformation</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Temperature</DescriptorName>
+            </MeshHeading>
+        </MeshHeadingList>
     </MedlineCitation>
     <PubmedData>
-      <History>
-        <PubMedPubDate PubStatus="pubmed">
-          <Year>1976</Year>
-          <Month>9</Month>
-          <Day>28</Day>
-        </PubMedPubDate>
-        <PubMedPubDate PubStatus="medline">
-          <Year>1976</Year>
-          <Month>9</Month>
-          <Day>28</Day>
-          <Hour>0</Hour>
-          <Minute>1</Minute>
-        </PubMedPubDate>
-        <PubMedPubDate PubStatus="entrez">
-          <Year>1976</Year>
-          <Month>9</Month>
-          <Day>28</Day>
-          <Hour>0</Hour>
-          <Minute>0</Minute>
-        </PubMedPubDate>
-      </History>
-      <PublicationStatus>ppublish</PublicationStatus>
-      <ArticleIdList>
-        <ArticleId IdType="pubmed">9997</ArticleId>
-      </ArticleIdList>
+        <History>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>1976</Year>
+                <Month>9</Month>
+                <Day>28</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>1976</Year>
+                <Month>9</Month>
+                <Day>28</Day>
+                <Hour>0</Hour>
+                <Minute>1</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>1976</Year>
+                <Month>9</Month>
+                <Day>28</Day>
+                <Hour>0</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">9997</ArticleId>
+        </ArticleIdList>
     </PubmedData>
-  </PubmedArticle>
+</PubmedArticle>
 
 </PubmedArticleSet>
