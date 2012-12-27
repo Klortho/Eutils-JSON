@@ -25,7 +25,7 @@
       <tr>
         <th></th>
         <th>✓</th>
-        <th>Notes</th>
+        <th>Description / Notes</th>
         <th>Links</th>
       </tr>
       <xsl:apply-templates/>
@@ -41,7 +41,7 @@
         <xsl:value-of select="@status"/>
       </td>
       <td>
-        <xsl:apply-templates select='notes/note'/>
+        <xsl:apply-templates select='notes/*'/>
       </td>
       <td>
         <xsl:if test='@dtd'>
@@ -64,6 +64,15 @@
     </tr>
   </xsl:template>
 
+  <xsl:template match='desc'>
+    <em>
+      <xsl:apply-templates/>
+    </em>
+    <xsl:if test='position() != last()'>
+      <br/>
+    </xsl:if>
+  </xsl:template>
+  
   <xsl:template match='note'>
     <xsl:if test='@rid'>
       <xsl:variable name='target'>
@@ -94,6 +103,9 @@
       </font>
     </xsl:if>
     <xsl:apply-templates/>
+    <xsl:if test='position() != last()'>
+      <br/>
+    </xsl:if>
   </xsl:template>
   
   <xsl:template match='@*|node()'>

@@ -1,8 +1,8 @@
 dtd2xml2json eInfo_020511.dtd eInfo_020511-2json.xsl
 xsltproc eInfo_020511-2json.xsl einfo.xml > einfo.json
+xsltproc eInfo_020511-2json.xsl einfo.pubmed.xml > einfo.pubmed.json
+xsltproc eInfo_020511-2json.xsl einfo.error.xml > einfo.error.json
 exit
-#xsltproc eInfo_020511-2json.xsl einfo.pubmed.xml > einfo.pubmed.json
-#xsltproc eInfo_020511-2json.xsl einfo.error.xml > einfo.error.json
 
 #dtd2xml2json eSearch_020511.dtd eSearch_020511-2json.xsl
 #xsltproc eSearch_020511-2json.xsl esearch.pubmed.xml > esearch.pubmed.json

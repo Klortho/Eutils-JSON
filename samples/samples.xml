@@ -6,22 +6,22 @@
 
 <samples>
   <samplegroup header='EInfo'>
-    <sample title='EInfo' status='D' name='einfo' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo' status='D✓' name='einfo' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi</eutils-url>
       <notes>
-        <note>List all databases</note>
+        <desc>Basic EInfo result, list of all databases.</desc>
       </notes>
     </sample>
-    <sample title='EInfo PubMed' status='D' name='einfo.pubmed' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo PubMed' status='D✓' name='einfo.pubmed' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed</eutils-url>
       <notes>
-        <note></note>
+        <desc>Information about the PubMed database.</desc>
       </notes>
     </sample>
-    <sample title='EInfo Error' status='D' name='einfo.error' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo Error' status='D✓' name='einfo.error' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle</eutils-url>
       <notes>
-        <note>Invalid database name</note>
+        <desc>Test an error response: invalid database name.</desc>
       </notes>
     </sample>
   </samplegroup>
@@ -30,7 +30,6 @@
     <sample title='ESearch PubMed' status='D' name='esearch.pubmed' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='ESearch Error' status='D' name='esearch.error' dtd='eSearch_020511.dtd'>

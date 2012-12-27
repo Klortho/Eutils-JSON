@@ -1,5 +1,9 @@
 {
-    "type": "einfo",
-    "version": "0.3",
-    "ERROR": "Can not retrieve DbInfo for db=fleegle"
+    "header": {
+        "type": "einfo",
+        "version": "0.3"
+    },
+    "einforesult": {
+        "ERROR": "Can not retrieve DbInfo for db=fleegle"
+    }
 }

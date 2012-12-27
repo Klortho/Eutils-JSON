@@ -3,7 +3,7 @@
         "type": "einfo",
         "version": "0.3"
     },
-    "response": {
+    "einforesult": {
         "dblist": [
             "pubmed",
             "protein",
