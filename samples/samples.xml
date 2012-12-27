@@ -49,10 +49,13 @@
 
 
   <samplegroup header='ESummary'>
-    <sample title='pubmed' status='D' name='esummary.pubmed' dtd='eSummary_pubmed.dtd'>
+    <sample title='pubmed' status='D✓' name='esummary.pubmed' dtd='eSummary_pubmed.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmed&amp;id=5683731,22144687</eutils-url>
       <notes>
-        <note></note>
+        <note rid='④'>
+          &lt;PubStatus> is marked as type "T_int", but its value is not always
+          an integer.
+        </note>
       </notes>
     </sample>
     <sample title='protein' status='D' name='esummary.protein' dtd='eSummary_protein.dtd'>

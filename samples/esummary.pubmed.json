@@ -1,8 +1,13 @@
 {
-    "type": "esummary",
-    "version": "0.3",
-    "documentsummaryset": {
-        "status": "OK",
+    "header": {
+        "type": "esummary",
+        "version": "0.3"
+    },
+    "result": {
+        "uids": [
+            "5683731",
+            "22144687"
+        ],
         "5683731": {
             "uid": "5683731",
             "pubdate": "1968 Aug",
@@ -40,22 +45,22 @@
             "articleids": [
                 {
                     "idtype": "pubmed",
-                    "idtypen": "1",
+                    "idtypen": 1,
                     "value": "5683731"
                 },
                 {
                     "idtype": "doi",
-                    "idtypen": "3",
+                    "idtypen": 3,
                     "value": "10.1038/sc.1968.18"
                 },
                 {
                     "idtype": "eid",
-                    "idtypen": "8",
+                    "idtypen": 8,
                     "value": "5683731"
                 },
                 {
                     "idtype": "rid",
-                    "idtypen": "8",
+                    "idtypen": 8,
                     "value": "5683731"
                 }
             ],
@@ -77,10 +82,10 @@
             ],
             "attributes": [
             ],
-            "pmcrefcount": "0",
+            "pmcrefcount": 0,
             "fulljournalname": "Paraplegia",
             "elocationid": "",
-            "viewcount": "68",
+            "viewcount": 68,
             "doctype": "citation",
             "srccontriblist": [
             ],
@@ -158,37 +163,37 @@
             "articleids": [
                 {
                     "idtype": "pii",
-                    "idtypen": "4",
+                    "idtypen": 4,
                     "value": "gkr1202"
                 },
                 {
                     "idtype": "doi",
-                    "idtypen": "3",
+                    "idtypen": 3,
                     "value": "10.1093/nar/gkr1202"
                 },
                 {
                     "idtype": "pubmed",
-                    "idtypen": "1",
+                    "idtypen": 1,
                     "value": "22144687"
                 },
                 {
                     "idtype": "pmc",
-                    "idtypen": "8",
+                    "idtypen": 8,
                     "value": "PMC3245039"
                 },
                 {
                     "idtype": "eid",
-                    "idtypen": "8",
+                    "idtypen": 8,
                     "value": "22144687"
                 },
                 {
                     "idtype": "rid",
-                    "idtypen": "8",
+                    "idtypen": 8,
                     "value": "22144687"
                 },
                 {
                     "idtype": "pmcid",
-                    "idtypen": "5",
+                    "idtypen": 5,
                     "value": "pmc-id: PMC3245039;"
                 }
             ],
@@ -215,10 +220,10 @@
             "attributes": [
                 "Has Abstract"
             ],
-            "pmcrefcount": "10",
+            "pmcrefcount": 10,
             "fulljournalname": "Nucleic acids research",
             "elocationid": "",
-            "viewcount": "1244",
+            "viewcount": 1244,
             "doctype": "citation",
             "srccontriblist": [
             ],

@@ -47,7 +47,12 @@
 
 <!-- Members definition of Structure type: T_ArticleId -->
 <!ELEMENT	IdType		%T_string;>
+
+<!--~~ <IdTypeN>
+~~json <number/>
+~~-->
 <!ELEMENT	IdTypeN		%T_int;>
+
 <!ELEMENT	Value		%T_string;>
 
 <!-- Definition of Structure type: T_ArticleId -->
@@ -89,7 +94,12 @@
 <!-- Members definition of Structure type: T_Reference -->
 <!ELEMENT	RefSource		%T_string;>
 <!ELEMENT	RefType		%T_ReferenceTypes;>
+
+<!--~~ <PMID>
+~~json <number/>
+~~-->
 <!ELEMENT	PMID		%T_int;>
+
 <!ELEMENT	Note		%T_string;>
 
 <!-- Definition of Structure type: T_Reference -->
@@ -127,15 +137,30 @@
 <!ELEMENT	ESSN		%T_string;>
 <!ELEMENT	PubType		%T_PublicationTypes;>
 <!ELEMENT	RecordStatus		%T_RecordStatusType;>
+<!--
+  Note that PubStatus is marked here as "T_int", but its value is not always
+  a number.
+-->
 <!ELEMENT	PubStatus		%T_int;>
+
 <!ELEMENT	ArticleIds		%T_ArticleIdList;>
 <!ELEMENT	History		%T_HistoryList;>
 <!ELEMENT	References		%T_ReferenceList;>
 <!ELEMENT	Attributes		%T_AttributesType;>
+
+<!--~~ <PmcRefCount>
+~~json <number/>
+~~-->
 <!ELEMENT	PmcRefCount		%T_int;>
+
 <!ELEMENT	FullJournalName		%T_string;>
 <!ELEMENT	ELocationID		%T_string;>
+
+<!--~~ <ViewCount>
+~~json <number/>
+~~-->
 <!ELEMENT	ViewCount		%T_int;>
+
 <!ELEMENT	DocType		%T_string;>
 <!ELEMENT	SrcContribList		%T_AuthorList;>
 <!ELEMENT	BookTitle		%T_string;>
@@ -207,12 +232,17 @@
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
 
 <!--~~ <DocumentSummarySet>
-~~json <object/>
+~~json 
+  <object name='"result"'>
+    <array name='"uids"' select='DocumentSummary/@uid'/>
+    <members select='DocumentSummary'/>
+  </object>
 ~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary*)>
 <!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
 
 <!--~~ <eSummaryResult>
 ~~ tags root
+~~ json <member/>
 ~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>

@@ -3,14 +3,14 @@
 #xsltproc eInfo_020511-2json.xsl einfo.pubmed.xml > einfo.pubmed.json
 #xsltproc eInfo_020511-2json.xsl einfo.error.xml > einfo.error.json
 
-dtd2xml2json eSearch_020511.dtd eSearch_020511-2json.xsl
-xsltproc eSearch_020511-2json.xsl esearch.pubmed.xml > esearch.pubmed.json
-xsltproc eSearch_020511-2json.xsl esearch.error.xml > esearch.error.json
-xsltproc eSearch_020511-2json.xsl esearch.baderror.xml > esearch.baderror.json
-exit
+#dtd2xml2json eSearch_020511.dtd eSearch_020511-2json.xsl
+#xsltproc eSearch_020511-2json.xsl esearch.pubmed.xml > esearch.pubmed.json
+#xsltproc eSearch_020511-2json.xsl esearch.error.xml > esearch.error.json
+#xsltproc eSearch_020511-2json.xsl esearch.baderror.xml > esearch.baderror.json
 
-#dtd2xml2json eSummary_pubmed.dtd eSummary_pubmed-2json.xsl
-#xsltproc eSummary_pubmed-2json.xsl esummary.pubmed.xml > esummary.pubmed.json
+dtd2xml2json eSummary_pubmed.dtd eSummary_pubmed-2json.xsl
+xsltproc eSummary_pubmed-2json.xsl esummary.pubmed.xml > esummary.pubmed.json
+exit
 
 #dtd2xml2json eSummary_protein.dtd eSummary_protein-2json.xsl
 #xsltproc eSummary_protein-2json.xsl esummary.protein.xml > esummary.protein.json
