@@ -113,9 +113,9 @@
     </xsl:if>
   </xsl:template>
   
-  <xsl:template match='@*|node()'>
+  <xsl:template match='@*|*|text()'>
     <xsl:copy>
-      <xsl:apply-templates select='@*|node()'/>
+      <xsl:apply-templates select='@*|*|text()'/>
     </xsl:copy>
   </xsl:template>
 
