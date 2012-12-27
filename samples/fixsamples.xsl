@@ -49,14 +49,18 @@
       </td>
       <td>
         <xsl:if test='@dtd'>
-          <a href="../../blob/master/samples/{@dtd}">DTD</a>,
+          <a href="../../blob/master/samples/{@dtd}">DTD</a>
+          <xsl:text>,&#160;</xsl:text>
           <!-- Assume the DTD filename always ends in ".dtd" -->
           <xsl:variable name='xslName' 
             select='concat(substring(@dtd, 1, string-length(@dtd) - 4), "-2json.xsl")'/>
-          <a href='../../blob/master/samples/{$xslName}'>XSL</a>,
+          <a href='../../blob/master/samples/{$xslName}'>XSL</a>
+          <xsl:text>,&#160;</xsl:text>
         </xsl:if>
-        <a href="../../blob/master/samples/{@name}.xml">XML</a>,
-        <a href="../../blob/master/samples/{@name}.json">JSON</a>,
+        <a href="../../blob/master/samples/{@name}.xml">XML</a>
+        <xsl:text>,&#160;</xsl:text>
+        <a href="../../blob/master/samples/{@name}.json">JSON</a>
+        <xsl:text>,&#160;</xsl:text>
         <a href="{eutils-url}">EUtils</a>
       </td>
     </tr>
