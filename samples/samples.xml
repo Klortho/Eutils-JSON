@@ -245,6 +245,12 @@
       dtd='eSummary_geoprofiles.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geoprofiles&amp;id=65526197</eutils-url>
       <notes>
+        <note rid='②'>
+          Instance document is not valid.  Note that it <em>was</em> valid when I started this
+          project, but as of 12/27/2012, something changed, and a new flavor of esummary was
+          retrieved, which is no longer valid.  I found out about this through
+          <a href='http://www.biostars.org/p/59755/'>this Biostar</a> post.
+        </note>
       </notes>
     </sample>
     <sample title='homologene' status='D' name='esummary.homologene'
@@ -266,7 +272,10 @@
           I went ahead and created a DTD for this.  There's just enough detail to get
           the sample file to validate.  It might or might not be correct.
         </note>
-        <note rid='⑤'/>
+        <note rid='⑤'>
+          The &lt;ConceptMeta> element has a lot of nice data that is inaccessible, because
+          it is in escaped markup.
+        </note>
       </notes>
     </sample>
     <sample title='mesh' status='D' name='esummary.mesh' dtd='eSummary_mesh.dtd'>
@@ -360,7 +369,10 @@
     <sample title='seqannot' status='D' name='esummary.seqannot' dtd='eSummary_seqannot.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=seqannot&amp;id=7232</eutils-url>
       <notes>
-        <note rid='⑤'/>
+        <note rid='⑤'>
+          The &lt;ExpXml> element has a lot of very interesting data, which 
+          unfortunately is inaccessible because it is in escaped markup.
+        </note>
         <note>
           The bulk of the data here is trapped inside the escaped-markup content
           of the &lt;ExpXml> element.
@@ -412,7 +424,6 @@
         <note rid='③'>
           &lt;Map_Gene_Summary> is under-specified.
         </note>
-        <note></note>
       </notes>
     </sample>
     <sample title='error' status='D' name='esummary.error' dtd='eSummary_041029.dtd'>

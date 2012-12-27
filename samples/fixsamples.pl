@@ -23,7 +23,7 @@ while (my $line = <T>) {
     $new .= $line;
 }
 close T;
-#unlink $table;
+unlink $table;
 
 open R, ">$readme" or die "Can't open $readme for writing";
 print R $new;

@@ -16,7 +16,7 @@
          <config lcnames="true"/>
       </json>
    </x:param>
-   <x:template match="summary | GBACC | UGName | GDS | VMIN | VMAX | taxon | SPOTID | gi | outliers | GSM_L | title | geneName | gdsType | PTACC | idref | SUB_SAMP_L | valType | SUB_TYPES_L | SAGEmap | EVALUE | cloneID | ORF | nucDesc | abscalls_chain | GSE | taxid_L | ERANK | geneDesc | UGDesc | alias | GPL | @uid | @status">
+   <x:template match="summary | GBACC | UGName | ENTREZ_GENE_ID | GDS | VMIN | VMAX | groups | taxon | SPOTID | gi | outliers | GSM_L | title | geneName | gdsType | PTACC | idref | SUB_SAMP_L | valType | SUB_TYPES_L | SAGEmap | EVALUE | cloneID | ORF | nucDesc | abscalls_chain | GSE | taxid_L | ERANK | geneDesc | UGDesc | alias | GPL | abscall | @uid | @status">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:param name="trailing-comma" select="position() != last()"/>

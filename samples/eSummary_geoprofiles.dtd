@@ -28,6 +28,7 @@
 <!ELEMENT	geneDesc		%T_string;>
 <!ELEMENT	geneName		%T_string;>
 <!ELEMENT	nucDesc		%T_string;>
+<!ELEMENT ENTREZ_GENE_ID %T_string;>
 <!ELEMENT	UGName		%T_string;>
 <!ELEMENT	UGDesc		%T_string;>
 <!ELEMENT	cloneID		%T_string;>
@@ -43,6 +44,8 @@
 <!ELEMENT	VMAX		%T_string;>
 <!ELEMENT	outliers		%T_string;>
 <!ELEMENT	abscalls_chain		%T_string;>
+<!ELEMENT groups %T_string; >
+<!ELEMENT abscall %T_string; >
 
 <!--~~ <AFLAG>
 ~~json <number/>
@@ -86,6 +89,7 @@
 			| geneDesc
 			| geneName
 			| nucDesc
+			| ENTREZ_GENE_ID
 			| UGName
 			| UGDesc
 			| cloneID
@@ -101,6 +105,8 @@
 			| VMAX
 			| outliers
 			| abscalls_chain
+			| groups
+			| abscall
 			| AFLAG
 			| AOUTL
 			| RSTD
