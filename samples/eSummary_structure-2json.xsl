@@ -4,7 +4,6 @@
               xmlns:xs="http://www.w3.org/2001/XMLSchema"
               version="1.0">
    <x:import href="xml2json.xsl"/>
-   <x:import href="esummary.structure.xsl"/>
    <x:output method="text"
              version="1.0"
              encoding="UTF-8"
@@ -14,7 +13,7 @@
    <x:param name="lcnames" select="true()"/>
    <x:param name="dtd-annotation">
       <json type="esummary" version="0.3">
-         <config lcnames="true" import="esummary.structure.xsl"/>
+         <config lcnames="true"/>
       </json>
    </x:param>
    <x:template match="EC | DNAMoleculeCount | PdbClass | MMDBModifyDate | LigCode | PdbAcc | LigCount | string | MMDBEntryDate | RNAMoleculeCount | DNAChainCount | ModRNAResCount | ProteinMoleculeCount | ExpMethod | ProteinChainCount | PdbDescr | RNAChainCount | ModDNAResCount | Resolution | ModProteinResCount | PdbDepositDate | @uid | @status">
@@ -37,7 +36,7 @@
          <x:with-param name="context" select="&#34;&#34;"/>
       </x:apply-templates>
    </x:template>
-   <x:template match="OrganismList">
+   <x:template match="OrganismList | PdbAccSynList">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
       <x:param name="trailing-comma" select="position() != last()"/>

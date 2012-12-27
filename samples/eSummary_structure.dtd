@@ -3,7 +3,7 @@
 <!--~~ !dtd
 ~~json 
     <json type='esummary' version='0.3'>
-      <config lcnames='true' import='esummary.structure.xsl'/>
+      <config lcnames='true'/>
     </json>
 ~~-->
 
@@ -24,6 +24,7 @@
 <!ELEMENT	MMDBEntryDate		%T_string;>
 <!ELEMENT	MMDBModifyDate		%T_string;>
 <!ELEMENT	OrganismList		%T_StringList;>
+<!ELEMENT	PdbAccSynList		%T_StringList;>
 <!ELEMENT	LigCode		%T_string;>
 <!ELEMENT	LigCount		%T_string;>
 <!ELEMENT	ModProteinResCount		%T_string;>
@@ -51,6 +52,7 @@
 			| MMDBEntryDate
 			| MMDBModifyDate
 			| OrganismList
+			| PdbAccSynList
 			| LigCode
 			| LigCount
 			| ModProteinResCount

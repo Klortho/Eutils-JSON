@@ -16,7 +16,7 @@
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed</eutils-url>
       <notes>
         <desc>Information about the PubMed database.</desc>
-        <note rid='④'>
+        <note rid='②'>
           &lt;Field> element in the instance document doesn't follow the DTD.
           I fixed the DTD by making &lt;IsRangable> [sic] and &lt;IsTruncatable>
           optional.
@@ -66,20 +66,18 @@
     <sample title='protein' status='D' name='esummary.protein' dtd='eSummary_protein.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=protein&amp;id=284822047</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='nuccore' status='D' name='esummary.nuccore' dtd='eSummary_nuccore.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nuccore&amp;id=424386131</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='nucleotide' status='D' name='esummary.nucleotide'
       dtd='eSummary_nucleotide.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucleotide&amp;id=424386131</eutils-url>
       <notes>
-        <note>
+        <note rid='②'>
           The instance document is invalid according to the DTD.  I fixed the DTD,
           by adding some elements and attributes that were declared in eSummary_nuccore.dtd.
         </note>
@@ -88,49 +86,48 @@
     <sample title='nucgss' status='D' name='esummary.nucgss' dtd='eSummary_nucgss.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucgss&amp;id=371566079</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='nucest' status='D' name='esummary.nucest' dtd='eSummary_nucest.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucest&amp;id=409212211</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='structure' status='D' name='esummary.structure' dtd='eSummary_structure.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=structure&amp;id=52770</eutils-url>
       <notes>
-        <note>
+        <note rid='②'>
           Instance document is not valid according to the DTD.  The element PdbAccSynList
-          is not declared.  This requires us to create a special imported XSLT
-          for this, esummary.structure.xsl.
+          is not declared.  We fixed the DTD by adding it.
         </note>
       </notes>
     </sample>
     <sample title='genome' status='D' name='esummary.genome' dtd='eSummary_genome.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genome&amp;id=2640</eutils-url>
       <notes>
-        <note>
+        <note rid='②'>
           Instance document is not valid according to the DTD.  
           The elements Organism_Group and Organism_Subgroup were not declared, so
-          I added them as strings.
+          we added them as strings.
         </note>
       </notes>
     </sample>
     <sample title='assembly' status='D' name='esummary.assembly' dtd='eSummary_assembly.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=assembly&amp;id=440818</eutils-url>
       <notes>
-        <note rid='⑤'/>
-        <note></note>
+        <note rid='⑤'>
+          The element &lt;Meta> contains some escaped markup, which makes it very hard to 
+          extract into JSON.
+        </note>
       </notes>
     </sample>
     <sample title='gcassembly' status='D' name='esummary.gcassembly'
       dtd='eSummary_gcassembly.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gcassembly&amp;id=440818</eutils-url>
       <notes>
-        <note>
+        <note rid='②'>
           Instance document is not valid according to the DTD.  No definitions for
-          SubmitterOrganization or AssemblyStatus.  I added the definitions for these from
+          &lt;SubmitterOrganization> or &lt;AssemblyStatus>.  I added the definitions for these from
           eSummary_assembly.dtd (which makes these two DTDs identical.)
         </note>
       </notes>
@@ -138,65 +135,59 @@
     <sample title='genomeprj' status='D' name='esummary.genomeprj' dtd='eSummary_genomeprj.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genomeprj&amp;id=54101</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='bioproject' status='D' name='esummary.bioproject'
       dtd='eSummary_bioproject.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=bioproject&amp;id=171168</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='biosample' status='D' name='esummary.biosample' dtd='eSummary_biosample.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosample&amp;id=182293</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='biosystems' status='D' name='esummary.biosystems'
       dtd='eSummary_biosystems.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosystems&amp;id=493040</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='blastdbinfo' status='D' name='esummary.blastdbinfo'
       dtd='eSummary_blastdbinfo.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=blastdbinfo&amp;id=645844</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='books' status='D' name='esummary.books' dtd='eSummary_books.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=books&amp;id=2825746</eutils-url>
       <notes>
-        <note rid='⑤'/>
-        <note></note>
+        <note rid='⑤'>
+          The &lt;BookInfo> element contains a lot of unfortunate escaped markup, in
+          a CDATA section.
+        </note>
       </notes>
     </sample>
     <sample title='cdd' status='D' name='esummary.cdd' dtd='eSummary_cdd.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=cdd&amp;id=201140</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='clone' status='D' name='esummary.clone' dtd='eSummary_clone.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=clone&amp;id=29702171</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='gap' status='D' name='esummary.gap' dtd='eSummary_gap.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gap&amp;id=195331</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='gapplus' status='D' name='esummary.gapplus' dtd='eSummary_gapplus.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996</eutils-url>
       <notes>
-        <note>
+        <note rid='②'>
           Instance document is not valid according to the DTD.  
           This DTD looks like it doesn't match the content very well.  I fixed it by adding
           elements until the instance document validated, but I don't have much confidence that
@@ -207,9 +198,9 @@
     <sample title='dbvar' status='D' name='esummary.dbvar' dtd='eSummary_dbvar.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816</eutils-url>
       <notes>
-        <note>
+        <note rid='②'>
           Instance document is not valid according to the DTD.  
-          Assembly_accession is not defined.
+          Assembly_accession was not defined.
         </note>
       </notes>
     </sample>
@@ -217,7 +208,6 @@
       dtd='eSummary_epigenomics.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=epigenomics&amp;id=16796</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='gencoll' status='' name='esummary.gencoll' dtd='eSummary_gencoll.dtd'>
@@ -227,19 +217,17 @@
           Escaped markup inside the &lt;Meta> element.  This seems unnecessary in this
           case because the contents seem to be well-defined custom markup.
         </note>
-        <note></note>
       </notes>
     </sample>
     <sample title='gene' status='D' name='esummary.gene' dtd='eSummary_gene.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gene&amp;id=21803</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='gds' status='D' name='esummary.gds' dtd='eSummary_gds.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726</eutils-url>
       <notes>
-        <note>
+        <note rid='②'>
           Instance document is not valid according to the DTD.  There was no declaration
           for &lt;ExtRelations>.  I <em>guessed</em> that this should have the same content model as
           &lt;Relations>.  No declaration for &lt;FTPLink>, and based on the sample, I added this
@@ -251,91 +239,82 @@
     <sample title='geo' status='D' name='esummary.geo' dtd='eSummary_geo.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geo&amp;id=65685298</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='geoprofiles' status='D' name='esummary.geoprofiles'
       dtd='eSummary_geoprofiles.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geoprofiles&amp;id=65526197</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='homologene' status='D' name='esummary.homologene'
       dtd='eSummary_homologene.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=homologene&amp;id=20659</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='journals' status='D' name='esummary.journals' dtd='eSummary_journals.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=journals&amp;id=35478</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='medgen' status='D' name='esummary.medgen' dtd='eSummary_medgen.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=medgen&amp;id=122602</eutils-url>
       <notes>
-        <note rid='⑤'/>
-        <note>
+        <note rid='②'>
           Can't find DTD; see EU-1908.
           I went ahead and created a DTD for this.  There's just enough detail to get
           the sample file to validate.  It might or might not be correct.
         </note>
+        <note rid='⑤'/>
       </notes>
     </sample>
     <sample title='mesh' status='D' name='esummary.mesh' dtd='eSummary_mesh.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=mesh&amp;id=67414177</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='ncbisearch' status='D' name='esummary.ncbisearch'
       dtd='eSummary_ncbisearch.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=ncbisearch&amp;id=1121</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='nlmcatalog' status='D' name='esummary.nlmcatalog'
       dtd='eSummary_nlmcatalog.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nlmcatalog&amp;id=101573253</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='omia' status='D' name='esummary.omia' dtd='eSummary_omia.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omia&amp;id=2615</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='omim' status='D' name='esummary.omim' dtd='eSummary_omim.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omim&amp;id=609708</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='pmc' status='D' name='esummary.pmc' dtd='eSummary_pmc.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,14900</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
 
     <sample title='pmc with error' status='D' name='esummary.pmcerror' dtd='eSummary_pmc.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,1,14900</eutils-url>
       <notes>
-        <note rid='②'/>
-        <note>The XML results here are not valid according to the DTD. </note>
+        <note rid='②'>
+          The XML results here were not valid according to the DTD.
+        </note>
       </notes>
     </sample>
     
     <sample title='popset' status='D' name='esummary.popset' dtd='eSummary_popset.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=popset&amp;id=418209882</eutils-url>
       <notes>
-        <note>
+        <note rid='②'>
           The instance document is invalid according to the DTD.
         </note>
       </notes>
@@ -343,43 +322,36 @@
     <sample title='probe' status='D' name='esummary.probe' dtd='eSummary_probe.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=probe&amp;id=156811</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='proteinclusters' status='D' name='esummary.proteinclusters'
       dtd='eSummary_proteinclusters.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=proteinclusters&amp;id=2516486</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='pcassay' status='D' name='esummary.pcassay' dtd='eSummary_pcassay.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcassay&amp;id=493206</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='pccompound' status='D' name='esummary.pccompound'
       dtd='eSummary_pccompound.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pccompound&amp;id=10322165</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='pcsubstance' status='D' name='esummary.pcsubstance'
       dtd='eSummary_pcsubstance.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcsubstance&amp;id=127317050</eutils-url>
       <notes>
-        <note>
-          XML instance document is empty.
-        </note>
       </notes>
     </sample>
     <sample title='pubmedhealth' status='D' name='esummary.pubmedhealth'
       dtd='eSummary_pubmedhealth.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625</eutils-url>
       <notes>
-        <note>
+        <note rid='②'>
           Can't find DTD.  See EU-1908.  I created one by copying and hacking the books DTD.  Might or
           might not be correct.
         </note>
@@ -398,15 +370,12 @@
     <sample title='snp' status='D' name='esummary.snp' dtd='eSummary_snp.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=snp&amp;id=206676795</eutils-url>
       <notes>
-        <note>
-        </note>
       </notes>
     </sample>
     <sample title='sra' status='D' name='esummary.sra' dtd='eSummary_sra.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=sra&amp;id=30750</eutils-url>
       <notes>
-        <note rid='⑤'/>
-        <note>
+        <note rid='⑤'>
           Like seqannot, the bulk of the data here is trapped inside the escaped-markup content
           of the &lt;ExpXml> element.  There is another escaped-markup element here, &lt;Runs>, 
           which also has some nice but inaccessible data.
@@ -416,7 +385,7 @@
     <sample title='taxonomy' status='D' name='esummary.taxonomy' dtd='eSummary_taxonomy.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=taxonomy&amp;id=9685</eutils-url>
       <notes>
-        <note>
+        <note rid='②'>
           XML instance document is invalid.  Added &lt;Status>, &lt;AkaTaxId>, and
           &lt;ModificationDate> to the DTD.
         </note>
@@ -425,8 +394,7 @@
     <sample title='toolkit' status='D' name='esummary.toolkit' dtd='eSummary_toolkit.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=toolkit&amp;id=149440</eutils-url>
       <notes>
-        <note rid='⑤'/>
-        <note>
+        <note rid='⑤'>
           Has escaped markup inside an &lt;Xmlnote> element.  I could understand this if the
           markup were HTML, designed to be injected into a web page, but it is not.  It appears
           to be a custom XML format, so, why not deliver it unescaped?
@@ -436,7 +404,6 @@
     <sample title='unigene' status='D' name='esummary.unigene' dtd='eSummary_unigene.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unigene&amp;id=1190943</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
     <sample title='unists' status='D' name='esummary.unists' dtd='eSummary_unists.dtd'>
@@ -451,7 +418,6 @@
     <sample title='error' status='D' name='esummary.error' dtd='eSummary_041029.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=error&amp;id=254088</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
   </samplegroup>
@@ -460,28 +426,19 @@
     <sample title='PubMed' status='D' name='efetch.pubmed' dtd='pubmed_120101.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml</eutils-url>
       <notes>
-        <note>
-          This one is very complicated.  Note that I got a start on it before moving to DtdAnalyzer,
-          with a manual stylesheet that is saved here:
-          https://github.com/Klortho/Eutils-JSON/blob/7550961a849e14f53899ea9cc948a36e5903677e/Eutils2JSON.xsl.
-          The JSON file, efetch.pubmed.json, here in the samples directory is the result of that
-          output, and should be the goal.
-        </note>
       </notes>
     </sample>
     <sample title='Pubmed Book' status='D' name='efetch.pubmedbook' dtd='pubmed_120101.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml</eutils-url>
       <notes>
-        <note></note>
       </notes>
     </sample>
 
     <sample title='PubMed Example' status='D' name='efetch.pubmedexample' dtd='pubmed_120101.dtd'>
       <notes>
-        <note>
-          This is a contrived example to test more thoroughly all the possible
-          permutations of content allowed by the EFetch PubMed DTD.
-        </note>
+        <desc>
+          A contrived sample for testing.
+        </desc>
       </notes>
     </sample>
     

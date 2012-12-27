@@ -24,7 +24,8 @@
                 "Human herpesvirus 4",
                 "Human herpesvirus 4"
             ],
-            "pdbaccsynlist": "\n\t",
+            "pdbaccsynlist": [
+            ],
             "ligcode": "",
             "ligcount": "0",
             "modproteinrescount": "0",
