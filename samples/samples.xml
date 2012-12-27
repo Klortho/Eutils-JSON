@@ -349,8 +349,15 @@
       </notes>
     </sample>
     <sample title='PubMed Book' status='' name='efetch.pubmedbook' dtd='pubmed_120101.dtd'>
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=20301295&&amp;retmode=xml</eutils-url>
+      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml</eutils-url>
       <desc></desc>
+    </sample>
+
+    <sample title='PubMed Example' status='' name='efetch.pubmedexample' dtd='pubmed_120101.dtd'>
+      <desc>
+        This is a contrived example to test more thoroughly all the possible
+        permutations of content allowed by the EFetch PubMed DTD.
+      </desc>
     </sample>
     
   </samplegroup>

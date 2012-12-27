@@ -388,7 +388,7 @@ result in invalid JSON output.
       <td>D</td>
       <td/>
       <td>
-        Instance document is not valid according to the DTD.
+        Instance document is not valid according to the DTD.  
         The elements Organism_Group and Organism_Subgroup were not declared, so
         I added them as strings.
       </td>
@@ -528,7 +528,7 @@ result in invalid JSON output.
       <td>D</td>
       <td/>
       <td>
-        Instance document is not valid according to the DTD.
+        Instance document is not valid according to the DTD.  
         This DTD looks like it doesn't match the content very well.  I fixed it by adding
         elements until the instance document validated, but I don't have much confidence that
         the DTD I created is correct.
@@ -544,7 +544,7 @@ result in invalid JSON output.
       <td>D</td>
       <td/>
       <td>
-        Instance document is not valid according to the DTD.
+        Instance document is not valid according to the DTD.  
         Assembly_accession is not defined.
       </td>
       <td><a href="../../blob/master/samples/eSummary_dbvar.dtd">DTD</a>,
@@ -568,10 +568,10 @@ result in invalid JSON output.
       <th>ESummary gencoll</th>
       <td/>
       <td>
-
+        
           Escaped markup inside the &lt;Meta&gt; element.  This seems unnecessary in this
           case because the contents seem to be well-defined custom markup.
-
+        
       </td>
       <td/>
       <td><a href="../../blob/master/samples/eSummary_gencoll.dtd">DTD</a>,
@@ -858,7 +858,7 @@ result in invalid JSON output.
       <td>⑤</td>
       <td>
         Like seqannot, the bulk of the data here is trapped inside the escaped-markup content
-        of the &lt;ExpXml&gt; element.  There is another escaped-markup element here, &lt;Runs&gt;,
+        of the &lt;ExpXml&gt; element.  There is another escaped-markup element here, &lt;Runs&gt;, 
         which also has some nice but inaccessible data.
       </td>
       <td><a href="../../blob/master/samples/eSummary_sra.dtd">DTD</a>,
@@ -911,9 +911,9 @@ result in invalid JSON output.
       <th>ESummary unists</th>
       <td>D</td>
       <td>
-
+        
           &lt;Map_Gene_Summary&gt; is under-specified.
-
+        
       </td>
       <td/>
       <td><a href="../../blob/master/samples/eSummary_unists.dtd">DTD</a>,
@@ -934,7 +934,7 @@ result in invalid JSON output.
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=error&amp;id=254088">EUtils</a></td>
     </tr>
   </table>
-  <h2>EFetch</h2>
+  <h2>EFetch PubMed</h2>
   <table>
     <tr>
       <th/>
@@ -946,21 +946,45 @@ result in invalid JSON output.
     <tr>
       <th>PubMed</th>
       <td/>
-      <td/>
+      <td>
+      </td>
       <td>
         This one is very complicated.  Note that I got a start on it before moving to DtdAnalyzer,
         with a manual stylesheet that is saved here:
         https://github.com/Klortho/Eutils-JSON/blob/7550961a849e14f53899ea9cc948a36e5903677e/Eutils2JSON.xsl.
         The JSON file, efetch.pubmed.json, here in the samples directory is the result of that
         output, and should be the goal.
-        There's an error in the DTD:  in bookdoc_120101.dtd, the content model of &lt;BookDocument>
-        includes an element &lt;GroupList>, but there is no declaration for it.
       </td>
       <td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>,
           <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSL</a>,
         <a href="../../blob/master/samples/efetch.pubmed.xml">XML</a>,
         <a href="../../blob/master/samples/efetch.pubmed.json">JSON</a>,
         <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml">EUtils</a></td>
+    </tr>
+    <tr>
+      <th>PubMed Book</th>
+      <td/>
+      <td/>
+      <td/>
+      <td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>,
+          <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSL</a>,
+        <a href="../../blob/master/samples/efetch.pubmedbook.xml">XML</a>,
+        <a href="../../blob/master/samples/efetch.pubmedbook.json">JSON</a>,
+        <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml">EUtils</a></td>
+    </tr>
+    <tr>
+      <th>PubMed Example</th>
+      <td/>
+      <td/>
+      <td>
+        This is a contrived example to test more thoroughly all the possible
+        permutations of content allowed by the EFetch PubMed DTD.
+      </td>
+      <td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>,
+          <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSL</a>,
+        <a href="../../blob/master/samples/efetch.pubmedexample.xml">XML</a>,
+        <a href="../../blob/master/samples/efetch.pubmedexample.json">JSON</a>,
+        <a href="">EUtils</a></td>
     </tr>
   </table>
 </div>
