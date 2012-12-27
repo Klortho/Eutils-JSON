@@ -1,8 +1,12 @@
 {
-    "type": "esummary",
-    "version": "0.3",
-    "documentsummaryset": {
-        "status": "OK",
+    "header": {
+        "type": "esummary",
+        "version": "0.3"
+    },
+    "result": {
+        "uids": [
+            "149440"
+        ],
         "149440": {
             "uid": "149440",
             "doxid": "classCQueryFuncPromoteIn_1a1cfe44f648227e7da08606595e69a53f",

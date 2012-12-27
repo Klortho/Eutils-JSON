@@ -54,8 +54,8 @@ This is the root element for an EInfo response.
                                  SingleToken,
                                  Hierarchy,
                                  IsHidden,
-                                 IsRangable,
-                                 IsTruncatable)>
+                                 IsRangable?,
+                                 IsTruncatable?)>
 
 <!ELEMENT       Link            (Name,Menu,Description,DbTo)>
 

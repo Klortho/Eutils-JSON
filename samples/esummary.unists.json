@@ -1,8 +1,13 @@
 {
-    "type": "esummary",
-    "version": "0.3",
-    "documentsummaryset": {
-        "status": "OK",
+    "header": {
+        "type": "esummary",
+        "version": "0.3"
+    },
+    "result": {
+        "uids": [
+            "254085",
+            "254086"
+        ],
         "254085": {
             "uid": "254085",
             "marker_name": "SE234324",

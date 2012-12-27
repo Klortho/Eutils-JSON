@@ -11,26 +11,29 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
+   <x:param name="dtd-annotation">
+      <json type="esummary" version="0.3">
+         <config lcnames="true"/>
+      </json>
+   </x:param>
    <x:template match="eSummaryResult">
-      <x:call-template name="result-start">
-         <x:with-param name="dtd-annotation">
-            <json type="esummary" version="0.3">
-               <config lcnames="true"/>
-            </json>
-         </x:with-param>
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:param name="trailing-comma" select="position() != last()"/>
+      <x:call-template name="array">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+         <x:with-param name="trailing-comma" select="$trailing-comma"/>
       </x:call-template>
-      <x:apply-templates select="@*|*">
-         <x:with-param name="indent" select="$iu"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-object(&#34;&#34;, false())"/>
    </x:template>
    <x:template match="ERROR | Id | @Type | @Name">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:param name="trailing-comma" select="position() != last()"/>
       <x:call-template name="string">
          <x:with-param name="indent" select="$indent"/>
          <x:with-param name="context" select="$context"/>
+         <x:with-param name="trailing-comma" select="$trailing-comma"/>
       </x:call-template>
    </x:template>
 </x:stylesheet>

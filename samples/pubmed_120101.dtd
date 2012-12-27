@@ -54,7 +54,8 @@
 <!-- ================================================================= -->
 <!--~~ <PubmedArticleSet>
 ~~tags root
-~~json <custom/>
+~~json 
+  <array name='"result"' select='PubmedArticle | PubmedBookArticle'/>
 ~~-->
 <!ELEMENT PubmedArticleSet (PubmedArticle | PubmedBookArticle)+>
 

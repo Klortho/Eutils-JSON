@@ -1,8 +1,12 @@
 {
-    "type": "esummary",
-    "version": "0.3",
-    "documentsummaryset": {
-        "status": "OK",
+    "header": {
+        "type": "esummary",
+        "version": "0.3"
+    },
+    "result": {
+        "uids": [
+            "2825746"
+        ],
         "2825746": {
             "uid": "2825746",
             "title": "Dictionary of Cancer Terms",

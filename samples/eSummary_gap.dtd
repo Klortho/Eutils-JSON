@@ -288,12 +288,17 @@
 <!ATTLIST DocumentSummary uid CDATA #IMPLIED>
 
 <!--~~ <DocumentSummarySet>
-~~json <object/>
+~~json 
+  <object name='"result"'>
+    <array name='"uids"' select='DocumentSummary/@uid'/>
+    <members select='DocumentSummary'/>
+  </object>
 ~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary*)>
 <!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
 
 <!--~~ <eSummaryResult>
 ~~ tags root
+~~ json <member/>
 ~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>

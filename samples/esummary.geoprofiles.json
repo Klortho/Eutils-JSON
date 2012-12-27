@@ -1,8 +1,12 @@
 {
-    "type": "esummary",
-    "version": "0.3",
-    "documentsummaryset": {
-        "status": "OK",
+    "header": {
+        "type": "esummary",
+        "version": "0.3"
+    },
+    "result": {
+        "uids": [
+            "65526197"
+        ],
         "65526197": {
             "uid": "65526197",
             "gds": "3710",

@@ -1,8 +1,12 @@
 {
-    "type": "esummary",
-    "version": "0.3",
-    "documentsummaryset": {
-        "status": "OK",
+    "header": {
+        "type": "esummary",
+        "version": "0.3"
+    },
+    "result": {
+        "uids": [
+            "493206"
+        ],
         "493206": {
             "uid": "493206",
             "assayname": "Assay for Inhibitors of Dual-Specificity Tyrosine-(Y)-Phosphorylation Regulated Kinase 1A (Kinase-Glo assay): round 2 SAR",

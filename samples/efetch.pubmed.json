@@ -1,11 +1,11 @@
 {
-    "type": "efetch.pubmed",
-    "version": "0.3",
-    "pubmedarticles": [
+    "header": {
+        "type": "efetch.pubmed",
+        "version": "0.3"
+    },
+    "result": [
         {
             "medlinecitation": {
-                "owner": "NLM",
-                "status": "MEDLINE",
                 "pmid": {
                     "version": "1",
                     "value": "17284678"
@@ -26,7 +26,6 @@
                     "day": "18"
                 },
                 "article": {
-                    "pubmodel": "Print-Electronic",
                     "journal": {
                         "issn": {
                             "issntype": "Print",
@@ -44,23 +43,25 @@
                         "title": "Genome research",
                         "isoabbreviation": "Genome Res."
                     },
-                    "articletitle": "Sequencing and analysis of chromosome 1 of Eimeria tenella reveals a unique\n          segmental organization.",
+                    "articletitle": "Sequencing and analysis of chromosome 1 of Eimeria tenella reveals a unique segmental organization.",
                     "pagination": [
                         "311-9"
                     ],
-                    "abstract": [
-                        {
-                            "label": "fleegle",
-                            "value": "<i>Eimeria tenella</i> is an intracellular protozoan parasite that infects the\n            intestinal tracts of domestic fowl and causes coccidiosis, a serious and sometimes\n            lethal enteritis. Eimeria falls in the same phylum (Apicomplexa) as several human and\n            animal parasites such as Cryptosporidium, Toxoplasma, and the malaria parasite,\n            Plasmodium. Here we report the sequencing and analysis of the first chromosome of E.\n            tenella, a chromosome believed to carry loci associated with drug resistance and known\n            to differ between virulent and attenuated strains of the parasite. The chromosome--which\n            appears to be representative of the genome--is gene-dense and rich in simple-sequence\n            repeats, many of which appear to give rise to repetitive amino acid tracts in the\n            predicted proteins. Most striking is the segmentation of the chromosome into repeat-rich\n            regions peppered with transposon-like elements and telomere-like repeats, alternating\n            with repeat-free regions. Predicted genes differ in character between the two types of\n            segment, and the repeat-rich regions appear to be associated with strain-to-strain\n            variation."
-                        }
-                    ],
-                    "affiliation": "Malaysia Genome Institute, UKM-MTDC Smart Technology Centre, Universiti\n          Kebangsaan Malaysia, 43600 UKM Bangi, Selangor DE, Malaysia.",
+                    "abstract": {
+                        "abstracttexts": [
+                            {
+                                "value": "Eimeria tenella is an intracellular protozoan parasite that infects the intestinal tracts of domestic fowl and causes coccidiosis, a serious and sometimes lethal enteritis. Eimeria falls in the same phylum (Apicomplexa) as several human and animal parasites such as Cryptosporidium, Toxoplasma, and the malaria parasite, Plasmodium. Here we report the sequencing and analysis of the first chromosome of E. tenella, a chromosome believed to carry loci associated with drug resistance and known to differ between virulent and attenuated strains of the parasite. The chromosome--which appears to be representative of the genome--is gene-dense and rich in simple-sequence repeats, many of which appear to give rise to repetitive amino acid tracts in the predicted proteins. Most striking is the segmentation of the chromosome into repeat-rich regions peppered with transposon-like elements and telomere-like repeats, alternating with repeat-free regions. Predicted genes differ in character between the two types of segment, and the repeat-rich regions appear to be associated with strain-to-strain variation."
+                            }
+                        ]
+                    },
+                    "affiliation": "Malaysia Genome Institute, UKM-MTDC Smart Technology Centre, Universiti Kebangsaan Malaysia, 43600 UKM Bangi, Selangor DE, Malaysia.",
                     "authorlist": [
                         {
-                            "completeyn": true
+                            "completeyn": true,
+                            "type": "authors"
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Ling",
                             "forename": "King-Hwa",
                             "initials": "KH",
@@ -68,7 +69,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Rajandream",
                             "forename": "Marie-Adele",
                             "initials": "MA",
@@ -76,7 +77,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Rivailler",
                             "forename": "Pierre",
                             "initials": "P",
@@ -84,7 +85,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Ivens",
                             "forename": "Alasdair",
                             "initials": "A",
@@ -92,7 +93,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Yap",
                             "forename": "Soon-Joo",
                             "initials": "SJ",
@@ -100,7 +101,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Madeira",
                             "forename": "Alda M B N",
                             "initials": "AM",
@@ -108,7 +109,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Mungall",
                             "forename": "Karen",
                             "initials": "K",
@@ -116,7 +117,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Billington",
                             "forename": "Karen",
                             "initials": "K",
@@ -124,7 +125,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Yee",
                             "forename": "Wai-Yan",
                             "initials": "WY",
@@ -132,7 +133,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Bankier",
                             "forename": "Alan T",
                             "initials": "AT",
@@ -140,7 +141,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Carroll",
                             "forename": "Fionnadh",
                             "initials": "F",
@@ -148,7 +149,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Durham",
                             "forename": "Alan M",
                             "initials": "AM",
@@ -156,7 +157,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Peters",
                             "forename": "Nicholas",
                             "initials": "N",
@@ -164,7 +165,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Loo",
                             "forename": "Shu-San",
                             "initials": "SS",
@@ -172,7 +173,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Isa",
                             "forename": "Mohd Noor Mat",
                             "initials": "MN",
@@ -180,7 +181,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Novaes",
                             "forename": "Jeniffer",
                             "initials": "J",
@@ -188,7 +189,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Quail",
                             "forename": "Michael",
                             "initials": "M",
@@ -196,7 +197,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Rosli",
                             "forename": "Rozita",
                             "initials": "R",
@@ -204,7 +205,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Nor Shamsudin",
                             "forename": "Mariana",
                             "initials": "M",
@@ -212,7 +213,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Sobreira",
                             "forename": "Tiago J P",
                             "initials": "TJ",
@@ -220,7 +221,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Tivey",
                             "forename": "Adrian R",
                             "initials": "AR",
@@ -228,7 +229,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Wai",
                             "forename": "Siew-Fun",
                             "initials": "SF",
@@ -236,7 +237,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "White",
                             "forename": "Sarah",
                             "initials": "S",
@@ -244,7 +245,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Wu",
                             "forename": "Xikun",
                             "initials": "X",
@@ -252,7 +253,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Kerhornou",
                             "forename": "Arnaud",
                             "initials": "A",
@@ -260,7 +261,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Blake",
                             "forename": "Damer",
                             "initials": "D",
@@ -268,7 +269,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Mohamed",
                             "forename": "Rahmah",
                             "initials": "R",
@@ -276,7 +277,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Shirley",
                             "forename": "Martin",
                             "initials": "M",
@@ -284,7 +285,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Gruber",
                             "forename": "Arthur",
                             "initials": "A",
@@ -292,7 +293,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Berriman",
                             "forename": "Matthew",
                             "initials": "M",
@@ -300,7 +301,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Tomley",
                             "forename": "Fiona",
                             "initials": "F",
@@ -308,7 +309,7 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Dear",
                             "forename": "Paul H",
                             "initials": "PH",
@@ -316,27 +317,41 @@
                             ]
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Wan",
                             "forename": "Kiew-Lian",
                             "initials": "KL",
                             "nameids": [
                             ]
                         }
-]
-                    "language": "eng",
-                    "grantlist": "\n          \n            Wellcome Trust\n            United Kingdom\n          \n        ",
+                    ],
+                    "grantlist": [
+                        {
+                            "completeyn": true
+                        },
+                        {
+                            "agency": "Wellcome Trust",
+                            "country": "United Kingdom"
+                        }
+                    ],
                     "publicationtypelist": [
                         "Comparative Study",
                         "Journal Article",
                         "Research Support, Non-U.S. Gov't"
                     ],
-                    "articledate": {
-                        "datetype": "Electronic",
-                        "year": "2007",
-                        "month": "02",
-                        "day": "06"
-                    }
+                    "elocationids": [
+                    ],
+                    "languages": [
+                        "eng"
+                    ],
+                    "articledates": [
+                        {
+                            "datetype": "Electronic",
+                            "year": "2007",
+                            "month": "02",
+                            "day": "06"
+                        }
+                    ]
                 },
                 "medlinejournalinfo": {
                     "country": "United States",
@@ -344,8 +359,127 @@
                     "nlmuniqueid": "9518021",
                     "issnlinking": "1088-9051"
                 },
-                "citationsubset": "IM",
                 "commentscorrectionslist": [
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nucleic Acids Res. 1999 Jan 15;27(2):573-80",
+                        "pmid": {
+                            "version": "1",
+                            "value": "9862982"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nucleic Acids Res. 1997 Mar 1;25(5):955-64",
+                        "pmid": {
+                            "version": "1",
+                            "value": "9023104"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Genome Res. 2000 Oct;10(10):1587-93",
+                        "pmid": {
+                            "version": "1",
+                            "value": "11042156"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Genome Res. 2000 Nov;10(11):1737-42",
+                        "pmid": {
+                            "version": "1",
+                            "value": "11076859"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Bioinformatics. 2000 Oct;16(10):944-5",
+                        "pmid": {
+                            "version": "1",
+                            "value": "11120685"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nature. 2001 Feb 15;409(6822):860-921",
+                        "pmid": {
+                            "version": "1",
+                            "value": "11237011"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nature. 2002 Jul 4;418(6893):79-85",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12097910"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nature. 2002 Oct 3;419(6906):498-511",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12368864"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nature. 2002 Oct 3;419(6906):527-31",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12368867"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Exp Parasitol. 2002 Jun-Jul;101(2-3):168-73",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12427472"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Nucleic Acids Res. 2003 Jan 1;31(1):439-41",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12520045"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Genome Res. 2003 Mar;13(3):443-54",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12618375"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Avian Pathol. 2003 Apr;32(2):115-27",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12745365"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Parasitol Res. 2003 Aug;90(6):473-5",
+                        "pmid": {
+                            "version": "1",
+                            "value": "12802683"
+                        }
+                    },
+                    {
+                        "reftype": "Cites",
+                        "refsource": "Trends Parasitol. 2004 May;20(5):199-201",
+                        "pmid": {
+                            "version": "1",
+                            "value": "15105014"
+                        }
+                    },
                     {
                         "reftype": "Cites",
                         "refsource": "J Mol Biol. 2004 May 14;338(5):1027-36",
@@ -356,10 +490,10 @@
                     },
                     {
                         "reftype": "Cites",
-                        "refsource": "Trends Parasitol. 2004 May;20(5):199-201",
+                        "refsource": "BMC Bioinformatics. 2004 May 14;5:59",
                         "pmid": {
                             "version": "1",
-                            "value": "15105014"
+                            "value": "15144565"
                         }
                     },
                     {
@@ -476,150 +610,136 @@
                     },
                     {
                         "reftype": "Cites",
-                        "refsource": "Nucleic Acids Res. 1997 Mar 1;25(5):955-64",
-                        "pmid": {
-                            "version": "1",
-                            "value": "9023104"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "Nucleic Acids Res. 1999 Jan 15;27(2):573-80",
-                        "pmid": {
-                            "version": "1",
-                            "value": "9862982"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
                         "refsource": "Int J Parasitol. 1999 Dec;29(12):1885-92",
                         "pmid": {
                             "version": "1",
                             "value": "10961844"
                         }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "Genome Res. 2000 Oct;10(10):1587-93",
-                        "pmid": {
-                            "version": "1",
-                            "value": "11042156"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "Genome Res. 2000 Nov;10(11):1737-42",
-                        "pmid": {
-                            "version": "1",
-                            "value": "11076859"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "Bioinformatics. 2000 Oct;16(10):944-5",
-                        "pmid": {
-                            "version": "1",
-                            "value": "11120685"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "Nature. 2001 Feb 15;409(6822):860-921",
-                        "pmid": {
-                            "version": "1",
-                            "value": "11237011"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "Nature. 2002 Jul 4;418(6893):79-85",
-                        "pmid": {
-                            "version": "1",
-                            "value": "12097910"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "Nature. 2002 Oct 3;419(6906):498-511",
-                        "pmid": {
-                            "version": "1",
-                            "value": "12368864"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "Nature. 2002 Oct 3;419(6906):527-31",
-                        "pmid": {
-                            "version": "1",
-                            "value": "12368867"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "Exp Parasitol. 2002 Jun-Jul;101(2-3):168-73",
-                        "pmid": {
-                            "version": "1",
-                            "value": "12427472"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "Nucleic Acids Res. 2003 Jan 1;31(1):439-41",
-                        "pmid": {
-                            "version": "1",
-                            "value": "12520045"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "Genome Res. 2003 Mar;13(3):443-54",
-                        "pmid": {
-                            "version": "1",
-                            "value": "12618375"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "Avian Pathol. 2003 Apr;32(2):115-27",
-                        "pmid": {
-                            "version": "1",
-                            "value": "12745365"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "Parasitol Res. 2003 Aug;90(6):473-5",
-                        "pmid": {
-                            "version": "1",
-                            "value": "12802683"
-                        }
-                    },
-                    {
-                        "reftype": "Cites",
-                        "refsource": "BMC Bioinformatics. 2004 May 14;5:59",
-                        "pmid": {
-                            "version": "1",
-                            "value": "15144565"
-                        }
                     }
                 ],
                 "meshheadinglist": [
-                    "\n          Animals\n        ",
-                    "\n          Base Sequence\n        ",
-                    "\n          Chromosome Mapping\n        ",
-                    "\n          Chromosome Structures\n          genetics\n        ",
-                    "\n          Computational Biology\n        ",
-                    "\n          Eimeria tenella\n          genetics\n        ",
-                    "\n          Genes, Protozoan\n          genetics\n        ",
-                    "\n          Minisatellite Repeats\n          genetics\n        ",
-                    "\n          Molecular Sequence Data\n        ",
-                    "\n          Polymorphism, Restriction Fragment\n            Length\n        ",
-                    "\n          Sequence Analysis, DNA\n        "
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Animals"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Base Sequence"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Chromosome Mapping"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Chromosome Structures"
+                        },
+                        "qualifiernames": [
+                            {
+                                "majortopicyn": true,
+                                "value": "genetics"
+                            }
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Computational Biology"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Eimeria tenella"
+                        },
+                        "qualifiernames": [
+                            {
+                                "majortopicyn": true,
+                                "value": "genetics"
+                            }
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Genes, Protozoan"
+                        },
+                        "qualifiernames": [
+                            {
+                                "majortopicyn": true,
+                                "value": "genetics"
+                            }
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Minisatellite Repeats"
+                        },
+                        "qualifiernames": [
+                            {
+                                "majortopicyn": false,
+                                "value": "genetics"
+                            }
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Molecular Sequence Data"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Polymorphism, Restriction Fragment Length"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Sequence Analysis, DNA"
+                        },
+                        "qualifiernames": [
+                        ]
+                    }
                 ],
-                "otherid": {
-                    "source": "NLM",
-                    "value": "PMC1800922"
-                }
+                "citationsubsets": [
+                    "IM"
+                ],
+                "otherids": [
+                    {
+                        "source": "NLM",
+                        "value": "PMC1800922"
+                    }
+                ],
+                "otherabstracts": [
+                ],
+                "keywordlists": [
+                ],
+                "spaceflightmissions": [
+                ],
+                "generalnotes": [
+                ]
             },
             "pubmeddata": {
                 "history": [
@@ -677,8 +797,6 @@
         },
         {
             "medlinecitation": {
-                "owner": "NLM",
-                "status": "MEDLINE",
                 "pmid": {
                     "version": "1",
                     "value": "9997"
@@ -699,7 +817,6 @@
                     "day": "14"
                 },
                 "article": {
-                    "pubmodel": "Print",
                     "journal": {
                         "issn": {
                             "issntype": "Print",
@@ -718,31 +835,40 @@
                         "title": "Biochimica et biophysica acta",
                         "isoabbreviation": "Biochim. Biophys. Acta"
                     },
-                    "articletitle": "Magnetic studies of Chromatium flavocytochrome C552. A mechanism for\n          heme-flavin interaction.",
+                    "articletitle": "Magnetic studies of Chromatium flavocytochrome C552. A mechanism for heme-flavin interaction.",
                     "pagination": [
                         "179-91"
                     ],
-                    "abstract": [
-                        {
-                            "value": "Electron paramagnetic resonance and magnetic susceptibility studies of\n            Chromatium flavocytochrome C552 and its diheme flavin-free subunit at temperatures below\n            45 degrees K are reported. The results show that in the intact protein and the subunit\n            the two low-spin (S = 1/2) heme irons are distinguishable, giving rise to separate EPR\n            signals. In the intact protein only, one of the heme irons exists in two different low\n            spin environments in the pH range 5.5 to 10.5, while the other remains in a constant\n            environment. Factors influencing the variable heme iron environment also influence\n            flavin reactivity, indicating the existence of a mechanism for heme-flavin\n            interaction."
-                        }
-                    ],
+                    "abstract": {
+                        "abstracttexts": [
+                            {
+                                "value": "Electron paramagnetic resonance and magnetic susceptibility studies of Chromatium flavocytochrome C552 and its diheme flavin-free subunit at temperatures below 45 degrees K are reported. The results show that in the intact protein and the subunit the two low-spin (S = 1/2) heme irons are distinguishable, giving rise to separate EPR signals. In the intact protein only, one of the heme irons exists in two different low spin environments in the pH range 5.5 to 10.5, while the other remains in a constant environment. Factors influencing the variable heme iron environment also influence flavin reactivity, indicating the existence of a mechanism for heme-flavin interaction."
+                            }
+                        ]
+                    },
                     "authorlist": [
                         {
-                            "completeyn": true
+                            "completeyn": true,
+                            "type": "authors"
                         },
                         {
-                            "validyn": "Y",
+                            "validyn": true,
                             "lastname": "Strekas",
                             "forename": "T C",
                             "initials": "TC",
                             "nameids": [
                             ]
                         }
-]
-                    "language": "eng",
+                    ],
                     "publicationtypelist": [
                         "Journal Article"
+                    ],
+                    "elocationids": [
+                    ],
+                    "languages": [
+                        "eng"
+                    ],
+                    "articledates": [
                     ]
                 },
                 "medlinejournalinfo": {
@@ -769,21 +895,132 @@
                         "nameofsubstance": "Iron"
                     }
                 ],
-                "citationsubset": "IM",
                 "meshheadinglist": [
-                    "\n          Binding Sites\n        ",
-                    "\n          Chromatium\n          enzymology\n        ",
-                    "\n          Cytochrome c Group\n        ",
-                    "\n          Electron Spin Resonance Spectroscopy\n        ",
-                    "\n          Flavins\n        ",
-                    "\n          Heme\n        ",
-                    "\n          Hydrogen-Ion Concentration\n        ",
-                    "\n          Iron\n          analysis\n        ",
-                    "\n          Magnetics\n        ",
-                    "\n          Oxidation-Reduction\n        ",
-                    "\n          Protein Binding\n        ",
-                    "\n          Protein Conformation\n        ",
-                    "\n          Temperature\n        "
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Binding Sites"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Chromatium"
+                        },
+                        "qualifiernames": [
+                            {
+                                "majortopicyn": true,
+                                "value": "enzymology"
+                            }
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": true,
+                            "value": "Cytochrome c Group"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Electron Spin Resonance Spectroscopy"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Flavins"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Heme"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Hydrogen-Ion Concentration"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Iron"
+                        },
+                        "qualifiernames": [
+                            {
+                                "majortopicyn": false,
+                                "value": "analysis"
+                            }
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Magnetics"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Oxidation-Reduction"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Protein Binding"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Protein Conformation"
+                        },
+                        "qualifiernames": [
+                        ]
+                    },
+                    {
+                        "descriptorname": {
+                            "majortopicyn": false,
+                            "value": "Temperature"
+                        },
+                        "qualifiernames": [
+                        ]
+                    }
+                ],
+                "citationsubsets": [
+                    "IM"
+                ],
+                "otherids": [
+                ],
+                "otherabstracts": [
+                ],
+                "keywordlists": [
+                ],
+                "spaceflightmissions": [
+                ],
+                "generalnotes": [
                 ]
             },
             "pubmeddata": {
@@ -820,7 +1057,5 @@
                 ]
             }
         }
-    ],
-    "pubmedbookarticles": [
     ]
 }

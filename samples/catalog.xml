@@ -6,7 +6,7 @@
 
   <system systemId="http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/bookdoc_120101.dtd"
     uri="bookdoc_120101.dtd"/>
-  <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eInfo_020511.dtd"
+  <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eInfo_020511.dtd"
     uri="eInfo_020511.dtd"/>
   <system systemId="http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSummaryDTD/eSearch_020511.dtd"
     uri="eSearch_020511.dtd"/>

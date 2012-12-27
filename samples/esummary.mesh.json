@@ -1,8 +1,12 @@
 {
-    "type": "esummary",
-    "version": "0.3",
-    "documentsummaryset": {
-        "status": "OK",
+    "header": {
+        "type": "esummary",
+        "version": "0.3"
+    },
+    "result": {
+        "uids": [
+            "67414177"
+        ],
         "67414177": {
             "uid": "67414177",
             "ds_yearintroduced": "",

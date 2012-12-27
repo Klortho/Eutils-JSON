@@ -6,19 +6,24 @@
 
 <samples>
   <samplegroup header='EInfo'>
-    <sample title='EInfo' status='D✓' name='einfo' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo' status='D' name='einfo' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi</eutils-url>
       <notes>
         <desc>Basic EInfo result, list of all databases.</desc>
       </notes>
     </sample>
-    <sample title='EInfo PubMed' status='D✓' name='einfo.pubmed' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo PubMed' status='D' name='einfo.pubmed' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed</eutils-url>
       <notes>
         <desc>Information about the PubMed database.</desc>
+        <note rid='④'>
+          &lt;Field> element in the instance document doesn't follow the DTD.
+          I fixed the DTD by making &lt;IsRangable> [sic] and &lt;IsTruncatable>
+          optional.
+        </note>
       </notes>
     </sample>
-    <sample title='EInfo Error' status='D✓' name='einfo.error' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo Error' status='D' name='einfo.error' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle</eutils-url>
       <notes>
         <desc>Test an error response: invalid database name.</desc>
@@ -27,19 +32,19 @@
   </samplegroup>
 
   <samplegroup header='ESearch'>
-    <sample title='ESearch PubMed' status='D✓' name='esearch.pubmed' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch PubMed' status='D' name='esearch.pubmed' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y</eutils-url>
       <notes>
         <desc>List of search results from PubMed.</desc>
       </notes>
     </sample>
-    <sample title='ESearch Error' status='D✓' name='esearch.error' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch Error' status='D' name='esearch.error' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d</eutils-url>
       <notes>
         <desc>Test an error response:  this query has a bad search term.</desc>
       </notes>
     </sample>
-    <sample title='ESearch Bad Error' status='D✓' name='esearch.baderror' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch Bad Error' status='D' name='esearch.baderror' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=fleegle&amp;term=cat</eutils-url>
       <notes>
         <desc>Test an even worse error:  invalid db name specified.</desc>
@@ -49,7 +54,7 @@
 
 
   <samplegroup header='ESummary'>
-    <sample title='pubmed' status='D✓' name='esummary.pubmed' dtd='eSummary_pubmed.dtd'>
+    <sample title='pubmed' status='D' name='esummary.pubmed' dtd='eSummary_pubmed.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmed&amp;id=5683731,22144687</eutils-url>
       <notes>
         <note rid='④'>
@@ -370,7 +375,8 @@
         </note>
       </notes>
     </sample>
-    <sample title='pubmedhealth' status='D' name='esummary.pubmedhealth'>
+    <sample title='pubmedhealth' status='D' name='esummary.pubmedhealth'
+      dtd='eSummary_pubmedhealth.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625</eutils-url>
       <notes>
         <note>
@@ -451,7 +457,7 @@
   </samplegroup>
 
   <samplegroup header='EFetch PubMed'>
-    <sample title='PubMed' status='' name='efetch.pubmed' dtd='pubmed_120101.dtd'>
+    <sample title='PubMed' status='D' name='efetch.pubmed' dtd='pubmed_120101.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml</eutils-url>
       <notes>
         <note>
@@ -463,14 +469,14 @@
         </note>
       </notes>
     </sample>
-    <sample title='Pubmed Book' status='' name='efetch.pubmedbook' dtd='pubmed_120101.dtd'>
+    <sample title='Pubmed Book' status='D' name='efetch.pubmedbook' dtd='pubmed_120101.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml</eutils-url>
       <notes>
         <note></note>
       </notes>
     </sample>
 
-    <sample title='PubMed Example' status='' name='efetch.pubmedexample' dtd='pubmed_120101.dtd'>
+    <sample title='PubMed Example' status='D' name='efetch.pubmedexample' dtd='pubmed_120101.dtd'>
       <notes>
         <note>
           This is a contrived example to test more thoroughly all the possible

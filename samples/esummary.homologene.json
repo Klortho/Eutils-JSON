@@ -1,8 +1,12 @@
 {
-    "type": "esummary",
-    "version": "0.3",
-    "documentsummaryset": {
-        "status": "OK",
+    "header": {
+        "type": "esummary",
+        "version": "0.3"
+    },
+    "result": {
+        "uids": [
+            "20659"
+        ],
         "20659": {
             "uid": "20659",
             "title": "solute carrier family 7 (cationic amino acid transporter, y+ system), member 2",

@@ -12,6 +12,11 @@
              omit-xml-declaration="yes"/>
    <x:param name="pretty" select="true()"/>
    <x:param name="lcnames" select="true()"/>
+   <x:param name="dtd-annotation">
+      <json type="efetch.pubmed" version="0.3">
+         <config lcnames="true" import="efetch.pubmed.xsl"/>
+      </json>
+   </x:param>
    <x:template match="PubMedPubDate | Chemical | DataBank | PersonalNameSubject | ContributionDate | DateRevised | Publisher | CommentsCorrections | PubmedArticle | BeginningDate | Grant | PubmedData | EndingDate | PubmedBookData | Journal | MedlineJournalInfo | DateCreated | ArticleDate | JournalIssue | DateCompleted | PubmedBookArticle">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>
@@ -578,6 +583,18 @@
       <x:value-of select="np:end-array(concat($indent, $iu1), false())"/>
       <!-- done: 'array' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
       <!-- done: 'object' --></x:template>
+   <x:template match="PubmedArticleSet">
+      <x:param name="indent" select="&#34;&#34;"/>
+      <x:param name="context" select="&#34;unknown&#34;"/>
+      <x:param name="trailing-comma" select="position() != last()"/>
+      <x:call-template name="array">
+         <x:with-param name="indent" select="$indent"/>
+         <x:with-param name="context" select="$context"/>
+         <x:with-param name="key" select="&#34;result&#34;"/>
+         <x:with-param name="kids" select="PubmedArticle | PubmedBookArticle"/>
+         <x:with-param name="trailing-comma" select="$trailing-comma"/>
+      </x:call-template>
+   </x:template>
    <x:template match="Section">
       <x:param name="indent" select="&#34;&#34;"/>
       <x:param name="context" select="&#34;unknown&#34;"/>

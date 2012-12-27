@@ -4,31 +4,6 @@
                 xmlns:np="http://ncbi.gov/portal/XSLT/namespace"
                 extension-element-prefixes="np">
   
-  <xsl:template match="PubmedArticleSet">
-    <xsl:call-template name="result-start">
-      <xsl:with-param name="dtd-annotation">
-        <json type="efetch.pubmed" version="0.3">
-          <config lcnames="true" import="pubmed.xsl"/>
-        </json>
-      </xsl:with-param>
-    </xsl:call-template>
-
-    <xsl:call-template name='array-in-object'>
-      <xsl:with-param name="indent" select="$iu"/>
-      <xsl:with-param name='key' select='"pubmedarticles"'/>
-      <xsl:with-param name='kids' select='PubmedArticle'/>
-      <xsl:with-param name='trailing-comma' select='true()'/>
-    </xsl:call-template>
-    
-    <xsl:call-template name='array-in-object'>
-      <xsl:with-param name="indent" select="$iu"/>
-      <xsl:with-param name='key' select='"pubmedbookarticles"'/>
-      <xsl:with-param name='kids' select='PubmedBookArticle'/>
-    </xsl:call-template>
-    
-    <xsl:value-of select="np:end-object(&#34;&#34;, false())"/>
-  </xsl:template>
-
 
   <!-- 
     Elements from nlmmedlinecitationset that have "%text;"

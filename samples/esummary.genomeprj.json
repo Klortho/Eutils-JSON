@@ -1,8 +1,12 @@
 {
-    "type": "esummary",
-    "version": "0.3",
-    "documentsummaryset": {
-        "status": "OK",
+    "header": {
+        "type": "esummary",
+        "version": "0.3"
+    },
+    "result": {
+        "uids": [
+            "54101"
+        ],
         "54101": {
             "uid": "54101",
             "organism_name": "Bacillus anthracis str. A2012",

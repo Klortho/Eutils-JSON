@@ -211,11 +211,17 @@
   uid   CDATA #IMPLIED>
 
 <!--~~ <DocumentSummarySet>
-~~json <object/>
+~~json 
+  <object name='"result"'>
+    <array name='"uids"' select='DocumentSummary/@uid'/>
+    <members select='DocumentSummary'/>
+  </object>
 ~~-->
 <!ELEMENT DocumentSummarySet (DocumentSummary | Warning)*>
 <!ATTLIST DocumentSummarySet status CDATA #IMPLIED>
+
 <!--~~ <eSummaryResult>
 ~~ tags root
+~~ json <member/>
 ~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>

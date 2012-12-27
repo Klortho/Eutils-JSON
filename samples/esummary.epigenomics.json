@@ -1,8 +1,12 @@
 {
-    "type": "esummary",
-    "version": "0.3",
-    "documentsummaryset": {
-        "status": "OK",
+    "header": {
+        "type": "esummary",
+        "version": "0.3"
+    },
+    "result": {
+        "uids": [
+            "16796"
+        ],
         "16796": {
             "uid": "16796",
             "title": "H3K4me1 - Human stem cell, iPS DF 6.9 cell line, foreskin, undifferentiated, passage 33",

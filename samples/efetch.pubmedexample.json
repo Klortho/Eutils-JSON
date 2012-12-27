@@ -1,7 +1,9 @@
 {
-    "type": "efetch.pubmed",
-    "version": "0.3",
-    "pubmedarticles": [
+    "header": {
+        "type": "efetch.pubmed",
+        "version": "0.3"
+    },
+    "result": [
         {
             "medlinecitation": {
                 "pmid": {
@@ -578,9 +580,7 @@
                     }
                 ]
             }
-        }
-    ],
-    "pubmedbookarticles": [
+        },
         {
             "bookdocument": {
                 "pmid": {

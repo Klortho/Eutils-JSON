@@ -248,22 +248,31 @@ result in invalid JSON output.
   Convert this into HTML with make-sample-readme-table.xslt, and then
   insert the result into README.md.
 -->
+<!--
+  Maintain the current status of all the samples here.
+  Convert this into HTML with make-sample-readme-table.xslt, and then
+  insert the result into README.md.
+-->
 <div>
   <h2>EInfo</h2>
   <table><tr><th/><th>✓</th><th>Description / Notes</th><th>Links</th></tr>
-    <tr><th>EInfo</th><td>D✓</td><td><em>Basic EInfo result, list of all databases.</em></td><td><a href="../../blob/master/samples/eInfo_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eInfo_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/einfo.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi">eutils;</a><br/><a href="../../blob/master/samples/einfo.json">JSON</a></td></tr>
-    <tr><th>EInfo PubMed</th><td>D✓</td><td><em>Information about the PubMed database.</em></td><td><a href="../../blob/master/samples/eInfo_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eInfo_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/einfo.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed">eutils;</a><br/><a href="../../blob/master/samples/einfo.pubmed.json">JSON</a></td></tr>
-    <tr><th>EInfo Error</th><td>D✓</td><td><em>Test an error response: invalid database name.</em></td><td><a href="../../blob/master/samples/eInfo_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eInfo_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/einfo.error.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle">eutils;</a><br/><a href="../../blob/master/samples/einfo.error.json">JSON</a></td></tr>
+    <tr><th>EInfo</th><td>D</td><td><em>Basic EInfo result, list of all databases.</em></td><td><a href="../../blob/master/samples/eInfo_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eInfo_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/einfo.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi">eutils;</a><br/><a href="../../blob/master/samples/einfo.json">JSON</a></td></tr>
+    <tr><th>EInfo PubMed</th><td>D</td><td><em>Information about the PubMed database.</em><br/><font size="5"><a href="#%E2%91%A3-errors-in-dtds">④</a> </font>
+          &lt;Field&gt; element in the instance document doesn't follow the DTD.
+          I fixed the DTD by making &lt;IsRangable&gt; [sic] and &lt;IsTruncatable&gt;
+          optional.
+        </td><td><a href="../../blob/master/samples/eInfo_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eInfo_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/einfo.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed">eutils;</a><br/><a href="../../blob/master/samples/einfo.pubmed.json">JSON</a></td></tr>
+    <tr><th>EInfo Error</th><td>D</td><td><em>Test an error response: invalid database name.</em></td><td><a href="../../blob/master/samples/eInfo_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eInfo_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/einfo.error.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle">eutils;</a><br/><a href="../../blob/master/samples/einfo.error.json">JSON</a></td></tr>
   </table>
   <h2>ESearch</h2>
   <table><tr><th/><th>✓</th><th>Description / Notes</th><th>Links</th></tr>
-    <tr><th>ESearch PubMed</th><td>D✓</td><td><em>List of search results from PubMed.</em></td><td><a href="../../blob/master/samples/eSearch_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eSearch_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esearch.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y">eutils;</a><br/><a href="../../blob/master/samples/esearch.pubmed.json">JSON</a></td></tr>
-    <tr><th>ESearch Error</th><td>D✓</td><td><em>Test an error response:  this query has a bad search term.</em></td><td><a href="../../blob/master/samples/eSearch_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eSearch_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esearch.error.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d">eutils;</a><br/><a href="../../blob/master/samples/esearch.error.json">JSON</a></td></tr>
-    <tr><th>ESearch Bad Error</th><td>D✓</td><td><em>Test an even worse error:  invalid db name specified.</em></td><td><a href="../../blob/master/samples/eSearch_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eSearch_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esearch.baderror.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=fleegle&amp;term=cat">eutils;</a><br/><a href="../../blob/master/samples/esearch.baderror.json">JSON</a></td></tr>
+    <tr><th>ESearch PubMed</th><td>D</td><td><em>List of search results from PubMed.</em></td><td><a href="../../blob/master/samples/eSearch_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eSearch_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esearch.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y">eutils;</a><br/><a href="../../blob/master/samples/esearch.pubmed.json">JSON</a></td></tr>
+    <tr><th>ESearch Error</th><td>D</td><td><em>Test an error response:  this query has a bad search term.</em></td><td><a href="../../blob/master/samples/eSearch_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eSearch_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esearch.error.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d">eutils;</a><br/><a href="../../blob/master/samples/esearch.error.json">JSON</a></td></tr>
+    <tr><th>ESearch Bad Error</th><td>D</td><td><em>Test an even worse error:  invalid db name specified.</em></td><td><a href="../../blob/master/samples/eSearch_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eSearch_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esearch.baderror.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=fleegle&amp;term=cat">eutils;</a><br/><a href="../../blob/master/samples/esearch.baderror.json">JSON</a></td></tr>
   </table>
   <h2>ESummary</h2>
   <table><tr><th/><th>✓</th><th>Description / Notes</th><th>Links</th></tr>
-    <tr><th>pubmed</th><td>D✓</td><td><font size="5"><a href="#%E2%91%A3-errors-in-dtds">④</a> </font>
+    <tr><th>pubmed</th><td>D</td><td><font size="5"><a href="#%E2%91%A3-errors-in-dtds">④</a> </font>
           &lt;PubStatus&gt; is marked as type "T_int", but its value is not always
           an integer.
         </td><td><a href="../../blob/master/samples/eSummary_pubmed.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_pubmed-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esummary.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmed&amp;id=5683731,22144687">eutils;</a><br/><a href="../../blob/master/samples/esummary.pubmed.json">JSON</a></td></tr>
@@ -354,7 +363,7 @@ result in invalid JSON output.
     <tr><th>pubmedhealth</th><td>D</td><td>⇒ 
           Can't find DTD.  See EU-1908.  I created one by copying and hacking the books DTD.  Might or
           might not be correct.
-        </td><td>XML: <a href="../../blob/master/samples/esummary.pubmedhealth.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625">eutils;</a><br/><a href="../../blob/master/samples/esummary.pubmedhealth.json">JSON</a></td></tr>
+        </td><td><a href="../../blob/master/samples/eSummary_pubmedhealth.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_pubmedhealth-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esummary.pubmedhealth.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625">eutils;</a><br/><a href="../../blob/master/samples/esummary.pubmedhealth.json">JSON</a></td></tr>
     <tr><th>seqannot</th><td>D</td><td><font size="5"><a href="#%E2%91%A4-escaped-markup">⑤</a> </font><br/>⇒ 
           The bulk of the data here is trapped inside the escaped-markup content
           of the &lt;ExpXml&gt; element.
@@ -383,16 +392,16 @@ result in invalid JSON output.
   </table>
   <h2>EFetch PubMed</h2>
   <table><tr><th/><th>✓</th><th>Description / Notes</th><th>Links</th></tr>
-    <tr><th>PubMed</th><td/><td>⇒ 
+    <tr><th>PubMed</th><td>D</td><td>⇒ 
           This one is very complicated.  Note that I got a start on it before moving to DtdAnalyzer,
           with a manual stylesheet that is saved here:
           https://github.com/Klortho/Eutils-JSON/blob/7550961a849e14f53899ea9cc948a36e5903677e/Eutils2JSON.xsl.
           The JSON file, efetch.pubmed.json, here in the samples directory is the result of that
           output, and should be the goal.
         </td><td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>, <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/efetch.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml">eutils;</a><br/><a href="../../blob/master/samples/efetch.pubmed.json">JSON</a></td></tr>
-    <tr><th>Pubmed Book</th><td/><td>⇒ </td><td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>, <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/efetch.pubmedbook.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml">eutils;</a><br/><a href="../../blob/master/samples/efetch.pubmedbook.json">JSON</a></td></tr>
+    <tr><th>Pubmed Book</th><td>D</td><td>⇒ </td><td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>, <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/efetch.pubmedbook.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml">eutils;</a><br/><a href="../../blob/master/samples/efetch.pubmedbook.json">JSON</a></td></tr>
 
-    <tr><th>PubMed Example</th><td/><td>⇒ 
+    <tr><th>PubMed Example</th><td>D</td><td>⇒ 
           This is a contrived example to test more thoroughly all the possible
           permutations of content allowed by the EFetch PubMed DTD.
         </td><td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>, <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/efetch.pubmedexample.xml">local</a>, <a href="">eutils;</a><br/><a href="../../blob/master/samples/efetch.pubmedexample.json">JSON</a></td></tr>

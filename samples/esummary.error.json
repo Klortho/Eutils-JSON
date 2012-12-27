@@ -1,5 +1,9 @@
 {
-    "type": "esummary",
-    "version": "0.3",
-    "error": "Invalid db name specified: fleegle"
+    "header": {
+        "type": "esummary",
+        "version": "0.3"
+    },
+    "esummaryresult": [
+        "Invalid db name specified: fleegle"
+    ]
 }

@@ -1,8 +1,14 @@
 {
-    "type": "esummary",
-    "version": "0.3",
-    "documentsummaryset": {
-        "status": "OK",
+    "header": {
+        "type": "esummary",
+        "version": "0.3"
+    },
+    "result": {
+        "uids": [
+            "254085",
+            "1",
+            "14900"
+        ],
         "254085": {
             "uid": "254085",
             "pubdate": "1987 Apr",
