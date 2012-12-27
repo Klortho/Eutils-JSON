@@ -233,18 +233,28 @@ result in invalid JSON output.
   Convert this into HTML with make-sample-readme-table.xslt, and then
   insert the result into README.md.
 -->
+<!--
+  Maintain the current status of all the samples here.
+  Convert this into HTML with make-sample-readme-table.xslt, and then
+  insert the result into README.md.
+-->
+<!--
+  Maintain the current status of all the samples here.
+  Convert this into HTML with make-sample-readme-table.xslt, and then
+  insert the result into README.md.
+-->
 <div>
   <h2>EInfo</h2>
   <table><tr><th/><th>✓</th><th>Description / Notes</th><th>Links</th></tr>
-    <tr><th>EInfo</th><td>D✓</td><td><em>Basic EInfo result, list of all databases.</em></td><td><a href="../../blob/master/samples/eInfo_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eInfo_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/einfo.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi">eutils;</a><br/><a href="../../blob/master/samples/einfo.json">JSON</a></td></tr>
-    <tr><th>EInfo PubMed</th><td>D✓</td><td><em>Information about the PubMed database.</em></td><td><a href="../../blob/master/samples/eInfo_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eInfo_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/einfo.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed">eutils;</a><br/><a href="../../blob/master/samples/einfo.pubmed.json">JSON</a></td></tr>
-    <tr><th>EInfo Error</th><td>D✓</td><td><em>Test an error response: invalid database name.</em></td><td><a href="../../blob/master/samples/eInfo_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eInfo_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/einfo.error.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle">eutils;</a><br/><a href="../../blob/master/samples/einfo.error.json">JSON</a></td></tr>
+    <tr><th>EInfo</th><td>D✓</td><td>⇒ <em>Basic EInfo result, list of all databases.</em></td><td><a href="../../blob/master/samples/eInfo_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eInfo_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/einfo.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi">eutils;</a><br/><a href="../../blob/master/samples/einfo.json">JSON</a></td></tr>
+    <tr><th>EInfo PubMed</th><td>D✓</td><td>⇒ <em>Information about the PubMed database.</em></td><td><a href="../../blob/master/samples/eInfo_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eInfo_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/einfo.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed">eutils;</a><br/><a href="../../blob/master/samples/einfo.pubmed.json">JSON</a></td></tr>
+    <tr><th>EInfo Error</th><td>D✓</td><td>⇒ <em>Test an error response: invalid database name.</em></td><td><a href="../../blob/master/samples/eInfo_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eInfo_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/einfo.error.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle">eutils;</a><br/><a href="../../blob/master/samples/einfo.error.json">JSON</a></td></tr>
   </table>
   <h2>ESearch</h2>
   <table><tr><th/><th>✓</th><th>Description / Notes</th><th>Links</th></tr>
-    <tr><th>ESearch PubMed</th><td>D</td><td/><td><a href="../../blob/master/samples/eSearch_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eSearch_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esearch.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y">eutils;</a><br/><a href="../../blob/master/samples/esearch.pubmed.json">JSON</a></td></tr>
-    <tr><th>ESearch Error</th><td>D</td><td>This query has a bad search term</td><td><a href="../../blob/master/samples/eSearch_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eSearch_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esearch.error.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d">eutils;</a><br/><a href="../../blob/master/samples/esearch.error.json">JSON</a></td></tr>
-    <tr><th>ESearch Bad Error</th><td>D</td><td>Invalid db name specified.</td><td><a href="../../blob/master/samples/eSearch_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eSearch_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esearch.baderror.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=fleegle&amp;term=cat">eutils;</a><br/><a href="../../blob/master/samples/esearch.baderror.json">JSON</a></td></tr>
+    <tr><th>ESearch PubMed</th><td>D✓</td><td>⇒ <em>List of search results from PubMed.</em></td><td><a href="../../blob/master/samples/eSearch_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eSearch_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esearch.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y">eutils;</a><br/><a href="../../blob/master/samples/esearch.pubmed.json">JSON</a></td></tr>
+    <tr><th>ESearch Error</th><td>D✓</td><td>⇒ <em>Test an error response:  this query has a bad search term.</em></td><td><a href="../../blob/master/samples/eSearch_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eSearch_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esearch.error.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d">eutils;</a><br/><a href="../../blob/master/samples/esearch.error.json">JSON</a></td></tr>
+    <tr><th>ESearch Bad Error</th><td>D✓</td><td>⇒ <em>Test an even worse error:  invalid db name specified.</em></td><td><a href="../../blob/master/samples/eSearch_020511.dtd">DTD</a>, <a href="../../blob/master/samples/eSearch_020511-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/esearch.baderror.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=fleegle&amp;term=cat">eutils;</a><br/><a href="../../blob/master/samples/esearch.baderror.json">JSON</a></td></tr>
   </table>
   <h2>ESummary</h2>
   <table><tr><th/><th>✓</th><th>Description / Notes</th><th>Links</th></tr>

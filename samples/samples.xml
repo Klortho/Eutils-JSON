@@ -27,21 +27,22 @@
   </samplegroup>
 
   <samplegroup header='ESearch'>
-    <sample title='ESearch PubMed' status='D' name='esearch.pubmed' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch PubMed' status='D✓' name='esearch.pubmed' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y</eutils-url>
       <notes>
+        <desc>List of search results from PubMed.</desc>
       </notes>
     </sample>
-    <sample title='ESearch Error' status='D' name='esearch.error' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch Error' status='D✓' name='esearch.error' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d</eutils-url>
       <notes>
-        <note>This query has a bad search term</note>
+        <desc>Test an error response:  this query has a bad search term.</desc>
       </notes>
     </sample>
-    <sample title='ESearch Bad Error' status='D' name='esearch.baderror' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch Bad Error' status='D✓' name='esearch.baderror' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=fleegle&amp;term=cat</eutils-url>
       <notes>
-        <note>Invalid db name specified.</note>
+        <desc>Test an even worse error:  invalid db name specified.</desc>
       </notes>
     </sample>
   </samplegroup>

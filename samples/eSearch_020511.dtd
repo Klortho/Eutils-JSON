@@ -85,8 +85,8 @@ This is the root element for an ESearch response.
 <!--~~ <ErrorList>
 ~~ json
   <object>
-    <array name='"phrasesnotfound"' content='PhraseNotFound'/>
-    <array name='"fieldsnotfound"' content='FieldsNotFound'/>
+    <array name='"phrasesnotfound"' select='PhraseNotFound'/>
+    <array name='"fieldsnotfound"' select='FieldsNotFound'/>
   </object>
 ~~-->
 <!ELEMENT        ErrorList      (PhraseNotFound*,FieldNotFound*)>
@@ -94,9 +94,9 @@ This is the root element for an ESearch response.
 <!--~~ <WarningList>
 ~~ json
   <object>
-    <array name='"phrasesignored"' content='PhraseIgnored'/>
-    <array name='"quotedphrasesnotfound"' content='QuotedPhraseNotFound'/>
-    <array name='"outputmessages"' content='OutputMessage'/>
+    <array name='"phrasesignored"' select='PhraseIgnored'/>
+    <array name='"quotedphrasesnotfound"' select='QuotedPhraseNotFound'/>
+    <array name='"outputmessages"' select='OutputMessage'/>
   </object>
 ~~-->
 <!ELEMENT        WarningList    ( PhraseIgnored*,

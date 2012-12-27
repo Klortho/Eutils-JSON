@@ -1,52 +1,56 @@
 {
-    "type": "esearch",
-    "version": "0.3",
-    "count": "5163",
-    "retmax": "20",
-    "retstart": "0",
-    "idlist": [
-        "101595451",
-        "101594756",
-        "101592162",
-        "101584239",
-        "101579894",
-        "101579335",
-        "101562482",
-        "101561609",
-        "101556399",
-        "101591596",
-        "101578136",
-        "101576454",
-        "101574347",
-        "101572928",
-        "101570665",
-        "101566951",
-        "101560767",
-        "101559065",
-        "101558035",
-        "101557580"
-    ],
-    "translationset": [
-        {
-            "from": "obstetrics[MeSH Terms]",
-            "to": "\"obstetrics\"[MeSH Terms]"
-        }
-    ],
-    "translationstack": [
-        {
-            "term": "\"obstetrics\"[MeSH Terms]",
-            "field": "MeSH Terms",
-            "count": "5163",
-            "explode": "Y"
-        },
-        "GROUP"
-    ],
-    "querytranslation": "\"obstetrics\"[MeSH Terms]",
-    "errorlist": {
-        "phrasesnotfound": [
-            "fleegle[MeSH Terms]"
+    "header": {
+        "type": "esearch",
+        "version": "0.3"
+    },
+    "esearchresult": {
+        "count": "5163",
+        "retmax": "20",
+        "retstart": "0",
+        "idlist": [
+            "101595451",
+            "101594756",
+            "101592162",
+            "101584239",
+            "101579894",
+            "101579335",
+            "101562482",
+            "101561609",
+            "101556399",
+            "101591596",
+            "101578136",
+            "101576454",
+            "101574347",
+            "101572928",
+            "101570665",
+            "101566951",
+            "101560767",
+            "101559065",
+            "101558035",
+            "101557580"
         ],
-        "fieldsnotfound": [
-        ]
+        "translationset": [
+            {
+                "from": "obstetrics[MeSH Terms]",
+                "to": "\"obstetrics\"[MeSH Terms]"
+            }
+        ],
+        "translationstack": [
+            {
+                "term": "\"obstetrics\"[MeSH Terms]",
+                "field": "MeSH Terms",
+                "count": "5163",
+                "explode": "Y"
+            },
+            "GROUP"
+        ],
+        "querytranslation": "\"obstetrics\"[MeSH Terms]",
+        "errorlist": {
+            "phrasesnotfound": [
+                "fleegle[MeSH Terms]"
+            ],
+            "fieldsnotfound": [
+            ]
+        }
     }
 }

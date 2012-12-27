@@ -65,6 +65,7 @@
   </xsl:template>
 
   <xsl:template match='desc'>
+    <xsl:text>⇒ </xsl:text>
     <em>
       <xsl:apply-templates/>
     </em>

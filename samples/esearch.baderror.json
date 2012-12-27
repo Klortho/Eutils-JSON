@@ -1,5 +1,9 @@
 {
-    "type": "esearch",
-    "version": "0.3",
-    "ERROR": "Invalid db name specified: fleegle"
+    "header": {
+        "type": "esearch",
+        "version": "0.3"
+    },
+    "esearchresult": {
+        "ERROR": "Invalid db name specified: fleegle"
+    }
 }
