@@ -24,7 +24,7 @@
     <table>
       <tr>
         <th></th>
-        <th>Status</th>
+        <th>✓</th>
         <th>Notes</th>
         <th>Comments</th>
         <th>Links</th>
@@ -55,13 +55,15 @@
           <xsl:variable name='xslName' 
             select='concat(substring(@dtd, 1, string-length(@dtd) - 4), "-2json.xsl")'/>
           <a href='../../blob/master/samples/{$xslName}'>XSL</a>
-          <xsl:text>,&#160;</xsl:text>
+          <xsl:text>;</xsl:text>
+          <br/>
         </xsl:if>
-        <a href="../../blob/master/samples/{@name}.xml">XML</a>
+        <xsl:text>XML&#160;</xsl:text>
+        <a href="../../blob/master/samples/{@name}.xml">local</a>
         <xsl:text>,&#160;</xsl:text>
+        <a href="{eutils-url}">eutils;</a>
+        <br/>
         <a href="../../blob/master/samples/{@name}.json">JSON</a>
-        <xsl:text>,&#160;</xsl:text>
-        <a href="{eutils-url}">EUtils</a>
       </td>
     </tr>
   </xsl:template>
