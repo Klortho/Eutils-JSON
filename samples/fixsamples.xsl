@@ -26,7 +26,6 @@
         <th></th>
         <th>✓</th>
         <th>Notes</th>
-        <th>Comments</th>
         <th>Links</th>
       </tr>
       <xsl:apply-templates/>
@@ -42,10 +41,7 @@
         <xsl:value-of select="@status"/>
       </td>
       <td>
-        <xsl:value-of select='notes'/>
-      </td>
-      <td>
-        <xsl:value-of select='desc'/>
+        <xsl:apply-templates select='notes/note'/>
       </td>
       <td>
         <xsl:if test='@dtd'>
@@ -58,7 +54,7 @@
           <xsl:text>;</xsl:text>
           <br/>
         </xsl:if>
-        <xsl:text>XML&#160;</xsl:text>
+        <xsl:text>XML:&#160;</xsl:text>
         <a href="../../blob/master/samples/{@name}.xml">local</a>
         <xsl:text>,&#160;</xsl:text>
         <a href="{eutils-url}">eutils;</a>
@@ -68,5 +64,42 @@
     </tr>
   </xsl:template>
 
-  <xsl:template match='text()'/>
+  <xsl:template match='note'>
+    <xsl:if test='@rid'>
+      <xsl:variable name='target'>
+        <xsl:choose>
+          <xsl:when test='@rid = "①"'>
+            <xsl:text>%E2%91%A0-all-esummary-dtds-use-the-same-public-identifier</xsl:text>
+          </xsl:when>
+          <xsl:when test='@rid = "②"'>
+            <xsl:text>%E2%91%A1-xml-results-that-fail-to-validate-bad-dtds</xsl:text>
+          </xsl:when>
+          <xsl:when test='@rid = "③"'>
+            <xsl:text>%E2%91%A2-dtds-elements-that-are-under-specified</xsl:text>
+          </xsl:when>
+          <xsl:when test='@rid = "④"'>
+            <xsl:text>%E2%91%A3-errors-in-dtds</xsl:text>
+          </xsl:when>
+          <xsl:when test='@rid = "⑤"'>
+            <xsl:text>%E2%91%A4-escaped-markup</xsl:text>
+          </xsl:when>
+          <xsl:when test='@rid = "⑥"'>
+            <xsl:text>%E2%91%A5-miscellaneous-problems--questions--suggestions</xsl:text>
+          </xsl:when>
+        </xsl:choose>
+      </xsl:variable>
+      <font size='5'>
+        <a href='{concat("#", $target)}'><xsl:value-of select='@rid'/></a>
+        <xsl:text> </xsl:text>
+      </font>
+    </xsl:if>
+    <xsl:apply-templates/>
+  </xsl:template>
+  
+  <xsl:template match='@*|node()'>
+    <xsl:copy>
+      <xsl:apply-templates select='@*|node()'/>
+    </xsl:copy>
+  </xsl:template>
+
 </xsl:stylesheet>
