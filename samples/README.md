@@ -413,6 +413,11 @@ result in invalid JSON output.
   Convert this into HTML with make-sample-readme-table.xslt, and then
   insert the result into README.md.
 -->
+<!--
+  Maintain the current status of all the samples here.
+  Convert this into HTML with make-sample-readme-table.xslt, and then
+  insert the result into README.md.
+-->
 <div>
   <h2>EInfo</h2>
   <table><tr><th/><th>✓</th><th>Description / Notes</th><th>Links</th></tr>
@@ -556,7 +561,11 @@ result in invalid JSON output.
   </table>
   <h2>EFetch PubMed</h2>
   <table><tr><th/><th>✓</th><th>Description / Notes</th><th>Links</th></tr>
-    <tr><th>PubMed</th><td>D</td><td/><td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>, <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/efetch.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml">eutils;</a><br/><a href="../../blob/master/samples/efetch.pubmed.json">JSON</a></td></tr>
+    <tr><th>PubMed</th><td>D</td><td>⇒ 
+          This is the only one that uses an imported stylesheet, efetch.pubmed.xsl,
+          because there were some
+          things that the DTD annotation feature could not handle.
+        </td><td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>, <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/efetch.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml">eutils;</a><br/><a href="../../blob/master/samples/efetch.pubmed.json">JSON</a></td></tr>
     <tr><th>Pubmed Book</th><td>D</td><td/><td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>, <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSL</a>;<br/>XML: <a href="../../blob/master/samples/efetch.pubmedbook.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml">eutils;</a><br/><a href="../../blob/master/samples/efetch.pubmedbook.json">JSON</a></td></tr>
 
     <tr><th>PubMed Example</th><td>D</td><td><em>
