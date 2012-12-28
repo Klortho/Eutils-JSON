@@ -186,7 +186,7 @@ This would result, for example, in JSON looking something like this:
         "52771": { ... }
     }
 
-In more complicated examples, however, even the DTD annotations are not adequate
+In more complicated cases, however, even the DTD annotations are not adequate
 to generate the best JSON for a particular type of XML content.  Among these
 samples, there was only one where this was a problem, the eFetch PubMed DTD,
 `pubmed_120101.dtd`.
