@@ -15,16 +15,18 @@ The "Links" column gives, for each file format / sample, links to
 ## Overview
 
 We are using the [DtdAnalyzer](http://github.com/NCBITools/DtdAnalyzer)
-utility to automatically generate XSLT files from the DTDs.  See
-[the documentation](https://github.com/NCBITools/DtdAnalyzer/wiki/Auto-generating-XML-to-JSON-conversion-XSLT)
-for an explanation of the general idea.  The command that generates the
-XSLT is `dtd2xml2json`.
+utility to automatically generate XSLT files from the DTDs.  The DtdAnalyzer
+includes a tool, `dtd2xml2json`, that reads a DTD, analyzes the content model
+of each element, and determines, when possible, the optimal JSON structure
+into which those elements should be mapped.
+[The documentation page](https://github.com/NCBITools/DtdAnalyzer/wiki/Auto-generating-XML-to-JSON-conversion-XSLT)
+for that tool gives a more detailed explanation.
 
-The DTDs here were pulled from the NCBI servers, and then annotated as
-needed to instruct the `dtd2xml2json` utility how instance XML documents
-should be converted into JSON.
+The DTDs here were pulled from the NCBI servers, and then annotated in a special
+format, as needed, to provide further instructions to the `dtd2xml2json`
+utility.
 
-The "work products" of this effort are the set of annotated DTDs and the
+The products of this effort are the set of annotated DTDs and the
 set of auto-generated XSLT files.  Each sample also includes an instance
 XML document, and the JSON into which that was transformed.
 
@@ -96,6 +98,110 @@ JSON output:
 Next you should validate the json output.  For example:
 
     jsonlint einfo.json
+
+## Specifying the conversion
+
+At the top-level of each DTD is a special annotation that defines a few
+pieces of metadata and configuration information.  For example, in the
+eSummary DTDs, this has been added:
+
+    <!--~~ !dtd
+    ~~json
+        <json type='esummary' version='0.3'>
+          <config lcnames='true'/>
+        </json>
+    ~~-->
+
+This tells the `dtd2xml2json` utility that it should insert two bits of
+metadata into the header of the resultant JSON, like so:
+
+    {
+        "header": {
+            "type": "esummary",
+            "version": "0.3"
+        },
+        "result": {
+            ...
+        }
+    }
+
+It also sets the configuration parameter "lcnames" to "true", which means that
+element and attribute names, when they appear as keys inside JSON objects,
+will be converted into lowercase.
+
+The `dtd2xml2json` utility then reads the entire DTD, and tries to determine,
+for each element and attribute, how to map that item into a JSON data type
+(either object, array, string, boolean, or number).  In most cases, it
+is able to figure out, without
+any hints or special annotations, what JSON type to map to.
+For example, one of the simplest cases is an XML element with
+text content and no attributes:
+
+    <!ELEMENT DbName (#PCDATA)>
+
+This will, by default, result in an XSLT template that will convert these
+elements, when they appear, into JSON strings.
+
+Sometimes, the `dtd2xml2json` utility wouldn't pick the optimal JSON
+type. In those cases, annotations can be added to the DTD to tell it
+what to do.  For example, the following instructs `dtd2xml2json` that the
+&lt;TAX_ID> element should be converted into a JSON number (not quoted):
+
+    <!--~~ <TAX_ID>
+    ~~json <number/>
+    ~~-->
+    <!ELEMENT TAX_ID    %T_int;>
+
+For a slightly more elaborate example, all of the eSummary DTDs specify a
+wrapper &lt;DocumentSummarySet> element, which contains possibly very many
+&lt;DocumentSummary>s.  It would be nice if, in JavaScript, you could access
+a particular docsum directly, by its UID.  That is, it would be nice if there
+were a JSON object whose member keys were the UIDs.  However, it might also
+be the case that the original order of the docsums is important, and needs
+to be preserved.  JSON objects do not preserve the order of their members, so
+that's a problem.
+
+The following annotation instructs `dtd2xml2json` that the &lt;DocumentSummarySet>
+element should be converted into a JSON object that has members that come from
+the &lt;DocumentSummary>s.  It also causes the generation of one extra member of
+that object, which is an array of uids.  The array preserves the order, and the
+uids within the array can be used to retrieve the docsums.
+
+    <!--~~ <DocumentSummarySet>
+    ~~json
+      <object name='"result"'>
+        <array name='"uids"' select='DocumentSummary/@uid'/>
+        <members select='DocumentSummary'/>
+      </object>
+    ~~-->
+
+This would result, for example, in JSON looking something like this:
+
+    "result": {
+        "uids": [
+            "52770",
+            "52771"
+        ],
+        "52770": { ... },
+        "52771": { ... }
+    }
+
+In more complicated examples, however, even the DTD annotations are not adequate
+to generate the best JSON for a particular type of XML content.  Among these
+samples, there was only one where this was a problem, the eFetch PubMed DTD,
+`pubmed_120101.dtd`.
+In this case, we wrote a separate XSLT stylesheet by hand, `efetch.pubmed.xsl`,
+with templates that
+match the problem elements.  In the DTD, we added the "import" configuration
+parameter, with a value that tells `dtd2xml2json` that its generated stylesheet
+should import our hand-crafted one:
+
+    <!--~~ !dtd
+    ~~json
+        <json type='efetch.pubmed' version='0.3'>
+          <config lcnames='true' import='efetch.pubmed.xsl'/>
+        </json>
+    ~~-->
 
 ## Other scripts and utilities
 
@@ -282,7 +388,7 @@ There's a note in the tables below for each DTD where we found this problem.
           Assembly_accession was not defined.
         </td><td><a href="../../blob/master/samples/eSummary_dbvar.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_dbvar-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.dbvar.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816">eutils;</a><br/><a href="../../blob/master/samples/esummary.dbvar.json">JSON</a></td></tr>
     <tr><th>epigenomics</th><td>✓</td><td/><td><a href="../../blob/master/samples/eSummary_epigenomics.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_epigenomics-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.epigenomics.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=epigenomics&amp;id=16796">eutils;</a><br/><a href="../../blob/master/samples/esummary.epigenomics.json">JSON</a></td></tr>
-    <tr><th>gencoll</th><td/><td><font size="5"><a href="#%E2%91%A4-escaped-markup">⑤</a> </font>
+    <tr><th>gencoll</th><td>✓</td><td><font size="5"><a href="#%E2%91%A4-escaped-markup">⑤</a> </font>
           Escaped markup inside the &lt;Meta&gt; element.  This seems unnecessary in this
           case because the contents seem to be well-defined custom markup.
         </td><td><a href="../../blob/master/samples/eSummary_gencoll.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_gencoll-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.gencoll.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608">eutils;</a><br/><a href="../../blob/master/samples/esummary.gencoll.json">JSON</a></td></tr>

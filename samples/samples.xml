@@ -214,7 +214,7 @@
       <notes>
       </notes>
     </sample>
-    <sample title='gencoll' status='' name='esummary.gencoll' dtd='eSummary_gencoll.dtd'>
+    <sample title='gencoll' status='✓' name='esummary.gencoll' dtd='eSummary_gencoll.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608</eutils-url>
       <notes>
         <note rid='⑤'>
