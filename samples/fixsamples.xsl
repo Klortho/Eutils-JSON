@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <!--
   This stylesheet converts samples.xml into an HTML fragment that
@@ -48,9 +48,9 @@
           <a href="../../blob/master/samples/{@dtd}">DTD</a>
           <xsl:text>,&#160;</xsl:text>
           <!-- Assume the DTD filename always ends in ".dtd" -->
-          <xsl:variable name='xslName' 
+          <xsl:variable name='xslName'
             select='concat(substring(@dtd, 1, string-length(@dtd) - 4), "-2json.xsl")'/>
-          <a href='../../blob/master/samples/{$xslName}'>XSL</a>
+          <a href='../../blob/master/samples/{$xslName}'>XSLT</a>
           <xsl:text>;</xsl:text>
           <br/>
         </xsl:if>
@@ -72,7 +72,7 @@
       <br/>
     </xsl:if>
   </xsl:template>
-  
+
   <xsl:template match='note'>
     <xsl:choose>
       <xsl:when test='@rid'>
@@ -112,7 +112,7 @@
       <br/>
     </xsl:if>
   </xsl:template>
-  
+
   <xsl:template match='@*|*|text()'>
     <xsl:copy>
       <xsl:apply-templates select='@*|*|text()'/>

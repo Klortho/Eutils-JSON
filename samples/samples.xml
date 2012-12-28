@@ -6,13 +6,13 @@
 
 <samples>
   <samplegroup header='EInfo'>
-    <sample title='EInfo' status='D' name='einfo' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo' status='✓' name='einfo' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi</eutils-url>
       <notes>
         <desc>Basic EInfo result, list of all databases.</desc>
       </notes>
     </sample>
-    <sample title='EInfo PubMed' status='D' name='einfo.pubmed' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo PubMed' status='✓' name='einfo.pubmed' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed</eutils-url>
       <notes>
         <desc>Information about the PubMed database.</desc>
@@ -23,7 +23,7 @@
         </note>
       </notes>
     </sample>
-    <sample title='EInfo Error' status='D' name='einfo.error' dtd='eInfo_020511.dtd'>
+    <sample title='EInfo Error' status='✓' name='einfo.error' dtd='eInfo_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle</eutils-url>
       <notes>
         <desc>Test an error response: invalid database name.</desc>
@@ -32,19 +32,19 @@
   </samplegroup>
 
   <samplegroup header='ESearch'>
-    <sample title='ESearch PubMed' status='D' name='esearch.pubmed' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch PubMed' status='✓' name='esearch.pubmed' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y</eutils-url>
       <notes>
         <desc>List of search results from PubMed.</desc>
       </notes>
     </sample>
-    <sample title='ESearch Error' status='D' name='esearch.error' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch Error' status='✓' name='esearch.error' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d</eutils-url>
       <notes>
         <desc>Test an error response:  this query has a bad search term.</desc>
       </notes>
     </sample>
-    <sample title='ESearch Bad Error' status='D' name='esearch.baderror' dtd='eSearch_020511.dtd'>
+    <sample title='ESearch Bad Error' status='✓' name='esearch.baderror' dtd='eSearch_020511.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=fleegle&amp;term=cat</eutils-url>
       <notes>
         <desc>Test an even worse error:  invalid db name specified.</desc>
@@ -54,7 +54,7 @@
 
 
   <samplegroup header='ESummary'>
-    <sample title='pubmed' status='D' name='esummary.pubmed' dtd='eSummary_pubmed.dtd'>
+    <sample title='pubmed' status='✓' name='esummary.pubmed' dtd='eSummary_pubmed.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmed&amp;id=5683731,22144687</eutils-url>
       <notes>
         <note rid='④'>
@@ -63,17 +63,17 @@
         </note>
       </notes>
     </sample>
-    <sample title='protein' status='D' name='esummary.protein' dtd='eSummary_protein.dtd'>
+    <sample title='protein' status='✓' name='esummary.protein' dtd='eSummary_protein.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=protein&amp;id=284822047</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='nuccore' status='D' name='esummary.nuccore' dtd='eSummary_nuccore.dtd'>
+    <sample title='nuccore' status='✓' name='esummary.nuccore' dtd='eSummary_nuccore.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nuccore&amp;id=424386131</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='nucleotide' status='D' name='esummary.nucleotide'
+    <sample title='nucleotide' status='✓' name='esummary.nucleotide'
       dtd='eSummary_nucleotide.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucleotide&amp;id=424386131</eutils-url>
       <notes>
@@ -83,17 +83,17 @@
         </note>
       </notes>
     </sample>
-    <sample title='nucgss' status='D' name='esummary.nucgss' dtd='eSummary_nucgss.dtd'>
+    <sample title='nucgss' status='✓' name='esummary.nucgss' dtd='eSummary_nucgss.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucgss&amp;id=371566079</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='nucest' status='D' name='esummary.nucest' dtd='eSummary_nucest.dtd'>
+    <sample title='nucest' status='✓' name='esummary.nucest' dtd='eSummary_nucest.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucest&amp;id=409212211</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='structure' status='D' name='esummary.structure' dtd='eSummary_structure.dtd'>
+    <sample title='structure' status='✓' name='esummary.structure' dtd='eSummary_structure.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=structure&amp;id=52770</eutils-url>
       <notes>
         <note rid='②'>
@@ -102,7 +102,7 @@
         </note>
       </notes>
     </sample>
-    <sample title='genome' status='D' name='esummary.genome' dtd='eSummary_genome.dtd'>
+    <sample title='genome' status='✓' name='esummary.genome' dtd='eSummary_genome.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genome&amp;id=2640</eutils-url>
       <notes>
         <note rid='②'>
@@ -112,7 +112,7 @@
         </note>
       </notes>
     </sample>
-    <sample title='assembly' status='D' name='esummary.assembly' dtd='eSummary_assembly.dtd'>
+    <sample title='assembly' status='✓' name='esummary.assembly' dtd='eSummary_assembly.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=assembly&amp;id=440818</eutils-url>
       <notes>
         <note rid='⑤'>
@@ -121,7 +121,7 @@
         </note>
       </notes>
     </sample>
-    <sample title='gcassembly' status='D' name='esummary.gcassembly'
+    <sample title='gcassembly' status='✓' name='esummary.gcassembly'
       dtd='eSummary_gcassembly.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gcassembly&amp;id=440818</eutils-url>
       <notes>
@@ -132,35 +132,35 @@
         </note>
       </notes>
     </sample>
-    <sample title='genomeprj' status='D' name='esummary.genomeprj' dtd='eSummary_genomeprj.dtd'>
+    <sample title='genomeprj' status='✓' name='esummary.genomeprj' dtd='eSummary_genomeprj.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genomeprj&amp;id=54101</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='bioproject' status='D' name='esummary.bioproject'
+    <sample title='bioproject' status='✓' name='esummary.bioproject'
       dtd='eSummary_bioproject.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=bioproject&amp;id=171168</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='biosample' status='D' name='esummary.biosample' dtd='eSummary_biosample.dtd'>
+    <sample title='biosample' status='✓' name='esummary.biosample' dtd='eSummary_biosample.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosample&amp;id=182293</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='biosystems' status='D' name='esummary.biosystems'
+    <sample title='biosystems' status='✓' name='esummary.biosystems'
       dtd='eSummary_biosystems.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosystems&amp;id=493040</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='blastdbinfo' status='D' name='esummary.blastdbinfo'
+    <sample title='blastdbinfo' status='✓' name='esummary.blastdbinfo'
       dtd='eSummary_blastdbinfo.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=blastdbinfo&amp;id=645844</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='books' status='D' name='esummary.books' dtd='eSummary_books.dtd'>
+    <sample title='books' status='✓' name='esummary.books' dtd='eSummary_books.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=books&amp;id=2825746</eutils-url>
       <notes>
         <note rid='⑤'>
@@ -169,22 +169,22 @@
         </note>
       </notes>
     </sample>
-    <sample title='cdd' status='D' name='esummary.cdd' dtd='eSummary_cdd.dtd'>
+    <sample title='cdd' status='✓' name='esummary.cdd' dtd='eSummary_cdd.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=cdd&amp;id=201140</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='clone' status='D' name='esummary.clone' dtd='eSummary_clone.dtd'>
+    <sample title='clone' status='✓' name='esummary.clone' dtd='eSummary_clone.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=clone&amp;id=29702171</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='gap' status='D' name='esummary.gap' dtd='eSummary_gap.dtd'>
+    <sample title='gap' status='✓' name='esummary.gap' dtd='eSummary_gap.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gap&amp;id=195331</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='gapplus' status='D' name='esummary.gapplus' dtd='eSummary_gapplus.dtd'>
+    <sample title='gapplus' status='✓' name='esummary.gapplus' dtd='eSummary_gapplus.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996</eutils-url>
       <notes>
         <note rid='②'>
@@ -193,9 +193,13 @@
           elements until the instance document validated, but I don't have much confidence that
           the DTD I created is correct.
         </note>
+        <note rid='④'>
+          Element &lt;source> is marked as "T_int", but its values
+          in instance documents are not numbers, they are text strings.
+        </note>
       </notes>
     </sample>
-    <sample title='dbvar' status='D' name='esummary.dbvar' dtd='eSummary_dbvar.dtd'>
+    <sample title='dbvar' status='✓' name='esummary.dbvar' dtd='eSummary_dbvar.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816</eutils-url>
       <notes>
         <note rid='②'>
@@ -204,7 +208,7 @@
         </note>
       </notes>
     </sample>
-    <sample title='epigenomics' status='D' name='esummary.epigenomics'
+    <sample title='epigenomics' status='✓' name='esummary.epigenomics'
       dtd='eSummary_epigenomics.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=epigenomics&amp;id=16796</eutils-url>
       <notes>
@@ -219,12 +223,12 @@
         </note>
       </notes>
     </sample>
-    <sample title='gene' status='D' name='esummary.gene' dtd='eSummary_gene.dtd'>
+    <sample title='gene' status='✓' name='esummary.gene' dtd='eSummary_gene.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gene&amp;id=21803</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='gds' status='D' name='esummary.gds' dtd='eSummary_gds.dtd'>
+    <sample title='gds' status='✓' name='esummary.gds' dtd='eSummary_gds.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726</eutils-url>
       <notes>
         <note rid='②'>
@@ -236,12 +240,12 @@
         </note>
       </notes>
     </sample>
-    <sample title='geo' status='D' name='esummary.geo' dtd='eSummary_geo.dtd'>
+    <sample title='geo' status='✓' name='esummary.geo' dtd='eSummary_geo.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geo&amp;id=65685298</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='geoprofiles' status='D' name='esummary.geoprofiles'
+    <sample title='geoprofiles' status='✓' name='esummary.geoprofiles'
       dtd='eSummary_geoprofiles.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geoprofiles&amp;id=65526197</eutils-url>
       <notes>
@@ -253,18 +257,18 @@
         </note>
       </notes>
     </sample>
-    <sample title='homologene' status='D' name='esummary.homologene'
+    <sample title='homologene' status='✓' name='esummary.homologene'
       dtd='eSummary_homologene.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=homologene&amp;id=20659</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='journals' status='D' name='esummary.journals' dtd='eSummary_journals.dtd'>
+    <sample title='journals' status='✓' name='esummary.journals' dtd='eSummary_journals.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=journals&amp;id=35478</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='medgen' status='D' name='esummary.medgen' dtd='eSummary_medgen.dtd'>
+    <sample title='medgen' status='✓' name='esummary.medgen' dtd='eSummary_medgen.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=medgen&amp;id=122602</eutils-url>
       <notes>
         <note rid='②'>
@@ -278,49 +282,52 @@
         </note>
       </notes>
     </sample>
-    <sample title='mesh' status='D' name='esummary.mesh' dtd='eSummary_mesh.dtd'>
+    <sample title='mesh' status='✓' name='esummary.mesh' dtd='eSummary_mesh.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=mesh&amp;id=67414177</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='ncbisearch' status='D' name='esummary.ncbisearch'
+    <sample title='ncbisearch' status='✓' name='esummary.ncbisearch'
       dtd='eSummary_ncbisearch.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=ncbisearch&amp;id=1121</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='nlmcatalog' status='D' name='esummary.nlmcatalog'
+    <sample title='nlmcatalog' status='✓' name='esummary.nlmcatalog'
       dtd='eSummary_nlmcatalog.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nlmcatalog&amp;id=101573253</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='omia' status='D' name='esummary.omia' dtd='eSummary_omia.dtd'>
+    <sample title='omia' status='✓' name='esummary.omia' dtd='eSummary_omia.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omia&amp;id=2615</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='omim' status='D' name='esummary.omim' dtd='eSummary_omim.dtd'>
+    <sample title='omim' status='✓' name='esummary.omim' dtd='eSummary_omim.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omim&amp;id=609708</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='pmc' status='D' name='esummary.pmc' dtd='eSummary_pmc.dtd'>
+    <sample title='pmc' status='✓' name='esummary.pmc' dtd='eSummary_pmc.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,14900</eutils-url>
       <notes>
       </notes>
     </sample>
 
-    <sample title='pmc with error' status='D' name='esummary.pmcerror' dtd='eSummary_pmc.dtd'>
+    <sample title='pmc with error' status='✓' name='esummary.pmcerror' dtd='eSummary_pmc.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,1,14900</eutils-url>
       <notes>
         <note rid='②'>
           The XML results here were not valid according to the DTD.
+          I added a declaration for the &lt;error> element into the DTD. 
+          I suspect that this is a problem for all the other esummary DTDs as 
+          well, but I didn't try them with erroneous IDs.
         </note>
       </notes>
     </sample>
     
-    <sample title='popset' status='D' name='esummary.popset' dtd='eSummary_popset.dtd'>
+    <sample title='popset' status='✓' name='esummary.popset' dtd='eSummary_popset.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=popset&amp;id=418209882</eutils-url>
       <notes>
         <note rid='②'>
@@ -328,35 +335,35 @@
         </note>
       </notes>
     </sample>
-    <sample title='probe' status='D' name='esummary.probe' dtd='eSummary_probe.dtd'>
+    <sample title='probe' status='✓' name='esummary.probe' dtd='eSummary_probe.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=probe&amp;id=156811</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='proteinclusters' status='D' name='esummary.proteinclusters'
+    <sample title='proteinclusters' status='✓' name='esummary.proteinclusters'
       dtd='eSummary_proteinclusters.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=proteinclusters&amp;id=2516486</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='pcassay' status='D' name='esummary.pcassay' dtd='eSummary_pcassay.dtd'>
+    <sample title='pcassay' status='✓' name='esummary.pcassay' dtd='eSummary_pcassay.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcassay&amp;id=493206</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='pccompound' status='D' name='esummary.pccompound'
+    <sample title='pccompound' status='✓' name='esummary.pccompound'
       dtd='eSummary_pccompound.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pccompound&amp;id=10322165</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='pcsubstance' status='D' name='esummary.pcsubstance'
+    <sample title='pcsubstance' status='✓' name='esummary.pcsubstance'
       dtd='eSummary_pcsubstance.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcsubstance&amp;id=127317050</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='pubmedhealth' status='D' name='esummary.pubmedhealth'
+    <sample title='pubmedhealth' status='✓' name='esummary.pubmedhealth'
       dtd='eSummary_pubmedhealth.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625</eutils-url>
       <notes>
@@ -366,7 +373,7 @@
         </note>
       </notes>
     </sample>
-    <sample title='seqannot' status='D' name='esummary.seqannot' dtd='eSummary_seqannot.dtd'>
+    <sample title='seqannot' status='✓' name='esummary.seqannot' dtd='eSummary_seqannot.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=seqannot&amp;id=7232</eutils-url>
       <notes>
         <note rid='⑤'>
@@ -379,12 +386,12 @@
         </note>
       </notes>
     </sample>
-    <sample title='snp' status='D' name='esummary.snp' dtd='eSummary_snp.dtd'>
+    <sample title='snp' status='✓' name='esummary.snp' dtd='eSummary_snp.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=snp&amp;id=206676795</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='sra' status='D' name='esummary.sra' dtd='eSummary_sra.dtd'>
+    <sample title='sra' status='✓' name='esummary.sra' dtd='eSummary_sra.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=sra&amp;id=30750</eutils-url>
       <notes>
         <note rid='⑤'>
@@ -394,7 +401,7 @@
         </note>
       </notes>
     </sample>
-    <sample title='taxonomy' status='D' name='esummary.taxonomy' dtd='eSummary_taxonomy.dtd'>
+    <sample title='taxonomy' status='✓' name='esummary.taxonomy' dtd='eSummary_taxonomy.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=taxonomy&amp;id=9685</eutils-url>
       <notes>
         <note rid='②'>
@@ -403,7 +410,7 @@
         </note>
       </notes>
     </sample>
-    <sample title='toolkit' status='D' name='esummary.toolkit' dtd='eSummary_toolkit.dtd'>
+    <sample title='toolkit' status='✓' name='esummary.toolkit' dtd='eSummary_toolkit.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=toolkit&amp;id=149440</eutils-url>
       <notes>
         <note rid='⑤'>
@@ -413,12 +420,12 @@
         </note>
       </notes>
     </sample>
-    <sample title='unigene' status='D' name='esummary.unigene' dtd='eSummary_unigene.dtd'>
+    <sample title='unigene' status='✓' name='esummary.unigene' dtd='eSummary_unigene.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unigene&amp;id=1190943</eutils-url>
       <notes>
       </notes>
     </sample>
-    <sample title='unists' status='D' name='esummary.unists' dtd='eSummary_unists.dtd'>
+    <sample title='unists' status='✓' name='esummary.unists' dtd='eSummary_unists.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unists&amp;id=254085,254086</eutils-url>
       <notes>
         <note rid='③'>
@@ -426,7 +433,7 @@
         </note>
       </notes>
     </sample>
-    <sample title='error' status='D' name='esummary.error' dtd='eSummary_041029.dtd'>
+    <sample title='error' status='✓' name='esummary.error' dtd='eSummary_041029.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=error&amp;id=254088</eutils-url>
       <notes>
       </notes>
@@ -434,7 +441,7 @@
   </samplegroup>
 
   <samplegroup header='EFetch PubMed'>
-    <sample title='PubMed' status='D' name='efetch.pubmed' dtd='pubmed_120101.dtd'>
+    <sample title='PubMed' status='✓' name='efetch.pubmed' dtd='pubmed_120101.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml</eutils-url>
       <notes>
         <note>
@@ -444,13 +451,13 @@
         </note>
       </notes>
     </sample>
-    <sample title='Pubmed Book' status='D' name='efetch.pubmedbook' dtd='pubmed_120101.dtd'>
+    <sample title='Pubmed Book' status='✓' name='efetch.pubmedbook' dtd='pubmed_120101.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml</eutils-url>
       <notes>
       </notes>
     </sample>
 
-    <sample title='PubMed Example' status='D' name='efetch.pubmedexample' dtd='pubmed_120101.dtd'>
+    <sample title='PubMed Example' status='✓' name='efetch.pubmedexample' dtd='pubmed_120101.dtd'>
       <notes>
         <desc>
           A contrived sample for testing.
