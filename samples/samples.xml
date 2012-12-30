@@ -547,11 +547,7 @@
     <sample title='PubMed' status='✓' name='efetch.pubmed' dtd='pubmed_120101.dtd'>
       <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml</eutils-url>
       <notes>
-        <note>
-          This is the only one that uses an imported stylesheet, efetch.pubmed.xsl,
-          because there were some
-          things that the DTD annotation feature could not handle.
-        </note>
+        <desc>This DTD is considerably more complicated than any of the ESummary DTDs.</desc>
       </notes>
     </sample>
     <sample title='Pubmed Book' status='✓' name='efetch.pubmedbook' dtd='pubmed_120101.dtd'>

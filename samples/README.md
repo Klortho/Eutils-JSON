@@ -482,11 +482,7 @@ There's a note in the tables below for each DTD where we found this problem.
   </table>
   <h2>EFetch PubMed</h2>
   <table><tr><th/><th>✓</th><th>Description / Notes</th><th>Links</th></tr>
-    <tr><th>PubMed</th><td>✓</td><td>⇒ 
-          This is the only one that uses an imported stylesheet, efetch.pubmed.xsl,
-          because there were some
-          things that the DTD annotation feature could not handle.
-        </td><td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>, <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/efetch.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml">eutils;</a><br/><a href="../../blob/master/samples/efetch.pubmed.json">JSON</a></td></tr>
+    <tr><th>PubMed</th><td>✓</td><td><em>This DTD is considerably more complicated than any of the ESummary DTDs.</em></td><td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>, <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/efetch.pubmed.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml">eutils;</a><br/><a href="../../blob/master/samples/efetch.pubmed.json">JSON</a></td></tr>
     <tr><th>Pubmed Book</th><td>✓</td><td/><td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>, <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/efetch.pubmedbook.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml">eutils;</a><br/><a href="../../blob/master/samples/efetch.pubmedbook.json">JSON</a></td></tr>
 
     <tr><th>PubMed Example</th><td>✓</td><td><em>
