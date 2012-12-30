@@ -84,15 +84,14 @@
 <!ELEMENT ObjectList (Object)+>
 
 <!--~~ <Object>
-~~json
-  <array>
-    <object select='@*'/>
-    <members select='*'/>
-  </array>
+~~json <object/>
 ~~-->
 <!ELEMENT Object (Param)*>
 <!ATTLIST Object Type CDATA #REQUIRED>
 
+<!--~~ <Param>
+~~json <string name='@Name'/>
+~~-->
 <!ELEMENT Param (#PCDATA)>
 <!ATTLIST Param Name CDATA #REQUIRED>
 <!ELEMENT Hour (#PCDATA)>

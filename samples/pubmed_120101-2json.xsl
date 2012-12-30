@@ -1,639 +1,394 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<x:stylesheet xmlns:np="http://ncbi.gov/portal/XSLT/namespace"
-              xmlns:x="http://www.w3.org/1999/XSL/Transform"
-              xmlns:xs="http://www.w3.org/2001/XMLSchema"
-              version="1.0">
-   <x:import href="xml2json.xsl"/>
-   <x:import href="efetch.pubmed.xsl"/>
-   <x:output method="text"
-             version="1.0"
-             encoding="UTF-8"
-             indent="yes"
-             omit-xml-declaration="yes"/>
-   <x:param name="pretty" select="true()"/>
-   <x:param name="lcnames" select="true()"/>
-   <x:param name="dtd-annotation">
+<xsl:stylesheet xmlns:np="http://ncbi.gov/portal/XSLT/namespace"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                version="1.0"
+                exclude-result-prefixes="np xs">
+   <xsl:import href="xml2json.xsl"/>
+   <xsl:import href="efetch.pubmed.xsl"/>
+   <xsl:output method="text" encoding="UTF-8"/>
+   <xsl:param name="pretty" select="true()"/>
+   <xsl:param name="lcnames" select="true()"/>
+   <xsl:param name="dtd-annotation">
       <json type="efetch.pubmed" version="0.3">
          <config lcnames="true" import="efetch.pubmed.xsl"/>
       </json>
-   </x:param>
-   <x:template match="PubMedPubDate | Chemical | DataBank | PersonalNameSubject | ContributionDate | DateRevised | Publisher | CommentsCorrections | PubmedArticle | BeginningDate | Grant | PubmedData | EndingDate | PubmedBookData | Journal | MedlineJournalInfo | DateCreated | ArticleDate | JournalIssue | DateCompleted | PubmedBookArticle">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:param name="trailing-comma" select="position() != last()"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="trailing-comma" select="$trailing-comma"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="LastName | Issue | CopyrightInformation | Country | MedlineTA | Second | EndPage | ForeName | ISSNLinking | ISOAbbreviation | CitationSubset | Volume | Note | Title | RegistryNumber | RefSource | Hour | Edition | Minute | DataBankName | MedlinePgn | MedlineDate | Language | Isbn | NlmUniqueID | Month | ReportNumber | NumberOfReferences | Season | GrantID | Acronym | PublisherLocation | StartPage | AccessionNumber | Agency | SpaceFlightMission | Day | Year | NameOfSubstance | PublicationType | Medium | PublicationStatus | GeneSymbol | Initials | @IssnType | @VersionID | @RefType | @DateType | @VersionDate | @NlmCategory | @PubModel | @CitedMedium | @EIdType | @Label | @part | @PubStatus | @Version | @Source | @Type | @lang | @Owner | @IdType | @Name | @Status | @sec | @book">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:param name="trailing-comma" select="position() != last()"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="trailing-comma" select="$trailing-comma"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="BookDocument">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-
-      <!--json annotation for content model: object-->
-      <x:choose>
-         <x:when test="$context = &#34;array&#34;">
-            <x:value-of select="np:start-object(concat($indent, $iu0))"/>
-         </x:when>
-         <x:otherwise>
-            <x:variable name="key" select="np:to-lower(name(.))"/>
-            <x:value-of select="np:key-start-object(concat($indent, $iu0), $key)"/>
-         </x:otherwise>
-      </x:choose>
-
-      <!--json annotation for content model: 'members'-->
-      <x:apply-templates select="PMID | ArticleIdList | Book | ArticleTitle | VernacularTitle |                      Pagination | GroupList | Abstract | Sections |                       ContributionDate | DateRevised | CitationString | GrantList">
-         <x:with-param name="indent" select="concat($indent, $iu1)"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-         <x:with-param name="trailing-comma" select="true()"/>
-      </x:apply-templates>
-
-      <!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;locationlabels&#34;)"/>
-      <x:apply-templates select="LocationLabel">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), true())"/>
-      <!-- done: 'array' -->
-
-<!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;languages&#34;)"/>
-      <x:apply-templates select="Language">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), true())"/>
-      <!-- done: 'array' -->
-
-<!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;authorlists&#34;)"/>
-      <x:apply-templates select="AuthorList">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), true())"/>
-      <!-- done: 'array' -->
-
-<!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;publicationtypes&#34;)"/>
-      <x:apply-templates select="PublicationType">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), true())"/>
-      <!-- done: 'array' -->
-
-<!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;keywordlists&#34;)"/>
-      <x:apply-templates select="KeywordList">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), false())"/>
-      <!-- done: 'array' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
-      <!-- done: 'object' --></x:template>
-   <x:template match="PersonalNameSubjectList | InvestigatorList | PubDate | ChemicalList | Pagination | ArticleIdList | AccessionNumberList | Sections | ObjectList | CommentsCorrectionsList | GeneSymbolList | History | SupplMeshList | PublicationTypeList | MeshHeadingList">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:param name="trailing-comma" select="position() != last()"/>
-      <x:call-template name="array">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="trailing-comma" select="$trailing-comma"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="MedlineCitation">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-
-      <!--json annotation for content model: object-->
-      <x:choose>
-         <x:when test="$context = &#34;array&#34;">
-            <x:value-of select="np:start-object(concat($indent, $iu0))"/>
-         </x:when>
-         <x:otherwise>
-            <x:variable name="key" select="np:to-lower(name(.))"/>
-            <x:value-of select="np:key-start-object(concat($indent, $iu0), $key)"/>
-         </x:otherwise>
-      </x:choose>
-
-      <!--json annotation for content model: 'members'-->
-      <x:apply-templates select="PMID | DateCreated | DateCompleted | DateRevised |                      Article | MedlineJournalInfo | ChemicalList |                       SupplMeshList | CommentsCorrectionsList | GeneSymbolList |                      MeshHeadingList | NumberOfReferences |                      PersonalNameSubjectList | InvestigatorList">
-         <x:with-param name="indent" select="concat($indent, $iu1)"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-         <x:with-param name="trailing-comma" select="true()"/>
-      </x:apply-templates>
-
-      <!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;citationsubsets&#34;)"/>
-      <x:apply-templates select="CitationSubset">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), true())"/>
-      <!-- done: 'array' -->
-
-<!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;otherids&#34;)"/>
-      <x:apply-templates select="OtherID">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), true())"/>
-      <!-- done: 'array' -->
-
-<!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;otherabstracts&#34;)"/>
-      <x:apply-templates select="OtherAbstract">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), true())"/>
-      <!-- done: 'array' -->
-
-<!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;keywordlists&#34;)"/>
-      <x:apply-templates select="KeywordList">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), true())"/>
-      <!-- done: 'array' -->
-
-<!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;spaceflightmissions&#34;)"/>
-      <x:apply-templates select="SpaceFlightMission">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), true())"/>
-      <!-- done: 'array' -->
-
-<!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;generalnotes&#34;)"/>
-      <x:apply-templates select="GeneralNote">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), false())"/>
-      <!-- done: 'array' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
-      <!-- done: 'object' --></x:template>
-   <x:template match="DataBankList | AuthorList | Object | GrantList">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-
-      <!--json annotation for content model: 'array'-->
-      <x:choose>
-         <x:when test="$context = &#34;array&#34;">
-            <x:value-of select="np:start-array(concat($indent, $iu0))"/>
-         </x:when>
-         <x:otherwise>
-            <x:variable name="key" select="np:to-lower(name(.))"/>
-            <x:value-of select="np:key-start-array(concat($indent, $iu0), $key)"/>
-         </x:otherwise>
-      </x:choose>
-
-      <!--json annotation for content model: object-->
-      <x:value-of select="np:start-object(concat($indent, $iu1))"/>
-      <x:apply-templates select="@*">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-object(concat($indent, $iu1),  true())"/>
-      <!-- done: 'object' -->
-
-<!--json annotation for content model: 'members'-->
-      <x:apply-templates select="*">
-         <x:with-param name="indent" select="concat($indent, $iu1)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu0), position() != last())"/>
-      <!-- done: 'array' --></x:template>
-   <x:template match="Book">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-
-      <!--json annotation for content model: object-->
-      <x:choose>
-         <x:when test="$context = &#34;array&#34;">
-            <x:value-of select="np:start-object(concat($indent, $iu0))"/>
-         </x:when>
-         <x:otherwise>
-            <x:variable name="key" select="np:to-lower(name(.))"/>
-            <x:value-of select="np:key-start-object(concat($indent, $iu0), $key)"/>
-         </x:otherwise>
-      </x:choose>
-
-      <!--json annotation for content model: 'members'-->
-      <x:apply-templates select="Publisher | BookTitle | PubDate | BeginningDate | EndingDate | Volume |                      VolumeTitle | Edition | CollectionTitle | Medium | ReportNumber">
-         <x:with-param name="indent" select="concat($indent, $iu1)"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-         <x:with-param name="trailing-comma" select="true()"/>
-      </x:apply-templates>
-
-      <!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;authorlists&#34;)"/>
-      <x:apply-templates select="AuthorList">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), true())"/>
-      <!-- done: 'array' -->
-
-<!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;isbn&#34;)"/>
-      <x:apply-templates select="Isbn">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), true())"/>
-      <!-- done: 'array' -->
-
-<!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;elocationid&#34;)"/>
-      <x:apply-templates select="ELocationID">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), false())"/>
-      <!-- done: 'array' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
-      <!-- done: 'object' --></x:template>
-   <x:template match="OtherID | LocationLabel | SupplMeshName | NameID | DescriptorName | Param | ELocationID | GeneralNote | PMID | ArticleId | ISSN | QualifierName">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:param name="trailing-comma" select="position() != last()"/>
-      <x:call-template name="object">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="kids" select="@*|node()"/>
-         <x:with-param name="trailing-comma" select="$trailing-comma"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="OtherID/text()">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="LocationLabel/text()">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="SupplMeshName/text()">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="NameID/text()">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="DescriptorName/text()">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="Param/text()">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="ELocationID/text()">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="GeneralNote/text()">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="PMID/text()">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="ArticleId/text()">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="ISSN/text()">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="QualifierName/text()">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:call-template name="string">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="Author | Investigator">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-
-      <!--json annotation for content model: object-->
-      <x:choose>
-         <x:when test="$context = &#34;array&#34;">
-            <x:value-of select="np:start-object(concat($indent, $iu0))"/>
-         </x:when>
-         <x:otherwise>
-            <x:variable name="key" select="np:to-lower(name(.))"/>
-            <x:value-of select="np:key-start-object(concat($indent, $iu0), $key)"/>
-         </x:otherwise>
-      </x:choose>
-
-      <!--json annotation for content model: 'members'-->
-      <x:apply-templates select="@*|*[not(self::NameID)]">
-         <x:with-param name="indent" select="concat($indent, $iu1)"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-         <x:with-param name="trailing-comma" select="true()"/>
-      </x:apply-templates>
-
-      <!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;nameids&#34;)"/>
-      <x:apply-templates select="NameID">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), false())"/>
-      <!-- done: 'array' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
-      <!-- done: 'object' --></x:template>
-   <x:template match="MeshHeading">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-
-      <!--json annotation for content model: object-->
-      <x:choose>
-         <x:when test="$context = &#34;array&#34;">
-            <x:value-of select="np:start-object(concat($indent, $iu0))"/>
-         </x:when>
-         <x:otherwise>
-            <x:variable name="key" select="np:to-lower(name(.))"/>
-            <x:value-of select="np:key-start-object(concat($indent, $iu0), $key)"/>
-         </x:otherwise>
-      </x:choose>
-
-      <!--json annotation for content model: 'members'-->
-      <x:apply-templates select="DescriptorName">
-         <x:with-param name="indent" select="concat($indent, $iu1)"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-         <x:with-param name="trailing-comma" select="true()"/>
-      </x:apply-templates>
-
-      <!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;qualifiernames&#34;)"/>
-      <x:apply-templates select="QualifierName">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), false())"/>
-      <!-- done: 'array' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
-      <!-- done: 'object' --></x:template>
-   <x:template match="Article">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-
-      <!--json annotation for content model: object-->
-      <x:choose>
-         <x:when test="$context = &#34;array&#34;">
-            <x:value-of select="np:start-object(concat($indent, $iu0))"/>
-         </x:when>
-         <x:otherwise>
-            <x:variable name="key" select="np:to-lower(name(.))"/>
-            <x:value-of select="np:key-start-object(concat($indent, $iu0), $key)"/>
-         </x:otherwise>
-      </x:choose>
-
-      <!--json annotation for content model: 'members'-->
-      <x:apply-templates select="Journal | ArticleTitle | Pagination | Abstract | Affiliation |                      AuthorList | DataBankList | GrantList |                      PublicationTypeList | VernacularTitle">
-         <x:with-param name="indent" select="concat($indent, $iu1)"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-         <x:with-param name="trailing-comma" select="true()"/>
-      </x:apply-templates>
-
-      <!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;elocationids&#34;)"/>
-      <x:apply-templates select="ELocationID">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), true())"/>
-      <!-- done: 'array' -->
-
-<!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;languages&#34;)"/>
-      <x:apply-templates select="Language">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), true())"/>
-      <!-- done: 'array' -->
-
-<!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;articledates&#34;)"/>
-      <x:apply-templates select="ArticleDate">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), false())"/>
-      <!-- done: 'array' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
-      <!-- done: 'object' --></x:template>
-   <x:template match="Abstract">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-
-      <!--json annotation for content model: object-->
-      <x:choose>
-         <x:when test="$context = &#34;array&#34;">
-            <x:value-of select="np:start-object(concat($indent, $iu0))"/>
-         </x:when>
-         <x:otherwise>
-            <x:variable name="key" select="np:to-lower(name(.))"/>
-            <x:value-of select="np:key-start-object(concat($indent, $iu0), $key)"/>
-         </x:otherwise>
-      </x:choose>
-
-      <!--json annotation for content model: 'members'-->
-      <x:apply-templates select="CopyrightInformation">
-         <x:with-param name="indent" select="concat($indent, $iu1)"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-         <x:with-param name="trailing-comma" select="true()"/>
-      </x:apply-templates>
-
-      <!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;abstracttexts&#34;)"/>
-      <x:apply-templates select="AbstractText">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), false())"/>
-      <!-- done: 'array' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
-      <!-- done: 'object' --></x:template>
-   <x:template match="KeywordList">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-
-      <!--json annotation for content model: object-->
-      <x:choose>
-         <x:when test="$context = &#34;array&#34;">
-            <x:value-of select="np:start-object(concat($indent, $iu0))"/>
-         </x:when>
-         <x:otherwise>
-            <x:variable name="key" select="np:to-lower(name(.))"/>
-            <x:value-of select="np:key-start-object(concat($indent, $iu0), $key)"/>
-         </x:otherwise>
-      </x:choose>
-
-      <!--json annotation for content model: object-->
-      <x:value-of select="np:key-start-object(concat($indent, $iu1), &#34;attrs&#34;)"/>
-      <x:apply-templates select="@*">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-object(concat($indent, $iu1),  true())"/>
-      <!-- done: 'object' -->
-
-<!--json annotation for content model: object-->
-      <x:value-of select="np:key-start-object(concat($indent, $iu1), &#34;keywords&#34;)"/>
-      <x:apply-templates select="Keyword">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-object(concat($indent, $iu1),  false())"/>
-      <!-- done: 'object' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
-      <!-- done: 'object' --></x:template>
-   <x:template match="OtherAbstract">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-
-      <!--json annotation for content model: object-->
-      <x:choose>
-         <x:when test="$context = &#34;array&#34;">
-            <x:value-of select="np:start-object(concat($indent, $iu0))"/>
-         </x:when>
-         <x:otherwise>
-            <x:variable name="key" select="np:to-lower(name(.))"/>
-            <x:value-of select="np:key-start-object(concat($indent, $iu0), $key)"/>
-         </x:otherwise>
-      </x:choose>
-
-      <!--json annotation for content model: 'members'-->
-      <x:apply-templates select="@*|CopyrightInformation">
-         <x:with-param name="indent" select="concat($indent, $iu1)"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-         <x:with-param name="trailing-comma" select="true()"/>
-      </x:apply-templates>
-
-      <!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;abstracttexts&#34;)"/>
-      <x:apply-templates select="AbstractText">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), false())"/>
-      <!-- done: 'array' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
-      <!-- done: 'object' --></x:template>
-   <x:template match="PubmedArticleSet">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:param name="trailing-comma" select="position() != last()"/>
-      <x:call-template name="array">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="key" select="&#34;result&#34;"/>
-         <x:with-param name="kids" select="PubmedArticle | PubmedBookArticle"/>
-         <x:with-param name="trailing-comma" select="$trailing-comma"/>
-      </x:call-template>
-   </x:template>
-   <x:template match="Section">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-
-      <!--json annotation for content model: object-->
-      <x:choose>
-         <x:when test="$context = &#34;array&#34;">
-            <x:value-of select="np:start-object(concat($indent, $iu0))"/>
-         </x:when>
-         <x:otherwise>
-            <x:variable name="key" select="np:to-lower(name(.))"/>
-            <x:value-of select="np:key-start-object(concat($indent, $iu0), $key)"/>
-         </x:otherwise>
-      </x:choose>
-
-      <!--json annotation for content model: 'members'-->
-      <x:apply-templates select="LocationLabel | SectionTitle">
-         <x:with-param name="indent" select="concat($indent, $iu1)"/>
-         <x:with-param name="context" select="&#34;object&#34;"/>
-         <x:with-param name="trailing-comma" select="true()"/>
-      </x:apply-templates>
-
-      <!--json annotation for content model: 'array'-->
-      <x:value-of select="np:key-start-array(concat($indent, $iu1), &#34;sections&#34;)"/>
-      <x:apply-templates select="Section">
-         <x:with-param name="indent" select="concat($indent, $iu1, $iu)"/>
-         <x:with-param name="context" select="&#34;array&#34;"/>
-      </x:apply-templates>
-      <x:value-of select="np:end-array(concat($indent, $iu1), false())"/>
-      <!-- done: 'array' --><x:value-of select="np:end-object(concat($indent, $iu0),  position() != last())"/>
-      <!-- done: 'object' --></x:template>
-   <x:template match="@CompleteYN | @ValidYN | @MajorTopicYN">
-      <x:param name="indent" select="&#34;&#34;"/>
-      <x:param name="context" select="&#34;unknown&#34;"/>
-      <x:param name="trailing-comma" select="position() != last()"/>
-      <x:call-template name="boolean">
-         <x:with-param name="indent" select="$indent"/>
-         <x:with-param name="context" select="$context"/>
-         <x:with-param name="trailing-comma" select="$trailing-comma"/>
-      </x:call-template>
-   </x:template>
-</x:stylesheet>
+   </xsl:param>
+   <xsl:template match="PubMedPubDate | Chemical | DataBank | PersonalNameSubject | ContributionDate | DateRevised | Publisher | CommentsCorrections | PubmedArticle | BeginningDate | Grant | PubmedData | Object | EndingDate | PubmedBookData | Journal | MedlineJournalInfo | DateCreated | ArticleDate | JournalIssue | DateCompleted | PubmedBookArticle">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="object">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="LastName | Issue | CopyrightInformation | Country | MedlineTA | Second | EndPage | ForeName | ISSNLinking | ISOAbbreviation | CitationSubset | Volume | Note | Title | RegistryNumber | RefSource | Hour | Edition | Minute | DataBankName | MedlinePgn | MedlineDate | Language | Isbn | NlmUniqueID | Month | ReportNumber | NumberOfReferences | Season | GrantID | Acronym | PublisherLocation | StartPage | AccessionNumber | Agency | SpaceFlightMission | Day | Year | NameOfSubstance | PublicationType | Medium | PublicationStatus | GeneSymbol | Initials | @IssnType | @VersionID | @RefType | @DateType | @VersionDate | @NlmCategory | @PubModel | @CitedMedium | @EIdType | @Label | @part | @PubStatus | @Version | @Source | @Type | @lang | @Owner | @IdType | @Name | @Status | @sec | @book">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="string">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="BookDocument">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <!--Handling itemspec <object>--><o>
+         <xsl:if test="$context = &#34;object&#34;">
+            <xsl:attribute name="name">
+               <xsl:value-of select="np:translate-name()"/>
+            </xsl:attribute>
+         </xsl:if>
+         <!--Handling itemspec <member> or <members>--><xsl:apply-templates select="PMID | ArticleIdList | Book | ArticleTitle | VernacularTitle |                      Pagination | GroupList | Abstract | Sections |                       ContributionDate | DateRevised | CitationString | GrantList">
+            <xsl:with-param name="context" select="'object'"/>
+         </xsl:apply-templates>
+         <!--Handling itemspec <array>--><a name="{&#34;locationlabels&#34;}">
+            <xsl:apply-templates select="LocationLabel">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+         <!--Handling itemspec <array>--><a name="{&#34;languages&#34;}">
+            <xsl:apply-templates select="Language">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+         <!--Handling itemspec <array>--><a name="{&#34;authorlists&#34;}">
+            <xsl:apply-templates select="AuthorList">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+         <!--Handling itemspec <array>--><a name="{&#34;publicationtypes&#34;}">
+            <xsl:apply-templates select="PublicationType">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+         <!--Handling itemspec <array>--><a name="{&#34;keywordlists&#34;}">
+            <xsl:apply-templates select="KeywordList">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+      </o>
+   </xsl:template>
+   <xsl:template match="PersonalNameSubjectList | InvestigatorList | PubDate | ChemicalList | Pagination | ArticleIdList | AccessionNumberList | Sections | ObjectList | CommentsCorrectionsList | GeneSymbolList | History | SupplMeshList | PublicationTypeList | MeshHeadingList">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="array">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="MedlineCitation">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <!--Handling itemspec <object>--><o>
+         <xsl:if test="$context = &#34;object&#34;">
+            <xsl:attribute name="name">
+               <xsl:value-of select="np:translate-name()"/>
+            </xsl:attribute>
+         </xsl:if>
+         <!--Handling itemspec <member> or <members>--><xsl:apply-templates select="PMID | DateCreated | DateCompleted | DateRevised |                      Article | MedlineJournalInfo | ChemicalList |                       SupplMeshList | CommentsCorrectionsList | GeneSymbolList |                      MeshHeadingList | NumberOfReferences |                      PersonalNameSubjectList | InvestigatorList">
+            <xsl:with-param name="context" select="'object'"/>
+         </xsl:apply-templates>
+         <!--Handling itemspec <array>--><a name="{&#34;citationsubsets&#34;}">
+            <xsl:apply-templates select="CitationSubset">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+         <!--Handling itemspec <array>--><a name="{&#34;otherids&#34;}">
+            <xsl:apply-templates select="OtherID">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+         <!--Handling itemspec <array>--><a name="{&#34;otherabstracts&#34;}">
+            <xsl:apply-templates select="OtherAbstract">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+         <!--Handling itemspec <array>--><a name="{&#34;keywordlists&#34;}">
+            <xsl:apply-templates select="KeywordList">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+         <!--Handling itemspec <array>--><a name="{&#34;spaceflightmissions&#34;}">
+            <xsl:apply-templates select="SpaceFlightMission">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+         <!--Handling itemspec <array>--><a name="{&#34;generalnotes&#34;}">
+            <xsl:apply-templates select="GeneralNote">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+      </o>
+   </xsl:template>
+   <xsl:template match="DataBankList | AuthorList | GrantList">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <!--Handling itemspec <array>--><a>
+         <xsl:if test="$context = &#34;object&#34;">
+            <xsl:attribute name="name">
+               <xsl:value-of select="np:translate-name()"/>
+            </xsl:attribute>
+         </xsl:if>
+         <!--Handling itemspec <object>--><o>
+            <xsl:apply-templates select="@*">
+               <xsl:with-param name="context" select="&#34;object&#34;"/>
+            </xsl:apply-templates>
+         </o>
+         <!--Handling itemspec <member> or <members>--><xsl:apply-templates select="*">
+            <xsl:with-param name="context" select="'array'"/>
+         </xsl:apply-templates>
+      </a>
+   </xsl:template>
+   <xsl:template match="Book">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <!--Handling itemspec <object>--><o>
+         <xsl:if test="$context = &#34;object&#34;">
+            <xsl:attribute name="name">
+               <xsl:value-of select="np:translate-name()"/>
+            </xsl:attribute>
+         </xsl:if>
+         <!--Handling itemspec <member> or <members>--><xsl:apply-templates select="Publisher | BookTitle | PubDate | BeginningDate | EndingDate | Volume |                      VolumeTitle | Edition | CollectionTitle | Medium | ReportNumber">
+            <xsl:with-param name="context" select="'object'"/>
+         </xsl:apply-templates>
+         <!--Handling itemspec <array>--><a name="{&#34;authorlists&#34;}">
+            <xsl:apply-templates select="AuthorList">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+         <!--Handling itemspec <array>--><a name="{&#34;isbn&#34;}">
+            <xsl:apply-templates select="Isbn">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+         <!--Handling itemspec <array>--><a name="{&#34;elocationid&#34;}">
+            <xsl:apply-templates select="ELocationID">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+      </o>
+   </xsl:template>
+   <xsl:template match="OtherID | LocationLabel | SupplMeshName | NameID | DescriptorName | ELocationID | GeneralNote | PMID | ArticleId | ISSN | QualifierName">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="object">
+         <xsl:with-param name="context" select="$context"/>
+         <xsl:with-param name="kids" select="@*|node()"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="OtherID/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="string">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="LocationLabel/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="string">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="SupplMeshName/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="string">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="NameID/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="string">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="DescriptorName/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="string">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="ELocationID/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="string">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="GeneralNote/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="string">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="PMID/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="string">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="ArticleId/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="string">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="ISSN/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="string">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="QualifierName/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="string">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="Author | Investigator">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <!--Handling itemspec <object>--><o>
+         <xsl:if test="$context = &#34;object&#34;">
+            <xsl:attribute name="name">
+               <xsl:value-of select="np:translate-name()"/>
+            </xsl:attribute>
+         </xsl:if>
+         <!--Handling itemspec <member> or <members>--><xsl:apply-templates select="@*|*[not(self::NameID)]">
+            <xsl:with-param name="context" select="'object'"/>
+         </xsl:apply-templates>
+         <!--Handling itemspec <array>--><a name="{&#34;nameids&#34;}">
+            <xsl:apply-templates select="NameID">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+      </o>
+   </xsl:template>
+   <xsl:template match="MeshHeading">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <!--Handling itemspec <object>--><o>
+         <xsl:if test="$context = &#34;object&#34;">
+            <xsl:attribute name="name">
+               <xsl:value-of select="np:translate-name()"/>
+            </xsl:attribute>
+         </xsl:if>
+         <!--Handling itemspec <member> or <members>--><xsl:apply-templates select="DescriptorName">
+            <xsl:with-param name="context" select="'object'"/>
+         </xsl:apply-templates>
+         <!--Handling itemspec <array>--><a name="{&#34;qualifiernames&#34;}">
+            <xsl:apply-templates select="QualifierName">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+      </o>
+   </xsl:template>
+   <xsl:template match="Article">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <!--Handling itemspec <object>--><o>
+         <xsl:if test="$context = &#34;object&#34;">
+            <xsl:attribute name="name">
+               <xsl:value-of select="np:translate-name()"/>
+            </xsl:attribute>
+         </xsl:if>
+         <!--Handling itemspec <member> or <members>--><xsl:apply-templates select="Journal | ArticleTitle | Pagination | Abstract | Affiliation |                      AuthorList | DataBankList | GrantList |                      PublicationTypeList | VernacularTitle">
+            <xsl:with-param name="context" select="'object'"/>
+         </xsl:apply-templates>
+         <!--Handling itemspec <array>--><a name="{&#34;elocationids&#34;}">
+            <xsl:apply-templates select="ELocationID">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+         <!--Handling itemspec <array>--><a name="{&#34;languages&#34;}">
+            <xsl:apply-templates select="Language">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+         <!--Handling itemspec <array>--><a name="{&#34;articledates&#34;}">
+            <xsl:apply-templates select="ArticleDate">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+      </o>
+   </xsl:template>
+   <xsl:template match="Abstract">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <!--Handling itemspec <object>--><o>
+         <xsl:if test="$context = &#34;object&#34;">
+            <xsl:attribute name="name">
+               <xsl:value-of select="np:translate-name()"/>
+            </xsl:attribute>
+         </xsl:if>
+         <!--Handling itemspec <member> or <members>--><xsl:apply-templates select="CopyrightInformation">
+            <xsl:with-param name="context" select="'object'"/>
+         </xsl:apply-templates>
+         <!--Handling itemspec <array>--><a name="{&#34;abstracttexts&#34;}">
+            <xsl:apply-templates select="AbstractText">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+      </o>
+   </xsl:template>
+   <xsl:template match="KeywordList">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <!--Handling itemspec <object>--><o>
+         <xsl:if test="$context = &#34;object&#34;">
+            <xsl:attribute name="name">
+               <xsl:value-of select="np:translate-name()"/>
+            </xsl:attribute>
+         </xsl:if>
+         <!--Handling itemspec <object>--><o name="{&#34;attrs&#34;}">
+            <xsl:apply-templates select="@*">
+               <xsl:with-param name="context" select="&#34;object&#34;"/>
+            </xsl:apply-templates>
+         </o>
+         <!--Handling itemspec <object>--><o name="{&#34;keywords&#34;}">
+            <xsl:apply-templates select="Keyword">
+               <xsl:with-param name="context" select="&#34;object&#34;"/>
+            </xsl:apply-templates>
+         </o>
+      </o>
+   </xsl:template>
+   <xsl:template match="OtherAbstract">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <!--Handling itemspec <object>--><o>
+         <xsl:if test="$context = &#34;object&#34;">
+            <xsl:attribute name="name">
+               <xsl:value-of select="np:translate-name()"/>
+            </xsl:attribute>
+         </xsl:if>
+         <!--Handling itemspec <member> or <members>--><xsl:apply-templates select="@*|CopyrightInformation">
+            <xsl:with-param name="context" select="'object'"/>
+         </xsl:apply-templates>
+         <!--Handling itemspec <array>--><a name="{&#34;abstracttexts&#34;}">
+            <xsl:apply-templates select="AbstractText">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+      </o>
+   </xsl:template>
+   <xsl:template match="Param">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="string">
+         <xsl:with-param name="context" select="$context"/>
+         <xsl:with-param name="key" select="@Name"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="PubmedArticleSet">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="array">
+         <xsl:with-param name="context" select="$context"/>
+         <xsl:with-param name="key" select="&#34;result&#34;"/>
+         <xsl:with-param name="kids" select="PubmedArticle | PubmedBookArticle"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="Section">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <!--Handling itemspec <object>--><o>
+         <xsl:if test="$context = &#34;object&#34;">
+            <xsl:attribute name="name">
+               <xsl:value-of select="np:translate-name()"/>
+            </xsl:attribute>
+         </xsl:if>
+         <!--Handling itemspec <member> or <members>--><xsl:apply-templates select="LocationLabel | SectionTitle">
+            <xsl:with-param name="context" select="'object'"/>
+         </xsl:apply-templates>
+         <!--Handling itemspec <array>--><a name="{&#34;sections&#34;}">
+            <xsl:apply-templates select="Section">
+               <xsl:with-param name="context" select="&#34;array&#34;"/>
+            </xsl:apply-templates>
+         </a>
+      </o>
+   </xsl:template>
+   <xsl:template match="@CompleteYN | @ValidYN | @MajorTopicYN">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="boolean">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+</xsl:stylesheet>

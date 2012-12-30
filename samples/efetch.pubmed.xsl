@@ -16,37 +16,28 @@
                        CollectionTitle |
                        Keyword |
                        SectionTitle'>
-    <xsl:param name="indent" select="''"/>
     <xsl:param name="context" select="'unknown'"/>
-    <xsl:param name='trailing-comma' select='position() != last()'/>
 
-    <xsl:choose>
-      <xsl:when test='$context = "array"'>
-        <xsl:value-of select='np:start-object($indent)'/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:variable name="key" select="np:to-lower(name(.))"/>
-        <xsl:value-of select="np:key-start-object($indent, $key)"/>
-      </xsl:otherwise>
-    </xsl:choose>
+    <o>
+      <xsl:if test='$context = "object"'>
+        <xsl:attribute name='name'>
+          <xsl:value-of select='np:translate-name()'/>
+        </xsl:attribute>
+      </xsl:if>
+
+      <xsl:apply-templates select='@*'>
+        <xsl:with-param name="context" select="'object'"/>
+      </xsl:apply-templates>
+      
+      <xsl:variable name='value'>
+        <xsl:apply-templates select='node()' mode='markup-to-string'/>
+      </xsl:variable>
+      <xsl:call-template name='string-in-object'>
+        <xsl:with-param name='key' select='"value"'/>
+        <xsl:with-param name='value' select='$value'/>
+      </xsl:call-template>
     
-    <xsl:apply-templates select='@*'>
-      <xsl:with-param name="indent" select="concat($indent, $iu)"/>
-      <xsl:with-param name="context" select="'object'"/>
-      <xsl:with-param name='trailing-comma' select='true()'/>
-    </xsl:apply-templates>
-    
-    <xsl:variable name='value'>
-      <xsl:apply-templates select='node()' mode='markup-to-string'/>
-    </xsl:variable>
-    <xsl:call-template name='string-in-object'>
-      <xsl:with-param name="indent" select="concat($indent, $iu)"/>
-      <xsl:with-param name='key' select='"value"'/>
-      <xsl:with-param name='value' select='$value'/>
-      <xsl:with-param name='trailing-comma' select='false()'/>
-    </xsl:call-template>
-    
-    <xsl:value-of select='np:end-object($indent, $trailing-comma)'/>
+    </o>
   </xsl:template>
 
   <!-- 
@@ -62,14 +53,12 @@
                        Suffix | 
                        VernacularTitle |
                        VolumeTitle' >
-    <xsl:param name="indent" select="''"/>
     <xsl:param name="context" select="'unknown'"/>
 
     <xsl:variable name='value'>
       <xsl:apply-templates select='node()' mode='markup-to-string'/>
     </xsl:variable>
     <xsl:call-template name='string'>
-      <xsl:with-param name="indent" select="$indent"/>
       <xsl:with-param name="context" select="$context"/>
       <xsl:with-param name='value' select='$value'/>
     </xsl:call-template>

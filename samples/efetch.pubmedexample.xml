@@ -298,6 +298,16 @@
         <ArticleId IdType="pubmed">17284678</ArticleId>
         <ArticleId IdType="pmc">PMC1800922</ArticleId>
       </ArticleIdList>
+      <ObjectList>
+        <Object Type="big-object">
+          <Param Name="color">red</Param>
+          <Param Name="size">very big</Param>
+        </Object>
+        <Object Type="small-object">
+          <Param Name="color">mauve</Param>
+          <Param Name='size'>teeny-tiny</Param>
+        </Object>
+      </ObjectList>
     </PubmedData>
   </PubmedArticle>
 

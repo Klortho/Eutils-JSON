@@ -11,6 +11,11 @@ then
   exit
 fi
 xsltproc eInfo_020511-2json.xsl einfo.xml > einfo.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q einfo.json
 if [ $? -ne 0 ]
 then
@@ -27,6 +32,11 @@ then
   exit
 fi
 xsltproc eInfo_020511-2json.xsl einfo.pubmed.xml > einfo.pubmed.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q einfo.pubmed.json
 if [ $? -ne 0 ]
 then
@@ -43,6 +53,11 @@ then
   exit
 fi
 xsltproc eInfo_020511-2json.xsl einfo.error.xml > einfo.error.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q einfo.error.json
 if [ $? -ne 0 ]
 then
@@ -60,6 +75,11 @@ then
   exit
 fi
 xsltproc eSearch_020511-2json.xsl esearch.pubmed.xml > esearch.pubmed.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esearch.pubmed.json
 if [ $? -ne 0 ]
 then
@@ -76,6 +96,11 @@ then
   exit
 fi
 xsltproc eSearch_020511-2json.xsl esearch.error.xml > esearch.error.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esearch.error.json
 if [ $? -ne 0 ]
 then
@@ -92,6 +117,11 @@ then
   exit
 fi
 xsltproc eSearch_020511-2json.xsl esearch.baderror.xml > esearch.baderror.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esearch.baderror.json
 if [ $? -ne 0 ]
 then
@@ -109,6 +139,11 @@ then
   exit
 fi
 xsltproc eSummary_pubmed-2json.xsl esummary.pubmed.xml > esummary.pubmed.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.pubmed.json
 if [ $? -ne 0 ]
 then
@@ -126,6 +161,11 @@ then
   exit
 fi
 xsltproc eSummary_protein-2json.xsl esummary.protein.xml > esummary.protein.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.protein.json
 if [ $? -ne 0 ]
 then
@@ -143,6 +183,11 @@ then
   exit
 fi
 xsltproc eSummary_nuccore-2json.xsl esummary.nuccore.xml > esummary.nuccore.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.nuccore.json
 if [ $? -ne 0 ]
 then
@@ -160,6 +205,11 @@ then
   exit
 fi
 xsltproc eSummary_nucleotide-2json.xsl esummary.nucleotide.xml > esummary.nucleotide.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.nucleotide.json
 if [ $? -ne 0 ]
 then
@@ -177,6 +227,11 @@ then
   exit
 fi
 xsltproc eSummary_nucgss-2json.xsl esummary.nucgss.xml > esummary.nucgss.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.nucgss.json
 if [ $? -ne 0 ]
 then
@@ -194,6 +249,11 @@ then
   exit
 fi
 xsltproc eSummary_nucest-2json.xsl esummary.nucest.xml > esummary.nucest.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.nucest.json
 if [ $? -ne 0 ]
 then
@@ -211,6 +271,11 @@ then
   exit
 fi
 xsltproc eSummary_structure-2json.xsl esummary.structure.xml > esummary.structure.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.structure.json
 if [ $? -ne 0 ]
 then
@@ -228,6 +293,11 @@ then
   exit
 fi
 xsltproc eSummary_genome-2json.xsl esummary.genome.xml > esummary.genome.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.genome.json
 if [ $? -ne 0 ]
 then
@@ -245,6 +315,11 @@ then
   exit
 fi
 xsltproc eSummary_assembly-2json.xsl esummary.assembly.xml > esummary.assembly.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.assembly.json
 if [ $? -ne 0 ]
 then
@@ -262,6 +337,11 @@ then
   exit
 fi
 xsltproc eSummary_gcassembly-2json.xsl esummary.gcassembly.xml > esummary.gcassembly.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.gcassembly.json
 if [ $? -ne 0 ]
 then
@@ -279,6 +359,11 @@ then
   exit
 fi
 xsltproc eSummary_genomeprj-2json.xsl esummary.genomeprj.xml > esummary.genomeprj.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.genomeprj.json
 if [ $? -ne 0 ]
 then
@@ -296,6 +381,11 @@ then
   exit
 fi
 xsltproc eSummary_bioproject-2json.xsl esummary.bioproject.xml > esummary.bioproject.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.bioproject.json
 if [ $? -ne 0 ]
 then
@@ -313,6 +403,11 @@ then
   exit
 fi
 xsltproc eSummary_biosample-2json.xsl esummary.biosample.xml > esummary.biosample.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.biosample.json
 if [ $? -ne 0 ]
 then
@@ -330,6 +425,11 @@ then
   exit
 fi
 xsltproc eSummary_biosystems-2json.xsl esummary.biosystems.xml > esummary.biosystems.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.biosystems.json
 if [ $? -ne 0 ]
 then
@@ -347,6 +447,11 @@ then
   exit
 fi
 xsltproc eSummary_blastdbinfo-2json.xsl esummary.blastdbinfo.xml > esummary.blastdbinfo.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.blastdbinfo.json
 if [ $? -ne 0 ]
 then
@@ -364,6 +469,11 @@ then
   exit
 fi
 xsltproc eSummary_books-2json.xsl esummary.books.xml > esummary.books.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.books.json
 if [ $? -ne 0 ]
 then
@@ -381,6 +491,11 @@ then
   exit
 fi
 xsltproc eSummary_cdd-2json.xsl esummary.cdd.xml > esummary.cdd.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.cdd.json
 if [ $? -ne 0 ]
 then
@@ -398,6 +513,11 @@ then
   exit
 fi
 xsltproc eSummary_clone-2json.xsl esummary.clone.xml > esummary.clone.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.clone.json
 if [ $? -ne 0 ]
 then
@@ -415,6 +535,11 @@ then
   exit
 fi
 xsltproc eSummary_gap-2json.xsl esummary.gap.xml > esummary.gap.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.gap.json
 if [ $? -ne 0 ]
 then
@@ -432,6 +557,11 @@ then
   exit
 fi
 xsltproc eSummary_gapplus-2json.xsl esummary.gapplus.xml > esummary.gapplus.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.gapplus.json
 if [ $? -ne 0 ]
 then
@@ -449,6 +579,11 @@ then
   exit
 fi
 xsltproc eSummary_dbvar-2json.xsl esummary.dbvar.xml > esummary.dbvar.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.dbvar.json
 if [ $? -ne 0 ]
 then
@@ -466,6 +601,11 @@ then
   exit
 fi
 xsltproc eSummary_epigenomics-2json.xsl esummary.epigenomics.xml > esummary.epigenomics.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.epigenomics.json
 if [ $? -ne 0 ]
 then
@@ -483,6 +623,11 @@ then
   exit
 fi
 xsltproc eSummary_gencoll-2json.xsl esummary.gencoll.xml > esummary.gencoll.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.gencoll.json
 if [ $? -ne 0 ]
 then
@@ -500,6 +645,11 @@ then
   exit
 fi
 xsltproc eSummary_gene-2json.xsl esummary.gene.xml > esummary.gene.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.gene.json
 if [ $? -ne 0 ]
 then
@@ -517,6 +667,11 @@ then
   exit
 fi
 xsltproc eSummary_gds-2json.xsl esummary.gds.xml > esummary.gds.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.gds.json
 if [ $? -ne 0 ]
 then
@@ -534,6 +689,11 @@ then
   exit
 fi
 xsltproc eSummary_geo-2json.xsl esummary.geo.xml > esummary.geo.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.geo.json
 if [ $? -ne 0 ]
 then
@@ -551,6 +711,11 @@ then
   exit
 fi
 xsltproc eSummary_geoprofiles-2json.xsl esummary.geoprofiles.xml > esummary.geoprofiles.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.geoprofiles.json
 if [ $? -ne 0 ]
 then
@@ -568,6 +733,11 @@ then
   exit
 fi
 xsltproc eSummary_homologene-2json.xsl esummary.homologene.xml > esummary.homologene.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.homologene.json
 if [ $? -ne 0 ]
 then
@@ -585,6 +755,11 @@ then
   exit
 fi
 xsltproc eSummary_journals-2json.xsl esummary.journals.xml > esummary.journals.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.journals.json
 if [ $? -ne 0 ]
 then
@@ -602,6 +777,11 @@ then
   exit
 fi
 xsltproc eSummary_medgen-2json.xsl esummary.medgen.xml > esummary.medgen.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.medgen.json
 if [ $? -ne 0 ]
 then
@@ -619,6 +799,11 @@ then
   exit
 fi
 xsltproc eSummary_mesh-2json.xsl esummary.mesh.xml > esummary.mesh.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.mesh.json
 if [ $? -ne 0 ]
 then
@@ -636,6 +821,11 @@ then
   exit
 fi
 xsltproc eSummary_ncbisearch-2json.xsl esummary.ncbisearch.xml > esummary.ncbisearch.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.ncbisearch.json
 if [ $? -ne 0 ]
 then
@@ -653,6 +843,11 @@ then
   exit
 fi
 xsltproc eSummary_nlmcatalog-2json.xsl esummary.nlmcatalog.xml > esummary.nlmcatalog.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.nlmcatalog.json
 if [ $? -ne 0 ]
 then
@@ -670,6 +865,11 @@ then
   exit
 fi
 xsltproc eSummary_omia-2json.xsl esummary.omia.xml > esummary.omia.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.omia.json
 if [ $? -ne 0 ]
 then
@@ -687,6 +887,11 @@ then
   exit
 fi
 xsltproc eSummary_omim-2json.xsl esummary.omim.xml > esummary.omim.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.omim.json
 if [ $? -ne 0 ]
 then
@@ -704,6 +909,11 @@ then
   exit
 fi
 xsltproc eSummary_pmc-2json.xsl esummary.pmc.xml > esummary.pmc.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.pmc.json
 if [ $? -ne 0 ]
 then
@@ -720,6 +930,11 @@ then
   exit
 fi
 xsltproc eSummary_pmc-2json.xsl esummary.pmcerror.xml > esummary.pmcerror.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.pmcerror.json
 if [ $? -ne 0 ]
 then
@@ -737,6 +952,11 @@ then
   exit
 fi
 xsltproc eSummary_popset-2json.xsl esummary.popset.xml > esummary.popset.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.popset.json
 if [ $? -ne 0 ]
 then
@@ -754,6 +974,11 @@ then
   exit
 fi
 xsltproc eSummary_probe-2json.xsl esummary.probe.xml > esummary.probe.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.probe.json
 if [ $? -ne 0 ]
 then
@@ -771,6 +996,11 @@ then
   exit
 fi
 xsltproc eSummary_proteinclusters-2json.xsl esummary.proteinclusters.xml > esummary.proteinclusters.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.proteinclusters.json
 if [ $? -ne 0 ]
 then
@@ -788,6 +1018,11 @@ then
   exit
 fi
 xsltproc eSummary_pcassay-2json.xsl esummary.pcassay.xml > esummary.pcassay.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.pcassay.json
 if [ $? -ne 0 ]
 then
@@ -805,6 +1040,11 @@ then
   exit
 fi
 xsltproc eSummary_pccompound-2json.xsl esummary.pccompound.xml > esummary.pccompound.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.pccompound.json
 if [ $? -ne 0 ]
 then
@@ -822,6 +1062,11 @@ then
   exit
 fi
 xsltproc eSummary_pcsubstance-2json.xsl esummary.pcsubstance.xml > esummary.pcsubstance.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.pcsubstance.json
 if [ $? -ne 0 ]
 then
@@ -839,6 +1084,11 @@ then
   exit
 fi
 xsltproc eSummary_pubmedhealth-2json.xsl esummary.pubmedhealth.xml > esummary.pubmedhealth.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.pubmedhealth.json
 if [ $? -ne 0 ]
 then
@@ -856,6 +1106,11 @@ then
   exit
 fi
 xsltproc eSummary_seqannot-2json.xsl esummary.seqannot.xml > esummary.seqannot.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.seqannot.json
 if [ $? -ne 0 ]
 then
@@ -873,6 +1128,11 @@ then
   exit
 fi
 xsltproc eSummary_snp-2json.xsl esummary.snp.xml > esummary.snp.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.snp.json
 if [ $? -ne 0 ]
 then
@@ -890,6 +1150,11 @@ then
   exit
 fi
 xsltproc eSummary_sra-2json.xsl esummary.sra.xml > esummary.sra.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.sra.json
 if [ $? -ne 0 ]
 then
@@ -907,6 +1172,11 @@ then
   exit
 fi
 xsltproc eSummary_taxonomy-2json.xsl esummary.taxonomy.xml > esummary.taxonomy.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.taxonomy.json
 if [ $? -ne 0 ]
 then
@@ -924,6 +1194,11 @@ then
   exit
 fi
 xsltproc eSummary_toolkit-2json.xsl esummary.toolkit.xml > esummary.toolkit.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.toolkit.json
 if [ $? -ne 0 ]
 then
@@ -941,6 +1216,11 @@ then
   exit
 fi
 xsltproc eSummary_unigene-2json.xsl esummary.unigene.xml > esummary.unigene.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.unigene.json
 if [ $? -ne 0 ]
 then
@@ -958,6 +1238,11 @@ then
   exit
 fi
 xsltproc eSummary_unists-2json.xsl esummary.unists.xml > esummary.unists.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.unists.json
 if [ $? -ne 0 ]
 then
@@ -975,6 +1260,11 @@ then
   exit
 fi
 xsltproc eSummary_041029-2json.xsl esummary.error.xml > esummary.error.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q esummary.error.json
 if [ $? -ne 0 ]
 then
@@ -992,6 +1282,11 @@ then
   exit
 fi
 xsltproc pubmed_120101-2json.xsl efetch.pubmed.xml > efetch.pubmed.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q efetch.pubmed.json
 if [ $? -ne 0 ]
 then
@@ -1008,6 +1303,11 @@ then
   exit
 fi
 xsltproc pubmed_120101-2json.xsl efetch.pubmedbook.xml > efetch.pubmedbook.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q efetch.pubmedbook.json
 if [ $? -ne 0 ]
 then
@@ -1024,6 +1324,11 @@ then
   exit
 fi
 xsltproc pubmed_120101-2json.xsl efetch.pubmedexample.xml > efetch.pubmedexample.json
+if [ $? -ne 0 ]
+then
+  echo xsltproc failed!
+  exit
+fi
 jsonlint -q efetch.pubmedexample.json
 if [ $? -ne 0 ]
 then

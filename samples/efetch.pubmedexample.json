@@ -578,6 +578,18 @@
                         "idtype": "pmc",
                         "value": "PMC1800922"
                     }
+                ],
+                "objectlist": [
+                    {
+                        "type": "big-object",
+                        "color": "red",
+                        "size": "very big"
+                    },
+                    {
+                        "type": "small-object",
+                        "color": "mauve",
+                        "size": "teeny-tiny"
+                    }
                 ]
             }
         },
