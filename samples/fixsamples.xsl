@@ -98,16 +98,24 @@
             </xsl:when>
           </xsl:choose>
         </xsl:variable>
-        <font size='5'>
-          <a href='{concat("#", $target)}'><xsl:value-of select='@rid'/></a>
-          <xsl:text> </xsl:text>
-        </font>
+        <a href='{concat("#", $target)}'><xsl:value-of select='@rid'/></a>
+        <xsl:text> </xsl:text>
       </xsl:when>
       <xsl:otherwise>
         <xsl:text>⇒ </xsl:text>
       </xsl:otherwise>
     </xsl:choose>
-    <xsl:apply-templates/>
+    <xsl:choose>
+      <xsl:when test='normalize-space(.) != ""'>
+        <xsl:apply-templates/>
+      </xsl:when>
+      <xsl:when test='@rid = "①"'>
+        <xsl:text>Each ESummary DTD should have a unique public identifier.</xsl:text>
+      </xsl:when>      
+      <xsl:when test='@rid = "③"'>
+        <xsl:text>All of the ESummary DTDs have elements that are underspecified.</xsl:text>
+      </xsl:when>
+    </xsl:choose>
     <xsl:if test='position() != last()'>
       <br/>
     </xsl:if>
