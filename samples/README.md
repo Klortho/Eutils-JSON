@@ -161,11 +161,13 @@ be the case that the original order of the docsums is important, and needs
 to be preserved.  JSON objects do not preserve the order of their members, so
 that's a problem.
 
-The following annotation instructs `dtd2xml2json` that the &lt;DocumentSummarySet>
+The following annotations instructs `dtd2xml2json` that the &lt;DocumentSummarySet>
 element should be converted into a JSON object that has members that come from
 the &lt;DocumentSummary>s.  It also causes the generation of one extra member of
-that object, which is an array of uids.  The array preserves the order, and the
-uids within the array can be used to retrieve the docsums.
+that object, which is an array of uids.  The array preserves the order of the
+docsums.  The second annotation, for the &lt;DocumentSummary> element, causes the
+"uid" attribute to be used for the member key within the wrapper JSON object.
+This allows the uids to be used directly to retrieve the docsums.
 
     <!--~~ <DocumentSummarySet>
     ~~json
@@ -173,6 +175,10 @@ uids within the array can be used to retrieve the docsums.
         <array name='"uids"' select='DocumentSummary/@uid'/>
         <members select='DocumentSummary'/>
       </object>
+    ~~-->
+
+    <!--~~ <DocumentSummary>
+    ~~json <object name='@uid'/>
     ~~-->
 
 This would result, for example, in JSON looking something like this:
@@ -349,12 +355,12 @@ There's a note in the tables below for each DTD where we found this problem.
           is not declared.  We fixed the DTD by adding it.
         </td><td><a href="../../blob/master/samples/eSummary_structure.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_structure-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.structure.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=structure&amp;id=52770">eutils;</a><br/><a href="../../blob/master/samples/esummary.structure.json">JSON</a></td></tr>
     <tr><th>genome</th><td>✓</td><td><font size="5"><a href="#%E2%91%A1-xml-results-that-fail-to-validate-bad-dtds">②</a> </font>
-          Instance document is not valid according to the DTD.  
+          Instance document is not valid according to the DTD.
           The elements Organism_Group and Organism_Subgroup were not declared, so
           we added them as strings.
         </td><td><a href="../../blob/master/samples/eSummary_genome.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_genome-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.genome.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genome&amp;id=2640">eutils;</a><br/><a href="../../blob/master/samples/esummary.genome.json">JSON</a></td></tr>
     <tr><th>assembly</th><td>✓</td><td><font size="5"><a href="#%E2%91%A4-escaped-markup">⑤</a> </font>
-          The element &lt;Meta&gt; contains some escaped markup, which makes it very hard to 
+          The element &lt;Meta&gt; contains some escaped markup, which makes it very hard to
           extract into JSON.
         </td><td><a href="../../blob/master/samples/eSummary_assembly.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_assembly-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.assembly.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=assembly&amp;id=440818">eutils;</a><br/><a href="../../blob/master/samples/esummary.assembly.json">JSON</a></td></tr>
     <tr><th>gcassembly</th><td>✓</td><td><font size="5"><a href="#%E2%91%A1-xml-results-that-fail-to-validate-bad-dtds">②</a> </font>
@@ -375,7 +381,7 @@ There's a note in the tables below for each DTD where we found this problem.
     <tr><th>clone</th><td>✓</td><td/><td><a href="../../blob/master/samples/eSummary_clone.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_clone-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.clone.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=clone&amp;id=29702171">eutils;</a><br/><a href="../../blob/master/samples/esummary.clone.json">JSON</a></td></tr>
     <tr><th>gap</th><td>✓</td><td/><td><a href="../../blob/master/samples/eSummary_gap.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_gap-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.gap.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gap&amp;id=195331">eutils;</a><br/><a href="../../blob/master/samples/esummary.gap.json">JSON</a></td></tr>
     <tr><th>gapplus</th><td>✓</td><td><font size="5"><a href="#%E2%91%A1-xml-results-that-fail-to-validate-bad-dtds">②</a> </font>
-          Instance document is not valid according to the DTD.  
+          Instance document is not valid according to the DTD.
           This DTD looks like it doesn't match the content very well.  I fixed it by adding
           elements until the instance document validated, but I don't have much confidence that
           the DTD I created is correct.
@@ -384,7 +390,7 @@ There's a note in the tables below for each DTD where we found this problem.
           in instance documents are not numbers, they are text strings.
         </td><td><a href="../../blob/master/samples/eSummary_gapplus.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_gapplus-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.gapplus.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996">eutils;</a><br/><a href="../../blob/master/samples/esummary.gapplus.json">JSON</a></td></tr>
     <tr><th>dbvar</th><td>✓</td><td><font size="5"><a href="#%E2%91%A1-xml-results-that-fail-to-validate-bad-dtds">②</a> </font>
-          Instance document is not valid according to the DTD.  
+          Instance document is not valid according to the DTD.
           Assembly_accession was not defined.
         </td><td><a href="../../blob/master/samples/eSummary_dbvar.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_dbvar-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.dbvar.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816">eutils;</a><br/><a href="../../blob/master/samples/esummary.dbvar.json">JSON</a></td></tr>
     <tr><th>epigenomics</th><td>✓</td><td/><td><a href="../../blob/master/samples/eSummary_epigenomics.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_epigenomics-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.epigenomics.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=epigenomics&amp;id=16796">eutils;</a><br/><a href="../../blob/master/samples/esummary.epigenomics.json">JSON</a></td></tr>
@@ -426,11 +432,11 @@ There's a note in the tables below for each DTD where we found this problem.
 
     <tr><th>pmc with error</th><td>✓</td><td><font size="5"><a href="#%E2%91%A1-xml-results-that-fail-to-validate-bad-dtds">②</a> </font>
           The XML results here were not valid according to the DTD.
-          I added a declaration for the &lt;error&gt; element into the DTD. 
-          I suspect that this is a problem for all the other esummary DTDs as 
+          I added a declaration for the &lt;error&gt; element into the DTD.
+          I suspect that this is a problem for all the other esummary DTDs as
           well, but I didn't try them with erroneous IDs.
         </td><td><a href="../../blob/master/samples/eSummary_pmc.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_pmc-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.pmcerror.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,1,14900">eutils;</a><br/><a href="../../blob/master/samples/esummary.pmcerror.json">JSON</a></td></tr>
-    
+
     <tr><th>popset</th><td>✓</td><td><font size="5"><a href="#%E2%91%A1-xml-results-that-fail-to-validate-bad-dtds">②</a> </font>
           The instance document is invalid according to the DTD.
         </td><td><a href="../../blob/master/samples/eSummary_popset.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_popset-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.popset.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=popset&amp;id=418209882">eutils;</a><br/><a href="../../blob/master/samples/esummary.popset.json">JSON</a></td></tr>
@@ -444,16 +450,16 @@ There's a note in the tables below for each DTD where we found this problem.
           might not be correct.
         </td><td><a href="../../blob/master/samples/eSummary_pubmedhealth.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_pubmedhealth-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.pubmedhealth.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625">eutils;</a><br/><a href="../../blob/master/samples/esummary.pubmedhealth.json">JSON</a></td></tr>
     <tr><th>seqannot</th><td>✓</td><td><font size="5"><a href="#%E2%91%A4-escaped-markup">⑤</a> </font>
-          The &lt;ExpXml&gt; element has a lot of very interesting data, which 
+          The &lt;ExpXml&gt; element has a lot of very interesting data, which
           unfortunately is inaccessible because it is in escaped markup.
-        <br/>⇒ 
+        <br/>⇒
           The bulk of the data here is trapped inside the escaped-markup content
           of the &lt;ExpXml&gt; element.
         </td><td><a href="../../blob/master/samples/eSummary_seqannot.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_seqannot-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.seqannot.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=seqannot&amp;id=7232">eutils;</a><br/><a href="../../blob/master/samples/esummary.seqannot.json">JSON</a></td></tr>
     <tr><th>snp</th><td>✓</td><td/><td><a href="../../blob/master/samples/eSummary_snp.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_snp-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.snp.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=snp&amp;id=206676795">eutils;</a><br/><a href="../../blob/master/samples/esummary.snp.json">JSON</a></td></tr>
     <tr><th>sra</th><td>✓</td><td><font size="5"><a href="#%E2%91%A4-escaped-markup">⑤</a> </font>
           Like seqannot, the bulk of the data here is trapped inside the escaped-markup content
-          of the &lt;ExpXml&gt; element.  There is another escaped-markup element here, &lt;Runs&gt;, 
+          of the &lt;ExpXml&gt; element.  There is another escaped-markup element here, &lt;Runs&gt;,
           which also has some nice but inaccessible data.
         </td><td><a href="../../blob/master/samples/eSummary_sra.dtd">DTD</a>, <a href="../../blob/master/samples/eSummary_sra-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/esummary.sra.xml">local</a>, <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=sra&amp;id=30750">eutils;</a><br/><a href="../../blob/master/samples/esummary.sra.json">JSON</a></td></tr>
     <tr><th>taxonomy</th><td>✓</td><td><font size="5"><a href="#%E2%91%A1-xml-results-that-fail-to-validate-bad-dtds">②</a> </font>
@@ -473,7 +479,7 @@ There's a note in the tables below for each DTD where we found this problem.
   </table>
   <h2>EFetch PubMed</h2>
   <table><tr><th/><th>✓</th><th>Description / Notes</th><th>Links</th></tr>
-    <tr><th>PubMed</th><td>✓</td><td>⇒ 
+    <tr><th>PubMed</th><td>✓</td><td>⇒
           This is the only one that uses an imported stylesheet, efetch.pubmed.xsl,
           because there were some
           things that the DTD annotation feature could not handle.
@@ -483,6 +489,6 @@ There's a note in the tables below for each DTD where we found this problem.
     <tr><th>PubMed Example</th><td>✓</td><td><em>
           A contrived sample for testing.
         </em></td><td><a href="../../blob/master/samples/pubmed_120101.dtd">DTD</a>, <a href="../../blob/master/samples/pubmed_120101-2json.xsl">XSLT</a>;<br/>XML: <a href="../../blob/master/samples/efetch.pubmedexample.xml">local</a>, <a href="">eutils;</a><br/><a href="../../blob/master/samples/efetch.pubmedexample.json">JSON</a></td></tr>
-    
+
   </table>
 </div>
