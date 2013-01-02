@@ -19,21 +19,21 @@
     <xsl:param name="context" select="'unknown'"/>
 
     <o>
-      <xsl:if test='$context = "object"'>
+      <xsl:if test='$context = "o"'>
         <xsl:attribute name='name'>
           <xsl:value-of select='np:translate-name()'/>
         </xsl:attribute>
       </xsl:if>
 
       <xsl:apply-templates select='@*'>
-        <xsl:with-param name="context" select="'object'"/>
+        <xsl:with-param name="context" select="'o'"/>
       </xsl:apply-templates>
       
       <xsl:variable name='value'>
         <xsl:apply-templates select='node()' mode='markup-to-string'/>
       </xsl:variable>
-      <xsl:call-template name='string-in-object'>
-        <xsl:with-param name='key' select='"value"'/>
+      <xsl:call-template name='s-in-o'>
+        <xsl:with-param name='k' select='"value"'/>
         <xsl:with-param name='value' select='$value'/>
       </xsl:call-template>
     
@@ -58,7 +58,7 @@
     <xsl:variable name='value'>
       <xsl:apply-templates select='node()' mode='markup-to-string'/>
     </xsl:variable>
-    <xsl:call-template name='string'>
+    <xsl:call-template name='s'>
       <xsl:with-param name="context" select="$context"/>
       <xsl:with-param name='value' select='$value'/>
     </xsl:call-template>
