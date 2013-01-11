@@ -502,6 +502,7 @@
                 "otherabstracts": [
                     {
                         "type": "AAMC",
+                        "language": "eng",
                         "copyrightinformation": "No copyright, this time!",
                         "abstracttexts": [
                             {
@@ -514,6 +515,7 @@
                     },
                     {
                         "type": "AIDS",
+                        "language": "eng",
                         "abstracttexts": [
                             {
                                 "value": "Foo <b>bar</b>!"

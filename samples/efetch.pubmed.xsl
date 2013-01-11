@@ -20,7 +20,7 @@
 
     <o>
       <xsl:if test='$context = "o"'>
-        <xsl:attribute name='name'>
+        <xsl:attribute name='k'>
           <xsl:value-of select='np:translate-name()'/>
         </xsl:attribute>
       </xsl:if>
