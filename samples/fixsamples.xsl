@@ -45,21 +45,21 @@
       </td>
       <td>
         <xsl:if test='@dtd'>
-          <a href="../../blob/master/samples/{@dtd}">DTD</a>
+          <a href="{@dtd}">DTD</a>
           <xsl:text>,&#160;</xsl:text>
           <!-- Assume the DTD filename always ends in ".dtd" -->
           <xsl:variable name='xslName'
             select='concat(substring(@dtd, 1, string-length(@dtd) - 4), "-2json.xsl")'/>
-          <a href='../../blob/master/samples/{$xslName}'>XSLT</a>
+          <a href='{$xslName}'>XSLT</a>
           <xsl:text>;</xsl:text>
           <br/>
         </xsl:if>
         <xsl:text>XML:&#160;</xsl:text>
-        <a href="../../blob/master/samples/{@name}.xml">local</a>
+        <a href="{@name}.xml">local</a>
         <xsl:text>,&#160;</xsl:text>
         <a href="{eutils-url}">eutils;</a>
         <br/>
-        <a href="../../blob/master/samples/{@name}.json">JSON</a>
+        <a href="{@name}.json">JSON</a>
       </td>
     </tr>
   </xsl:template>
@@ -79,22 +79,22 @@
         <xsl:variable name='target'>
           <xsl:choose>
             <xsl:when test='@rid = "①"'>
-              <xsl:text>%E2%91%A0-all-esummary-dtds-use-the-same-public-identifier</xsl:text>
+              <xsl:text>-all-esummary-dtds-use-the-same-public-identifier</xsl:text>
             </xsl:when>
             <xsl:when test='@rid = "②"'>
-              <xsl:text>%E2%91%A1-xml-results-that-fail-to-validate-bad-dtds</xsl:text>
+              <xsl:text>-xml-results-that-fail-to-validate-bad-dtds</xsl:text>
             </xsl:when>
             <xsl:when test='@rid = "③"'>
-              <xsl:text>%E2%91%A2-dtds-elements-that-are-under-specified</xsl:text>
+              <xsl:text>-dtds-elements-that-are-under-specified</xsl:text>
             </xsl:when>
             <xsl:when test='@rid = "④"'>
-              <xsl:text>%E2%91%A3-errors-in-dtds</xsl:text>
+              <xsl:text>-errors-in-dtds</xsl:text>
             </xsl:when>
             <xsl:when test='@rid = "⑤"'>
-              <xsl:text>%E2%91%A4-escaped-markup</xsl:text>
+              <xsl:text>-escaped-markup</xsl:text>
             </xsl:when>
             <xsl:when test='@rid = "⑥"'>
-              <xsl:text>%E2%91%A5-miscellaneous-problems--questions--suggestions</xsl:text>
+              <xsl:text>-miscellaneous-problems--questions--suggestions</xsl:text>
             </xsl:when>
           </xsl:choose>
         </xsl:variable>
