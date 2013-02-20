@@ -201,8 +201,8 @@
 
 <!--~~ <DocumentSummarySet>
 ~~json 
-  <object name='"result"'>
-    <array name='"uids"' select='DocumentSummary/@uid'/>
+  <object key="result">
+    <array key="uids" select='DocumentSummary/@uid'/>
     <members select='DocumentSummary'/>
   </object>
 ~~-->

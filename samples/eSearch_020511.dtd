@@ -61,7 +61,7 @@ $Id: eSearch_020511.dtd 85163 2006-06-28 17:35:21Z olegh $
 
 <!-- Error message tags  -->
 <!--~~ <ERROR>
-~~ json <json name='"ERROR"'/>
+~~ json <json key="ERROR"/>
 ~~-->
 <!ELEMENT        ERROR                  (#PCDATA)>  <!-- .+ -->
 
@@ -81,8 +81,8 @@ $Id: eSearch_020511.dtd 85163 2006-06-28 17:35:21Z olegh $
 <!--~~ <ErrorList>
 ~~ json
   <object>
-    <array name='"phrasesnotfound"' select='PhraseNotFound'/>
-    <array name='"fieldsnotfound"' select='FieldsNotFound'/>
+    <array key="phrasesnotfound" select='PhraseNotFound'/>
+    <array key="fieldsnotfound" select='FieldsNotFound'/>
   </object>
 ~~-->
 <!ELEMENT        ErrorList      (PhraseNotFound*,FieldNotFound*)>
@@ -90,9 +90,9 @@ $Id: eSearch_020511.dtd 85163 2006-06-28 17:35:21Z olegh $
 <!--~~ <WarningList>
 ~~ json
   <object>
-    <array name='"phrasesignored"' select='PhraseIgnored'/>
-    <array name='"quotedphrasesnotfound"' select='QuotedPhraseNotFound'/>
-    <array name='"outputmessages"' select='OutputMessage'/>
+    <array key="phrasesignored" select='PhraseIgnored'/>
+    <array key="quotedphrasesnotfound" select='QuotedPhraseNotFound'/>
+    <array key="outputmessages" select='OutputMessage'/>
   </object>
 ~~-->
 <!ELEMENT        WarningList    ( PhraseIgnored*,

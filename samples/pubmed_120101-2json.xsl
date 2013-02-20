@@ -19,7 +19,7 @@
          <xsl:with-param name="context" select="$context"/>
       </xsl:call-template>
    </xsl:template>
-   <xsl:template match="LastName | Issue | CopyrightInformation | Country | MedlineTA | Second | EndPage | ForeName | ISSNLinking | ISOAbbreviation | CitationSubset | Volume | Note | Title | RegistryNumber | RefSource | Hour | Edition | Minute | DataBankName | MedlinePgn | MedlineDate | Language | Isbn | NlmUniqueID | Month | ReportNumber | NumberOfReferences | Season | GrantID | Acronym | PublisherLocation | StartPage | AccessionNumber | Agency | SpaceFlightMission | Day | Year | NameOfSubstance | PublicationType | Medium | PublicationStatus | GeneSymbol | Initials | @IssnType | @VersionID | @RefType | @DateType | @VersionDate | @NlmCategory | @PubModel | @CitedMedium | @EIdType | @Label | @part | @PubStatus | @Version | @Source | @Type | @lang | @Owner | @IdType | @Name | @Status | @sec | @book">
+   <xsl:template match="LastName | Issue | CopyrightInformation | Country | MedlineTA | Second | EndPage | ForeName | ISSNLinking | ISOAbbreviation | CitationSubset | Volume | Note | Title | RegistryNumber | RefSource | Hour | Edition | Minute | DataBankName | MedlinePgn | MedlineDate | Language | Isbn | NlmUniqueID | Month | ReportNumber | NumberOfReferences | Season | GrantID | Acronym | PublisherLocation | StartPage | AccessionNumber | Agency | SpaceFlightMission | Day | ContractNumber | Year | NameOfSubstance | PublicationType | Medium | PublicationStatus | GeneSymbol | Initials | @IssnType | @VersionID | @RefType | @DateType | @VersionDate | @NlmCategory | @PubModel | @CitedMedium | @EIdType | @Label | @part | @PubStatus | @Version | @Source | @Type | @lang | @Owner | @IdType | @Name | @Status | @sec | @book">
       <xsl:param name="context" select="&#34;unknown&#34;"/>
       <xsl:call-template name="s">
          <xsl:with-param name="context" select="$context"/>
@@ -39,38 +39,38 @@
             <xsl:with-param name="context" select="'o'"/>
          </xsl:apply-templates>
          <!--Handling itemspec <a>-->
-<a k="{&#34;locationlabels&#34;}">
+<a k="locationlabels">
             <xsl:apply-templates select="LocationLabel">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;languages&#34;}">
+<a k="languages">
             <xsl:apply-templates select="Language">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;authorlists&#34;}">
+<a k="authorlists">
             <xsl:apply-templates select="AuthorList">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;publicationtypes&#34;}">
+<a k="publicationtypes">
             <xsl:apply-templates select="PublicationType">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;keywordlists&#34;}">
+<a k="keywordlists">
             <xsl:apply-templates select="KeywordList">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
       </o>
    </xsl:template>
-   <xsl:template match="PersonalNameSubjectList | InvestigatorList | PubDate | ChemicalList | Pagination | ArticleIdList | AccessionNumberList | Sections | ObjectList | CommentsCorrectionsList | GeneSymbolList | History | SupplMeshList | PublicationTypeList | MeshHeadingList">
+   <xsl:template match="PersonalNameSubjectList | InvestigatorList | PubDate | ChemicalList | Pagination | ArticleIdList | AccessionNumberList | MedlineCitationSet | Sections | DeleteDocument | ObjectList | DeleteCitation | CommentsCorrectionsList | GeneSymbolList | History | SupplMeshList | PublicationTypeList | PubmedBookArticleSet | BookDocumentSet | MeshHeadingList">
       <xsl:param name="context" select="&#34;unknown&#34;"/>
       <xsl:call-template name="a">
          <xsl:with-param name="context" select="$context"/>
@@ -90,37 +90,37 @@
             <xsl:with-param name="context" select="'o'"/>
          </xsl:apply-templates>
          <!--Handling itemspec <a>-->
-<a k="{&#34;citationsubsets&#34;}">
+<a k="citationsubsets">
             <xsl:apply-templates select="CitationSubset">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;otherids&#34;}">
+<a k="otherids">
             <xsl:apply-templates select="OtherID">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;otherabstracts&#34;}">
+<a k="otherabstracts">
             <xsl:apply-templates select="OtherAbstract">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;keywordlists&#34;}">
+<a k="keywordlists">
             <xsl:apply-templates select="KeywordList">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;spaceflightmissions&#34;}">
+<a k="spaceflightmissions">
             <xsl:apply-templates select="SpaceFlightMission">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;generalnotes&#34;}">
+<a k="generalnotes">
             <xsl:apply-templates select="GeneralNote">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
@@ -162,26 +162,26 @@
             <xsl:with-param name="context" select="'o'"/>
          </xsl:apply-templates>
          <!--Handling itemspec <a>-->
-<a k="{&#34;authorlists&#34;}">
+<a k="authorlists">
             <xsl:apply-templates select="AuthorList">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;isbn&#34;}">
+<a k="isbn">
             <xsl:apply-templates select="Isbn">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;elocationid&#34;}">
+<a k="elocationid">
             <xsl:apply-templates select="ELocationID">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
       </o>
    </xsl:template>
-   <xsl:template match="OtherID | LocationLabel | SupplMeshName | NameID | DescriptorName | ELocationID | GeneralNote | PMID | ArticleId | ISSN | QualifierName">
+   <xsl:template match="OtherID | URL | LocationLabel | SupplMeshName | NameID | DescriptorName | ELocationID | GeneralNote | PMID | ArticleId | ISSN | QualifierName">
       <xsl:param name="context" select="&#34;unknown&#34;"/>
       <xsl:call-template name="o">
          <xsl:with-param name="context" select="$context"/>
@@ -189,6 +189,12 @@
       </xsl:call-template>
    </xsl:template>
    <xsl:template match="OtherID/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="URL/text()">
       <xsl:param name="context" select="&#34;unknown&#34;"/>
       <xsl:call-template name="s">
          <xsl:with-param name="context" select="$context"/>
@@ -268,7 +274,7 @@
             <xsl:with-param name="context" select="'o'"/>
          </xsl:apply-templates>
          <!--Handling itemspec <a>-->
-<a k="{&#34;nameids&#34;}">
+<a k="nameids">
             <xsl:apply-templates select="NameID">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
@@ -289,7 +295,7 @@
             <xsl:with-param name="context" select="'o'"/>
          </xsl:apply-templates>
          <!--Handling itemspec <a>-->
-<a k="{&#34;qualifiernames&#34;}">
+<a k="qualifiernames">
             <xsl:apply-templates select="QualifierName">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
@@ -310,19 +316,19 @@
             <xsl:with-param name="context" select="'o'"/>
          </xsl:apply-templates>
          <!--Handling itemspec <a>-->
-<a k="{&#34;elocationids&#34;}">
+<a k="elocationids">
             <xsl:apply-templates select="ELocationID">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;languages&#34;}">
+<a k="languages">
             <xsl:apply-templates select="Language">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;articledates&#34;}">
+<a k="articledates">
             <xsl:apply-templates select="ArticleDate">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
@@ -343,7 +349,7 @@
             <xsl:with-param name="context" select="'o'"/>
          </xsl:apply-templates>
          <!--Handling itemspec <a>-->
-<a k="{&#34;abstracttexts&#34;}">
+<a k="abstracttexts">
             <xsl:apply-templates select="AbstractText">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
@@ -360,13 +366,13 @@
             </xsl:attribute>
          </xsl:if>
          <!--Handling itemspec <o>-->
-<o k="{&#34;attrs&#34;}">
+<o k="attrs">
             <xsl:apply-templates select="@*">
                <xsl:with-param name="context" select="&#34;o&#34;"/>
             </xsl:apply-templates>
          </o>
          <!--Handling itemspec <o>-->
-<o k="{&#34;keywords&#34;}">
+<o k="keywords">
             <xsl:apply-templates select="Keyword">
                <xsl:with-param name="context" select="&#34;o&#34;"/>
             </xsl:apply-templates>
@@ -387,7 +393,7 @@
             <xsl:with-param name="context" select="'o'"/>
          </xsl:apply-templates>
          <!--Handling itemspec <a>-->
-<a k="{&#34;abstracttexts&#34;}">
+<a k="abstracttexts">
             <xsl:apply-templates select="AbstractText">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
@@ -423,7 +429,7 @@
             <xsl:with-param name="context" select="'o'"/>
          </xsl:apply-templates>
          <!--Handling itemspec <a>-->
-<a k="{&#34;sections&#34;}">
+<a k="sections">
             <xsl:apply-templates select="Section">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>

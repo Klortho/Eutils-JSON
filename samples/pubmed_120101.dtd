@@ -54,7 +54,7 @@
 <!-- ================================================================= -->
 <!--~~ <PubmedArticleSet>
 ~~json 
-  <array name='"result"' select='PubmedArticle | PubmedBookArticle'/>
+  <array key="result" select='PubmedArticle | PubmedBookArticle'/>
 ~~-->
 <!ELEMENT PubmedArticleSet (PubmedArticle | PubmedBookArticle)+>
 

@@ -39,11 +39,11 @@
     <members select='PMID | ArticleIdList | Book | ArticleTitle | VernacularTitle |
                      Pagination | GroupList | Abstract | Sections | 
                      ContributionDate | DateRevised | CitationString | GrantList'/>
-    <array name='"locationlabels"' select='LocationLabel'/>
-    <array name='"languages"' select='Language'/>
-    <array name='"authorlists"' select='AuthorList'/>
-    <array name='"publicationtypes"' select='PublicationType'/>
-    <array name='"keywordlists"' select='KeywordList'/>
+    <array key="locationlabels" select='LocationLabel'/>
+    <array key="languages" select='Language'/>
+    <array key="authorlists" select='AuthorList'/>
+    <array key="publicationtypes" select='PublicationType'/>
+    <array key="keywordlists" select='KeywordList'/>
   </object>
 ~~-->
 <!ELEMENT BookDocument ( PMID, ArticleIdList, Book, LocationLabel*, ArticleTitle?, VernacularTitle?,
@@ -55,9 +55,9 @@
   <object>
     <members select='Publisher | BookTitle | PubDate | BeginningDate | EndingDate | Volume |
                      VolumeTitle | Edition | CollectionTitle | Medium | ReportNumber'/>
-    <array name='"authorlists"' select='AuthorList'/>
-    <array name='"isbn"' select='Isbn'/>
-    <array name='"elocationid"' select='ELocationID'/>
+    <array key="authorlists" select='AuthorList'/>
+    <array key="isbn" select='Isbn'/>
+    <array key="elocationid" select='ELocationID'/>
   </object>
 ~~-->
 <!ELEMENT Book ( Publisher, BookTitle, PubDate, BeginningDate?, EndingDate?, AuthorList*, Volume?, VolumeTitle?, 
@@ -126,7 +126,7 @@
 ~~json
   <object>
     <members select='LocationLabel | SectionTitle'/>
-    <array name='"sections"' select='Section'/>
+    <array key="sections" select='Section'/>
   </object>
 ~~-->
 <!ELEMENT Section	(LocationLabel?, SectionTitle, Section*) >

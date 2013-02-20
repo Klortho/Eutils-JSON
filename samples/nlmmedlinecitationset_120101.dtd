@@ -79,12 +79,12 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
                      SupplMeshList | CommentsCorrectionsList | GeneSymbolList |
                      MeshHeadingList | NumberOfReferences |
                      PersonalNameSubjectList | InvestigatorList'/>
-    <array name='"citationsubsets"' select='CitationSubset'/>
-    <array name='"otherids"' select='OtherID'/>
-    <array name='"otherabstracts"' select='OtherAbstract'/>
-    <array name='"keywordlists"' select='KeywordList'/>
-    <array name='"spaceflightmissions"' select='SpaceFlightMission'/>
-    <array name='"generalnotes"' select='GeneralNote'/>
+    <array key="citationsubsets" select='CitationSubset'/>
+    <array key="otherids" select='OtherID'/>
+    <array key="otherabstracts" select='OtherAbstract'/>
+    <array key="keywordlists" select='KeywordList'/>
+    <array key="spaceflightmissions" select='SpaceFlightMission'/>
+    <array key="generalnotes" select='GeneralNote'/>
   </object>
 ~~-->
 <!ELEMENT	MedlineCitation (PMID, DateCreated, DateCompleted?, DateRevised?,
@@ -105,7 +105,7 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 ~~json
   <object>
     <member select='CopyrightInformation'/>
-    <array name='"abstracttexts"' select='AbstractText'/>
+    <array key="abstracttexts" select='AbstractText'/>
   </object>
 ~~-->
 <!ELEMENT	Abstract (AbstractText+,CopyrightInformation?)>
@@ -136,9 +136,9 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
     <members select='Journal | ArticleTitle | Pagination | Abstract | Affiliation |
                      AuthorList | DataBankList | GrantList |
                      PublicationTypeList | VernacularTitle'/>
-    <array name='"elocationids"' select='ELocationID'/>
-    <array name='"languages"' select='Language'/>
-    <array name='"articledates"' select='ArticleDate'/>
+    <array key="elocationids" select='ELocationID'/>
+    <array key="languages" select='Language'/>
+    <array key="articledates" select='ArticleDate'/>
   </object>
 ~~-->
 <!ELEMENT	Article (Journal,ArticleTitle,((Pagination, ELocationID*) | 
@@ -160,7 +160,7 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 ~~json 
   <object>
     <members select='@*|*[not(self::NameID)]'/>
-    <array name='"nameids"' select='NameID'/>
+    <array key="nameids" select='NameID'/>
   </object>
 ~~-->
 <!ELEMENT	Author (((LastName, ForeName?, Initials?, Suffix?) | 
@@ -264,7 +264,7 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 ~~json
   <object>
     <members select='@*|*[not(self::NameID)]'/>
-    <array name='"nameids"' select='NameID'/>
+    <array key="nameids" select='NameID'/>
   </object>
 ~~-->
 <!ELEMENT	Investigator (LastName,ForeName?, Initials?,Suffix?,NameID*,Affiliation?)>
@@ -285,8 +285,8 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 <!--~~ <KeywordList>
 ~~json
   <object>
-    <object name='"attrs"' select='@*'/>
-    <object name='"keywords"' select='Keyword'/>
+    <object key="attrs" select='@*'/>
+    <object key="keywords" select='Keyword'/>
   </object>
 ~~-->
 <!ELEMENT	KeywordList (Keyword+)>
@@ -303,7 +303,7 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 ~~json 
   <object>
     <member select='DescriptorName'/>
-    <array name='"qualifiernames"' select='QualifierName'/>
+    <array key="qualifiernames" select='QualifierName'/>
   </object>
 ~~-->
 <!ELEMENT	MeshHeading (DescriptorName, QualifierName*)>
@@ -322,7 +322,7 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 ~~json
   <object>
     <members select='@*|CopyrightInformation'/>
-    <array name='"abstracttexts"' select='AbstractText'/>
+    <array key="abstracttexts" select='AbstractText'/>
   </object>
 ~~-->
 <!ELEMENT	OtherAbstract (AbstractText+,CopyrightInformation?)>

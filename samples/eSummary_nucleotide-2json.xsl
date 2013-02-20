@@ -83,12 +83,10 @@
       <!--Handling itemspec <o>-->
 <o>
          <xsl:if test="$context = &#34;o&#34;">
-            <xsl:attribute name="k">
-               <xsl:value-of select="&#34;result&#34;"/>
-            </xsl:attribute>
+            <xsl:attribute name="k">result</xsl:attribute>
          </xsl:if>
          <!--Handling itemspec <a>-->
-<a k="{&#34;uids&#34;}">
+<a k="uids">
             <xsl:apply-templates select="DocumentSummary/@uid">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>

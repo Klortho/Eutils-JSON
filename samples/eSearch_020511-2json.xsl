@@ -41,13 +41,13 @@
             </xsl:attribute>
          </xsl:if>
          <!--Handling itemspec <a>-->
-<a k="{&#34;phrasesnotfound&#34;}">
+<a k="phrasesnotfound">
             <xsl:apply-templates select="PhraseNotFound">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;fieldsnotfound&#34;}">
+<a k="fieldsnotfound">
             <xsl:apply-templates select="FieldsNotFound">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
@@ -70,19 +70,19 @@
             </xsl:attribute>
          </xsl:if>
          <!--Handling itemspec <a>-->
-<a k="{&#34;phrasesignored&#34;}">
+<a k="phrasesignored">
             <xsl:apply-templates select="PhraseIgnored">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;quotedphrasesnotfound&#34;}">
+<a k="quotedphrasesnotfound">
             <xsl:apply-templates select="QuotedPhraseNotFound">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
          </a>
          <!--Handling itemspec <a>-->
-<a k="{&#34;outputmessages&#34;}">
+<a k="outputmessages">
             <xsl:apply-templates select="OutputMessage">
                <xsl:with-param name="context" select="&#34;a&#34;"/>
             </xsl:apply-templates>
