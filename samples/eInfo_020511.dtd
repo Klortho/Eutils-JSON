@@ -12,10 +12,6 @@
     </json>
 ~~-->
 
-<!--~~ <eInfoResult>
-This is the root element for an EInfo response.
-~~ tags root
-~~-->
 <!ELEMENT       eInfoResult     (DbList|DbInfo|ERROR)>
 
 <!ELEMENT       DbName          (#PCDATA)>      <!-- \S+ -->
@@ -30,7 +26,7 @@ This is the root element for an EInfo response.
 <!ELEMENT       LastUpdate      (#PCDATA)>      <!-- \d+ -->
 
 <!--~~ <ERROR>
-~~ json <json name="'ERROR'"/>
+~~ json <json key="ERROR"/>
 ~~-->
 <!ELEMENT       ERROR           (#PCDATA)>      <!-- .+ -->
 

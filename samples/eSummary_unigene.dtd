@@ -66,7 +66,6 @@
 <!ATTLIST DocumentSummarySet status CDATA #REQUIRED>
 
 <!--~~ <eSummaryResult>
-~~ tags root
 ~~ json <member/>
 ~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>

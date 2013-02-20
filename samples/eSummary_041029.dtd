@@ -33,7 +33,6 @@ Not implemented yet.  This annotation will cause this to be ignored.
 <!ELEMENT DocSum            (Id, Item+)>
 
 <!--~~ <eSummaryResult>
-~~ tags root
 ~~ json <array/>
 ~~-->
 <!ELEMENT eSummaryResult    (DocSum|ERROR)+>

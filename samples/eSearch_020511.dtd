@@ -11,10 +11,6 @@ $Id: eSearch_020511.dtd 85163 2006-06-28 17:35:21Z olegh $
     </json>
 ~~-->
 
-<!--~~ <eSearchResult>
-This is the root element for an ESearch response.
-~~ tags root
-~~-->
 <!ELEMENT       eSearchResult  (
                                  (
                                    (

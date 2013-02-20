@@ -159,7 +159,6 @@
 <!ATTLIST DocumentSummarySet status CDATA #IMPLIED>
 
 <!--~~ <eSummaryResult>
-~~ tags root
 ~~ json <member/>
 ~~-->
 <!ELEMENT eSummaryResult (DocumentSummarySet?)>

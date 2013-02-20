@@ -22,7 +22,7 @@
       <xsl:param name="context" select="&#34;unknown&#34;"/>
       <xsl:call-template name="s">
          <xsl:with-param name="context" select="$context"/>
-         <xsl:with-param name="k" select="'ERROR'"/>
+         <xsl:with-param name="k" select="&#34;ERROR&#34;"/>
       </xsl:call-template>
    </xsl:template>
    <xsl:template match="Link | Field | eInfoResult | DbInfo">

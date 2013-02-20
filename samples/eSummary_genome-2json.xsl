@@ -12,7 +12,7 @@
          <config lcnames="true"/>
       </json>
    </xsl:param>
-   <xsl:template match="Create_Date | Organism_Kingdom | Organism_Group | Organism_Subgroup | Options | Organism_Name | @uid | @db | @status | @weight | @term">
+   <xsl:template match="Create_Date | Organism_Kingdom | Organism_Group | TaxId | Organism_Subgroup | Options | Organism_Name | @uid | @db | @status | @weight | @term">
       <xsl:param name="context" select="&#34;unknown&#34;"/>
       <xsl:call-template name="s">
          <xsl:with-param name="context" select="$context"/>
@@ -40,14 +40,26 @@
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
-   <xsl:template match="AssemblyID | ProjectID | Defline | Project_Accession | Assembly_Name | Assembly_Accession | Status">
+   <xsl:template match="Protein_Name | AssemblyID | Organism | ProjectID | Filter | Defline | Replicon_Name | Properties | PmId | GeneID | Replicon_Accession | Biological_Property | Project_Accession | Locus_tag | Uid | WGS_Prefix | CreateDate | ClusterID | ProteinGI | Locus | Protein_Accession | Assembly_Name | Assembly_Accession | RepliconGI | Description | Status">
       <xsl:param name="context" select="&#34;unknown&#34;"/>
       <xsl:call-template name="o">
          <xsl:with-param name="context" select="$context"/>
          <xsl:with-param name="kids" select="@*|node()"/>
       </xsl:call-template>
    </xsl:template>
+   <xsl:template match="Protein_Name/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
    <xsl:template match="AssemblyID/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="Organism/text()">
       <xsl:param name="context" select="&#34;unknown&#34;"/>
       <xsl:call-template name="s">
          <xsl:with-param name="context" select="$context"/>
@@ -59,13 +71,103 @@
          <xsl:with-param name="context" select="$context"/>
       </xsl:call-template>
    </xsl:template>
+   <xsl:template match="Filter/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
    <xsl:template match="Defline/text()">
       <xsl:param name="context" select="&#34;unknown&#34;"/>
       <xsl:call-template name="s">
          <xsl:with-param name="context" select="$context"/>
       </xsl:call-template>
    </xsl:template>
+   <xsl:template match="Replicon_Name/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="Properties/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="PmId/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="GeneID/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="Replicon_Accession/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="Biological_Property/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
    <xsl:template match="Project_Accession/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="Locus_tag/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="Uid/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="WGS_Prefix/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="CreateDate/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="ClusterID/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="ProteinGI/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="Locus/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="Protein_Accession/text()">
       <xsl:param name="context" select="&#34;unknown&#34;"/>
       <xsl:call-template name="s">
          <xsl:with-param name="context" select="$context"/>
@@ -78,6 +180,18 @@
       </xsl:call-template>
    </xsl:template>
    <xsl:template match="Assembly_Accession/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="RepliconGI/text()">
+      <xsl:param name="context" select="&#34;unknown&#34;"/>
+      <xsl:call-template name="s">
+         <xsl:with-param name="context" select="$context"/>
+      </xsl:call-template>
+   </xsl:template>
+   <xsl:template match="Description/text()">
       <xsl:param name="context" select="&#34;unknown&#34;"/>
       <xsl:call-template name="s">
          <xsl:with-param name="context" select="$context"/>
