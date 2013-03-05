@@ -286,7 +286,7 @@ See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for histori
 ~~json
   <object>
     <object key="attrs" select='@*'/>
-    <object key="keywords" select='Keyword'/>
+    <array key="keywords" select='Keyword'/>
   </object>
 ~~-->
 <!ELEMENT	KeywordList (Keyword+)>
