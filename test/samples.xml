@@ -3,299 +3,299 @@
 <samples>
   <samplegroup dtd="eInfo_020511.dtd" eutil="einfo">
     <sample name="einfo">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi</eutils-url>
+      <eutils-url>einfo.fcgi</eutils-url>
     </sample>
     <sample name="einfo.pubmed" db="pubmed">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed</eutils-url>
+      <eutils-url>einfo.fcgi?db=pubmed</eutils-url>
     </sample>
     <sample name="einfo.error" error='yes'>
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=fleegle</eutils-url>
+      <eutils-url>einfo.fcgi?db=fleegle</eutils-url>
     </sample>
   </samplegroup>
   
   <samplegroup dtd="eSearch_020511.dtd" eutil="esearch">
     <sample name="esearch.pubmed" db="pubmed">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y</eutils-url>
+      <eutils-url>esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y</eutils-url>
     </sample>
     <sample name="esearch.error" db='nlmcatalog' error='yes'>
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d</eutils-url>
+      <eutils-url>esearch.fcgi?db=nlmcatalog&amp;term=obstetrics%5bMeSH%20Terms%5d+OR+fleegle%5bMeSH%20Terms%5d</eutils-url>
     </sample>
     <sample name="esearch.baderror" error='yes'>
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=fleegle&amp;term=cat</eutils-url>
+      <eutils-url>esearch.fcgi?db=fleegle&amp;term=cat</eutils-url>
     </sample>
   </samplegroup>
   
   <samplegroup dtd="eSummary_pubmed.dtd" eutil="esummary">
     <sample name="esummary.pubmed" db="pubmed">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmed&amp;id=5683731,22144687</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmed&amp;id=5683731,22144687</eutils-url>
     </sample>
   </samplegroup>
   
   <samplegroup dtd="eSummary_protein.dtd" eutil="esummary">
     <sample name="esummary.protein" db="protein">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=protein&amp;id=284822047</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=protein&amp;id=284822047</eutils-url>
     </sample>
   </samplegroup>
   
   <samplegroup dtd="eSummary_nuccore.dtd" eutil="esummary">
     <sample name="esummary.nuccore" db="nuccore">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nuccore&amp;id=424386131</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nuccore&amp;id=424386131</eutils-url>
     </sample>
   </samplegroup>
   
   <samplegroup dtd="eSummary_nucleotide.dtd" eutil="esummary">
     <sample name="esummary.nucleotide" db="nucleotide">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucleotide&amp;id=424386131</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucleotide&amp;id=424386131</eutils-url>
     </sample>
   </samplegroup>
   
   <samplegroup dtd="eSummary_nucgss.dtd" eutil="esummary">
     <sample name="esummary.nucgss" db="nucgss">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucgss&amp;id=371566079</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucgss&amp;id=371566079</eutils-url>
     </sample>
   </samplegroup>
   
   <samplegroup dtd="eSummary_nucest.dtd" eutil="esummary">
     <sample name="esummary.nucest" db="nucest">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucest&amp;id=409212211</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucest&amp;id=409212211</eutils-url>
     </sample>
   </samplegroup>
   
   <samplegroup dtd="eSummary_structure.dtd" eutil="esummary">
     <sample name="esummary.structure" db="structure">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=structure&amp;id=52770</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=structure&amp;id=52770</eutils-url>
     </sample>
   </samplegroup>
   
   <samplegroup dtd="eSummary_genome.dtd" eutil="esummary">
     <sample name="esummary.genome" db="genome">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genome&amp;id=2640</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genome&amp;id=2640</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_assembly.dtd" eutil="esummary">
     <sample name="esummary.assembly" db="assembly">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=assembly&amp;id=440818</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=assembly&amp;id=440818</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_gcassembly.dtd" eutil="esummary">
     <sample name="esummary.gcassembly" db="gcassembly">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gcassembly&amp;id=440818</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gcassembly&amp;id=440818</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_genomeprj.dtd" eutil="esummary">
     <sample name="esummary.genomeprj" db="genomeprj">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genomeprj&amp;id=54101</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genomeprj&amp;id=54101</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_bioproject.dtd" eutil="esummary">
     <sample name="esummary.bioproject" db="bioproject">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=bioproject&amp;id=171168</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=bioproject&amp;id=171168</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_biosample.dtd" eutil="esummary">
     <sample name="esummary.biosample" db="biosample">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosample&amp;id=182293</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosample&amp;id=182293</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_biosystems.dtd" eutil="esummary">
     <sample name="esummary.biosystems" db="biosystems">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosystems&amp;id=493040</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosystems&amp;id=493040</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_blastdbinfo.dtd" eutil="esummary">
     <sample name="esummary.blastdbinfo" db="blastdbinfo">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=blastdbinfo&amp;id=645844</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=blastdbinfo&amp;id=645844</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_books.dtd" eutil="esummary">
     <sample name="esummary.books" db="books">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=books&amp;id=2825746</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=books&amp;id=2825746</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_cdd.dtd" eutil="esummary">
     <sample name="esummary.cdd" db="cdd">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=cdd&amp;id=201140</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=cdd&amp;id=201140</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_clone.dtd" eutil="esummary">
     <sample name="esummary.clone" db="clone">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=clone&amp;id=29702171</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=clone&amp;id=29702171</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_gap.dtd" eutil="esummary">
     <sample name="esummary.gap" db="gap">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gap&amp;id=195331</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gap&amp;id=195331</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_gapplus.dtd" eutil="esummary">
     <sample name="esummary.gapplus" db="gapplus">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_dbvar.dtd" eutil="esummary">
     <sample name="esummary.dbvar" db="dbvar">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_epigenomics.dtd" eutil="esummary">
     <sample name="esummary.epigenomics" db="epigenomics">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=epigenomics&amp;id=16796</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=epigenomics&amp;id=16796</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_gencoll.dtd" eutil="esummary">
     <sample name="esummary.gencoll" db="gencoll">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_gene.dtd" eutil="esummary">
     <sample name="esummary.gene" db="gene">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gene&amp;id=21803</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gene&amp;id=21803</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_gds.dtd" eutil="esummary">
     <sample name="esummary.gds" db="gds">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_geo.dtd" eutil="esummary">
     <sample name="esummary.geo" db="geo">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geo&amp;id=65685298</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geo&amp;id=65685298</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_geoprofiles.dtd" eutil="esummary">
     <sample name="esummary.geoprofiles" db="geoprofiles">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geoprofiles&amp;id=65526197</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geoprofiles&amp;id=65526197</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_homologene.dtd" eutil="esummary">
     <sample name="esummary.homologene" db="homologene">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=homologene&amp;id=20659</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=homologene&amp;id=20659</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_journals.dtd" eutil="esummary">
     <sample name="esummary.journals" db="journals">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=journals&amp;id=35478</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=journals&amp;id=35478</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_medgen.dtd" eutil="esummary">
     <sample name="esummary.medgen" db="medgen">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=medgen&amp;id=122602</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=medgen&amp;id=122602</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_mesh.dtd" eutil="esummary">
     <sample name="esummary.mesh" db="mesh">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=mesh&amp;id=67414177</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=mesh&amp;id=67414177</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_ncbisearch.dtd" eutil="esummary">
     <sample name="esummary.ncbisearch" db="ncbisearch">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=ncbisearch&amp;id=1121</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=ncbisearch&amp;id=1121</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_nlmcatalog.dtd" eutil="esummary">
     <sample name="esummary.nlmcatalog" db="nlmcatalog">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nlmcatalog&amp;id=101573253</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nlmcatalog&amp;id=101573253</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_omia.dtd" eutil="esummary">
     <sample name="esummary.omia" db="omia">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omia&amp;id=2615</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omia&amp;id=2615</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_omim.dtd" eutil="esummary">
     <sample name="esummary.omim" db="omim">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omim&amp;id=609708</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omim&amp;id=609708</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_pmc.dtd" eutil="esummary">
     <sample name="esummary.pmc" db="pmc">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,14900</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,14900</eutils-url>
     </sample>
     <sample name="esummary.pmcerror" db="pmcerror">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,1,14900</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,1,14900</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_popset.dtd" eutil="esummary">
     <sample name="esummary.popset" db="popset">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=popset&amp;id=418209882</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=popset&amp;id=418209882</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_probe.dtd" eutil="esummary">
     <sample name="esummary.probe" db="probe">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=probe&amp;id=156811</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=probe&amp;id=156811</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_proteinclusters.dtd" eutil="esummary">
     <sample name="esummary.proteinclusters" db="proteinclusters">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=proteinclusters&amp;id=2516486</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=proteinclusters&amp;id=2516486</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_pcassay.dtd" eutil="esummary">
     <sample name="esummary.pcassay" db="pcassay">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcassay&amp;id=493206</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcassay&amp;id=493206</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_pccompound.dtd" eutil="esummary">
     <sample name="esummary.pccompound" db="pccompound">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pccompound&amp;id=10322165</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pccompound&amp;id=10322165</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_pcsubstance.dtd" eutil="esummary">
     <sample name="esummary.pcsubstance" db="pcsubstance">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcsubstance&amp;id=127317050</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcsubstance&amp;id=127317050</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_pubmedhealth.dtd" eutil="esummary">
     <sample name="esummary.pubmedhealth" db="pubmedhealth">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_seqannot.dtd" eutil="esummary">
     <sample name="esummary.seqannot" db="seqannot">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=seqannot&amp;id=7232</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=seqannot&amp;id=7232</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_snp.dtd" eutil="esummary">
     <sample name="esummary.snp" db="snp">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=snp&amp;id=206676795</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=snp&amp;id=206676795</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_sra.dtd" eutil="esummary">
     <sample name="esummary.sra" db="sra">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=sra&amp;id=30750</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=sra&amp;id=30750</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_taxonomy.dtd" eutil="esummary">
     <sample name="esummary.taxonomy" db="taxonomy">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=taxonomy&amp;id=9685</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=taxonomy&amp;id=9685</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_toolkit.dtd" eutil="esummary">
     <sample name="esummary.toolkit" db="toolkit">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=toolkit&amp;id=149440</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=toolkit&amp;id=149440</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_unigene.dtd" eutil="esummary">
     <sample name="esummary.unigene" db="unigene">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unigene&amp;id=1190943</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unigene&amp;id=1190943</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_unists.dtd" eutil="esummary">
     <sample name="esummary.unists" db="unists">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unists&amp;id=254085,254086</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unists&amp;id=254085,254086</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="eSummary_041029.dtd" eutil="esummary">
     <sample name="esummary.error">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=error&amp;id=254088</eutils-url>
+      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=error&amp;id=254088</eutils-url>
     </sample>
   </samplegroup>
   <samplegroup dtd="pubmed_120101.dtd" eutil="efetch">
     <sample name="efetch.pubmed" db="pubmed">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml</eutils-url>
+      <eutils-url>efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml</eutils-url>
     </sample>
     <sample name="efetch.pubmedbook" db="pubmed">
-      <eutils-url>http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml</eutils-url>
+      <eutils-url>efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml</eutils-url>
     </sample>
     <sample name="efetch.pubmedexample"/>
   </samplegroup>
