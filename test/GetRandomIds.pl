@@ -24,9 +24,9 @@ my @databases = qw(
 );
 
 my $ua = LWP::UserAgent->new;
-
-
 my $req;
+
+print "<samples>\n";
 foreach my $db (@databases) {
     my @samples = ();
 
@@ -65,6 +65,6 @@ foreach my $db (@databases) {
     }
     print "  </samplegroup>\n";
 }
-
+print "</samples>\n";
 
 
