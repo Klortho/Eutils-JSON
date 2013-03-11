@@ -1,38 +1,27 @@
 #!/usr/bin/perl
-# This script accesses the Eutilities service to compile lists of random
-# IDs for each of the available databases.
+# This is a throw-away script to compile lists of random
+# IDs for each of the available databases.  It writes its output to
+# standard out in the form of a samples.xml file.  The samples for each
+# esummary database are grouped together, since they share the same DTD.
 
 use strict;
 use LWP::UserAgent;
-
-# Base URL of the eutilities service
-my $eutilsBase = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
+use EutilsJson;
 
 # The number of IDs to find for each database
 my $numIdsPerDb = 10;
 
-# The list of databases
-my @databases = qw(
-    assembly bioproject biosample biosystems blastdbinfo books
-    cdd clone dbvar epigenomics gap gapplus gcassembly gds
-    gencoll gene genome genomeprj geoprofiles homologene
-    journals medgen mesh ncbisearch nlmcatalog nuccore nucest
-    nucgss nucleotide omia omim pcassay pccompound pcsubstance
-    pmc popset probe protein proteinclusters pubmed pubmedhealth
-    seqannot snp sra structure taxonomy toolkit toolkitall
-    toolkitbook unigene unists
-);
 
 my $ua = LWP::UserAgent->new;
 my $req;
 
 print "<samples>\n";
-foreach my $db (@databases) {
+foreach my $db (@EutilsJson::dbs) {
     my @samples = ();
 
     # Create a request
     $req = HTTP::Request->new(GET =>
-      $eutilsBase . 'esearch.fcgi?db=' . $db . '&term=all[sb]');
+      $EutilsJson::eutilsBaseUrl . 'esearch.fcgi?db=' . $db . '&term=all[sb]');
 
     my $response = $ua->request($req)->content;
     #print $response . "\n\n";

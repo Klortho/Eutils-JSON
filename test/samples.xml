@@ -1815,6 +1815,5 @@
     <sample name="efetch.pubmedbook" db="pubmed">
       <eutils-url>efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml</eutils-url>
     </sample>
-    <sample name="efetch.pubmedexample"/>
   </samplegroup>
 </samples>
