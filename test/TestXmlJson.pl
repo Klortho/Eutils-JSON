@@ -29,10 +29,24 @@ foreach my $samplegroup (@$samples) {
     my $groupsamples = $samplegroup->{samples};
     foreach my $s (@$groupsamples) {
         print "  testing $s->{name}\n";
+
+        # Fetch the XML for this eutilities sample URL
         my $eutilsUrl = $EutilsJson::eutilsBaseUrl . $s->{"eutils-url"};
-        my $out = $s->{name} . ".xml";
+        my $samplexml = $s->{name} . ".xml";
+        $eutilsUrl =~ s/\&/\\\&/g;
         print "    fetching $eutilsUrl\n";
-        $status = system "curl --silent --output $out $eutilsUrl";
+        $status = system "curl --silent --output $samplexml $eutilsUrl";
+        if ($status != 0) {
+            print "      ... failed!\n";
+            next;
+        }
+
+        # Validate the XML
+        $status = system "xmllint --noout --valid --nonet $samplexml";
+        if ($status != 0) {
+            print "    Failed to validate!\n";
+            die;
+        }
     }
 }
 
