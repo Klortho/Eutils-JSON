@@ -67,6 +67,7 @@ foreach my $samplegroup (@$samples) {
     next if $dtd !~ /esummary_([a-z]+)\.dtd/;
     my $db = $1;
     print "Checking $dtd => $db\n";
+
     if (!exists $testResults{$db}) {
         print "    not an idx database, skipping ...\n";
         next;
@@ -97,19 +98,23 @@ foreach my $samplegroup (@$samples) {
         my $samplexml = $s->{name} . ".xml";
         $eutilsUrl =~ s/\&/\\\&/g;
         print "        Fetching $eutilsUrl => $samplexml\n";
-        #$status = system "curl --silent --output $samplexml $eutilsUrl";
-        #if ($status != 0) {
-        #    print "            ... FAILED!\n";
-        #    next;
-        #}
+        $status = system "curl --silent --output $samplexml $eutilsUrl";
+        if ($status != 0) {
+            print "            ... FAILED!\n";
+            next;
+        }
 
-        # Validate this sample against the new DTD
+        # Validate this sample against the new DTD.  There's still a problem
+        # with this validation, because it still tries to read the instance
+        # document's specified DTD over the network, even though it's not using
+        # that for validation.  So this will fail if that DTD doesn't exist
+        # (pubmedhealth).
         my $xmllint_cmd = "xmllint --noout --dtdvalid $dtdpath $samplexml";
         print "        Validating:  '$xmllint_cmd'\n";
         $status = system $xmllint_cmd;
         if ($status != 0) {
-            print "            FAILED to validate!\n";
-            die;
+            print STDERR "            $samplexml FAILED to validate!\n";
+            next;
         }
     }
 
@@ -117,13 +122,10 @@ foreach my $samplegroup (@$samples) {
 
 
 
-
-
-
-
+    # Done up to here
     next;
 
-
+    # Next steps:  generate the -2json.xml, generate JSON, and validate it.
 
     my $basename = $dtd;
     $basename =~ s/\.dtd$//;
