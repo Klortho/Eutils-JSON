@@ -10,4 +10,6 @@ There are several others, but they are of the "throw-away" variety.
   for validation of the XML results
 * `TestXmlJson.pl` - Tests each sample in samples.xml
 * `EutilsJson.pm` - Perl module with some shared code.
-
+* `GetRandomIds.pl` - throw-away script to compile lists of random IDs for each
+  of the available databases.  The output of this is XML, suitable for merging
+  into `samples.xml`.
