@@ -11,7 +11,7 @@
       <eutils-url>einfo.fcgi?db=fleegle</eutils-url>
     </sample>
   </samplegroup>
-  
+
   <samplegroup dtd="eSearch_020511.dtd" eutil="esearch">
     <sample name="esearch.pubmed" db="pubmed">
       <eutils-url>esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y</eutils-url>
@@ -23,1791 +23,1659 @@
       <eutils-url>esearch.fcgi?db=fleegle&amp;term=cat</eutils-url>
     </sample>
   </samplegroup>
-  
-  <samplegroup dtd="eSummary_pubmed.dtd" eutil="esummary">
-    <sample name="esummary.pubmed" db="pubmed">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmed&amp;id=5683731,22144687</eutils-url>
+
+  <samplegroup dtd="esummary_pubmed.dtd" eutil="esummary">
+    <sample name="esummary.pubmed.multiple" db="pubmed">
+      <eutils-url>esummary.fcgi?db=pubmed&amp;id=5683731,22144687&amp;version=2.0</eutils-url>
     </sample>
-  
-    <sample name="esummary.pubmed.11410305" eutil="esummary" id="11410305">
+    <sample name="esummary.pubmed.11410305" id="11410305" db="pubmed">
       <eutils-url>esummary.fcgi?db=pubmed&amp;id=11410305&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmed.96989" eutil="esummary" id="96989">
+    <sample name="esummary.pubmed.96989" id="96989" db="pubmed">
       <eutils-url>esummary.fcgi?db=pubmed&amp;id=96989&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmed.7615336" eutil="esummary" id="7615336">
+    <sample name="esummary.pubmed.7615336" id="7615336" db="pubmed">
       <eutils-url>esummary.fcgi?db=pubmed&amp;id=7615336&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmed.3511784" eutil="esummary" id="3511784">
+    <sample name="esummary.pubmed.3511784" id="3511784" db="pubmed">
       <eutils-url>esummary.fcgi?db=pubmed&amp;id=3511784&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmed.12700482" eutil="esummary" id="12700482">
+    <sample name="esummary.pubmed.12700482" id="12700482" db="pubmed">
       <eutils-url>esummary.fcgi?db=pubmed&amp;id=12700482&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmed.20585052" eutil="esummary" id="20585052">
+    <sample name="esummary.pubmed.20585052" id="20585052" db="pubmed">
       <eutils-url>esummary.fcgi?db=pubmed&amp;id=20585052&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmed.17759229" eutil="esummary" id="17759229">
+    <sample name="esummary.pubmed.17759229" id="17759229" db="pubmed">
       <eutils-url>esummary.fcgi?db=pubmed&amp;id=17759229&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmed.14772281" eutil="esummary" id="14772281">
+    <sample name="esummary.pubmed.14772281" id="14772281" db="pubmed">
       <eutils-url>esummary.fcgi?db=pubmed&amp;id=14772281&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmed.9856941" eutil="esummary" id="9856941">
+    <sample name="esummary.pubmed.9856941" id="9856941" db="pubmed">
       <eutils-url>esummary.fcgi?db=pubmed&amp;id=9856941&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmed.7550843" eutil="esummary" id="7550843">
+    <sample name="esummary.pubmed.7550843" id="7550843" db="pubmed">
       <eutils-url>esummary.fcgi?db=pubmed&amp;id=7550843&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  
-  <samplegroup dtd="eSummary_protein.dtd" eutil="esummary">
-    <sample name="esummary.protein" db="protein">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=protein&amp;id=284822047</eutils-url>
+
+
+  <samplegroup dtd="esummary_protein.dtd" eutil="esummary">
+    <sample name="esummary.protein.284822047" db="protein">
+      <eutils-url>esummary.fcgi?db=protein&amp;id=284822047&amp;version=2.0</eutils-url>
     </sample>
-  
-    <sample name="esummary.protein.141211935" eutil="esummary" id="141211935">
+    <sample name="esummary.protein.141211935" id="141211935" db="protein">
       <eutils-url>esummary.fcgi?db=protein&amp;id=141211935&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.protein.392737980" eutil="esummary" id="392737980">
+    <sample name="esummary.protein.392737980" id="392737980" db="protein">
       <eutils-url>esummary.fcgi?db=protein&amp;id=392737980&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.protein.417639812" eutil="esummary" id="417639812">
+    <sample name="esummary.protein.417639812" id="417639812" db="protein">
       <eutils-url>esummary.fcgi?db=protein&amp;id=417639812&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.protein.358994476" eutil="esummary" id="358994476">
+    <sample name="esummary.protein.358994476" id="358994476" db="protein">
       <eutils-url>esummary.fcgi?db=protein&amp;id=358994476&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.protein.340034898" eutil="esummary" id="340034898">
+    <sample name="esummary.protein.340034898" id="340034898" db="protein">
       <eutils-url>esummary.fcgi?db=protein&amp;id=340034898&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.protein.383787542" eutil="esummary" id="383787542">
+    <sample name="esummary.protein.383787542" id="383787542" db="protein">
       <eutils-url>esummary.fcgi?db=protein&amp;id=383787542&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.protein.289418017" eutil="esummary" id="289418017">
+    <sample name="esummary.protein.289418017" id="289418017" db="protein">
       <eutils-url>esummary.fcgi?db=protein&amp;id=289418017&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.protein.189420454" eutil="esummary" id="189420454">
+    <sample name="esummary.protein.189420454" id="189420454" db="protein">
       <eutils-url>esummary.fcgi?db=protein&amp;id=189420454&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.protein.394996278" eutil="esummary" id="394996278">
+    <sample name="esummary.protein.394996278" id="394996278" db="protein">
       <eutils-url>esummary.fcgi?db=protein&amp;id=394996278&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.protein.429372529" eutil="esummary" id="429372529">
+    <sample name="esummary.protein.429372529" id="429372529" db="protein">
       <eutils-url>esummary.fcgi?db=protein&amp;id=429372529&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  
-  <samplegroup dtd="eSummary_nuccore.dtd" eutil="esummary">
-    <sample name="esummary.nuccore" db="nuccore">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nuccore&amp;id=424386131</eutils-url>
+
+
+  <samplegroup dtd="esummary_nuccore.dtd" eutil="esummary">
+    <sample name="esummary.nuccore.424386131" id="424386131" db="nuccore">
+      <eutils-url>esummary.fcgi?db=nuccore&amp;id=424386131&amp;version=2.0</eutils-url>
     </sample>
-  
-    <sample name="esummary.nuccore.348571067" eutil="esummary" id="348571067">
+    <sample name="esummary.nuccore.348571067" id="348571067" db="nuccore">
       <eutils-url>esummary.fcgi?db=nuccore&amp;id=348571067&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nuccore.387254824" eutil="esummary" id="387254824">
+    <sample name="esummary.nuccore.387254824" id="387254824" db="nuccore">
       <eutils-url>esummary.fcgi?db=nuccore&amp;id=387254824&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nuccore.22215779" eutil="esummary" id="22215779">
+    <sample name="esummary.nuccore.22215779" id="22215779" db="nuccore">
       <eutils-url>esummary.fcgi?db=nuccore&amp;id=22215779&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nuccore.351547243" eutil="esummary" id="351547243">
+    <sample name="esummary.nuccore.351547243" id="351547243" db="nuccore">
       <eutils-url>esummary.fcgi?db=nuccore&amp;id=351547243&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nuccore.154014601" eutil="esummary" id="154014601">
+    <sample name="esummary.nuccore.154014601" id="154014601" db="nuccore">
       <eutils-url>esummary.fcgi?db=nuccore&amp;id=154014601&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nuccore.329159523" eutil="esummary" id="329159523">
+    <sample name="esummary.nuccore.329159523" id="329159523" db="nuccore">
       <eutils-url>esummary.fcgi?db=nuccore&amp;id=329159523&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nuccore.319963363" eutil="esummary" id="319963363">
+    <sample name="esummary.nuccore.319963363" id="319963363" db="nuccore">
       <eutils-url>esummary.fcgi?db=nuccore&amp;id=319963363&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nuccore.453355471" eutil="esummary" id="453355471">
+    <sample name="esummary.nuccore.453355471" id="453355471" db="nuccore">
       <eutils-url>esummary.fcgi?db=nuccore&amp;id=453355471&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nuccore.25992614" eutil="esummary" id="25992614">
+    <sample name="esummary.nuccore.25992614" id="25992614" db="nuccore">
       <eutils-url>esummary.fcgi?db=nuccore&amp;id=25992614&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nuccore.319869180" eutil="esummary" id="319869180">
+    <sample name="esummary.nuccore.319869180" id="319869180" db="nuccore">
       <eutils-url>esummary.fcgi?db=nuccore&amp;id=319869180&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  
-  <samplegroup dtd="eSummary_nucleotide.dtd" eutil="esummary">
-    <sample name="esummary.nucleotide" db="nucleotide">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucleotide&amp;id=424386131</eutils-url>
+
+  <samplegroup dtd="esummary_nucleotide.dtd" eutil="esummary">
+    <sample name="esummary.nucleotide.424386131" id="424386131" db="nucleotide">
+      <eutils-url>esummary.fcgi?db=nucleotide&amp;id=424386131&amp;version=2.0</eutils-url>
     </sample>
-  
-    <sample name="esummary.nucleotide.374244865" eutil="esummary" id="374244865">
+    <sample name="esummary.nucleotide.374244865" id="374244865" db="nucleotide">
       <eutils-url>esummary.fcgi?db=nucleotide&amp;id=374244865&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucleotide.396286732" eutil="esummary" id="396286732">
+    <sample name="esummary.nucleotide.396286732" id="396286732" db="nucleotide">
       <eutils-url>esummary.fcgi?db=nucleotide&amp;id=396286732&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucleotide.23212902" eutil="esummary" id="23212902">
+    <sample name="esummary.nucleotide.23212902" id="23212902" db="nucleotide">
       <eutils-url>esummary.fcgi?db=nucleotide&amp;id=23212902&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucleotide.149548095" eutil="esummary" id="149548095">
+    <sample name="esummary.nucleotide.149548095" id="149548095" db="nucleotide">
       <eutils-url>esummary.fcgi?db=nucleotide&amp;id=149548095&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucleotide.363480624" eutil="esummary" id="363480624">
+    <sample name="esummary.nucleotide.363480624" id="363480624" db="nucleotide">
       <eutils-url>esummary.fcgi?db=nucleotide&amp;id=363480624&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucleotide.67614275" eutil="esummary" id="67614275">
+    <sample name="esummary.nucleotide.67614275" id="67614275" db="nucleotide">
       <eutils-url>esummary.fcgi?db=nucleotide&amp;id=67614275&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucleotide.213402144" eutil="esummary" id="213402144">
+    <sample name="esummary.nucleotide.213402144" id="213402144" db="nucleotide">
       <eutils-url>esummary.fcgi?db=nucleotide&amp;id=213402144&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucleotide.322178668" eutil="esummary" id="322178668">
+    <sample name="esummary.nucleotide.322178668" id="322178668" db="nucleotide">
       <eutils-url>esummary.fcgi?db=nucleotide&amp;id=322178668&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucleotide.217071077" eutil="esummary" id="217071077">
+    <sample name="esummary.nucleotide.217071077" id="217071077" db="nucleotide">
       <eutils-url>esummary.fcgi?db=nucleotide&amp;id=217071077&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucleotide.341916132" eutil="esummary" id="341916132">
+    <sample name="esummary.nucleotide.341916132" id="341916132" db="nucleotide">
       <eutils-url>esummary.fcgi?db=nucleotide&amp;id=341916132&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  
-  <samplegroup dtd="eSummary_nucgss.dtd" eutil="esummary">
-    <sample name="esummary.nucgss" db="nucgss">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucgss&amp;id=371566079</eutils-url>
+
+  <samplegroup dtd="esummary_nucgss.dtd" eutil="esummary">
+    <sample name="esummary.nucgss.371566079" id="371566079" db="nucgss">
+      <eutils-url>esummary.fcgi?db=nucgss&amp;id=371566079&amp;version=2.0</eutils-url>
     </sample>
-  
-    <sample name="esummary.nucgss.357928777" eutil="esummary" id="357928777">
+    <sample name="esummary.nucgss.357928777" id="357928777" db="nucgss">
       <eutils-url>esummary.fcgi?db=nucgss&amp;id=357928777&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucgss.191722905" eutil="esummary" id="191722905">
+    <sample name="esummary.nucgss.191722905" id="191722905" db="nucgss">
       <eutils-url>esummary.fcgi?db=nucgss&amp;id=191722905&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucgss.85500571" eutil="esummary" id="85500571">
+    <sample name="esummary.nucgss.85500571" id="85500571" db="nucgss">
       <eutils-url>esummary.fcgi?db=nucgss&amp;id=85500571&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucgss.433838145" eutil="esummary" id="433838145">
+    <sample name="esummary.nucgss.433838145" id="433838145" db="nucgss">
       <eutils-url>esummary.fcgi?db=nucgss&amp;id=433838145&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucgss.128578226" eutil="esummary" id="128578226">
+    <sample name="esummary.nucgss.128578226" id="128578226" db="nucgss">
       <eutils-url>esummary.fcgi?db=nucgss&amp;id=128578226&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucgss.312360541" eutil="esummary" id="312360541">
+    <sample name="esummary.nucgss.312360541" id="312360541" db="nucgss">
       <eutils-url>esummary.fcgi?db=nucgss&amp;id=312360541&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucgss.151706895" eutil="esummary" id="151706895">
+    <sample name="esummary.nucgss.151706895" id="151706895" db="nucgss">
       <eutils-url>esummary.fcgi?db=nucgss&amp;id=151706895&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucgss.323623060" eutil="esummary" id="323623060">
+    <sample name="esummary.nucgss.323623060" id="323623060" db="nucgss">
       <eutils-url>esummary.fcgi?db=nucgss&amp;id=323623060&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucgss.127437447" eutil="esummary" id="127437447">
+    <sample name="esummary.nucgss.127437447" id="127437447" db="nucgss">
       <eutils-url>esummary.fcgi?db=nucgss&amp;id=127437447&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucgss.170419883" eutil="esummary" id="170419883">
+    <sample name="esummary.nucgss.170419883" id="170419883" db="nucgss">
       <eutils-url>esummary.fcgi?db=nucgss&amp;id=170419883&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  
-  <samplegroup dtd="eSummary_nucest.dtd" eutil="esummary">
-    <sample name="esummary.nucest" db="nucest">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nucest&amp;id=409212211</eutils-url>
-    </sample>
-  
-    <sample name="esummary.nucest.11167272" eutil="esummary" id="11167272">
+
+  <samplegroup dtd="esummary_nucest.dtd" eutil="esummary">
+    <sample name="esummary.nucest.11167272" id="11167272" db="nucest">
       <eutils-url>esummary.fcgi?db=nucest&amp;id=11167272&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucest.308099259" eutil="esummary" id="308099259">
+    <sample name="esummary.nucest.308099259" id="308099259" db="nucest">
       <eutils-url>esummary.fcgi?db=nucest&amp;id=308099259&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucest.29791833" eutil="esummary" id="29791833">
+    <sample name="esummary.nucest.29791833" id="29791833" db="nucest">
       <eutils-url>esummary.fcgi?db=nucest&amp;id=29791833&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucest.86847592" eutil="esummary" id="86847592">
+    <sample name="esummary.nucest.86847592" id="86847592" db="nucest">
       <eutils-url>esummary.fcgi?db=nucest&amp;id=86847592&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucest.189248004" eutil="esummary" id="189248004">
+    <sample name="esummary.nucest.189248004" id="189248004" db="nucest">
       <eutils-url>esummary.fcgi?db=nucest&amp;id=189248004&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucest.66461632" eutil="esummary" id="66461632">
+    <sample name="esummary.nucest.66461632" id="66461632" db="nucest">
       <eutils-url>esummary.fcgi?db=nucest&amp;id=66461632&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucest.103776888" eutil="esummary" id="103776888">
+    <sample name="esummary.nucest.103776888" id="103776888" db="nucest">
       <eutils-url>esummary.fcgi?db=nucest&amp;id=103776888&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucest.313977450" eutil="esummary" id="313977450">
+    <sample name="esummary.nucest.313977450" id="313977450" db="nucest">
       <eutils-url>esummary.fcgi?db=nucest&amp;id=313977450&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucest.6157619" eutil="esummary" id="6157619">
+    <sample name="esummary.nucest.6157619" id="6157619" db="nucest">
       <eutils-url>esummary.fcgi?db=nucest&amp;id=6157619&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nucest.401451035" eutil="esummary" id="401451035">
+    <sample name="esummary.nucest.401451035" id="401451035" db="nucest">
       <eutils-url>esummary.fcgi?db=nucest&amp;id=401451035&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  
-  <samplegroup dtd="eSummary_structure.dtd" eutil="esummary">
-    <sample name="esummary.structure" db="structure">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=structure&amp;id=52770</eutils-url>
-    </sample>
-  
-    <sample name="esummary.structure.68512" eutil="esummary" id="68512">
+
+  <samplegroup dtd="esummary_structure.dtd" eutil="esummary">
+    <sample name="esummary.structure.68512" id="68512" db="structure">
       <eutils-url>esummary.fcgi?db=structure&amp;id=68512&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.structure.93335" eutil="esummary" id="93335">
+    <sample name="esummary.structure.93335" id="93335" db="structure">
       <eutils-url>esummary.fcgi?db=structure&amp;id=93335&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.structure.74431" eutil="esummary" id="74431">
+    <sample name="esummary.structure.74431" id="74431" db="structure">
       <eutils-url>esummary.fcgi?db=structure&amp;id=74431&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.structure.59394" eutil="esummary" id="59394">
+    <sample name="esummary.structure.59394" id="59394" db="structure">
       <eutils-url>esummary.fcgi?db=structure&amp;id=59394&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.structure.37633" eutil="esummary" id="37633">
+    <sample name="esummary.structure.37633" id="37633" db="structure">
       <eutils-url>esummary.fcgi?db=structure&amp;id=37633&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.structure.93483" eutil="esummary" id="93483">
+    <sample name="esummary.structure.93483" id="93483" db="structure">
       <eutils-url>esummary.fcgi?db=structure&amp;id=93483&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.structure.80736" eutil="esummary" id="80736">
+    <sample name="esummary.structure.80736" id="80736" db="structure">
       <eutils-url>esummary.fcgi?db=structure&amp;id=80736&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.structure.90975" eutil="esummary" id="90975">
+    <sample name="esummary.structure.90975" id="90975" db="structure">
       <eutils-url>esummary.fcgi?db=structure&amp;id=90975&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.structure.66404" eutil="esummary" id="66404">
+    <sample name="esummary.structure.66404" id="66404" db="structure">
       <eutils-url>esummary.fcgi?db=structure&amp;id=66404&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.structure.80184" eutil="esummary" id="80184">
+    <sample name="esummary.structure.80184" id="80184" db="structure">
       <eutils-url>esummary.fcgi?db=structure&amp;id=80184&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  
-  <samplegroup dtd="eSummary_genome.dtd" eutil="esummary">
-    <sample name="esummary.genome" db="genome">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genome&amp;id=2640</eutils-url>
-    </sample>
-  
-    <sample name="esummary.genome.16722" eutil="esummary" id="16722">
+
+  <samplegroup dtd="esummary_genome.dtd" eutil="esummary">
+    <sample name="esummary.genome.16722" id="16722" db="genome">
       <eutils-url>esummary.fcgi?db=genome&amp;id=16722&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genome.4098" eutil="esummary" id="4098">
+    <sample name="esummary.genome.4098" id="4098" db="genome">
       <eutils-url>esummary.fcgi?db=genome&amp;id=4098&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genome.11014" eutil="esummary" id="11014">
+    <sample name="esummary.genome.11014" id="11014" db="genome">
       <eutils-url>esummary.fcgi?db=genome&amp;id=11014&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genome.13650" eutil="esummary" id="13650">
+    <sample name="esummary.genome.13650" id="13650" db="genome">
       <eutils-url>esummary.fcgi?db=genome&amp;id=13650&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genome.13247" eutil="esummary" id="13247">
+    <sample name="esummary.genome.13247" id="13247" db="genome">
       <eutils-url>esummary.fcgi?db=genome&amp;id=13247&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genome.5425" eutil="esummary" id="5425">
+    <sample name="esummary.genome.5425" id="5425" db="genome">
       <eutils-url>esummary.fcgi?db=genome&amp;id=5425&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genome.13541" eutil="esummary" id="13541">
+    <sample name="esummary.genome.13541" id="13541" db="genome">
       <eutils-url>esummary.fcgi?db=genome&amp;id=13541&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genome.10347" eutil="esummary" id="10347">
+    <sample name="esummary.genome.10347" id="10347" db="genome">
       <eutils-url>esummary.fcgi?db=genome&amp;id=10347&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genome.14646" eutil="esummary" id="14646">
+    <sample name="esummary.genome.14646" id="14646" db="genome">
       <eutils-url>esummary.fcgi?db=genome&amp;id=14646&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genome.14799" eutil="esummary" id="14799">
+    <sample name="esummary.genome.14799" id="14799" db="genome">
       <eutils-url>esummary.fcgi?db=genome&amp;id=14799&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_assembly.dtd" eutil="esummary">
-    <sample name="esummary.assembly" db="assembly">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=assembly&amp;id=440818</eutils-url>
-    </sample>
-  
-    <sample name="esummary.assembly.547138" eutil="esummary" id="547138">
+
+  <samplegroup dtd="esummary_assembly.dtd" eutil="esummary">
+    <sample name="esummary.assembly.547138" id="547138" db="assembly">
       <eutils-url>esummary.fcgi?db=assembly&amp;id=547138&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.assembly.264318" eutil="esummary" id="264318">
+    <sample name="esummary.assembly.264318" id="264318" db="assembly">
       <eutils-url>esummary.fcgi?db=assembly&amp;id=264318&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.assembly.455398" eutil="esummary" id="455398">
+    <sample name="esummary.assembly.455398" id="455398" db="assembly">
       <eutils-url>esummary.fcgi?db=assembly&amp;id=455398&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.assembly.220638" eutil="esummary" id="220638">
+    <sample name="esummary.assembly.220638" id="220638" db="assembly">
       <eutils-url>esummary.fcgi?db=assembly&amp;id=220638&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.assembly.184078" eutil="esummary" id="184078">
+    <sample name="esummary.assembly.184078" id="184078" db="assembly">
       <eutils-url>esummary.fcgi?db=assembly&amp;id=184078&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.assembly.408738" eutil="esummary" id="408738">
+    <sample name="esummary.assembly.408738" id="408738" db="assembly">
       <eutils-url>esummary.fcgi?db=assembly&amp;id=408738&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.assembly.216418" eutil="esummary" id="216418">
+    <sample name="esummary.assembly.216418" id="216418" db="assembly">
       <eutils-url>esummary.fcgi?db=assembly&amp;id=216418&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.assembly.305868" eutil="esummary" id="305868">
+    <sample name="esummary.assembly.305868" id="305868" db="assembly">
       <eutils-url>esummary.fcgi?db=assembly&amp;id=305868&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.assembly.102208" eutil="esummary" id="102208">
+    <sample name="esummary.assembly.102208" id="102208" db="assembly">
       <eutils-url>esummary.fcgi?db=assembly&amp;id=102208&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.assembly.490948" eutil="esummary" id="490948">
+    <sample name="esummary.assembly.490948" id="490948" db="assembly">
       <eutils-url>esummary.fcgi?db=assembly&amp;id=490948&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_gcassembly.dtd" eutil="esummary">
-    <sample name="esummary.gcassembly" db="gcassembly">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gcassembly&amp;id=440818</eutils-url>
-    </sample>
-  
-    <sample name="esummary.gcassembly.485008" eutil="esummary" id="485008">
+
+  <samplegroup dtd="esummary_gcassembly.dtd" eutil="esummary">
+    <sample name="esummary.gcassembly.485008" id="485008" db="gcassembly">
       <eutils-url>esummary.fcgi?db=gcassembly&amp;id=485008&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gcassembly.360198" eutil="esummary" id="360198">
+    <sample name="esummary.gcassembly.360198" id="360198" db="gcassembly">
       <eutils-url>esummary.fcgi?db=gcassembly&amp;id=360198&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gcassembly.331208" eutil="esummary" id="331208">
+    <sample name="esummary.gcassembly.331208" id="331208" db="gcassembly">
       <eutils-url>esummary.fcgi?db=gcassembly&amp;id=331208&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gcassembly.317518" eutil="esummary" id="317518">
+    <sample name="esummary.gcassembly.317518" id="317518" db="gcassembly">
       <eutils-url>esummary.fcgi?db=gcassembly&amp;id=317518&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gcassembly.479208" eutil="esummary" id="479208">
+    <sample name="esummary.gcassembly.479208" id="479208" db="gcassembly">
       <eutils-url>esummary.fcgi?db=gcassembly&amp;id=479208&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gcassembly.215318" eutil="esummary" id="215318">
+    <sample name="esummary.gcassembly.215318" id="215318" db="gcassembly">
       <eutils-url>esummary.fcgi?db=gcassembly&amp;id=215318&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gcassembly.397518" eutil="esummary" id="397518">
+    <sample name="esummary.gcassembly.397518" id="397518" db="gcassembly">
       <eutils-url>esummary.fcgi?db=gcassembly&amp;id=397518&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gcassembly.401588" eutil="esummary" id="401588">
+    <sample name="esummary.gcassembly.401588" id="401588" db="gcassembly">
       <eutils-url>esummary.fcgi?db=gcassembly&amp;id=401588&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gcassembly.311488" eutil="esummary" id="311488">
+    <sample name="esummary.gcassembly.311488" id="311488" db="gcassembly">
       <eutils-url>esummary.fcgi?db=gcassembly&amp;id=311488&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gcassembly.365738" eutil="esummary" id="365738">
+    <sample name="esummary.gcassembly.365738" id="365738" db="gcassembly">
       <eutils-url>esummary.fcgi?db=gcassembly&amp;id=365738&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_genomeprj.dtd" eutil="esummary">
-    <sample name="esummary.genomeprj" db="genomeprj">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=genomeprj&amp;id=54101</eutils-url>
-    </sample>
-  
-    <sample name="esummary.genomeprj.35465" eutil="esummary" id="35465">
+
+  <samplegroup dtd="esummary_genomeprj.dtd" eutil="esummary">
+    <sample name="esummary.genomeprj.35465" id="35465" db="genomeprj">
       <eutils-url>esummary.fcgi?db=genomeprj&amp;id=35465&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genomeprj.62187" eutil="esummary" id="62187">
+    <sample name="esummary.genomeprj.62187" id="62187" db="genomeprj">
       <eutils-url>esummary.fcgi?db=genomeprj&amp;id=62187&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genomeprj.49955" eutil="esummary" id="49955">
+    <sample name="esummary.genomeprj.49955" id="49955" db="genomeprj">
       <eutils-url>esummary.fcgi?db=genomeprj&amp;id=49955&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genomeprj.14381" eutil="esummary" id="14381">
+    <sample name="esummary.genomeprj.14381" id="14381" db="genomeprj">
       <eutils-url>esummary.fcgi?db=genomeprj&amp;id=14381&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genomeprj.54463" eutil="esummary" id="54463">
+    <sample name="esummary.genomeprj.54463" id="54463" db="genomeprj">
       <eutils-url>esummary.fcgi?db=genomeprj&amp;id=54463&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genomeprj.54495" eutil="esummary" id="54495">
+    <sample name="esummary.genomeprj.54495" id="54495" db="genomeprj">
       <eutils-url>esummary.fcgi?db=genomeprj&amp;id=54495&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genomeprj.59591" eutil="esummary" id="59591">
+    <sample name="esummary.genomeprj.59591" id="59591" db="genomeprj">
       <eutils-url>esummary.fcgi?db=genomeprj&amp;id=59591&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genomeprj.9618" eutil="esummary" id="9618">
+    <sample name="esummary.genomeprj.9618" id="9618" db="genomeprj">
       <eutils-url>esummary.fcgi?db=genomeprj&amp;id=9618&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genomeprj.68395" eutil="esummary" id="68395">
+    <sample name="esummary.genomeprj.68395" id="68395" db="genomeprj">
       <eutils-url>esummary.fcgi?db=genomeprj&amp;id=68395&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.genomeprj.42373" eutil="esummary" id="42373">
+    <sample name="esummary.genomeprj.42373" id="42373" db="genomeprj">
       <eutils-url>esummary.fcgi?db=genomeprj&amp;id=42373&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_bioproject.dtd" eutil="esummary">
-    <sample name="esummary.bioproject" db="bioproject">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=bioproject&amp;id=171168</eutils-url>
-    </sample>
-  
-    <sample name="esummary.bioproject.15766" eutil="esummary" id="15766">
+
+  <samplegroup dtd="esummary_bioproject.dtd" eutil="esummary">
+    <sample name="esummary.bioproject.15766" id="15766" db="bioproject">
       <eutils-url>esummary.fcgi?db=bioproject&amp;id=15766&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.bioproject.130231" eutil="esummary" id="130231">
+    <sample name="esummary.bioproject.130231" id="130231" db="bioproject">
       <eutils-url>esummary.fcgi?db=bioproject&amp;id=130231&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.bioproject.164551" eutil="esummary" id="164551">
+    <sample name="esummary.bioproject.164551" id="164551" db="bioproject">
       <eutils-url>esummary.fcgi?db=bioproject&amp;id=164551&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.bioproject.116203" eutil="esummary" id="116203">
+    <sample name="esummary.bioproject.116203" id="116203" db="bioproject">
       <eutils-url>esummary.fcgi?db=bioproject&amp;id=116203&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.bioproject.34627" eutil="esummary" id="34627">
+    <sample name="esummary.bioproject.34627" id="34627" db="bioproject">
       <eutils-url>esummary.fcgi?db=bioproject&amp;id=34627&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.bioproject.130155" eutil="esummary" id="130155">
+    <sample name="esummary.bioproject.130155" id="130155" db="bioproject">
       <eutils-url>esummary.fcgi?db=bioproject&amp;id=130155&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.bioproject.181913" eutil="esummary" id="181913">
+    <sample name="esummary.bioproject.181913" id="181913" db="bioproject">
       <eutils-url>esummary.fcgi?db=bioproject&amp;id=181913&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.bioproject.93851" eutil="esummary" id="93851">
+    <sample name="esummary.bioproject.93851" id="93851" db="bioproject">
       <eutils-url>esummary.fcgi?db=bioproject&amp;id=93851&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.bioproject.170332" eutil="esummary" id="170332">
+    <sample name="esummary.bioproject.170332" id="170332" db="bioproject">
       <eutils-url>esummary.fcgi?db=bioproject&amp;id=170332&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.bioproject.97315" eutil="esummary" id="97315">
+    <sample name="esummary.bioproject.97315" id="97315" db="bioproject">
       <eutils-url>esummary.fcgi?db=bioproject&amp;id=97315&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_biosample.dtd" eutil="esummary">
-    <sample name="esummary.biosample" db="biosample">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosample&amp;id=182293</eutils-url>
-    </sample>
-  
-    <sample name="esummary.biosample.1764229" eutil="esummary" id="1764229">
+
+  <samplegroup dtd="esummary_biosample.dtd" eutil="esummary">
+    <sample name="esummary.biosample.1764229" id="1764229" db="biosample">
       <eutils-url>esummary.fcgi?db=biosample&amp;id=1764229&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosample.874511" eutil="esummary" id="874511">
+    <sample name="esummary.biosample.874511" id="874511" db="biosample">
       <eutils-url>esummary.fcgi?db=biosample&amp;id=874511&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosample.901916" eutil="esummary" id="901916">
+    <sample name="esummary.biosample.901916" id="901916" db="biosample">
       <eutils-url>esummary.fcgi?db=biosample&amp;id=901916&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosample.1610148" eutil="esummary" id="1610148">
+    <sample name="esummary.biosample.1610148" id="1610148" db="biosample">
       <eutils-url>esummary.fcgi?db=biosample&amp;id=1610148&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosample.1431640" eutil="esummary" id="1431640">
+    <sample name="esummary.biosample.1431640" id="1431640" db="biosample">
       <eutils-url>esummary.fcgi?db=biosample&amp;id=1431640&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosample.1174137" eutil="esummary" id="1174137">
+    <sample name="esummary.biosample.1174137" id="1174137" db="biosample">
       <eutils-url>esummary.fcgi?db=biosample&amp;id=1174137&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosample.856120" eutil="esummary" id="856120">
+    <sample name="esummary.biosample.856120" id="856120" db="biosample">
       <eutils-url>esummary.fcgi?db=biosample&amp;id=856120&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosample.1719871" eutil="esummary" id="1719871">
+    <sample name="esummary.biosample.1719871" id="1719871" db="biosample">
       <eutils-url>esummary.fcgi?db=biosample&amp;id=1719871&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosample.1218553" eutil="esummary" id="1218553">
+    <sample name="esummary.biosample.1218553" id="1218553" db="biosample">
       <eutils-url>esummary.fcgi?db=biosample&amp;id=1218553&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosample.832019" eutil="esummary" id="832019">
+    <sample name="esummary.biosample.832019" id="832019" db="biosample">
       <eutils-url>esummary.fcgi?db=biosample&amp;id=832019&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_biosystems.dtd" eutil="esummary">
-    <sample name="esummary.biosystems" db="biosystems">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=biosystems&amp;id=493040</eutils-url>
-    </sample>
-  
-    <sample name="esummary.biosystems.555627" eutil="esummary" id="555627">
+
+  <samplegroup dtd="esummary_biosystems.dtd" eutil="esummary">
+    <sample name="esummary.biosystems.555627" id="555627" db="biosystems">
       <eutils-url>esummary.fcgi?db=biosystems&amp;id=555627&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosystems.123893" eutil="esummary" id="123893">
+    <sample name="esummary.biosystems.123893" id="123893" db="biosystems">
       <eutils-url>esummary.fcgi?db=biosystems&amp;id=123893&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosystems.99907" eutil="esummary" id="99907">
+    <sample name="esummary.biosystems.99907" id="99907" db="biosystems">
       <eutils-url>esummary.fcgi?db=biosystems&amp;id=99907&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosystems.690422" eutil="esummary" id="690422">
+    <sample name="esummary.biosystems.690422" id="690422" db="biosystems">
       <eutils-url>esummary.fcgi?db=biosystems&amp;id=690422&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosystems.595824" eutil="esummary" id="595824">
+    <sample name="esummary.biosystems.595824" id="595824" db="biosystems">
       <eutils-url>esummary.fcgi?db=biosystems&amp;id=595824&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosystems.396072" eutil="esummary" id="396072">
+    <sample name="esummary.biosystems.396072" id="396072" db="biosystems">
       <eutils-url>esummary.fcgi?db=biosystems&amp;id=396072&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosystems.678200" eutil="esummary" id="678200">
+    <sample name="esummary.biosystems.678200" id="678200" db="biosystems">
       <eutils-url>esummary.fcgi?db=biosystems&amp;id=678200&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosystems.465152" eutil="esummary" id="465152">
+    <sample name="esummary.biosystems.465152" id="465152" db="biosystems">
       <eutils-url>esummary.fcgi?db=biosystems&amp;id=465152&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosystems.610079" eutil="esummary" id="610079">
+    <sample name="esummary.biosystems.610079" id="610079" db="biosystems">
       <eutils-url>esummary.fcgi?db=biosystems&amp;id=610079&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.biosystems.597220" eutil="esummary" id="597220">
+    <sample name="esummary.biosystems.597220" id="597220" db="biosystems">
       <eutils-url>esummary.fcgi?db=biosystems&amp;id=597220&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_blastdbinfo.dtd" eutil="esummary">
-    <sample name="esummary.blastdbinfo" db="blastdbinfo">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=blastdbinfo&amp;id=645844</eutils-url>
-    </sample>
-  
-    <sample name="esummary.blastdbinfo.1369374" eutil="esummary" id="1369374">
+
+  <samplegroup dtd="esummary_blastdbinfo.dtd" eutil="esummary">
+    <sample name="esummary.blastdbinfo.1369374" id="1369374" db="blastdbinfo">
       <eutils-url>esummary.fcgi?db=blastdbinfo&amp;id=1369374&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.blastdbinfo.98884" eutil="esummary" id="98884">
+    <sample name="esummary.blastdbinfo.98884" id="98884" db="blastdbinfo">
       <eutils-url>esummary.fcgi?db=blastdbinfo&amp;id=98884&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.blastdbinfo.989024" eutil="esummary" id="989024">
+    <sample name="esummary.blastdbinfo.989024" id="989024" db="blastdbinfo">
       <eutils-url>esummary.fcgi?db=blastdbinfo&amp;id=989024&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.blastdbinfo.108854" eutil="esummary" id="108854">
+    <sample name="esummary.blastdbinfo.108854" id="108854" db="blastdbinfo">
       <eutils-url>esummary.fcgi?db=blastdbinfo&amp;id=108854&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.blastdbinfo.1334334" eutil="esummary" id="1334334">
+    <sample name="esummary.blastdbinfo.1334334" id="1334334" db="blastdbinfo">
       <eutils-url>esummary.fcgi?db=blastdbinfo&amp;id=1334334&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.blastdbinfo.1000024" eutil="esummary" id="1000024">
+    <sample name="esummary.blastdbinfo.1000024" id="1000024" db="blastdbinfo">
       <eutils-url>esummary.fcgi?db=blastdbinfo&amp;id=1000024&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.blastdbinfo.521373" eutil="esummary" id="521373">
+    <sample name="esummary.blastdbinfo.521373" id="521373" db="blastdbinfo">
       <eutils-url>esummary.fcgi?db=blastdbinfo&amp;id=521373&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.blastdbinfo.1063774" eutil="esummary" id="1063774">
+    <sample name="esummary.blastdbinfo.1063774" id="1063774" db="blastdbinfo">
       <eutils-url>esummary.fcgi?db=blastdbinfo&amp;id=1063774&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.blastdbinfo.1295944" eutil="esummary" id="1295944">
+    <sample name="esummary.blastdbinfo.1295944" id="1295944" db="blastdbinfo">
       <eutils-url>esummary.fcgi?db=blastdbinfo&amp;id=1295944&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.blastdbinfo.1330134" eutil="esummary" id="1330134">
+    <sample name="esummary.blastdbinfo.1330134" id="1330134" db="blastdbinfo">
       <eutils-url>esummary.fcgi?db=blastdbinfo&amp;id=1330134&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_books.dtd" eutil="esummary">
-    <sample name="esummary.books" db="books">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=books&amp;id=2825746</eutils-url>
-    </sample>
-  
-    <sample name="esummary.books.2643114" eutil="esummary" id="2643114">
+
+  <samplegroup dtd="esummary_books.dtd" eutil="esummary">
+    <sample name="esummary.books.2643114" id="2643114" db="books">
       <eutils-url>esummary.fcgi?db=books&amp;id=2643114&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.books.2979028" eutil="esummary" id="2979028">
+    <sample name="esummary.books.2979028" id="2979028" db="books">
       <eutils-url>esummary.fcgi?db=books&amp;id=2979028&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.books.2472858" eutil="esummary" id="2472858">
+    <sample name="esummary.books.2472858" id="2472858" db="books">
       <eutils-url>esummary.fcgi?db=books&amp;id=2472858&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.books.1645938" eutil="esummary" id="1645938">
+    <sample name="esummary.books.1645938" id="1645938" db="books">
       <eutils-url>esummary.fcgi?db=books&amp;id=1645938&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.books.1865712" eutil="esummary" id="1865712">
+    <sample name="esummary.books.1865712" id="1865712" db="books">
       <eutils-url>esummary.fcgi?db=books&amp;id=1865712&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.books.2752122" eutil="esummary" id="2752122">
+    <sample name="esummary.books.2752122" id="2752122" db="books">
       <eutils-url>esummary.fcgi?db=books&amp;id=2752122&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.books.2624808" eutil="esummary" id="2624808">
+    <sample name="esummary.books.2624808" id="2624808" db="books">
       <eutils-url>esummary.fcgi?db=books&amp;id=2624808&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.books.1673010" eutil="esummary" id="1673010">
+    <sample name="esummary.books.1673010" id="1673010" db="books">
       <eutils-url>esummary.fcgi?db=books&amp;id=1673010&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.books.2789764" eutil="esummary" id="2789764">
+    <sample name="esummary.books.2789764" id="2789764" db="books">
       <eutils-url>esummary.fcgi?db=books&amp;id=2789764&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.books.2954532" eutil="esummary" id="2954532">
+    <sample name="esummary.books.2954532" id="2954532" db="books">
       <eutils-url>esummary.fcgi?db=books&amp;id=2954532&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_cdd.dtd" eutil="esummary">
-    <sample name="esummary.cdd" db="cdd">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=cdd&amp;id=201140</eutils-url>
-    </sample>
-  
-    <sample name="esummary.cdd.114126" eutil="esummary" id="114126">
+
+  <samplegroup dtd="esummary_cdd.dtd" eutil="esummary">
+    <sample name="esummary.cdd.114126" id="114126" db="cdd">
       <eutils-url>esummary.fcgi?db=cdd&amp;id=114126&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.cdd.177745" eutil="esummary" id="177745">
+    <sample name="esummary.cdd.177745" id="177745" db="cdd">
       <eutils-url>esummary.fcgi?db=cdd&amp;id=177745&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.cdd.30046" eutil="esummary" id="30046">
+    <sample name="esummary.cdd.30046" id="30046" db="cdd">
       <eutils-url>esummary.fcgi?db=cdd&amp;id=30046&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.cdd.150297" eutil="esummary" id="150297">
+    <sample name="esummary.cdd.150297" id="150297" db="cdd">
       <eutils-url>esummary.fcgi?db=cdd&amp;id=150297&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.cdd.178395" eutil="esummary" id="178395">
+    <sample name="esummary.cdd.178395" id="178395" db="cdd">
       <eutils-url>esummary.fcgi?db=cdd&amp;id=178395&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.cdd.147203" eutil="esummary" id="147203">
+    <sample name="esummary.cdd.147203" id="147203" db="cdd">
       <eutils-url>esummary.fcgi?db=cdd&amp;id=147203&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.cdd.206727" eutil="esummary" id="206727">
+    <sample name="esummary.cdd.206727" id="206727" db="cdd">
       <eutils-url>esummary.fcgi?db=cdd&amp;id=206727&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.cdd.149369" eutil="esummary" id="149369">
+    <sample name="esummary.cdd.149369" id="149369" db="cdd">
       <eutils-url>esummary.fcgi?db=cdd&amp;id=149369&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.cdd.214247" eutil="esummary" id="214247">
+    <sample name="esummary.cdd.214247" id="214247" db="cdd">
       <eutils-url>esummary.fcgi?db=cdd&amp;id=214247&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.cdd.176002" eutil="esummary" id="176002">
+    <sample name="esummary.cdd.176002" id="176002" db="cdd">
       <eutils-url>esummary.fcgi?db=cdd&amp;id=176002&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_clone.dtd" eutil="esummary">
-    <sample name="esummary.clone" db="clone">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=clone&amp;id=29702171</eutils-url>
-    </sample>
-  
-    <sample name="esummary.clone.17415112" eutil="esummary" id="17415112">
+
+  <samplegroup dtd="esummary_clone.dtd" eutil="esummary">
+    <sample name="esummary.clone.17415112" id="17415112" db="clone">
       <eutils-url>esummary.fcgi?db=clone&amp;id=17415112&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.clone.18644059" eutil="esummary" id="18644059">
+    <sample name="esummary.clone.18644059" id="18644059" db="clone">
       <eutils-url>esummary.fcgi?db=clone&amp;id=18644059&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.clone.7536622" eutil="esummary" id="7536622">
+    <sample name="esummary.clone.7536622" id="7536622" db="clone">
       <eutils-url>esummary.fcgi?db=clone&amp;id=7536622&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.clone.5332985" eutil="esummary" id="5332985">
+    <sample name="esummary.clone.5332985" id="5332985" db="clone">
       <eutils-url>esummary.fcgi?db=clone&amp;id=5332985&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.clone.17320817" eutil="esummary" id="17320817">
+    <sample name="esummary.clone.17320817" id="17320817" db="clone">
       <eutils-url>esummary.fcgi?db=clone&amp;id=17320817&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.clone.21412536" eutil="esummary" id="21412536">
+    <sample name="esummary.clone.21412536" id="21412536" db="clone">
       <eutils-url>esummary.fcgi?db=clone&amp;id=21412536&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.clone.30272937" eutil="esummary" id="30272937">
+    <sample name="esummary.clone.30272937" id="30272937" db="clone">
       <eutils-url>esummary.fcgi?db=clone&amp;id=30272937&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.clone.26025085" eutil="esummary" id="26025085">
+    <sample name="esummary.clone.26025085" id="26025085" db="clone">
       <eutils-url>esummary.fcgi?db=clone&amp;id=26025085&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.clone.12354079" eutil="esummary" id="12354079">
+    <sample name="esummary.clone.12354079" id="12354079" db="clone">
       <eutils-url>esummary.fcgi?db=clone&amp;id=12354079&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.clone.21767861" eutil="esummary" id="21767861">
+    <sample name="esummary.clone.21767861" id="21767861" db="clone">
       <eutils-url>esummary.fcgi?db=clone&amp;id=21767861&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_gap.dtd" eutil="esummary">
-    <sample name="esummary.gap" db="gap">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gap&amp;id=195331</eutils-url>
-    </sample>
-  
-    <sample name="esummary.gap.134929" eutil="esummary" id="134929">
+
+  <samplegroup dtd="esummary_gap.dtd" eutil="esummary">
+    <sample name="esummary.gap.134929" id="134929" db="gap">
       <eutils-url>esummary.fcgi?db=gap&amp;id=134929&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gap.687195" eutil="esummary" id="687195">
+    <sample name="esummary.gap.687195" id="687195" db="gap">
       <eutils-url>esummary.fcgi?db=gap&amp;id=687195&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gap.872921" eutil="esummary" id="872921">
+    <sample name="esummary.gap.872921" id="872921" db="gap">
       <eutils-url>esummary.fcgi?db=gap&amp;id=872921&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gap.345581" eutil="esummary" id="345581">
+    <sample name="esummary.gap.345581" id="345581" db="gap">
       <eutils-url>esummary.fcgi?db=gap&amp;id=345581&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gap.831523" eutil="esummary" id="831523">
+    <sample name="esummary.gap.831523" id="831523" db="gap">
       <eutils-url>esummary.fcgi?db=gap&amp;id=831523&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gap.378662" eutil="esummary" id="378662">
+    <sample name="esummary.gap.378662" id="378662" db="gap">
       <eutils-url>esummary.fcgi?db=gap&amp;id=378662&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gap.871592" eutil="esummary" id="871592">
+    <sample name="esummary.gap.871592" id="871592" db="gap">
       <eutils-url>esummary.fcgi?db=gap&amp;id=871592&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gap.271924" eutil="esummary" id="271924">
+    <sample name="esummary.gap.271924" id="271924" db="gap">
       <eutils-url>esummary.fcgi?db=gap&amp;id=271924&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gap.852583" eutil="esummary" id="852583">
+    <sample name="esummary.gap.852583" id="852583" db="gap">
       <eutils-url>esummary.fcgi?db=gap&amp;id=852583&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gap.269710" eutil="esummary" id="269710">
+    <sample name="esummary.gap.269710" id="269710" db="gap">
       <eutils-url>esummary.fcgi?db=gap&amp;id=269710&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_gapplus.dtd" eutil="esummary">
-    <sample name="esummary.gapplus" db="gapplus">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gapplus&amp;id=5235996</eutils-url>
-    </sample>
-  
-    <sample name="esummary.gapplus.4544330" eutil="esummary" id="4544330">
+
+  <samplegroup dtd="esummary_gapplus.dtd" eutil="esummary">
+    <sample name="esummary.gapplus.4544330" id="4544330" db="gapplus">
       <eutils-url>esummary.fcgi?db=gapplus&amp;id=4544330&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gapplus.449888" eutil="esummary" id="449888">
+    <sample name="esummary.gapplus.449888" id="449888" db="gapplus">
       <eutils-url>esummary.fcgi?db=gapplus&amp;id=449888&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gapplus.4598447" eutil="esummary" id="4598447">
+    <sample name="esummary.gapplus.4598447" id="4598447" db="gapplus">
       <eutils-url>esummary.fcgi?db=gapplus&amp;id=4598447&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gapplus.3506262" eutil="esummary" id="3506262">
+    <sample name="esummary.gapplus.3506262" id="3506262" db="gapplus">
       <eutils-url>esummary.fcgi?db=gapplus&amp;id=3506262&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gapplus.5049509" eutil="esummary" id="5049509">
+    <sample name="esummary.gapplus.5049509" id="5049509" db="gapplus">
       <eutils-url>esummary.fcgi?db=gapplus&amp;id=5049509&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gapplus.827479" eutil="esummary" id="827479">
+    <sample name="esummary.gapplus.827479" id="827479" db="gapplus">
       <eutils-url>esummary.fcgi?db=gapplus&amp;id=827479&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gapplus.784662" eutil="esummary" id="784662">
+    <sample name="esummary.gapplus.784662" id="784662" db="gapplus">
       <eutils-url>esummary.fcgi?db=gapplus&amp;id=784662&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gapplus.3074382" eutil="esummary" id="3074382">
+    <sample name="esummary.gapplus.3074382" id="3074382" db="gapplus">
       <eutils-url>esummary.fcgi?db=gapplus&amp;id=3074382&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gapplus.1907450" eutil="esummary" id="1907450">
+    <sample name="esummary.gapplus.1907450" id="1907450" db="gapplus">
       <eutils-url>esummary.fcgi?db=gapplus&amp;id=1907450&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gapplus.4165747" eutil="esummary" id="4165747">
+    <sample name="esummary.gapplus.4165747" id="4165747" db="gapplus">
       <eutils-url>esummary.fcgi?db=gapplus&amp;id=4165747&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_dbvar.dtd" eutil="esummary">
-    <sample name="esummary.dbvar" db="dbvar">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=dbvar&amp;id=1272816</eutils-url>
-    </sample>
-  
-    <sample name="esummary.dbvar.7597202" eutil="esummary" id="7597202">
+
+  <samplegroup dtd="esummary_dbvar.dtd" eutil="esummary">
+    <sample name="esummary.dbvar.7597202" id="7597202" db="dbvar">
       <eutils-url>esummary.fcgi?db=dbvar&amp;id=7597202&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.dbvar.7484780" eutil="esummary" id="7484780">
+    <sample name="esummary.dbvar.7484780" id="7484780" db="dbvar">
       <eutils-url>esummary.fcgi?db=dbvar&amp;id=7484780&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.dbvar.11137587" eutil="esummary" id="11137587">
+    <sample name="esummary.dbvar.11137587" id="11137587" db="dbvar">
       <eutils-url>esummary.fcgi?db=dbvar&amp;id=11137587&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.dbvar.10760337" eutil="esummary" id="10760337">
+    <sample name="esummary.dbvar.10760337" id="10760337" db="dbvar">
       <eutils-url>esummary.fcgi?db=dbvar&amp;id=10760337&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.dbvar.9601517" eutil="esummary" id="9601517">
+    <sample name="esummary.dbvar.9601517" id="9601517" db="dbvar">
       <eutils-url>esummary.fcgi?db=dbvar&amp;id=9601517&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.dbvar.46387" eutil="esummary" id="46387">
+    <sample name="esummary.dbvar.46387" id="46387" db="dbvar">
       <eutils-url>esummary.fcgi?db=dbvar&amp;id=46387&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.dbvar.196552" eutil="esummary" id="196552">
+    <sample name="esummary.dbvar.196552" id="196552" db="dbvar">
       <eutils-url>esummary.fcgi?db=dbvar&amp;id=196552&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.dbvar.997243" eutil="esummary" id="997243">
+    <sample name="esummary.dbvar.997243" id="997243" db="dbvar">
       <eutils-url>esummary.fcgi?db=dbvar&amp;id=997243&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.dbvar.4573072" eutil="esummary" id="4573072">
+    <sample name="esummary.dbvar.4573072" id="4573072" db="dbvar">
       <eutils-url>esummary.fcgi?db=dbvar&amp;id=4573072&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.dbvar.6462050" eutil="esummary" id="6462050">
+    <sample name="esummary.dbvar.6462050" id="6462050" db="dbvar">
       <eutils-url>esummary.fcgi?db=dbvar&amp;id=6462050&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_epigenomics.dtd" eutil="esummary">
-    <sample name="esummary.epigenomics" db="epigenomics">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=epigenomics&amp;id=16796</eutils-url>
-    </sample>
-  
-    <sample name="esummary.epigenomics.22013" eutil="esummary" id="22013">
+
+  <samplegroup dtd="esummary_epigenomics.dtd" eutil="esummary">
+    <sample name="esummary.epigenomics.22013" id="22013" db="epigenomics">
       <eutils-url>esummary.fcgi?db=epigenomics&amp;id=22013&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.epigenomics.1942" eutil="esummary" id="1942">
+    <sample name="esummary.epigenomics.1942" id="1942" db="epigenomics">
       <eutils-url>esummary.fcgi?db=epigenomics&amp;id=1942&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.epigenomics.22310" eutil="esummary" id="22310">
+    <sample name="esummary.epigenomics.22310" id="22310" db="epigenomics">
       <eutils-url>esummary.fcgi?db=epigenomics&amp;id=22310&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.epigenomics.2369" eutil="esummary" id="2369">
+    <sample name="esummary.epigenomics.2369" id="2369" db="epigenomics">
       <eutils-url>esummary.fcgi?db=epigenomics&amp;id=2369&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.epigenomics.1721" eutil="esummary" id="1721">
+    <sample name="esummary.epigenomics.1721" id="1721" db="epigenomics">
       <eutils-url>esummary.fcgi?db=epigenomics&amp;id=1721&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.epigenomics.380" eutil="esummary" id="380">
+    <sample name="esummary.epigenomics.380" id="380" db="epigenomics">
       <eutils-url>esummary.fcgi?db=epigenomics&amp;id=380&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.epigenomics.15787" eutil="esummary" id="15787">
+    <sample name="esummary.epigenomics.15787" id="15787" db="epigenomics">
       <eutils-url>esummary.fcgi?db=epigenomics&amp;id=15787&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.epigenomics.22623" eutil="esummary" id="22623">
+    <sample name="esummary.epigenomics.22623" id="22623" db="epigenomics">
       <eutils-url>esummary.fcgi?db=epigenomics&amp;id=22623&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.epigenomics.9207" eutil="esummary" id="9207">
+    <sample name="esummary.epigenomics.9207" id="9207" db="epigenomics">
       <eutils-url>esummary.fcgi?db=epigenomics&amp;id=9207&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.epigenomics.8339" eutil="esummary" id="8339">
+    <sample name="esummary.epigenomics.8339" id="8339" db="epigenomics">
       <eutils-url>esummary.fcgi?db=epigenomics&amp;id=8339&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_gencoll.dtd" eutil="esummary">
-    <sample name="esummary.gencoll" db="gencoll">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gencoll&amp;id=320608</eutils-url>
-    </sample>
-  
-    <sample name="esummary.gencoll.290258" eutil="esummary" id="290258">
+
+  <samplegroup dtd="esummary_gencoll.dtd" eutil="esummary">
+    <sample name="esummary.gencoll.290258" id="290258" db="gencoll">
       <eutils-url>esummary.fcgi?db=gencoll&amp;id=290258&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gencoll.351908" eutil="esummary" id="351908">
+    <sample name="esummary.gencoll.351908" id="351908" db="gencoll">
       <eutils-url>esummary.fcgi?db=gencoll&amp;id=351908&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gencoll.205428" eutil="esummary" id="205428">
+    <sample name="esummary.gencoll.205428" id="205428" db="gencoll">
       <eutils-url>esummary.fcgi?db=gencoll&amp;id=205428&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gencoll.344048" eutil="esummary" id="344048">
+    <sample name="esummary.gencoll.344048" id="344048" db="gencoll">
       <eutils-url>esummary.fcgi?db=gencoll&amp;id=344048&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gencoll.168768" eutil="esummary" id="168768">
+    <sample name="esummary.gencoll.168768" id="168768" db="gencoll">
       <eutils-url>esummary.fcgi?db=gencoll&amp;id=168768&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gencoll.513858" eutil="esummary" id="513858">
+    <sample name="esummary.gencoll.513858" id="513858" db="gencoll">
       <eutils-url>esummary.fcgi?db=gencoll&amp;id=513858&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gencoll.37768" eutil="esummary" id="37768">
+    <sample name="esummary.gencoll.37768" id="37768" db="gencoll">
       <eutils-url>esummary.fcgi?db=gencoll&amp;id=37768&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gencoll.94048" eutil="esummary" id="94048">
+    <sample name="esummary.gencoll.94048" id="94048" db="gencoll">
       <eutils-url>esummary.fcgi?db=gencoll&amp;id=94048&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gencoll.229468" eutil="esummary" id="229468">
+    <sample name="esummary.gencoll.229468" id="229468" db="gencoll">
       <eutils-url>esummary.fcgi?db=gencoll&amp;id=229468&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gencoll.105848" eutil="esummary" id="105848">
+    <sample name="esummary.gencoll.105848" id="105848" db="gencoll">
       <eutils-url>esummary.fcgi?db=gencoll&amp;id=105848&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_gene.dtd" eutil="esummary">
-    <sample name="esummary.gene" db="gene">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gene&amp;id=21803</eutils-url>
-    </sample>
-  
-    <sample name="esummary.gene.701176" eutil="esummary" id="701176">
+
+  <samplegroup dtd="esummary_gene.dtd" eutil="esummary">
+    <sample name="esummary.gene.701176" id="701176" db="gene">
       <eutils-url>esummary.fcgi?db=gene&amp;id=701176&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gene.12234035" eutil="esummary" id="12234035">
+    <sample name="esummary.gene.12234035" id="12234035" db="gene">
       <eutils-url>esummary.fcgi?db=gene&amp;id=12234035&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gene.12449390" eutil="esummary" id="12449390">
+    <sample name="esummary.gene.12449390" id="12449390" db="gene">
       <eutils-url>esummary.fcgi?db=gene&amp;id=12449390&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gene.100748421" eutil="esummary" id="100748421">
+    <sample name="esummary.gene.100748421" id="100748421" db="gene">
       <eutils-url>esummary.fcgi?db=gene&amp;id=100748421&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gene.6260568" eutil="esummary" id="6260568">
+    <sample name="esummary.gene.6260568" id="6260568" db="gene">
       <eutils-url>esummary.fcgi?db=gene&amp;id=6260568&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gene.5076425" eutil="esummary" id="5076425">
+    <sample name="esummary.gene.5076425" id="5076425" db="gene">
       <eutils-url>esummary.fcgi?db=gene&amp;id=5076425&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gene.10553503" eutil="esummary" id="10553503">
+    <sample name="esummary.gene.10553503" id="10553503" db="gene">
       <eutils-url>esummary.fcgi?db=gene&amp;id=10553503&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gene.14636399" eutil="esummary" id="14636399">
+    <sample name="esummary.gene.14636399" id="14636399" db="gene">
       <eutils-url>esummary.fcgi?db=gene&amp;id=14636399&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gene.657656" eutil="esummary" id="657656">
+    <sample name="esummary.gene.657656" id="657656" db="gene">
       <eutils-url>esummary.fcgi?db=gene&amp;id=657656&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gene.392989" eutil="esummary" id="392989">
+    <sample name="esummary.gene.392989" id="392989" db="gene">
       <eutils-url>esummary.fcgi?db=gene&amp;id=392989&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_gds.dtd" eutil="esummary">
-    <sample name="esummary.gds" db="gds">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=gds&amp;id=200040726</eutils-url>
-    </sample>
-  
-    <sample name="esummary.gds.200006335" eutil="esummary" id="200006335">
+
+  <samplegroup dtd="esummary_gds.dtd" eutil="esummary">
+    <sample name="esummary.gds.200006335" id="200006335" db="gds">
       <eutils-url>esummary.fcgi?db=gds&amp;id=200006335&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gds.300837222" eutil="esummary" id="300837222">
+    <sample name="esummary.gds.300837222" id="300837222" db="gds">
       <eutils-url>esummary.fcgi?db=gds&amp;id=300837222&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gds.300143935" eutil="esummary" id="300143935">
+    <sample name="esummary.gds.300143935" id="300143935" db="gds">
       <eutils-url>esummary.fcgi?db=gds&amp;id=300143935&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gds.300230634" eutil="esummary" id="300230634">
+    <sample name="esummary.gds.300230634" id="300230634" db="gds">
       <eutils-url>esummary.fcgi?db=gds&amp;id=300230634&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gds.300162677" eutil="esummary" id="300162677">
+    <sample name="esummary.gds.300162677" id="300162677" db="gds">
       <eutils-url>esummary.fcgi?db=gds&amp;id=300162677&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gds.300416486" eutil="esummary" id="300416486">
+    <sample name="esummary.gds.300416486" id="300416486" db="gds">
       <eutils-url>esummary.fcgi?db=gds&amp;id=300416486&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gds.301084194" eutil="esummary" id="301084194">
+    <sample name="esummary.gds.301084194" id="301084194" db="gds">
       <eutils-url>esummary.fcgi?db=gds&amp;id=301084194&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gds.300045657" eutil="esummary" id="300045657">
+    <sample name="esummary.gds.300045657" id="300045657" db="gds">
       <eutils-url>esummary.fcgi?db=gds&amp;id=300045657&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gds.300436551" eutil="esummary" id="300436551">
+    <sample name="esummary.gds.300436551" id="300436551" db="gds">
       <eutils-url>esummary.fcgi?db=gds&amp;id=300436551&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.gds.300208300" eutil="esummary" id="300208300">
+    <sample name="esummary.gds.300208300" id="300208300" db="gds">
       <eutils-url>esummary.fcgi?db=gds&amp;id=300208300&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_geo.dtd" eutil="esummary">
+
+  <samplegroup dtd="esummary_geo.dtd" eutil="esummary">
     <sample name="esummary.geo" db="geo">
       <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geo&amp;id=65685298</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_geoprofiles.dtd" eutil="esummary">
-    <sample name="esummary.geoprofiles" db="geoprofiles">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geoprofiles&amp;id=65526197</eutils-url>
-    </sample>
-  
-    <sample name="esummary.geoprofiles.4773697" eutil="esummary" id="4773697">
+
+  <samplegroup dtd="esummary_geoprofiles.dtd" eutil="esummary">
+    <sample name="esummary.geoprofiles.4773697" id="4773697" db="geoprofiles">
       <eutils-url>esummary.fcgi?db=geoprofiles&amp;id=4773697&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.geoprofiles.58461926" eutil="esummary" id="58461926">
+    <sample name="esummary.geoprofiles.58461926" id="58461926" db="geoprofiles">
       <eutils-url>esummary.fcgi?db=geoprofiles&amp;id=58461926&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.geoprofiles.2686185" eutil="esummary" id="2686185">
+    <sample name="esummary.geoprofiles.2686185" id="2686185" db="geoprofiles">
       <eutils-url>esummary.fcgi?db=geoprofiles&amp;id=2686185&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.geoprofiles.59489215" eutil="esummary" id="59489215">
+    <sample name="esummary.geoprofiles.59489215" id="59489215" db="geoprofiles">
       <eutils-url>esummary.fcgi?db=geoprofiles&amp;id=59489215&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.geoprofiles.55201625" eutil="esummary" id="55201625">
+    <sample name="esummary.geoprofiles.55201625" id="55201625" db="geoprofiles">
       <eutils-url>esummary.fcgi?db=geoprofiles&amp;id=55201625&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.geoprofiles.67920882" eutil="esummary" id="67920882">
+    <sample name="esummary.geoprofiles.67920882" id="67920882" db="geoprofiles">
       <eutils-url>esummary.fcgi?db=geoprofiles&amp;id=67920882&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.geoprofiles.49291597" eutil="esummary" id="49291597">
+    <sample name="esummary.geoprofiles.49291597" id="49291597" db="geoprofiles">
       <eutils-url>esummary.fcgi?db=geoprofiles&amp;id=49291597&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.geoprofiles.39544166" eutil="esummary" id="39544166">
+    <sample name="esummary.geoprofiles.39544166" id="39544166" db="geoprofiles">
       <eutils-url>esummary.fcgi?db=geoprofiles&amp;id=39544166&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.geoprofiles.37719804" eutil="esummary" id="37719804">
+    <sample name="esummary.geoprofiles.37719804" id="37719804" db="geoprofiles">
       <eutils-url>esummary.fcgi?db=geoprofiles&amp;id=37719804&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.geoprofiles.20575068" eutil="esummary" id="20575068">
+    <sample name="esummary.geoprofiles.20575068" id="20575068" db="geoprofiles">
       <eutils-url>esummary.fcgi?db=geoprofiles&amp;id=20575068&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_homologene.dtd" eutil="esummary">
-    <sample name="esummary.homologene" db="homologene">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=homologene&amp;id=20659</eutils-url>
-    </sample>
-  
-    <sample name="esummary.homologene.46359" eutil="esummary" id="46359">
+
+  <samplegroup dtd="esummary_homologene.dtd" eutil="esummary">
+    <sample name="esummary.homologene.46359" id="46359" db="homologene">
       <eutils-url>esummary.fcgi?db=homologene&amp;id=46359&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.homologene.74443" eutil="esummary" id="74443">
+    <sample name="esummary.homologene.74443" id="74443" db="homologene">
       <eutils-url>esummary.fcgi?db=homologene&amp;id=74443&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.homologene.31891" eutil="esummary" id="31891">
+    <sample name="esummary.homologene.31891" id="31891" db="homologene">
       <eutils-url>esummary.fcgi?db=homologene&amp;id=31891&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.homologene.117277" eutil="esummary" id="117277">
+    <sample name="esummary.homologene.117277" id="117277" db="homologene">
       <eutils-url>esummary.fcgi?db=homologene&amp;id=117277&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.homologene.45173" eutil="esummary" id="45173">
+    <sample name="esummary.homologene.45173" id="45173" db="homologene">
       <eutils-url>esummary.fcgi?db=homologene&amp;id=45173&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.homologene.87641" eutil="esummary" id="87641">
+    <sample name="esummary.homologene.87641" id="87641" db="homologene">
       <eutils-url>esummary.fcgi?db=homologene&amp;id=87641&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.homologene.81755" eutil="esummary" id="81755">
+    <sample name="esummary.homologene.81755" id="81755" db="homologene">
       <eutils-url>esummary.fcgi?db=homologene&amp;id=81755&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.homologene.37188" eutil="esummary" id="37188">
+    <sample name="esummary.homologene.37188" id="37188" db="homologene">
       <eutils-url>esummary.fcgi?db=homologene&amp;id=37188&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.homologene.51235" eutil="esummary" id="51235">
+    <sample name="esummary.homologene.51235" id="51235" db="homologene">
       <eutils-url>esummary.fcgi?db=homologene&amp;id=51235&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.homologene.98442" eutil="esummary" id="98442">
+    <sample name="esummary.homologene.98442" id="98442" db="homologene">
       <eutils-url>esummary.fcgi?db=homologene&amp;id=98442&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_journals.dtd" eutil="esummary">
-    <sample name="esummary.journals" db="journals">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=journals&amp;id=35478</eutils-url>
-    </sample>
-  
-    <sample name="esummary.journals.39606" eutil="esummary" id="39606">
+
+  <samplegroup dtd="esummary_journals.dtd" eutil="esummary">
+    <sample name="esummary.journals.39606" id="39606" db="journals">
       <eutils-url>esummary.fcgi?db=journals&amp;id=39606&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.journals.33891" eutil="esummary" id="33891">
+    <sample name="esummary.journals.33891" id="33891" db="journals">
       <eutils-url>esummary.fcgi?db=journals&amp;id=33891&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.journals.4507" eutil="esummary" id="4507">
+    <sample name="esummary.journals.4507" id="4507" db="journals">
       <eutils-url>esummary.fcgi?db=journals&amp;id=4507&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.journals.34169" eutil="esummary" id="34169">
+    <sample name="esummary.journals.34169" id="34169" db="journals">
       <eutils-url>esummary.fcgi?db=journals&amp;id=34169&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.journals.39954" eutil="esummary" id="39954">
+    <sample name="esummary.journals.39954" id="39954" db="journals">
       <eutils-url>esummary.fcgi?db=journals&amp;id=39954&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.journals.36216" eutil="esummary" id="36216">
+    <sample name="esummary.journals.36216" id="36216" db="journals">
       <eutils-url>esummary.fcgi?db=journals&amp;id=36216&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.journals.4507" eutil="esummary" id="4507">
+    <sample name="esummary.journals.4507" id="4507" db="journals">
       <eutils-url>esummary.fcgi?db=journals&amp;id=4507&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.journals.31693" eutil="esummary" id="31693">
+    <sample name="esummary.journals.31693" id="31693" db="journals">
       <eutils-url>esummary.fcgi?db=journals&amp;id=31693&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.journals.29634" eutil="esummary" id="29634">
+    <sample name="esummary.journals.29634" id="29634" db="journals">
       <eutils-url>esummary.fcgi?db=journals&amp;id=29634&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.journals.30742" eutil="esummary" id="30742">
+    <sample name="esummary.journals.30742" id="30742" db="journals">
       <eutils-url>esummary.fcgi?db=journals&amp;id=30742&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_medgen.dtd" eutil="esummary">
-    <sample name="esummary.medgen" db="medgen">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=medgen&amp;id=122602</eutils-url>
-    </sample>
-  
-    <sample name="esummary.medgen.429771" eutil="esummary" id="429771">
+
+  <samplegroup dtd="esummary_medgen.dtd" eutil="esummary">
+    <sample name="esummary.medgen.429771" id="429771" db="medgen">
       <eutils-url>esummary.fcgi?db=medgen&amp;id=429771&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.medgen.305100" eutil="esummary" id="305100">
+    <sample name="esummary.medgen.305100" id="305100" db="medgen">
       <eutils-url>esummary.fcgi?db=medgen&amp;id=305100&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.medgen.66017" eutil="esummary" id="66017">
+    <sample name="esummary.medgen.66017" id="66017" db="medgen">
       <eutils-url>esummary.fcgi?db=medgen&amp;id=66017&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.medgen.362193" eutil="esummary" id="362193">
+    <sample name="esummary.medgen.362193" id="362193" db="medgen">
       <eutils-url>esummary.fcgi?db=medgen&amp;id=362193&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.medgen.212869" eutil="esummary" id="212869">
+    <sample name="esummary.medgen.212869" id="212869" db="medgen">
       <eutils-url>esummary.fcgi?db=medgen&amp;id=212869&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.medgen.466682" eutil="esummary" id="466682">
+    <sample name="esummary.medgen.466682" id="466682" db="medgen">
       <eutils-url>esummary.fcgi?db=medgen&amp;id=466682&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.medgen.60022" eutil="esummary" id="60022">
+    <sample name="esummary.medgen.60022" id="60022" db="medgen">
       <eutils-url>esummary.fcgi?db=medgen&amp;id=60022&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.medgen.131048" eutil="esummary" id="131048">
+    <sample name="esummary.medgen.131048" id="131048" db="medgen">
       <eutils-url>esummary.fcgi?db=medgen&amp;id=131048&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.medgen.471224" eutil="esummary" id="471224">
+    <sample name="esummary.medgen.471224" id="471224" db="medgen">
       <eutils-url>esummary.fcgi?db=medgen&amp;id=471224&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.medgen.428120" eutil="esummary" id="428120">
+    <sample name="esummary.medgen.428120" id="428120" db="medgen">
       <eutils-url>esummary.fcgi?db=medgen&amp;id=428120&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_mesh.dtd" eutil="esummary">
-    <sample name="esummary.mesh" db="mesh">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=mesh&amp;id=67414177</eutils-url>
-    </sample>
-  
-    <sample name="esummary.mesh.67490495" eutil="esummary" id="67490495">
+
+  <samplegroup dtd="esummary_mesh.dtd" eutil="esummary">
+    <sample name="esummary.mesh.67490495" id="67490495" db="mesh">
       <eutils-url>esummary.fcgi?db=mesh&amp;id=67490495&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.mesh.67097261" eutil="esummary" id="67097261">
+    <sample name="esummary.mesh.67097261" id="67097261" db="mesh">
       <eutils-url>esummary.fcgi?db=mesh&amp;id=67097261&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.mesh.67032554" eutil="esummary" id="67032554">
+    <sample name="esummary.mesh.67032554" id="67032554" db="mesh">
       <eutils-url>esummary.fcgi?db=mesh&amp;id=67032554&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.mesh.67033659" eutil="esummary" id="67033659">
+    <sample name="esummary.mesh.67033659" id="67033659" db="mesh">
       <eutils-url>esummary.fcgi?db=mesh&amp;id=67033659&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.mesh.67526238" eutil="esummary" id="67526238">
+    <sample name="esummary.mesh.67526238" id="67526238" db="mesh">
       <eutils-url>esummary.fcgi?db=mesh&amp;id=67526238&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.mesh.67501074" eutil="esummary" id="67501074">
+    <sample name="esummary.mesh.67501074" id="67501074" db="mesh">
       <eutils-url>esummary.fcgi?db=mesh&amp;id=67501074&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.mesh.67515714" eutil="esummary" id="67515714">
+    <sample name="esummary.mesh.67515714" id="67515714" db="mesh">
       <eutils-url>esummary.fcgi?db=mesh&amp;id=67515714&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.mesh.67069894" eutil="esummary" id="67069894">
+    <sample name="esummary.mesh.67069894" id="67069894" db="mesh">
       <eutils-url>esummary.fcgi?db=mesh&amp;id=67069894&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.mesh.67541019" eutil="esummary" id="67541019">
+    <sample name="esummary.mesh.67541019" id="67541019" db="mesh">
       <eutils-url>esummary.fcgi?db=mesh&amp;id=67541019&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.mesh.67532633" eutil="esummary" id="67532633">
+    <sample name="esummary.mesh.67532633" id="67532633" db="mesh">
       <eutils-url>esummary.fcgi?db=mesh&amp;id=67532633&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_ncbisearch.dtd" eutil="esummary">
-    <sample name="esummary.ncbisearch" db="ncbisearch">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=ncbisearch&amp;id=1121</eutils-url>
-    </sample>
-  
-    <sample name="esummary.ncbisearch.1025" eutil="esummary" id="1025">
+
+  <samplegroup dtd="esummary_ncbisearch.dtd" eutil="esummary">
+    <sample name="esummary.ncbisearch.1025" id="1025" db="ncbisearch">
       <eutils-url>esummary.fcgi?db=ncbisearch&amp;id=1025&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.ncbisearch.11320" eutil="esummary" id="11320">
+    <sample name="esummary.ncbisearch.11320" id="11320" db="ncbisearch">
       <eutils-url>esummary.fcgi?db=ncbisearch&amp;id=11320&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.ncbisearch.16629" eutil="esummary" id="16629">
+    <sample name="esummary.ncbisearch.16629" id="16629" db="ncbisearch">
       <eutils-url>esummary.fcgi?db=ncbisearch&amp;id=16629&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.ncbisearch.15750" eutil="esummary" id="15750">
+    <sample name="esummary.ncbisearch.15750" id="15750" db="ncbisearch">
       <eutils-url>esummary.fcgi?db=ncbisearch&amp;id=15750&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.ncbisearch.2095" eutil="esummary" id="2095">
+    <sample name="esummary.ncbisearch.2095" id="2095" db="ncbisearch">
       <eutils-url>esummary.fcgi?db=ncbisearch&amp;id=2095&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.ncbisearch.18819" eutil="esummary" id="18819">
+    <sample name="esummary.ncbisearch.18819" id="18819" db="ncbisearch">
       <eutils-url>esummary.fcgi?db=ncbisearch&amp;id=18819&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.ncbisearch.20396" eutil="esummary" id="20396">
+    <sample name="esummary.ncbisearch.20396" id="20396" db="ncbisearch">
       <eutils-url>esummary.fcgi?db=ncbisearch&amp;id=20396&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.ncbisearch.7618" eutil="esummary" id="7618">
+    <sample name="esummary.ncbisearch.7618" id="7618" db="ncbisearch">
       <eutils-url>esummary.fcgi?db=ncbisearch&amp;id=7618&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.ncbisearch.25945" eutil="esummary" id="25945">
+    <sample name="esummary.ncbisearch.25945" id="25945" db="ncbisearch">
       <eutils-url>esummary.fcgi?db=ncbisearch&amp;id=25945&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.ncbisearch.26871" eutil="esummary" id="26871">
+    <sample name="esummary.ncbisearch.26871" id="26871" db="ncbisearch">
       <eutils-url>esummary.fcgi?db=ncbisearch&amp;id=26871&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_nlmcatalog.dtd" eutil="esummary">
-    <sample name="esummary.nlmcatalog" db="nlmcatalog">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=nlmcatalog&amp;id=101573253</eutils-url>
-    </sample>
-  
-    <sample name="esummary.nlmcatalog.101500738" eutil="esummary" id="101500738">
+
+  <samplegroup dtd="esummary_nlmcatalog.dtd" eutil="esummary">
+    <sample name="esummary.nlmcatalog.101500738" id="101500738" db="nlmcatalog">
       <eutils-url>esummary.fcgi?db=nlmcatalog&amp;id=101500738&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nlmcatalog.454927" eutil="esummary" id="454927">
+    <sample name="esummary.nlmcatalog.454927" id="454927" db="nlmcatalog">
       <eutils-url>esummary.fcgi?db=nlmcatalog&amp;id=454927&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nlmcatalog.150050" eutil="esummary" id="150050">
+    <sample name="esummary.nlmcatalog.150050" id="150050" db="nlmcatalog">
       <eutils-url>esummary.fcgi?db=nlmcatalog&amp;id=150050&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nlmcatalog.9612399" eutil="esummary" id="9612399">
+    <sample name="esummary.nlmcatalog.9612399" id="9612399" db="nlmcatalog">
       <eutils-url>esummary.fcgi?db=nlmcatalog&amp;id=9612399&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nlmcatalog.101071722" eutil="esummary" id="101071722">
+    <sample name="esummary.nlmcatalog.101071722" id="101071722" db="nlmcatalog">
       <eutils-url>esummary.fcgi?db=nlmcatalog&amp;id=101071722&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nlmcatalog.8003575" eutil="esummary" id="8003575">
+    <sample name="esummary.nlmcatalog.8003575" id="8003575" db="nlmcatalog">
       <eutils-url>esummary.fcgi?db=nlmcatalog&amp;id=8003575&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nlmcatalog.100915505" eutil="esummary" id="100915505">
+    <sample name="esummary.nlmcatalog.100915505" id="100915505" db="nlmcatalog">
       <eutils-url>esummary.fcgi?db=nlmcatalog&amp;id=100915505&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nlmcatalog.8701164" eutil="esummary" id="8701164">
+    <sample name="esummary.nlmcatalog.8701164" id="8701164" db="nlmcatalog">
       <eutils-url>esummary.fcgi?db=nlmcatalog&amp;id=8701164&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nlmcatalog.8804481" eutil="esummary" id="8804481">
+    <sample name="esummary.nlmcatalog.8804481" id="8804481" db="nlmcatalog">
       <eutils-url>esummary.fcgi?db=nlmcatalog&amp;id=8804481&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nlmcatalog.100918659" eutil="esummary" id="100918659">
+    <sample name="esummary.nlmcatalog.100918659" id="100918659" db="nlmcatalog">
       <eutils-url>esummary.fcgi?db=nlmcatalog&amp;id=100918659&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_omia.dtd" eutil="esummary">
-    <sample name="esummary.omia" db="omia">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omia&amp;id=2615</eutils-url>
-    </sample>
-  
-    <sample name="esummary.omia.633" eutil="esummary" id="633">
+
+  <samplegroup dtd="esummary_omia.dtd" eutil="esummary">
+    <sample name="esummary.omia.633" id="633" db="omia">
       <eutils-url>esummary.fcgi?db=omia&amp;id=633&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omia.1826" eutil="esummary" id="1826">
+    <sample name="esummary.omia.1826" id="1826" db="omia">
       <eutils-url>esummary.fcgi?db=omia&amp;id=1826&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omia.3131" eutil="esummary" id="3131">
+    <sample name="esummary.omia.3131" id="3131" db="omia">
       <eutils-url>esummary.fcgi?db=omia&amp;id=3131&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omia.3444" eutil="esummary" id="3444">
+    <sample name="esummary.omia.3444" id="3444" db="omia">
       <eutils-url>esummary.fcgi?db=omia&amp;id=3444&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omia.1178" eutil="esummary" id="1178">
+    <sample name="esummary.omia.1178" id="1178" db="omia">
       <eutils-url>esummary.fcgi?db=omia&amp;id=1178&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omia.3127" eutil="esummary" id="3127">
+    <sample name="esummary.omia.3127" id="3127" db="omia">
       <eutils-url>esummary.fcgi?db=omia&amp;id=3127&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omia.639" eutil="esummary" id="639">
+    <sample name="esummary.omia.639" id="639" db="omia">
       <eutils-url>esummary.fcgi?db=omia&amp;id=639&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omia.380" eutil="esummary" id="380">
+    <sample name="esummary.omia.380" id="380" db="omia">
       <eutils-url>esummary.fcgi?db=omia&amp;id=380&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omia.1300" eutil="esummary" id="1300">
+    <sample name="esummary.omia.1300" id="1300" db="omia">
       <eutils-url>esummary.fcgi?db=omia&amp;id=1300&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omia.778" eutil="esummary" id="778">
+    <sample name="esummary.omia.778" id="778" db="omia">
       <eutils-url>esummary.fcgi?db=omia&amp;id=778&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_omim.dtd" eutil="esummary">
-    <sample name="esummary.omim" db="omim">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=omim&amp;id=609708</eutils-url>
-    </sample>
-  
-    <sample name="esummary.omim.124089" eutil="esummary" id="124089">
+
+  <samplegroup dtd="esummary_omim.dtd" eutil="esummary">
+    <sample name="esummary.omim.124089" id="124089" db="omim">
       <eutils-url>esummary.fcgi?db=omim&amp;id=124089&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omim.612264" eutil="esummary" id="612264">
+    <sample name="esummary.omim.612264" id="612264" db="omim">
       <eutils-url>esummary.fcgi?db=omim&amp;id=612264&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omim.237800" eutil="esummary" id="237800">
+    <sample name="esummary.omim.237800" id="237800" db="omim">
       <eutils-url>esummary.fcgi?db=omim&amp;id=237800&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omim.300845" eutil="esummary" id="300845">
+    <sample name="esummary.omim.300845" id="300845" db="omim">
       <eutils-url>esummary.fcgi?db=omim&amp;id=300845&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omim.607253" eutil="esummary" id="607253">
+    <sample name="esummary.omim.607253" id="607253" db="omim">
       <eutils-url>esummary.fcgi?db=omim&amp;id=607253&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omim.123660" eutil="esummary" id="123660">
+    <sample name="esummary.omim.123660" id="123660" db="omim">
       <eutils-url>esummary.fcgi?db=omim&amp;id=123660&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omim.127800" eutil="esummary" id="127800">
+    <sample name="esummary.omim.127800" id="127800" db="omim">
       <eutils-url>esummary.fcgi?db=omim&amp;id=127800&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omim.604220" eutil="esummary" id="604220">
+    <sample name="esummary.omim.604220" id="604220" db="omim">
       <eutils-url>esummary.fcgi?db=omim&amp;id=604220&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omim.612363" eutil="esummary" id="612363">
+    <sample name="esummary.omim.612363" id="612363" db="omim">
       <eutils-url>esummary.fcgi?db=omim&amp;id=612363&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.omim.610480" eutil="esummary" id="610480">
+    <sample name="esummary.omim.610480" id="610480" db="omim">
       <eutils-url>esummary.fcgi?db=omim&amp;id=610480&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_pmc.dtd" eutil="esummary">
-    <sample name="esummary.pmc" db="pmc">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,14900</eutils-url>
+
+  <samplegroup dtd="esummary_pmc.dtd" eutil="esummary">
+    <sample name="esummary.pmc.multiple" db="pmc">
+      <eutils-url>esummary.fcgi?db=pmc&amp;id=254085,14900&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pmcerror" db="pmcerror">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pmc&amp;id=254085,1,14900</eutils-url>
+    <sample name="esummary.pmc.error" db="pmc">
+      <eutils-url>esummary.fcgi?db=pmc&amp;id=254085,1,14900&amp;version=2.0</eutils-url>
     </sample>
-  
-    <sample name="esummary.pmc.3326371" eutil="esummary" id="3326371">
+    <sample name="esummary.pmc.3326371" id="3326371" db="pmc">
       <eutils-url>esummary.fcgi?db=pmc&amp;id=3326371&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pmc.2614914" eutil="esummary" id="2614914">
+    <sample name="esummary.pmc.2614914" id="2614914" db="pmc">
       <eutils-url>esummary.fcgi?db=pmc&amp;id=2614914&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pmc.1411198" eutil="esummary" id="1411198">
+    <sample name="esummary.pmc.1411198" id="1411198" db="pmc">
       <eutils-url>esummary.fcgi?db=pmc&amp;id=1411198&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pmc.2346066" eutil="esummary" id="2346066">
+    <sample name="esummary.pmc.2346066" id="2346066" db="pmc">
       <eutils-url>esummary.fcgi?db=pmc&amp;id=2346066&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pmc.3356092" eutil="esummary" id="3356092">
+    <sample name="esummary.pmc.3356092" id="3356092" db="pmc">
       <eutils-url>esummary.fcgi?db=pmc&amp;id=3356092&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pmc.516148" eutil="esummary" id="516148">
+    <sample name="esummary.pmc.516148" id="516148" db="pmc">
       <eutils-url>esummary.fcgi?db=pmc&amp;id=516148&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pmc.3206632" eutil="esummary" id="3206632">
+    <sample name="esummary.pmc.3206632" id="3206632" db="pmc">
       <eutils-url>esummary.fcgi?db=pmc&amp;id=3206632&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pmc.2945267" eutil="esummary" id="2945267">
+    <sample name="esummary.pmc.2945267" id="2945267" db="pmc">
       <eutils-url>esummary.fcgi?db=pmc&amp;id=2945267&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pmc.2770036" eutil="esummary" id="2770036">
+    <sample name="esummary.pmc.2770036" id="2770036" db="pmc">
       <eutils-url>esummary.fcgi?db=pmc&amp;id=2770036&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pmc.373209" eutil="esummary" id="373209">
+    <sample name="esummary.pmc.373209" id="373209" db="pmc">
       <eutils-url>esummary.fcgi?db=pmc&amp;id=373209&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_popset.dtd" eutil="esummary">
-    <sample name="esummary.popset" db="popset">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=popset&amp;id=418209882</eutils-url>
-    </sample>
-  
-    <sample name="esummary.popset.42412310" eutil="esummary" id="42412310">
+
+  <samplegroup dtd="esummary_popset.dtd" eutil="esummary">
+    <sample name="esummary.popset.42412310" id="42412310" db="popset">
       <eutils-url>esummary.fcgi?db=popset&amp;id=42412310&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.popset.339719408" eutil="esummary" id="339719408">
+    <sample name="esummary.popset.339719408" id="339719408" db="popset">
       <eutils-url>esummary.fcgi?db=popset&amp;id=339719408&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.popset.251737004" eutil="esummary" id="251737004">
+    <sample name="esummary.popset.251737004" id="251737004" db="popset">
       <eutils-url>esummary.fcgi?db=popset&amp;id=251737004&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.popset.54399313" eutil="esummary" id="54399313">
+    <sample name="esummary.popset.54399313" id="54399313" db="popset">
       <eutils-url>esummary.fcgi?db=popset&amp;id=54399313&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.popset.290565765" eutil="esummary" id="290565765">
+    <sample name="esummary.popset.290565765" id="290565765" db="popset">
       <eutils-url>esummary.fcgi?db=popset&amp;id=290565765&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.popset.82469869" eutil="esummary" id="82469869">
+    <sample name="esummary.popset.82469869" id="82469869" db="popset">
       <eutils-url>esummary.fcgi?db=popset&amp;id=82469869&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.popset.28143951" eutil="esummary" id="28143951">
+    <sample name="esummary.popset.28143951" id="28143951" db="popset">
       <eutils-url>esummary.fcgi?db=popset&amp;id=28143951&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.popset.384371476" eutil="esummary" id="384371476">
+    <sample name="esummary.popset.384371476" id="384371476" db="popset">
       <eutils-url>esummary.fcgi?db=popset&amp;id=384371476&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.popset.159146237" eutil="esummary" id="159146237">
+    <sample name="esummary.popset.159146237" id="159146237" db="popset">
       <eutils-url>esummary.fcgi?db=popset&amp;id=159146237&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.popset.315468959" eutil="esummary" id="315468959">
+    <sample name="esummary.popset.315468959" id="315468959" db="popset">
       <eutils-url>esummary.fcgi?db=popset&amp;id=315468959&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_probe.dtd" eutil="esummary">
-    <sample name="esummary.probe" db="probe">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=probe&amp;id=156811</eutils-url>
-    </sample>
-  
-    <sample name="esummary.probe.18219031" eutil="esummary" id="18219031">
+
+  <samplegroup dtd="esummary_probe.dtd" eutil="esummary">
+    <sample name="esummary.probe.18219031" id="18219031" db="probe">
       <eutils-url>esummary.fcgi?db=probe&amp;id=18219031&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.probe.19644730" eutil="esummary" id="19644730">
+    <sample name="esummary.probe.19644730" id="19644730" db="probe">
       <eutils-url>esummary.fcgi?db=probe&amp;id=19644730&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.probe.15140287" eutil="esummary" id="15140287">
+    <sample name="esummary.probe.15140287" id="15140287" db="probe">
       <eutils-url>esummary.fcgi?db=probe&amp;id=15140287&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.probe.10023819" eutil="esummary" id="10023819">
+    <sample name="esummary.probe.10023819" id="10023819" db="probe">
       <eutils-url>esummary.fcgi?db=probe&amp;id=10023819&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.probe.21681233" eutil="esummary" id="21681233">
+    <sample name="esummary.probe.21681233" id="21681233" db="probe">
       <eutils-url>esummary.fcgi?db=probe&amp;id=21681233&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.probe.20527198" eutil="esummary" id="20527198">
+    <sample name="esummary.probe.20527198" id="20527198" db="probe">
       <eutils-url>esummary.fcgi?db=probe&amp;id=20527198&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.probe.16950402" eutil="esummary" id="16950402">
+    <sample name="esummary.probe.16950402" id="16950402" db="probe">
       <eutils-url>esummary.fcgi?db=probe&amp;id=16950402&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.probe.1374631" eutil="esummary" id="1374631">
+    <sample name="esummary.probe.1374631" id="1374631" db="probe">
       <eutils-url>esummary.fcgi?db=probe&amp;id=1374631&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.probe.20726979" eutil="esummary" id="20726979">
+    <sample name="esummary.probe.20726979" id="20726979" db="probe">
       <eutils-url>esummary.fcgi?db=probe&amp;id=20726979&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.probe.4972266" eutil="esummary" id="4972266">
+    <sample name="esummary.probe.4972266" id="4972266" db="probe">
       <eutils-url>esummary.fcgi?db=probe&amp;id=4972266&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_proteinclusters.dtd" eutil="esummary">
-    <sample name="esummary.proteinclusters" db="proteinclusters">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=proteinclusters&amp;id=2516486</eutils-url>
-    </sample>
-  
-    <sample name="esummary.proteinclusters.2683460" eutil="esummary" id="2683460">
+
+  <samplegroup dtd="esummary_proteinclusters.dtd" eutil="esummary">
+    <sample name="esummary.proteinclusters.2683460" id="2683460" db="proteinclusters">
       <eutils-url>esummary.fcgi?db=proteinclusters&amp;id=2683460&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.proteinclusters.2535029" eutil="esummary" id="2535029">
+    <sample name="esummary.proteinclusters.2535029" id="2535029" db="proteinclusters">
       <eutils-url>esummary.fcgi?db=proteinclusters&amp;id=2535029&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.proteinclusters.3070390" eutil="esummary" id="3070390">
+    <sample name="esummary.proteinclusters.3070390" id="3070390" db="proteinclusters">
       <eutils-url>esummary.fcgi?db=proteinclusters&amp;id=3070390&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.proteinclusters.572776" eutil="esummary" id="572776">
+    <sample name="esummary.proteinclusters.572776" id="572776" db="proteinclusters">
       <eutils-url>esummary.fcgi?db=proteinclusters&amp;id=572776&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.proteinclusters.2955724" eutil="esummary" id="2955724">
+    <sample name="esummary.proteinclusters.2955724" id="2955724" db="proteinclusters">
       <eutils-url>esummary.fcgi?db=proteinclusters&amp;id=2955724&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.proteinclusters.507733" eutil="esummary" id="507733">
+    <sample name="esummary.proteinclusters.507733" id="507733" db="proteinclusters">
       <eutils-url>esummary.fcgi?db=proteinclusters&amp;id=507733&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.proteinclusters.988502" eutil="esummary" id="988502">
+    <sample name="esummary.proteinclusters.988502" id="988502" db="proteinclusters">
       <eutils-url>esummary.fcgi?db=proteinclusters&amp;id=988502&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.proteinclusters.2816809" eutil="esummary" id="2816809">
+    <sample name="esummary.proteinclusters.2816809" id="2816809" db="proteinclusters">
       <eutils-url>esummary.fcgi?db=proteinclusters&amp;id=2816809&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.proteinclusters.939846" eutil="esummary" id="939846">
+    <sample name="esummary.proteinclusters.939846" id="939846" db="proteinclusters">
       <eutils-url>esummary.fcgi?db=proteinclusters&amp;id=939846&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.proteinclusters.2723422" eutil="esummary" id="2723422">
+    <sample name="esummary.proteinclusters.2723422" id="2723422" db="proteinclusters">
       <eutils-url>esummary.fcgi?db=proteinclusters&amp;id=2723422&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_pcassay.dtd" eutil="esummary">
-    <sample name="esummary.pcassay" db="pcassay">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcassay&amp;id=493206</eutils-url>
-    </sample>
-  
-    <sample name="esummary.pcassay.25195" eutil="esummary" id="25195">
+
+  <samplegroup dtd="esummary_pcassay.dtd" eutil="esummary">
+    <sample name="esummary.pcassay.25195" id="25195" db="pcassay">
       <eutils-url>esummary.fcgi?db=pcassay&amp;id=25195&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcassay.593543" eutil="esummary" id="593543">
+    <sample name="esummary.pcassay.593543" id="593543" db="pcassay">
       <eutils-url>esummary.fcgi?db=pcassay&amp;id=593543&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcassay.391795" eutil="esummary" id="391795">
+    <sample name="esummary.pcassay.391795" id="391795" db="pcassay">
       <eutils-url>esummary.fcgi?db=pcassay&amp;id=391795&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcassay.1335" eutil="esummary" id="1335">
+    <sample name="esummary.pcassay.1335" id="1335" db="pcassay">
       <eutils-url>esummary.fcgi?db=pcassay&amp;id=1335&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcassay.75973" eutil="esummary" id="75973">
+    <sample name="esummary.pcassay.75973" id="75973" db="pcassay">
       <eutils-url>esummary.fcgi?db=pcassay&amp;id=75973&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcassay.460420" eutil="esummary" id="460420">
+    <sample name="esummary.pcassay.460420" id="460420" db="pcassay">
       <eutils-url>esummary.fcgi?db=pcassay&amp;id=460420&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcassay.621996" eutil="esummary" id="621996">
+    <sample name="esummary.pcassay.621996" id="621996" db="pcassay">
       <eutils-url>esummary.fcgi?db=pcassay&amp;id=621996&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcassay.270049" eutil="esummary" id="270049">
+    <sample name="esummary.pcassay.270049" id="270049" db="pcassay">
       <eutils-url>esummary.fcgi?db=pcassay&amp;id=270049&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcassay.343256" eutil="esummary" id="343256">
+    <sample name="esummary.pcassay.343256" id="343256" db="pcassay">
       <eutils-url>esummary.fcgi?db=pcassay&amp;id=343256&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcassay.10969" eutil="esummary" id="10969">
+    <sample name="esummary.pcassay.10969" id="10969" db="pcassay">
       <eutils-url>esummary.fcgi?db=pcassay&amp;id=10969&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_pccompound.dtd" eutil="esummary">
-    <sample name="esummary.pccompound" db="pccompound">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pccompound&amp;id=10322165</eutils-url>
-    </sample>
-  
-    <sample name="esummary.pccompound.11131708" eutil="esummary" id="11131708">
+
+  <samplegroup dtd="esummary_pccompound.dtd" eutil="esummary">
+    <sample name="esummary.pccompound.11131708" id="11131708" db="pccompound">
       <eutils-url>esummary.fcgi?db=pccompound&amp;id=11131708&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pccompound.7589800" eutil="esummary" id="7589800">
+    <sample name="esummary.pccompound.7589800" id="7589800" db="pccompound">
       <eutils-url>esummary.fcgi?db=pccompound&amp;id=7589800&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pccompound.55707566" eutil="esummary" id="55707566">
+    <sample name="esummary.pccompound.55707566" id="55707566" db="pccompound">
       <eutils-url>esummary.fcgi?db=pccompound&amp;id=55707566&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pccompound.65161177" eutil="esummary" id="65161177">
+    <sample name="esummary.pccompound.65161177" id="65161177" db="pccompound">
       <eutils-url>esummary.fcgi?db=pccompound&amp;id=65161177&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pccompound.52631729" eutil="esummary" id="52631729">
+    <sample name="esummary.pccompound.52631729" id="52631729" db="pccompound">
       <eutils-url>esummary.fcgi?db=pccompound&amp;id=52631729&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pccompound.40141830" eutil="esummary" id="40141830">
+    <sample name="esummary.pccompound.40141830" id="40141830" db="pccompound">
       <eutils-url>esummary.fcgi?db=pccompound&amp;id=40141830&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pccompound.351469" eutil="esummary" id="351469">
+    <sample name="esummary.pccompound.351469" id="351469" db="pccompound">
       <eutils-url>esummary.fcgi?db=pccompound&amp;id=351469&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pccompound.41058930" eutil="esummary" id="41058930">
+    <sample name="esummary.pccompound.41058930" id="41058930" db="pccompound">
       <eutils-url>esummary.fcgi?db=pccompound&amp;id=41058930&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pccompound.55997911" eutil="esummary" id="55997911">
+    <sample name="esummary.pccompound.55997911" id="55997911" db="pccompound">
       <eutils-url>esummary.fcgi?db=pccompound&amp;id=55997911&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pccompound.55092086" eutil="esummary" id="55092086">
+    <sample name="esummary.pccompound.55092086" id="55092086" db="pccompound">
       <eutils-url>esummary.fcgi?db=pccompound&amp;id=55092086&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_pcsubstance.dtd" eutil="esummary">
-    <sample name="esummary.pcsubstance" db="pcsubstance">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pcsubstance&amp;id=127317050</eutils-url>
-    </sample>
-  
-    <sample name="esummary.pcsubstance.78465809" eutil="esummary" id="78465809">
+
+  <samplegroup dtd="esummary_pcsubstance.dtd" eutil="esummary">
+    <sample name="esummary.pcsubstance.78465809" id="78465809" db="pcsubstance">
       <eutils-url>esummary.fcgi?db=pcsubstance&amp;id=78465809&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcsubstance.160534292" eutil="esummary" id="160534292">
+    <sample name="esummary.pcsubstance.160534292" id="160534292" db="pcsubstance">
       <eutils-url>esummary.fcgi?db=pcsubstance&amp;id=160534292&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcsubstance.153953295" eutil="esummary" id="153953295">
+    <sample name="esummary.pcsubstance.153953295" id="153953295" db="pcsubstance">
       <eutils-url>esummary.fcgi?db=pcsubstance&amp;id=153953295&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcsubstance.119252052" eutil="esummary" id="119252052">
+    <sample name="esummary.pcsubstance.119252052" id="119252052" db="pcsubstance">
       <eutils-url>esummary.fcgi?db=pcsubstance&amp;id=119252052&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcsubstance.132019755" eutil="esummary" id="132019755">
+    <sample name="esummary.pcsubstance.132019755" id="132019755" db="pcsubstance">
       <eutils-url>esummary.fcgi?db=pcsubstance&amp;id=132019755&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcsubstance.48118224" eutil="esummary" id="48118224">
+    <sample name="esummary.pcsubstance.48118224" id="48118224" db="pcsubstance">
       <eutils-url>esummary.fcgi?db=pcsubstance&amp;id=48118224&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcsubstance.91139128" eutil="esummary" id="91139128">
+    <sample name="esummary.pcsubstance.91139128" id="91139128" db="pcsubstance">
       <eutils-url>esummary.fcgi?db=pcsubstance&amp;id=91139128&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcsubstance.48149008" eutil="esummary" id="48149008">
+    <sample name="esummary.pcsubstance.48149008" id="48149008" db="pcsubstance">
       <eutils-url>esummary.fcgi?db=pcsubstance&amp;id=48149008&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcsubstance.47316139" eutil="esummary" id="47316139">
+    <sample name="esummary.pcsubstance.47316139" id="47316139" db="pcsubstance">
       <eutils-url>esummary.fcgi?db=pcsubstance&amp;id=47316139&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pcsubstance.3722328" eutil="esummary" id="3722328">
+    <sample name="esummary.pcsubstance.3722328" id="3722328" db="pcsubstance">
       <eutils-url>esummary.fcgi?db=pcsubstance&amp;id=3722328&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_pubmedhealth.dtd" eutil="esummary">
-    <sample name="esummary.pubmedhealth" db="pubmedhealth">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=pubmedhealth&amp;id=8625</eutils-url>
-    </sample>
-  
-    <sample name="esummary.pubmedhealth.20356" eutil="esummary" id="20356">
+
+  <samplegroup dtd="esummary_pubmedhealth.dtd" eutil="esummary">
+    <sample name="esummary.pubmedhealth.20356" id="20356" db="pubmedhealth">
       <eutils-url>esummary.fcgi?db=pubmedhealth&amp;id=20356&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmedhealth.48438" eutil="esummary" id="48438">
+    <sample name="esummary.pubmedhealth.48438" id="48438" db="pubmedhealth">
       <eutils-url>esummary.fcgi?db=pubmedhealth&amp;id=48438&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmedhealth.48788" eutil="esummary" id="48788">
+    <sample name="esummary.pubmedhealth.48788" id="48788" db="pubmedhealth">
       <eutils-url>esummary.fcgi?db=pubmedhealth&amp;id=48788&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmedhealth.26322" eutil="esummary" id="26322">
+    <sample name="esummary.pubmedhealth.26322" id="26322" db="pubmedhealth">
       <eutils-url>esummary.fcgi?db=pubmedhealth&amp;id=26322&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmedhealth.23240" eutil="esummary" id="23240">
+    <sample name="esummary.pubmedhealth.23240" id="23240" db="pubmedhealth">
       <eutils-url>esummary.fcgi?db=pubmedhealth&amp;id=23240&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmedhealth.41890" eutil="esummary" id="41890">
+    <sample name="esummary.pubmedhealth.41890" id="41890" db="pubmedhealth">
       <eutils-url>esummary.fcgi?db=pubmedhealth&amp;id=41890&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmedhealth.41359" eutil="esummary" id="41359">
+    <sample name="esummary.pubmedhealth.41359" id="41359" db="pubmedhealth">
       <eutils-url>esummary.fcgi?db=pubmedhealth&amp;id=41359&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmedhealth.29563" eutil="esummary" id="29563">
+    <sample name="esummary.pubmedhealth.29563" id="29563" db="pubmedhealth">
       <eutils-url>esummary.fcgi?db=pubmedhealth&amp;id=29563&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmedhealth.1142" eutil="esummary" id="1142">
+    <sample name="esummary.pubmedhealth.1142" id="1142" db="pubmedhealth">
       <eutils-url>esummary.fcgi?db=pubmedhealth&amp;id=1142&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.pubmedhealth.20442" eutil="esummary" id="20442">
+    <sample name="esummary.pubmedhealth.20442" id="20442" db="pubmedhealth">
       <eutils-url>esummary.fcgi?db=pubmedhealth&amp;id=20442&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_seqannot.dtd" eutil="esummary">
-    <sample name="esummary.seqannot" db="seqannot">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=seqannot&amp;id=7232</eutils-url>
-    </sample>
-  
-    <sample name="esummary.seqannot.3566" eutil="esummary" id="3566">
+
+  <samplegroup dtd="esummary_seqannot.dtd" eutil="esummary">
+    <sample name="esummary.seqannot.3566" id="3566" db="seqannot">
       <eutils-url>esummary.fcgi?db=seqannot&amp;id=3566&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.seqannot.6092" eutil="esummary" id="6092">
+    <sample name="esummary.seqannot.6092" id="6092" db="seqannot">
       <eutils-url>esummary.fcgi?db=seqannot&amp;id=6092&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.seqannot.730" eutil="esummary" id="730">
+    <sample name="esummary.seqannot.730" id="730" db="seqannot">
       <eutils-url>esummary.fcgi?db=seqannot&amp;id=730&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.seqannot.3954" eutil="esummary" id="3954">
+    <sample name="esummary.seqannot.3954" id="3954" db="seqannot">
       <eutils-url>esummary.fcgi?db=seqannot&amp;id=3954&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.seqannot.3758" eutil="esummary" id="3758">
+    <sample name="esummary.seqannot.3758" id="3758" db="seqannot">
       <eutils-url>esummary.fcgi?db=seqannot&amp;id=3758&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.seqannot.7365" eutil="esummary" id="7365">
+    <sample name="esummary.seqannot.7365" id="7365" db="seqannot">
       <eutils-url>esummary.fcgi?db=seqannot&amp;id=7365&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.seqannot.2792" eutil="esummary" id="2792">
+    <sample name="esummary.seqannot.2792" id="2792" db="seqannot">
       <eutils-url>esummary.fcgi?db=seqannot&amp;id=2792&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.seqannot.5534" eutil="esummary" id="5534">
+    <sample name="esummary.seqannot.5534" id="5534" db="seqannot">
       <eutils-url>esummary.fcgi?db=seqannot&amp;id=5534&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.seqannot.9283" eutil="esummary" id="9283">
+    <sample name="esummary.seqannot.9283" id="9283" db="seqannot">
       <eutils-url>esummary.fcgi?db=seqannot&amp;id=9283&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.seqannot.5858" eutil="esummary" id="5858">
+    <sample name="esummary.seqannot.5858" id="5858" db="seqannot">
       <eutils-url>esummary.fcgi?db=seqannot&amp;id=5858&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_snp.dtd" eutil="esummary">
-    <sample name="esummary.snp" db="snp">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=snp&amp;id=206676795</eutils-url>
-    </sample>
-  
-    <sample name="esummary.snp.177121769" eutil="esummary" id="177121769">
+
+  <samplegroup dtd="esummary_snp.dtd" eutil="esummary">
+    <sample name="esummary.snp.177121769" id="177121769" db="snp">
       <eutils-url>esummary.fcgi?db=snp&amp;id=177121769&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.snp.9771058" eutil="esummary" id="9771058">
+    <sample name="esummary.snp.9771058" id="9771058" db="snp">
       <eutils-url>esummary.fcgi?db=snp&amp;id=9771058&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.snp.70676207" eutil="esummary" id="70676207">
+    <sample name="esummary.snp.70676207" id="70676207" db="snp">
       <eutils-url>esummary.fcgi?db=snp&amp;id=70676207&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.snp.55753068" eutil="esummary" id="55753068">
+    <sample name="esummary.snp.55753068" id="55753068" db="snp">
       <eutils-url>esummary.fcgi?db=snp&amp;id=55753068&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.snp.164273617" eutil="esummary" id="164273617">
+    <sample name="esummary.snp.164273617" id="164273617" db="snp">
       <eutils-url>esummary.fcgi?db=snp&amp;id=164273617&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.snp.165398170" eutil="esummary" id="165398170">
+    <sample name="esummary.snp.165398170" id="165398170" db="snp">
       <eutils-url>esummary.fcgi?db=snp&amp;id=165398170&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.snp.142252122" eutil="esummary" id="142252122">
+    <sample name="esummary.snp.142252122" id="142252122" db="snp">
       <eutils-url>esummary.fcgi?db=snp&amp;id=142252122&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.snp.230266504" eutil="esummary" id="230266504">
+    <sample name="esummary.snp.230266504" id="230266504" db="snp">
       <eutils-url>esummary.fcgi?db=snp&amp;id=230266504&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.snp.14190703" eutil="esummary" id="14190703">
+    <sample name="esummary.snp.14190703" id="14190703" db="snp">
       <eutils-url>esummary.fcgi?db=snp&amp;id=14190703&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.snp.7136153" eutil="esummary" id="7136153">
+    <sample name="esummary.snp.7136153" id="7136153" db="snp">
       <eutils-url>esummary.fcgi?db=snp&amp;id=7136153&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_sra.dtd" eutil="esummary">
-    <sample name="esummary.sra" db="sra">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=sra&amp;id=30750</eutils-url>
-    </sample>
-  
-    <sample name="esummary.sra.260922" eutil="esummary" id="260922">
+
+  <samplegroup dtd="esummary_sra.dtd" eutil="esummary">
+    <sample name="esummary.sra.260922" id="260922" db="sra">
       <eutils-url>esummary.fcgi?db=sra&amp;id=260922&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.sra.30486" eutil="esummary" id="30486">
+    <sample name="esummary.sra.30486" id="30486" db="sra">
       <eutils-url>esummary.fcgi?db=sra&amp;id=30486&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.sra.291269" eutil="esummary" id="291269">
+    <sample name="esummary.sra.291269" id="291269" db="sra">
       <eutils-url>esummary.fcgi?db=sra&amp;id=291269&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.sra.271784" eutil="esummary" id="271784">
+    <sample name="esummary.sra.271784" id="271784" db="sra">
       <eutils-url>esummary.fcgi?db=sra&amp;id=271784&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.sra.71935" eutil="esummary" id="71935">
+    <sample name="esummary.sra.71935" id="71935" db="sra">
       <eutils-url>esummary.fcgi?db=sra&amp;id=71935&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.sra.214650" eutil="esummary" id="214650">
+    <sample name="esummary.sra.214650" id="214650" db="sra">
       <eutils-url>esummary.fcgi?db=sra&amp;id=214650&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.sra.118807" eutil="esummary" id="118807">
+    <sample name="esummary.sra.118807" id="118807" db="sra">
       <eutils-url>esummary.fcgi?db=sra&amp;id=118807&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.sra.29873" eutil="esummary" id="29873">
+    <sample name="esummary.sra.29873" id="29873" db="sra">
       <eutils-url>esummary.fcgi?db=sra&amp;id=29873&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.sra.103916" eutil="esummary" id="103916">
+    <sample name="esummary.sra.103916" id="103916" db="sra">
       <eutils-url>esummary.fcgi?db=sra&amp;id=103916&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.sra.57392" eutil="esummary" id="57392">
+    <sample name="esummary.sra.57392" id="57392" db="sra">
       <eutils-url>esummary.fcgi?db=sra&amp;id=57392&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_taxonomy.dtd" eutil="esummary">
-    <sample name="esummary.taxonomy" db="taxonomy">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=taxonomy&amp;id=9685</eutils-url>
-    </sample>
-  
-    <sample name="esummary.taxonomy.415095" eutil="esummary" id="415095">
+
+  <samplegroup dtd="esummary_taxonomy.dtd" eutil="esummary">
+    <sample name="esummary.taxonomy.415095" id="415095" db="taxonomy">
       <eutils-url>esummary.fcgi?db=taxonomy&amp;id=415095&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.taxonomy.323268" eutil="esummary" id="323268">
+    <sample name="esummary.taxonomy.323268" id="323268" db="taxonomy">
       <eutils-url>esummary.fcgi?db=taxonomy&amp;id=323268&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.taxonomy.453561" eutil="esummary" id="453561">
+    <sample name="esummary.taxonomy.453561" id="453561" db="taxonomy">
       <eutils-url>esummary.fcgi?db=taxonomy&amp;id=453561&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.taxonomy.29078" eutil="esummary" id="29078">
+    <sample name="esummary.taxonomy.29078" id="29078" db="taxonomy">
       <eutils-url>esummary.fcgi?db=taxonomy&amp;id=29078&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.taxonomy.441950" eutil="esummary" id="441950">
+    <sample name="esummary.taxonomy.441950" id="441950" db="taxonomy">
       <eutils-url>esummary.fcgi?db=taxonomy&amp;id=441950&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.taxonomy.208254" eutil="esummary" id="208254">
+    <sample name="esummary.taxonomy.208254" id="208254" db="taxonomy">
       <eutils-url>esummary.fcgi?db=taxonomy&amp;id=208254&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.taxonomy.875046" eutil="esummary" id="875046">
+    <sample name="esummary.taxonomy.875046" id="875046" db="taxonomy">
       <eutils-url>esummary.fcgi?db=taxonomy&amp;id=875046&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.taxonomy.1038539" eutil="esummary" id="1038539">
+    <sample name="esummary.taxonomy.1038539" id="1038539" db="taxonomy">
       <eutils-url>esummary.fcgi?db=taxonomy&amp;id=1038539&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.taxonomy.817150" eutil="esummary" id="817150">
+    <sample name="esummary.taxonomy.817150" id="817150" db="taxonomy">
       <eutils-url>esummary.fcgi?db=taxonomy&amp;id=817150&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.taxonomy.330039" eutil="esummary" id="330039">
+    <sample name="esummary.taxonomy.330039" id="330039" db="taxonomy">
       <eutils-url>esummary.fcgi?db=taxonomy&amp;id=330039&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_toolkit.dtd" eutil="esummary">
-    <sample name="esummary.toolkit" db="toolkit">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=toolkit&amp;id=149440</eutils-url>
-    </sample>
-  
-    <sample name="esummary.toolkit.133256" eutil="esummary" id="133256">
+
+  <samplegroup dtd="esummary_toolkit.dtd" eutil="esummary">
+    <sample name="esummary.toolkit.133256" id="133256" db="toolkit">
       <eutils-url>esummary.fcgi?db=toolkit&amp;id=133256&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.toolkit.119424" eutil="esummary" id="119424">
+    <sample name="esummary.toolkit.119424" id="119424" db="toolkit">
       <eutils-url>esummary.fcgi?db=toolkit&amp;id=119424&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.toolkit.235153" eutil="esummary" id="235153">
+    <sample name="esummary.toolkit.235153" id="235153" db="toolkit">
       <eutils-url>esummary.fcgi?db=toolkit&amp;id=235153&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.toolkit.93702" eutil="esummary" id="93702">
+    <sample name="esummary.toolkit.93702" id="93702" db="toolkit">
       <eutils-url>esummary.fcgi?db=toolkit&amp;id=93702&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.toolkit.152434" eutil="esummary" id="152434">
+    <sample name="esummary.toolkit.152434" id="152434" db="toolkit">
       <eutils-url>esummary.fcgi?db=toolkit&amp;id=152434&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.toolkit.142243" eutil="esummary" id="142243">
+    <sample name="esummary.toolkit.142243" id="142243" db="toolkit">
       <eutils-url>esummary.fcgi?db=toolkit&amp;id=142243&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.toolkit.165056" eutil="esummary" id="165056">
+    <sample name="esummary.toolkit.165056" id="165056" db="toolkit">
       <eutils-url>esummary.fcgi?db=toolkit&amp;id=165056&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.toolkit.62801" eutil="esummary" id="62801">
+    <sample name="esummary.toolkit.62801" id="62801" db="toolkit">
       <eutils-url>esummary.fcgi?db=toolkit&amp;id=62801&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.toolkit.40122" eutil="esummary" id="40122">
+    <sample name="esummary.toolkit.40122" id="40122" db="toolkit">
       <eutils-url>esummary.fcgi?db=toolkit&amp;id=40122&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.toolkit.75795" eutil="esummary" id="75795">
+    <sample name="esummary.toolkit.75795" id="75795" db="toolkit">
       <eutils-url>esummary.fcgi?db=toolkit&amp;id=75795&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_unigene.dtd" eutil="esummary">
-    <sample name="esummary.unigene" db="unigene">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unigene&amp;id=1190943</eutils-url>
-    </sample>
-  
-    <sample name="esummary.unigene.5244716" eutil="esummary" id="5244716">
+
+  <samplegroup dtd="esummary_unigene.dtd" eutil="esummary">
+    <sample name="esummary.unigene.5244716" id="5244716" db="unigene">
       <eutils-url>esummary.fcgi?db=unigene&amp;id=5244716&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unigene.2777194" eutil="esummary" id="2777194">
+    <sample name="esummary.unigene.2777194" id="2777194" db="unigene">
       <eutils-url>esummary.fcgi?db=unigene&amp;id=2777194&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unigene.2209943" eutil="esummary" id="2209943">
+    <sample name="esummary.unigene.2209943" id="2209943" db="unigene">
       <eutils-url>esummary.fcgi?db=unigene&amp;id=2209943&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unigene.2886580" eutil="esummary" id="2886580">
+    <sample name="esummary.unigene.2886580" id="2886580" db="unigene">
       <eutils-url>esummary.fcgi?db=unigene&amp;id=2886580&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unigene.1819801" eutil="esummary" id="1819801">
+    <sample name="esummary.unigene.1819801" id="1819801" db="unigene">
       <eutils-url>esummary.fcgi?db=unigene&amp;id=1819801&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unigene.818201" eutil="esummary" id="818201">
+    <sample name="esummary.unigene.818201" id="818201" db="unigene">
       <eutils-url>esummary.fcgi?db=unigene&amp;id=818201&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unigene.2985176" eutil="esummary" id="2985176">
+    <sample name="esummary.unigene.2985176" id="2985176" db="unigene">
       <eutils-url>esummary.fcgi?db=unigene&amp;id=2985176&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unigene.1960954" eutil="esummary" id="1960954">
+    <sample name="esummary.unigene.1960954" id="1960954" db="unigene">
       <eutils-url>esummary.fcgi?db=unigene&amp;id=1960954&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unigene.3814178" eutil="esummary" id="3814178">
+    <sample name="esummary.unigene.3814178" id="3814178" db="unigene">
       <eutils-url>esummary.fcgi?db=unigene&amp;id=3814178&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unigene.644782" eutil="esummary" id="644782">
+    <sample name="esummary.unigene.644782" id="644782" db="unigene">
       <eutils-url>esummary.fcgi?db=unigene&amp;id=644782&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
-  <samplegroup dtd="eSummary_unists.dtd" eutil="esummary">
-    <sample name="esummary.unists" db="unists">
-      <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=unists&amp;id=254085,254086</eutils-url>
-    </sample>
-  
-    <sample name="esummary.unists.198285" eutil="esummary" id="198285">
+
+  <samplegroup dtd="esummary_unists.dtd" eutil="esummary">
+    <sample name="esummary.unists.198285" id="198285" db="unists">
       <eutils-url>esummary.fcgi?db=unists&amp;id=198285&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unists.532494" eutil="esummary" id="532494">
+    <sample name="esummary.unists.532494" id="532494" db="unists">
       <eutils-url>esummary.fcgi?db=unists&amp;id=532494&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unists.140801" eutil="esummary" id="140801">
+    <sample name="esummary.unists.140801" id="140801" db="unists">
       <eutils-url>esummary.fcgi?db=unists&amp;id=140801&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unists.214938" eutil="esummary" id="214938">
+    <sample name="esummary.unists.214938" id="214938" db="unists">
       <eutils-url>esummary.fcgi?db=unists&amp;id=214938&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unists.62943" eutil="esummary" id="62943">
+    <sample name="esummary.unists.62943" id="62943" db="unists">
       <eutils-url>esummary.fcgi?db=unists&amp;id=62943&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unists.167835" eutil="esummary" id="167835">
+    <sample name="esummary.unists.167835" id="167835" db="unists">
       <eutils-url>esummary.fcgi?db=unists&amp;id=167835&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unists.347107" eutil="esummary" id="347107">
+    <sample name="esummary.unists.347107" id="347107" db="unists">
       <eutils-url>esummary.fcgi?db=unists&amp;id=347107&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unists.187999" eutil="esummary" id="187999">
+    <sample name="esummary.unists.187999" id="187999" db="unists">
       <eutils-url>esummary.fcgi?db=unists&amp;id=187999&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unists.522991" eutil="esummary" id="522991">
+    <sample name="esummary.unists.522991" id="522991" db="unists">
       <eutils-url>esummary.fcgi?db=unists&amp;id=522991&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.unists.297405" eutil="esummary" id="297405">
+    <sample name="esummary.unists.297405" id="297405" db="unists">
       <eutils-url>esummary.fcgi?db=unists&amp;id=297405&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
+
   <samplegroup dtd="eSummary_041029.dtd" eutil="esummary">
-    <sample name="esummary.error">
+    <sample name="esummary.error" db="error">
       <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=error&amp;id=254088</eutils-url>
     </sample>
   </samplegroup>
+
   <samplegroup dtd="pubmed_120101.dtd" eutil="efetch">
     <sample name="efetch.pubmed" db="pubmed">
       <eutils-url>efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml</eutils-url>
