@@ -8,9 +8,12 @@ use Data::Dumper;
 use Getopt::Long;
 use File::Temp qw/ :POSIX /;
 use Cwd;
+use File::Path qw(make_path);
 
 my $status;
 my $cwd = getcwd;
+make_path('out');
+
 
 # -v | --verbose turn on verbose messages
 my %Opts;
@@ -121,12 +124,11 @@ foreach my $samplegroup (@$samples) {
     }
 
     # For each sample corresponding to this DTD:
-
     my $groupsamples = $samplegroup->{samples};
     foreach my $s (@$groupsamples) {
 
         # Fetch the XML for this eutilities sample URL, into a temp file
-        my $sampleXml = $s->{name} . ".xml";   # final output filename
+        my $sampleXml = 'out/' . $s->{name} . ".xml";   # final output filename
         if (!$noFetch) {
             my $eutilsUrl = $EutilsJson::eutilsBaseUrl . $s->{"eutils-url"};
             my $tempname = tmpnam();
@@ -181,10 +183,29 @@ foreach my $samplegroup (@$samples) {
         exit 1 if $soe;
     }
 
+    # Now, for each sample, generate the JSON output
+    foreach my $s (@$groupsamples) {
+        my $sampleXml = 'out/' . $s->{name} . ".xml";
+        my $sampleJson = $sampleXml;
+        $sampleJson =~ s/\.xml$/.json/;
+        print "        Converting XML -> JSON:  $sampleJson\n" if $verbose;
+        my $xsltCmd = "xsltproc $jsonXslPath $sampleXml > $sampleJson";
+        $status = system $xsltCmd;
+        if ($status != 0) {
+            print "            FAILED!\n";
+            exit 1 if $soe;
+            next;
+        }
 
-
-
-    # Done up to here
-    next;
+        # Validate the JSON output
+        my $jsonValidateCmd = "jsonlint -q $sampleJson";
+        print "        Validating $sampleJson\n";
+        $status = $jsonValidateCmd;
+        if ($status != 0) {
+            print "            FAILED!\n";
+            exit 1 if $soe;
+            next;
+        }
+    }
 }
 
