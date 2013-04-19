@@ -55,6 +55,10 @@
     <sample name="esummary.assembly.490948" id="490948" db="assembly">
       <eutils-url>esummary.fcgi?db=assembly&amp;id=490948&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.assembly.error" id="888888888888" db="assembly">
+      <eutils-url>esummary.fcgi?db=assembly&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_bioproject.dtd" eutil="esummary">
@@ -87,6 +91,9 @@
     </sample>
     <sample name="esummary.bioproject.97315" id="97315" db="bioproject">
       <eutils-url>esummary.fcgi?db=bioproject&amp;id=97315&amp;version=2.0</eutils-url>
+    </sample>
+    <sample name="esummary.bioproject.error" id="888888888888" db="bioproject">
+      <eutils-url>esummary.fcgi?db=bioproject&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -121,6 +128,10 @@
     <sample name="esummary.biosample.832019" id="832019" db="biosample">
       <eutils-url>esummary.fcgi?db=biosample&amp;id=832019&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.biosample.error" id="888888888888" db="biosample">
+      <eutils-url>esummary.fcgi?db=biosample&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_biosystems.dtd" eutil="esummary">
@@ -153,6 +164,10 @@
     </sample>
     <sample name="esummary.biosystems.597220" id="597220" db="biosystems">
       <eutils-url>esummary.fcgi?db=biosystems&amp;id=597220&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.biosystems.error" id="888888888888" db="biosystems">
+      <eutils-url>esummary.fcgi?db=biosystems&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -187,6 +202,10 @@
     <sample name="esummary.blastdbinfo.1330134" id="1330134" db="blastdbinfo">
       <eutils-url>esummary.fcgi?db=blastdbinfo&amp;id=1330134&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.blastdbinfo.error" id="888888888888" db="blastdbinfo">
+      <eutils-url>esummary.fcgi?db=blastdbinfo&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_books.dtd" eutil="esummary">
@@ -219,6 +238,10 @@
     </sample>
     <sample name="esummary.books.2954532" id="2954532" db="books">
       <eutils-url>esummary.fcgi?db=books&amp;id=2954532&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.books.error" id="888888888888" db="books">
+      <eutils-url>esummary.fcgi?db=books&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -253,6 +276,10 @@
     <sample name="esummary.cdd.176002" id="176002" db="cdd">
       <eutils-url>esummary.fcgi?db=cdd&amp;id=176002&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.cdd.error" id="888888888888" db="cdd">
+      <eutils-url>esummary.fcgi?db=cdd&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_clone.dtd" eutil="esummary">
@@ -285,6 +312,10 @@
     </sample>
     <sample name="esummary.clone.21767861" id="21767861" db="clone">
       <eutils-url>esummary.fcgi?db=clone&amp;id=21767861&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.clone.error" id="888888888888" db="clone">
+      <eutils-url>esummary.fcgi?db=clone&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -319,6 +350,10 @@
     <sample name="esummary.dbvar.6462050" id="6462050" db="dbvar">
       <eutils-url>esummary.fcgi?db=dbvar&amp;id=6462050&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.dbvar.error" id="888888888888" db="dbvar">
+      <eutils-url>esummary.fcgi?db=dbvar&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
   
   <samplegroup dtd="esummary_epigenomics.dtd" eutil="esummary">
@@ -351,6 +386,10 @@
     </sample>
     <sample name="esummary.epigenomics.8339" id="8339" db="epigenomics">
       <eutils-url>esummary.fcgi?db=epigenomics&amp;id=8339&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.epigenomics.error" id="888888888888" db="epigenomics">
+      <eutils-url>esummary.fcgi?db=epigenomics&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
   
@@ -385,6 +424,10 @@
     <sample name="esummary.gap.269710" id="269710" db="gap">
       <eutils-url>esummary.fcgi?db=gap&amp;id=269710&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.gap.error" id="888888888888" db="gap">
+      <eutils-url>esummary.fcgi?db=gap&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_gapplus.dtd" eutil="esummary">
@@ -417,6 +460,10 @@
     </sample>
     <sample name="esummary.gapplus.4165747" id="4165747" db="gapplus">
       <eutils-url>esummary.fcgi?db=gapplus&amp;id=4165747&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.gapplus.error" id="888888888888" db="gapplus">
+      <eutils-url>esummary.fcgi?db=gapplus&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -451,6 +498,10 @@
     <sample name="esummary.gcassembly.365738" id="365738" db="gcassembly">
       <eutils-url>esummary.fcgi?db=gcassembly&amp;id=365738&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.gcassembly.error" id="888888888888" db="gcassembly">
+      <eutils-url>esummary.fcgi?db=gcassembly&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
   
   <samplegroup dtd="esummary_gds.dtd" eutil="esummary">
@@ -483,6 +534,10 @@
     </sample>
     <sample name="esummary.gds.300208300" id="300208300" db="gds">
       <eutils-url>esummary.fcgi?db=gds&amp;id=300208300&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.gds.error" id="888888888888" db="gds">
+      <eutils-url>esummary.fcgi?db=gds&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
   
@@ -517,6 +572,10 @@
     <sample name="esummary.gencoll.105848" id="105848" db="gencoll">
       <eutils-url>esummary.fcgi?db=gencoll&amp;id=105848&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.gencoll.error" id="888888888888" db="gencoll">
+      <eutils-url>esummary.fcgi?db=gencoll&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
   
   <samplegroup dtd="esummary_gene.dtd" eutil="esummary">
@@ -549,6 +608,10 @@
     </sample>
     <sample name="esummary.gene.392989" id="392989" db="gene">
       <eutils-url>esummary.fcgi?db=gene&amp;id=392989&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.gene.error" id="888888888888" db="gene">
+      <eutils-url>esummary.fcgi?db=gene&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
   
@@ -583,6 +646,10 @@
     <sample name="esummary.genome.14799" id="14799" db="genome">
       <eutils-url>esummary.fcgi?db=genome&amp;id=14799&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.genome.error" id="888888888888" db="genome">
+      <eutils-url>esummary.fcgi?db=genome&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
   
   <samplegroup dtd="esummary_genomeprj.dtd" eutil="esummary">
@@ -616,13 +683,19 @@
     <sample name="esummary.genomeprj.42373" id="42373" db="genomeprj">
       <eutils-url>esummary.fcgi?db=genomeprj&amp;id=42373&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.genomeprj.error" id="888888888888" db="genomeprj">
+      <eutils-url>esummary.fcgi?db=genomeprj&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
   
+  <!-- geo is not listed in einfo.fcgi on production right now
   <samplegroup dtd="esummary_geo.dtd" eutil="esummary">
     <sample name="esummary.geo" db="geo">
       <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=geo&amp;id=65685298</eutils-url>
     </sample>
   </samplegroup>
+  -->
 
   <samplegroup dtd="esummary_geoprofiles.dtd" eutil="esummary">
     <sample name="esummary.geoprofiles.4773697" id="4773697" db="geoprofiles">
@@ -654,6 +727,10 @@
     </sample>
     <sample name="esummary.geoprofiles.20575068" id="20575068" db="geoprofiles">
       <eutils-url>esummary.fcgi?db=geoprofiles&amp;id=20575068&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.geoprofiles.error" id="888888888888" db="geoprofiles">
+      <eutils-url>esummary.fcgi?db=geoprofiles&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -688,6 +765,10 @@
     <sample name="esummary.homologene.98442" id="98442" db="homologene">
       <eutils-url>esummary.fcgi?db=homologene&amp;id=98442&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.homologene.error" id="888888888888" db="homologene">
+      <eutils-url>esummary.fcgi?db=homologene&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_journals.dtd" eutil="esummary">
@@ -720,6 +801,10 @@
     </sample>
     <sample name="esummary.journals.30742" id="30742" db="journals">
       <eutils-url>esummary.fcgi?db=journals&amp;id=30742&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.journals.error" id="888888888888" db="journals">
+      <eutils-url>esummary.fcgi?db=journals&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -754,6 +839,10 @@
     <sample name="esummary.medgen.428120" id="428120" db="medgen">
       <eutils-url>esummary.fcgi?db=medgen&amp;id=428120&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.medgen.error" id="888888888888" db="medgen">
+      <eutils-url>esummary.fcgi?db=medgen&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_mesh.dtd" eutil="esummary">
@@ -786,6 +875,10 @@
     </sample>
     <sample name="esummary.mesh.67532633" id="67532633" db="mesh">
       <eutils-url>esummary.fcgi?db=mesh&amp;id=67532633&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.mesh.error" id="888888888888" db="mesh">
+      <eutils-url>esummary.fcgi?db=mesh&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -820,6 +913,10 @@
     <sample name="esummary.ncbisearch.26871" id="26871" db="ncbisearch">
       <eutils-url>esummary.fcgi?db=ncbisearch&amp;id=26871&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.ncbisearch.error" id="888888888888" db="ncbisearch">
+      <eutils-url>esummary.fcgi?db=ncbisearch&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_nlmcatalog.dtd" eutil="esummary">
@@ -850,8 +947,12 @@
     <sample name="esummary.nlmcatalog.8804481" id="8804481" db="nlmcatalog">
       <eutils-url>esummary.fcgi?db=nlmcatalog&amp;id=8804481&amp;version=2.0</eutils-url>
     </sample>
-    <sample name="esummary.nlmcatalog.100918659" id="100918659" db="nlmcatalog">
+    <sample name="esummary.nlmcatalog.error" id="100918659" db="nlmcatalog">
       <eutils-url>esummary.fcgi?db=nlmcatalog&amp;id=100918659&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.nlmcatalog.100918659" id="888888888888" db="nlmcatalog">
+      <eutils-url>esummary.fcgi?db=nlmcatalog&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -889,6 +990,10 @@
     <sample name="esummary.nuccore.319869180" id="319869180" db="nuccore">
       <eutils-url>esummary.fcgi?db=nuccore&amp;id=319869180&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.nuccore.error" id="888888888888" db="nuccore">
+      <eutils-url>esummary.fcgi?db=nuccore&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
   
   <samplegroup dtd="esummary_nucest.dtd" eutil="esummary">
@@ -921,6 +1026,10 @@
     </sample>
     <sample name="esummary.nucest.401451035" id="401451035" db="nucest">
       <eutils-url>esummary.fcgi?db=nucest&amp;id=401451035&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.nucest.error" id="888888888888" db="nucest">
+      <eutils-url>esummary.fcgi?db=nucest&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
   
@@ -958,6 +1067,10 @@
     <sample name="esummary.nucgss.170419883" id="170419883" db="nucgss">
       <eutils-url>esummary.fcgi?db=nucgss&amp;id=170419883&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.nucgss.error" id="888888888888" db="nucgss">
+      <eutils-url>esummary.fcgi?db=nucgss&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_nucleotide.dtd" eutil="esummary">
@@ -994,6 +1107,10 @@
     <sample name="esummary.nucleotide.341916132" id="341916132" db="nucleotide">
       <eutils-url>esummary.fcgi?db=nucleotide&amp;id=341916132&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.nucleotide.error" id="888888888888" db="nucleotide">
+      <eutils-url>esummary.fcgi?db=nucleotide&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_omia.dtd" eutil="esummary">
@@ -1026,6 +1143,10 @@
     </sample>
     <sample name="esummary.omia.778" id="778" db="omia">
       <eutils-url>esummary.fcgi?db=omia&amp;id=778&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.omia.error" id="888888888888" db="omia">
+      <eutils-url>esummary.fcgi?db=omia&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -1060,6 +1181,10 @@
     <sample name="esummary.omim.610480" id="610480" db="omim">
       <eutils-url>esummary.fcgi?db=omim&amp;id=610480&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.omim.error" id="888888888888" db="omim">
+      <eutils-url>esummary.fcgi?db=omim&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_pcassay.dtd" eutil="esummary">
@@ -1092,6 +1217,10 @@
     </sample>
     <sample name="esummary.pcassay.10969" id="10969" db="pcassay">
       <eutils-url>esummary.fcgi?db=pcassay&amp;id=10969&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.pcassay.error" id="888888888888" db="pcassay">
+      <eutils-url>esummary.fcgi?db=pcassay&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
   
@@ -1126,6 +1255,10 @@
     <sample name="esummary.pccompound.55092086" id="55092086" db="pccompound">
       <eutils-url>esummary.fcgi?db=pccompound&amp;id=55092086&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.pccompound.error" id="888888888888" db="pccompound">
+      <eutils-url>esummary.fcgi?db=pccompound&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
   
   <samplegroup dtd="esummary_pcsubstance.dtd" eutil="esummary">
@@ -1158,6 +1291,10 @@
     </sample>
     <sample name="esummary.pcsubstance.3722328" id="3722328" db="pcsubstance">
       <eutils-url>esummary.fcgi?db=pcsubstance&amp;id=3722328&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.pcsubstance.error" id="888888888888" db="pcsubstance">
+      <eutils-url>esummary.fcgi?db=pcsubstance&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -1198,6 +1335,10 @@
     <sample name="esummary.pmc.373209" id="373209" db="pmc">
       <eutils-url>esummary.fcgi?db=pmc&amp;id=373209&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.pmc.error" id="888888888888" db="pmc">
+      <eutils-url>esummary.fcgi?db=pmc&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_popset.dtd" eutil="esummary">
@@ -1231,6 +1372,10 @@
     <sample name="esummary.popset.315468959" id="315468959" db="popset">
       <eutils-url>esummary.fcgi?db=popset&amp;id=315468959&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.popset.error" id="888888888888" db="popset">
+      <eutils-url>esummary.fcgi?db=popset&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_probe.dtd" eutil="esummary">
@@ -1263,6 +1408,10 @@
     </sample>
     <sample name="esummary.probe.4972266" id="4972266" db="probe">
       <eutils-url>esummary.fcgi?db=probe&amp;id=4972266&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.probe.error" id="888888888888" db="probe">
+      <eutils-url>esummary.fcgi?db=probe&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -1300,6 +1449,10 @@
     <sample name="esummary.protein.429372529" id="429372529" db="protein">
       <eutils-url>esummary.fcgi?db=protein&amp;id=429372529&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.protein.error" id="888888888888" db="protein">
+      <eutils-url>esummary.fcgi?db=protein&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
   
   <samplegroup dtd="esummary_proteinclusters.dtd" eutil="esummary">
@@ -1332,6 +1485,10 @@
     </sample>
     <sample name="esummary.proteinclusters.2723422" id="2723422" db="proteinclusters">
       <eutils-url>esummary.fcgi?db=proteinclusters&amp;id=2723422&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.proteinclusters.error" id="888888888888" db="proteinclusters">
+      <eutils-url>esummary.fcgi?db=proteinclusters&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -1369,6 +1526,10 @@
     <sample name="esummary.pubmed.7550843" id="7550843" db="pubmed">
       <eutils-url>esummary.fcgi?db=pubmed&amp;id=7550843&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.pubmed.error" id="888888888888" db="pubmed">
+      <eutils-url>esummary.fcgi?db=pubmed&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_pubmedhealth.dtd" eutil="esummary">
@@ -1401,6 +1562,10 @@
     </sample>
     <sample name="esummary.pubmedhealth.20442" id="20442" db="pubmedhealth">
       <eutils-url>esummary.fcgi?db=pubmedhealth&amp;id=20442&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.pubmedhealth.error" id="888888888888" db="pubmedhealth">
+      <eutils-url>esummary.fcgi?db=pubmedhealth&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -1435,6 +1600,10 @@
     <sample name="esummary.seqannot.5858" id="5858" db="seqannot">
       <eutils-url>esummary.fcgi?db=seqannot&amp;id=5858&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.seqannot.error" id="888888888888" db="seqannot">
+      <eutils-url>esummary.fcgi?db=seqannot&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_snp.dtd" eutil="esummary">
@@ -1467,6 +1636,10 @@
     </sample>
     <sample name="esummary.snp.7136153" id="7136153" db="snp">
       <eutils-url>esummary.fcgi?db=snp&amp;id=7136153&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.snp.error" id="888888888888" db="snp">
+      <eutils-url>esummary.fcgi?db=snp&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -1501,6 +1674,10 @@
     <sample name="esummary.sra.57392" id="57392" db="sra">
       <eutils-url>esummary.fcgi?db=sra&amp;id=57392&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.sra.error" id="888888888888" db="sra">
+      <eutils-url>esummary.fcgi?db=sra&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_structure.dtd" eutil="esummary">
@@ -1533,6 +1710,10 @@
     </sample>
     <sample name="esummary.structure.80184" id="80184" db="structure">
       <eutils-url>esummary.fcgi?db=structure&amp;id=80184&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.structure.error" id="888888888888" db="structure">
+      <eutils-url>esummary.fcgi?db=structure&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
   
@@ -1567,6 +1748,10 @@
     <sample name="esummary.taxonomy.330039" id="330039" db="taxonomy">
       <eutils-url>esummary.fcgi?db=taxonomy&amp;id=330039&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.taxonomy.error" id="888888888888" db="taxonomy">
+      <eutils-url>esummary.fcgi?db=taxonomy&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_toolkit.dtd" eutil="esummary">
@@ -1599,6 +1784,10 @@
     </sample>
     <sample name="esummary.toolkit.75795" id="75795" db="toolkit">
       <eutils-url>esummary.fcgi?db=toolkit&amp;id=75795&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.toolkit.error" id="888888888888" db="toolkit">
+      <eutils-url>esummary.fcgi?db=toolkit&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
@@ -1633,6 +1822,10 @@
     <sample name="esummary.unigene.644782" id="644782" db="unigene">
       <eutils-url>esummary.fcgi?db=unigene&amp;id=644782&amp;version=2.0</eutils-url>
     </sample>
+
+    <sample name="esummary.unigene.error" id="888888888888" db="unigene">
+      <eutils-url>esummary.fcgi?db=unigene&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
   </samplegroup>
 
   <samplegroup dtd="esummary_unists.dtd" eutil="esummary">
@@ -1665,6 +1858,10 @@
     </sample>
     <sample name="esummary.unists.297405" id="297405" db="unists">
       <eutils-url>esummary.fcgi?db=unists&amp;id=297405&amp;version=2.0</eutils-url>
+    </sample>
+
+    <sample name="esummary.unists.error" id="888888888888" db="unists">
+      <eutils-url>esummary.fcgi?db=unists&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
 
