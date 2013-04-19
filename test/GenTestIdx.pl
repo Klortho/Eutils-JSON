@@ -36,8 +36,6 @@ if ($Opts{help}) {
 my $verbose = $Opts{verbose};
 my $soe = $Opts{'stop-on-error'};
 my $noFetch = $Opts{'no-fetch-xml'};
-#print Dumper(\%Opts);
-
 
 
 # These are just the databases which are still in IDX, not CIDX.
@@ -53,7 +51,6 @@ my @idxDbs = qw(
     blastdbinfo
     cdd
     dbvar
-    entrezfilters
     epigenomics
     gap
     gapplus
@@ -92,7 +89,7 @@ foreach my $db (@idxDbs) {
 my $IDXEXT_DIR = "/home/maloneyc/svn/toolkit/trunk/internal/c++/src/internal/idxext";
 
 my $samples = EutilsJson::readSamples();
-print Dumper($samples) if $verbose;
+#print Dumper($samples) if $verbose;
 
 foreach my $samplegroup (@$samples) {
     my $dtd = $samplegroup->{dtd};
@@ -169,10 +166,10 @@ foreach my $samplegroup (@$samples) {
         }
     }
 
-    # For this DTD, generate the -2json.xsl file.  Put these into the same
-    # place as the DTD
+    # For this DTD, generate the esummary2json_DBNAME.xslt files.
+    # Put these into the same place as the DTD
     my $jsonXslPath = $dtdpath;
-    $jsonXslPath =~ s/esummary_(\w+)\.dtd/esummary_$1_2json.xsl/;
+    $jsonXslPath =~ s/esummary_(\w+)\.dtd/esummary2json_$1.xslt/;
     my $baseXsltPath = $cwd . "/xml2json.xsl";
     my $dtd2xsl2jsonCmd =
         "dtd2xml2json --basexslt $baseXsltPath $dtdpath $jsonXslPath";

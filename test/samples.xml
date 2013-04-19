@@ -1790,6 +1790,15 @@
       <eutils-url>esummary.fcgi?db=toolkit&amp;id=888888888888&amp;version=2.0</eutils-url>
     </sample>
   </samplegroup>
+  
+  <samplegroup dtd="esummary_toolkitall.dtd" eutil="esummary">
+    <sample name="esummary.toolkitall.100" id="100" db="toolkitall">
+      <eutils-url>esummary.fcgi?db=toolkitall&amp;id=100&amp;version=2.0</eutils-url>
+    </sample>
+    <sample name="esummary.toolkitall.error" id="888888888888" db="toolkitall">
+      <eutils-url>esummary.fcgi?db=toolkitall&amp;id=888888888888&amp;version=2.0</eutils-url>
+    </sample>
+  </samplegroup>
 
   <samplegroup dtd="esummary_unigene.dtd" eutil="esummary">
     <sample name="esummary.unigene.5244716" id="5244716" db="unigene">
