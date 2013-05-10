@@ -22,6 +22,7 @@ our $eutilsBaseUrl = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
 # this:
 #   [
 #     { dtd => 'eInfo_020511.dtd',
+#       idx => 0,
 #       eutil => 'einfo',
 #       samples => [
 #         { name => 'einfo',
@@ -39,6 +40,7 @@ sub readSamples {
     foreach my $sg ($sxml->getChildrenByTagName('samplegroup')) {
         my %samplegroup = (
             dtd => $sg->getAttribute('dtd'),
+            idx => ($sg->getAttribute('idx') eq 'true'),
             eutil => $sg->getAttribute('eutil'),
         );
 
