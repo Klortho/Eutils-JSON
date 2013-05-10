@@ -3,6 +3,9 @@ package EutilsJson;
 use strict;
 use XML::LibXML;
 use File::Temp qw/ :POSIX /;
+use Logger;
+
+our $log;
 
 
 # Set this to true if this should output verbose messages
@@ -58,6 +61,7 @@ sub readSamples {
                 db => $samp->getAttribute('db'),
                 'eutils-url' =>
                   ($samp->getChildrenByTagName('eutils-url'))[0]->textContent(),
+                error => ($samp->getAttribute('error') eq 'true'),
             );
             push @groupsamples, \%gs;
             $samplegroup{samples} = \@groupsamples;
@@ -87,7 +91,7 @@ sub getDtd {
     if ($eutil eq 'esummary' && $idx) {
         # Get the database from the name of the dtd
         if ($dtd !~ /esummary_([a-z]+)\.dtd/) {
-            print "        FAILED:  Unexpected DTD name for esummary idx database:  $dtd\n";
+            $log->message("FAILED:  Unexpected DTD name for esummary idx database:  $dtd");
             exit 1 if $coe;
             next;
         }
@@ -101,10 +105,10 @@ sub getDtd {
         else {
             # Assume $dtdpath is a URL, and fetch it with curl
             my $dest = "out/esummary_$db.dtd";
-            print "    Fetching $dtdpath\n" if $verbose;
+            $log->message("Fetching $dtdpath");
             my $status = system "curl --silent --output $dest $dtdpath";
             if ($status != 0) {
-                print "        FAILED to retrieve $dtdpath!\n";
+                $log->message("FAILED to retrieve $dtdpath!");
                 exit 1 if !$coe;
                 next;
             }
@@ -133,7 +137,7 @@ sub validateXml {
         # if the remote DTD does not exist, which was the case, for example,
         # for pubmedhealth.
         my $tempname = tmpnam();
-        print "        Stripping doctype decl:  $xml -> $tempname.\n" if $verbose;
+        $log->message("Stripping doctype decl:  $xml -> $tempname.");
         open(my $th, "<", $xml) or die "Can't open $xml for reading";
         open(my $sh, ">", $tempname) or die "Can't open $tempname for writing";
         while (my $line = <$th>) {
@@ -149,10 +153,10 @@ sub validateXml {
 
     # Validate this sample against the new DTD.
     my $xmllintCmd = 'xmllint --noout ' . $dtdvalidArg . ' ' . $xml;
-    print "        Validating:  '$xmllintCmd'\n" if $verbose;
+    $log->message("Validating:  '$xmllintCmd'");
     my $status = system $xmllintCmd;
     if ($status != 0) {
-        print "            $xml FAILED to validate!\n";
+        $log->message("$xml FAILED to validate!");
         exit 1 if !$coe;
         next;
     }

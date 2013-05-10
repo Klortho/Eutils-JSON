@@ -7,6 +7,7 @@
 
 use strict;
 use EutilsJson;
+use Logger;
 use Data::Dumper;
 use Getopt::Long;
 use Cwd;
@@ -17,33 +18,60 @@ my $cwd = getcwd;
 make_path('out');
 
 
+
 # -v | --verbose turn on verbose messages
 my %Opts;
 my $ok = GetOptions(\%Opts,
     "help|?",
     "verbose",
     "continue-on-error",
+    "eutil:s",
+    "db:s",
+    "dtd:s",
+    "sample:s",
+    "idx",
+    "error",
     "no-fetch-xml",
 );
 if ($Opts{help}) {
     print "Usage:  GetTestIdx.pl [-v|--verbose] [-s|--stop-on-error]\n" .
           "This script tests EUtilities.\n" .
-          "Options:\n" .
+          "General options:\n" .
           "  -h|-? - help\n" .
           "  -v|--verbose - turn on verbose messages\n" .
           "  -c|--continue-on-error - keep going even if there is an error\n" .
+          "Options to select the sample(s) to test (these will be ANDed together):\n" .
+          "  --eutil=<eutil> - test samples corresponding only to the given eutility\n" .
+          "  --db=<db> - test samples corresponding to the given database\n" .
+          "  --dtd=<dtd> - test only those samples correponding to the given DTD (as given in samples.xml)\n" .
+          "  --sample=<sample-name> - test only the indicated sample\n" .
+          "  --idx - test only IDX databases\n" .
+          "  --error - test only the error cases\n" .
+          "Options to select which steps to test\n" .
           "  -n|--no-fetch-xml - don't fetch anything from the eutils.  This\n" .
           "      assumes all XML files have already been fetched.\n";
     exit 0;
 }
 my $verbose = $Opts{verbose};
-$EutilsJson::verbose = $verbose;
+my $log = Logger->new($verbose);
+$EutilsJson::log = $log;
+
+
 my $coe = $Opts{'continue-on-error'};
 $EutilsJson::coe = $coe;
 my $noFetch = $Opts{'no-fetch-xml'};
 
+my $eutilToTest = $Opts{'eutil'};
+my $dbToTest = $Opts{'db'};
+my $dtdToTest = $Opts{'dtd'};
+my $sampleToTest = $Opts{'sample'};
+my $testIdx = $Opts{'idx'};
+my $testError = $Opts{'error'};
 
 
+#print "eutilToTest = '$eutilToTest'; dbToTest = '$dbToTest'; \n" .
+#      "dtdToTest = '$dtdToTest'; sampleToTest = '$sampleToTest'\n";
+#exit 1;
 
 my $samples = EutilsJson::readSamples();
 #print Dumper($samples) if $verbose;
@@ -51,22 +79,38 @@ my $samples = EutilsJson::readSamples();
 #my %testResults;
 foreach my $samplegroup (@$samples) {
     my $eutil = $samplegroup->{eutil};
-    my $dtd = $samplegroup->{dtd};
-    my $idx = $samplegroup->{idx};
+    next if $eutilToTest ne '' && $eutilToTest ne $eutil;
 
-    # If this is not an esummary, or one of the IDX databases above, then skip it.
-    next if $eutil ne 'esummary' || !$idx;
-#    $testResults{$db} = {
-#        'samples-exist' => 1,  # if there are samples in samples.xml
-#        'dtd-found' => 0,      # if we found the DTD on the filesystem
-#    };
+    my $dtd = $samplegroup->{dtd};
+    next if $dtdToTest ne '' && $dtdToTest ne $dtd;
+
+    my $idx = $samplegroup->{idx};
+    next if $testIdx && !$idx;
+
+    my $groupsamples = $samplegroup->{samples};
+    my $s;
+
+    # If one of the sample-specific selectors has been given, and there are no samples
+    # under this group that match any of the other criteria, then skip
+    if ($dbToTest || $sampleToTest || $testError) {
+        my $doTest = 0;
+        foreach $s (@$groupsamples) {
+            if ( sampleMatch($s) ) {
+                $doTest = 1;
+                last;
+            }
+        }
+        next if !$doTest;
+    }
 
     my $dtdpath = EutilsJson::getDtd($samplegroup);
-    print "Checking sample group eutil=$eutil, dtd=$dtd\n" if $verbose;
+    $log->message("Checking sample group eutil=$eutil, dtd=$dtd -> $dtdpath");
+    $log->indent;
 
     # For each sample corresponding to this DTD:
-    my $groupsamples = $samplegroup->{samples};
-    foreach my $s (@$groupsamples) {
+    foreach $s (@$groupsamples) {
+        next if !sampleMatch($s);
+
 
         # Fetch the XML for this eutilities sample URL, into a temp file
         my $sampleXml = 'out/' . $s->{name} . ".xml";   # final output filename
@@ -74,10 +118,10 @@ foreach my $samplegroup (@$samples) {
             my $eutilsUrl = $EutilsJson::eutilsBaseUrl . $s->{"eutils-url"};
 
             $eutilsUrl =~ s/\&/\\\&/g;
-            print "        Fetching $eutilsUrl => $sampleXml\n" if $verbose;
+            $log->message("Fetching $eutilsUrl => $sampleXml");
             $status = system "curl --silent --output $sampleXml $eutilsUrl";
             if ($status != 0) {
-                print "            ... FAILED!\n";
+                $log->message("FAILED!");
                 exit 1 if !$coe;
                 next;
             }
@@ -93,36 +137,54 @@ foreach my $samplegroup (@$samples) {
     my $baseXsltPath = $cwd . "/xml2json.xsl";
     my $dtd2xsl2jsonCmd =
         "dtd2xml2json --basexslt $baseXsltPath $dtdpath $jsonXslPath";
-    print "    Creating XSLT $jsonXslPath\n" if $verbose;
+    $log->message("Creating XSLT $jsonXslPath");
     $status = system $dtd2xsl2jsonCmd;
     if ($status != 0) {
-        print "        FAILED!\n";
+        $log->message("FAILED!");
         exit 1 if !$coe;
     }
 
     # Now, for each sample, generate the JSON output
-    foreach my $s (@$groupsamples) {
+    foreach $s (@$groupsamples) {
+        next if !sampleMatch($s);
+
         my $sampleXml = 'out/' . $s->{name} . ".xml";
         my $sampleJson = $sampleXml;
         $sampleJson =~ s/\.xml$/.json/;
-        print "        Converting XML -> JSON:  $sampleJson\n" if $verbose;
+        $log->message("Converting XML -> JSON:  $sampleJson");
         my $xsltCmd = "xsltproc $jsonXslPath $sampleXml > $sampleJson";
         $status = system $xsltCmd;
         if ($status != 0) {
-            print "            FAILED!\n";
+            $log->message("FAILED!");
             exit 1 if !$coe;
             next;
         }
 
         # Validate the JSON output
         my $jsonValidateCmd = "jsonlint -q $sampleJson";
-        print "        Validating $sampleJson\n";
+        $log->message("Validating $sampleJson");
         $status = $jsonValidateCmd;
         if ($status != 0) {
-            print "            FAILED!\n";
+            $log->message("FAILED!");
             exit 1 if !$coe;
             next;
         }
     }
+
+    $log->undent;
 }
+
+#-----------------------------------------------------------------------
+# This subroutine returns true if the sample matches the selection criteria
+# given by the user in the command-line arguments.
+
+sub sampleMatch {
+    my $s = shift;
+    my $matchDb = !$dbToTest || $s->{db} eq $dbToTest;
+    my $matchSample = !$sampleToTest || $s->{name} eq $sampleToTest;
+    my $matchError = !$testError || $s->{error};
+    return $matchDb && $matchSample && $matchError;
+}
+
+
 
