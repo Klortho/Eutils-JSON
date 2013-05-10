@@ -78,7 +78,8 @@ sub readSamples {
 # returns the relative pathname to the DTD file.
 # If this is an ESummary IDX database, and $idxextbase points to the filesystem,
 # then this will return the copy of the DTD file under that path.  Otherwise, if
-# $idxextbase is an SVN URL, this will download it and use that.
+# $idxextbase is an SVN URL, this will download it into the 'out' subdirectory,
+# and use that.
 
 sub getDtd {
     my $samplegroup = shift;

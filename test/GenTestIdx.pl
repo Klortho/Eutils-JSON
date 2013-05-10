@@ -34,20 +34,22 @@ my $ok = GetOptions(\%Opts,
     "no-fetch-xml",
 );
 if ($Opts{help}) {
-    print "Usage:  GetTestIdx.pl [-v|--verbose] [-s|--stop-on-error]\n" .
-          "This script tests EUtilities.\n" .
+    print "Usage:  GetTestIdx.pl [-v|--verbose] [-s|--stop-on-error]\n\n" .
+          "This script tests EUtilities.\n\n" .
           "General options:\n" .
           "  -h|-? - help\n" .
           "  -v|--verbose - turn on verbose messages\n" .
-          "  -c|--continue-on-error - keep going even if there is an error\n" .
-          "Options to select the sample(s) to test (these will be ANDed together):\n" .
+          "  -c|--continue-on-error - keep going even if there is an error\n\n" .
+          "Options to select the sample(s) from the samples.xml file to test (these will be ANDed together):\n" .
           "  --eutil=<eutil> - test samples corresponding only to the given eutility\n" .
           "  --db=<db> - test samples corresponding to the given database\n" .
           "  --dtd=<dtd> - test only those samples correponding to the given DTD (as given in samples.xml)\n" .
           "  --sample=<sample-name> - test only the indicated sample\n" .
           "  --idx - test only IDX databases\n" .
-          "  --error - test only the error cases\n" .
-          "Options to select which steps to test\n" .
+          "  --error - test only the error cases\n\n" .
+          "Options to control the steps to test\n" .
+          "  --domain - Domain to test.  Defaults to 'www'.\n" .
+          "  --dtd-from - specify how to get the DTD(s).  Valid values are 'remote' (default), 'local'\n" .
           "  -n|--no-fetch-xml - don't fetch anything from the eutils.  This\n" .
           "      assumes all XML files have already been fetched.\n";
     exit 0;
@@ -112,7 +114,7 @@ foreach my $samplegroup (@$samples) {
         next if !sampleMatch($s);
 
 
-        # Fetch the XML for this eutilities sample URL, into a temp file
+        # Fetch the XML for this eutilities sample URL
         my $sampleXml = 'out/' . $s->{name} . ".xml";   # final output filename
         if (!$noFetch) {
             my $eutilsUrl = $EutilsJson::eutilsBaseUrl . $s->{"eutils-url"};
