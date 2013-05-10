@@ -87,12 +87,14 @@ foreach my $samplegroup (@$samples) {
 
         # Fetch the XML for this eutilities sample URL, into a temp file
         my $sampleXml = 'out/' . $s->{name} . ".xml";   # final output filename
+        my $tempname = tmpnam();
         if (!$noFetch) {
             my $eutilsUrl = $EutilsJson::eutilsBaseUrl . $s->{"eutils-url"};
-            my $tempname = tmpnam();
+
+
             $eutilsUrl =~ s/\&/\\\&/g;
-            print "        Fetching $eutilsUrl => $tempname\n" if $verbose;
-            $status = system "curl --silent --output $tempname $eutilsUrl";
+            print "        Fetching $eutilsUrl => $sampleXml\n" if $verbose;
+            $status = system "curl --silent --output $sampleXml $eutilsUrl";
             if ($status != 0) {
                 print "            ... FAILED!\n";
                 exit 1 if !$coe;
@@ -104,10 +106,9 @@ foreach my $samplegroup (@$samples) {
             # `xmllint --dtdvalid` does that local validation, it will still fail
             # if the remote DTD does not exist, which was the case, for example,
             # for pubmedhealth.
-
-            print "        Stripping doctype decl:  $tempname -> $sampleXml.\n" if $verbose;
-            open(my $th, "<", $tempname) or die "Can't open $tempname for reading";
-            open(my $sh, ">", $sampleXml) or die "Can't open $sampleXml for writing";
+            print "        Stripping doctype decl:  $sampleXml -> $tempname.\n" if $verbose;
+            open(my $th, "<", $sampleXml) or die "Can't open $sampleXml for reading";
+            open(my $sh, ">", $tempname) or die "Can't open $tempname for writing";
             while (my $line = <$th>) {
                 next if $line =~ /^\<\!DOCTYPE /;
                 print $sh $line;
@@ -117,11 +118,11 @@ foreach my $samplegroup (@$samples) {
         }
 
         # Validate this sample against the new DTD.
-        my $xmllintCmd = "xmllint --noout --dtdvalid $dtdpath $sampleXml";
+        my $xmllintCmd = "xmllint --noout --dtdvalid $dtdpath $tempname";
         print "        Validating:  '$xmllintCmd'\n" if $verbose;
         $status = system $xmllintCmd;
         if ($status != 0) {
-            print "            $sampleXml FAILED to validate!\n";
+            print "            $tempname FAILED to validate!\n";
             exit 1 if !$coe;
             next;
         }
