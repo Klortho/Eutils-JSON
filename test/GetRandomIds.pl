@@ -1,4 +1,8 @@
 #!/usr/bin/perl
+
+# FIXME:  I took @dbs out of EutilsJson -- the list of databases is now stored
+# in the samples.xml file.  So, this script is broken for now.
+
 # This is a throw-away script to compile lists of random
 # IDs for each of the available databases.  It writes its output to
 # standard out in the form of a samples.xml file.  The samples for each

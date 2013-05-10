@@ -9,7 +9,6 @@ use strict;
 use EutilsJson;
 use Data::Dumper;
 use Getopt::Long;
-use File::Temp qw/ :POSIX /;
 use Cwd;
 use File::Path qw(make_path);
 
@@ -38,48 +37,32 @@ if ($Opts{help}) {
     exit 0;
 }
 my $verbose = $Opts{verbose};
+$EutilsJson::verbose = $verbose;
 my $coe = $Opts{'continue-on-error'};
+$EutilsJson::coe = $coe;
 my $noFetch = $Opts{'no-fetch-xml'};
 
 
 
-# $IDXEXT_DIR  points to the base directory of the subtree under which are all
-# of the DTDs.  This is the working copy of the subversion directory
-# https://svn.ncbi.nlm.nih.gov/repos/toolkit/trunk/internal/c++/src/internal/idxext
-# Any given DTD is at $IDXEXT_DIR/<db>/support/esummary_<db>.dtd
-my $IDXEXT_DIR = "/home/maloneyc/svn/toolkit/trunk/internal/c++/src/internal/idxext";
 
 my $samples = EutilsJson::readSamples();
 #print Dumper($samples) if $verbose;
 
-my %testResults;
+#my %testResults;
 foreach my $samplegroup (@$samples) {
+    my $eutil = $samplegroup->{eutil};
     my $dtd = $samplegroup->{dtd};
     my $idx = $samplegroup->{idx};
 
-    # If the DTD is not of the form esummary_<db>.dtd, where <db> is one
-    # of the IDX databases above, then skip it.
-    next if $dtd !~ /esummary_([a-z]+)\.dtd/;
-    my $db = $1;
-    next if !$idx;
-    $testResults{$db} = {
-        'samples-exist' => 1,  # if there are samples in samples.xml
-        'dtd-found' => 0,      # if we found the DTD on the filesystem
-    };
-    print "Checking $dtd; database $db\n" if $verbose;
+    # If this is not an esummary, or one of the IDX databases above, then skip it.
+    next if $eutil ne 'esummary' || !$idx;
+#    $testResults{$db} = {
+#        'samples-exist' => 1,  # if there are samples in samples.xml
+#        'dtd-found' => 0,      # if we found the DTD on the filesystem
+#    };
 
-    print "    Testing $dtd\n" if $verbose;
-
-    # See if the DTD exists on the filesystem
-    my $dtdpath = "$IDXEXT_DIR/$db/support/esummary_$db.dtd";
-    if (-f $dtdpath) {
-        $testResults{$db}{'dtd-found'} = 1;
-    }
-    else {
-        print "        FAILED:  can't find $dtdpath\n";
-        exit 1 if !$coe;
-        next;
-    }
+    my $dtdpath = EutilsJson::getDtd($samplegroup);
+    print "Checking sample group eutil=$eutil, dtd=$dtd\n" if $verbose;
 
     # For each sample corresponding to this DTD:
     my $groupsamples = $samplegroup->{samples};
@@ -87,10 +70,8 @@ foreach my $samplegroup (@$samples) {
 
         # Fetch the XML for this eutilities sample URL, into a temp file
         my $sampleXml = 'out/' . $s->{name} . ".xml";   # final output filename
-        my $tempname = tmpnam();
         if (!$noFetch) {
             my $eutilsUrl = $EutilsJson::eutilsBaseUrl . $s->{"eutils-url"};
-
 
             $eutilsUrl =~ s/\&/\\\&/g;
             print "        Fetching $eutilsUrl => $sampleXml\n" if $verbose;
@@ -100,32 +81,9 @@ foreach my $samplegroup (@$samples) {
                 exit 1 if !$coe;
                 next;
             }
-
-            # Strip off the doctype declaration.  This is necessary because we want
-            # to validate against local DTD files.  Note that even though
-            # `xmllint --dtdvalid` does that local validation, it will still fail
-            # if the remote DTD does not exist, which was the case, for example,
-            # for pubmedhealth.
-            print "        Stripping doctype decl:  $sampleXml -> $tempname.\n" if $verbose;
-            open(my $th, "<", $sampleXml) or die "Can't open $sampleXml for reading";
-            open(my $sh, ">", $tempname) or die "Can't open $tempname for writing";
-            while (my $line = <$th>) {
-                next if $line =~ /^\<\!DOCTYPE /;
-                print $sh $line;
-            }
-            close $sh;
-            close $th;
         }
 
-        # Validate this sample against the new DTD.
-        my $xmllintCmd = "xmllint --noout --dtdvalid $dtdpath $tempname";
-        print "        Validating:  '$xmllintCmd'\n" if $verbose;
-        $status = system $xmllintCmd;
-        if ($status != 0) {
-            print "            $tempname FAILED to validate!\n";
-            exit 1 if !$coe;
-            next;
-        }
+        EutilsJson::validateXml($sampleXml, $dtdpath);
     }
 
     # For this DTD, generate the esummary2json_DBNAME.xslt files.

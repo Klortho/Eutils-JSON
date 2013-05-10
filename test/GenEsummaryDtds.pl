@@ -1,4 +1,8 @@
 #!/opt/perl-5.8.8/bin/perl
+
+# FIXME:  I took @dbs out of EutilsJson -- the list of databases is now stored
+# in the samples.xml file.  So, this script is broken for now.
+
 # This script will auto-generate all of the eSummary DTDs from the cidx utility.
 # For each database, first, we find the latest build with the command
 #     cidxdbgetparam -db $db -dbinfo $dbinfoIni -n buildversion
