@@ -20,6 +20,11 @@ sub message {
     print "  " x $self->{indent} . $m . "\n" if $verbose;
 }
 
+sub error {
+    my ($self, $m) = @_;
+    print "  " x $self->{indent} . $m . "\n";
+}
+
 sub indent {
     my $self = shift;
     $self->{indent}++;

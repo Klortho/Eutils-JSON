@@ -1,4 +1,4 @@
-#!/opt/perl-5.8.8/bin/perl
+#!/usr/bin/env perl
 # Script for testing EUtils JSON output
 # All output files will be written to an "out" subdirectory here.
 
@@ -70,6 +70,7 @@ my $sampleToTest = $Opts{'sample'};
 my $testIdx = $Opts{'idx'};
 my $testError = $Opts{'error'};
 
+my $cmd;
 
 #print "eutilToTest = '$eutilToTest'; dbToTest = '$dbToTest'; \n" .
 #      "dtdToTest = '$dtdToTest'; sampleToTest = '$sampleToTest'\n";
@@ -121,9 +122,10 @@ foreach my $samplegroup (@$samples) {
 
             $eutilsUrl =~ s/\&/\\\&/g;
             $log->message("Fetching $eutilsUrl => $sampleXml");
-            $status = system "curl --silent --output $sampleXml $eutilsUrl";
+            $cmd = "curl --silent --output $sampleXml $eutilsUrl";
+            $status = system $cmd;
             if ($status != 0) {
-                $log->message("FAILED!");
+                $log->error("FAILED: $cmd");
                 exit 1 if !$coe;
                 next;
             }
@@ -137,13 +139,13 @@ foreach my $samplegroup (@$samples) {
     my $jsonXslPath = $dtdpath;
     $jsonXslPath =~ s/esummary_(\w+)\.dtd/esummary2json_$1.xslt/;
     my $baseXsltPath = $cwd . "/xml2json.xsl";
-    my $dtd2xsl2jsonCmd =
-        "dtd2xml2json --basexslt $baseXsltPath $dtdpath $jsonXslPath";
+    my $cmd = "dtd2xml2json --basexslt $baseXsltPath $dtdpath $jsonXslPath";
     $log->message("Creating XSLT $jsonXslPath");
-    $status = system $dtd2xsl2jsonCmd;
+    $status = system $cmd;
     if ($status != 0) {
-        $log->message("FAILED!");
+        $log->error("FAILED: $cmd");
         exit 1 if !$coe;
+        next;
     }
 
     # Now, for each sample, generate the JSON output
@@ -157,7 +159,7 @@ foreach my $samplegroup (@$samples) {
         my $xsltCmd = "xsltproc $jsonXslPath $sampleXml > $sampleJson";
         $status = system $xsltCmd;
         if ($status != 0) {
-            $log->message("FAILED!");
+            $log->error("FAILED: $cmd");
             exit 1 if !$coe;
             next;
         }
@@ -167,7 +169,7 @@ foreach my $samplegroup (@$samples) {
         $log->message("Validating $sampleJson");
         $status = $jsonValidateCmd;
         if ($status != 0) {
-            $log->message("FAILED!");
+            $log->error("FAILED: $cmd");
             exit 1 if !$coe;
             next;
         }

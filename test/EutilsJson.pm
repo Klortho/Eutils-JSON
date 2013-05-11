@@ -92,7 +92,7 @@ sub getDtd {
     if ($eutil eq 'esummary' && $idx) {
         # Get the database from the name of the dtd
         if ($dtd !~ /esummary_([a-z]+)\.dtd/) {
-            $log->message("FAILED:  Unexpected DTD name for esummary idx database:  $dtd");
+            $log->error("FAILED:  Unexpected DTD name for esummary idx database:  $dtd");
             exit 1 if $coe;
             next;
         }
@@ -109,7 +109,7 @@ sub getDtd {
             $log->message("Fetching $dtdpath");
             my $status = system "curl --silent --output $dest $dtdpath";
             if ($status != 0) {
-                $log->message("FAILED to retrieve $dtdpath!");
+                $log->error("FAILED to retrieve $dtdpath!");
                 exit 1 if !$coe;
                 next;
             }
@@ -157,7 +157,7 @@ sub validateXml {
     $log->message("Validating:  '$xmllintCmd'");
     my $status = system $xmllintCmd;
     if ($status != 0) {
-        $log->message("$xml FAILED to validate!");
+        $log->error("$xml FAILED to validate!");
         exit 1 if !$coe;
         next;
     }
