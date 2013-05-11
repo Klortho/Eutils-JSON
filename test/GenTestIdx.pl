@@ -10,12 +10,9 @@ use warnings;
 use EutilsJson;
 use Data::Dumper;
 use Getopt::Long;
-use Cwd;
 use File::Path qw(make_path);
 
-my $cwd = getcwd;
 make_path('out');
-
 
 # -v | --verbose turn on verbose messages
 my %Opts;
@@ -29,7 +26,12 @@ my $ok = GetOptions(\%Opts,
     "sample:s",
     "idx",
     "error",
-    "no-fetch-xml",
+    "fetch-dtd",
+    "fetch-xml",
+    "validate-xml",
+    "generate-xslt",
+    "generate-json",
+    "validate-json",
 );
 if ($Opts{help}) {
     print "Usage:  GetTestIdx.pl [-v|--verbose] [-s|--stop-on-error]\n\n" .
@@ -46,8 +48,15 @@ if ($Opts{help}) {
           "  --idx - test only IDX databases\n" .
           "  --error - test only the error cases\n\n" .
           "Options to control the steps to test\n" .
+          "  --fetch-dtd\n" .
+          "  --fetch-xml\n" .
+          "  --validate-xml\n" .
+          "  --generate-xslt\n" .
+          "  --generate-json\n" .
+          "  --validate-json\n\n" .
+          "Options related to the DTD\n" .
           "  --domain - Domain to test.  Defaults to 'www'.\n" .
-          "  --dtd-from - specify how to get the DTD(s).  Valid values are 'remote' (default), 'local'\n" .
+          "  --dtd-from - specify how to get the DTD(s).  Valid values are 'remote' (default), 'local'\n";
     exit 0;
 }
 $verbose = $Opts{verbose};
@@ -55,7 +64,6 @@ $log = Logger->new($verbose);
 
 
 $coe = $Opts{'continue-on-error'};
-$EutilsJson::coe = $coe;
 
 my $eutilToTest = $Opts{'eutil'} || '';
 my $dbToTest = $Opts{'db'} || '';
@@ -63,6 +71,19 @@ my $dtdToTest = $Opts{'dtd'} || '';
 my $sampleToTest = $Opts{'sample'} || '';
 my $testIdx = $Opts{'idx'} || 0;
 my $testError = $Opts{'error'} || 0;
+
+my $doAllSteps = !$Opts{'fetch-dtd'} &&
+                 !$Opts{'fetch-xml'} &&
+                 !$Opts{'validate-xml'} &&
+                 !$Opts{'generate-xslt'} &&
+                 !$Opts{'generate-json'} &&
+                 !$Opts{'validate-json'};
+my $doFetchDtd = $Opts{'fetch-dtd'} || $doAllSteps;
+my $doFetchXml = $Opts{'fetch-xml'} || $doAllSteps;
+my $doValidateXml = $Opts{'validate-xml'} || $doAllSteps;
+my $doGenerateXslt = $Opts{'generate-xslt'} || $doAllSteps;
+my $doGenerateJson = $Opts{'generate-json'} || $doAllSteps;
+my $doValidateJson = $Opts{'validate-json'} || $doAllSteps;
 
 #print "eutilToTest = '$eutilToTest'; dbToTest = '$dbToTest'; \n" .
 #      "dtdToTest = '$dtdToTest'; sampleToTest = '$sampleToTest'\n";
@@ -102,8 +123,7 @@ foreach my $samplegroup (@$samples) {
     }
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    $step = 'fetch-dtd';
-    my $dtdpath = EutilsJson::getDtd();
+    my $dtdpath = EutilsJson::fetchDtd($doFetchDtd);
     next if !$dtdpath;   # means there was an error and continue-on-error is set.
     $log->indent;
 
@@ -113,80 +133,42 @@ foreach my $samplegroup (@$samples) {
         next if !sampleMatch();
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        $step = 'fetch-xml';
-        my $sampleXml = 'out/' . $s->{name} . ".xml";   # final output filename
-        my $eutilsUrl = $EutilsJson::eutilsBaseUrl . $s->{"eutils-url"};
-
-        $eutilsUrl =~ s/\&/\\\&/g;
-        $log->message("Fetching $eutilsUrl => $sampleXml");
-        $cmd = "curl --silent --output $sampleXml $eutilsUrl";
-        $status = system $cmd;
-        if ($status != 0) {
-            $log->error("FAILED: $cmd");
-            exit 1 if !$coe;
-            EutilsJson::recordFailure($cmd);
-            next;
-        }
+        my $sampleXml = EutilsJson::fetchXml($doFetchXml);
+        next if $status != 0;
         $log->indent;
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        EutilsJson::validateXml($sampleXml, $dtdpath);
-
+        EutilsJson::validateXml($doValidateXml, $sampleXml, $dtdpath);
         $log->undent;
     }
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    $step = 'generate-xslt';
-
-    # For this DTD, generate the esummary2json_DBNAME.xslt files.
-    # Put these into the same place as the DTD (usually the 'out' directory)
-    my $jsonXslPath = $dtdpath;
-    $jsonXslPath =~ s/esummary_(\w+)\.dtd/esummary2json_$1.xslt/;
-    my $baseXsltPath = $cwd . "/xml2json.xsl";
-    $cmd = "dtd2xml2json --basexslt $baseXsltPath $dtdpath $jsonXslPath > /dev/null 2>&1";
-    $log->message("Creating XSLT $jsonXslPath");
-    $status = system $cmd;
+    my $jsonXslPath = EutilsJson::generateXslt($doGenerateXslt, $dtdpath);
     if ($status != 0) {
-        $log->error("FAILED: $cmd");
-        exit 1 if !$coe;
-        EutilsJson::recordFailure($cmd);
+        $log->undent;
+        $status = 0;
         next;
     }
     $log->indent;
-
 
     # Now, for each sample, generate the JSON output
     foreach my $sample (@$groupsamples) {
         $s = $sample;
         next if !sampleMatch();
 
-        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        $step = 'generate-json';
-        my $sampleXml = 'out/' . $s->{name} . ".xml";
-        my $sampleJson = $sampleXml;
-        $sampleJson =~ s/\.xml$/.json/;
-        $log->message("Converting XML -> JSON:  $sampleJson");
-        $cmd = "xsltproc $jsonXslPath $sampleXml > $sampleJson 2> /dev/null";
-        $status = system $cmd;
-        if ($status != 0) {
-            $log->error("FAILED: $cmd");
-            exit 1 if !$coe;
-            EutilsJson::recordFailure($cmd);
+        if ($s->{failure}{'fetch-xml'}) {
+            $log->message("Skipping generate-json for " . $s->{name} .
+                          ", because fetch-xml failed");
             next;
         }
+
+        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        my $sampleJson = EutilsJson::generateJson($doGenerateJson, $jsonXslPath);
+        next if $status != 0;
         $log->indent;
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        $step = 'validate-json';
-        $cmd = "jsonlint -q $sampleJson";
-        $log->message("Validating $sampleJson");
-        $status = system $cmd;
-        if ($status != 0) {
-            $log->error("FAILED: $cmd");
-            exit 1 if !$coe;
-            EutilsJson::recordFailure($cmd);
-            next;
-        }
+        EutilsJson::validateJson($doValidateJson, $sampleJson);
         $log->undent;
     }
 
@@ -194,6 +176,7 @@ foreach my $samplegroup (@$samples) {
     $log->undent;
 }
 
+# Summary pass / fail report
 if ($EutilsJson::failed) {
     print "$EutilsJson::failed failures:\n";
     foreach my $samplegroup (@$samples) {

@@ -7,10 +7,13 @@ use File::Temp qw/ :POSIX /;
 use Logger;
 use Exporter 'import';
 use Data::Dumper;
+use Cwd;
 
 our @EXPORT = qw(
     $verbose $coe $log $cmd $status $sg $s $step $failed
 );
+
+my $cwd = getcwd;
 
 # Set this to true if this should output verbose messages
 our $verbose = 0;
@@ -34,6 +37,7 @@ our $failed = 0;
 our @steps = qw(
     fetch-dtd fetch-xml validate-xml generate-xslt generate-json validate-json
 );
+
 
 # Base URL of the eutilities services
 our $eutilsBaseUrl = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
@@ -102,8 +106,10 @@ sub readSamples {
 # $idxextbase is an SVN URL, this will download it into the 'out' subdirectory,
 # and use that.
 
-sub getDtd {
+sub fetchDtd {
     $step = 'fetch-dtd';
+    $status = 0;
+    my $do = shift;
     my $eutil = $sg->{eutil};
     my $dtd = $sg->{dtd};
     my $idx = $sg->{idx};
@@ -113,8 +119,8 @@ sub getDtd {
     if ($eutil eq 'esummary' && $idx) {
         # Get the database from the name of the dtd
         if ($dtd !~ /esummary_([a-z]+)\.dtd/) {
-            $log->error("FAILED:  Unexpected DTD name for esummary idx database:  $dtd");
-            exit 1 if !$coe;
+            $log->error("FAILED:  Unexpected DTD name for esummary idx database:  $dtd  $?");
+            exit 1 if !$coe || $status & 127;
             recordFailure("Unexpected DTD name for esummary idx database");
             return 0;
         }
@@ -128,14 +134,16 @@ sub getDtd {
         else {
             # Assume $dtdpath is a URL, and fetch it with curl
             my $dest = "out/$dtd";
-            $log->message("Fetching $dtdpath");
-            $cmd = "curl --silent --output $dest $dtdpath > /dev/null 2>&1";
-            $status = system $cmd;
-            if ($status != 0) {
-                $log->error("FAILED to retrieve $dtdpath!");
-                exit 1 if !$coe;
-                recordFailure($cmd);
-                return 0;
+            if ($do) {
+                $log->message("Fetching $dtdpath");
+                $cmd = "curl --fail --silent --output $dest $dtdpath > /dev/null 2>&1";
+                $status = system $cmd;
+                if ($status != 0) {
+                    $log->error("FAILED to retrieve $dtdpath!  $?");
+                    exit 1 if !$coe || $status & 127;
+                    recordFailure($cmd);
+                    return 0;
+                }
             }
             return $dest;
         }
@@ -154,14 +162,16 @@ sub getDtd {
             $dtdpath = $eutilsDtdBase . $dtd;
         }
         my $dest = "out/$dtd";
-        $log->message("Fetching $dtdpath -> $dest");
-        $cmd = "curl --silent --output $dest $dtdpath > /dev/null 2>&1";
-        $status = system $cmd;
-        if ($status != 0) {
-            $log->error("FAILED to retrieve $dtdpath!");
-            exit 1 if !$coe;
-            recordFailure($cmd);
-            return 0;
+        if ($do) {
+            $log->message("Fetching $dtdpath -> $dest");
+            $cmd = "curl --fail --silent --output $dest $dtdpath > /dev/null 2>&1";
+            $status = system $cmd;
+            if ($status != 0) {
+                $log->error("FAILED to retrieve $dtdpath!  $?");
+                exit 1 if !$coe || $status & 127;
+                recordFailure($cmd);
+                return 0;
+            }
         }
         return $dest;
     }
@@ -175,6 +185,29 @@ sub getDtd {
     return $dtdpath;
 }
 
+#-------------------------------------------------------------
+# Fetch an XML sample file, and return the pathname.  If this fails,
+# then $status will be non-zero.
+
+sub fetchXml {
+    $step = 'fetch-xml';
+    $status = 0;
+    my $do = shift;
+    my $sampleXml = 'out/' . $s->{name} . ".xml";   # final output filename
+    my $eutilsUrl = $eutilsBaseUrl . $s->{"eutils-url"};
+    $eutilsUrl =~ s/\&/\\\&/g;
+    if ($do) {
+        $log->message("Fetching $eutilsUrl => $sampleXml");
+        $cmd = "curl --fail --silent --output $sampleXml $eutilsUrl";
+        $status = system $cmd;
+        if ($status != 0) {
+            $log->error("FAILED: $cmd  $?");
+            exit 1 if !$coe || $status & 127;
+            recordFailure($cmd);
+        }
+    }
+    return $sampleXml;
+}
 
 #-------------------------------------------------------------
 # Validate an XML file against a DTD.  By default, this will just use the
@@ -182,8 +215,10 @@ sub getDtd {
 # but if a second argument is given, that will be used as the DTD.
 
 sub validateXml {
-    my ($xml, $dtdpath) = @_;
     $step = 'validate-xml';
+    $status = 0;
+    my ($do, $xml, $dtdpath) = @_;
+    return if !$do;
     #print "        Validating $xml against $dtdpath\n" if $verbose;
 
     my $dtdvalidArg = '';  # command-line argument to xmllint, if needed.
@@ -213,9 +248,77 @@ sub validateXml {
     $log->message("Validating:  '$cmd'");
     $status = system $cmd;
     if ($status != 0) {
-        $log->error("FAILED to validate $xmlFinal ($xml): '$cmd'!");
-        exit 1 if !$coe;
+        $log->error("FAILED to validate $xmlFinal ($xml): '$cmd'!  $?");
+        exit 1 if !$coe || $status & 127;
         recordFailure('validate-xml', $cmd);
+    }
+}
+
+#------------------------------------------------------------------------
+# Use the dtd2xml2json utility to generate an XSLT from the DTD.
+# Returns the pathname of the generated file.  If there's an error,
+# $status will be nonzero.
+
+sub generateXslt {
+    $step = 'generate-xslt';
+    $status = 0;
+    my ($do, $dtdpath) = @_;
+
+    # For this DTD, generate the esummary2json_DBNAME.xslt files.
+    # Put these into the same place as the DTD (usually the 'out' directory)
+    my $jsonXslPath = $dtdpath;
+    $jsonXslPath =~ s/esummary_(\w+)\.dtd/esummary2json_$1.xslt/;
+    if ($do) {
+        my $baseXsltPath = $cwd . "/xml2json.xsl";
+        $cmd = "dtd2xml2json --basexslt $baseXsltPath $dtdpath $jsonXslPath > /dev/null 2>&1";
+        $log->message("Creating XSLT $jsonXslPath");
+        $status = system $cmd;
+        if ($status != 0) {
+            $log->error("FAILED: $cmd  $?");
+            exit 1 if !$coe || $status & 127;
+            EutilsJson::recordFailure($cmd);
+        }
+    }
+    return $jsonXslPath;
+}
+
+#------------------------------------------------------------------------
+sub generateJson {
+    $step = 'generate-json';
+    $status = 0;
+    my ($do, $jsonXslPath) = @_;
+
+    my $sampleXml = 'out/' . $s->{name} . ".xml";
+    my $sampleJson = $sampleXml;
+    $sampleJson =~ s/\.xml$/.json/;
+    if ($do) {
+        $log->message("Converting XML -> JSON:  $sampleJson");
+        $cmd = "xsltproc $jsonXslPath $sampleXml > $sampleJson 2> /dev/null";
+        $status = system $cmd;
+        if ($status != 0) {
+            $log->error("FAILED: $cmd  $?");
+            exit 1 if !$coe || $status & 127;
+            EutilsJson::recordFailure($cmd);
+        }
+    }
+    return $sampleJson;
+}
+
+#------------------------------------------------------------------------
+sub validateJson {
+    $step = 'validate-json';
+    $status = 0;
+    my ($do, $sampleJson) = @_;
+
+    if ($do) {
+        $cmd = "jsonlint -q $sampleJson";
+        $log->message("Validating $sampleJson");
+        $status = system $cmd;
+        if ($status != 0) {
+            $log->error("FAILED: $cmd  $?");
+            exit 1 if !$coe || $status & 127;
+            EutilsJson::recordFailure($cmd);
+        }
     }
 }
 
