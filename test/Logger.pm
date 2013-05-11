@@ -1,15 +1,14 @@
 package Logger;
 
 use strict;
-
-our $verbose;
+use warnings;
 
 sub new {
     my ($class, $v) = @_;
-    $verbose = $v;
 
     my $self = {
         'indent' => 0,
+        'verbose' => $v,
     };
     bless $self, $class;
     return $self;
@@ -17,7 +16,7 @@ sub new {
 
 sub message {
     my ($self, $m) = @_;
-    print "  " x $self->{indent} . $m . "\n" if $verbose;
+    print "  " x $self->{indent} . $m . "\n" if $self->{verbose};
 }
 
 sub error {

@@ -1,22 +1,42 @@
 package EutilsJson;
 
 use strict;
+use warnings;
 use XML::LibXML;
 use File::Temp qw/ :POSIX /;
 use Logger;
+use Exporter 'import';
+use Data::Dumper;
 
-our $log;
-
+our @EXPORT = qw(
+    $verbose $coe $log $cmd $status $sg $s $step $failed
+);
 
 # Set this to true if this should output verbose messages
 our $verbose = 0;
 # Set this to true if you want *not* to exit when there's an error
 our $coe = 0;
+# Log messages
+our $log;
+# command line command
+our $cmd;
+# Status returned from system command
+our $status;
+# sample group
+our $sg;
+# sample
+our $s;
+# The step we're currently on
+our $step;
+# count the number of failures
+our $failed = 0;
 
+our @steps = qw(
+    fetch-dtd fetch-xml validate-xml generate-xslt generate-json validate-json
+);
 
 # Base URL of the eutilities services
 our $eutilsBaseUrl = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
-
 
 # $idxextbase  points to the base directory of the subtree under which are all
 # of the IDX DTDs.  This can either be a directory on the filesystem, or a URL
@@ -25,7 +45,6 @@ our $eutilsBaseUrl = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
 
 #my $idxextbase = "/home/maloneyc/svn/toolkit/trunk/internal/c++/src/internal/idxext";
 my $idxextbase = "https://svn.ncbi.nlm.nih.gov/repos/toolkit/trunk/internal/c++/src/internal/idxext";
-
 
 
 #-------------------------------------------------------------
@@ -47,21 +66,23 @@ sub readSamples {
     my $sxml = $parser->load_xml(location => 'samples.xml')->getDocumentElement();
 
     my @samples = ();
-    foreach my $sg ($sxml->getChildrenByTagName('samplegroup')) {
+    foreach my $sgx ($sxml->getChildrenByTagName('samplegroup')) {
+        my $idxAttr = $sgx->getAttribute('idx') || '';
         my %samplegroup = (
-            dtd => $sg->getAttribute('dtd'),
-            idx => ($sg->getAttribute('idx') eq 'true'),
-            eutil => $sg->getAttribute('eutil'),
+            dtd => $sgx->getAttribute('dtd'),
+            idx => ($idxAttr eq 'true'),
+            eutil => $sgx->getAttribute('eutil'),
         );
 
         my @groupsamples = ();
-        foreach my $samp ($sg->getChildrenByTagName('sample')) {
+        foreach my $samp ($sgx->getChildrenByTagName('sample')) {
+            my $errAttr = $samp->getAttribute('error') || '';
             my %gs = (
                 name => $samp->getAttribute('name'),
-                db => $samp->getAttribute('db'),
+                db => $samp->getAttribute('db') || '',
                 'eutils-url' =>
-                  ($samp->getChildrenByTagName('eutils-url'))[0]->textContent(),
-                error => ($samp->getAttribute('error') eq 'true'),
+                    ($samp->getChildrenByTagName('eutils-url'))[0]->textContent(),
+                error => ($errAttr eq 'true'),
             );
             push @groupsamples, \%gs;
             $samplegroup{samples} = \@groupsamples;
@@ -74,18 +95,18 @@ sub readSamples {
 
 #-----------------------------------------------------------------------------
 # Retrieve the DTD for a samplegroup.  This encapsulates information about how
-# and where to get it.  This takes a $samplegroup as input (see above), and
-# returns the relative pathname to the DTD file.
+# and where to get it.  This takes a $sg as input (package variable), and
+# returns the relative pathname to the DTD file.  It returns 0 on failure.
 # If this is an ESummary IDX database, and $idxextbase points to the filesystem,
 # then this will return the copy of the DTD file under that path.  Otherwise, if
 # $idxextbase is an SVN URL, this will download it into the 'out' subdirectory,
 # and use that.
 
 sub getDtd {
-    my $samplegroup = shift;
-    my $eutil = $samplegroup->{eutil};
-    my $dtd = $samplegroup->{dtd};
-    my $idx = $samplegroup->{idx};
+    $step = 'fetch-dtd';
+    my $eutil = $sg->{eutil};
+    my $dtd = $sg->{dtd};
+    my $idx = $sg->{idx};
     my $dtdpath;
 
     # If this is an esummary idx samplegroup, then:
@@ -93,8 +114,9 @@ sub getDtd {
         # Get the database from the name of the dtd
         if ($dtd !~ /esummary_([a-z]+)\.dtd/) {
             $log->error("FAILED:  Unexpected DTD name for esummary idx database:  $dtd");
-            exit 1 if $coe;
-            next;
+            exit 1 if !$coe;
+            recordFailure("Unexpected DTD name for esummary idx database");
+            return 0;
         }
         my $db = $1;
 
@@ -105,17 +127,50 @@ sub getDtd {
         }
         else {
             # Assume $dtdpath is a URL, and fetch it with curl
-            my $dest = "out/esummary_$db.dtd";
+            my $dest = "out/$dtd";
             $log->message("Fetching $dtdpath");
-            my $status = system "curl --silent --output $dest $dtdpath";
+            $cmd = "curl --silent --output $dest $dtdpath > /dev/null 2>&1";
+            $status = system $cmd;
             if ($status != 0) {
                 $log->error("FAILED to retrieve $dtdpath!");
                 exit 1 if !$coe;
-                next;
+                recordFailure($cmd);
+                return 0;
             }
             return $dest;
         }
     }
+
+    else {
+        # Get the DTD from the production server
+        my $eutilsDtdBase = 'http://www.ncbi.nlm.nih.gov/entrez/query/DTD/';
+        if ($eutil eq 'esummary') {
+            # Prefix with a directory, and change to old-style name, capital S in "eSummary"
+            my $proddtd = $dtd;
+            $proddtd =~ s/esummary/eSummary/;
+            $dtdpath = $eutilsDtdBase . 'eSummaryDTD/' . $proddtd;
+        }
+        else {
+            $dtdpath = $eutilsDtdBase . $dtd;
+        }
+        my $dest = "out/$dtd";
+        $log->message("Fetching $dtdpath -> $dest");
+        $cmd = "curl --silent --output $dest $dtdpath > /dev/null 2>&1";
+        $status = system $cmd;
+        if ($status != 0) {
+            $log->error("FAILED to retrieve $dtdpath!");
+            exit 1 if !$coe;
+            recordFailure($cmd);
+            return 0;
+        }
+        return $dest;
+    }
+
+#    else {
+#        $log->error("FAILED:  Don't know how to get the DTD");
+#        exit 1 if !$coe;
+#        return;
+#    }
 
     return $dtdpath;
 }
@@ -128,19 +183,21 @@ sub getDtd {
 
 sub validateXml {
     my ($xml, $dtdpath) = @_;
+    $step = 'validate-xml';
     #print "        Validating $xml against $dtdpath\n" if $verbose;
 
-    my $dtdvalidArg = '';    # command-line argument to xmllint, if needed.
+    my $dtdvalidArg = '';  # command-line argument to xmllint, if needed.
+    my $xmlFinal = $xml;   # The actual file we'll pass to xmllint
     if ($dtdpath) {
         # Strip off the doctype declaration.  This is necessary because we want
         # to validate against local DTD files.  Note that even though
         # `xmllint --dtdvalid` does that local validation, it will still fail
         # if the remote DTD does not exist, which was the case, for example,
         # for pubmedhealth.
-        my $tempname = tmpnam();
-        $log->message("Stripping doctype decl:  $xml -> $tempname.");
+        $xmlFinal = tmpnam();
+        $log->message("Stripping doctype decl:  $xml -> $xmlFinal");
         open(my $th, "<", $xml) or die "Can't open $xml for reading";
-        open(my $sh, ">", $tempname) or die "Can't open $tempname for writing";
+        open(my $sh, ">", $xmlFinal) or die "Can't open $xmlFinal for writing";
         while (my $line = <$th>) {
             next if $line =~ /^\<\!DOCTYPE /;
             print $sh $line;
@@ -148,20 +205,44 @@ sub validateXml {
         close $sh;
         close $th;
 
-        $xml = $tempname;
         $dtdvalidArg = '--dtdvalid ' . $dtdpath;
     }
 
     # Validate this sample against the new DTD.
-    my $xmllintCmd = 'xmllint --noout ' . $dtdvalidArg . ' ' . $xml;
-    $log->message("Validating:  '$xmllintCmd'");
-    my $status = system $xmllintCmd;
+    $cmd = 'xmllint --noout ' . $dtdvalidArg . ' ' . $xmlFinal . ' > /dev/null 2>&1';
+    $log->message("Validating:  '$cmd'");
+    $status = system $cmd;
     if ($status != 0) {
-        $log->error("$xml FAILED to validate!");
+        $log->error("FAILED to validate $xmlFinal ($xml): '$cmd'!");
         exit 1 if !$coe;
-        next;
+        recordFailure('validate-xml', $cmd);
     }
 }
 
+#------------------------------------------------------------------------
+# Record information about an individual test failure in $sg and (if
+# appropriate) $s
+
+sub recordFailure {
+    my $msg = shift;
+
+    # We'll always store something in $sg.  Make a hash if one hasn't been
+    # made before.
+    if (!$sg->{failure}) { $sg->{failure} = {}; }
+
+    if ($step eq 'fetch-dtd' || $step eq 'generate-xslt') {
+        $sg->{failure}{$step} = $msg;
+    }
+    else {
+        # This was a sample-specific step
+        if (!$s->{failure}) { $s->{failure} = {}; }
+        $s->{failure}{$step} = $msg;
+
+        # Also flag this in the $sg hash
+        $sg->{failure}{$step} = 1;
+    }
+
+    $failed++;
+}
 
 1;
