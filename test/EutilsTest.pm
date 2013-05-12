@@ -11,7 +11,7 @@ use Cwd;
 
 
 our @EXPORT = qw(
-    $verbose $coe $log $cmd $status $sg $s $step $failed
+    $verbose $coe $log $cmd $status $sg $s $step $failures
 );
 
 my $cwd = getcwd;
@@ -33,7 +33,7 @@ our $s;
 # The step we're currently on
 our $step;
 # count the number of failures
-our $failed = 0;
+our $failures = 0;
 
 our @steps = qw(
     fetch-dtd fetch-xml validate-xml generate-xslt generate-json validate-json
@@ -521,7 +521,7 @@ sub recordFailure {
         $sg->{failure}{$step} = 1;
     }
 
-    $failed++;
+    $failures++;
 }
 
 1;

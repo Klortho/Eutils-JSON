@@ -228,8 +228,8 @@ foreach my $samplegroup (@$testcases) {
 }
 
 # Summary pass / fail report
-if ($EutilsTest::failed) {
-    print "$EutilsTest::failed failures:\n";
+if ($EutilsTest::failures) {
+    print "$EutilsTest::failures failures:\n";
     foreach my $samplegroup (@$testcases) {
         $sg = $samplegroup;
         if ($sg->{failure}) {
@@ -242,7 +242,7 @@ if ($EutilsTest::failed) {
 else {
     print "All tests passed!\n";
 }
-exit $EutilsTest::failed;
+exit $EutilsTest::failures;
 
 #-----------------------------------------------------------------------
 # This subroutine returns true if the sample matches the selection criteria
