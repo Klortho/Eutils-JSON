@@ -9,6 +9,7 @@ use Exporter 'import';
 use Data::Dumper;
 use Cwd;
 
+
 our @EXPORT = qw(
     $verbose $coe $log $cmd $status $sg $s $step $failed
 );
@@ -142,9 +143,7 @@ sub fetchDtd {
         if ($eutil eq 'esummary' && $idx) {
             # Get the database from the name of the dtd
             if ($dtd !~ /esummary_([a-z]+)\.dtd/) {
-                $log->error("FAILED:  Unexpected DTD name for esummary idx database:  $dtd  $?");
-                exit 1 if !$coe || $status & 127;
-                recordFailure("Unexpected DTD name for esummary idx database");
+                failed("Unexpected DTD name for esummary idx database:  $dtd");
                 return 0;
             }
             my $db = $1;
@@ -163,9 +162,7 @@ sub fetchDtd {
                     $cmd = "curl --fail --silent --output $dest $dtdpath > /dev/null 2>&1";
                     $status = system $cmd;
                     if ($status != 0) {
-                        $log->error("FAILED to retrieve $dtdpath!  $?");
-                        exit 1 if !$coe || $status & 127;
-                        recordFailure($cmd);
+                        failed("'$cmd': $?");
                         return 0;
                     }
                 }
@@ -175,10 +172,8 @@ sub fetchDtd {
             }
         }
         else {
-            $log->error("FAILED:  --dtd-svn was specified, but I don't know where this DTD " .
-                        "is in svn:  $dtd");
-            exit 1 if !$coe;
-            recordFailure("--dtd-svn for unknown DTD");
+            failed("--dtd-svn was specified, but I don't know where this DTD " .
+                   "is in svn:  $dtd");
             return 0;
         }
     }
@@ -219,9 +214,7 @@ sub fetchXml {
         $cmd = "curl --fail --silent --output $sampleXml $eutilsUrl";
         $status = system $cmd;
         if ($status != 0) {
-            $log->error("FAILED: $cmd  $?");
-            exit 1 if !$coe || $status & 127;
-            recordFailure($cmd);
+            failed("'$cmd':  $?");
         }
     }
     return $sampleXml;
@@ -249,9 +242,7 @@ sub downloadDtd {
         $cmd = "curl --fail --silent --output $dtdPath $dtdUrl > /dev/null 2>&1";
         $status = system $cmd;
         if ($status != 0) {
-            $log->error("FAILED to retrieve $dtdUrl!  $?");
-            exit 1 if !$coe || $status & 127;
-            recordFailure($cmd);
+            failed("'$cmd':  $?");
             return 0;
         }
     }
@@ -282,10 +273,7 @@ sub validateXml {
         my $dtdSystemId;
         my $th;
         if (!open($th, "<", $xml)) {
-            my $msg = "Can't open $xml for reading";
-            $log->error($msg);
-            exit 1 if !$coe;
-            recordFailure($msg);
+            failed("Can't open $xml for reading");
             return;
         }
         while (my $line = <$th>) {
@@ -295,10 +283,7 @@ sub validateXml {
             }
         }
         if (!$dtdSystemId) {
-            my $msg = "Couldn't get system identifier for DTD from xml file";
-            $log->error($msg);
-            exit 1 if !$coe;
-            recordFailure($msg);
+            failed("Couldn't get system identifier for DTD from xml file");
             return;
         }
         close $th;
@@ -321,10 +306,7 @@ sub validateXml {
         $log->message("Stripping doctype decl:  $xml -> $xmlFinal");
         my $th;
         if (!open($th, "<", $xml)) {
-            my $msg = "Can't open $xml for reading";
-            $log->error($msg);
-            exit 1 if !$coe;
-            recordFailure($msg);
+            failed("Can't open $xml for reading");
             return;
         }
         open(my $sh, ">", $xmlFinal) or die "Can't open $xmlFinal for writing";
@@ -344,10 +326,7 @@ sub validateXml {
         $log->message("Writing new doctype decl:  $xml -> $xmlFinal");
         my $th;
         if (!open($th, "<", $xml)) {
-            my $msg = "Can't open $xml for reading";
-            $log->error($msg);
-            exit 1 if !$coe;
-            recordFailure($msg);
+            failed("Can't open $xml for reading");
             return;
         }
         open(my $sh, ">", $xmlFinal) or die "Can't open $xmlFinal for writing";
@@ -368,22 +347,20 @@ sub validateXml {
     $log->message("Validating:  '$cmd'");
     $status = system $cmd;
     if ($status != 0) {
-        $log->error("FAILED to validate $xmlFinal ($xml): '$cmd'!  $?");
-        exit 1 if !$coe || $status & 127;
-        recordFailure($cmd);
+        failed("Validating $xmlFinal ($xml): '$cmd'!  $?");
     }
 }
 
 #------------------------------------------------------------------------
 # Use the dtd2xml2json utility to generate an XSLT from the DTD.
-# Returns the pathname of the generated file.  If there's an error,
-# $status will be nonzero.
+# Returns the pathname of the generated file.
 
 sub generateXslt {
     $step = 'generate-xslt';
     $status = 0;
     my $do = shift;
 
+    my $dtd = $sg->{dtd};
     my $dtdSystemId = $sg->{'dtd-system-id'};
     return if !$dtdSystemId;  # This can happen if --dtd-doctype is given, but we can't find the DTD
     my $dtdPath = $sg->{'dtd-path'};
@@ -402,7 +379,7 @@ sub generateXslt {
     if (!$jp) { $jp = 'out/'; }
 
     # filename
-    my $jf = $dtdSystemId;
+    my $jf = $dtd;
     $jf =~ s/.*\///;  # get rid of path
     if ($jf =~ /esummary/) {
         # Names of the form esummary_db.dtd
@@ -413,22 +390,40 @@ sub generateXslt {
         $jf =~ s/_(\d+)\.dtd/2json_$1.xslt/;
     }
     else {
-        my $msg = "FAILED: unrecognized DTD filename, don't know how to construct json filename: $jf";
-        $log->error($msg);
-        exit 1 if !$coe;
-        EutilsJson::recordFailure($msg);
+        failed("Unrecognized DTD filename, don't know how to construct 2json XSLT filename: $jf");
+        return;
     }
     my $jsonXslPath = $jp . $jf;
 
     if ($do) {
-        my $baseXsltPath = $cwd . "/xml2json.xsl";
-        $cmd = "dtd2xml2json --basexslt $baseXsltPath $dtdSrc $jsonXslPath > /dev/null 2>&1";
+
+        # Run the utility, and capture both standard out and standard error into a
+        # file
+        my $outfile = 'out/dtd2xml2json.out';
+        $cmd = "dtd2xml2json $dtdSrc $jsonXslPath > $outfile 2>&1";
         $log->message("Creating XSLT $jsonXslPath");
         $status = system $cmd;
+
         if ($status != 0) {
-            $log->error("FAILED: $cmd  $?");
-            exit 1 if !$coe || $status & 127;
-            EutilsJson::recordFailure($cmd);
+            failed("'$cmd':  $?");
+            return;
+        }
+
+        # Check the output from the command, to see if there were problems with
+        # the JSON annotations (unfortunately, the tool does not return with an
+        # error status when this happens).
+        my $output = do {
+            local $/ = undef;
+            open my $fh, "<", $outfile or die "could not open $outfile: $!";
+            <$fh>;
+        };
+        # Look for specific messages
+        if ($output =~ /invalid json annotation/ ||
+            $output =~ /tell me what to do/ ||
+            $output =~ /unknown item group/ ||
+            $output =~ /unrecognized element/)
+        {
+            failed("Problem while running dtd2xml2json utility");
         }
     }
     return $jsonXslPath;
@@ -445,14 +440,24 @@ sub generateJson {
     $sampleJson =~ s/\.xml$/.json/;
     if ($do) {
         $log->message("Converting XML -> JSON:  $sampleJson");
-        $cmd = "xsltproc $jsonXslPath $sampleXml > $sampleJson 2> /dev/null";
+        my $errfile = 'out/xsltproc.err';
+        $cmd = "xsltproc $jsonXslPath $sampleXml > $sampleJson 2> $errfile";
         $status = system $cmd;
         if ($status != 0) {
-            $log->error("FAILED: $cmd  $?");
-            exit 1 if !$coe || $status & 127;
-            EutilsJson::recordFailure($cmd);
+            failed("'$cmd': $?");
+        }
+
+        my $err = do {
+            local $/ = undef;
+            open my $fh, "<", $errfile or die "could not open $errfile: $!";
+            <$fh>;
+        };
+        if (length($err) > 0)
+        {
+            failed("Problem during the xsltproc conversion");
         }
     }
+
     return $sampleJson;
 }
 
@@ -467,12 +472,21 @@ sub validateJson {
         $log->message("Validating $sampleJson");
         $status = system $cmd;
         if ($status != 0) {
-            $log->error("FAILED: $cmd  $?");
-            exit 1 if !$coe || $status & 127;
-            EutilsJson::recordFailure($cmd);
+            failed("'$cmd':  $?");
         }
     }
 }
+#------------------------------------------------------------------------
+# Generic test failure handler
+
+sub failed {
+    my $msg = shift;
+    $log->error("FAILED:  $msg");
+    exit 1 if !$coe || $status & 127;
+    recordFailure($cmd);
+    $status = 0;
+}
+
 
 #------------------------------------------------------------------------
 # Record information about an individual test failure in $sg and (if

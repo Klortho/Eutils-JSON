@@ -11,8 +11,9 @@ use EutilsJson;
 use Data::Dumper;
 use Getopt::Long;
 use File::Path qw(make_path);
+use File::Which;
+use File::Copy;
 
-make_path('out');
 
 # -v | --verbose turn on verbose messages
 my %Opts;
@@ -20,6 +21,7 @@ my $ok = GetOptions(\%Opts,
     "help|?",
     "verbose",
     "continue-on-error",
+    "reset",
     "eutil:s",
     "db:s",
     "dtd:s",
@@ -47,6 +49,7 @@ General options:
   -h|-? - help
   -v|--verbose - turn on verbose messages
   -c|--continue-on-error - keep going even if there is an error
+  --reset - erase the 'out' directory first
 
 Options to select the sample(s) from the samples.xml file to test (these will
 be ANDed together):
@@ -116,7 +119,27 @@ if ($dtdSvn && ($dtdRemote || $dtdTld || $dtdDoctype)) {
     die "Can't use --dtd-svn with any other DTD option.";
 }
 
+# Set things up
 
+make_path('out');
+if ($Opts{reset}) {
+    unlink glob "out/*";
+}
+
+# Get the XSLT base stylesheet, xml2json.xsl, into the out directory
+my $ddir = which('dtd2xml2json');
+if (!$ddir) {
+    die "Can't find dtd2xml2json in my PATH.  That's not good.";
+}
+$ddir =~ s/^(.*)\/.*$/$1\//;
+my $basexslt = $ddir . 'xslt/xml2json.xsl';
+if (!-f $basexslt) {
+    die "Can't find the base XSLT file $basexslt.  That's bad.";
+}
+copy($basexslt, 'out');
+
+
+# Read in the samples xml file
 my $samples = EutilsJson::readSamples();
 #print Dumper($samples) if $verbose;
 
