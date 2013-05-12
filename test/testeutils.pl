@@ -7,7 +7,7 @@
 
 use strict;
 use warnings;
-use EutilsJson;
+use EutilsTest;
 use Data::Dumper;
 use Getopt::Long;
 use File::Path qw(make_path);
@@ -140,7 +140,7 @@ copy($basexslt, 'out');
 
 
 # Read in the samples xml file
-my $samples = EutilsJson::readSamples();
+my $samples = EutilsTest::readSamples();
 #print Dumper($samples) if $verbose;
 
 foreach my $samplegroup (@$samples) {
@@ -173,7 +173,7 @@ foreach my $samplegroup (@$samples) {
     }
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    my $result = EutilsJson::fetchDtd($doFetchDtd, $dtdRemote, $dtdTld, $dtdSvn, $dtdDoctype);
+    my $result = EutilsTest::fetchDtd($doFetchDtd, $dtdRemote, $dtdTld, $dtdSvn, $dtdDoctype);
     next if !$result;   # means there was an error and continue-on-error is set.
     $log->indent;
 
@@ -183,17 +183,17 @@ foreach my $samplegroup (@$samples) {
         next if !sampleMatch();
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        my $sampleXml = EutilsJson::fetchXml($doFetchXml);
+        my $sampleXml = EutilsTest::fetchXml($doFetchXml);
         next if $status != 0;
         $log->indent;
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        EutilsJson::validateXml($doValidateXml, $sampleXml, $dtdRemote, $dtdTld, $dtdDoctype);
+        EutilsTest::validateXml($doValidateXml, $sampleXml, $dtdRemote, $dtdTld, $dtdDoctype);
         $log->undent;
     }
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    my $jsonXslPath = EutilsJson::generateXslt($doGenerateXslt);
+    my $jsonXslPath = EutilsTest::generateXslt($doGenerateXslt);
     if ($status != 0) {
         $log->undent;
         $status = 0;
@@ -213,12 +213,12 @@ foreach my $samplegroup (@$samples) {
         }
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        my $sampleJson = EutilsJson::generateJson($doGenerateJson, $jsonXslPath);
+        my $sampleJson = EutilsTest::generateJson($doGenerateJson, $jsonXslPath);
         next if $status != 0;
         $log->indent;
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        EutilsJson::validateJson($doValidateJson, $sampleJson);
+        EutilsTest::validateJson($doValidateJson, $sampleJson);
         $log->undent;
     }
 
@@ -227,13 +227,13 @@ foreach my $samplegroup (@$samples) {
 }
 
 # Summary pass / fail report
-if ($EutilsJson::failed) {
-    print "$EutilsJson::failed failures:\n";
+if ($EutilsTest::failed) {
+    print "$EutilsTest::failed failures:\n";
     foreach my $samplegroup (@$samples) {
         $sg = $samplegroup;
         if ($sg->{failure}) {
             print "  " . $sg->{dtd} . ": ";
-            my @fs = map { $sg->{failure}{$_} ? $_ : () } @EutilsJson::steps;
+            my @fs = map { $sg->{failure}{$_} ? $_ : () } @EutilsTest::steps;
             print join(", ", @fs) . "\n";
         }
     }
@@ -241,7 +241,7 @@ if ($EutilsJson::failed) {
 else {
     print "All tests passed!\n";
 }
-exit $EutilsJson::failed;
+exit $EutilsTest::failed;
 
 #-----------------------------------------------------------------------
 # This subroutine returns true if the sample matches the selection criteria

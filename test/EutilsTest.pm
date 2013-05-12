@@ -1,4 +1,4 @@
-package EutilsJson;
+package EutilsTest;
 
 use strict;
 use warnings;
