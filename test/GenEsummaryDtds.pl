@@ -44,28 +44,15 @@ sub genEsummaryDtd
           "$db: build: $buildversion\n";
 
     if ($buildversion ne 'error') {
-        # First use the cidxgendocsumdtd to generate a *broken* DTD.  After we
-        # get the DTD, we'll fix it up.
-        my $brokenDtd = "eSummary_$db.broke.dtd";
+        my $dtd = "eSummary_$db.dtd";
         my $cmd = "$cidxbin/cidxgendocsumdtd -dbinfo $dbinfoIni -db $db " .
-                  "-build $buildversion -dtd $brokenDtd";
+                  "-build $buildversion -dtd $dtd";
         if ($debug) { print "executing '$cmd'\n"; }
         system $cmd;
-        if (! -f $brokenDtd) {
-            print "Error!  $brokenDtd not created\n";
+        if (! -f $dtd) {
+            print "Error!  $dtd not created\n";
             next;
         }
-
-        # Now let's fix it up
-        my $fixedDtd = "eSummary_$db.dtd";
-        system "./fix-dtds.pl $brokenDtd > $fixedDtd";
-        if (! -f $fixedDtd) {
-            print "Error!  $fixedDtd not created\n";
-            next;
-        }
-
-        # Now that we're sure we've got a good one, remove the bad one.
-        unlink $brokenDtd;
     }
 }
 
