@@ -734,7 +734,7 @@
     </sample>
   </samplegroup>
 
-  <samplegroup dtd="esummary_homologene.dtd" eutil="esummary" idx='true'>
+  <samplegroup dtd="esummary_homologene.dtd" eutil="esummary">
     <sample name="esummary.homologene.46359" id="46359" db="homologene">
       <eutils-url>esummary.fcgi?db=homologene&amp;id=46359&amp;version=2.0</eutils-url>
     </sample>

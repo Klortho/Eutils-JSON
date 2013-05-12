@@ -42,6 +42,10 @@ our @steps = qw(
 # Base URL of the eutilities services
 our $eutilsBaseUrl = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
 
+# Base URL of the DTDs
+our $eutilsDtdBase = 'http://www.ncbi.nlm.nih.gov/entrez/query/DTD/';
+
+
 # $idxextbase  points to the base directory of the subtree under which are all
 # of the IDX DTDs.  This can either be a directory on the filesystem, or a URL
 # to the Subversion repository.
@@ -98,91 +102,105 @@ sub readSamples {
 }
 
 #-----------------------------------------------------------------------------
-# Retrieve the DTD for a samplegroup.  This encapsulates information about how
-# and where to get it.  This takes a $sg as input (package variable), and
-# returns the relative pathname to the DTD file.  It returns 0 on failure.
-# If this is an ESummary IDX database, and $idxextbase points to the filesystem,
-# then this will return the copy of the DTD file under that path.  Otherwise, if
-# $idxextbase is an SVN URL, this will download it into the 'out' subdirectory,
-# and use that.
+# Compute the location, and (optionally) retrieve a local copy of the DTD for a
+# samplegroup.  If --dtd-doctype was given, then this function does nothing;
+# everything is deferred to later, when an instance document is fetched.
+#
+# This function encapsulates information about where the DTDs are for each type
+# of Eutility.
+#
+# This takes a $sg as input (package variable), and stores these pieces of information
+# in that hash:
+#     - dtd-system-id - the computed value for the system identifier
+#     - dtd-url - the computed value for the actual URL that is used to grab the DTD.
+#       Usually this is the same, but might be different if --dtd-tld is used
+#     - dtd-path - the relative path to the local copy, if there is one.  If not
+#       (--dtd-remote was given) this will be the empty string.
+#
+# This function returns 1 if successful, or 0 if there is a failure.
+#
+# Special case:  if --dtd-svn is given, and this is an ESummary IDX database, and
+# $idxextbase points to the filesystem, then this will set 'dtd-path' to point to
+# the DTD file under within that path on the filesystem.  Otherwise, if
+# $idxextbase is an SVN URL, this will download it to a local copy, as with any
+# other URL.
 
 sub fetchDtd {
     $step = 'fetch-dtd';
     $status = 0;
-    my $do = shift;
+    my ($do, $dtdRemote, $dtdTld, $dtdSvn, $dtdDoctype) = @_;
+    return 1 if $dtdDoctype;  # Nothing to do.
+
     my $eutil = $sg->{eutil};
     my $dtd = $sg->{dtd};
     my $idx = $sg->{idx};
     my $dtdpath;
 
-    # If this is an esummary idx samplegroup, then:
-    if ($eutil eq 'esummary' && $idx) {
-        # Get the database from the name of the dtd
-        if ($dtd !~ /esummary_([a-z]+)\.dtd/) {
-            $log->error("FAILED:  Unexpected DTD name for esummary idx database:  $dtd  $?");
-            exit 1 if !$coe || $status & 127;
-            recordFailure("Unexpected DTD name for esummary idx database");
-            return 0;
-        }
-        my $db = $1;
+    # If the --dtd-svn option was given, then this better be an esummary idx samplegroup,
+    # otherwise we have to fail.
+    if ($dtdSvn) {
+        if ($eutil eq 'esummary' && $idx) {
+            # Get the database from the name of the dtd
+            if ($dtd !~ /esummary_([a-z]+)\.dtd/) {
+                $log->error("FAILED:  Unexpected DTD name for esummary idx database:  $dtd  $?");
+                exit 1 if !$coe || $status & 127;
+                recordFailure("Unexpected DTD name for esummary idx database");
+                return 0;
+            }
+            my $db = $1;
 
-        # See if the DTD exists on the filesystem
-        $dtdpath = "$idxextbase/$db/support/esummary_$db.dtd";
-        if (-f $dtdpath) {
-            return $dtdpath;
+            # See if the DTD exists on the filesystem
+            $dtdpath = "$idxextbase/$db/support/esummary_$db.dtd";
+            if (-f $dtdpath) {
+                $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $sg->{'dtd-path'} = $dtdpath;
+                return 1;
+            }
+            else {
+                # Assume $dtdpath is a URL, and fetch it with curl
+                my $dest = "out/$dtd";
+                if ($do) {
+                    $log->message("Fetching $dtdpath");
+                    $cmd = "curl --fail --silent --output $dest $dtdpath > /dev/null 2>&1";
+                    $status = system $cmd;
+                    if ($status != 0) {
+                        $log->error("FAILED to retrieve $dtdpath!  $?");
+                        exit 1 if !$coe || $status & 127;
+                        recordFailure($cmd);
+                        return 0;
+                    }
+                }
+                $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $dtdpath;
+                $sg->{'dtd-path'} = $dest;
+                return 1;
+            }
         }
         else {
-            # Assume $dtdpath is a URL, and fetch it with curl
-            my $dest = "out/$dtd";
-            if ($do) {
-                $log->message("Fetching $dtdpath");
-                $cmd = "curl --fail --silent --output $dest $dtdpath > /dev/null 2>&1";
-                $status = system $cmd;
-                if ($status != 0) {
-                    $log->error("FAILED to retrieve $dtdpath!  $?");
-                    exit 1 if !$coe || $status & 127;
-                    recordFailure($cmd);
-                    return 0;
-                }
-            }
-            return $dest;
+            $log->error("FAILED:  --dtd-svn was specified, but I don't know where this DTD " .
+                        "is in svn:  $dtd");
+            exit 1 if !$coe;
+            recordFailure("--dtd-svn for unknown DTD");
+            return 0;
         }
     }
 
+    # Not --dtd-svn, we'll compute a normal system identifier URL
     else {
-        # Get the DTD from the production server
-        my $eutilsDtdBase = 'http://www.ncbi.nlm.nih.gov/entrez/query/DTD/';
+        # Compute the official system identifier (not necessarily the same as
+        # the URL that we'll use to get the DTD.
+        my $dtdSystemId;
+
         if ($eutil eq 'esummary') {
             # Prefix with a directory, and change to old-style name, capital S in "eSummary"
             my $proddtd = $dtd;
             $proddtd =~ s/esummary/eSummary/;
-            $dtdpath = $eutilsDtdBase . 'eSummaryDTD/' . $proddtd;
+            $dtdSystemId = $eutilsDtdBase . 'eSummaryDTD/' . $proddtd;
         }
         else {
-            $dtdpath = $eutilsDtdBase . $dtd;
+            $dtdSystemId = $eutilsDtdBase . $dtd;
         }
-        my $dest = "out/$dtd";
-        if ($do) {
-            $log->message("Fetching $dtdpath -> $dest");
-            $cmd = "curl --fail --silent --output $dest $dtdpath > /dev/null 2>&1";
-            $status = system $cmd;
-            if ($status != 0) {
-                $log->error("FAILED to retrieve $dtdpath!  $?");
-                exit 1 if !$coe || $status & 127;
-                recordFailure($cmd);
-                return 0;
-            }
-        }
-        return $dest;
+
+        return downloadDtd($do, $dtdSystemId, $dtdTld, $dtdRemote);
     }
-
-#    else {
-#        $log->error("FAILED:  Don't know how to get the DTD");
-#        exit 1 if !$coe;
-#        return;
-#    }
-
-    return $dtdpath;
 }
 
 #-------------------------------------------------------------
@@ -210,20 +228,90 @@ sub fetchXml {
 }
 
 #-------------------------------------------------------------
-# Validate an XML file against a DTD.  By default, this will just use the
-# DTD specified by the doctype declaration in the file to do the validation,
-# but if a second argument is given, that will be used as the DTD.
+# This does the actual download of the DTD for both fetchDtd
+# and validateXml.
+# This returns 1 if successful, or 0 if there was a failure.
+
+sub downloadDtd {
+    my ($do, $dtdSystemId, $dtdTld, $dtdRemote) = @_;
+
+    # Now the URL that we'll use to actually get it.
+    my $dtdUrl = $dtdSystemId;
+    if ($dtdTld) {
+        $dtdUrl =~ s/www/$dtdTld/;
+    }
+
+    # Here is where we'll put the local copy, only if not --dtd-remote
+    my $dtdPath = $dtdRemote ? '' : "out/" . $sg->{dtd};
+
+    if ($do && !$dtdRemote) {
+        $log->message("Fetching $dtdUrl -> $dtdPath");
+        $cmd = "curl --fail --silent --output $dtdPath $dtdUrl > /dev/null 2>&1";
+        $status = system $cmd;
+        if ($status != 0) {
+            $log->error("FAILED to retrieve $dtdUrl!  $?");
+            exit 1 if !$coe || $status & 127;
+            recordFailure($cmd);
+            return 0;
+        }
+    }
+    $sg->{'dtd-system-id'} = $dtdSystemId;
+    $sg->{'dtd-url'} = $dtdUrl;
+    $sg->{'dtd-path'} = $dtdPath;
+    return 1;
+}
+
+#-------------------------------------------------------------
+# Validate an XML file against a DTD.
+# The DTD local path or URL that will be used is figured out on the basis of
+# the $sg->{'dtd-url'} and $sg->{'dtd-path'} that were set in fetchDtd():
+#     dtd-path   dtd-url
+#     <path>      ---       Strip off doctype decl, and use --dtdvalid to point to local file
+#     ''         <url>      Rewrite doctype decl, and use --valid
 
 sub validateXml {
     $step = 'validate-xml';
     $status = 0;
-    my ($do, $xml, $dtdpath) = @_;
+    my ($do, $xml, $dtdRemote, $dtdTld, $dtdDoctype) = @_;
     return if !$do;
-    #print "        Validating $xml against $dtdpath\n" if $verbose;
 
-    my $dtdvalidArg = '';  # command-line argument to xmllint, if needed.
-    my $xmlFinal = $xml;   # The actual file we'll pass to xmllint
-    if ($dtdpath) {
+    # If the --dtd-doctype argument was given, and this is the first sample from
+    # this group that we've seen, then we need to fetch the DTD
+    if ($dtdDoctype && !exists $sg->{'dtd-url'}) {
+        $log->message("Reading XML file $xml to find the DTD");
+        my $dtdSystemId;
+        my $th;
+        if (!open($th, "<", $xml)) {
+            my $msg = "Can't open $xml for reading";
+            $log->error($msg);
+            exit 1 if !$coe;
+            recordFailure($msg);
+            return;
+        }
+        while (my $line = <$th>) {
+            if ($line =~ /^\<\!DOCTYPE.*?".*?"\s+"(.*?)"/) {
+                $dtdSystemId = $1;
+                last;
+            }
+        }
+        if (!$dtdSystemId) {
+            my $msg = "Couldn't get system identifier for DTD from xml file";
+            $log->error($msg);
+            exit 1 if !$coe;
+            recordFailure($msg);
+            return;
+        }
+        close $th;
+        return if !downloadDtd($do, $dtdSystemId, $dtdTld, $dtdRemote);
+    }
+
+    my $dtdPath = $sg->{'dtd-path'};
+    my $dtdUrl = $sg->{'dtd-url'};
+
+    my $xmllintArg = '';   # command-line argument to xmllint, if needed.
+    my $xmlFinal = $xml;   # The pathname of the actual file we'll pass to xmllint
+
+    if ($dtdPath) {
         # Strip off the doctype declaration.  This is necessary because we want
         # to validate against local DTD files.  Note that even though
         # `xmllint --dtdvalid` does that local validation, it will still fail
@@ -231,7 +319,14 @@ sub validateXml {
         # for pubmedhealth.
         $xmlFinal = tmpnam();
         $log->message("Stripping doctype decl:  $xml -> $xmlFinal");
-        open(my $th, "<", $xml) or die "Can't open $xml for reading";
+        my $th;
+        if (!open($th, "<", $xml)) {
+            my $msg = "Can't open $xml for reading";
+            $log->error($msg);
+            exit 1 if !$coe;
+            recordFailure($msg);
+            return;
+        }
         open(my $sh, ">", $xmlFinal) or die "Can't open $xmlFinal for writing";
         while (my $line = <$th>) {
             next if $line =~ /^\<\!DOCTYPE /;
@@ -240,17 +335,42 @@ sub validateXml {
         close $sh;
         close $th;
 
-        $dtdvalidArg = '--dtdvalid ' . $dtdpath;
+        $xmllintArg = '--dtdvalid ' . $dtdPath;
+    }
+
+    else {
+        # Replace the doctype declaration with a new one.
+        $xmlFinal = tmpnam();
+        $log->message("Writing new doctype decl:  $xml -> $xmlFinal");
+        my $th;
+        if (!open($th, "<", $xml)) {
+            my $msg = "Can't open $xml for reading";
+            $log->error($msg);
+            exit 1 if !$coe;
+            recordFailure($msg);
+            return;
+        }
+        open(my $sh, ">", $xmlFinal) or die "Can't open $xmlFinal for writing";
+        while (my $line = <$th>) {
+            if ($line =~ /^\<\!DOCTYPE /) {
+                $line =~ s/PUBLIC\s+".*"/SYSTEM "$dtdUrl"/;
+            }
+            print $sh $line;
+        }
+        close $sh;
+        close $th;
+
+        $xmllintArg = '--valid';
     }
 
     # Validate this sample against the new DTD.
-    $cmd = 'xmllint --noout ' . $dtdvalidArg . ' ' . $xmlFinal . ' > /dev/null 2>&1';
+    $cmd = 'xmllint --noout ' . $xmllintArg . ' ' . $xmlFinal . ' > /dev/null 2>&1';
     $log->message("Validating:  '$cmd'");
     $status = system $cmd;
     if ($status != 0) {
         $log->error("FAILED to validate $xmlFinal ($xml): '$cmd'!  $?");
         exit 1 if !$coe || $status & 127;
-        recordFailure('validate-xml', $cmd);
+        recordFailure($cmd);
     }
 }
 
@@ -262,15 +382,47 @@ sub validateXml {
 sub generateXslt {
     $step = 'generate-xslt';
     $status = 0;
-    my ($do, $dtdpath) = @_;
+    my $do = shift;
 
-    # For this DTD, generate the esummary2json_DBNAME.xslt files.
-    # Put these into the same place as the DTD (usually the 'out' directory)
-    my $jsonXslPath = $dtdpath;
-    $jsonXslPath =~ s/esummary_(\w+)\.dtd/esummary2json_$1.xslt/;
+    my $dtdSystemId = $sg->{'dtd-system-id'};
+    return if !$dtdSystemId;  # This can happen if --dtd-doctype is given, but we can't find the DTD
+    my $dtdPath = $sg->{'dtd-path'};
+    my $dtdUrl = $sg->{'dtd-url'};
+    my $dtdSrc = $dtdPath ? $dtdPath : $dtdUrl;
+
+    # Compute the full path- and filename of the target 2JSON XSLT file.
+    # the e...2json_DBNAME.xslt files.
+    # Put these into the same place as the DTD, if there is a local copy of
+    # it.  If there is no local copy, put it into the 'out' directory.
+    my $jp = '';  # path
+    if ($dtdPath) {
+        $jp = $dtdPath;
+        $jp =~ s/(.*\/).*/$1/;
+    }
+    if (!$jp) { $jp = 'out/'; }
+
+    # filename
+    my $jf = $dtdSystemId;
+    $jf =~ s/.*\///;  # get rid of path
+    if ($jf =~ /esummary/) {
+        # Names of the form esummary_db.dtd
+        $jf =~ s/esummary_(\w+)\.dtd/esummary2json_$1.xslt/;
+    }
+    elsif ($jf =~ /e[a-zA-Z]+_\d+\.dtd/) {
+        # Names of the from eInfo_020511.dtd
+        $jf =~ s/_(\d+)\.dtd/2json_$1.xslt/;
+    }
+    else {
+        my $msg = "FAILED: unrecognized DTD filename, don't know how to construct json filename: $jf";
+        $log->error($msg);
+        exit 1 if !$coe;
+        EutilsJson::recordFailure($msg);
+    }
+    my $jsonXslPath = $jp . $jf;
+
     if ($do) {
         my $baseXsltPath = $cwd . "/xml2json.xsl";
-        $cmd = "dtd2xml2json --basexslt $baseXsltPath $dtdpath $jsonXslPath > /dev/null 2>&1";
+        $cmd = "dtd2xml2json --basexslt $baseXsltPath $dtdSrc $jsonXslPath > /dev/null 2>&1";
         $log->message("Creating XSLT $jsonXslPath");
         $status = system $cmd;
         if ($status != 0) {
@@ -311,7 +463,7 @@ sub validateJson {
     my ($do, $sampleJson) = @_;
 
     if ($do) {
-        $cmd = "jsonlint -q $sampleJson";
+        $cmd = "jsonlint -q $sampleJson > /dev/null 2>&1";
         $log->message("Validating $sampleJson");
         $status = system $cmd;
         if ($status != 0) {

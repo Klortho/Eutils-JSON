@@ -32,31 +32,54 @@ my $ok = GetOptions(\%Opts,
     "generate-xslt",
     "generate-json",
     "validate-json",
+    "dtd-remote",
+    "dtd-tld:s",
+    "dtd-svn",
+    "dtd-doctype",
 );
 if ($Opts{help}) {
-    print "Usage:  GetTestIdx.pl [-v|--verbose] [-s|--stop-on-error]\n\n" .
-          "This script tests EUtilities.\n\n" .
-          "General options:\n" .
-          "  -h|-? - help\n" .
-          "  -v|--verbose - turn on verbose messages\n" .
-          "  -c|--continue-on-error - keep going even if there is an error\n\n" .
-          "Options to select the sample(s) from the samples.xml file to test (these will be ANDed together):\n" .
-          "  --eutil=<eutil> - test samples corresponding only to the given eutility\n" .
-          "  --db=<db> - test samples corresponding to the given database\n" .
-          "  --dtd=<dtd> - test only those samples correponding to the given DTD (as given in samples.xml)\n" .
-          "  --sample=<sample-name> - test only the indicated sample\n" .
-          "  --idx - test only IDX databases\n" .
-          "  --error - test only the error cases\n\n" .
-          "Options to control the steps to test\n" .
-          "  --fetch-dtd\n" .
-          "  --fetch-xml\n" .
-          "  --validate-xml\n" .
-          "  --generate-xslt\n" .
-          "  --generate-json\n" .
-          "  --validate-json\n\n" .
-          "Options related to the DTD\n" .
-          "  --domain - Domain to test.  Defaults to 'www'.\n" .
-          "  --dtd-from - specify how to get the DTD(s).  Valid values are 'remote' (default), 'local'\n";
+    print <<END_USAGE;
+Usage:  GetTestIdx.pl [-v|--verbose] [-s|--stop-on-error]
+
+This script tests EUtilities.
+
+General options:
+  -h|-? - help
+  -v|--verbose - turn on verbose messages
+  -c|--continue-on-error - keep going even if there is an error
+
+Options to select the sample(s) from the samples.xml file to test (these will
+be ANDed together):
+  --eutil=<eutil> - test samples corresponding only to the given eutility
+  --db=<db> - test samples corresponding to the given database
+  --dtd=<dtd> - test only those samples correponding to the given DTD (as given
+    in samples.xml)
+  --sample=<sample-name> - test only the indicated sample
+  --idx - test only ESummary with the IDX databases
+  --error - test only the error cases
+
+Options to control the steps to test.  If none of these are given, then all the
+steps are performed.
+  --fetch-dtd
+  --fetch-xml
+  --validate-xml
+  --generate-xslt
+  --generate-json
+  --validate-json
+
+Options related to the DTD.  In general, the script "knows" where to get the
+DTD, and doesn't use the actual doctype declaration from the instance documents.
+  --dtd-remote - Leave the DTD on the remote server, rather than copying it
+    locally.
+  --dtd-tld=<tld> - Substitute a different top-level-domain in the DTD URL.
+    I.e. substitute "www" with <tld>.
+  --dtd-svn - Get the DTDs from svn instead of the system identifier.  Only
+    works with --idx.  Can't be used with other --dtd options.
+  --dtd-doctype - Trust the doctype declaration.  Can be used in conjunction
+    with --dtd-remote or --dtd-tld.  This won't do any checking to see that
+    the doctype decl matches what we expect, or that every sample in a group
+    has the same doctype decl.
+END_USAGE
     exit 0;
 }
 $verbose = $Opts{verbose};
@@ -85,14 +108,18 @@ my $doGenerateXslt = $Opts{'generate-xslt'} || $doAllSteps;
 my $doGenerateJson = $Opts{'generate-json'} || $doAllSteps;
 my $doValidateJson = $Opts{'validate-json'} || $doAllSteps;
 
-#print "eutilToTest = '$eutilToTest'; dbToTest = '$dbToTest'; \n" .
-#      "dtdToTest = '$dtdToTest'; sampleToTest = '$sampleToTest'\n";
-#exit 1;
+my $dtdRemote = $Opts{'dtd-remote'};
+my $dtdTld = $Opts{'dtd-tld'};
+my $dtdSvn = $Opts{'dtd-svn'};
+my $dtdDoctype = $Opts{'dtd-doctype'};
+if ($dtdSvn && ($dtdRemote || $dtdTld || $dtdDoctype)) {
+    die "Can't use --dtd-svn with any other DTD option.";
+}
+
 
 my $samples = EutilsJson::readSamples();
 #print Dumper($samples) if $verbose;
 
-#my %testResults;
 foreach my $samplegroup (@$samples) {
     $sg = $samplegroup;
 
@@ -123,8 +150,8 @@ foreach my $samplegroup (@$samples) {
     }
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    my $dtdpath = EutilsJson::fetchDtd($doFetchDtd);
-    next if !$dtdpath;   # means there was an error and continue-on-error is set.
+    my $result = EutilsJson::fetchDtd($doFetchDtd, $dtdRemote, $dtdTld, $dtdSvn, $dtdDoctype);
+    next if !$result;   # means there was an error and continue-on-error is set.
     $log->indent;
 
     # For each sample corresponding to this DTD:
@@ -138,12 +165,12 @@ foreach my $samplegroup (@$samples) {
         $log->indent;
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        EutilsJson::validateXml($doValidateXml, $sampleXml, $dtdpath);
+        EutilsJson::validateXml($doValidateXml, $sampleXml, $dtdRemote, $dtdTld, $dtdDoctype);
         $log->undent;
     }
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    my $jsonXslPath = EutilsJson::generateXslt($doGenerateXslt, $dtdpath);
+    my $jsonXslPath = EutilsJson::generateXslt($doGenerateXslt);
     if ($status != 0) {
         $log->undent;
         $status = 0;
