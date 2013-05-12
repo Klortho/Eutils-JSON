@@ -139,11 +139,12 @@ if (!-f $basexslt) {
 copy($basexslt, 'out');
 
 
-# Read in the samples xml file
-my $samples = EutilsTest::readSamples();
-#print Dumper($samples) if $verbose;
+# Create a new test object, and read in the samples xml file
+my $t = EutilsTest->new();
+my $testcases = $t->{testcases};
+#print Dumper($testcases);
 
-foreach my $samplegroup (@$samples) {
+foreach my $samplegroup (@$testcases) {
     $sg = $samplegroup;
 
     # See if we can skip this sample group
@@ -229,7 +230,7 @@ foreach my $samplegroup (@$samples) {
 # Summary pass / fail report
 if ($EutilsTest::failed) {
     print "$EutilsTest::failed failures:\n";
-    foreach my $samplegroup (@$samples) {
+    foreach my $samplegroup (@$testcases) {
         $sg = $samplegroup;
         if ($sg->{failure}) {
             print "  " . $sg->{dtd} . ": ";

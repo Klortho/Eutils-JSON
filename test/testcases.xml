@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<samples>
+<testcases>
   <samplegroup dtd="eInfo_020511.dtd" eutil="einfo" idx='foo'>
     <sample name="einfo">
       <eutils-url>einfo.fcgi</eutils-url>
@@ -1885,4 +1885,4 @@
       <eutils-url>efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml</eutils-url>
     </sample>
   </samplegroup>
-</samples>
+</testcases>

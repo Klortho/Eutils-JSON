@@ -57,7 +57,17 @@ my $idxextbase = "https://svn.ncbi.nlm.nih.gov/repos/toolkit/trunk/internal/c++/
 
 
 #-------------------------------------------------------------
-# Read the samples.xml file and produce a structure that stores information about it.
+sub new {
+    my $class = shift;
+    my $self = {
+        'testcases' => _readTestCases(),
+    };
+    bless $self, $class;
+    return $self;
+}
+
+#-------------------------------------------------------------
+# Read the testcases.xml file and produce a structure that stores information about it.
 #   [
 #     { dtd => 'eInfo_020511.dtd',
 #       idx => 0,
@@ -70,11 +80,11 @@ my $idxextbase = "https://svn.ncbi.nlm.nih.gov/repos/toolkit/trunk/internal/c++/
 #     } ...
 #   ]
 
-sub readSamples {
+sub _readTestCases {
     my $parser = new XML::LibXML;
-    my $sxml = $parser->load_xml(location => 'samples.xml')->getDocumentElement();
+    my $sxml = $parser->load_xml(location => 'testcases.xml')->getDocumentElement();
 
-    my @samples = ();
+    my @testcases = ();
     foreach my $sgx ($sxml->getChildrenByTagName('samplegroup')) {
         my $idxAttr = $sgx->getAttribute('idx') || '';
         my %samplegroup = (
@@ -96,10 +106,10 @@ sub readSamples {
             push @groupsamples, \%gs;
             $samplegroup{samples} = \@groupsamples;
         }
-        push @samples, \%samplegroup;
+        push @testcases, \%samplegroup;
     }
 
-    return \@samples;
+    return \@testcases;
 }
 
 #-----------------------------------------------------------------------------
