@@ -17,11 +17,8 @@ use File::Copy;
 
 # Create a new test object, and read in the samples xml file
 my $t = EutilsTest->new();
-$self = $t;   # FIXME:  temporary, while moving to OO
 my $testcases = $t->{testcases};
 #print Dumper($testcases);
-
-
 
 # -v | --verbose turn on verbose messages
 my %Opts;
@@ -145,9 +142,8 @@ if (!-f $basexslt) {
 }
 copy($basexslt, 'out');
 
-
-foreach my $samplegroup (@$testcases) {
-    $sg = $samplegroup;
+# Now run the tests, for each sample group, ...
+foreach my $sg (@$testcases) {
 
     # See if we can skip this sample group
     my $eutil = $sg->{eutil};
@@ -165,9 +161,8 @@ foreach my $samplegroup (@$testcases) {
     # under this group that match any of the other criteria, then skip
     if ($dbToTest || $sampleToTest || $testError) {
         my $doTest = 0;
-        foreach my $sample (@$groupsamples) {
-            $s = $sample;
-            if ( sampleMatch() ) {
+        foreach my $s (@$groupsamples) {
+            if ( sampleMatch($s) ) {
                 $doTest = 1;
                 last;
             }
@@ -176,37 +171,34 @@ foreach my $samplegroup (@$testcases) {
     }
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    next if !EutilsTest::fetchDtd($doFetchDtd, $dtdRemote, $dtdTld, $dtdSvn, $dtdDoctype);
+    next if !$t->fetchDtd($sg, $doFetchDtd, $dtdRemote, $dtdTld, $dtdSvn, $dtdDoctype);
     $log->indent;
 
     # For each sample corresponding to this DTD:
-    foreach my $sample (@$groupsamples) {
-        $s = $sample;
-        next if !sampleMatch();
+    foreach my $s (@$groupsamples) {
+        next if !sampleMatch($s);
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        next if !EutilsTest::fetchXml($doFetchXml);
+        next if !$t->fetchXml($s, $doFetchXml);
         my $sampleXml = $s->{'local-xml'};
         $log->indent;
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        EutilsTest::validateXml($doValidateXml, $sampleXml, $dtdRemote, $dtdTld, $dtdDoctype);
+        $t->validateXml($s, $doValidateXml, $sampleXml, $dtdRemote, $dtdTld, $dtdDoctype);
         $log->undent;
     }
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    my $jsonXslPath = EutilsTest::generateXslt($doGenerateXslt);
-    if ($status != 0) {
+    if (!$t->generateXslt($sg, $doGenerateXslt)) {
         $log->undent;
-        $status = 0;
         next;
     }
+    my $jsonXsltPath = $sg->{'json-xslt'};
     $log->indent;
 
     # Now, for each sample, generate the JSON output
-    foreach my $sample (@$groupsamples) {
-        $s = $sample;
-        next if !sampleMatch();
+    foreach my $s (@$groupsamples) {
+        next if !sampleMatch($s);
 
         if ($s->{failure}{'fetch-xml'}) {
             $log->message("Skipping generate-json for " . $s->{name} .
@@ -215,12 +207,11 @@ foreach my $samplegroup (@$testcases) {
         }
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        my $sampleJson = EutilsTest::generateJson($doGenerateJson, $jsonXslPath);
-        next if $status != 0;
+        next if !$t->generateJson($s, $doGenerateJson);
         $log->indent;
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        EutilsTest::validateJson($doValidateJson, $sampleJson);
+        $t->validateJson($s, $doValidateJson);
         $log->undent;
     }
 
@@ -229,10 +220,9 @@ foreach my $samplegroup (@$testcases) {
 }
 
 # Summary pass / fail report
-if ($EutilsTest::failures) {
-    print "$EutilsTest::failures failures:\n";
-    foreach my $samplegroup (@$testcases) {
-        $sg = $samplegroup;
+if ($t->{failures}) {
+    print $t->{failures} . " failures:\n";
+    foreach my $sg (@$testcases) {
         if ($sg->{failure}) {
             print "  " . $sg->{dtd} . ": ";
             my @fs = map { $sg->{failure}{$_} ? $_ : () } @EutilsTest::steps;
@@ -243,13 +233,15 @@ if ($EutilsTest::failures) {
 else {
     print "All tests passed!\n";
 }
-exit $EutilsTest::failures;
+exit !!$t->{failures};
 
 #-----------------------------------------------------------------------
+# sampleMatch($s)
 # This subroutine returns true if the sample matches the selection criteria
 # given by the user in the command-line arguments.
 
 sub sampleMatch {
+    my $s = shift;
     my $matchDb = !$dbToTest || $s->{db} eq $dbToTest;
     my $matchSample = !$sampleToTest || $s->{name} eq $sampleToTest;
     my $matchError = !$testError || $s->{'error-type'};

@@ -5,6 +5,12 @@ package EutilsTest;
 #   # Command line option variables, set to their defaults
 #   'verbose' => 0,
 #   'coe' => 0,
+#   'current-step' => {   # Info about currently executing step
+#       'step' => 'fetch-xml',
+#       'sg' => $sg,
+#       's' => $s,
+#   },
+#   'failures' => 0,        # count of the total number of failures
 #
 #   'testcases' => [
 #     { # One sample group
@@ -12,30 +18,36 @@ package EutilsTest;
 #       dtd => 'eInfo_020511.dtd',
 #       idx => 0,
 #       eutil => 'einfo',
+#
 #       # Derived data:
 #       'dtd-system-id' => '...',  # Computed value for the system identifier
 #       'dtd-url' => '...',        # Computed value for the actual URL used to grab the DTD;
 #                                  # usually the same as dtd-system-id, but not always
 #       'dtd-path' => 'out/...',   # Relative path to the local copy, if there is one,
 #                                  # otherwise (--dtd-remote was given) the empty string
+#       'json-xslt' => 'out/...",  # Location of the 2JSON XSLT file
+#       'dtd2xml2json-out' => '...', # A string of the output from the dtd2xml2json utility
 #
 #       samples => [
 #         { # One of these for each sample in a group
 #           # Data from the XML file
+#           sg => ...,                # Reference to the parent samplegroup this belongs to
 #           name => 'einfo',
 #           db => 'pubmed',           # optional
 #           'eutils-url' => '....',   # relative URL, from the XML file
 #           'error-type' => 0,        # from the @error attribute of the XML file
+#
 #           # Derived data
 #           'local-xml' => 'out/foo.xml',   # Where this was downloaded to
 #           'full-xml-url' => 'http://eutils....', # Full URL from which it was downloaded
 #           'final-xml' => '/tmp/...',      # Munged copy of the XML (changed doctype decl);
 #                                           # if the XML was not modified, this will be the same as
 #                                           # local-xml.
-#         },
+#           'json-file' => 'out/...',       # Filename of the generated json file
+#         }, ... more samples
 #       ]
-#     } ...
-#   ],
+#     } ... more sample groups
+#   ]  # end testcases
 # }
 
 
@@ -44,49 +56,15 @@ use warnings;
 use XML::LibXML;
 use File::Temp qw/ :POSIX /;
 use Logger;
-use Exporter 'import';
+#use Exporter 'import';
 use Data::Dumper;
 use Cwd;
 
-
-our @EXPORT = qw(
-    $self
-    $status $sg $s $step $failures
-);
-
-# FIXME:  temporary, while migrating to OO:
-our $self;
-
-
 my $cwd = getcwd;
-
-# This stores the system command, whenever we run one
-my $cmd;
-
-## Set this to true if this should output verbose messages
-#our $verbose = 0;
-
-## Set this to true if you want *not* to exit when there's an error
-#our $coe = 0;
-
-## Log messages
-#our $log;
-
-# Status returned from system command
-our $status;
-# sample group
-our $sg;
-# sample
-our $s;
-# The step we're currently on
-our $step;
-# count the number of failures
-our $failures = 0;
 
 our @steps = qw(
     fetch-dtd fetch-xml validate-xml generate-xslt generate-json validate-json
 );
-
 
 # Base URL of the eutilities services
 our $eutilsBaseUrl = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
@@ -101,7 +79,7 @@ our $eutilsDtdBase = 'http://www.ncbi.nlm.nih.gov/entrez/query/DTD/';
 # Any given DTD is at $idxextbase/<db>/support/esummary_<db>.dtd
 
 #my $idxextbase = "/home/maloneyc/svn/toolkit/trunk/internal/c++/src/internal/idxext";
-my $idxextbase = "https://svn.ncbi.nlm.nih.gov/repos/toolkit/trunk/internal/c++/src/internal/idxext";
+our $idxextbase = "https://svn.ncbi.nlm.nih.gov/repos/toolkit/trunk/internal/c++/src/internal/idxext";
 
 
 #-------------------------------------------------------------
@@ -112,6 +90,10 @@ sub new {
         # Command line option variables, set to their defaults
         'verbose' => 0,
         'coe' => 0,
+        # Other
+        'current-step' => {
+            'step' => 'none',
+        },
     };
     bless $self, $class;
     return $self;
@@ -128,31 +110,39 @@ sub _readTestCases {
     my @testcases = ();
     foreach my $sgx ($sxml->getChildrenByTagName('samplegroup')) {
         my $idxAttr = $sgx->getAttribute('idx') || '';
-        my %samplegroup = (
+        my $sg = {
             dtd => $sgx->getAttribute('dtd'),
             idx => ($idxAttr eq 'true'),
             eutil => $sgx->getAttribute('eutil'),
-        );
+        };
 
         my @groupsamples = ();
+        $sg->{samples} = \@groupsamples;
         foreach my $samp ($sgx->getChildrenByTagName('sample')) {
             my $errAttr = $samp->getAttribute('error') || '';
-            my %gs = (
+            my $s = {
+                sg => $sg,
                 name => $samp->getAttribute('name'),
                 db => $samp->getAttribute('db') || '',
                 'eutils-url' =>
                     ($samp->getChildrenByTagName('eutils-url'))[0]->textContent(),
                 'error-type' => ($errAttr eq 'true'),
-            );
-            push @groupsamples, \%gs;
-            $samplegroup{samples} = \@groupsamples;
+            };
+            push @groupsamples, $s;
         }
-        push @testcases, \%samplegroup;
+        push @testcases, $sg;
     }
 
     return \@testcases;
 }
 
+#-----------------------------------------------------------------------------
+sub _setCurrentStep {
+    my ($self, $step, $s_or_sg) = @_;
+    $self->{'current-step'}{step} = $step;
+    $self->{'current-step'}{sg} = exists $s_or_sg->{sg} ? $s_or_sg->{sg} : $s_or_sg;;
+    $self->{'current-step'}{s} = exists $s_or_sg->{sg} ? $s_or_sg : undef;;
+}
 #-----------------------------------------------------------------------------
 # Compute the location, and (optionally) retrieve a local copy of the DTD for a
 # samplegroup.  If --dtd-doctype was given, then this function does nothing;
@@ -173,9 +163,9 @@ sub _readTestCases {
 # other URL.
 
 sub fetchDtd {
-    $step = 'fetch-dtd';
-    $status = 0;
-    my ($do, $dtdRemote, $dtdTld, $dtdSvn, $dtdDoctype) = @_;
+    my ($self, $sg, $do, $dtdRemote, $dtdTld, $dtdSvn, $dtdDoctype) = @_;
+    $self->_setCurrentStep('fetch-dtd', $sg);
+
     return 1 if $dtdDoctype;  # Nothing to do.
 
     my $dtd = $sg->{dtd};
@@ -189,7 +179,7 @@ sub fetchDtd {
         if ($eutil eq 'esummary' && $idx) {
             # Get the database from the name of the dtd
             if ($dtd !~ /esummary_([a-z]+)\.dtd/) {
-                failed("Unexpected DTD name for esummary idx database:  $dtd");
+                $self->failed("Unexpected DTD name for esummary idx database:  $dtd");
                 return 0;
             }
             my $db = $1;
@@ -207,10 +197,10 @@ sub fetchDtd {
                 $sg->{'dtd-path'} = $dest;
                 if ($do) {
                     $self->message("Fetching $dtdpath");
-                    $cmd = "curl --fail --silent --output $dest $dtdpath > /dev/null 2>&1";
-                    $status = system $cmd;
+                    my $cmd = "curl --fail --silent --output $dest $dtdpath > /dev/null 2>&1";
+                    my $status = system $cmd;
                     if ($status != 0) {
-                        failed("'$cmd': $?");
+                        $self->failedCmd($status, $cmd);
                         return 0;
                     }
                 }
@@ -218,8 +208,8 @@ sub fetchDtd {
             }
         }
         else {
-            failed("--dtd-svn was specified, but I don't know where this DTD " .
-                   "is in svn:  $dtd");
+            $self->failed(
+                "--dtd-svn was specified, but I don't know where this DTD is in svn:  $dtd");
             return 0;
         }
     }
@@ -240,7 +230,7 @@ sub fetchDtd {
             $dtdSystemId = $eutilsDtdBase . $dtd;
         }
 
-        return downloadDtd($do, $dtdSystemId, $dtdTld, $dtdRemote);
+        return $self->downloadDtd($sg, $do, $dtdSystemId, $dtdTld, $dtdRemote);
     }
 }
 
@@ -248,10 +238,9 @@ sub fetchDtd {
 # Fetch an XML sample file, and return the pathname.
 # This function returns 1 if successful, or 0 if there is a failure.
 
-
 sub fetchXml {
-    $step = 'fetch-xml';
-    my $do = shift;
+    my ($self, $s, $do) = @_;
+    $self->_setCurrentStep('fetch-xml', $s);
 
     my $localXml = 'out/' . $s->{name} . ".xml";   # final output filename
     $s->{'local-xml'} = $localXml;
@@ -265,10 +254,10 @@ sub fetchXml {
 
     if ($do) {
         $self->message("Fetching $fullUrl => $localXml");
-        $cmd = "curl --fail --silent --output $localXml $cmdUrl";
-        $status = system $cmd;
+        my $cmd = "curl --fail --silent --output $localXml $cmdUrl";
+        my $status = system $cmd;
         if ($status != 0) {
-            failed("'$cmd':  $?");
+            $self->failedCmd($status, $cmd);
             return 0;
         }
     }
@@ -281,7 +270,7 @@ sub fetchXml {
 # This returns 1 if successful, or 0 if there was a failure.
 
 sub downloadDtd {
-    my ($do, $dtdSystemId, $dtdTld, $dtdRemote) = @_;
+    my ($self, $sg, $do, $dtdSystemId, $dtdTld, $dtdRemote) = @_;
 
     # Now the URL that we'll use to actually get it.
     my $dtdUrl = $dtdSystemId;
@@ -297,10 +286,10 @@ sub downloadDtd {
     $sg->{'dtd-path'} = $dtdPath;
     if ($do && !$dtdRemote) {
         $self->message("Fetching $dtdUrl -> $dtdPath");
-        $cmd = "curl --fail --silent --output $dtdPath $dtdUrl > /dev/null 2>&1";
-        $status = system $cmd;
+        my $cmd = "curl --fail --silent --output $dtdPath $dtdUrl > /dev/null 2>&1";
+        my $status = system $cmd;
         if ($status != 0) {
-            failed("'$cmd':  $?");
+            $self->failedCmd($status, $cmd);
             return 0;
         }
     }
@@ -317,10 +306,10 @@ sub downloadDtd {
 # Returns 1 if successful; 0 otherwise.
 
 sub validateXml {
-    $step = 'validate-xml';
-    $status = 0;
-    my ($do, $xml, $dtdRemote, $dtdTld, $dtdDoctype) = @_;
+    my ($self, $s, $do, $xml, $dtdRemote, $dtdTld, $dtdDoctype) = @_;
+    $self->_setCurrentStep('validate-xml', $s);
     return 1 if !$do;
+    my $sg = $s->{sg};
 
     # If the --dtd-doctype argument was given, and this is the first sample from
     # this group that we've seen, then we need to fetch the DTD
@@ -329,7 +318,7 @@ sub validateXml {
         my $dtdSystemId;
         my $th;
         if (!open($th, "<", $xml)) {
-            failed("Can't open $xml for reading");
+            $self->failed("Can't open $xml for reading");
             return 0;
         }
         while (my $line = <$th>) {
@@ -339,7 +328,7 @@ sub validateXml {
             }
         }
         if (!$dtdSystemId) {
-            failed("Couldn't get system identifier for DTD from xml file");
+            $self->failed("Couldn't get system identifier for DTD from xml file");
             return 0;
         }
         close $th;
@@ -362,7 +351,7 @@ sub validateXml {
         $self->message("Stripping doctype decl:  $xml -> $finalXml");
         my $th;
         if (!open($th, "<", $xml)) {
-            failed("Can't open $xml for reading");
+            $self->failed("Can't open $xml for reading");
             return 0;
         }
         open(my $sh, ">", $finalXml) or die "Can't open $finalXml for writing";
@@ -382,7 +371,7 @@ sub validateXml {
         $self->message("Writing new doctype decl:  $xml -> $finalXml");
         my $th;
         if (!open($th, "<", $xml)) {
-            failed("Can't open $xml for reading");
+            $self->failed("Can't open $xml for reading");
             return 0;
         }
         open(my $sh, ">", $finalXml) or die "Can't open $finalXml for writing";
@@ -400,11 +389,11 @@ sub validateXml {
 
     # Validate this sample against the new DTD.
     $s->{'final-xml'} = $finalXml;
-    $cmd = 'xmllint --noout ' . $xmllintArg . ' ' . $finalXml . ' > /dev/null 2>&1';
+    my $cmd = 'xmllint --noout ' . $xmllintArg . ' ' . $finalXml . ' > /dev/null 2>&1';
     $self->message("Validating:  '$cmd'");
-    $status = system $cmd;
+    my $status = system $cmd;
     if ($status != 0) {
-        failed("Validating $finalXml ($xml): '$cmd'!  $?");
+        $self->failedCmd($status, $cmd);
         return 0;
     }
     return 1;
@@ -412,11 +401,12 @@ sub validateXml {
 
 #------------------------------------------------------------------------
 # Use the dtd2xml2json utility to generate an XSLT from the DTD.
-# Returns the pathname of the generated file.
+# Returns 1 if successful; 0 otherwise.
+# Puts the pathname of the generated file into 'json-xslt'
 
 sub generateXslt {
-    $step = 'generate-xslt';
-    my $do = shift;
+    my ($self, $sg, $do) = @_;
+    $self->_setCurrentStep('generate-xslt', $sg);
 
     my $dtd = $sg->{dtd};
     my $dtdSystemId = $sg->{'dtd-system-id'};
@@ -448,23 +438,23 @@ sub generateXslt {
         $jf =~ s/_(\d+)\.dtd/2json_$1.xslt/;
     }
     else {
-        failed("Unrecognized DTD filename, don't know how to construct 2json XSLT filename: $jf");
-        return;
+        $self->failed(
+            "Unrecognized DTD filename, don't know how to construct 2json XSLT filename: $jf");
+        return 0;
     }
-    my $jsonXslPath = $jp . $jf;
+    my $jsonXslPath = $sg->{'json-xslt'} = $jp . $jf;
 
     if ($do) {
 
         # Run the utility, and capture both standard out and standard error into a
         # file
         my $outfile = 'out/dtd2xml2json.out';
-        $cmd = "dtd2xml2json $dtdSrc $jsonXslPath > $outfile 2>&1";
+        my $cmd = "dtd2xml2json $dtdSrc $jsonXslPath > $outfile 2>&1";
         $self->message("Creating XSLT $jsonXslPath");
-        $status = system $cmd;
-
+        my $status = system $cmd;
         if ($status != 0) {
-            failed("'$cmd':  $?");
-            return;
+            $self->failedCmd($status, $cmd);
+            return 0;
         }
 
         # Check the output from the command, to see if there were problems with
@@ -475,34 +465,42 @@ sub generateXslt {
             open my $fh, "<", $outfile or die "could not open $outfile: $!";
             <$fh>;
         };
+        $sg->{'dtd2xml2json-out'} = $output;
+
         # Look for specific messages
         if ($output =~ /invalid json annotation/ ||
             $output =~ /tell me what to do/ ||
             $output =~ /unknown item group/ ||
             $output =~ /unrecognized element/)
         {
-            failed("Problem while running dtd2xml2json utility");
+            $self->failed("Problem while running dtd2xml2json utility");
+            return 0;
         }
     }
-    return $jsonXslPath;
+    return 1;
 }
 
 #------------------------------------------------------------------------
-sub generateJson {
-    $step = 'generate-json';
-    $status = 0;
-    my ($do, $jsonXslPath) = @_;
+# Returns 1 if successful; 0 otherwise.
+# Puts the pathname of the generated file into $s->{'json-file'}
 
-    my $sampleXml = 'out/' . $s->{name} . ".xml";
-    my $sampleJson = $sampleXml;
-    $sampleJson =~ s/\.xml$/.json/;
+sub generateJson {
+    my ($self, $s, $do) = @_;
+    $self->_setCurrentStep('generate-json', $s);
+
+    my $jsonXslt = $s->{sg}{'json-xslt'};
+    my $localXml = $s->{'local-xml'};
+    my $jsonFile = $localXml;
+    $jsonFile =~ s/\.xml$/.json/;
+    $s->{'json-file'} = $jsonFile;
     if ($do) {
-        $self->message("Converting XML -> JSON:  $sampleJson");
+        $self->message("Converting XML -> JSON:  $jsonFile");
         my $errfile = 'out/xsltproc.err';
-        $cmd = "xsltproc $jsonXslPath $sampleXml > $sampleJson 2> $errfile";
-        $status = system $cmd;
+        my $cmd = "xsltproc $jsonXslt $localXml > $jsonFile 2> $errfile";
+        my $status = system $cmd;
         if ($status != 0) {
-            failed("'$cmd': $?");
+            $self->failedCmd($status, $cmd);
+            return 0;
         }
 
         my $err = do {
@@ -512,38 +510,59 @@ sub generateJson {
         };
         if (length($err) > 0)
         {
-            failed("Problem during the xsltproc conversion");
+            $self->failed("Problem during the xsltproc conversion");
+            return 0;
         }
     }
-
-    return $sampleJson;
+    return 1;
 }
 
 #------------------------------------------------------------------------
+# Returns 1 if successful; 0 otherwise.
+
 sub validateJson {
-    $step = 'validate-json';
-    $status = 0;
-    my ($do, $sampleJson) = @_;
+    my ($self, $s, $do) = @_;
+    $self->_setCurrentStep('validate-json', $s);
+    my $jsonFile = $s->{'json-file'};
 
     if ($do) {
-        $cmd = "jsonlint -q $sampleJson > /dev/null 2>&1";
-        $self->message("Validating $sampleJson");
-        $status = system $cmd;
+        my $cmd = "jsonlint -q $jsonFile > /dev/null 2>&1";
+        $self->message("Validating $jsonFile");
+        my $status = system $cmd;
         if ($status != 0) {
-            failed("'$cmd':  $?");
+            $self->failedCmd($status, $cmd);
+            return 0;
         }
     }
+    return 1;
 }
 
 #------------------------------------------------------------------------
-# Generic test failure handler
+# $self->failed($msg);
+# Generic test failure handler.
+# $s_or_sg will be either the single sample, or the samplegroup, depending
+# on what step we are on.
 
 sub failed {
-    my $msg = shift;
+    my ($self, $msg) = @_;
     $self->error("FAILED:  $msg");
-    exit 1 if !$self->{coe} || $status & 127;
-    recordFailure($cmd);
-    $status = 0;
+    exit 1 if !$self->{coe};
+    $self->recordFailure($msg);
+}
+
+#------------------------------------------------------------------------
+# $self->failedCmd($status, $cmd);
+# Failure handler for a system command.
+# This produces a canned message, and also causes the system to exit if
+# the status indicates an abnormal termination, even if continue-on-error
+# is active.  This lets us exit if the user presses ^C, even when
+# continue-on-error is true.
+
+sub failedCmd {
+    my ($self, $status, $cmd) = @_;
+    my $msg = "System command '$cmd':  $?";
+    $self->failed($msg);
+    exit 1 if $status & 127;
 }
 
 #------------------------------------------------------------------------
@@ -564,7 +583,11 @@ sub error {
 # appropriate) $s
 
 sub recordFailure {
-    my $msg = shift;
+    my ($self, $msg) = @_;
+
+    my $step = $self->{'current-step'}{step};
+    my $sg = $self->{'current-step'}{sg};
+    my $s = $self->{'current-step'}{s};
 
     # We'll always store something in $sg.  Make a hash if one hasn't been
     # made before.
@@ -582,7 +605,7 @@ sub recordFailure {
         $sg->{failure}{$step} = 1;
     }
 
-    $failures++;
+    $self->{failures}++;
 }
 
 1;
