@@ -15,6 +15,14 @@ use File::Which;
 use File::Copy;
 
 
+# Create a new test object, and read in the samples xml file
+my $t = EutilsTest->new();
+$self = $t;   # FIXME:  temporary, while moving to OO
+my $testcases = $t->{testcases};
+#print Dumper($testcases);
+
+
+
 # -v | --verbose turn on verbose messages
 my %Opts;
 my $ok = GetOptions(\%Opts,
@@ -85,11 +93,10 @@ DTD, and doesn't use the actual doctype declaration from the instance documents.
 END_USAGE
     exit 0;
 }
-$verbose = $Opts{verbose};
-$log = Logger->new($verbose);
+$t->{verbose} = $Opts{verbose};
+my $log = $t->{log} = Logger->new($t->{verbose});
 
-
-$coe = $Opts{'continue-on-error'};
+$t->{coe} = $Opts{'continue-on-error'};
 
 my $eutilToTest = $Opts{'eutil'} || '';
 my $dbToTest = $Opts{'db'} || '';
@@ -139,11 +146,6 @@ if (!-f $basexslt) {
 copy($basexslt, 'out');
 
 
-# Create a new test object, and read in the samples xml file
-my $t = EutilsTest->new();
-my $testcases = $t->{testcases};
-#print Dumper($testcases);
-
 foreach my $samplegroup (@$testcases) {
     $sg = $samplegroup;
 
@@ -174,8 +176,7 @@ foreach my $samplegroup (@$testcases) {
     }
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    my $result = EutilsTest::fetchDtd($doFetchDtd, $dtdRemote, $dtdTld, $dtdSvn, $dtdDoctype);
-    next if !$result;   # means there was an error and continue-on-error is set.
+    next if !EutilsTest::fetchDtd($doFetchDtd, $dtdRemote, $dtdTld, $dtdSvn, $dtdDoctype);
     $log->indent;
 
     # For each sample corresponding to this DTD:
@@ -184,8 +185,8 @@ foreach my $samplegroup (@$testcases) {
         next if !sampleMatch();
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        my $sampleXml = EutilsTest::fetchXml($doFetchXml);
-        next if $status != 0;
+        next if !EutilsTest::fetchXml($doFetchXml);
+        my $sampleXml = $s->{'local-xml'};
         $log->indent;
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -251,7 +252,7 @@ exit $EutilsTest::failures;
 sub sampleMatch {
     my $matchDb = !$dbToTest || $s->{db} eq $dbToTest;
     my $matchSample = !$sampleToTest || $s->{name} eq $sampleToTest;
-    my $matchError = !$testError || $s->{error};
+    my $matchError = !$testError || $s->{'error-type'};
     return $matchDb && $matchSample && $matchError;
 }
 

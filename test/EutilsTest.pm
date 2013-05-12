@@ -1,5 +1,44 @@
 package EutilsTest;
 
+# Structure of the object:
+# {
+#   # Command line option variables, set to their defaults
+#   'verbose' => 0,
+#   'coe' => 0,
+#
+#   'testcases' => [
+#     { # One sample group
+#       # Data from the XML file
+#       dtd => 'eInfo_020511.dtd',
+#       idx => 0,
+#       eutil => 'einfo',
+#       # Derived data:
+#       'dtd-system-id' => '...',  # Computed value for the system identifier
+#       'dtd-url' => '...',        # Computed value for the actual URL used to grab the DTD;
+#                                  # usually the same as dtd-system-id, but not always
+#       'dtd-path' => 'out/...',   # Relative path to the local copy, if there is one,
+#                                  # otherwise (--dtd-remote was given) the empty string
+#
+#       samples => [
+#         { # One of these for each sample in a group
+#           # Data from the XML file
+#           name => 'einfo',
+#           db => 'pubmed',           # optional
+#           'eutils-url' => '....',   # relative URL, from the XML file
+#           'error-type' => 0,        # from the @error attribute of the XML file
+#           # Derived data
+#           'local-xml' => 'out/foo.xml',   # Where this was downloaded to
+#           'full-xml-url' => 'http://eutils....', # Full URL from which it was downloaded
+#           'final-xml' => '/tmp/...',      # Munged copy of the XML (changed doctype decl);
+#                                           # if the XML was not modified, this will be the same as
+#                                           # local-xml.
+#         },
+#       ]
+#     } ...
+#   ],
+# }
+
+
 use strict;
 use warnings;
 use XML::LibXML;
@@ -11,19 +50,28 @@ use Cwd;
 
 
 our @EXPORT = qw(
-    $verbose $coe $log $cmd $status $sg $s $step $failures
+    $self
+    $status $sg $s $step $failures
 );
+
+# FIXME:  temporary, while migrating to OO:
+our $self;
+
 
 my $cwd = getcwd;
 
-# Set this to true if this should output verbose messages
-our $verbose = 0;
-# Set this to true if you want *not* to exit when there's an error
-our $coe = 0;
-# Log messages
-our $log;
-# command line command
-our $cmd;
+# This stores the system command, whenever we run one
+my $cmd;
+
+## Set this to true if this should output verbose messages
+#our $verbose = 0;
+
+## Set this to true if you want *not* to exit when there's an error
+#our $coe = 0;
+
+## Log messages
+#our $log;
+
 # Status returned from system command
 our $status;
 # sample group
@@ -61,24 +109,17 @@ sub new {
     my $class = shift;
     my $self = {
         'testcases' => _readTestCases(),
+        # Command line option variables, set to their defaults
+        'verbose' => 0,
+        'coe' => 0,
     };
     bless $self, $class;
     return $self;
 }
 
 #-------------------------------------------------------------
-# Read the testcases.xml file and produce a structure that stores information about it.
-#   [
-#     { dtd => 'eInfo_020511.dtd',
-#       idx => 0,
-#       eutil => 'einfo',
-#       samples => [
-#         { name => 'einfo',
-#           db => 'pubmed',
-#           eutils-url => '....', },
-#       ]
-#     } ...
-#   ]
+# Read the testcases.xml file and produce a structure that stores the
+# information.
 
 sub _readTestCases {
     my $parser = new XML::LibXML;
@@ -101,7 +142,7 @@ sub _readTestCases {
                 db => $samp->getAttribute('db') || '',
                 'eutils-url' =>
                     ($samp->getChildrenByTagName('eutils-url'))[0]->textContent(),
-                error => ($errAttr eq 'true'),
+                'error-type' => ($errAttr eq 'true'),
             );
             push @groupsamples, \%gs;
             $samplegroup{samples} = \@groupsamples;
@@ -120,13 +161,8 @@ sub _readTestCases {
 # This function encapsulates information about where the DTDs are for each type
 # of Eutility.
 #
-# This takes a $sg as input (package variable), and stores these pieces of information
-# in that hash:
-#     - dtd-system-id - the computed value for the system identifier
-#     - dtd-url - the computed value for the actual URL that is used to grab the DTD.
-#       Usually this is the same, but might be different if --dtd-tld is used
-#     - dtd-path - the relative path to the local copy, if there is one.  If not
-#       (--dtd-remote was given) this will be the empty string.
+# This takes a $sg as input (package variable), and stores various pieces of information
+# in that hash (see the data structure description in the comments at the top.)
 #
 # This function returns 1 if successful, or 0 if there is a failure.
 #
@@ -142,9 +178,9 @@ sub fetchDtd {
     my ($do, $dtdRemote, $dtdTld, $dtdSvn, $dtdDoctype) = @_;
     return 1 if $dtdDoctype;  # Nothing to do.
 
-    my $eutil = $sg->{eutil};
     my $dtd = $sg->{dtd};
     my $idx = $sg->{idx};
+    my $eutil = $sg->{eutil};
     my $dtdpath;
 
     # If the --dtd-svn option was given, then this better be an esummary idx samplegroup,
@@ -167,8 +203,10 @@ sub fetchDtd {
             else {
                 # Assume $dtdpath is a URL, and fetch it with curl
                 my $dest = "out/$dtd";
+                $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $dtdpath;
+                $sg->{'dtd-path'} = $dest;
                 if ($do) {
-                    $log->message("Fetching $dtdpath");
+                    $self->message("Fetching $dtdpath");
                     $cmd = "curl --fail --silent --output $dest $dtdpath > /dev/null 2>&1";
                     $status = system $cmd;
                     if ($status != 0) {
@@ -176,8 +214,6 @@ sub fetchDtd {
                         return 0;
                     }
                 }
-                $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $dtdpath;
-                $sg->{'dtd-path'} = $dest;
                 return 1;
             }
         }
@@ -209,25 +245,34 @@ sub fetchDtd {
 }
 
 #-------------------------------------------------------------
-# Fetch an XML sample file, and return the pathname.  If this fails,
-# then $status will be non-zero.
+# Fetch an XML sample file, and return the pathname.
+# This function returns 1 if successful, or 0 if there is a failure.
+
 
 sub fetchXml {
     $step = 'fetch-xml';
-    $status = 0;
     my $do = shift;
-    my $sampleXml = 'out/' . $s->{name} . ".xml";   # final output filename
-    my $eutilsUrl = $eutilsBaseUrl . $s->{"eutils-url"};
-    $eutilsUrl =~ s/\&/\\\&/g;
+
+    my $localXml = 'out/' . $s->{name} . ".xml";   # final output filename
+    $s->{'local-xml'} = $localXml;
+
+    my $fullUrl = $eutilsBaseUrl . $s->{"eutils-url"};
+    $s->{'full-xml-url'} = $fullUrl;
+
+    # For inserting into the system command, escape ampersands:
+    my $cmdUrl = $fullUrl;
+    $cmdUrl =~ s/\&/\\\&/g;
+
     if ($do) {
-        $log->message("Fetching $eutilsUrl => $sampleXml");
-        $cmd = "curl --fail --silent --output $sampleXml $eutilsUrl";
+        $self->message("Fetching $fullUrl => $localXml");
+        $cmd = "curl --fail --silent --output $localXml $cmdUrl";
         $status = system $cmd;
         if ($status != 0) {
             failed("'$cmd':  $?");
+            return 0;
         }
     }
-    return $sampleXml;
+    return 1;
 }
 
 #-------------------------------------------------------------
@@ -247,8 +292,11 @@ sub downloadDtd {
     # Here is where we'll put the local copy, only if not --dtd-remote
     my $dtdPath = $dtdRemote ? '' : "out/" . $sg->{dtd};
 
+    $sg->{'dtd-system-id'} = $dtdSystemId;
+    $sg->{'dtd-url'} = $dtdUrl;
+    $sg->{'dtd-path'} = $dtdPath;
     if ($do && !$dtdRemote) {
-        $log->message("Fetching $dtdUrl -> $dtdPath");
+        $self->message("Fetching $dtdUrl -> $dtdPath");
         $cmd = "curl --fail --silent --output $dtdPath $dtdUrl > /dev/null 2>&1";
         $status = system $cmd;
         if ($status != 0) {
@@ -256,9 +304,6 @@ sub downloadDtd {
             return 0;
         }
     }
-    $sg->{'dtd-system-id'} = $dtdSystemId;
-    $sg->{'dtd-url'} = $dtdUrl;
-    $sg->{'dtd-path'} = $dtdPath;
     return 1;
 }
 
@@ -269,22 +314,23 @@ sub downloadDtd {
 #     dtd-path   dtd-url
 #     <path>      ---       Strip off doctype decl, and use --dtdvalid to point to local file
 #     ''         <url>      Rewrite doctype decl, and use --valid
+# Returns 1 if successful; 0 otherwise.
 
 sub validateXml {
     $step = 'validate-xml';
     $status = 0;
     my ($do, $xml, $dtdRemote, $dtdTld, $dtdDoctype) = @_;
-    return if !$do;
+    return 1 if !$do;
 
     # If the --dtd-doctype argument was given, and this is the first sample from
     # this group that we've seen, then we need to fetch the DTD
     if ($dtdDoctype && !exists $sg->{'dtd-url'}) {
-        $log->message("Reading XML file $xml to find the DTD");
+        $self->message("Reading XML file $xml to find the DTD");
         my $dtdSystemId;
         my $th;
         if (!open($th, "<", $xml)) {
             failed("Can't open $xml for reading");
-            return;
+            return 0;
         }
         while (my $line = <$th>) {
             if ($line =~ /^\<\!DOCTYPE.*?".*?"\s+"(.*?)"/) {
@@ -294,17 +340,17 @@ sub validateXml {
         }
         if (!$dtdSystemId) {
             failed("Couldn't get system identifier for DTD from xml file");
-            return;
+            return 0;
         }
         close $th;
-        return if !downloadDtd($do, $dtdSystemId, $dtdTld, $dtdRemote);
+        return 0 if !downloadDtd($do, $dtdSystemId, $dtdTld, $dtdRemote);
     }
 
-    my $dtdPath = $sg->{'dtd-path'};
     my $dtdUrl = $sg->{'dtd-url'};
+    my $dtdPath = $sg->{'dtd-path'};
 
     my $xmllintArg = '';   # command-line argument to xmllint, if needed.
-    my $xmlFinal = $xml;   # The pathname of the actual file we'll pass to xmllint
+    my $finalXml = $xml;   # The pathname of the actual file we'll pass to xmllint
 
     if ($dtdPath) {
         # Strip off the doctype declaration.  This is necessary because we want
@@ -312,14 +358,14 @@ sub validateXml {
         # `xmllint --dtdvalid` does that local validation, it will still fail
         # if the remote DTD does not exist, which was the case, for example,
         # for pubmedhealth.
-        $xmlFinal = tmpnam();
-        $log->message("Stripping doctype decl:  $xml -> $xmlFinal");
+        $finalXml = tmpnam();
+        $self->message("Stripping doctype decl:  $xml -> $finalXml");
         my $th;
         if (!open($th, "<", $xml)) {
             failed("Can't open $xml for reading");
-            return;
+            return 0;
         }
-        open(my $sh, ">", $xmlFinal) or die "Can't open $xmlFinal for writing";
+        open(my $sh, ">", $finalXml) or die "Can't open $finalXml for writing";
         while (my $line = <$th>) {
             next if $line =~ /^\<\!DOCTYPE /;
             print $sh $line;
@@ -332,14 +378,14 @@ sub validateXml {
 
     else {
         # Replace the doctype declaration with a new one.
-        $xmlFinal = tmpnam();
-        $log->message("Writing new doctype decl:  $xml -> $xmlFinal");
+        $finalXml = tmpnam();
+        $self->message("Writing new doctype decl:  $xml -> $finalXml");
         my $th;
         if (!open($th, "<", $xml)) {
             failed("Can't open $xml for reading");
-            return;
+            return 0;
         }
-        open(my $sh, ">", $xmlFinal) or die "Can't open $xmlFinal for writing";
+        open(my $sh, ">", $finalXml) or die "Can't open $finalXml for writing";
         while (my $line = <$th>) {
             if ($line =~ /^\<\!DOCTYPE /) {
                 $line =~ s/PUBLIC\s+".*"/SYSTEM "$dtdUrl"/;
@@ -353,12 +399,15 @@ sub validateXml {
     }
 
     # Validate this sample against the new DTD.
-    $cmd = 'xmllint --noout ' . $xmllintArg . ' ' . $xmlFinal . ' > /dev/null 2>&1';
-    $log->message("Validating:  '$cmd'");
+    $s->{'final-xml'} = $finalXml;
+    $cmd = 'xmllint --noout ' . $xmllintArg . ' ' . $finalXml . ' > /dev/null 2>&1';
+    $self->message("Validating:  '$cmd'");
     $status = system $cmd;
     if ($status != 0) {
-        failed("Validating $xmlFinal ($xml): '$cmd'!  $?");
+        failed("Validating $finalXml ($xml): '$cmd'!  $?");
+        return 0;
     }
+    return 1;
 }
 
 #------------------------------------------------------------------------
@@ -367,7 +416,6 @@ sub validateXml {
 
 sub generateXslt {
     $step = 'generate-xslt';
-    $status = 0;
     my $do = shift;
 
     my $dtd = $sg->{dtd};
@@ -411,7 +459,7 @@ sub generateXslt {
         # file
         my $outfile = 'out/dtd2xml2json.out';
         $cmd = "dtd2xml2json $dtdSrc $jsonXslPath > $outfile 2>&1";
-        $log->message("Creating XSLT $jsonXslPath");
+        $self->message("Creating XSLT $jsonXslPath");
         $status = system $cmd;
 
         if ($status != 0) {
@@ -449,7 +497,7 @@ sub generateJson {
     my $sampleJson = $sampleXml;
     $sampleJson =~ s/\.xml$/.json/;
     if ($do) {
-        $log->message("Converting XML -> JSON:  $sampleJson");
+        $self->message("Converting XML -> JSON:  $sampleJson");
         my $errfile = 'out/xsltproc.err';
         $cmd = "xsltproc $jsonXslPath $sampleXml > $sampleJson 2> $errfile";
         $status = system $cmd;
@@ -479,24 +527,37 @@ sub validateJson {
 
     if ($do) {
         $cmd = "jsonlint -q $sampleJson > /dev/null 2>&1";
-        $log->message("Validating $sampleJson");
+        $self->message("Validating $sampleJson");
         $status = system $cmd;
         if ($status != 0) {
             failed("'$cmd':  $?");
         }
     }
 }
+
 #------------------------------------------------------------------------
 # Generic test failure handler
 
 sub failed {
     my $msg = shift;
-    $log->error("FAILED:  $msg");
-    exit 1 if !$coe || $status & 127;
+    $self->error("FAILED:  $msg");
+    exit 1 if !$self->{coe} || $status & 127;
     recordFailure($cmd);
     $status = 0;
 }
 
+#------------------------------------------------------------------------
+# Delegate message() and error() to Logger
+
+sub message {
+    my ($self, $msg) = @_;
+    $self->{log}->message($msg);
+}
+
+sub error {
+    my ($self, $msg) = @_;
+    $self->{log}->error($msg);
+}
 
 #------------------------------------------------------------------------
 # Record information about an individual test failure in $sg and (if
