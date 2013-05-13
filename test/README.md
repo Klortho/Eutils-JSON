@@ -50,21 +50,9 @@ These are deprecated and will be replaced eventually:
 
 These need to be done
 
-- Add something to verify that the system and public identifiers in the
-  instance documents are correct
-
-- Need to add new-style system identifiers (see Confluence page) to fetchDtd
-
-- Add a switch to take DTDs from the filesystem.
-
-- It should also be able to validate the JSON output directly from the new utilities,
-  when that's deployed.
-
-- CIDX in ergatis use case:
-    - It should also be able to use JSON XSLTs that were already generated.
-    - It should get the XML from a command-line utility, and wrap it somehow.
-
-- Add jslint4java validation.
+- Add a check to verify that the system and public identifiers in the
+  instance documents are correct.  All the ones in a given sample group
+  should be the same.
 
 - Enable it to use local copies of DTDs, instead of fetching them from the
   server.  This should be implemented with a catalog file.
@@ -75,6 +63,12 @@ These need to be done
     - Change the catalog so that it expects all dtds in a dtd/ subdirectory
     - Change the curl dtd-downloading functionality so that it downloads into
       dtd/..., same as what the catalog expects.
+
+- CIDX in ergatis use case:
+    - It should also be able to use JSON XSLTs that were already generated.
+    - It should get the XML from a command-line utility, and wrap it somehow.
+
+- Add jslint4java validation.
 
 These are "nice to have" improvements:
 

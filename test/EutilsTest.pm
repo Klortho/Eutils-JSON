@@ -20,7 +20,9 @@ package EutilsTest;
 #       eutil => 'einfo',
 #
 #       # Derived data:
-#       'dtd-system-id' => '...',  # Computed value for the system identifier
+#       'dtd-public-id' => '...'   # The expected public id.  Empty if we don't know.
+#       'dtd-system-id' => '...',  # The expected system id.
+#       'dtd-id-date' => 'YYYYMMDD', # The date field from the system id
 #       'dtd-url' => '...',        # Computed value for the actual URL used to grab the DTD;
 #                                  # usually the same as dtd-system-id, but not always
 #       'dtd-path' => 'out/...',   # Relative path to the local copy, if there is one,
@@ -38,13 +40,15 @@ package EutilsTest;
 #           'error-type' => 0,        # from the @error attribute of the XML file
 #
 #           # Derived data
-#           'local-xml' => 'out/foo.xml',   # Where this was downloaded to
-#           'full-xml-url' => 'http://eutils....', # Full URL from which it was downloaded
+#           'local-xml' => 'out/foo.xml',      # Where this was downloaded to
+#           'xml-url' => 'http://eutils...',   # Nominal URL for the XML (before tld substitution)
+#           'real-xml-url' => 'http://qa....', # The actual URL from which it was downloaded
 #           'final-xml' => '/tmp/...',      # Munged copy of the XML (changed doctype decl);
 #                                           # if the XML was not modified, this will be the same as
 #                                           # local-xml.
-#           'json-file' => 'out/...',       # Filename of the generated json file
-#           'full-json-url' => 'http://...', # If JSON was downloaded, this is the source
+#           'json-file' => 'out/...',          # Filename of the generated json file
+#           'json-url' => 'http://eutils...",  # Nominal URL for the JSON (before tld substitution)
+#           'real-json-url' => 'http://...', # If JSON was downloaded, this is the source
 #         }, ... more samples
 #       ]
 #     } ... more sample groups
@@ -64,7 +68,13 @@ use Cwd;
 my $cwd = getcwd;
 
 our @steps = qw(
-    fetch-dtd fetch-xml validate-xml generate-xslt generate-json validate-json
+    fetch-dtd
+    fetch-xml
+    validate-xml
+    fetch-json
+    generate-xslt
+    generate-json
+    validate-json
 );
 
 # Base URL of the eutilities services
@@ -157,14 +167,17 @@ sub _setCurrentStep {
 #
 # This function returns 1 if successful, or 0 if there is a failure.
 #
-# Special case:  if --dtd-svn is given, and this is an ESummary IDX database, and
-# $idxextbase points to the filesystem, then this will set 'dtd-path' to point to
-# the DTD file under within that path on the filesystem.  Otherwise, if
-# $idxextbase is an SVN URL, this will download it to a local copy, as with any
-# other URL.
+# Summary of the cases:
+#     --dtd-svn - for ESummary IDX databases.  Get the DTD from SVN.
+#         - If $idxextbase points to the filesystem, then this will
+#           set 'dtd-path' to point to the DTD file within that path on the
+#           filesystem.
+#         - If $idxextbase points to the Subversion https URL, then we can't
+#           implement --dtd-remote, because validation doesn't work over https.
+#
 
 sub fetchDtd {
-    my ($self, $sg, $do, $dtdRemote, $dtdTld, $dtdSvn, $dtdDoctype) = @_;
+    my ($self, $sg, $do, $dtdRemote, $tld, $dtdSvn, $dtdDoctype, $dtdOldUrl) = @_;
     $self->_setCurrentStep('fetch-dtd', $sg);
 
     return 1 if $dtdDoctype;  # Nothing to do.
@@ -177,6 +190,9 @@ sub fetchDtd {
     # If the --dtd-svn option was given, then this better be an esummary idx samplegroup,
     # otherwise we have to fail.
     if ($dtdSvn) {
+        # We won't try to compute/verify the public identifier.
+        $sg->{'dtd-public-id'} = '';
+
         if ($eutil eq 'esummary' && $idx) {
             # Get the database from the name of the dtd
             if ($dtd !~ /esummary_([a-z]+)\.dtd/) {
@@ -216,7 +232,11 @@ sub fetchDtd {
     }
 
     # Not --dtd-svn, we'll compute a normal system identifier URL
-    else {
+    elsif ($dtdOldUrl) {
+        # For old-style doctype declarations, we won't try to compute/verify the
+        # public identifier.
+        $sg->{'dtd-public-id'} = '';
+
         # Compute the official system identifier (not necessarily the same as
         # the URL that we'll use to get the DTD.
         my $dtdSystemId;
@@ -231,31 +251,81 @@ sub fetchDtd {
             $dtdSystemId = $eutilsDtdBase . $dtd;
         }
 
-        return $self->downloadDtd($sg, $do, $dtdSystemId, $dtdTld, $dtdRemote);
+        return $self->downloadDtd($sg, $do, $dtdSystemId, $tld, $dtdRemote);
+    }
+
+    else {
+        # Fetch the first XML in the set
+        my $s = $sg->{samples}[0];
+        $self->_fetchXml($s, 1, $tld);
+        my $firstXml = $s->{'local-xml'};
+        my $ids = getDoctype($firstXml);
+        #print "ids:  " . Dumper($ids) . "\n\n";
+        #exit 0;
+        if (!$ids) {
+            $self->failed("Couldn't read doctype declaration from $firstXml");
+        }
+
+        # Store these results
+        my $dtdPublicId = $sg->{'dtd-public-id'}
+            = exists $ids->{'public'} ? $ids->{'public'} : '';
+        my $dtdSystemId = $sg->{'dtd-system-id'} = $ids->{'system'};
+
+        # Validate the form of the identifiers
+        if ($dtdPublicId !~ m{-//NLM//DTD [a-z]+ \d{8}//EN}) {
+            $self->failed("DTD public identifier '$dtdPublicId' doesn't match expected form");
+        }
+        if ($dtdSystemId !~ m{http://eutils.ncbi.nlm.nih.gov/dtd/\d{8}/[a-z]+\.dtd}) {
+            $self->failed("DTD system identifier '$dtdSystemId' doesn't match expected form");
+        }
+
+        # Fetch the DTD
+        return $self->downloadDtd($sg, $do, $dtdSystemId, $tld, $dtdRemote);
     }
 }
 
 #-------------------------------------------------------------
-# Fetch an XML sample file, and puts 'local-xml' and 'full-xml-url'
+# Fetch an XML sample file, and puts 'local-xml' and 'real-xml-url'
 # into the sample structure.
 # This function returns 1 if successful, or 0 if there is a failure.
 
 sub fetchXml {
-    my ($self, $s, $do) = @_;
+    my ($self, $s, $do, $tld) = @_;
     $self->_setCurrentStep('fetch-xml', $s);
+
+    # See if this has already been fetched (possible if it was fetched
+    # as part of fetchDtd)
+    return 1 if ($s->{'local-xml'});
+
+    return $self->_fetchXml($s, $do, $tld);
+}
+
+#-------------------------------------------------------------
+# This implements the guts of fetchXml.  It is reused by that step as
+# well as by fetchDtd, which needs to grab an XML instance document in
+# order to discover the system identifier.
+
+
+sub _fetchXml {
+    my ($self, $s, $do, $tld) = @_;
 
     my $localXml = 'out/' . $s->{name} . ".xml";   # final output filename
     $s->{'local-xml'} = $localXml;
 
-    my $fullUrl = $eutilsBaseUrl . $s->{"eutils-url"};
-    $s->{'full-xml-url'} = $fullUrl;
+    my $xmlUrl = $eutilsBaseUrl . $s->{"eutils-url"};
+    $s->{'xml-url'} = $xmlUrl;
+    my $realUrl = $xmlUrl;
+    if ($tld) {
+        $realUrl =~ s/http:\/\/eutils/http:\/\/$tld/;
+    }
+    $s->{'real-xml-url'} = $realUrl;
 
     # For inserting into the system command, escape ampersands:
-    my $cmdUrl = $fullUrl;
+    my $cmdUrl = $realUrl;
     $cmdUrl =~ s/\&/\\\&/g;
 
     if ($do) {
-        $self->message("Fetching $fullUrl => $localXml");
+        $self->message("Fetching $realUrl => $localXml");
         my $cmd = "curl --fail --silent --output $localXml $cmdUrl";
         my $status = system $cmd;
         if ($status != 0) {
@@ -272,12 +342,12 @@ sub fetchXml {
 # This returns 1 if successful, or 0 if there was a failure.
 
 sub downloadDtd {
-    my ($self, $sg, $do, $dtdSystemId, $dtdTld, $dtdRemote) = @_;
+    my ($self, $sg, $do, $dtdSystemId, $tld, $dtdRemote) = @_;
 
     # Now the URL that we'll use to actually get it.
     my $dtdUrl = $dtdSystemId;
-    if ($dtdTld) {
-        $dtdUrl =~ s/www/$dtdTld/;
+    if ($tld) {
+        $dtdUrl =~ s/www/$tld/;
     }
 
     # Here is where we'll put the local copy, only if not --dtd-remote
@@ -308,7 +378,7 @@ sub downloadDtd {
 # Returns 1 if successful; 0 otherwise.
 
 sub validateXml {
-    my ($self, $s, $do, $xml, $dtdRemote, $dtdTld, $dtdDoctype) = @_;
+    my ($self, $s, $do, $xml, $dtdRemote, $tld, $dtdDoctype) = @_;
     $self->_setCurrentStep('validate-xml', $s);
     return 1 if !$do;
     my $sg = $s->{sg};
@@ -334,7 +404,7 @@ sub validateXml {
             return 0;
         }
         close $th;
-        return 0 if !downloadDtd($do, $dtdSystemId, $dtdTld, $dtdRemote);
+        return 0 if !downloadDtd($do, $dtdSystemId, $tld, $dtdRemote);
     }
 
     my $dtdUrl = $sg->{'dtd-url'};
@@ -525,26 +595,33 @@ sub generateJson {
 }
 
 #-------------------------------------------------------------
-# Fetch the JSON results from EUtilities, and puts 'json-file' and 'full-json-url'
-# into the sample structure.
+# Fetch the JSON results from EUtilities, and puts 'json-file' 'json-url',
+# and 'real-json-url' into the sample structure.
 # This function returns 1 if successful, or 0 if there is a failure.
 
 sub fetchJson {
-    my ($self, $s, $do) = @_;
+    my ($self, $s, $do, $tld) = @_;
     $self->_setCurrentStep('fetch-json', $s);
 
     my $jsonFile = 'out/' . $s->{name} . ".json";   # final output filename
     $s->{'json-file'} = $jsonFile;
 
-    my $fullUrl = $eutilsBaseUrl . $s->{"eutils-url"} . '?retmode=json';
-    $s->{'full-json-url'} = $fullUrl;
+
+
+    my $jsonUrl = $eutilsBaseUrl . $s->{"eutils-url"} . '&retmode=json';
+    $s->{'json-url'} = $jsonUrl;
+    my $realUrl = $jsonUrl;
+    if ($tld) {
+        $realUrl =~ s/http:\/\/eutils/http:\/\/$tld/;
+    }
+    $s->{'real-json-url'} = $realUrl;
 
     # For inserting into the system command, escape ampersands:
-    my $cmdUrl = $fullUrl;
+    my $cmdUrl = $realUrl;
     $cmdUrl =~ s/\&/\\\&/g;
 
     if ($do) {
-        $self->message("Fetching $fullUrl => $jsonFile");
+        $self->message("Fetching $realUrl => $jsonFile");
         my $cmd = "curl --fail --silent --output $jsonFile $cmdUrl";
         my $status = system $cmd;
         if ($status != 0) {
@@ -575,6 +652,38 @@ sub validateJson {
     }
     return 1;
 }
+
+#-----------------------------------------------------------------------------
+# Utility function to extract public and system ids from a local file,
+# from its doctype declaration.  This returns 0 if it couldn't find anything,
+# or a hash like this:  { 'public-id' => '....', 'system-id' => '....' }
+
+sub getDoctype {
+    my $xmlFilename = shift;
+
+    # FIXME:  this should only read as far as the end of the doctype.
+    # Slurp the whole file into a string
+    my $xml = do {
+        local $/ = undef;
+        open my $xmlFile, "<", $xmlFilename
+            or return 0;
+        <$xmlFile>;
+    };
+
+    if ($xml =~ m/<\!DOCTYPE.*?PUBLIC\s+"(.*?)"\s+"(.*?)"/) {
+        return {
+            'public' => $1,
+            'system' => $2,
+        };
+    }
+    if ($xml =~ m/<\!DOCTYPE.*?SYSTEM\s+"(.*?)"/) {
+        return {
+            'system' => $1,
+        };
+    }
+    return 0;
+}
+
 
 #------------------------------------------------------------------------
 # $self->failed($msg);

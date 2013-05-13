@@ -27,30 +27,26 @@ my $ok = GetOptions(\%Opts,
     "verbose",
     "continue-on-error",
     "reset",
+    "tld:s",
     "eutil:s",
     "db:s",
     "dtd:s",
     "sample:s",
     "idx",
     "error",
-    "fetch-dtd",
-    "fetch-xml",
-    "validate-xml",
-    "generate-xslt",
-    "generate-json",
-    "fetch-json",
-    "validate-json",
+    @EutilsTest::steps,
     "dtd-remote",
-    "dtd-tld:s",
     "dtd-svn",
+    "dtd-oldurl",
     "dtd-doctype",
     "pipe-qa-monitor",
+    "pipe-qa-release",
     "pipe-idx-svn",
 );
 #print Dumper \%Opts;
 
 if ($Opts{help}) {
-    print <<END_USAGE;
+    print q(
 Usage:  GetTestIdx.pl [-v|--verbose] [-s|--stop-on-error]
 
 This script tests EUtilities.
@@ -60,6 +56,9 @@ General options:
   -v|--verbose - turn on verbose messages
   -c|--continue-on-error - keep going even if there is an error
   --reset - erase the 'out' directory first
+  --tld=<tld> - Substitute a different top-level-domain in all URLs.
+    I.e., for DTDs:  www.ncbi -> <tld>.ncbi; for FCGIs:  eutils.ncbi ->
+    <tld>.ncbi
 
 Options to select the sample(s) from the samples.xml file to test (these will
 be ANDed together):
@@ -73,32 +72,27 @@ be ANDed together):
 
 Options to control the steps to test.  If none of these are given, then all the
 steps are performed.
-  --fetch-dtd
-  --fetch-xml
-  --validate-xml
-  --fetch-json
-  --generate-xslt
-  --generate-json
-  --validate-json
-
+) .
+(join("", map { "  --$_\n" } @EutilsTest::steps)) .
+q(
 Options related to the DTD.  In general, the script "knows" where to get the
 DTD, and doesn't use the actual doctype declaration from the instance documents.
   --dtd-remote - Leave the DTD on the remote server, rather than copying it
     locally.
-  --dtd-tld=<tld> - Substitute a different top-level-domain in the DTD URL.
-    I.e. substitute "www" with <tld>.
   --dtd-svn - Get the DTDs from svn instead of the system identifier.  Only
     works with --idx.  Can't be used with other --dtd options.
+  --dtd-oldurl - Use old-style URLs to get the DTDs; prior to the redesign
+    of the system and public identifiers.
   --dtd-doctype - Trust the doctype declaration.  Can be used in conjunction
-    with --dtd-remote or --dtd-tld.  This won't do any checking to see that
+    with --tld or with --dtd-remote.  This won't do any checking to see that
     the doctype decl matches what we expect, or that every sample in a group
     has the same doctype decl.
 
 Pipelines.  These are shorthands for collections of other options.
   --pipe-qa-monitor
+  --pipe-qa-release
   --pipe-idx-svn
-
-END_USAGE
+);
     exit 0;
 }
 
@@ -122,6 +116,16 @@ my %pipelines = (
         'fetch-json' => 1,
         'validate-json' => 1,
     },
+    'qa-release' => {
+        'reset' => 1,
+        'tld' => 'qa',
+        'eutil' => 'esummary',
+        'fetch-dtd' => 1,
+        'fetch-xml' => 1,
+        'validate-xml' => 1,
+        'fetch-json' => 1,
+        'validate-json' => 1,
+    },
     'idx-svn' => {
         'reset' => 1,
         'idx' => 1,
@@ -137,16 +141,17 @@ my %pipelines = (
 
 # If no pipeline and no steps are selected, then use pipe-default.
 my $pipeline = $Opts{'pipe-qa-monitor'} ? 'qa-monitor' :
+               $Opts{'pipe-qa-release'} ? 'qa-release' :
                $Opts{'pipe-idx-svn'}    ? 'idx-svn' : '';
-if (!$pipeline && !$Opts{'fetch-dtd'} &&
-                  !$Opts{'fetch-xml'} &&
-                  !$Opts{'validate-xml'} &&
-                  !$Opts{'fetch-json'} &&
-                  !$Opts{'generate-xslt'} &&
-                  !$Opts{'generate-json'} &&
-                  !$Opts{'validate-json'}) {
+
+# This will be true if any of the step options was given
+my $stepOptGiven = grep { $Opts{$_} } @EutilsTest::steps;
+
+if (!$pipeline && !$stepOptGiven) {
     $pipeline = 'default';
 }
+
+# Merge in the pipeline options
 my $pipeOpts = $pipelines{$pipeline};
 foreach my $k (keys %$pipeOpts) {
     $Opts{$k} = $pipeOpts->{$k};
@@ -157,6 +162,7 @@ $t->{verbose} = $Opts{verbose};
 my $log = $t->{log} = Logger->new($t->{verbose});
 
 $t->{coe} = $Opts{'continue-on-error'};
+my $tld = $Opts{'tld'};
 
 my $eutilToTest = $Opts{'eutil'} || '';
 my $dbToTest = $Opts{'db'} || '';
@@ -174,10 +180,10 @@ my $doGenerateJson = $Opts{'generate-json'};
 my $doValidateJson = $Opts{'validate-json'};
 
 my $dtdRemote = $Opts{'dtd-remote'};
-my $dtdTld = $Opts{'dtd-tld'};
 my $dtdSvn = $Opts{'dtd-svn'};
+my $dtdOldUrl = $Opts{'dtd-oldurl'};
 my $dtdDoctype = $Opts{'dtd-doctype'};
-if ($dtdSvn && ($dtdRemote || $dtdTld || $dtdDoctype)) {
+if ($dtdSvn && ($dtdRemote || $dtdOldUrl || $dtdDoctype)) {
     die "Can't use --dtd-svn with any other DTD option.";
 }
 
@@ -229,7 +235,8 @@ foreach my $sg (@$testcases) {
     }
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    next if !$t->fetchDtd($sg, $doFetchDtd, $dtdRemote, $dtdTld, $dtdSvn, $dtdDoctype);
+    next if !$t->fetchDtd($sg, $doFetchDtd, $dtdRemote, $tld, $dtdSvn,
+                          $dtdDoctype, $dtdOldUrl);
     $log->indent;
 
     # For each sample corresponding to this DTD:
@@ -237,12 +244,13 @@ foreach my $sg (@$testcases) {
         next if !sampleMatch($s);
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        next if !$t->fetchXml($s, $doFetchXml);
+        next if !$t->fetchXml($s, $doFetchXml, $tld);
         my $sampleXml = $s->{'local-xml'};
         $log->indent;
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        $t->validateXml($s, $doValidateXml, $sampleXml, $dtdRemote, $dtdTld, $dtdDoctype);
+        $t->validateXml($s, $doValidateXml, $sampleXml, $dtdRemote, $tld,
+                        $dtdDoctype);
         $log->undent;
     }
 
@@ -271,7 +279,7 @@ foreach my $sg (@$testcases) {
 
         else {
             # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-            next if !$t->fetchJson($s, $doFetchJson);
+            next if !$t->fetchJson($s, $doFetchJson, $tld);
         }
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
