@@ -44,6 +44,7 @@ package EutilsTest;
 #                                           # if the XML was not modified, this will be the same as
 #                                           # local-xml.
 #           'json-file' => 'out/...',       # Filename of the generated json file
+#           'full-json-url' => 'http://...', # If JSON was downloaded, this is the source
 #         }, ... more samples
 #       ]
 #     } ... more sample groups
@@ -235,7 +236,8 @@ sub fetchDtd {
 }
 
 #-------------------------------------------------------------
-# Fetch an XML sample file, and return the pathname.
+# Fetch an XML sample file, and puts 'local-xml' and 'full-xml-url'
+# into the sample structure.
 # This function returns 1 if successful, or 0 if there is a failure.
 
 sub fetchXml {
@@ -489,14 +491,19 @@ sub generateJson {
     $self->_setCurrentStep('generate-json', $s);
 
     my $jsonXslt = $s->{sg}{'json-xslt'};
+
+    # Use local-xml to figure out what the JSON filename should be,
     my $localXml = $s->{'local-xml'};
     my $jsonFile = $localXml;
     $jsonFile =~ s/\.xml$/.json/;
     $s->{'json-file'} = $jsonFile;
+
+    # But use final-xml as input to the conversion
+    my $finalXml = $s->{'final-xml'};
     if ($do) {
         $self->message("Converting XML -> JSON:  $jsonFile");
         my $errfile = 'out/xsltproc.err';
-        my $cmd = "xsltproc $jsonXslt $localXml > $jsonFile 2> $errfile";
+        my $cmd = "xsltproc $jsonXslt $finalXml > $jsonFile 2> $errfile";
         my $status = system $cmd;
         if ($status != 0) {
             $self->failedCmd($status, $cmd);
@@ -510,12 +517,44 @@ sub generateJson {
         };
         if (length($err) > 0)
         {
-            $self->failed("Problem during the xsltproc conversion");
+            $self->failed("Problem during the xsltproc conversion: '$cmd'");
             return 0;
         }
     }
     return 1;
 }
+
+#-------------------------------------------------------------
+# Fetch the JSON results from EUtilities, and puts 'json-file' and 'full-json-url'
+# into the sample structure.
+# This function returns 1 if successful, or 0 if there is a failure.
+
+sub fetchJson {
+    my ($self, $s, $do) = @_;
+    $self->_setCurrentStep('fetch-json', $s);
+
+    my $jsonFile = 'out/' . $s->{name} . ".json";   # final output filename
+    $s->{'json-file'} = $jsonFile;
+
+    my $fullUrl = $eutilsBaseUrl . $s->{"eutils-url"} . '?retmode=json';
+    $s->{'full-json-url'} = $fullUrl;
+
+    # For inserting into the system command, escape ampersands:
+    my $cmdUrl = $fullUrl;
+    $cmdUrl =~ s/\&/\\\&/g;
+
+    if ($do) {
+        $self->message("Fetching $fullUrl => $jsonFile");
+        my $cmd = "curl --fail --silent --output $jsonFile $cmdUrl";
+        my $status = system $cmd;
+        if ($status != 0) {
+            $self->failedCmd($status, $cmd);
+            return 0;
+        }
+    }
+    return 1;
+}
+
 
 #------------------------------------------------------------------------
 # Returns 1 if successful; 0 otherwise.

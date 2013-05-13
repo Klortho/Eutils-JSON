@@ -1,10 +1,35 @@
-# Testing framework for Eutils-JSON
+# NCBI Eutilities test tool
+
+## Installing
+
+This should be installed on a Unix system that has the basic tools
+`perl`, `curl`, and `xmllint` in you PATH.
+
+If you want to be able to generate the XML-to-JSON XSLT files and to
+generate JSON output from those, then
+you will also need the [DtdAnalyzer](https://github.com/NCBITools/DtdAnalyzer)
+and `xsltproc`.
+
+To validate the JSON output (either generated, or from the Eutilities)
+you need [`jsonlint`](https://github.com/zaach/jsonlint).
+
+## Running the tests
+
+The test script `testeutils.pl` should be run from the same directory in
+which it resides.  It needs write access to that directory, since it writes
+generated files to the `out` subdirectory there.
+
+Enter the following to get the list of command line options:
+
+```bash
+./testeutils.pl -?
+```
 
 ## Contents of this directory
 
 Here is a list of some of the files and scripts, and what they do.
 
-* `testeutils.pl` - Main test script
+* `testeutils.pl` - Main all-in-one test script
 * `EutilsTest.pm` - Perl module that implements most of the functionality
 * `Logger.pm` - Logs messages
 * `samples.xml` - Latest list of all of the test cases we'll use
@@ -20,40 +45,55 @@ These are deprecated and will be replaced eventually:
   of the available databases.  The output of this is XML, suitable for merging
   into `samples.xml`.
 
+
 ## To do:
 
 These need to be done
 
 - Add something to verify that the system and public identifiers in the
   instance documents are correct
+
 - Need to add new-style system identifiers (see Confluence page) to fetchDtd
+
 - Add a switch to take DTDs from the filesystem.
+
 - It should also be able to validate the JSON output directly from the new utilities,
   when that's deployed.
+
 - CIDX in ergatis use case:
     - It should also be able to use JSON XSLTs that were already generated.
     - It should get the XML from a command-line utility, and wrap it somehow.
-- Add --reset, which causes the out directory to be cleared.
+
 - Add jslint4java validation.
 
-These are "nice to have" improvements:
-
-- Enable it to use a catalog file.  There is already a catalog.xml file in the
-  directory.  It should use prefixes, instead of calling all the DTDs out explicitly.
+- Enable it to use local copies of DTDs, instead of fetching them from the
+  server.  This should be implemented with a catalog file.
+  There is already a catalog.xml file in the
+  directory.  The catalog should use prefixes, instead of calling all the DTDs out explicitly.
   This can only be used with --dtd-remote, because `curl`, that copies down all the
   DTDs into a local directory, doens't know how to use a catalog
     - Change the catalog so that it expects all dtds in a dtd/ subdirectory
     - Change the curl dtd-downloading functionality so that it downloads into
       dtd/..., same as what the catalog expects.
 
+These are "nice to have" improvements:
+
 - Combine recordFailure with $log->error.  Also implement halt-on-error there.
+
 - use LibXML for XML validation
+
 - use LibXSLT for the transformation
+
 - use LWP instead of curl
+
 - Write a custom json parser and jsonlint.
+
 - Doesn't work for efetch, because that's a multipart DTD
-- Make the samplegroup and the samples into objects.  Store more stuff there
-  rather than in package variables.
+
 - Turn this into a CGI, and have it output a detailed test report in XML
+
 - Include a 'generate-dtd' step that generates CIDX DTDs from Max's tool.
   It will replace GenEsummaryDtds.pl
+
+- Be able to configure pipelines in an external (yaml or xml) file.
+

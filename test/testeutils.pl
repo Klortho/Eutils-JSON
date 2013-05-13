@@ -38,12 +38,17 @@ my $ok = GetOptions(\%Opts,
     "validate-xml",
     "generate-xslt",
     "generate-json",
+    "fetch-json",
     "validate-json",
     "dtd-remote",
     "dtd-tld:s",
     "dtd-svn",
     "dtd-doctype",
+    "pipe-qa-monitor",
+    "pipe-idx-svn",
 );
+#print Dumper \%Opts;
+
 if ($Opts{help}) {
     print <<END_USAGE;
 Usage:  GetTestIdx.pl [-v|--verbose] [-s|--stop-on-error]
@@ -71,6 +76,7 @@ steps are performed.
   --fetch-dtd
   --fetch-xml
   --validate-xml
+  --fetch-json
   --generate-xslt
   --generate-json
   --validate-json
@@ -87,9 +93,66 @@ DTD, and doesn't use the actual doctype declaration from the instance documents.
     with --dtd-remote or --dtd-tld.  This won't do any checking to see that
     the doctype decl matches what we expect, or that every sample in a group
     has the same doctype decl.
+
+Pipelines.  These are shorthands for collections of other options.
+  --pipe-qa-monitor
+  --pipe-idx-svn
+
 END_USAGE
     exit 0;
 }
+
+# Pipelines are collections of other options, that will get merged in
+my %pipelines = (
+    'default' => {
+        'fetch-dtd' => 1,
+        'fetch-xml' => 1,
+        'validate-xml' => 1,
+        'generate-xslt' => 1,
+        'generate-json' => 1,
+        'validate-json' => 1,
+    },
+    'qa-monitor' => {
+        'reset' => 1,
+        'idx' => 1,
+        'eutil' => 'esummary',
+        'fetch-dtd' => 1,
+        'fetch-xml' => 1,
+        'validate-xml' => 1,
+        'fetch-json' => 1,
+        'validate-json' => 1,
+    },
+    'idx-svn' => {
+        'reset' => 1,
+        'idx' => 1,
+        'eutil' => 'esummary',
+        'fetch-dtd' => 1,
+        'fetch-xml' => 1,
+        'validate-xml' => 1,
+        'generate-xslt' => 1,
+        'generate-json' => 1,
+        'validate-json' => 1,
+    }
+);
+
+# If no pipeline and no steps are selected, then use pipe-default.
+my $pipeline = $Opts{'pipe-qa-monitor'} ? 'qa-monitor' :
+               $Opts{'pipe-idx-svn'}    ? 'idx-svn' : '';
+if (!$pipeline && !$Opts{'fetch-dtd'} &&
+                  !$Opts{'fetch-xml'} &&
+                  !$Opts{'validate-xml'} &&
+                  !$Opts{'fetch-json'} &&
+                  !$Opts{'generate-xslt'} &&
+                  !$Opts{'generate-json'} &&
+                  !$Opts{'validate-json'}) {
+    $pipeline = 'default';
+}
+my $pipeOpts = $pipelines{$pipeline};
+foreach my $k (keys %$pipeOpts) {
+    $Opts{$k} = $pipeOpts->{$k};
+}
+
+
 $t->{verbose} = $Opts{verbose};
 my $log = $t->{log} = Logger->new($t->{verbose});
 
@@ -102,18 +165,13 @@ my $sampleToTest = $Opts{'sample'} || '';
 my $testIdx = $Opts{'idx'} || 0;
 my $testError = $Opts{'error'} || 0;
 
-my $doAllSteps = !$Opts{'fetch-dtd'} &&
-                 !$Opts{'fetch-xml'} &&
-                 !$Opts{'validate-xml'} &&
-                 !$Opts{'generate-xslt'} &&
-                 !$Opts{'generate-json'} &&
-                 !$Opts{'validate-json'};
-my $doFetchDtd = $Opts{'fetch-dtd'} || $doAllSteps;
-my $doFetchXml = $Opts{'fetch-xml'} || $doAllSteps;
-my $doValidateXml = $Opts{'validate-xml'} || $doAllSteps;
-my $doGenerateXslt = $Opts{'generate-xslt'} || $doAllSteps;
-my $doGenerateJson = $Opts{'generate-json'} || $doAllSteps;
-my $doValidateJson = $Opts{'validate-json'} || $doAllSteps;
+my $doFetchDtd = $Opts{'fetch-dtd'};
+my $doFetchXml = $Opts{'fetch-xml'};
+my $doValidateXml = $Opts{'validate-xml'};
+my $doFetchJson = $Opts{'fetch-json'};
+my $doGenerateXslt = $Opts{'generate-xslt'};
+my $doGenerateJson = $Opts{'generate-json'};
+my $doValidateJson = $Opts{'validate-json'};
 
 my $dtdRemote = $Opts{'dtd-remote'};
 my $dtdTld = $Opts{'dtd-tld'};
@@ -200,17 +258,24 @@ foreach my $sg (@$testcases) {
     foreach my $s (@$groupsamples) {
         next if !sampleMatch($s);
 
-        if ($s->{failure}{'fetch-xml'}) {
-            $log->message("Skipping generate-json for " . $s->{name} .
-                          ", because fetch-xml failed");
-            next;
+        if ($doGenerateJson) {
+            if ($s->{failure}{'fetch-xml'}) {
+                $log->message("Skipping generate-json for " . $s->{name} .
+                              ", because fetch-xml failed");
+                next;
+            }
+
+            # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            next if !$t->generateJson($s, $doGenerateJson);
+        }
+
+        else {
+            # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            next if !$t->fetchJson($s, $doFetchJson);
         }
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        next if !$t->generateJson($s, $doGenerateJson);
         $log->indent;
-
-        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         $t->validateJson($s, $doValidateJson);
         $log->undent;
     }
