@@ -64,12 +64,14 @@ use Logger;
 #use Exporter 'import';
 use Data::Dumper;
 use Cwd;
+use File::Copy;
 
 my $cwd = getcwd;
 
 our @steps = qw(
     fetch-dtd
     fetch-xml
+    generate-xml
     validate-xml
     fetch-json
     generate-xslt
@@ -177,7 +179,7 @@ sub _setCurrentStep {
 #
 
 sub fetchDtd {
-    my ($self, $sg, $do, $dtdRemote, $tld, $dtdSvn, $dtdDoctype, $dtdOldUrl) = @_;
+    my ($self, $sg, $do, $dtdRemote, $tld, $dtdSvn, $dtdDoctype, $dtdOldUrl, $dtdLoc) = @_;
     $self->_setCurrentStep('fetch-dtd', $sg);
 
     return 1 if $dtdDoctype;  # Nothing to do.
@@ -254,6 +256,30 @@ sub fetchDtd {
         return $self->downloadDtd($sg, $do, $dtdSystemId, $tld, $dtdRemote);
     }
 
+    # User specified a local-filesystem location for the DTD explicitly (this can only
+    # be used when testing a single samplegroup, but we don't enforce that -- it is up
+    # to the user to make sure.)
+    elsif ($dtdLoc) {
+        # Don't try to compute the public identifier
+        $sg->{'dtd-public-id'} = $sg->{'dtd-system-id'} = '';
+        # Use the filesystem path as the system id and URL (not used, though)
+        $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = 'file://' . $dtdLoc;
+
+        # Here is the local copy.  We will copy it to 'out' if $dtdRemote is true,
+        # otherwise use the given path
+        my $dtdPath = $dtdRemote ? $dtdLoc : "out/" . $sg->{dtd};
+        $sg->{'dtd-path'} = $dtdPath;
+
+        if ($do && !$dtdRemote) {
+            $self->message("Fetching $dtdLoc -> $dtdPath");
+            if (!copy($dtdLoc, $dtdPath)) {
+                $self->failed("copying $dtdLoc -> $dtdPath");
+                return 0;
+            }
+        }
+        return 1;
+    }
+
     else {
         # Fetch the first XML in the set
         my $s = $sg->{samples}[0];
@@ -282,6 +308,59 @@ sub fetchDtd {
         # Fetch the DTD
         return $self->downloadDtd($sg, $do, $dtdSystemId, $tld, $dtdRemote);
     }
+}
+
+#-------------------------------------------------------------
+# Generate XML from Maxim's docsum tool (binary)
+
+sub generateXml {
+    my ($self, $s, $do, $xmlDocsumTool, $dbinfo, $build) = @_;
+    $self->_setCurrentStep('generate-xml', $s);
+
+    my $localXml = 'out/' . $s->{name} . '.xml';  # final output filename
+    $s->{'local-xml'} = $localXml;
+
+    if ($do) {
+        if (!$dbinfo || !$build) {
+            $self->failed("Can't run xml-docsumtool without --dbinfo and --build");
+            return 0;
+        }
+        # Generate the list of XML docsums in a temporary file
+        # Sample command line:
+        #     cidxdocsum2xml -dbinfo $DBINFOINI -db pmc -build Build130513-0205.1 \
+        #         -uid 14900,14901 > t.xml
+        my $tmp = tmpnam();
+        my $cmd = "$xmlDocsumTool -dbinfo $dbinfo -db pmc -build $build " .
+                  "-outxml $tmp -uid 14900,14901";
+
+        $self->message("Generating docsum file $tmp");
+        my $status = system $cmd;
+        if ($status != 0) {
+            $self->failedCmd($status, $cmd);
+            return 0;
+        }
+
+        # Now wrap it in esummaryset
+        $self->message("Wrapping docsums  -> $localXml");
+
+        my $src;
+        if (!open($src, "<", $tmp)) {
+            $self->failed("Can't open $tmp for reading");
+            return 0;
+        }
+        open(my $dest, ">", $localXml) or die "Can't open $localXml for writing";
+        print $dest "<eSummaryResult>\n" .
+                    "<DocumentSummarySet status='OK'>\n";
+        while (my $line = <$src>) {
+            print $dest $line;
+        }
+        print $dest "</DocumentSummarySet>\n" .
+                    "</eSummaryResult>\n";
+        close $dest;
+        close $src;
+
+    }
+    return 1;
 }
 
 #-------------------------------------------------------------
@@ -473,12 +552,29 @@ sub validateXml {
 
 #------------------------------------------------------------------------
 # Use the dtd2xml2json utility to generate an XSLT from the DTD.
+# Alternatively, if $xsltLoc is specified, this just copies it from that
+# location
 # Returns 1 if successful; 0 otherwise.
 # Puts the pathname of the generated file into 'json-xslt'
 
 sub generateXslt {
-    my ($self, $sg, $do) = @_;
+    my ($self, $sg, $do, $xsltLoc) = @_;
     $self->_setCurrentStep('generate-xslt', $sg);
+
+    if ($xsltLoc) {
+        my $jsonXslt = $xsltLoc;
+        $jsonXslt =~ s/.*\//out\//;
+        $sg->{'json-xslt'} = $jsonXslt;
+        if ($do) {
+            $self->message("Copying XSLT from $xsltLoc -> $jsonXslt");
+            if (!copy($xsltLoc, $jsonXslt)) {
+                failed("Couldn't copy XSLT from $xsltLoc -> $jsonXslt");
+                return 0
+            }
+        }
+        return 1;
+    }
+
 
     my $dtd = $sg->{dtd};
     my $dtdSystemId = $sg->{'dtd-system-id'};

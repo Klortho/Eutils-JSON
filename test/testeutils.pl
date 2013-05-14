@@ -39,8 +39,14 @@ my $ok = GetOptions(\%Opts,
     "dtd-svn",
     "dtd-oldurl",
     "dtd-doctype",
+    "dtd-loc:s",
+    "xml-docsumtool:s",
+    "dbinfo:s",
+    "build:s",
+    "xslt-loc:s",
     "pipe-qa-monitor",
     "pipe-qa-release",
+    "pipe-cidx-verify",
     "pipe-idx-svn",
 );
 #print Dumper \%Opts;
@@ -70,8 +76,8 @@ be ANDed together):
   --idx - test only ESummary with the IDX databases
   --error - test only the error cases
 
-Options to control the steps to test.  If none of these are given, then all the
-steps are performed.
+Options to control the steps to test.  If none of these are given, then the
+default pipeline steps are performed.
 ) .
 (join("", map { "  --$_\n" } @EutilsTest::steps)) .
 q(
@@ -87,6 +93,18 @@ DTD, and doesn't use the actual doctype declaration from the instance documents.
     with --tld or with --dtd-remote.  This won't do any checking to see that
     the doctype decl matches what we expect, or that every sample in a group
     has the same doctype decl.
+  --dtd-loc=<full-path-to-dtd> - Specify the location of the DTD explicitly.
+    This should only be used when testing just one samplegroup at a time.
+
+Other options:
+  --xml-docsumtool=<path-to-tool> - When testing CIDX pipeline, we use a utility
+    to generate docsums, that we then wrap into an XML file
+  --dbinfo - Location of the dbinfo.ini file.  Same as for CIDX tools; this is
+    passed to the xml-docsumtool
+  --build - Build identfier.  Same as for CIDX tools; this is passed to the
+    xml-docsumtool
+  --xslt-loc - Specify the location of the XSLT explicitly.  This is used in
+    conjunction with --dtd-loc, when testing just one samplegroup at a time.
 
 Pipelines.  These are shorthands for collections of other options.
   --pipe-qa-monitor
@@ -126,6 +144,16 @@ my %pipelines = (
         'fetch-json' => 1,
         'validate-json' => 1,
     },
+    'cidx-verify' => {
+        'reset' => 1,
+        'eutil' => 'esummary',
+        'fetch-dtd' => 1,
+        'generate-xml' => 1,
+        'validate-xml' => 1,
+        'generate-xslt' => 1,
+        'generate-json' => 1,
+        'validate-json' => 1,
+    },
     'idx-svn' => {
         'reset' => 1,
         'idx' => 1,
@@ -142,7 +170,8 @@ my %pipelines = (
 # If no pipeline and no steps are selected, then use pipe-default.
 my $pipeline = $Opts{'pipe-qa-monitor'} ? 'qa-monitor' :
                $Opts{'pipe-qa-release'} ? 'qa-release' :
-               $Opts{'pipe-idx-svn'}    ? 'idx-svn' : '';
+               $Opts{'pipe-idx-svn'}    ? 'idx-svn' :
+               $Opts{'pipe-cidx-verify'}    ? 'cidx-verify' : '';
 
 # This will be true if any of the step options was given
 my $stepOptGiven = grep { $Opts{$_} } @EutilsTest::steps;
@@ -156,6 +185,7 @@ my $pipeOpts = $pipelines{$pipeline};
 foreach my $k (keys %$pipeOpts) {
     $Opts{$k} = $pipeOpts->{$k};
 }
+#print Dumper \%Opts;
 
 
 $t->{verbose} = $Opts{verbose};
@@ -173,6 +203,7 @@ my $testError = $Opts{'error'} || 0;
 
 my $doFetchDtd = $Opts{'fetch-dtd'};
 my $doFetchXml = $Opts{'fetch-xml'};
+my $doGenerateXml = $Opts{'generate-xml'};
 my $doValidateXml = $Opts{'validate-xml'};
 my $doFetchJson = $Opts{'fetch-json'};
 my $doGenerateXslt = $Opts{'generate-xslt'};
@@ -183,9 +214,14 @@ my $dtdRemote = $Opts{'dtd-remote'};
 my $dtdSvn = $Opts{'dtd-svn'};
 my $dtdOldUrl = $Opts{'dtd-oldurl'};
 my $dtdDoctype = $Opts{'dtd-doctype'};
+my $dtdLoc = $Opts{'dtd-loc'};
 if ($dtdSvn && ($dtdRemote || $dtdOldUrl || $dtdDoctype)) {
     die "Can't use --dtd-svn with any other DTD option.";
 }
+my $xmlDocsumTool = $Opts{'xml-docsumtool'};
+my $dbinfo = $Opts{'dbinfo'};
+my $build = $Opts{'build'};
+my $xsltLoc = $Opts{'xslt-loc'};
 
 # Set things up
 
@@ -236,7 +272,7 @@ foreach my $sg (@$testcases) {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     next if !$t->fetchDtd($sg, $doFetchDtd, $dtdRemote, $tld, $dtdSvn,
-                          $dtdDoctype, $dtdOldUrl);
+                          $dtdDoctype, $dtdOldUrl, $dtdLoc);
     $log->indent;
 
     # For each sample corresponding to this DTD:
@@ -244,18 +280,25 @@ foreach my $sg (@$testcases) {
         next if !sampleMatch($s);
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        next if !$t->fetchXml($s, $doFetchXml, $tld);
-        my $sampleXml = $s->{'local-xml'};
-        $log->indent;
+        if ($doGenerateXml) {
+            next if !$t->generateXml($s, $doGenerateXml, $xmlDocsumTool,
+                                     $dbinfo, $build);
+        }
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        $t->validateXml($s, $doValidateXml, $sampleXml, $dtdRemote, $tld,
+        if ($doFetchXml) {
+            next if !$t->fetchXml($s, $doFetchXml, $tld);
+        }
+
+        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        $log->indent;
+        $t->validateXml($s, $doValidateXml, $s->{'local-xml'}, $dtdRemote, $tld,
                         $dtdDoctype);
         $log->undent;
     }
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    if (!$t->generateXslt($sg, $doGenerateXslt)) {
+    if (!$t->generateXslt($sg, $doGenerateXslt, $xsltLoc)) {
         $log->undent;
         next;
     }
