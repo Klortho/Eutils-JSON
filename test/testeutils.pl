@@ -15,16 +15,15 @@ use File::Which;
 use File::Copy;
 
 
-# Create a new test object, and read in the samples xml file
+# Create a new test object, and read in the testcases.xml file
 my $t = EutilsTest->new();
 my $testcases = $t->{testcases};
 #print Dumper($testcases);
 
-# -v | --verbose turn on verbose messages
 my %Opts;
 my $ok = GetOptions(\%Opts,
     "help|?",
-    "verbose",
+    "quiet",
     "continue-on-error",
     "reset",
     "tld:s",
@@ -44,6 +43,7 @@ my $ok = GetOptions(\%Opts,
     "dbinfo:s",
     "build:s",
     "xslt-loc:s",
+    "pipe-basic",
     "pipe-qa-monitor",
     "pipe-qa-release",
     "pipe-cidx-verify",
@@ -51,16 +51,17 @@ my $ok = GetOptions(\%Opts,
 );
 #print Dumper \%Opts;
 
-if ($Opts{help}) {
-    print q(
-Usage:  GetTestIdx.pl [-v|--verbose] [-s|--stop-on-error]
+my $usage = q(
+Usage:  testeutils.pl [options] {step / pipeline}
 
-This script tests EUtilities.
+This script tests EUtilities, using some subset of the test cases defined
+in the samples.xml file.  At least one step or pipeline must be given.
 
 General options:
   -h|-? - help
-  -v|--verbose - turn on verbose messages
-  -c|--continue-on-error - keep going even if there is an error
+  -q|--quiet - turn off most messages
+  -c|--continue-on-error - keep going even if there is an error (default is to
+    stop)
   --reset - erase the 'out' directory first
   --tld=<tld> - Substitute a different top-level-domain in all URLs.
     I.e., for DTDs:  www.ncbi -> <tld>.ncbi; for FCGIs:  eutils.ncbi ->
@@ -76,13 +77,14 @@ be ANDed together):
   --idx - test only ESummary with the IDX databases
   --error - test only the error cases
 
-Options to control the steps to test.  If none of these are given, then the
-default pipeline steps are performed.
+Options to control the steps to test.  At least one step, or at least one
+pipeline, must be given.
 ) .
 (join("", map { "  --$_\n" } @EutilsTest::steps)) .
 q(
 Options related to the DTD.  In general, the script "knows" where to get the
 DTD, and doesn't use the actual doctype declaration from the instance documents.
+But, that default behavior can be overridden.
   --dtd-remote - Leave the DTD on the remote server, rather than copying it
     locally.
   --dtd-svn - Get the DTDs from svn instead of the system identifier.  Only
@@ -106,17 +108,23 @@ Other options:
   --xslt-loc - Specify the location of the XSLT explicitly.  This is used in
     conjunction with --dtd-loc, when testing just one samplegroup at a time.
 
-Pipelines.  These are shorthands for collections of other options.
+Pipelines.  These are shorthands for collections of other options.  At least
+one pipeline, or at least one step, must be given.
+  --pipe-basic
   --pipe-qa-monitor
   --pipe-qa-release
+  --pipe-cidx-verify
   --pipe-idx-svn
 );
+
+if ($Opts{help}) {
+    print $usage;
     exit 0;
 }
 
 # Pipelines are collections of other options, that will get merged in
 my %pipelines = (
-    'default' => {
+    'basic' => {
         'fetch-dtd' => 1,
         'fetch-xml' => 1,
         'validate-xml' => 1,
@@ -168,16 +176,18 @@ my %pipelines = (
 );
 
 # If no pipeline and no steps are selected, then use pipe-default.
-my $pipeline = $Opts{'pipe-qa-monitor'} ? 'qa-monitor' :
+my $pipeline = $Opts{'pipe-basic'} ? 'basic' :
+               $Opts{'pipe-qa-monitor'} ? 'qa-monitor' :
                $Opts{'pipe-qa-release'} ? 'qa-release' :
-               $Opts{'pipe-idx-svn'}    ? 'idx-svn' :
-               $Opts{'pipe-cidx-verify'}    ? 'cidx-verify' : '';
+               $Opts{'pipe-cidx-verify'}    ? 'cidx-verify' :
+               $Opts{'pipe-idx-svn'}    ? 'idx-svn' : '';
 
 # This will be true if any of the step options was given
 my $stepOptGiven = grep { $Opts{$_} } @EutilsTest::steps;
 
 if (!$pipeline && !$stepOptGiven) {
-    $pipeline = 'default';
+    print $usage;
+    exit 0;
 }
 
 # Merge in the pipeline options
@@ -188,7 +198,7 @@ foreach my $k (keys %$pipeOpts) {
 #print Dumper \%Opts;
 
 
-$t->{verbose} = $Opts{verbose};
+$t->{verbose} = !$Opts{quiet};
 my $log = $t->{log} = Logger->new($t->{verbose});
 
 $t->{coe} = $Opts{'continue-on-error'};
@@ -210,11 +220,11 @@ my $doGenerateXslt = $Opts{'generate-xslt'};
 my $doGenerateJson = $Opts{'generate-json'};
 my $doValidateJson = $Opts{'validate-json'};
 
-my $dtdRemote = $Opts{'dtd-remote'};
-my $dtdSvn = $Opts{'dtd-svn'};
-my $dtdOldUrl = $Opts{'dtd-oldurl'};
-my $dtdDoctype = $Opts{'dtd-doctype'};
-my $dtdLoc = $Opts{'dtd-loc'};
+my $dtdRemote = $Opts{'dtd-remote'} || 0;
+my $dtdSvn = $Opts{'dtd-svn'} || 0;
+my $dtdOldUrl = $Opts{'dtd-oldurl'} || 0;
+my $dtdDoctype = $Opts{'dtd-doctype'} || 0;
+my $dtdLoc = $Opts{'dtd-loc'} || '';
 if ($dtdSvn && ($dtdRemote || $dtdOldUrl || $dtdDoctype)) {
     die "Can't use --dtd-svn with any other DTD option.";
 }
@@ -241,6 +251,16 @@ if (!-f $basexslt) {
     die "Can't find the base XSLT file $basexslt.  That's bad.";
 }
 copy($basexslt, 'out');
+
+if (!$Opts{quiet}) {
+    if ($pipeline) {
+        print "Executing pipeline '$pipeline'\n";
+    }
+    else {
+        print "Executing discrete steps\n";
+    }
+}
+
 
 # Now run the tests, for each sample group, ...
 foreach my $sg (@$testcases) {

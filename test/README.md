@@ -3,21 +3,21 @@
 ## Installing
 
 This should be installed on a Unix system that has the basic tools
-`perl`, `curl`, and `xmllint` in you PATH.
+`perl`, `curl`, and `xmllint` in your PATH.
 
 If you want to be able to generate the XML-to-JSON XSLT files and to
 generate JSON output from those, then
 you will also need the [DtdAnalyzer](https://github.com/NCBITools/DtdAnalyzer)
-and `xsltproc`.
+and [xsltproc](http://xmlsoft.org/XSLT/xsltproc2.html).
 
 To validate the JSON output (either generated, or from the Eutilities)
-you need [`jsonlint`](https://github.com/zaach/jsonlint).
+you need [jsonlint](https://github.com/zaach/jsonlint).
 
 ## Running the tests
 
 The test script `testeutils.pl` should be run from the same directory in
-which it resides.  It needs write access to that directory, since it writes
-generated files to the `out` subdirectory there.
+which it resides.  It needs write access to that directory, since it puts
+generated files into the `out` subdirectory there.
 
 Enter the following to get the list of command line options:
 
@@ -45,6 +45,18 @@ These are deprecated and will be replaced eventually:
   of the available databases.  The output of this is XML, suitable for merging
   into `samples.xml`.
 
+## Steps
+
+Enter `testeutils.pl -?` to get the list of defined steps.
+
+## Pipelines
+
+The test script does nothing by default.  You have to specify at least one step
+or at least one pipeline.
+
+A pipeline is really just a fixed set of command-line options.  They can be combined
+with other options, but the result will always be the superset (there's no way to
+"unset" a pipeline option.)  The following pipelines are defined:
 
 ## To do:
 

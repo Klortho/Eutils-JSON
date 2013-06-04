@@ -150,11 +150,18 @@ sub _readTestCases {
 }
 
 #-----------------------------------------------------------------------------
+# This changes the current step, as well as the pointers to both the sample (s)
+# and the sample group (sg).  If $s_or_sg has an 'sg' member, then we know that
+# it is a sample object, and we use that 'sg' member to get the sample group.
+# If $s_or_sg doesn't have an 'sg' member, then it is a sample group object.
+
 sub _setCurrentStep {
     my ($self, $step, $s_or_sg) = @_;
     $self->{'current-step'}{step} = $step;
-    $self->{'current-step'}{sg} = exists $s_or_sg->{sg} ? $s_or_sg->{sg} : $s_or_sg;;
-    $self->{'current-step'}{s} = exists $s_or_sg->{sg} ? $s_or_sg : undef;;
+    $self->{'current-step'}{sg} = exists $s_or_sg->{sg} ? $s_or_sg->{sg} : $s_or_sg;
+    $self->{'current-step'}{s} = exists $s_or_sg->{sg} ? $s_or_sg : undef;
+    $self->{log}->message('## Step ' . $step);
+
 }
 #-----------------------------------------------------------------------------
 # Compute the location, and (optionally) retrieve a local copy of the DTD for a
@@ -183,6 +190,7 @@ sub fetchDtd {
     $self->_setCurrentStep('fetch-dtd', $sg);
 
     return 1 if $dtdDoctype;  # Nothing to do.
+
 
     my $dtd = $sg->{dtd};
     my $idx = $sg->{idx};
@@ -430,7 +438,7 @@ sub downloadDtd {
     }
 
     # Here is where we'll put the local copy, only if not --dtd-remote
-    my $dtdPath = $dtdRemote ? '' : "out/" . $sg->{dtd};
+    my $dtdPath = $dtdRemote ? '' : "out/" . $sg->{'dtd'};
 
     $sg->{'dtd-system-id'} = $dtdSystemId;
     $sg->{'dtd-url'} = $dtdUrl;
@@ -483,7 +491,7 @@ sub validateXml {
             return 0;
         }
         close $th;
-        return 0 if !downloadDtd($do, $dtdSystemId, $tld, $dtdRemote);
+        return 0 if !$self->downloadDtd($sg, $do, $dtdSystemId, $tld, $dtdRemote);
     }
 
     my $dtdUrl = $sg->{'dtd-url'};
