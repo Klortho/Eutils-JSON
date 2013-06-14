@@ -3,6 +3,7 @@ package EutilsTest;
 # Structure of the object:
 # {
 #   # Command line option variables, set to their defaults
+#   'opts' => { ... command line options ... },
 #   'verbose' => 0,
 #   'coe' => 0,
 #   'current-step' => {   # Info about currently executing step
@@ -12,9 +13,10 @@ package EutilsTest;
 #   },
 #   'failures' => 0,        # count of the total number of failures
 #
-#   'testcases' => [
+#   'samplegroups' => [
 #     { # One sample group
 #       # Data from the XML file
+#       isa => 'samplegroup',
 #       dtd => 'eInfo_020511.dtd',
 #       idx => 0,
 #       eutil => 'einfo',
@@ -33,6 +35,7 @@ package EutilsTest;
 #       samples => [
 #         { # One of these for each sample in a group
 #           # Data from the XML file
+#           isa => 'sample',
 #           sg => ...,                # Reference to the parent samplegroup this belongs to
 #           name => 'einfo',
 #           db => 'pubmed',           # optional
@@ -52,9 +55,8 @@ package EutilsTest;
 #         }, ... more samples
 #       ]
 #     } ... more sample groups
-#   ]  # end testcases
+#   ]  # end samplegroups
 # }
-
 
 use strict;
 use warnings;
@@ -63,22 +65,78 @@ use XML::LibXML;
 use File::Temp qw/ :POSIX /;
 use Logger;
 #use Exporter 'import';
-use Data::Dumper;
-use Cwd;
+#use Cwd;
 use File::Copy;
+use Getopt::Long;
+use File::Path qw(make_path);
 
-my $cwd = getcwd;
+#use Data::Dumper;
 
-our @steps = qw(
-    fetch-dtd
-    fetch-xml
-    generate-xml
-    validate-xml
-    fetch-json
-    generate-xslt
-    generate-json
-    validate-json
+
+my @commonOpts = (
+    'help|?',
+    'quiet',
+    'continue-on-error',
+    'reset',
+    'tld:s',
+    'eutil:s',
+    'db:s',
+    'dtd:s',
+    'sample:s',
+    'idx',
+    'error',
 );
+
+our $commonOptUsage = q(
+General options:
+  -h|-? - help
+  -q|--quiet - turn off most messages
+  -c|--continue-on-error - keep going even if there is an error (default is to
+    stop)
+  --reset - erase the 'out' directory first
+  --tld=<tld> - Substitute a different top-level-domain in all URLs.
+    I.e., for DTDs:  www.ncbi -> <tld>.ncbi; for FCGIs:  eutils.ncbi ->
+    <tld>.ncbi
+
+Options to select the sample(s) from the samples.xml file to test (these will
+be ANDed together):
+  --eutil=<eutil> - test samplegroups corresponding only to the given eutility
+  --dtd=<dtd> - test samplegroups correponding to the given DTD (as given
+    in samples.xml)
+  --db=<db> - test samples corresponding to the given database
+  --sample=<sample-name> - test only the indicated sample
+  --idx - test only ESummary with the IDX databases samplegroups
+  --error - test only the error samples
+);
+
+#-------------------------------------------------------------------------
+# Function to process command line options. This prints out the usage message
+# and exits, if the help option was given.
+
+sub getOptions {
+    my ($stepOpts, $usage) = @_;
+    my @options = (@$stepOpts, @commonOpts);
+
+    my %Opts;
+    my $ok = GetOptions(\%Opts, @options);
+
+    # Set defaults for the common options.  This prevents a class of runtime
+    # errors when trying to access uninitialized hash elements
+    $Opts{help} = 0                if !$Opts{help};
+    $Opts{'continue-on-error'} = 0 if !$Opts{'continue-on-error'};
+    $Opts{'eutil'} = ''            if !$Opts{'eutil'};
+    $Opts{'db'} = ''               if !$Opts{'db'};
+    $Opts{'dtd'} = ''              if !$Opts{'dtd'};
+    $Opts{'sample'} = ''           if !$Opts{'sample'};
+    $Opts{'idx'} = 0               if !$Opts{'idx'};
+    $Opts{'error'} = 0             if !$Opts{'error'};
+
+    if ($Opts{help}) {
+        print $usage;
+        exit 0;
+    }
+    return \%Opts;
+}
 
 # Base URL of the eutilities services
 our $eutilsBaseUrl = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
@@ -88,28 +146,46 @@ our $eutilsDtdBase = 'http://www.ncbi.nlm.nih.gov/entrez/query/DTD/';
 
 
 # $idxextbase  points to the base directory of the subtree under which are all
-# of the IDX DTDs.  This can either be a directory on the filesystem, or a URL
-# to the Subversion repository.
+# of the IDX DTDs.  This should be a URL to the Subversion repository.
 # Any given DTD is at $idxextbase/<db>/support/esummary_<db>.dtd
 
-#my $idxextbase = "/home/maloneyc/svn/toolkit/trunk/internal/c++/src/internal/idxext";
-our $idxextbase = "https://svn.ncbi.nlm.nih.gov/repos/toolkit/trunk/internal/c++/src/internal/idxext";
+our $idxextbase =
+    "https://svn.ncbi.nlm.nih.gov/repos/toolkit/trunk/internal/c++/src/internal/idxext";
 
 
 #-------------------------------------------------------------
+# Create a new test-run object, read in testcases.xml.  This also prepares the
+# output directory.
 sub new {
-    my $class = shift;
+    my ($class, $Opts) = @_;
+
     my $self = {
-        'testcases' => _readTestCases(),
-        # Command line option variables, set to their defaults
-        'verbose' => 0,
-        'coe' => 0,
+        'samplegroups' => _readTestCases(),
+
+        # Command line options and shortcuts
+        'opts' => $Opts,
+        'verbose' => !$Opts->{'quiet'},
+        'coe' => $Opts->{'continue-on-error'},
+
         # Other
         'current-step' => {
             'step' => 'none',
         },
     };
     bless $self, $class;
+
+    $self->{log} = Logger->new($self->{verbose});
+
+    # Set up the output directory
+    make_path('out');
+    if ($Opts->{reset}) {
+        unlink glob "out/*";
+    }
+
+    # If no samplegroup or sample filters were given, then test everything
+    $self->{'test-all'} = !$Opts->{'eutil'} && !$Opts->{'db'} && !$Opts->{'dtd'} &&
+                          !$Opts->{'sample'} && !$Opts->{'idx'} && !$Opts->{'error'};
+
     return $self;
 }
 
@@ -121,10 +197,11 @@ sub _readTestCases {
     my $parser = new XML::LibXML;
     my $sxml = $parser->load_xml(location => 'testcases.xml')->getDocumentElement();
 
-    my @testcases = ();
+    my @samplegroups = ();
     foreach my $sgx ($sxml->getChildrenByTagName('samplegroup')) {
         my $idxAttr = $sgx->getAttribute('idx') || '';
         my $sg = {
+            isa => 'samplegroup',
             dtd => $sgx->getAttribute('dtd'),
             idx => ($idxAttr eq 'true'),
             eutil => $sgx->getAttribute('eutil'),
@@ -135,6 +212,7 @@ sub _readTestCases {
         foreach my $samp ($sgx->getChildrenByTagName('sample')) {
             my $errAttr = $samp->getAttribute('error') || '';
             my $s = {
+                isa => 'sample',
                 sg => $sg,
                 name => $samp->getAttribute('name'),
                 db => $samp->getAttribute('db') || '',
@@ -144,13 +222,65 @@ sub _readTestCases {
             };
             push @groupsamples, $s;
         }
-        push @testcases, $sg;
+        push @samplegroups, $sg;
     }
 
-    return \@testcases;
+    return \@samplegroups;
 }
 
 #-----------------------------------------------------------------------------
+# $t->filterMatch($s or $sg)
+# Tests a samplegroup or a sample to see if it matches one of the filter criteria.
+# A true value means yes, we should test it.
+
+sub filterMatch {
+    my ($self, $s_or_sg) = @_;
+    return 1 if $self->{'test-all'};
+
+    my $opts = $self->{opts};
+    my $eutilToTest = $opts->{eutil};
+    my $dtdToTest = $opts->{dtd};
+    my $dbToTest = $opts->{db};
+    my $sampleToTest = $opts->{sample};
+    my $testIdx = $opts->{idx};
+    my $testError = $opts->{error};
+
+    if ($s_or_sg->{isa} eq 'samplegroup') {
+        my $sg = $s_or_sg;
+
+        # See if we can skip this sample group
+        return 0 if $eutilToTest ne '' && $eutilToTest ne $sg->{eutil};
+        return 0 if $dtdToTest ne '' && $dtdToTest ne $sg->{dtd};
+        return 0 if $testIdx && !$sg->{idx};
+
+
+        # If one of the sample-specific selectors has been given, and there are no samples
+        # under this group that match any of the other criteria, then skip
+        if ($dbToTest || $sampleToTest || $testError) {
+            my $groupsamples = $sg->{samples};
+            foreach my $s (@$groupsamples) {
+                if ( $self->filterMatch($s) ) {
+                    return 1;
+                }
+            }
+            return 0;
+        }
+
+        return 1;
+    }
+    else {
+        my $s = $s_or_sg;
+        my $matchDb = !$dbToTest || $s->{db} eq $dbToTest;
+        my $matchSample = !$sampleToTest || $s->{name} eq $sampleToTest;
+        my $matchError = !$testError || $s->{'error-type'};
+        return $matchDb && $matchSample && $matchError;
+    }
+}
+
+
+
+#-----------------------------------------------------------------------------
+# FIXME:  Is this still needed?
 # This changes the current step, as well as the pointers to both the sample (s)
 # and the sample group (sg).  If $s_or_sg has an 'sg' member, then we know that
 # it is a sample object, and we use that 'sg' member to get the sample group.
@@ -164,10 +294,10 @@ sub _setCurrentStep {
     $self->{log}->message('## Step ' . $step);
 
 }
+
 #-----------------------------------------------------------------------------
-# Compute the location, and (optionally) retrieve a local copy of the DTD for a
-# samplegroup.  If --dtd-doctype was given, then this function does nothing;
-# everything is deferred to later, when an instance document is fetched.
+# Compute the location, and retrieve a local copy of the DTD for a
+# samplegroup.
 #
 # This function encapsulates information about where the DTDs are for each type
 # of Eutility.
@@ -187,10 +317,15 @@ sub _setCurrentStep {
 #
 
 sub fetchDtd {
-    my ($self, $sg, $do, $dtdRemote, $tld, $dtdSvn, $dtdDoctype, $dtdOldUrl, $dtdLoc) = @_;
-    $self->_setCurrentStep('fetch-dtd', $sg);
+    my ($self, $sg) = @_;
+    #$self->_setCurrentStep('fetch-dtd', $sg);
+    my $opts = $self->{opts};
+    my $tld = $opts->{tld};
+    my $dtdOldUrl = $opts->{'dtd-oldurl'};
+    my $dtdDoctype = $opts->{'dtd-doctype'};
+    my $dtdSvn = $opts->{'dtd-svn'};
+    my $dtdLoc = $opts->{'dtd-loc'};
 
-    return 1 if $dtdDoctype;  # Nothing to do.
 
 
     my $dtd = $sg->{dtd};
@@ -223,14 +358,13 @@ sub fetchDtd {
                 my $dest = "out/$dtd";
                 $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $dtdpath;
                 $sg->{'dtd-path'} = $dest;
-                if ($do) {
-                    $self->message("Fetching $dtdpath");
-                    my $cmd = "curl --fail --silent --output $dest $dtdpath > /dev/null 2>&1";
-                    my $status = system $cmd;
-                    if ($status != 0) {
-                        $self->failedCmd($status, $cmd);
-                        return 0;
-                    }
+
+                $self->message("Fetching $dtdpath");
+                my $cmd = "curl --fail --silent --output $dest $dtdpath > /dev/null 2>&1";
+                my $status = system $cmd;
+                if ($status != 0) {
+                    $self->failedCmd($status, $cmd);
+                    return 0;
                 }
                 return 1;
             }
@@ -262,7 +396,7 @@ sub fetchDtd {
             $dtdSystemId = $eutilsDtdBase . $dtd;
         }
 
-        return $self->downloadDtd($sg, $do, $dtdSystemId, $tld, $dtdRemote);
+        return $self->downloadDtd($sg, $dtdSystemId, $tld);
     }
 
     # User specified a local-filesystem location for the DTD explicitly (this can only
@@ -276,16 +410,15 @@ sub fetchDtd {
 
         # Here is the local copy.  We will copy it to 'out' if $dtdRemote is true,
         # otherwise use the given path
-        my $dtdPath = $dtdRemote ? $dtdLoc : "out/" . $sg->{dtd};
+        my $dtdPath = $sg->{dtd};
         $sg->{'dtd-path'} = $dtdPath;
 
-        if ($do && !$dtdRemote) {
-            $self->message("Fetching $dtdLoc -> $dtdPath");
-            if (!copy($dtdLoc, $dtdPath)) {
-                $self->failed("copying $dtdLoc -> $dtdPath");
-                return 0;
-            }
+        $self->message("Fetching $dtdLoc -> $dtdPath");
+        if (!copy($dtdLoc, $dtdPath)) {
+            $self->failed("copying $dtdLoc -> $dtdPath");
+            return 0;
         }
+
         return 1;
     }
 
@@ -315,7 +448,7 @@ sub fetchDtd {
         }
 
         # Fetch the DTD
-        return $self->downloadDtd($sg, $do, $dtdSystemId, $tld, $dtdRemote);
+        return $self->downloadDtd($sg, $dtdSystemId, $tld);
     }
 }
 

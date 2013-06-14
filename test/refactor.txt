@@ -1,0 +1,35 @@
+Give up on the idea of a pipeline.  Every pipeline will be implemented as a custom script.
+Encapsulate whatever shared stuff you can into EutilsTest.pm, including step-specific stuff.
+
+
+For each step
+  - There should be a command-line utility with the name <step>.pl
+  - That utility, be default, should execute its step with --verbose and halt-on-error
+  - There should be a perl module <cc-step>.pm, where <cc-step> is the camel cased version of the step
+  - The perl module should have a function doStep() that:
+      - Takes parameters:
+          - $t - the test run
+          - $sg or $s
+          - NOT $do
+          - other step-specific params
+      - $testRun->setCurrentStep(<step>, $s or $sg)
+      - Returns 1 if successful, 0 if there was a failure
+      - Logs errors and messages using $testRun->log()
+      - Stores state information in $sg or $s
+  - The perl module should have another function that:
+      - Returns a list of options.
+  - Should be able to run the perl script by itself, and it works great, and with --help, prints
+    out list of just those options that apply
+
+  - Future:
+      - Should define its usage data, including step-specific options, in a standard way,
+        that can be extracted somehow.
+
+
+testeutils.pl becomes the master "pipeline" script (same function it has now)
+  - Pipelines should be defined in yaml or something.
+
+EutilsTest.pm defines:
+  - Routine for reading testcases.xml
+  - All common options.
+

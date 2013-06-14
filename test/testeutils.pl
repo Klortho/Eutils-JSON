@@ -10,15 +10,14 @@ use warnings;
 use EutilsTest;
 use Data::Dumper;
 use Getopt::Long;
-use File::Path qw(make_path);
 use File::Which;
 use File::Copy;
 
 
 # Create a new test object, and read in the testcases.xml file
 my $t = EutilsTest->new();
-my $testcases = $t->{testcases};
-#print Dumper($testcases);
+my $samplegroups = $t->{samplegroups};
+#print Dumper($samplegroups);
 
 my %Opts;
 my $ok = GetOptions(\%Opts,
@@ -34,11 +33,6 @@ my $ok = GetOptions(\%Opts,
     "idx",
     "error",
     @EutilsTest::steps,
-    "dtd-remote",
-    "dtd-svn",
-    "dtd-oldurl",
-    "dtd-doctype",
-    "dtd-loc:s",
     "xml-docsumtool:s",
     "dbinfo:s",
     "build:s",
@@ -57,34 +51,11 @@ Usage:  testeutils.pl [options] {step / pipeline}
 This script tests EUtilities, using some subset of the test cases defined
 in the samples.xml file.  At least one step or pipeline must be given.
 
-General options:
-  -h|-? - help
-  -q|--quiet - turn off most messages
-  -c|--continue-on-error - keep going even if there is an error (default is to
-    stop)
-  --reset - erase the 'out' directory first
-  --tld=<tld> - Substitute a different top-level-domain in all URLs.
-    I.e., for DTDs:  www.ncbi -> <tld>.ncbi; for FCGIs:  eutils.ncbi ->
-    <tld>.ncbi
-
-Options to select the sample(s) from the samples.xml file to test (these will
-be ANDed together):
-  --eutil=<eutil> - test samples corresponding only to the given eutility
-  --db=<db> - test samples corresponding to the given database
-  --dtd=<dtd> - test only those samples correponding to the given DTD (as given
-    in samples.xml)
-  --sample=<sample-name> - test only the indicated sample
-  --idx - test only ESummary with the IDX databases
-  --error - test only the error cases
-
 Options to control the steps to test.  At least one step, or at least one
 pipeline, must be given.
 ) .
 (join("", map { "  --$_\n" } @EutilsTest::steps)) .
 q(
-Options related to the DTD.  In general, the script "knows" where to get the
-DTD, and doesn't use the actual doctype declaration from the instance documents.
-But, that default behavior can be overridden.
   --dtd-remote - Leave the DTD on the remote server, rather than copying it
     locally.
   --dtd-svn - Get the DTDs from svn instead of the system identifier.  Only
@@ -198,36 +169,9 @@ foreach my $k (keys %$pipeOpts) {
 #print Dumper \%Opts;
 
 
-$t->{verbose} = !$Opts{quiet};
-my $log = $t->{log} = Logger->new($t->{verbose});
 
-$t->{coe} = $Opts{'continue-on-error'};
-my $tld = $Opts{'tld'};
 
-my $eutilToTest = $Opts{'eutil'} || '';
-my $dbToTest = $Opts{'db'} || '';
-my $dtdToTest = $Opts{'dtd'} || '';
-my $sampleToTest = $Opts{'sample'} || '';
-my $testIdx = $Opts{'idx'} || 0;
-my $testError = $Opts{'error'} || 0;
 
-my $doFetchDtd = $Opts{'fetch-dtd'};
-my $doFetchXml = $Opts{'fetch-xml'};
-my $doGenerateXml = $Opts{'generate-xml'};
-my $doValidateXml = $Opts{'validate-xml'};
-my $doFetchJson = $Opts{'fetch-json'};
-my $doGenerateXslt = $Opts{'generate-xslt'};
-my $doGenerateJson = $Opts{'generate-json'};
-my $doValidateJson = $Opts{'validate-json'};
-
-my $dtdRemote = $Opts{'dtd-remote'} || 0;
-my $dtdSvn = $Opts{'dtd-svn'} || 0;
-my $dtdOldUrl = $Opts{'dtd-oldurl'} || 0;
-my $dtdDoctype = $Opts{'dtd-doctype'} || 0;
-my $dtdLoc = $Opts{'dtd-loc'} || '';
-if ($dtdSvn && ($dtdRemote || $dtdOldUrl || $dtdDoctype)) {
-    die "Can't use --dtd-svn with any other DTD option.";
-}
 my $xmlDocsumTool = $Opts{'xml-docsumtool'};
 my $dbinfo = $Opts{'dbinfo'};
 my $build = $Opts{'build'};
@@ -235,10 +179,6 @@ my $xsltLoc = $Opts{'xslt-loc'};
 
 # Set things up
 
-make_path('out');
-if ($Opts{reset}) {
-    unlink glob "out/*";
-}
 
 if (!$Opts{quiet}) {
     if ($pipeline) {
@@ -250,32 +190,8 @@ if (!$Opts{quiet}) {
 }
 
 # Now run the tests, for each sample group, ...
-foreach my $sg (@$testcases) {
+foreach my $sg (@$samplegroups) {
 
-    # See if we can skip this sample group
-    my $eutil = $sg->{eutil};
-    next if $eutilToTest ne '' && $eutilToTest ne $eutil;
-
-    my $dtd = $sg->{dtd};
-    next if $dtdToTest ne '' && $dtdToTest ne $dtd;
-
-    my $idx = $sg->{idx};
-    next if $testIdx && !$idx;
-
-    my $groupsamples = $sg->{samples};
-
-    # If one of the sample-specific selectors has been given, and there are no samples
-    # under this group that match any of the other criteria, then skip
-    if ($dbToTest || $sampleToTest || $testError) {
-        my $doTest = 0;
-        foreach my $s (@$groupsamples) {
-            if ( sampleMatch($s) ) {
-                $doTest = 1;
-                last;
-            }
-        }
-        next if !$doTest;
-    }
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     next if !$t->fetchDtd($sg, $doFetchDtd, $dtdRemote, $tld, $dtdSvn,
@@ -345,7 +261,7 @@ foreach my $sg (@$testcases) {
 # Summary pass / fail report
 if ($t->{failures}) {
     print $t->{failures} . " failures:\n";
-    foreach my $sg (@$testcases) {
+    foreach my $sg (@$samplegroups) {
         if ($sg->{failure}) {
             print "  " . $sg->{dtd} . ": ";
             my @fs = map { $sg->{failure}{$_} ? $_ : () } @EutilsTest::steps;
@@ -357,19 +273,5 @@ else {
     print "All tests passed!\n";
 }
 exit !!$t->{failures};
-
-#-----------------------------------------------------------------------
-# sampleMatch($s)
-# This subroutine returns true if the sample matches the selection criteria
-# given by the user in the command-line arguments.
-
-sub sampleMatch {
-    my $s = shift;
-    my $matchDb = !$dbToTest || $s->{db} eq $dbToTest;
-    my $matchSample = !$sampleToTest || $s->{name} eq $sampleToTest;
-    my $matchError = !$testError || $s->{'error-type'};
-    return $matchDb && $matchSample && $matchError;
-}
-
 
 
