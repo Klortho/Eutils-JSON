@@ -58,6 +58,7 @@ package EutilsTest;
 
 use strict;
 use warnings;
+use DtdAnalyzer;
 use XML::LibXML;
 use File::Temp qw/ :POSIX /;
 use Logger;
@@ -625,11 +626,11 @@ sub generateXslt {
         # Run the utility, and capture both standard out and standard error into a
         # file
         my $outfile = 'out/dtd2xml2json.out';
-        my $cmd = "dtd2xml2json $dtdSrc $jsonXslPath > $outfile 2>&1";
+        my $dtdAnalyzer = DtdAnalyzer->instance();
         $self->message("Creating XSLT $jsonXslPath");
-        my $status = system $cmd;
+        my $status = $dtdAnalyzer->dtd2xml2json($dtdSrc, $jsonXslPath, $outfile);
         if ($status != 0) {
-            $self->failedCmd($status, $cmd);
+            $self->failed("Failed:  '$status'");
             return 0;
         }
 

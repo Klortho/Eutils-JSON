@@ -240,18 +240,6 @@ if ($Opts{reset}) {
     unlink glob "out/*";
 }
 
-# Get the XSLT base stylesheet, xml2json.xsl, into the out directory
-my $ddir = which('dtd2xml2json');
-if (!$ddir) {
-    die "Can't find dtd2xml2json in my PATH.  That's not good.";
-}
-$ddir =~ s/^(.*)\/.*$/$1\//;
-my $basexslt = $ddir . 'xslt/xml2json.xsl';
-if (!-f $basexslt) {
-    die "Can't find the base XSLT file $basexslt.  That's bad.";
-}
-copy($basexslt, 'out');
-
 if (!$Opts{quiet}) {
     if ($pipeline) {
         print "Executing pipeline '$pipeline'\n";
@@ -260,7 +248,6 @@ if (!$Opts{quiet}) {
         print "Executing discrete steps\n";
     }
 }
-
 
 # Now run the tests, for each sample group, ...
 foreach my $sg (@$testcases) {
