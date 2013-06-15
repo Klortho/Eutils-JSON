@@ -11,13 +11,14 @@ package EutilsTest;
 #       'sg' => $sg,
 #       's' => $s,
 #   },
+#   'total-tests' => 100,
 #   'failures' => 0,        # count of the total number of failures
 #
 #   'samplegroups' => [
 #     { # One sample group
 #       # Data from the XML file
 #       isa => 'samplegroup',
-#       dtd => 'eInfo_020511.dtd',
+#       dtd => 'einfo.dtd',
 #       idx => 0,
 #       eutil => 'einfo',
 #
@@ -69,8 +70,10 @@ use Logger;
 use File::Copy;
 use Getopt::Long;
 use File::Path qw(make_path);
+use LWP::UserAgent;
 
-#use Data::Dumper;
+use Data::Dumper;
+my $ua = LWP::UserAgent->new;
 
 
 my @commonOpts = (
@@ -111,14 +114,19 @@ be ANDed together):
 
 #-------------------------------------------------------------------------
 # Function to process command line options. This prints out the usage message
-# and exits, if the help option was given.
+# and exits, if the help option was given.  This should be called explicitly
+# from the script, after it initializes its "step-specific" option array, but
+# before instantiating the EutilsTest object.
 
 sub getOptions {
     my ($stepOpts, $usage) = @_;
     my @options = (@$stepOpts, @commonOpts);
 
     my %Opts;
-    my $ok = GetOptions(\%Opts, @options);
+    # Strict:  die if there's anything wrong with the command line.  That's better
+    # than perhaps running tons of tests which would bury the error.
+    die if !GetOptions(\%Opts, @options);
+
 
     # Set defaults for the common options.  This prevents a class of runtime
     # errors when trying to access uninitialized hash elements
@@ -171,6 +179,8 @@ sub new {
         'current-step' => {
             'step' => 'none',
         },
+        'total-tests' => 0,
+        'failures' => 0,
     };
     bless $self, $class;
 
@@ -229,6 +239,18 @@ sub _readTestCases {
 }
 
 #-----------------------------------------------------------------------------
+# $t->findSample($name);
+# Returns the sample with the given name, or undef if not found
+sub findSample {
+    my ($self, $name) = @_;
+    foreach my $sg (@{$self->{samplegroups}}) {
+        foreach my $s (@{$sg->{samples}}) {
+            return $s if $s->{name} eq $name;
+        }
+    }
+    return undef;
+}
+#-----------------------------------------------------------------------------
 # $t->filterMatch($s or $sg)
 # Tests a samplegroup or a sample to see if it matches one of the filter criteria.
 # A true value means yes, we should test it.
@@ -253,7 +275,6 @@ sub filterMatch {
         return 0 if $dtdToTest ne '' && $dtdToTest ne $sg->{dtd};
         return 0 if $testIdx && !$sg->{idx};
 
-
         # If one of the sample-specific selectors has been given, and there are no samples
         # under this group that match any of the other criteria, then skip
         if ($dbToTest || $sampleToTest || $testError) {
@@ -265,7 +286,6 @@ sub filterMatch {
             }
             return 0;
         }
-
         return 1;
     }
     else {
@@ -277,21 +297,29 @@ sub filterMatch {
     }
 }
 
-
-
 #-----------------------------------------------------------------------------
-# FIXME:  Is this still needed?
 # This changes the current step, as well as the pointers to both the sample (s)
-# and the sample group (sg).  If $s_or_sg has an 'sg' member, then we know that
-# it is a sample object, and we use that 'sg' member to get the sample group.
-# If $s_or_sg doesn't have an 'sg' member, then it is a sample group object.
+# and the sample group (sg).
+# It also increments the total-tests counter, so it should only be called after
+# filterMatch, to make sure this is a real test on a real sample or samplegroup.
 
 sub _setCurrentStep {
     my ($self, $step, $s_or_sg) = @_;
+    my $testNum = $self->{'total-tests'}++;
     $self->{'current-step'}{step} = $step;
-    $self->{'current-step'}{sg} = exists $s_or_sg->{sg} ? $s_or_sg->{sg} : $s_or_sg;
-    $self->{'current-step'}{s} = exists $s_or_sg->{sg} ? $s_or_sg : undef;
-    $self->{log}->message('## Step ' . $step);
+
+    my $smsg;
+    if ($s_or_sg->{isa} eq 'samplegroup') {
+        $self->{'current-step'}{sg} = $s_or_sg;
+        $self->{'current-step'}{s} = undef;
+        $smsg = 'samplegroup ' . $s_or_sg->{dtd};
+    }
+    else {
+        $self->{'current-step'}{sg} = $s_or_sg->{sg};
+        $self->{'current-step'}{s} = $s_or_sg;
+        $smsg = 'sample ' . $s_or_sg->{name};
+    }
+    $self->{log}->message("TEST #$testNum: $step: " . $smsg);
 
 }
 
@@ -318,86 +346,122 @@ sub _setCurrentStep {
 
 sub fetchDtd {
     my ($self, $sg) = @_;
-    #$self->_setCurrentStep('fetch-dtd', $sg);
+    return if !$self->filterMatch($sg);
+
+    $self->_setCurrentStep('fetch-dtd', $sg);
     my $opts = $self->{opts};
     my $tld = $opts->{tld};
-    my $dtdOldUrl = $opts->{'dtd-oldurl'};
+    my $dtdNewUrl = $opts->{'dtd-newurl'};
     my $dtdDoctype = $opts->{'dtd-doctype'};
     my $dtdSvn = $opts->{'dtd-svn'};
     my $dtdLoc = $opts->{'dtd-loc'};
-
-
 
     my $dtd = $sg->{dtd};
     my $idx = $sg->{idx};
     my $eutil = $sg->{eutil};
     my $dtdpath;
 
-    # If the --dtd-svn option was given, then this better be an esummary idx samplegroup,
-    # otherwise we have to fail.
-    if ($dtdSvn) {
+    if ($dtdNewUrl || $dtdDoctype) {
+        if ($dtdNewUrl) {
+            $self->message("Fetching DTD based on new URL scheme; requires getting a sample XML");
+        }
+        else {
+            $self->message("Fetching DTD based on doctype of a sample XML");
+        }
+
+        # Fetch the first XML in the set, or, if --sample was given, then use that.
+        my $sampleToTest = $opts->{sample};
+        my $s = $sampleToTest ? $self->findSample($sampleToTest)
+                              : $sg->{samples}[0];
+        $self->_fetchXml($s);
+        my $firstXml = $s->{'local-xml'};
+
+        # Get the public and system ids from the doctype
+        my $ids = getDoctype($firstXml);
+        if (!$ids) {
+            $self->failed("Couldn't read doctype declaration from $firstXml");
+        }
+
+        # Store these results
+        my $dtdPublicId = $sg->{'dtd-public-id'}
+            = exists $ids->{'public'} ? $ids->{'public'} : '';
+        my $dtdSystemId = $sg->{'dtd-system-id'} = $ids->{'system'};
+
+        if ($dtdNewUrl) {
+            # Validate the form of the identifiers
+            # public:  e.g.  -//NLM//DTD einfo YYYYMMDD//EN
+            if ($dtdPublicId !~ m{-//NLM//DTD [a-z]+ \d{8}//EN}) {
+                $self->failed("DTD public identifier '$dtdPublicId' doesn't match expected form");
+            }
+            # system:  e.g.  http://eutils.ncbi.nlm.nih.gov/dtd/YYYYMMDD/einfo.dtd
+            if ($dtdSystemId !~ m{http://eutils.ncbi.nlm.nih.gov/dtd/\d{8}/[a-z]+\.dtd}) {
+                $self->failed("DTD system identifier '$dtdSystemId' doesn't match expected form");
+            }
+        }
+
+        # Fetch the DTD
+        return $self->downloadDtd($sg, $dtdSystemId, $tld);
+    }
+
+
+    elsif ($dtdSvn) {
         # We won't try to compute/verify the public identifier.
         $sg->{'dtd-public-id'} = '';
 
-        if ($eutil eq 'esummary' && $idx) {
-            # Get the database from the name of the dtd
-            if ($dtd !~ /esummary_([a-z]+)\.dtd/) {
-                $self->failed("Unexpected DTD name for esummary idx database:  $dtd");
-                return 0;
-            }
-            my $db = $1;
-
-            # See if the DTD exists on the filesystem
-            $dtdpath = "$idxextbase/$db/support/esummary_$db.dtd";
-            if (-f $dtdpath) {
-                $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $sg->{'dtd-path'} = $dtdpath;
-                return 1;
-            }
-            else {
-                # Assume $dtdpath is a URL, and fetch it with curl
-                my $dest = "out/$dtd";
-                $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $dtdpath;
-                $sg->{'dtd-path'} = $dest;
-
-                $self->message("Fetching $dtdpath");
-                my $cmd = "curl --fail --silent --output $dest $dtdpath > /dev/null 2>&1";
-                my $status = system $cmd;
-                if ($status != 0) {
-                    $self->failedCmd($status, $cmd);
-                    return 0;
-                }
-                return 1;
-            }
-        }
-        else {
+        # If the --dtd-svn option was given, then this better be an esummary idx samplegroup,
+        # otherwise we have to fail.
+        if ($eutil ne 'esummary' || !$idx) {
             $self->failed(
                 "--dtd-svn was specified, but I don't know where this DTD is in svn:  $dtd");
             return 0;
         }
-    }
 
-    # Not --dtd-svn, we'll compute a normal system identifier URL
-    elsif ($dtdOldUrl) {
-        # For old-style doctype declarations, we won't try to compute/verify the
-        # public identifier.
-        $sg->{'dtd-public-id'} = '';
+        # Get the database from the name of the dtd
+        if ($dtd !~ /esummary_([a-z]+)\.dtd/) {
+            $self->failed("Unexpected DTD name for esummary idx database:  $dtd");
+            return 0;
+        }
+        my $db = $1;
 
-        # Compute the official system identifier (not necessarily the same as
-        # the URL that we'll use to get the DTD.
-        my $dtdSystemId;
-
-        if ($eutil eq 'esummary') {
-            # Prefix with a directory, and change to old-style name, capital S in "eSummary"
-            my $proddtd = $dtd;
-            $proddtd =~ s/esummary/eSummary/;
-            $dtdSystemId = $eutilsDtdBase . 'eSummaryDTD/' . $proddtd;
+        # See if the DTD exists on the filesystem
+        $dtdpath = "$idxextbase/$db/support/esummary_$db.dtd";
+        if (-f $dtdpath) {
+            $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $sg->{'dtd-path'} = $dtdpath;
+            return 1;
         }
         else {
-            $dtdSystemId = $eutilsDtdBase . $dtd;
-        }
+            # Assume $dtdpath is a URL, and fetch it
+            my $dest = "out/$dtd";
+            $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $dtdpath;
+            $sg->{'dtd-path'} = $dest;
 
-        return $self->downloadDtd($sg, $dtdSystemId, $tld);
+            $self->message("Fetching $dtdpath");
+            return $self->httpGetToFile($dtdpath, $dest);
+        }
     }
+
+    # This one is no longer used
+#    elsif ($dtdOldUrl) {
+#        # For old-style doctype declarations, we won't try to compute/verify the
+#        # public identifier.
+#        $sg->{'dtd-public-id'} = '';
+#
+#        # Compute the official system identifier (not necessarily the same as
+#        # the URL that we'll use to get the DTD.
+#        my $dtdSystemId;
+#
+#        if ($eutil eq 'esummary') {
+#            # Prefix with a directory, and change to old-style name, capital S in "eSummary"
+#            my $proddtd = $dtd;
+#            $proddtd =~ s/esummary/eSummary/;
+#            $dtdSystemId = $eutilsDtdBase . 'eSummaryDTD/' . $proddtd;
+#        }
+#        else {
+#            $dtdSystemId = $eutilsDtdBase . $dtd;
+#        }
+#
+#        return $self->downloadDtd($sg, $dtdSystemId, $tld);
+#    }
 
     # User specified a local-filesystem location for the DTD explicitly (this can only
     # be used when testing a single samplegroup, but we don't enforce that -- it is up
@@ -422,34 +486,6 @@ sub fetchDtd {
         return 1;
     }
 
-    else {
-        # Fetch the first XML in the set
-        my $s = $sg->{samples}[0];
-        $self->_fetchXml($s, 1, $tld);
-        my $firstXml = $s->{'local-xml'};
-        my $ids = getDoctype($firstXml);
-        #print "ids:  " . Dumper($ids) . "\n\n";
-        #exit 0;
-        if (!$ids) {
-            $self->failed("Couldn't read doctype declaration from $firstXml");
-        }
-
-        # Store these results
-        my $dtdPublicId = $sg->{'dtd-public-id'}
-            = exists $ids->{'public'} ? $ids->{'public'} : '';
-        my $dtdSystemId = $sg->{'dtd-system-id'} = $ids->{'system'};
-
-        # Validate the form of the identifiers
-        if ($dtdPublicId !~ m{-//NLM//DTD [a-z]+ \d{8}//EN}) {
-            $self->failed("DTD public identifier '$dtdPublicId' doesn't match expected form");
-        }
-        if ($dtdSystemId !~ m{http://eutils.ncbi.nlm.nih.gov/dtd/\d{8}/[a-z]+\.dtd}) {
-            $self->failed("DTD system identifier '$dtdSystemId' doesn't match expected form");
-        }
-
-        # Fetch the DTD
-        return $self->downloadDtd($sg, $dtdSystemId, $tld);
-    }
 }
 
 #-------------------------------------------------------------
@@ -518,17 +554,18 @@ sub fetchXml {
     # as part of fetchDtd)
     return 1 if ($s->{'local-xml'});
 
-    return $self->_fetchXml($s, $do, $tld);
+    return $self->_fetchXml($s);
 }
 
 #-------------------------------------------------------------
 # This implements the guts of fetchXml.  It is reused by that step as
-# well as by fetchDtd, which needs to grab an XML instance document in
+# well as by fetchDtd, which sometimes needs to grab an XML instance document in
 # order to discover the system identifier.
-
+# Returns 1 on success, 0 on failure.
 
 sub _fetchXml {
-    my ($self, $s, $do, $tld) = @_;
+    my ($self, $s) = @_;
+    my $tld = $self->{opts}{tld};
 
     my $localXml = 'out/' . $s->{name} . ".xml";   # final output filename
     $s->{'local-xml'} = $localXml;
@@ -541,20 +578,30 @@ sub _fetchXml {
     }
     $s->{'real-xml-url'} = $realUrl;
 
-    # For inserting into the system command, escape ampersands:
-    my $cmdUrl = $realUrl;
-    $cmdUrl =~ s/\&/\\\&/g;
+    $self->message("Fetching $realUrl => $localXml");
+    return $self->httpGetToFile($realUrl, $localXml);
+}
 
-    if ($do) {
-        $self->message("Fetching $realUrl => $localXml");
-        my $cmd = "curl --fail --silent --output $localXml $cmdUrl";
-        my $status = system $cmd;
-        if ($status != 0) {
-            $self->failedCmd($status, $cmd);
-            return 0;
-        }
-    }
+#-------------------------------------------------------------
+# Note that if there's a problem opening the local file for writing, that's
+# a fatal error.
+# Returns 1 on success, 0 on failure.
+
+sub httpGetToFile {
+    my ($self, $url, $localFile) = @_;
+
+    my $req = HTTP::Request->new(GET => $url);
+    my $res = $ua->request($req);
+    if ($res->is_success) {
+        open(my $OUT, ">", $localFile) or die("Can't open $localFile:  $!");
+    print $OUT $res->content;
+    close $OUT;
     return 1;
+    }
+    else {
+        $self->failed("HTTP GET '$url':  " . $res->status_line);
+        return 0;
+    }
 }
 
 #-------------------------------------------------------------
@@ -563,7 +610,7 @@ sub _fetchXml {
 # This returns 1 if successful, or 0 if there was a failure.
 
 sub downloadDtd {
-    my ($self, $sg, $do, $dtdSystemId, $tld, $dtdRemote) = @_;
+    my ($self, $sg, $dtdSystemId, $tld, $dtdRemote) = @_;
 
     # Now the URL that we'll use to actually get it.
     my $dtdUrl = $dtdSystemId;
@@ -577,14 +624,15 @@ sub downloadDtd {
     $sg->{'dtd-system-id'} = $dtdSystemId;
     $sg->{'dtd-url'} = $dtdUrl;
     $sg->{'dtd-path'} = $dtdPath;
-    if ($do && !$dtdRemote) {
+    if (!$dtdRemote) {
         $self->message("Fetching $dtdUrl -> $dtdPath");
-        my $cmd = "curl --fail --silent --output $dtdPath $dtdUrl > /dev/null 2>&1";
-        my $status = system $cmd;
-        if ($status != 0) {
-            $self->failedCmd($status, $cmd);
-            return 0;
-        }
+        return $self->httpGetToFile($dtdUrl, $dtdPath);
+#        my $cmd = "curl --fail --silent --output $dtdPath $dtdUrl > /dev/null 2>&1";
+#        my $status = system $cmd;
+#        if ($status != 0) {
+#            $self->failedCmd($status, $cmd);
+#            return 0;
+#        }
     }
     return 1;
 }
@@ -838,7 +886,7 @@ sub generateJson {
 # This function returns 1 if successful, or 0 if there is a failure.
 
 sub fetchJson {
-    my ($self, $s, $do, $tld) = @_;
+    my ($self, $s, $tld) = @_;
     $self->_setCurrentStep('fetch-json', $s);
 
     my $jsonFile = 'out/' . $s->{name} . ".json";   # final output filename
@@ -858,16 +906,15 @@ sub fetchJson {
     my $cmdUrl = $realUrl;
     $cmdUrl =~ s/\&/\\\&/g;
 
-    if ($do) {
-        $self->message("Fetching $realUrl => $jsonFile");
-        my $cmd = "curl --fail --silent --output $jsonFile $cmdUrl";
-        my $status = system $cmd;
-        if ($status != 0) {
-            $self->failedCmd($status, $cmd);
-            return 0;
-        }
-    }
-    return 1;
+    $self->message("Fetching $realUrl => $jsonFile");
+    return $self->httpGetToFile($cmdUrl, $jsonFile);
+#    my $cmd = "curl --fail --silent --output $jsonFile $cmdUrl";
+#    my $status = system $cmd;
+#    if ($status != 0) {
+#        $self->failedCmd($status, $cmd);
+#        return 0;
+#    }
+#    return 1;
 }
 
 
@@ -992,6 +1039,26 @@ sub recordFailure {
     }
 
     $self->{failures}++;
+}
+
+#------------------------------------------------------------------------
+# Summary pass / fail report
+sub summaryReport {
+    my $self = shift;
+
+    if ($self->{failures}) {
+        print $self->{failures} . " failures:\n";
+        foreach my $sg (@{$self->{samplegroups}}) {
+            if ($sg->{failure}) {
+                print "  " . $sg->{dtd} . ": ";
+                my @fs = map { $sg->{failure}{$_} ? $_ : () } @EutilsTest::steps;
+                print join(", ", @fs) . "\n";
+            }
+        }
+    }
+    else {
+        print "All tests passed!\n";
+    }
 }
 
 1;

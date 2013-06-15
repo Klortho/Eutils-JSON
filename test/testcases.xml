@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testcases>
-  <samplegroup dtd="eInfo_020511.dtd" eutil="einfo" idx='foo'>
+  <samplegroup dtd="einfo.dtd" eutil="einfo" idx='foo'>
     <sample name="einfo">
       <eutils-url>einfo.fcgi</eutils-url>
     </sample>
@@ -12,7 +12,7 @@
     </sample>
   </samplegroup>
 
-  <samplegroup dtd="eSearch_020511.dtd" eutil="esearch">
+  <samplegroup dtd="esearch.dtd" eutil="esearch">
     <sample name="esearch.pubmed" db="pubmed">
       <eutils-url>esearch.fcgi?db=pubmed&amp;term=cancer&amp;reldate=60&amp;datetype=edat&amp;retmax=100&amp;usehistory=y</eutils-url>
     </sample>

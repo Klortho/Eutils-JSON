@@ -12,9 +12,9 @@ use FetchDtd;
 
 # Step-specific options
 my @stepOpts = (
-    "dtd-svn",
-    "dtd-oldurl",
+    "dtd-newurl",
     "dtd-doctype",
+    "dtd-svn",
     "dtd-loc:s",
 );
 
@@ -33,10 +33,10 @@ can be overridden.
 $EutilsTest::commonOptUsage .
 q(
 Options related to the DTD.  These are mutually exclusive.  If none are given,
-then the location of the DTD is computed according to the new scheme.
-  --dtd-oldurl - Use old-style URLs to get the DTDs; prior to the redesign
-    of the system and public identifiers.
-  --dtd-doctype - Don't compute the location of the DTD; instead, use the
+then --dtd-newurl is the default.
+  --dtd-newurl - Get the DTD based on the doctype-decl of a sample XML, while
+    validating that the URI is in the correct form.  This is the default.
+  --dtd-doctype - Same as --dtd-newurl, but doesn't do any checking of the URIs.
     doctype declaration of the first sample in the group
   --dtd-svn - Get the DTDs from svn instead of the system identifier.  Only
     works with --idx.  Can't be used with other --dtd options.
@@ -48,10 +48,23 @@ then the location of the DTD is computed according to the new scheme.
 my $Opts = EutilsTest::getOptions(\@stepOpts, $usage);
 
 # Some options defaults for step-specific options
-$Opts->{'dtd-oldurl'} = 0  if !$Opts->{'dtd-oldurl'};
+$Opts->{'dtd-newurl'} = 0  if !$Opts->{'dtd-newurl'};
 $Opts->{'dtd-doctype'} = 0 if !$Opts->{'dtd-doctype'};
 $Opts->{'dtd-svn'} = 0     if !$Opts->{'dtd-svn'};
 $Opts->{'dtd-loc'} = ''    if !$Opts->{'dtd-loc'};
+
+
+# Verify that no more than one is given
+my $numDtdOpts = ($Opts->{'dtd-newurl'} ? 1 : 0) +
+                 ($Opts->{'dtd-doctype'} ? 1 : 0) +
+                 ($Opts->{'dtd-svn'} ? 1 : 0) +
+                 ($Opts->{'dtd-loc'} ? 1 : 0);
+if ($numDtdOpts == 0) {
+    $Opts->{'dtd-newurl'} = 1;
+}
+elsif ($numDtdOpts > 1) {
+    die "No more than one --dtd option can be given.";
+}
 
 
 #-----------------------------------------------------------------
@@ -72,3 +85,10 @@ foreach my $sg (@$samplegroups) {
     $t->fetchDtd($sg);
 }
 
+# Make sure at least one sample was found
+if ($t->{'total-tests'} == 0) {
+    die "No test cases were found matching your criteria!";
+}
+
+$t->summaryReport();
+exit !!$t->{failures};

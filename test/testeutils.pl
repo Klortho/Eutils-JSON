@@ -177,17 +177,7 @@ my $dbinfo = $Opts{'dbinfo'};
 my $build = $Opts{'build'};
 my $xsltLoc = $Opts{'xslt-loc'};
 
-# Set things up
 
-
-if (!$Opts{quiet}) {
-    if ($pipeline) {
-        print "Executing pipeline '$pipeline'\n";
-    }
-    else {
-        print "Executing discrete steps\n";
-    }
-}
 
 # Now run the tests, for each sample group, ...
 foreach my $sg (@$samplegroups) {
@@ -258,20 +248,5 @@ foreach my $sg (@$samplegroups) {
     $log->undent;
 }
 
-# Summary pass / fail report
-if ($t->{failures}) {
-    print $t->{failures} . " failures:\n";
-    foreach my $sg (@$samplegroups) {
-        if ($sg->{failure}) {
-            print "  " . $sg->{dtd} . ": ";
-            my @fs = map { $sg->{failure}{$_} ? $_ : () } @EutilsTest::steps;
-            print join(", ", @fs) . "\n";
-        }
-    }
-}
-else {
-    print "All tests passed!\n";
-}
-exit !!$t->{failures};
 
 
