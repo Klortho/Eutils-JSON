@@ -472,8 +472,7 @@ sub fetchDtd {
         # Use the filesystem path as the system id and URL (not used, though)
         $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = 'file://' . $dtdLoc;
 
-        # Here is the local copy.  We will copy it to 'out' if $dtdRemote is true,
-        # otherwise use the given path
+        # Here is the local copy.
         my $dtdPath = $sg->{dtd};
         $sg->{'dtd-path'} = $dtdPath;
 

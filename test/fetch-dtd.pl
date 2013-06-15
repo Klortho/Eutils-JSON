@@ -40,8 +40,9 @@ then --dtd-newurl is the default.
     doctype declaration of the first sample in the group
   --dtd-svn - Get the DTDs from svn instead of the system identifier.  Only
     works with --idx.  Can't be used with other --dtd options.
-  --dtd-loc=<full-path-to-dtd> - Specify the location of the DTD explicitly.
-    This should only be used when testing just one samplegroup at a time.
+  --dtd-loc=<path-to-dtd> - Specify the location of the DTD (on the filesystem)
+    explicitly.  This should only be used when testing just one samplegroup at
+    a time.
 );
 
 # Process these options.
