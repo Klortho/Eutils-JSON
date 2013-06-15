@@ -380,6 +380,7 @@ sub fetchDtd {
         my $ids = getDoctype($firstXml);
         if (!$ids) {
             $self->failed("Couldn't read doctype declaration from $firstXml");
+            return 0;  # not much we can do
         }
 
         # Store these results
