@@ -63,18 +63,12 @@ COMING SOON.
 Combines generate-xslt and fetch-xml, and then runs each XML through the newly
 created XSLT to generate JSON.  Then validates that JSON.
 
-### qa-monitor.pl
+### qa-test.pl
 
 COMING SOON.
 
-Combines validate-xml with validate-json.
-
-### qa-release.pl
-
-COMING SOON.
-
-Same as qa-monitor, but uses the "qa" tld.
-
+Combines validate-xml with validate-json.  Also has a command line switch to
+run it against the qa domain.
 
 ## Contents of this directory
 
