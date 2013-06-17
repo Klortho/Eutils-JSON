@@ -3,7 +3,7 @@
 ## Installing
 
 This should be installed on a Unix system that has the basic tools
-`perl`, `curl`, and `xmllint` in your PATH.
+`perl` and `xmllint` in your PATH.
 
 If you want to be able to generate the XML-to-JSON XSLT files and to
 generate JSON output from those, then
@@ -13,68 +13,65 @@ and [xsltproc](http://xmlsoft.org/XSLT/xsltproc2.html).
 To validate the JSON output (either generated, or from the Eutilities)
 you need [jsonlint](https://github.com/zaach/jsonlint).
 
+## The test cases
+
+There are several different test scripts here, that all use the same
+set of test cases, that are defined in the testcases.xml file.  This file
+contains a list of \<samplegroup>s, which, in turn, each contains
+a list of \<sample>s.  Each samplegroup corresponds to one independent DTD,
+and each sample corresponds to one particular EUtilities request that should
+return a response using that DTD.
+
 ## Running the tests
 
-The test script `testeutils.pl` should be run from the same directory in
-which it resides.  It needs write access to that directory, since it puts
-generated files into the `out` subdirectory there.
+Run any of the test scripts with `-?` to see all the option available.
+Below is a brief summary of what each one does.
 
-Enter the following to get the list of command line options:
+### fetch-dtd.pl
 
-```bash
-./testeutils.pl -?
-```
+Fetches the DTD for each of the samplegroups.  In order to do this, it has
+to first fetch the first sample and examine its doctype declaration.  It
+verifies that the system and public identifiers used in that sample
+correspond to the standard forms for these.
+
+### fetch-xml.pl
+
+This merely fetches all the XML versions of all of the samples, without
+doing any validation.
+
+### validate-xml.pl
+
+This script fetches the DTD for each samplegroup, then fetches the XML for
+each individual sample, and then validates the XML against the DTD.
+
+### generate-xslt.pl
+
+Fetches the DTD for each samplegroup, and then uses the DtdAnalyzer utility
+to create an XML-to-JSON transformation stylesheet.
+
+
 
 ## Contents of this directory
 
 Here is a list of some of the files and scripts, and what they do.
 
-* `testeutils.pl` - Main all-in-one test script
+* `*.pl` - test scripts, as described above
+* `testeutils.pl` - *Deprecated*
 * `EutilsTest.pm` - Perl module that implements most of the functionality
 * `Logger.pm` - Logs messages
-* `samples.xml` - Latest list of all of the test cases we'll use
-* `catalog.xml` - OASIS catalog file.  This allows you to use local copies
-  of all DTDs with all of the tools.  This must only be used with --dtd-remote.
-  **This functionality not implemented yet.**
+* `testcases.xml` - Latest list of all of the test cases we'll use
 
-These are deprecated and will be replaced eventually:
-
-* `GenEsummaryDtds.pl` - Auto-generates all of the eSummary DTDs from the cidx
-  utility, and then fixes some known errors in them.
-* `GetRandomIds.pl` - throw-away script to compile lists of random IDs for each
-  of the available databases.  The output of this is XML, suitable for merging
-  into `samples.xml`.
-
-## Steps
-
-Enter `testeutils.pl -?` to get the list of defined steps.
-
-## Pipelines
-
-The test script does nothing by default.  You have to specify at least one step
-or at least one pipeline.
-
-A pipeline is really just a fixed set of command-line options.  They can be combined
-with other options, but the result will always be the superset (there's no way to
-"unset" a pipeline option.)  The following pipelines are defined:
 
 ## To do:
 
 These need to be done
 
-- Add a check to verify that the system and public identifiers in the
-  instance documents are correct.  All the ones in a given sample group
-  should be the same.
+- Add a check in validate-xml to verify that the system and public identifiers in the
+  instance documents are correct (code is commented out in fetch-dtd).  Also, all the
+  ones in a given sample group should be the same.
 
-- Enable it to use local copies of DTDs, instead of fetching them from the
-  server.  This should be implemented with a catalog file.
-  There is already a catalog.xml file in the
-  directory.  The catalog should use prefixes, instead of calling all the DTDs out explicitly.
-  This can only be used with --dtd-remote, because `curl`, that copies down all the
-  DTDs into a local directory, doens't know how to use a catalog
-    - Change the catalog so that it expects all dtds in a dtd/ subdirectory
-    - Change the curl dtd-downloading functionality so that it downloads into
-      dtd/..., same as what the catalog expects.
+- Add (back) the --dtd-remote option for (for example) validate-xml.pl.  This
+  would cause it to skip the fetch-dtd step.
 
 - CIDX in ergatis use case:
     - It should also be able to use JSON XSLTs that were already generated.
@@ -84,13 +81,9 @@ These need to be done
 
 These are "nice to have" improvements:
 
-- Combine recordFailure with $log->error.  Also implement halt-on-error there.
-
 - use LibXML for XML validation
 
 - use LibXSLT for the transformation
-
-- use LWP instead of curl
 
 - Write a custom json parser and jsonlint.
 
@@ -100,6 +93,4 @@ These are "nice to have" improvements:
 
 - Include a 'generate-dtd' step that generates CIDX DTDs from Max's tool.
   It will replace GenEsummaryDtds.pl
-
-- Be able to configure pipelines in an external (yaml or xml) file.
 

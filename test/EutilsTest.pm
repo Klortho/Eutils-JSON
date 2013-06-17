@@ -346,23 +346,15 @@ sub fetchDtd {
 
     my $opts = $self->{opts};
     my $tld = $opts->{tld};
-    my $dtdNewUrl = $opts->{'dtd-newurl'};
-    my $dtdDoctype = $opts->{'dtd-doctype'};
     my $dtdSvn = $opts->{'dtd-svn'};
-    my $dtdLoc = $opts->{'dtd-loc'};
 
     my $dtd = $sg->{dtd};
     my $idx = $sg->{idx};
     my $eutil = $sg->{eutil};
     my $dtdpath;
 
-    if ($dtdNewUrl || $dtdDoctype) {
-        if ($dtdNewUrl) {
-            $self->message("Fetching DTD based on new URL scheme; requires getting a sample XML");
-        }
-        else {
-            $self->message("Fetching DTD based on doctype of a sample XML");
-        }
+    if (!$dtdSvn) {
+        $self->message("Fetching DTD, first requires getting a sample XML");
 
         # Fetch the first XML in the set, or, if --sample was given, then use that.
         my $sampleToTest = $opts->{sample};
@@ -383,7 +375,9 @@ sub fetchDtd {
             = exists $ids->{'public'} ? $ids->{'public'} : '';
         my $dtdSystemId = $sg->{'dtd-system-id'} = $ids->{'system'};
 
-        if ($dtdNewUrl) {
+        # FIXME:  The following validates the form of the public and system identifiers.
+        # This should move to the validate-xml step.
+        if (0) {
             # Validate the form of the identifiers
             # public:  e.g.  -//NLM//DTD einfo YYYYMMDD//EN
             if ($dtdPublicId !~ m{-//NLM//DTD [a-z]+ \d{8}//EN}) {
@@ -400,7 +394,7 @@ sub fetchDtd {
     }
 
 
-    elsif ($dtdSvn) {
+    else {
         # We won't try to compute/verify the public identifier.
         $sg->{'dtd-public-id'} = '';
 
@@ -436,27 +430,6 @@ sub fetchDtd {
         }
     }
 
-    # User specified a local-filesystem location for the DTD explicitly (this can only
-    # be used when testing a single samplegroup, but we don't enforce that -- it is up
-    # to the user to make sure.)
-    elsif ($dtdLoc) {
-        # Don't try to compute the public identifier
-        $sg->{'dtd-public-id'} = $sg->{'dtd-system-id'} = '';
-        # Use the filesystem path as the system id and URL (not used, though)
-        $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = 'file://' . $dtdLoc;
-
-        # Here is the local copy.
-        my $dtdPath = $sg->{dtd};
-        $sg->{'dtd-path'} = $dtdPath;
-
-        $self->message("Fetching $dtdLoc -> $dtdPath");
-        if (!copy($dtdLoc, $dtdPath)) {
-            $self->failed("copying $dtdLoc -> $dtdPath");
-            return 0;
-        }
-
-        return 1;
-    }
 }
 
 #-------------------------------------------------------------
@@ -824,13 +797,11 @@ sub generateJson {
 # This function returns 1 if successful, or 0 if there is a failure.
 
 sub fetchJson {
-    my ($self, $s, $tld) = @_;
-    $self->_setCurrentStep('fetch-json', $s);
+    my ($self, $s) = @_;
+    my $tld = $self->{tld};
 
     my $jsonFile = 'out/' . $s->{name} . ".json";   # final output filename
     $s->{'json-file'} = $jsonFile;
-
-
 
     my $jsonUrl = $eutilsBaseUrl . $s->{"eutils-url"} . '&retmode=json';
     $s->{'json-url'} = $jsonUrl;
@@ -853,18 +824,15 @@ sub fetchJson {
 # Returns 1 if successful; 0 otherwise.
 
 sub validateJson {
-    my ($self, $s, $do) = @_;
-    $self->_setCurrentStep('validate-json', $s);
+    my ($self, $s) = @_;
     my $jsonFile = $s->{'json-file'};
 
-    if ($do) {
-        my $cmd = "jsonlint -q $jsonFile > /dev/null 2>&1";
-        $self->message("Validating $jsonFile");
-        my $status = system $cmd;
-        if ($status != 0) {
-            $self->failedCmd($status, $cmd);
-            return 0;
-        }
+    my $cmd = "jsonlint -q $jsonFile > /dev/null 2>&1";
+    $self->message("Validating $jsonFile");
+    my $status = system $cmd;
+    if ($status != 0) {
+        $self->failedCmd($status, $cmd);
+        return 0;
     }
     return 1;
 }
@@ -949,7 +917,6 @@ sub summaryReport {
     # What is the total number of different test types that have been run?
     my $testNames = $logger->{'test-names'};
     my $numTestTypes = scalar (keys %$testNames);
-    print "Number of different test types = " . $numTestTypes . "\n";
 
     if ($logger->{failures}) {
         print $logger->{failures} . " failures of " . $logger->{'total-tests'} . " tests:\n";
