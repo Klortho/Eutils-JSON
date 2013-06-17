@@ -3,9 +3,21 @@ require 'open-uri'
 require 'nori'
 require 'json'
 
+class Nori
+  class XMLUtilityNode
+
+  def prefixed_attributes
+      attributes.inject({}) do |memo, (key, value)|
+        memo[prefixed_attribute_name(key)] = value
+        memo
+      end
+    end
+  end
+end
+
 app = lambda do |env|
   req = Rack::Request.new(env)
-  parser = Nori.new
+  parser = Nori.new(:advanced_typecasting => true)
   req.update_param('retmode','xml')
   params = Array.new
   req.params().each do |k,v|
