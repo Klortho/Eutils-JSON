@@ -1,5 +1,6 @@
 #!/usr/bin/env perl
-# Script for testing EUtils JSON output - fetch-dtd step.
+# Script for testing EUtils JSON output - validate-xml step.  Assumes the XML has
+# already been fetched.
 
 use strict;
 use warnings;
@@ -12,15 +13,10 @@ use Logger;
 
 # Usage message:  note where common options usage is inserted
 my $usage = q(
-Usage:  fetch-dtd.pl [options]
+Usage:  validate-xml.pl [options]
 
-This script computes the location of, and (optionally) fetches a local copy
-of the DTD for a set of sample groups.  If the DTD is fetched, it will be put
-into the 'out' directory.
-
-In general, the script "knows" where to get the DTD, and doesn't use the actual
-doctype declaration from the instance documents.  But, that default behavior
-can be overridden.
+This script combines fetch-dtd and fetch-xml, and then additionally, validates
+the fetched XML against the fetched DTD.
 ) .
 $EutilsTest::commonOptUsage .
 $FetchDtdOpts::optsUsage;
@@ -30,6 +26,7 @@ my $Opts = EutilsTest::getOptions(\@FetchDtdOpts::opts, $usage);
 
 # Post-process fetch-dtd options
 FetchDtdOpts::processOpts($Opts);
+
 
 #-----------------------------------------------------------------
 # Create a new test object, and read in the testcases.xml file
@@ -45,6 +42,14 @@ foreach my $sg (@$samplegroups) {
     next if !$t->filterMatch($sg);
     $logger->setCurrentTest('fetch-dtd', $sg);
     $t->fetchDtd($sg);
+
+    foreach my $s (@{$sg->{samples}}) {
+        next if !$t->filterMatch($s);
+        $logger->setCurrentTest('fetch-xml', $s);
+        $t->fetchXml($s);
+        $logger->setCurrentTest('validate-xml', $s);
+        $t->validateXml($s);
+    }
 }
 
 # Make sure at least one sample was found

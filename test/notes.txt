@@ -1,0 +1,47 @@
+﻿Goal:  Get this to run against eutilstest, such that we see a list of real failures that
+ought to be fixed.
+
+STEPS
+
+✓ fetch-dtd
+✓ fetch-xml
+    ✓ Get filter params working
+    ✓ Are there any step-specific options?  No
+    ✗ defer: Fix the summary report
+        - Record every message, and a flag for failed,
+          in every samplegroup and sample
+✓ validate-xml
+    - Change it so that the munged XML files is also in the out dir.
+- generate-xslt
+- generate-json
+- validate-json
+
+
+PIPELINES
+
+- pipe-basic
+
+- pipe-qa-monitor
+
+- pipe-qa-release
+
+- pipe-cidx-verify
+
+- pipe-idx-svn
+
+
+
+TO DO
+- Fix
+- Fix logging and "current test"
+    - Requirements:
+        - I want to have the concept of "current test" set outside of EutilsTest.pm
+        - Checking the filter should also happen outside of the EutilsTest step code,
+          like fetchDtd()
+
+    - Pass the logger in from outside
+
+
+
+
+

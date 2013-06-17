@@ -6,13 +6,6 @@ package EutilsTest;
 #   'opts' => { ... command line options ... },
 #   'verbose' => 0,
 #   'coe' => 0,
-#   'current-step' => {   # Info about currently executing step
-#       'step' => 'fetch-xml',
-#       'sg' => $sg,
-#       's' => $s,
-#   },
-#   'total-tests' => 100,
-#   'failures' => 0,        # count of the total number of failures
 #
 #   'samplegroups' => [
 #     { # One sample group
@@ -33,6 +26,13 @@ package EutilsTest;
 #       'json-xslt' => 'out/...",  # Location of the 2JSON XSLT file
 #       'dtd2xml2json-out' => '...', # A string of the output from the dtd2xml2json utility
 #
+#       msgs => [ ... messages while testing this samplegroup ... ],
+#       failed => 0,   # boolean, indicates whether or not any test failed
+#       tests => [
+#           { 'name' => 'fetch-dtd', 'failed' => 0 },
+#           ...
+#       ],
+#
 #       samples => [
 #         { # One of these for each sample in a group
 #           # Data from the XML file
@@ -40,19 +40,24 @@ package EutilsTest;
 #           sg => ...,                # Reference to the parent samplegroup this belongs to
 #           name => 'einfo',
 #           db => 'pubmed',           # optional
-#           'eutils-url' => '....',   # relative URL, from the XML file
-#           'error-type' => 0,        # from the @error attribute of the XML file
+#           'eutils-url' => '....',   # relative URL, from the testcases.xml file
+#           'error-type' => 0,        # from the @error attribute of the testcases.xml file
 #
 #           # Derived data
 #           'local-xml' => 'out/foo.xml',      # Where this was downloaded to
 #           'xml-url' => 'http://eutils...',   # Nominal URL for the XML (before tld substitution)
 #           'real-xml-url' => 'http://qa....', # The actual URL from which it was downloaded
-#           'final-xml' => '/tmp/...',      # Munged copy of the XML (changed doctype decl);
-#                                           # if the XML was not modified, this will be the same as
-#                                           # local-xml.
+#           'final-xml' => '/tmp/...',         # Munged copy of the XML (changed doctype decl);
+#                                              # if the XML was not modified, this will be the same as
+#                                              # local-xml.
 #           'json-file' => 'out/...',          # Filename of the generated json file
 #           'json-url' => 'http://eutils...",  # Nominal URL for the JSON (before tld substitution)
 #           'real-json-url' => 'http://...', # If JSON was downloaded, this is the source
+#
+#           msgs => [ ... messages while testing this sample ... ],
+#           failed => 0,
+#           tests => [ ... list of tests that this failed ... ],
+#
 #         }, ... more samples
 #       ]
 #     } ... more sample groups
@@ -65,8 +70,6 @@ use DtdAnalyzer;
 use XML::LibXML;
 use File::Temp qw/ :POSIX /;
 use Logger;
-#use Exporter 'import';
-#use Cwd;
 use File::Copy;
 use Getopt::Long;
 use File::Path qw(make_path);
@@ -165,9 +168,10 @@ our $idxextbase =
 # Create a new test-run object, read in testcases.xml.  This also prepares the
 # output directory.
 sub new {
-    my ($class, $Opts) = @_;
+    my ($class, $Opts, $logger) = @_;
 
     my $self = {
+        'log' => $logger,
         'samplegroups' => _readTestCases(),
 
         # Command line options and shortcuts
@@ -184,7 +188,7 @@ sub new {
     };
     bless $self, $class;
 
-    $self->{log} = Logger->new($self->{verbose});
+    $logger->setVerbose($self->{verbose});
 
     # Set up the output directory
     make_path('out');
@@ -215,6 +219,9 @@ sub _readTestCases {
             dtd => $sgx->getAttribute('dtd'),
             idx => ($idxAttr eq 'true'),
             eutil => $sgx->getAttribute('eutil'),
+            msgs => [],
+            failed => 0,
+            tests => [],
         };
 
         my @groupsamples = ();
@@ -229,6 +236,9 @@ sub _readTestCases {
                 'eutils-url' =>
                     ($samp->getChildrenByTagName('eutils-url'))[0]->textContent(),
                 'error-type' => ($errAttr eq 'true'),
+                msgs => [],
+                failed => 0,
+                tests => [],
             };
             push @groupsamples, $s;
         }
@@ -259,68 +269,64 @@ sub filterMatch {
     my ($self, $s_or_sg) = @_;
     return 1 if $self->{'test-all'};
 
-    my $opts = $self->{opts};
-    my $eutilToTest = $opts->{eutil};
-    my $dtdToTest = $opts->{dtd};
-    my $dbToTest = $opts->{db};
-    my $sampleToTest = $opts->{sample};
-    my $testIdx = $opts->{idx};
-    my $testError = $opts->{error};
-
     if ($s_or_sg->{isa} eq 'samplegroup') {
         my $sg = $s_or_sg;
 
-        # See if we can skip this sample group
-        return 0 if $eutilToTest ne '' && $eutilToTest ne $sg->{eutil};
-        return 0 if $dtdToTest ne '' && $dtdToTest ne $sg->{dtd};
-        return 0 if $testIdx && !$sg->{idx};
+        # Is this samplegroup is explicitly filtered out?
+        return 0 if $self->_sgFilteredOut($sg);
 
-        # If one of the sample-specific selectors has been given, and there are no samples
-        # under this group that match any of the other criteria, then skip
-        if ($dbToTest || $sampleToTest || $testError) {
-            my $groupsamples = $sg->{samples};
-            foreach my $s (@$groupsamples) {
-                if ( $self->filterMatch($s) ) {
-                    return 1;
-                }
-            }
-            return 0;
+        # If none of the sample-specific selectors were given, then return 1
+        my $opts = $self->{opts};
+        return 1 if !$opts->{db} && !$opts->{sample} && !$opts->{error};
+
+        # Otherwise if any of the samples were
+        # selected (not filtered out), then return 1
+        foreach my $s (@{$sg->{samples}}) {
+            return 1 if !$self->_sFilteredOut($s);
         }
-        return 1;
+
+        # Otherwise skip this group.
+        return 0;
     }
+
     else {
         my $s = $s_or_sg;
-        my $matchDb = !$dbToTest || $s->{db} eq $dbToTest;
-        my $matchSample = !$sampleToTest || $s->{name} eq $sampleToTest;
-        my $matchError = !$testError || $s->{'error-type'};
-        return $matchDb && $matchSample && $matchError;
+
+        # If this sample's samplegroup was explicitly filtered out, then return 0.
+        return 0 if $self->_sgFilteredOut($s->{sg});
+
+        # Otherwise, return 0 if and only if this sample was explicitly filtered out.
+        return !$self->_sFilteredOut($s);
     }
 }
 
-#-----------------------------------------------------------------------------
-# This changes the current step, as well as the pointers to both the sample (s)
-# and the sample group (sg).
-# It also increments the total-tests counter, so it should only be called after
-# filterMatch, to make sure this is a real test on a real sample or samplegroup.
+# This just tests whether or not any samplegroup filters are set, and this samplegroup
+# does not match.  In that case, this returns 1, and this samplegroup is filtered out,
+# and we won't test it.
+sub _sgFilteredOut {
+    my ($self, $sg) = @_;
+    my $opts = $self->{opts};
+    my $eutilToTest = $opts->{eutil};
+    my $dtdToTest = $opts->{dtd};
+    my $testIdx = $opts->{idx};
 
-sub _setCurrentStep {
-    my ($self, $step, $s_or_sg) = @_;
-    my $testNum = $self->{'total-tests'}++;
-    $self->{'current-step'}{step} = $step;
+    return $eutilToTest && $eutilToTest ne $sg->{eutil} ||
+           $dtdToTest   && $dtdToTest ne $sg->{dtd} ||
+           $testIdx     && !$sg->{idx};
+}
 
-    my $smsg;
-    if ($s_or_sg->{isa} eq 'samplegroup') {
-        $self->{'current-step'}{sg} = $s_or_sg;
-        $self->{'current-step'}{s} = undef;
-        $smsg = 'samplegroup ' . $s_or_sg->{dtd};
-    }
-    else {
-        $self->{'current-step'}{sg} = $s_or_sg->{sg};
-        $self->{'current-step'}{s} = $s_or_sg;
-        $smsg = 'sample ' . $s_or_sg->{name};
-    }
-    $self->{log}->message("TEST #$testNum: $step: " . $smsg);
+# This just tests whether or not any sample filters are set, and this sample does not
+# match.
+sub _sFilteredOut {
+    my ($self, $s) = @_;
+    my $opts = $self->{opts};
+    my $dbToTest = $opts->{db};
+    my $sampleToTest = $opts->{sample};
+    my $testError = $opts->{error};
 
+    return $dbToTest     && $dbToTest ne $s->{db} ||
+           $sampleToTest && $sampleToTest ne $s->{name} ||
+           $testError    && !$s->{'error-type'};
 }
 
 #-----------------------------------------------------------------------------
@@ -334,21 +340,10 @@ sub _setCurrentStep {
 # in that hash (see the data structure description in the comments at the top.)
 #
 # This function returns 1 if successful, or 0 if there is a failure.
-#
-# Summary of the cases:
-#     --dtd-svn - for ESummary IDX databases.  Get the DTD from SVN.
-#         - If $idxextbase points to the filesystem, then this will
-#           set 'dtd-path' to point to the DTD file within that path on the
-#           filesystem.
-#         - If $idxextbase points to the Subversion https URL, then we can't
-#           implement --dtd-remote, because validation doesn't work over https.
-#
 
 sub fetchDtd {
     my ($self, $sg) = @_;
-    return if !$self->filterMatch($sg);
 
-    $self->_setCurrentStep('fetch-dtd', $sg);
     my $opts = $self->{opts};
     my $tld = $opts->{tld};
     my $dtdNewUrl = $opts->{'dtd-newurl'};
@@ -441,29 +436,6 @@ sub fetchDtd {
         }
     }
 
-    # This one is no longer used
-#    elsif ($dtdOldUrl) {
-#        # For old-style doctype declarations, we won't try to compute/verify the
-#        # public identifier.
-#        $sg->{'dtd-public-id'} = '';
-#
-#        # Compute the official system identifier (not necessarily the same as
-#        # the URL that we'll use to get the DTD.
-#        my $dtdSystemId;
-#
-#        if ($eutil eq 'esummary') {
-#            # Prefix with a directory, and change to old-style name, capital S in "eSummary"
-#            my $proddtd = $dtd;
-#            $proddtd =~ s/esummary/eSummary/;
-#            $dtdSystemId = $eutilsDtdBase . 'eSummaryDTD/' . $proddtd;
-#        }
-#        else {
-#            $dtdSystemId = $eutilsDtdBase . $dtd;
-#        }
-#
-#        return $self->downloadDtd($sg, $dtdSystemId, $tld);
-#    }
-
     # User specified a local-filesystem location for the DTD explicitly (this can only
     # be used when testing a single samplegroup, but we don't enforce that -- it is up
     # to the user to make sure.)
@@ -485,7 +457,6 @@ sub fetchDtd {
 
         return 1;
     }
-
 }
 
 #-------------------------------------------------------------
@@ -547,8 +518,7 @@ sub generateXml {
 # This function returns 1 if successful, or 0 if there is a failure.
 
 sub fetchXml {
-    my ($self, $s, $do, $tld) = @_;
-    $self->_setCurrentStep('fetch-xml', $s);
+    my ($self, $s) = @_;
 
     # See if this has already been fetched (possible if it was fetched
     # as part of fetchDtd)
@@ -594,9 +564,9 @@ sub httpGetToFile {
     my $res = $ua->request($req);
     if ($res->is_success) {
         open(my $OUT, ">", $localFile) or die("Can't open $localFile:  $!");
-    print $OUT $res->content;
-    close $OUT;
-    return 1;
+        print $OUT $res->content;
+        close $OUT;
+        return 1;
     }
     else {
         $self->failed("HTTP GET '$url':  " . $res->status_line);
@@ -627,18 +597,13 @@ sub downloadDtd {
     if (!$dtdRemote) {
         $self->message("Fetching $dtdUrl -> $dtdPath");
         return $self->httpGetToFile($dtdUrl, $dtdPath);
-#        my $cmd = "curl --fail --silent --output $dtdPath $dtdUrl > /dev/null 2>&1";
-#        my $status = system $cmd;
-#        if ($status != 0) {
-#            $self->failedCmd($status, $cmd);
-#            return 0;
-#        }
     }
     return 1;
 }
 
 #-------------------------------------------------------------
-# Validate an XML file against a DTD.
+# Validate an XML file against a DTD.  This assumes that the DTD and the XML
+# files have already been fetched.
 # The DTD local path or URL that will be used is figured out on the basis of
 # the $sg->{'dtd-url'} and $sg->{'dtd-path'} that were set in fetchDtd():
 #     dtd-path   dtd-url
@@ -647,40 +612,15 @@ sub downloadDtd {
 # Returns 1 if successful; 0 otherwise.
 
 sub validateXml {
-    my ($self, $s, $do, $xml, $dtdRemote, $tld, $dtdDoctype) = @_;
-    $self->_setCurrentStep('validate-xml', $s);
-    return 1 if !$do;
+    my ($self, $s) = @_;
     my $sg = $s->{sg};
-
-    # If the --dtd-doctype argument was given, and this is the first sample from
-    # this group that we've seen, then we need to fetch the DTD
-    if ($dtdDoctype && !exists $sg->{'dtd-url'}) {
-        $self->message("Reading XML file $xml to find the DTD");
-        my $dtdSystemId;
-        my $th;
-        if (!open($th, "<", $xml)) {
-            $self->failed("Can't open $xml for reading");
-            return 0;
-        }
-        while (my $line = <$th>) {
-            if ($line =~ /^\<\!DOCTYPE.*?".*?"\s+"(.*?)"/) {
-                $dtdSystemId = $1;
-                last;
-            }
-        }
-        if (!$dtdSystemId) {
-            $self->failed("Couldn't get system identifier for DTD from xml file");
-            return 0;
-        }
-        close $th;
-        return 0 if !$self->downloadDtd($sg, $do, $dtdSystemId, $tld, $dtdRemote);
-    }
-
     my $dtdUrl = $sg->{'dtd-url'};
     my $dtdPath = $sg->{'dtd-path'};
+    my $xml = $s->{'local-xml'};
 
     my $xmllintArg = '';   # command-line argument to xmllint, if needed.
     my $finalXml = $xml;   # The pathname of the actual file we'll pass to xmllint
+    $finalXml =~ s/\.xml$/-test\.xml/;
 
     if ($dtdPath) {
         # Strip off the doctype declaration.  This is necessary because we want
@@ -688,7 +628,6 @@ sub validateXml {
         # `xmllint --dtdvalid` does that local validation, it will still fail
         # if the remote DTD does not exist, which was the case, for example,
         # for pubmedhealth.
-        $finalXml = tmpnam();
         $self->message("Stripping doctype decl:  $xml -> $finalXml");
         my $th;
         if (!open($th, "<", $xml)) {
@@ -708,7 +647,6 @@ sub validateXml {
 
     else {
         # Replace the doctype declaration with a new one.
-        $finalXml = tmpnam();
         $self->message("Writing new doctype decl:  $xml -> $finalXml");
         my $th;
         if (!open($th, "<", $xml)) {
@@ -969,18 +907,15 @@ sub getDoctype {
     return 0;
 }
 
-
 #------------------------------------------------------------------------
 # $self->failed($msg);
-# Generic test failure handler.
-# $s_or_sg will be either the single sample, or the samplegroup, depending
-# on what step we are on.
+# This delegates writing the error message to the Logger, and then checks
+# the status of continue-on-error
 
 sub failed {
     my ($self, $msg) = @_;
-    $self->error("FAILED:  $msg");
+    $self->{log}->failed($msg);
     exit 1 if !$self->{coe};
-    $self->recordFailure($msg);
 }
 
 #------------------------------------------------------------------------
@@ -1011,48 +946,42 @@ sub error {
     $self->{log}->error($msg);
 }
 
-#------------------------------------------------------------------------
-# Record information about an individual test failure in $sg and (if
-# appropriate) $s
-
-sub recordFailure {
-    my ($self, $msg) = @_;
-
-    my $step = $self->{'current-step'}{step};
-    my $sg = $self->{'current-step'}{sg};
-    my $s = $self->{'current-step'}{s};
-
-    # We'll always store something in $sg.  Make a hash if one hasn't been
-    # made before.
-    if (!$sg->{failure}) { $sg->{failure} = {}; }
-
-    if ($step eq 'fetch-dtd' || $step eq 'generate-xslt') {
-        $sg->{failure}{$step} = $msg;
-    }
-    else {
-        # This was a sample-specific step
-        if (!$s->{failure}) { $s->{failure} = {}; }
-        $s->{failure}{$step} = $msg;
-
-        # Also flag this in the $sg hash
-        $sg->{failure}{$step} = 1;
-    }
-
-    $self->{failures}++;
-}
 
 #------------------------------------------------------------------------
 # Summary pass / fail report
 sub summaryReport {
     my $self = shift;
+    my $logger = $self->{log};
 
-    if ($self->{failures}) {
-        print $self->{failures} . " failures:\n";
+    # What is the total number of different test types that have been run?
+    my $testNames = $logger->{'test-names'};
+    my $numTestTypes = scalar (keys %$testNames);
+    print "Number of different test types = " . $numTestTypes . "\n";
+
+    if ($logger->{failures}) {
+        print $logger->{failures} . " failures of " . $logger->{'total-tests'} . " tests:\n";
         foreach my $sg (@{$self->{samplegroups}}) {
-            if ($sg->{failure}) {
-                print "  " . $sg->{dtd} . ": ";
-                my @fs = map { $sg->{failure}{$_} ? $_ : () } @EutilsTest::steps;
-                print join(", ", @fs) . "\n";
+            if ($sg->{failed}) {
+                print "  " . $sg->{dtd} . ":\n";
+                if ($numTestTypes > 1) {
+                    foreach my $test (@{$sg->{tests}}) {
+                        if ($test->{failed}) {
+                            print "    " . $test->{name} . "\n";
+                        }
+                    }
+                }
+                foreach my $s (@{$sg->{samples}}) {
+                    if ($s->{failed}) {
+                        print "    " . $s->{name} . ":\n";
+                        if ($numTestTypes > 1) {
+                            foreach my $test (@{$sg->{tests}}) {
+                                if ($test->{failed}) {
+                                    print "      " . $test->{name} . "\n";
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

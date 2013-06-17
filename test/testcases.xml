@@ -1877,6 +1877,7 @@
     </sample>
   </samplegroup>
 
+<!-- Not implemented yet
   <samplegroup dtd="pubmed_120101.dtd" eutil="efetch">
     <sample name="efetch.pubmed" db="pubmed">
       <eutils-url>efetch.fcgi?db=pubmed&amp;id=17284678,9997&amp;retmode=xml</eutils-url>
@@ -1885,4 +1886,5 @@
       <eutils-url>efetch.fcgi?db=pubmed&amp;id=20301295&amp;retmode=xml</eutils-url>
     </sample>
   </samplegroup>
+-->
 </testcases>
