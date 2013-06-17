@@ -66,7 +66,6 @@ package EutilsTest;
 
 use strict;
 use warnings;
-use DtdAnalyzer;
 use XML::LibXML;
 use File::Temp qw/ :POSIX /;
 use Logger;
@@ -74,8 +73,9 @@ use File::Copy;
 use Getopt::Long;
 use File::Path qw(make_path);
 use LWP::UserAgent;
-
 use Data::Dumper;
+use File::Which;
+
 my $ua = LWP::UserAgent->new;
 
 
@@ -686,21 +686,23 @@ sub validateXml {
 # Puts the pathname of the generated file into 'json-xslt'
 
 sub generateXslt {
-    my ($self, $sg, $do, $xsltLoc) = @_;
-    $self->_setCurrentStep('generate-xslt', $sg);
+    my ($self, $sg) = @_;
 
-    if ($xsltLoc) {
-        my $jsonXslt = $xsltLoc;
-        $jsonXslt =~ s/.*\//out\//;
-        $sg->{'json-xslt'} = $jsonXslt;
-        if ($do) {
-            $self->message("Copying XSLT from $xsltLoc -> $jsonXslt");
-            if (!copy($xsltLoc, $jsonXslt)) {
-                failed("Couldn't copy XSLT from $xsltLoc -> $jsonXslt");
-                return 0
-            }
+    # If this is the first time here, then
+    # Get the XSLT base stylesheet, xml2json.xsl, into the out directory
+    if (!$self->{'got-xml2json'}) {
+        my $ddir = which('dtd2xml2json');
+        if (!$ddir) {
+            die "Can't find dtd2xml2json in my PATH.  That's not good.";
         }
-        return 1;
+        $ddir =~ s/^(.*)\/.*$/$1\//;
+        my $basexslt = $ddir . 'xslt/xml2json.xsl';
+        if (!-f $basexslt) {
+            die "Can't find the base XSLT file $basexslt.  That's bad.";
+        }
+        copy($basexslt, 'out');
+
+        $self->{'got-xml2json'} = 1;
     }
 
 
@@ -729,9 +731,8 @@ sub generateXslt {
         # Names of the form esummary_db.dtd
         $jf =~ s/esummary_(\w+)\.dtd/esummary2json_$1.xslt/;
     }
-    elsif ($jf =~ /e[a-zA-Z]+_\d+\.dtd/) {
-        # Names of the from eInfo_020511.dtd
-        $jf =~ s/_(\d+)\.dtd/2json_$1.xslt/;
+    elsif ($jf =~ /\.dtd$/) {
+        $jf =~ s/\.dtd$/2json.xslt/;
     }
     else {
         $self->failed(
@@ -740,41 +741,41 @@ sub generateXslt {
     }
     my $jsonXslPath = $sg->{'json-xslt'} = $jp . $jf;
 
-    if ($do) {
 
-        # Run the utility, and capture both standard out and standard error into a
-        # file
-        my $outfile = 'out/dtd2xml2json.out';
-        my $dtdAnalyzer = DtdAnalyzer->instance();
-        $self->message("Creating XSLT $jsonXslPath");
-        my $status = $dtdAnalyzer->dtd2xml2json($dtdSrc, $jsonXslPath, $outfile);
-        if ($status != 0) {
-            $self->failed("Failed:  '$status'");
-            return 0;
-        }
-
-        # Check the output from the command, to see if there were problems with
-        # the JSON annotations (unfortunately, the tool does not return with an
-        # error status when this happens).
-        my $output = do {
-            local $/ = undef;
-            open my $fh, "<", $outfile or die "could not open $outfile: $!";
-            <$fh>;
-        };
-        $sg->{'dtd2xml2json-out'} = $output;
-
-        # Look for specific messages
-        if ($output =~ /invalid json annotation/ ||
-            $output =~ /tell me what to do/ ||
-            $output =~ /unknown item group/ ||
-            $output =~ /unrecognized element/)
-        {
-            $self->failed("Problem while running dtd2xml2json utility");
-            return 0;
-        }
+    # Run the utility, and capture both standard out and standard error into a
+    # file
+    my $outfile = 'out/dtd2xml2json.out';
+    my $cmd = "dtd2xml2json $dtdSrc $jsonXslPath > $outfile 2>&1";
+    $self->message("Creating XSLT $jsonXslPath");
+    my $status = system $cmd;
+    if ($status != 0) {
+        $self->failedCmd($status, $cmd);
+        return 0;
     }
+
+    # Check the output from the command, to see if there were problems with
+    # the JSON annotations (unfortunately, the tool does not return with an
+    # error status when this happens).
+    my $output = do {
+        local $/ = undef;
+        open my $fh, "<", $outfile or die "could not open $outfile: $!";
+        <$fh>;
+    };
+    $sg->{'dtd2xml2json-out'} = $output;
+
+    # Look for specific messages
+    if ($output =~ /invalid json annotation/ ||
+        $output =~ /tell me what to do/ ||
+        $output =~ /unknown item group/ ||
+        $output =~ /unrecognized element/)
+    {
+        $self->failed("Problems or warnings while running '$cmd'");
+        return 0;
+    }
+
     return 1;
 }
+
 
 #------------------------------------------------------------------------
 # Returns 1 if successful; 0 otherwise.
@@ -782,7 +783,6 @@ sub generateXslt {
 
 sub generateJson {
     my ($self, $s, $do) = @_;
-    $self->_setCurrentStep('generate-json', $s);
 
     my $jsonXslt = $s->{sg}{'json-xslt'};
 
@@ -846,13 +846,6 @@ sub fetchJson {
 
     $self->message("Fetching $realUrl => $jsonFile");
     return $self->httpGetToFile($cmdUrl, $jsonFile);
-#    my $cmd = "curl --fail --silent --output $jsonFile $cmdUrl";
-#    my $status = system $cmd;
-#    if ($status != 0) {
-#        $self->failedCmd($status, $cmd);
-#        return 0;
-#    }
-#    return 1;
 }
 
 

@@ -25,21 +25,6 @@ sub instance {
     return $inst;
 }
 
-#----------------------------------------------------------
-# This returns 0 on success, or the command line that was used to execute
-# the utility on error.
-
-sub dtd2xml2json {
-    my ($self, $dtdSrc, $jsonXslPath, $outfile) = @_;
-
-    # Lazy initialization - do it now.
-    if (!$self->{initialized}) { $self->initialize(); }
-
-    my $cmd = "dtd2xml2json $dtdSrc $jsonXslPath > $outfile 2>&1";
-    $self->message("Creating XSLT $jsonXslPath");
-    my $status = system $cmd;
-    return $status ? $cmd : 0;
-}
 
 #----------------------------------------------------------
 sub initialize {

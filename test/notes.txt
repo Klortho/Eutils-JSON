@@ -12,22 +12,10 @@ STEPS
           in every samplegroup and sample
 ✓ validate-xml
     - Change it so that the munged XML files is also in the out dir.
-- generate-xslt
+✓ generate-xslt
 - generate-json
 - validate-json
 
-
-PIPELINES
-
-- pipe-basic
-
-- pipe-qa-monitor
-
-- pipe-qa-release
-
-- pipe-cidx-verify
-
-- pipe-idx-svn
 
 
 
