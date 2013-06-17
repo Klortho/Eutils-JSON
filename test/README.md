@@ -49,6 +49,31 @@ each individual sample, and then validates the XML against the DTD.
 Fetches the DTD for each samplegroup, and then uses the DtdAnalyzer utility
 to create an XML-to-JSON transformation stylesheet.
 
+### validate-json.pl
+
+COMING SOON
+
+This will download the JSON output directly from the Eutilities service, and
+make sure it is valid JSON.
+
+### generate-json.pl
+
+COMING SOON.
+
+Combines generate-xslt and fetch-xml, and then runs each XML through the newly
+created XSLT to generate JSON.  Then validates that JSON.
+
+### qa-monitor.pl
+
+COMING SOON.
+
+Combines validate-xml with validate-json.
+
+### qa-release.pl
+
+COMING SOON.
+
+Same as qa-monitor, but uses the "qa" tld.
 
 
 ## Contents of this directory
@@ -56,10 +81,10 @@ to create an XML-to-JSON transformation stylesheet.
 Here is a list of some of the files and scripts, and what they do.
 
 * `*.pl` - test scripts, as described above
-* `testeutils.pl` - *Deprecated*
 * `EutilsTest.pm` - Perl module that implements most of the functionality
 * `Logger.pm` - Logs messages
 * `testcases.xml` - Latest list of all of the test cases we'll use
+* `testeutils.pl` - *Deprecated*.
 
 
 ## To do:
