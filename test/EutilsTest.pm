@@ -16,13 +16,16 @@ package EutilsTest;
 #       eutil => 'einfo',
 #
 #       # Derived data:
-#       'dtd-public-id' => '...'   # The expected public id.  Empty if we don't know.
-#       'dtd-system-id' => '...',  # The expected system id.
+#       # The public and system ids.  Empty if we don't know.  These gets validated and
+#       # stored the first time we fetch an XML file, for whatever reason.
+#       'dtd-public-id' => '...'
+#       'dtd-system-id' => '...',
 #       'dtd-id-date' => 'YYYYMMDD', # The date field from the system id
+#
 #       'dtd-url' => '...',        # Computed value for the actual URL used to grab the DTD;
 #                                  # usually the same as dtd-system-id, but not always
-#       'dtd-path' => 'out/...',   # Relative path to the local copy, if there is one,
-#                                  # otherwise (--dtd-remote was given) the empty string
+#       'dtd-local-path' => 'out/...',  # Relative path to the local copy, if there is one,
+#                                       # otherwise (--dtd-remote was given) the empty string
 #       'json-xslt' => 'out/...",  # Location of the 2JSON XSLT file
 #       'dtd2xml2json-out' => '...', # A string of the output from the dtd2xml2json utility
 #
@@ -360,44 +363,18 @@ sub fetchDtd {
         my $sampleToTest = $opts->{sample};
         my $s = $sampleToTest ? $self->findSample($sampleToTest)
                               : $sg->{samples}[0];
-        $self->_fetchXml($s);
+        if (!$self->_fetchXml($s)) {
+            return 0;
+        }
         my $firstXml = $s->{'local-xml'};
 
-        # Get the public and system ids from the doctype
-        my $ids = getDoctype($firstXml);
-        if (!$ids) {
-            $self->failed("Couldn't read doctype declaration from $firstXml");
-            return 0;  # not much we can do
-        }
-
-        # Store these results
-        my $dtdPublicId = $sg->{'dtd-public-id'}
-            = exists $ids->{'public'} ? $ids->{'public'} : '';
-        my $dtdSystemId = $sg->{'dtd-system-id'} = $ids->{'system'};
-
-        # FIXME:  The following validates the form of the public and system identifiers.
-        # This should move to the validate-xml step.
-        if (0) {
-            # Validate the form of the identifiers
-            # public:  e.g.  -//NLM//DTD einfo YYYYMMDD//EN
-            if ($dtdPublicId !~ m{-//NLM//DTD [a-z]+ \d{8}//EN}) {
-                $self->failed("DTD public identifier '$dtdPublicId' doesn't match expected form");
-            }
-            # system:  e.g.  http://eutils.ncbi.nlm.nih.gov/dtd/YYYYMMDD/einfo.dtd
-            if ($dtdSystemId !~ m{http://eutils.ncbi.nlm.nih.gov/dtd/\d{8}/[a-z]+\.dtd}) {
-                $self->failed("DTD system identifier '$dtdSystemId' doesn't match expected form");
-            }
-        }
 
         # Fetch the DTD
-        return $self->downloadDtd($sg, $dtdSystemId, $tld);
+        return $self->downloadDtd($sg, $sg->{'dtd-system-id'}, $tld);
     }
 
 
     else {
-        # We won't try to compute/verify the public identifier.
-        $sg->{'dtd-public-id'} = '';
-
         # If the --dtd-svn option was given, then this better be an esummary idx samplegroup,
         # otherwise we have to fail.
         if ($eutil ne 'esummary' || !$idx) {
@@ -416,14 +393,14 @@ sub fetchDtd {
         # See if the DTD exists on the filesystem
         $dtdpath = "$idxextbase/$db/support/esummary_$db.dtd";
         if (-f $dtdpath) {
-            $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $sg->{'dtd-path'} = $dtdpath;
+            $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $sg->{'dtd-local-path'} = $dtdpath;
             return 1;
         }
         else {
             # Assume $dtdpath is a URL, and fetch it
             my $dest = "out/$dtd";
             $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $dtdpath;
-            $sg->{'dtd-path'} = $dest;
+            $sg->{'dtd-local-path'} = $dest;
 
             $self->message("Fetching $dtdpath");
             return $self->httpGetToFile($dtdpath, $dest);
@@ -504,6 +481,10 @@ sub fetchXml {
 # This implements the guts of fetchXml.  It is reused by that step as
 # well as by fetchDtd, which sometimes needs to grab an XML instance document in
 # order to discover the system identifier.
+# If this is the first time that an XML file has been fetched for this DTD
+# (samplegroup) then validate the public and system IDs, and store them with
+# the $sg.
+#
 # Returns 1 on success, 0 on failure.
 
 sub _fetchXml {
@@ -522,7 +503,41 @@ sub _fetchXml {
     $s->{'real-xml-url'} = $realUrl;
 
     $self->message("Fetching $realUrl => $localXml");
-    return $self->httpGetToFile($realUrl, $localXml);
+    if (! $self->httpGetToFile($realUrl, $localXml)) { return 0; }
+
+    # If this is the first time that an XML file has successfully
+    # been fetched for this DTD, then $sg should have a recorded
+    # system id.
+    my $sg = $s->{sg};
+    if (!$sg->{'dtd-system-id'}) {
+
+        # Get the public and system ids from the doctype
+        my $ids = getDoctype($localXml);
+        if (!$ids) {
+            $self->failed("$localXml doesn't have a good doctype declaration");
+            return 0;
+        }
+
+        # Store these results
+        my $pubid = $sg->{'dtd-public-id'} = exists $ids->{'public'} ? $ids->{'public'} : '';
+        my $sysid = $sg->{'dtd-system-id'} = $ids->{'system'};
+
+        # Validate the form of the identifiers, per the spec here
+        # https://confluence.ncbi.nlm.nih.gov/x/HJnY
+
+        # public:  e.g.  -//NLM//DTD einfo YYYYMMDD//EN
+        if ($pubid !~ m{-//NLM//DTD [a-z]+ \d{8}//EN}) {
+            $self->failed("DTD public identifier '$pubid' doesn't match expected form");
+            # Just report this -- doesn't effect return status
+        }
+        # system:  e.g.  http://www.ncbi.nlm.nih.gov/eutils/dtd/YYYYMMDD/einfo.dtd
+        if ($sysid !~ m{http://www.ncbi.nlm.nih.gov/eutils/dtd/\d{8}/\w+\.dtd}) {
+            $self->failed("DTD system identifier '$sysid' doesn't match expected form");
+            # Just report this -- doesn't effect return status
+        }
+    }
+
+    return 1;
 }
 
 #-------------------------------------------------------------
@@ -566,7 +581,7 @@ sub downloadDtd {
 
     $sg->{'dtd-system-id'} = $dtdSystemId;
     $sg->{'dtd-url'} = $dtdUrl;
-    $sg->{'dtd-path'} = $dtdPath;
+    $sg->{'dtd-local-path'} = $dtdPath;
     if (!$dtdRemote) {
         $self->message("Fetching $dtdUrl -> $dtdPath");
         return $self->httpGetToFile($dtdUrl, $dtdPath);
@@ -578,22 +593,42 @@ sub downloadDtd {
 # Validate an XML file against a DTD.  This assumes that the DTD and the XML
 # files have already been fetched.
 # The DTD local path or URL that will be used is figured out on the basis of
-# the $sg->{'dtd-url'} and $sg->{'dtd-path'} that were set in fetchDtd():
-#     dtd-path   dtd-url
-#     <path>      ---       Strip off doctype decl, and use --dtdvalid to point to local file
-#     ''         <url>      Rewrite doctype decl, and use --valid
+# the $sg->{'dtd-url'} and $sg->{'dtd-local-path'} that were set in fetchDtd().
+# If dtd-local-path is set, use --dtdvalid to point to point to that.
+# Otherwise, rewrite the doctype decl, and use --valid to point to the url.
 # Returns 1 if successful; 0 otherwise.
 
 sub validateXml {
     my ($self, $s) = @_;
     my $sg = $s->{sg};
     my $dtdUrl = $sg->{'dtd-url'};
-    my $dtdPath = $sg->{'dtd-path'};
-    my $xml = $s->{'local-xml'};
+    my $dtdPath = $sg->{'dtd-local-path'};
+    my $localXml = $s->{'local-xml'};
 
     my $xmllintArg = '';   # command-line argument to xmllint, if needed.
-    my $finalXml = $xml;   # The pathname of the actual file we'll pass to xmllint
+    my $finalXml = $localXml;   # The pathname of the actual file we'll pass to xmllint
     $finalXml =~ s/\.xml$/-test\.xml/;
+
+
+    # Match this XML file's public and system identifiers to what we expect
+    my $ids = getDoctype($localXml);
+    if (!$ids) {
+        $self->failed("$localXml doesn't have a good doctype declaration");
+        return 0;
+    }
+    my $pubid = exists $ids->{'public'} ? $ids->{'public'} : '';
+    if ($pubid ne $sg->{'dtd-public-id'}) {
+        $self->failed("$localXml has a bad public identifier:  '$pubid'.  " .
+            "Doesn't match expected '" . $sg->{'dtd-public-id'} . "'");
+        return 0;
+    }
+    my $sysid = $ids->{'system'};
+    if ($sysid ne $sg->{'dtd-system-id'}) {
+        $self->failed("$localXml has a bad system identifier:  '$sysid'.  " .
+            "Doesn't match expected '" . $sg->{'dtd-system-id'} . "'");
+        return 0;
+    }
+
 
     if ($dtdPath) {
         # Strip off the doctype declaration.  This is necessary because we want
@@ -601,10 +636,10 @@ sub validateXml {
         # `xmllint --dtdvalid` does that local validation, it will still fail
         # if the remote DTD does not exist, which was the case, for example,
         # for pubmedhealth.
-        $self->message("Stripping doctype decl:  $xml -> $finalXml");
+        $self->message("Stripping doctype decl:  $localXml -> $finalXml");
         my $th;
-        if (!open($th, "<", $xml)) {
-            $self->failed("Can't open $xml for reading");
+        if (!open($th, "<", $localXml)) {
+            $self->failed("Can't open $localXml for reading");
             return 0;
         }
         open(my $sh, ">", $finalXml) or die "Can't open $finalXml for writing";
@@ -620,10 +655,10 @@ sub validateXml {
 
     else {
         # Replace the doctype declaration with a new one.
-        $self->message("Writing new doctype decl:  $xml -> $finalXml");
+        $self->message("Writing new doctype decl:  $localXml -> $finalXml");
         my $th;
-        if (!open($th, "<", $xml)) {
-            $self->failed("Can't open $xml for reading");
+        if (!open($th, "<", $localXml)) {
+            $self->failed("Can't open $localXml for reading");
             return 0;
         }
         open(my $sh, ">", $finalXml) or die "Can't open $finalXml for writing";
@@ -682,7 +717,7 @@ sub generateXslt {
     my $dtd = $sg->{dtd};
     my $dtdSystemId = $sg->{'dtd-system-id'};
     return if !$dtdSystemId;  # This can happen if --dtd-doctype is given, but we can't find the DTD
-    my $dtdPath = $sg->{'dtd-path'};
+    my $dtdPath = $sg->{'dtd-local-path'};
     my $dtdUrl = $sg->{'dtd-url'};
     my $dtdSrc = $dtdPath ? $dtdPath : $dtdUrl;
 
