@@ -47,19 +47,20 @@ package EutilsTest;
 #           'error-type' => 0,        # from the @error attribute of the testcases.xml file
 #
 #           # Derived data
-#           'local-xml' => 'out/foo.xml',      # Where this was downloaded to
-#           'xml-url' => 'http://eutils...',   # Nominal URL for the XML (before tld substitution)
-#           'real-xml-url' => 'http://qa....', # The actual URL from which it was downloaded
-#           'final-xml' => '/tmp/...',         # Munged copy of the XML (changed doctype decl);
+#           'local-path' => 'out/foo.xml',     # Where this was downloaded to
+#           'canon-url' => 'http://eutils...', # Nominal URL for the XML (before tld substitution)
+#           'actual-url' => 'http://qa....',   # The actual URL from which it was downloaded
+#           'munged-path' => 'out/foo-m.xml',  # Munged copy of the XML (changed doctype decl);
 #                                              # if the XML was not modified, this will be the same as
-#                                              # local-xml.
-#           'json-file' => 'out/...',          # Filename of the generated json file
-#           'json-url' => 'http://eutils...",  # Nominal URL for the JSON (before tld substitution)
-#           'real-json-url' => 'http://...', # If JSON was downloaded, this is the source
+#                                              # local-path.
+
+#           'json-local-path' => 'out/...',    # Filename of the generated json file
+#           'json-canon-url' => 'http://eutils...",  # Nominal URL for the JSON (before tld substitution)
+#           'json-actual-url' => 'http://...', # If JSON was downloaded, this is the source
 #
 #           msgs => [ ... messages while testing this sample ... ],
 #           failed => 0,
-#           tests => [ ... list of tests that this failed ... ],
+#           tests => [ ... list of tests that were run against this sample ... ],
 #
 #         }, ... more samples
 #       ]
@@ -86,7 +87,7 @@ my @commonOpts = (
     'help|?',
     'quiet',
     'continue-on-error',
-    'reset',
+    'preserve',
     'tld:s',
     'eutil:s',
     'db:s',
@@ -102,7 +103,7 @@ General options:
   -q|--quiet - turn off most messages
   -c|--continue-on-error - keep going even if there is an error (default is to
     stop)
-  --reset - erase the 'out' directory first
+  --preserve - don't erase the 'out' directory first
   --tld=<tld> - Substitute a different top-level-domain in all URLs.
     I.e., for DTDs:  www.ncbi -> <tld>.ncbi; for FCGIs:  eutils.ncbi ->
     <tld>.ncbi
@@ -195,7 +196,7 @@ sub new {
 
     # Set up the output directory
     make_path('out');
-    if ($Opts->{reset}) {
+    if (!$Opts->{preserve}) {
         unlink glob "out/*";
     }
 
@@ -333,11 +334,7 @@ sub _sFilteredOut {
 }
 
 #-----------------------------------------------------------------------------
-# Compute the location, and retrieve a local copy of the DTD for a
-# samplegroup.
-#
-# This function encapsulates information about where the DTDs are for each type
-# of Eutility.
+# Compute the location, and retrieve a local copy of the DTD for a samplegroup.
 #
 # This takes a $sg as input (package variable), and stores various pieces of information
 # in that hash (see the data structure description in the comments at the top.)
@@ -354,7 +351,6 @@ sub fetchDtd {
     my $dtd = $sg->{dtd};
     my $idx = $sg->{idx};
     my $eutil = $sg->{eutil};
-    my $dtdpath;
 
     if (!$dtdSvn) {
         $self->message("Fetching DTD, first requires getting a sample XML");
@@ -366,7 +362,7 @@ sub fetchDtd {
         if (!$self->_fetchXml($s)) {
             return 0;
         }
-        my $firstXml = $s->{'local-xml'};
+        my $firstXml = $s->{'local-path'};
 
 
         # Fetch the DTD
@@ -391,7 +387,7 @@ sub fetchDtd {
         my $db = $1;
 
         # See if the DTD exists on the filesystem
-        $dtdpath = "$idxextbase/$db/support/esummary_$db.dtd";
+        my $dtdpath = "$idxextbase/$db/support/esummary_$db.dtd";
         if (-f $dtdpath) {
             $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $sg->{'dtd-local-path'} = $dtdpath;
             return 1;
@@ -406,64 +402,10 @@ sub fetchDtd {
             return $self->httpGetToFile($dtdpath, $dest);
         }
     }
-
 }
 
 #-------------------------------------------------------------
-# Generate XML from Maxim's docsum tool (binary)
-
-sub generateXml {
-    my ($self, $s, $do, $xmlDocsumTool, $dbinfo, $build) = @_;
-    $self->_setCurrentStep('generate-xml', $s);
-
-    my $localXml = 'out/' . $s->{name} . '.xml';  # final output filename
-    $s->{'local-xml'} = $localXml;
-
-    if ($do) {
-        if (!$dbinfo || !$build) {
-            $self->failed("Can't run xml-docsumtool without --dbinfo and --build");
-            return 0;
-        }
-        # Generate the list of XML docsums in a temporary file
-        # Sample command line:
-        #     cidxdocsum2xml -dbinfo $DBINFOINI -db pmc -build Build130513-0205.1 \
-        #         -uid 14900,14901 > t.xml
-        my $tmp = tmpnam();
-        my $cmd = "$xmlDocsumTool -dbinfo $dbinfo -db pmc -build $build " .
-                  "-outxml $tmp -uid 14900,14901";
-
-        $self->message("Generating docsum file $tmp");
-        my $status = system $cmd;
-        if ($status != 0) {
-            $self->failedCmd($status, $cmd);
-            return 0;
-        }
-
-        # Now wrap it in esummaryset
-        $self->message("Wrapping docsums  -> $localXml");
-
-        my $src;
-        if (!open($src, "<", $tmp)) {
-            $self->failed("Can't open $tmp for reading");
-            return 0;
-        }
-        open(my $dest, ">", $localXml) or die "Can't open $localXml for writing";
-        print $dest "<eSummaryResult>\n" .
-                    "<DocumentSummarySet status='OK'>\n";
-        while (my $line = <$src>) {
-            print $dest $line;
-        }
-        print $dest "</DocumentSummarySet>\n" .
-                    "</eSummaryResult>\n";
-        close $dest;
-        close $src;
-
-    }
-    return 1;
-}
-
-#-------------------------------------------------------------
-# Fetch an XML sample file, and puts 'local-xml' and 'real-xml-url'
+# Fetch an XML sample file, and puts 'local-path' and 'actual-url'
 # into the sample structure.
 # This function returns 1 if successful, or 0 if there is a failure.
 
@@ -472,7 +414,7 @@ sub fetchXml {
 
     # See if this has already been fetched (possible if it was fetched
     # as part of fetchDtd)
-    return 1 if ($s->{'local-xml'});
+    return 1 if ($s->{'local-path'});
 
     return $self->_fetchXml($s);
 }
@@ -480,41 +422,42 @@ sub fetchXml {
 #-------------------------------------------------------------
 # This implements the guts of fetchXml.  It is reused by that step as
 # well as by fetchDtd, which sometimes needs to grab an XML instance document in
-# order to discover the system identifier.
-# If this is the first time that an XML file has been fetched for this DTD
-# (samplegroup) then validate the public and system IDs, and store them with
-# the $sg.
+# order to discover the system identifier of the DTD.
+# If this is the first time that an XML file has been fetched for this DTD, and
+# the 'dtd-nocheck' option was not given, then we'll validate the public and system
+# IDs, and store them with the samplegroup ($sg).
 #
 # Returns 1 on success, 0 on failure.
 
 sub _fetchXml {
     my ($self, $s) = @_;
-    my $tld = $self->{opts}{tld};
+    my $opts = $self->{opts};
+    my $tld = $opts->{tld};
+    my $nocheck = $opts->{'dtd-nocheck'};
 
-    my $localXml = 'out/' . $s->{name} . ".xml";   # final output filename
-    $s->{'local-xml'} = $localXml;
+    # final output filename
+    my $localPath = $s->{'local-path'} = 'out/' . $s->{name} . ".xml";
 
-    my $xmlUrl = $eutilsBaseUrl . $s->{"eutils-url"};
-    $s->{'xml-url'} = $xmlUrl;
-    my $realUrl = $xmlUrl;
+    my $canonUrl = $s->{'canon-url'} = $eutilsBaseUrl . $s->{"eutils-url"};
+    my $actualUrl = $canonUrl;
     if ($tld) {
-        $realUrl =~ s/http:\/\/eutils/http:\/\/$tld/;
+        $actualUrl =~ s/http:\/\/eutils/http:\/\/$tld/;
     }
-    $s->{'real-xml-url'} = $realUrl;
+    $s->{'actual-url'} = $actualUrl;
 
-    $self->message("Fetching $realUrl => $localXml");
-    if (! $self->httpGetToFile($realUrl, $localXml)) { return 0; }
+    $self->message("Fetching $actualUrl => $localPath");
+    return 0 if !$self->httpGetToFile($actualUrl, $localPath);
 
     # If this is the first time that an XML file has successfully
-    # been fetched for this DTD, then $sg should have a recorded
+    # been fetched for this DTD, then $sg should not have a recorded
     # system id.
     my $sg = $s->{sg};
     if (!$sg->{'dtd-system-id'}) {
 
         # Get the public and system ids from the doctype
-        my $ids = getDoctype($localXml);
+        my $ids = getDoctype($localPath);
         if (!$ids) {
-            $self->failed("$localXml doesn't have a good doctype declaration");
+            $self->failed("$localPath doesn't have a good doctype declaration");
             return 0;
         }
 
@@ -522,18 +465,20 @@ sub _fetchXml {
         my $pubid = $sg->{'dtd-public-id'} = exists $ids->{'public'} ? $ids->{'public'} : '';
         my $sysid = $sg->{'dtd-system-id'} = $ids->{'system'};
 
-        # Validate the form of the identifiers, per the spec here
-        # https://confluence.ncbi.nlm.nih.gov/x/HJnY
+        if (!$opts->{'dtd-nocheck'}) {
+            # Validate the form of the identifiers, per the spec here
+            # https://confluence.ncbi.nlm.nih.gov/x/HJnY
 
-        # public:  e.g.  -//NLM//DTD einfo YYYYMMDD//EN
-        if ($pubid !~ m{-//NLM//DTD [a-z]+ \d{8}//EN}) {
-            $self->failed("DTD public identifier '$pubid' doesn't match expected form");
-            # Just report this -- doesn't effect return status
-        }
-        # system:  e.g.  http://www.ncbi.nlm.nih.gov/eutils/dtd/YYYYMMDD/einfo.dtd
-        if ($sysid !~ m{http://www.ncbi.nlm.nih.gov/eutils/dtd/\d{8}/\w+\.dtd}) {
-            $self->failed("DTD system identifier '$sysid' doesn't match expected form");
-            # Just report this -- doesn't effect return status
+            # public:  e.g.  -//NLM//DTD einfo YYYYMMDD//EN
+            if ($pubid !~ m{-//NLM//DTD [a-z]+ \d{8}//EN}) {
+                $self->failed("DTD public identifier '$pubid' doesn't match expected form");
+                # Just report this -- doesn't effect return status
+            }
+            # system:  e.g.  http://www.ncbi.nlm.nih.gov/eutils/dtd/YYYYMMDD/einfo.dtd
+            if ($sysid !~ m{http://www.ncbi.nlm.nih.gov/eutils/dtd/\d{8}/\w+\.dtd}) {
+                $self->failed("DTD system identifier '$sysid' doesn't match expected form");
+                # Just report this -- doesn't effect return status
+            }
         }
     }
 
@@ -603,28 +548,28 @@ sub validateXml {
     my $sg = $s->{sg};
     my $dtdUrl = $sg->{'dtd-url'};
     my $dtdPath = $sg->{'dtd-local-path'};
-    my $localXml = $s->{'local-xml'};
+    my $localPath = $s->{'local-path'};
 
     my $xmllintArg = '';   # command-line argument to xmllint, if needed.
-    my $finalXml = $localXml;   # The pathname of the actual file we'll pass to xmllint
-    $finalXml =~ s/\.xml$/-test\.xml/;
+    my $mungedPath = $localPath;   # The pathname of the actual file we'll pass to xmllint
+    $mungedPath =~ s/\.xml$/-m\.xml/;
 
 
     # Match this XML file's public and system identifiers to what we expect
-    my $ids = getDoctype($localXml);
+    my $ids = getDoctype($localPath);
     if (!$ids) {
-        $self->failed("$localXml doesn't have a good doctype declaration");
+        $self->failed("$localPath doesn't have a good doctype declaration");
         return 0;
     }
     my $pubid = exists $ids->{'public'} ? $ids->{'public'} : '';
     if ($pubid ne $sg->{'dtd-public-id'}) {
-        $self->failed("$localXml has a bad public identifier:  '$pubid'.  " .
+        $self->failed("$localPath has a bad public identifier:  '$pubid'.  " .
             "Doesn't match expected '" . $sg->{'dtd-public-id'} . "'");
         return 0;
     }
     my $sysid = $ids->{'system'};
     if ($sysid ne $sg->{'dtd-system-id'}) {
-        $self->failed("$localXml has a bad system identifier:  '$sysid'.  " .
+        $self->failed("$localPath has a bad system identifier:  '$sysid'.  " .
             "Doesn't match expected '" . $sg->{'dtd-system-id'} . "'");
         return 0;
     }
@@ -636,13 +581,13 @@ sub validateXml {
         # `xmllint --dtdvalid` does that local validation, it will still fail
         # if the remote DTD does not exist, which was the case, for example,
         # for pubmedhealth.
-        $self->message("Stripping doctype decl:  $localXml -> $finalXml");
+        $self->message("Stripping doctype decl:  $localPath -> $mungedPath");
         my $th;
-        if (!open($th, "<", $localXml)) {
-            $self->failed("Can't open $localXml for reading");
+        if (!open($th, "<", $localPath)) {
+            $self->failed("Can't open $localPath for reading");
             return 0;
         }
-        open(my $sh, ">", $finalXml) or die "Can't open $finalXml for writing";
+        open(my $sh, ">", $mungedPath) or die "Can't open $mungedPath for writing";
         while (my $line = <$th>) {
             next if $line =~ /^\<\!DOCTYPE /;
             print $sh $line;
@@ -655,13 +600,13 @@ sub validateXml {
 
     else {
         # Replace the doctype declaration with a new one.
-        $self->message("Writing new doctype decl:  $localXml -> $finalXml");
+        $self->message("Writing new doctype decl:  $localPath -> $mungedPath");
         my $th;
-        if (!open($th, "<", $localXml)) {
-            $self->failed("Can't open $localXml for reading");
+        if (!open($th, "<", $localPath)) {
+            $self->failed("Can't open $localPath for reading");
             return 0;
         }
-        open(my $sh, ">", $finalXml) or die "Can't open $finalXml for writing";
+        open(my $sh, ">", $mungedPath) or die "Can't open $mungedPath for writing";
         while (my $line = <$th>) {
             if ($line =~ /^\<\!DOCTYPE /) {
                 $line =~ s/PUBLIC\s+".*"/SYSTEM "$dtdUrl"/;
@@ -675,8 +620,8 @@ sub validateXml {
     }
 
     # Validate this sample against the new DTD.
-    $s->{'final-xml'} = $finalXml;
-    my $cmd = 'xmllint --noout ' . $xmllintArg . ' ' . $finalXml . ' > /dev/null 2>&1';
+    $s->{'munged-path'} = $mungedPath;
+    my $cmd = 'xmllint --noout ' . $xmllintArg . ' ' . $mungedPath . ' > /dev/null 2>&1';
     $self->message("Validating:  '$cmd'");
     my $status = system $cmd;
     if ($status != 0) {
@@ -784,28 +729,83 @@ sub generateXslt {
     return 1;
 }
 
+#========================================================================
+# FIXME:  The routines below are not working again yet.
+#-------------------------------------------------------------
+# Generate XML from Maxim's docsum tool (binary)
+
+sub generateXml {
+    my ($self, $s, $do, $xmlDocsumTool, $dbinfo, $build) = @_;
+    $self->_setCurrentStep('generate-xml', $s);
+
+    my $localPath = 'out/' . $s->{name} . '.xml';  # final output filename
+    $s->{'local-path'} = $localPath;
+
+    if ($do) {
+        if (!$dbinfo || !$build) {
+            $self->failed("Can't run xml-docsumtool without --dbinfo and --build");
+            return 0;
+        }
+        # Generate the list of XML docsums in a temporary file
+        # Sample command line:
+        #     cidxdocsum2xml -dbinfo $DBINFOINI -db pmc -build Build130513-0205.1 \
+        #         -uid 14900,14901 > t.xml
+        my $tmp = tmpnam();
+        my $cmd = "$xmlDocsumTool -dbinfo $dbinfo -db pmc -build $build " .
+                  "-outxml $tmp -uid 14900,14901";
+
+        $self->message("Generating docsum file $tmp");
+        my $status = system $cmd;
+        if ($status != 0) {
+            $self->failedCmd($status, $cmd);
+            return 0;
+        }
+
+        # Now wrap it in esummaryset
+        $self->message("Wrapping docsums  -> $localPath");
+
+        my $src;
+        if (!open($src, "<", $tmp)) {
+            $self->failed("Can't open $tmp for reading");
+            return 0;
+        }
+        open(my $dest, ">", $localPath) or die "Can't open $localPath for writing";
+        print $dest "<eSummaryResult>\n" .
+                    "<DocumentSummarySet status='OK'>\n";
+        while (my $line = <$src>) {
+            print $dest $line;
+        }
+        print $dest "</DocumentSummarySet>\n" .
+                    "</eSummaryResult>\n";
+        close $dest;
+        close $src;
+
+    }
+    return 1;
+}
+
 
 #------------------------------------------------------------------------
 # Returns 1 if successful; 0 otherwise.
-# Puts the pathname of the generated file into $s->{'json-file'}
+# Puts the pathname of the generated file into $s->{'json-local-path'}
 
 sub generateJson {
     my ($self, $s, $do) = @_;
 
     my $jsonXslt = $s->{sg}{'json-xslt'};
 
-    # Use local-xml to figure out what the JSON filename should be,
-    my $localXml = $s->{'local-xml'};
-    my $jsonFile = $localXml;
-    $jsonFile =~ s/\.xml$/.json/;
-    $s->{'json-file'} = $jsonFile;
+    # Use local-path to figure out what the JSON filename should be,
+    my $localPath = $s->{'local-path'};
+    my $jsonLocalPath = $localPath;
+    $jsonLocalPath =~ s/\.xml$/.json/;
+    $s->{'json-local-path'} = $jsonLocalPath;
 
-    # But use final-xml as input to the conversion
-    my $finalXml = $s->{'final-xml'};
+    # But use munged-path as input to the conversion
+    my $mungedPath = $s->{'munged-path'};
     if ($do) {
-        $self->message("Converting XML -> JSON:  $jsonFile");
+        $self->message("Converting XML -> JSON:  $jsonLocalPath");
         my $errfile = 'out/xsltproc.err';
-        my $cmd = "xsltproc $jsonXslt $finalXml > $jsonFile 2> $errfile";
+        my $cmd = "xsltproc $jsonXslt $mungedPath > $jsonLocalPath 2> $errfile";
         my $status = system $cmd;
         if ($status != 0) {
             $self->failedCmd($status, $cmd);
@@ -827,31 +827,31 @@ sub generateJson {
 }
 
 #-------------------------------------------------------------
-# Fetch the JSON results from EUtilities, and puts 'json-file' 'json-url',
-# and 'real-json-url' into the sample structure.
+# Fetch the JSON results from EUtilities, and puts 'json-local-path' 'json-canon-url',
+# and 'json-actual-url' into the sample structure.
 # This function returns 1 if successful, or 0 if there is a failure.
 
 sub fetchJson {
     my ($self, $s) = @_;
     my $tld = $self->{tld};
 
-    my $jsonFile = 'out/' . $s->{name} . ".json";   # final output filename
-    $s->{'json-file'} = $jsonFile;
+    my $jsonLocalPath = 'out/' . $s->{name} . ".json";   # final output filename
+    $s->{'json-local-path'} = $jsonLocalPath;
 
-    my $jsonUrl = $eutilsBaseUrl . $s->{"eutils-url"} . '&retmode=json';
-    $s->{'json-url'} = $jsonUrl;
-    my $realUrl = $jsonUrl;
+    my $jsonCanonUrl = $eutilsBaseUrl . $s->{"eutils-url"} . '&retmode=json';
+    $s->{'json-canon-url'} = $jsonCanonUrl;
+    my $jsonActualUrl = $jsonCanonUrl;
     if ($tld) {
-        $realUrl =~ s/http:\/\/eutils/http:\/\/$tld/;
+        $jsonActualUrl =~ s/http:\/\/eutils/http:\/\/$tld/;
     }
-    $s->{'real-json-url'} = $realUrl;
+    $s->{'json-actual-url'} = $jsonActualUrl;
 
     # For inserting into the system command, escape ampersands:
-    my $cmdUrl = $realUrl;
+    my $cmdUrl = $jsonActualUrl;
     $cmdUrl =~ s/\&/\\\&/g;
 
-    $self->message("Fetching $realUrl => $jsonFile");
-    return $self->httpGetToFile($cmdUrl, $jsonFile);
+    $self->message("Fetching $jsonActualUrl => $jsonLocalPath");
+    return $self->httpGetToFile($cmdUrl, $jsonLocalPath);
 }
 
 
@@ -860,10 +860,10 @@ sub fetchJson {
 
 sub validateJson {
     my ($self, $s) = @_;
-    my $jsonFile = $s->{'json-file'};
+    my $jsonLocalPath = $s->{'json-local-path'};
 
-    my $cmd = "jsonlint -q $jsonFile > /dev/null 2>&1";
-    $self->message("Validating $jsonFile");
+    my $cmd = "jsonlint -q $jsonLocalPath > /dev/null 2>&1";
+    $self->message("Validating $jsonLocalPath");
     my $status = system $cmd;
     if ($status != 0) {
         $self->failedCmd($status, $cmd);
