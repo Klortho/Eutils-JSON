@@ -387,18 +387,17 @@ sub fetchDtd {
         my $db = $1;
 
         # See if the DTD exists on the filesystem
-        my $dtdpath = "$idxextbase/$db/support/esummary_$db.dtd";
+        my $dtdpath = $sg->{'dtd-url'} = "$idxextbase/$db/support/esummary_$db.dtd";
+        my $dest = $sg->{'dtd-local-path'} = "out/$dtd";
+
         if (-f $dtdpath) {
-            $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $sg->{'dtd-local-path'} = $dtdpath;
+            copy($dtdpath, $dest);
+            $self->message("Copying $dtdpath -> $dest");
             return 1;
         }
         else {
             # Assume $dtdpath is a URL, and fetch it
-            my $dest = "out/$dtd";
-            $sg->{'dtd-system-id'} = $sg->{'dtd-url'} = $dtdpath;
-            $sg->{'dtd-local-path'} = $dest;
-
-            $self->message("Fetching $dtdpath");
+            $self->message("Fetching $dtdpath -> $dest");
             return $self->httpGetToFile($dtdpath, $dest);
         }
     }

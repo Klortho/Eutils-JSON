@@ -1529,7 +1529,7 @@
     </sample>
   </samplegroup>
 
-  <samplegroup dtd="esummary_pubmedhealth.dtd" eutil="esummary" idx='true'>
+  <samplegroup dtd="esummary_pubmedhealth.dtd" eutil="esummary">
     <sample name="esummary.pubmedhealth.20356" id="20356" db="pubmedhealth">
       <eutils-url>esummary.fcgi?db=pubmedhealth&amp;id=20356&amp;version=2.0</eutils-url>
     </sample>
@@ -1640,7 +1640,7 @@
     </sample>
   </samplegroup>
 
-  <samplegroup dtd="esummary_sra.dtd" eutil="esummary" idx='true'>
+  <samplegroup dtd="esummary_sra.dtd" eutil="esummary">
     <sample name="esummary.sra.260922" id="260922" db="sra">
       <eutils-url>esummary.fcgi?db=sra&amp;id=260922&amp;version=2.0</eutils-url>
     </sample>
