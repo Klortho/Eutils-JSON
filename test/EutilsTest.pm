@@ -859,6 +859,7 @@ sub fetchJson {
 
 sub validateJson {
     my ($self, $s) = @_;
+    my $sg = $s->{sg};
     my $jsonLocalPath = $s->{'json-local-path'};
 
     my $cmd = "jsonlint -q $jsonLocalPath > /dev/null 2>&1";
@@ -870,11 +871,6 @@ sub validateJson {
     }
     return 1;
 }
-
-
-
-
-
 
 #-----------------------------------------------------------------------------
 # Utility function to extract public and system ids from a local file,

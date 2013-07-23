@@ -60,17 +60,15 @@ to create an XML-to-JSON transformation stylesheet.
 This will download the JSON output directly from the Eutilities service, and
 make sure it is valid JSON.
 
-
-
-
-
-
 ### generate-json.pl
 
-COMING SOON.
-
-Combines generate-xslt and fetch-xml, and then runs each XML through the newly
+Combines fetch-xml and generate-xslt, and then runs each XML through the newly
 created XSLT to generate JSON.  Then validates that JSON.
+
+
+
+
+
 
 ### qa-test.pl
 
