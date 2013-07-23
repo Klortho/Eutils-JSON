@@ -728,61 +728,6 @@ sub generateXslt {
     return 1;
 }
 
-#========================================================================
-# FIXME:  The routines below are not working again yet.
-#-------------------------------------------------------------
-# Generate XML from Maxim's docsum tool (binary)
-
-sub generateXml {
-    my ($self, $s, $do, $xmlDocsumTool, $dbinfo, $build) = @_;
-    $self->_setCurrentStep('generate-xml', $s);
-
-    my $localPath = 'out/' . $s->{name} . '.xml';  # final output filename
-    $s->{'local-path'} = $localPath;
-
-    if ($do) {
-        if (!$dbinfo || !$build) {
-            $self->failed("Can't run xml-docsumtool without --dbinfo and --build");
-            return 0;
-        }
-        # Generate the list of XML docsums in a temporary file
-        # Sample command line:
-        #     cidxdocsum2xml -dbinfo $DBINFOINI -db pmc -build Build130513-0205.1 \
-        #         -uid 14900,14901 > t.xml
-        my $tmp = tmpnam();
-        my $cmd = "$xmlDocsumTool -dbinfo $dbinfo -db pmc -build $build " .
-                  "-outxml $tmp -uid 14900,14901";
-
-        $self->message("Generating docsum file $tmp");
-        my $status = system $cmd;
-        if ($status != 0) {
-            $self->failedCmd($status, $cmd);
-            return 0;
-        }
-
-        # Now wrap it in esummaryset
-        $self->message("Wrapping docsums  -> $localPath");
-
-        my $src;
-        if (!open($src, "<", $tmp)) {
-            $self->failed("Can't open $tmp for reading");
-            return 0;
-        }
-        open(my $dest, ">", $localPath) or die "Can't open $localPath for writing";
-        print $dest "<eSummaryResult>\n" .
-                    "<DocumentSummarySet status='OK'>\n";
-        while (my $line = <$src>) {
-            print $dest $line;
-        }
-        print $dest "</DocumentSummarySet>\n" .
-                    "</eSummaryResult>\n";
-        close $dest;
-        close $src;
-
-    }
-    return 1;
-}
-
 #-------------------------------------------------------------
 # Fetch the JSON results from EUtilities, and puts 'json-local-path' 'json-canon-url',
 # and 'json-actual-url' into the sample structure.
