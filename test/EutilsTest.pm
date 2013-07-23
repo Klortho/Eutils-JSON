@@ -469,7 +469,7 @@ sub _fetchXml {
             # https://confluence.ncbi.nlm.nih.gov/x/HJnY
 
             # public:  e.g.  -//NLM//DTD einfo YYYYMMDD//EN
-            if ($pubid !~ m{-//NLM//DTD [a-z]+ \d{8}//EN}) {
+            if ($pubid !~ m{-//NLM//DTD [a-z ]+ \d{8}//EN}) {
                 $self->failed("DTD public identifier '$pubid' doesn't match expected form");
                 # Just report this -- doesn't effect return status
             }
@@ -832,13 +832,14 @@ sub generateJson {
 
 sub fetchJson {
     my ($self, $s) = @_;
-    my $tld = $self->{tld};
+    my $opts = $self->{opts};
+    my $tld = $opts->{tld};
 
     my $jsonLocalPath = 'out/' . $s->{name} . ".json";   # final output filename
     $s->{'json-local-path'} = $jsonLocalPath;
 
-    my $jsonCanonUrl = $eutilsBaseUrl . $s->{"eutils-url"} . '&retmode=json';
-    $s->{'json-canon-url'} = $jsonCanonUrl;
+    my $jsonCanonUrl = $s->{'json-canon-url'} =
+        $eutilsBaseUrl . $s->{"eutils-url"} . '&retmode=json';
     my $jsonActualUrl = $jsonCanonUrl;
     if ($tld) {
         $jsonActualUrl =~ s/http:\/\/eutils/http:\/\/$tld/;
@@ -852,7 +853,6 @@ sub fetchJson {
     $self->message("Fetching $jsonActualUrl => $jsonLocalPath");
     return $self->httpGetToFile($cmdUrl, $jsonLocalPath);
 }
-
 
 #------------------------------------------------------------------------
 # Returns 1 if successful; 0 otherwise.
@@ -870,6 +870,11 @@ sub validateJson {
     }
     return 1;
 }
+
+
+
+
+
 
 #-----------------------------------------------------------------------------
 # Utility function to extract public and system ids from a local file,

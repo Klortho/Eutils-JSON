@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testcases>
-  <samplegroup dtd="einfo.dtd" eutil="einfo" idx='foo'>
+  <samplegroup dtd="einfo.dtd" eutil="einfo">
     <sample name="einfo">
       <eutils-url>einfo.fcgi</eutils-url>
     </sample>

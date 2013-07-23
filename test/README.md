@@ -37,12 +37,18 @@ correspond to the standard forms for these.
 ### fetch-xml.pl
 
 This merely fetches all the XML versions of all of the samples, without
-doing any validation.
+doing rigorous XML validation.  Note that it will still check the doctype
+declaration, so it can still fail, if it sees something unexpected.
 
 ### validate-xml.pl
 
 This script fetches the DTD for each samplegroup, then fetches the XML for
 each individual sample, and then validates the XML against the DTD.
+
+### fetch-json.pl
+
+This fetches all the JSON versions of all of the samples, without
+doing any validation.
 
 ### generate-xslt.pl
 
@@ -51,10 +57,13 @@ to create an XML-to-JSON transformation stylesheet.
 
 ### validate-json.pl
 
-COMING SOON
-
 This will download the JSON output directly from the Eutilities service, and
 make sure it is valid JSON.
+
+
+
+
+
 
 ### generate-json.pl
 

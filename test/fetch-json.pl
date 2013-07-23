@@ -1,5 +1,5 @@
 #!/usr/bin/env perl
-# Script for testing EUtils JSON output - fetch-xml step.
+# Script for testing EUtils JSON output - fetch-json step.
 
 use strict;
 use warnings;
@@ -11,9 +11,9 @@ use Logger;
 
 # Usage message:  note where common options usage is inserted
 my $usage = q(
-Usage:  fetch-xml.pl [options]
+Usage:  fetch-json.pl [options]
 
-This script fetches a local copy of the XML for a set of samples.  It puts the
+This script fetches a local copy of the JSON for a set of samples.  It puts the
 file into the 'out' directory.
 ) .
 $EutilsTest::commonOptUsage;
@@ -34,8 +34,8 @@ my $samplegroups = $t->{samplegroups};
 foreach my $sg (@$samplegroups) {
     foreach my $s (@{$sg->{samples}}) {
         next if !$t->filterMatch($s);
-        $logger->setCurrentTest('fetch-xml', $s);
-        $t->fetchXml($s);
+        $logger->setCurrentTest('fetch-json', $s);
+        $t->fetchJson($s);
     }
 }
 
