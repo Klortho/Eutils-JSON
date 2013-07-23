@@ -783,48 +783,6 @@ sub generateXml {
     return 1;
 }
 
-
-#------------------------------------------------------------------------
-# Returns 1 if successful; 0 otherwise.
-# Puts the pathname of the generated file into $s->{'json-local-path'}
-
-sub generateJson {
-    my ($self, $s, $do) = @_;
-
-    my $jsonXslt = $s->{sg}{'json-xslt'};
-
-    # Use local-path to figure out what the JSON filename should be,
-    my $localPath = $s->{'local-path'};
-    my $jsonLocalPath = $localPath;
-    $jsonLocalPath =~ s/\.xml$/.json/;
-    $s->{'json-local-path'} = $jsonLocalPath;
-
-    # But use munged-path as input to the conversion
-    my $mungedPath = $s->{'munged-path'};
-    if ($do) {
-        $self->message("Converting XML -> JSON:  $jsonLocalPath");
-        my $errfile = 'out/xsltproc.err';
-        my $cmd = "xsltproc $jsonXslt $mungedPath > $jsonLocalPath 2> $errfile";
-        my $status = system $cmd;
-        if ($status != 0) {
-            $self->failedCmd($status, $cmd);
-            return 0;
-        }
-
-        my $err = do {
-            local $/ = undef;
-            open my $fh, "<", $errfile or die "could not open $errfile: $!";
-            <$fh>;
-        };
-        if (length($err) > 0)
-        {
-            $self->failed("Problem during the xsltproc conversion: '$cmd'");
-            return 0;
-        }
-    }
-    return 1;
-}
-
 #-------------------------------------------------------------
 # Fetch the JSON results from EUtilities, and puts 'json-local-path' 'json-canon-url',
 # and 'json-actual-url' into the sample structure.
@@ -835,8 +793,8 @@ sub fetchJson {
     my $opts = $self->{opts};
     my $tld = $opts->{tld};
 
-    my $jsonLocalPath = 'out/' . $s->{name} . ".json";   # final output filename
-    $s->{'json-local-path'} = $jsonLocalPath;
+    my $jsonLocalPath = $s->{'json-local-path'} =
+        'out/' . $s->{name} . ".json";   # final output filename
 
     my $jsonCanonUrl = $s->{'json-canon-url'} =
         $eutilsBaseUrl . $s->{"eutils-url"} . '&retmode=json';
@@ -855,6 +813,49 @@ sub fetchJson {
 }
 
 #------------------------------------------------------------------------
+# This is called from the generate-json.pl script, to generate a local
+# JSON file using the XSLT generated automagically from the DTD.
+# Returns 1 if successful; 0 otherwise.
+
+sub genJson {
+    my ($self, $s) = @_;
+    my $sg = $s->{sg};
+    my $opts = $self->{opts};
+
+    # the XSLT to use
+    my $jsonXslt = $sg->{'json-xslt'};
+
+    # the input XML
+    my $localPath = $s->{'local-path'};
+
+    # the output JSON
+    my $jsonLocalPath = $s->{'json-local-path'} =
+        'out/' . $s->{name} . ".json";   # final output filename
+
+    $self->message("Converting XML $localPath -> JSON:  $jsonLocalPath");
+    my $errfile = 'out/xsltproc.err';
+    my $cmd = "xsltproc $jsonXslt $localPath > $jsonLocalPath 2> $errfile";
+    my $status = system $cmd;
+    if ($status != 0) {
+        $self->failedCmd($status, $cmd);
+        return 0;
+    }
+
+    my $err = do {
+        local $/ = undef;
+        open my $fh, "<", $errfile or die "could not open $errfile: $!";
+        <$fh>;
+    };
+    if (length($err) > 0)
+    {
+        $self->failed("Problem during the xsltproc conversion: '$cmd'");
+        return 0;
+    }
+}
+
+#------------------------------------------------------------------------
+# Here we know that the JSON should already have been either fetched or
+# generated.
 # Returns 1 if successful; 0 otherwise.
 
 sub validateJson {

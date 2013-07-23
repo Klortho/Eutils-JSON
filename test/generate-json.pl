@@ -1,9 +1,10 @@
 #!/usr/bin/env perl
-# Script for testing EUtils JSON output - fetch-json step.
+# Script for testing EUtils JSON output - generate-json step.
 
 use strict;
 use warnings;
 use EutilsTest;
+use FetchDtdOpts;
 use Logger;
 
 #-----------------------------------------------------------------
@@ -11,15 +12,19 @@ use Logger;
 
 # Usage message:  note where common options usage is inserted
 my $usage = q(
-Usage:  validate-json.pl [options]
+Usage:  generate-json.pl [options]
 
-This will download the JSON output directly from the Eutilities service, and
-make sure it is valid JSON.  The JSON is put into the out directory.
+Combines fetch-xml and generate-xslt, and then runs each XML through the newly
+created XSLT to generate JSON.  Then validates that JSON.
 ) .
-$EutilsTest::commonOptUsage;
+$EutilsTest::commonOptUsage .
+$FetchDtdOpts::optsUsage;
 
 # Process these options.
-my $Opts = EutilsTest::getOptions([], $usage);
+my $Opts = EutilsTest::getOptions(\@FetchDtdOpts::opts, $usage);
+
+# Post-process fetch-dtd options
+FetchDtdOpts::processOpts($Opts);
 
 #-----------------------------------------------------------------
 # Create a new test object, and read in the testcases.xml file
@@ -32,10 +37,19 @@ my $samplegroups = $t->{samplegroups};
 # Now run the test
 
 foreach my $sg (@$samplegroups) {
+    next if !$t->filterMatch($sg);
+    $logger->setCurrentTest('fetch-dtd', $sg);
+    $t->fetchDtd($sg);
+
+    $logger->setCurrentTest('generate-xslt', $sg);
+    $t->generateXslt($sg);
+
     foreach my $s (@{$sg->{samples}}) {
         next if !$t->filterMatch($s);
-        $logger->setCurrentTest('fetch-json', $s);
-        $t->fetchJson($s);
+        $logger->setCurrentTest('fetch-xml', $s);
+        $t->fetchXml($s);
+        $logger->setCurrentTest('gen-json', $s);
+        $t->genJson($s);
         $logger->setCurrentTest('validate-json', $s);
         $t->validateJson($s);
     }

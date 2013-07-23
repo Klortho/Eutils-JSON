@@ -1,5 +1,5 @@
 #!/usr/bin/env perl
-# Script for testing EUtils JSON output - fetch-json step.
+# Script for testing EUtils JSON output - validate-json step.
 
 use strict;
 use warnings;
