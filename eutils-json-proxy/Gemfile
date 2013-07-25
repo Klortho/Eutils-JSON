@@ -1,0 +1,4 @@
+gem 'rack'
+gem 'puma'
+gem 'nokogiri'
+gem 'nori'
