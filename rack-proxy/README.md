@@ -15,6 +15,17 @@ Eutils-json-proxy is rack application that converts eutils xml to json
 
 This should start a local server running on port 8080.
 
+## Implementation
+
+This is a demo app contributed by [sdor](https://github.com/sdor) (Thanks!)
+and is not deployed anywhere, nor are there plans (at present) to deploy it.
+This is one alternative way to implement the XML-to-JSON conversion, and is
+here for comparison purposes.
+
+This server acts as a reverse-proxy from NCBI E-utilities, and uses nokogiri
+to parse the XML (nokogiri is the ruby binding to libxml2).  noris is a Ruby
+gem that produces a map to convert the XML into JSON.
+
 ## Example
 
 In a browser, navigate to:
