@@ -749,12 +749,8 @@ sub fetchJson {
     }
     $s->{'json-actual-url'} = $jsonActualUrl;
 
-    # For inserting into the system command, escape ampersands:
-    my $cmdUrl = $jsonActualUrl;
-    $cmdUrl =~ s/\&/\\\&/g;
-
     $self->message("Fetching $jsonActualUrl => $jsonLocalPath");
-    return $self->httpGetToFile($cmdUrl, $jsonLocalPath);
+    return $self->httpGetToFile($jsonActualUrl, $jsonLocalPath);
 }
 
 #------------------------------------------------------------------------
