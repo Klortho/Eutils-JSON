@@ -1873,11 +1873,13 @@
     </sample>
   </samplegroup>
 
+  <!-- skip for now
   <samplegroup dtd="eSummary_041029.dtd" eutil="esummary">
     <sample name="esummary.error" error='true'>
       <eutils-url>esummary.fcgi?retmode=xml&amp;version=2.0&amp;db=error&amp;id=254088</eutils-url>
     </sample>
   </samplegroup>
+  -->
 
 <!-- Not implemented yet
   <samplegroup dtd="pubmed_120101.dtd" eutil="efetch">

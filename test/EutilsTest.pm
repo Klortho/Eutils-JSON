@@ -741,8 +741,10 @@ sub fetchJson {
     my $jsonLocalPath = $s->{'json-local-path'} =
         'out/' . $s->{name} . ".json";   # final output filename
 
+    my $eutilsUrl = $s->{'eutils-url'};
+    my $qsdelim = $eutilsUrl =~ /\?/ ? '&' : '?';
     my $jsonCanonUrl = $s->{'json-canon-url'} =
-        $eutilsBaseUrl . $s->{"eutils-url"} . '&retmode=json';
+        $eutilsBaseUrl . $s->{"eutils-url"} . $qsdelim . 'retmode=json';
     my $jsonActualUrl = $jsonCanonUrl;
     if ($tld) {
         $jsonActualUrl =~ s/http:\/\/eutils/http:\/\/$tld/;
