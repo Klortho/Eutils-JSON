@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 cd /home/maloneyc/git/Klortho/Eutils-JSON/test
-now=`date +"%Y%m%d"`
+now=`date +"%Y%m%d%H%M%S"`
 
 outfile_vxml=cron_out_vxml_$now.txt
 echo "Running validate-xml.pl" > $outfile_vxml

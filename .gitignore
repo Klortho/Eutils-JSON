@@ -1,3 +1,3 @@
 OxygenProject.xpr
-test/cron_out_vjson_20130930.txt
-test/cron_out_vxml_20130930.txt
+test/cron_out_vjson_*.txt
+test/cron_out_vxml_*.txt
