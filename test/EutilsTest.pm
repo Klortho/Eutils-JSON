@@ -474,7 +474,7 @@ sub _fetchXml {
                 # Just report this -- doesn't effect return status
             }
             # system:  e.g.  http://www.ncbi.nlm.nih.gov/eutils/dtd/YYYYMMDD/einfo.dtd
-            if ($sysid !~ m{http://www.ncbi.nlm.nih.gov/eutils/dtd/\d{8}/\w+\.dtd}) {
+            if ($sysid !~ m{http://eutils.ncbi.nlm.nih.gov/eutils/dtd/\d{8}/\w+\.dtd}) {
                 $self->failed("DTD system identifier '$sysid' doesn't match expected form");
                 # Just report this -- doesn't effect return status
             }
