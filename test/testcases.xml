@@ -989,6 +989,10 @@
     <sample name="esummary.nuccore.319869180" id="319869180" db="nuccore">
       <eutils-url>esummary.fcgi?db=nuccore&amp;id=319869180&amp;version=2.0</eutils-url>
     </sample>
+    <!-- non-numeric project id: -->
+    <sample name="esummary.nuccore.530377099" id="530377099" db="nuccore">
+      <eutils-url>esummary.fcgi?db=nuccore&amp;id=530377099&amp;version=2.0</eutils-url>
+    </sample>
 
     <sample name="esummary.nuccore.error" id="888888888888" db="nuccore" error='true'>
       <eutils-url>esummary.fcgi?db=nuccore&amp;id=888888888888&amp;version=2.0</eutils-url>
