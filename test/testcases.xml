@@ -1116,43 +1116,6 @@
     </sample>
   </samplegroup>
 
-  <samplegroup dtd="esummary_omia.dtd" eutil="esummary" idx='true'>
-    <sample name="esummary.omia.633" id="633" db="omia">
-      <eutils-url>esummary.fcgi?db=omia&amp;id=633&amp;version=2.0</eutils-url>
-    </sample>
-    <sample name="esummary.omia.1826" id="1826" db="omia">
-      <eutils-url>esummary.fcgi?db=omia&amp;id=1826&amp;version=2.0</eutils-url>
-    </sample>
-    <sample name="esummary.omia.3131" id="3131" db="omia">
-      <eutils-url>esummary.fcgi?db=omia&amp;id=3131&amp;version=2.0</eutils-url>
-    </sample>
-    <sample name="esummary.omia.3444" id="3444" db="omia">
-      <eutils-url>esummary.fcgi?db=omia&amp;id=3444&amp;version=2.0</eutils-url>
-    </sample>
-    <sample name="esummary.omia.1178" id="1178" db="omia">
-      <eutils-url>esummary.fcgi?db=omia&amp;id=1178&amp;version=2.0</eutils-url>
-    </sample>
-    <sample name="esummary.omia.3127" id="3127" db="omia">
-      <eutils-url>esummary.fcgi?db=omia&amp;id=3127&amp;version=2.0</eutils-url>
-    </sample>
-    <sample name="esummary.omia.639" id="639" db="omia">
-      <eutils-url>esummary.fcgi?db=omia&amp;id=639&amp;version=2.0</eutils-url>
-    </sample>
-    <sample name="esummary.omia.380" id="380" db="omia">
-      <eutils-url>esummary.fcgi?db=omia&amp;id=380&amp;version=2.0</eutils-url>
-    </sample>
-    <sample name="esummary.omia.1300" id="1300" db="omia">
-      <eutils-url>esummary.fcgi?db=omia&amp;id=1300&amp;version=2.0</eutils-url>
-    </sample>
-    <sample name="esummary.omia.778" id="778" db="omia">
-      <eutils-url>esummary.fcgi?db=omia&amp;id=778&amp;version=2.0</eutils-url>
-    </sample>
-
-    <sample name="esummary.omia.error" id="888888888888" db="omia" error='true'>
-      <eutils-url>esummary.fcgi?db=omia&amp;id=888888888888&amp;version=2.0</eutils-url>
-    </sample>
-  </samplegroup>
-
   <samplegroup dtd="esummary_omim.dtd" eutil="esummary" idx='true'>
     <sample name="esummary.omim.124089" id="124089" db="omim">
       <eutils-url>esummary.fcgi?db=omim&amp;id=124089&amp;version=2.0</eutils-url>
