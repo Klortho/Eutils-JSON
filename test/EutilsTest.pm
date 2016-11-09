@@ -48,15 +48,15 @@ package EutilsTest;
 #
 #           # Derived data
 #           'local-path' => 'out/foo.xml',     # Where this was downloaded to
-#           'canon-url' => 'http://eutils...', # Nominal URL for the XML (before tld substitution)
-#           'actual-url' => 'http://qa....',   # The actual URL from which it was downloaded
+#           'canon-url' => 'https://eutils...', # Nominal URL for the XML (before tld substitution)
+#           'actual-url' => 'https://qa....',   # The actual URL from which it was downloaded
 #           'munged-path' => 'out/foo-m.xml',  # Munged copy of the XML (changed doctype decl);
 #                                              # if the XML was not modified, this will be the same as
 #                                              # local-path.
 
 #           'json-local-path' => 'out/...',    # Filename of the generated json file
-#           'json-canon-url' => 'http://eutils...",  # Nominal URL for the JSON (before tld substitution)
-#           'json-actual-url' => 'http://...', # If JSON was downloaded, this is the source
+#           'json-canon-url' => 'https://eutils...",  # Nominal URL for the JSON (before tld substitution)
+#           'json-actual-url' => 'https://...', # If JSON was downloaded, this is the source
 #
 #           msgs => [ ... messages while testing this sample ... ],
 #           failed => 0,
@@ -154,10 +154,10 @@ sub getOptions {
 }
 
 # Base URL of the eutilities services
-our $eutilsBaseUrl = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
+our $eutilsBaseUrl = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
 
 # Base URL of the DTDs
-our $eutilsDtdBase = 'http://www.ncbi.nlm.nih.gov/entrez/query/DTD/';
+our $eutilsDtdBase = 'https://www.ncbi.nlm.nih.gov/entrez/query/DTD/';
 
 
 # $idxextbase  points to the base directory of the subtree under which are all
@@ -440,7 +440,7 @@ sub _fetchXml {
     my $canonUrl = $s->{'canon-url'} = $eutilsBaseUrl . $s->{"eutils-url"};
     my $actualUrl = $canonUrl;
     if ($tld) {
-        $actualUrl =~ s/http:\/\/eutils/http:\/\/$tld/;
+        $actualUrl =~ s/https:\/\/eutils/https:\/\/$tld/;
     }
     $s->{'actual-url'} = $actualUrl;
 
@@ -473,8 +473,8 @@ sub _fetchXml {
                 $self->failed("DTD public identifier '$pubid' doesn't match expected form");
                 # Just report this -- doesn't effect return status
             }
-            # system:  e.g.  http://www.ncbi.nlm.nih.gov/eutils/dtd/YYYYMMDD/einfo.dtd
-            if ($sysid !~ m{http://eutils.ncbi.nlm.nih.gov/eutils/dtd/\d{8}/\w+\.dtd}) {
+            # system:  e.g.  https://www.ncbi.nlm.nih.gov/eutils/dtd/YYYYMMDD/einfo.dtd
+            if ($sysid !~ m{https://eutils.ncbi.nlm.nih.gov/eutils/dtd/\d{8}/\w+\.dtd}) {
                 $self->failed("DTD system identifier '$sysid' doesn't match expected form");
                 # Just report this -- doesn't effect return status
             }
@@ -747,7 +747,7 @@ sub fetchJson {
         $eutilsBaseUrl . $s->{"eutils-url"} . $qsdelim . 'retmode=json';
     my $jsonActualUrl = $jsonCanonUrl;
     if ($tld) {
-        $jsonActualUrl =~ s/http:\/\/eutils/http:\/\/$tld/;
+        $jsonActualUrl =~ s/https:\/\/eutils/https:\/\/$tld/;
     }
     $s->{'json-actual-url'} = $jsonActualUrl;
 
